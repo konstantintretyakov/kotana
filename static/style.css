@@ -1,0 +1,373 @@
+/* ── Reset & Base ── */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --navy-dark: #0a0f1e;
+    --navy: #111833;
+    --navy-light: #1a2444;
+    --gold: #c9a84c;
+    --gold-light: #ddc175;
+    --text: #d0d4e0;
+    --text-muted: #8891a8;
+    --white: #f0f1f5;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background: var(--navy-dark);
+    color: var(--text);
+    line-height: 1.7;
+}
+
+a {
+    color: var(--gold);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+a:hover {
+    color: var(--gold-light);
+}
+
+/* ── Navigation ── */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(10, 15, 30, 0.92);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(201, 168, 76, 0.15);
+    z-index: 100;
+    padding: 0 2rem;
+}
+
+nav .nav-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 64px;
+}
+
+nav .logo {
+    font-size: 1.25rem;
+    font-weight: 700;
+    letter-spacing: 0.25em;
+    color: var(--gold);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+nav ul a {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+}
+
+nav ul a:hover {
+    color: var(--gold);
+}
+
+/* ── Sections (shared) ── */
+section {
+    padding: 6rem 2rem;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.section-title {
+    font-size: 0.8rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.75rem;
+}
+
+.section-heading {
+    font-size: 2rem;
+    color: var(--white);
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+.divider {
+    width: 48px;
+    height: 2px;
+    background: var(--gold);
+    margin-bottom: 2rem;
+}
+
+/* ── Hero ── */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    background:
+        radial-gradient(ellipse at 50% 40%, rgba(26, 36, 68, 0.7) 0%, transparent 70%),
+        var(--navy-dark);
+    border-bottom: 1px solid rgba(201, 168, 76, 0.1);
+}
+
+.hero-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+    opacity: 0.35;
+}
+
+.katana-bg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 95vh;
+    width: auto;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    letter-spacing: 0.35em;
+    color: var(--gold);
+    font-weight: 300;
+    margin-bottom: 1rem;
+}
+
+.hero .tagline {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    letter-spacing: 0.15em;
+    font-weight: 300;
+}
+
+.hero .line {
+    width: 64px;
+    height: 1px;
+    background: var(--gold);
+    margin: 2rem auto;
+    opacity: 0.5;
+}
+
+/* ── About ── */
+.about {
+    background: var(--navy);
+}
+
+.about p {
+    max-width: 720px;
+    font-size: 1.05rem;
+    color: var(--text);
+    line-height: 1.9;
+}
+
+/* ── Services ── */
+.services {
+    background: var(--navy-dark);
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 1rem;
+}
+
+.service-card {
+    background: var(--navy);
+    border: 1px solid rgba(201, 168, 76, 0.1);
+    border-radius: 6px;
+    padding: 2.5rem 2rem;
+    transition: border-color 0.3s, transform 0.3s;
+}
+
+.service-card:hover {
+    border-color: rgba(201, 168, 76, 0.35);
+    transform: translateY(-4px);
+}
+
+.service-card h3 {
+    font-size: 1.15rem;
+    color: var(--white);
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+}
+
+.service-card p {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    line-height: 1.75;
+}
+
+/* ── Contact ── */
+.contact {
+    background: var(--navy);
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    margin-top: 1rem;
+}
+
+.contact-info dt {
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.25rem;
+    margin-top: 1.5rem;
+}
+
+.contact-info dt:first-child {
+    margin-top: 0;
+}
+
+.contact-info dd {
+    font-size: 1rem;
+    color: var(--text);
+}
+
+.contact-cta {
+    display: flex;
+    align-items: center;
+}
+
+.contact-cta p {
+    font-size: 1.05rem;
+    color: var(--text-muted);
+    line-height: 1.9;
+}
+
+/* ── Contact Form ── */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+}
+
+.form-group label {
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+}
+
+.form-group input {
+    padding: 0.75rem 1rem;
+    background: var(--navy-dark);
+    border: 1px solid rgba(201, 168, 76, 0.2);
+    border-radius: 4px;
+    color: var(--text);
+    font-size: 1rem;
+    font-family: inherit;
+    transition: border-color 0.2s;
+}
+
+.form-group input::placeholder {
+    color: var(--text-muted);
+    opacity: 0.5;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: var(--gold);
+}
+
+.contact-form button {
+    padding: 0.85rem 2rem;
+    background: transparent;
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    font-size: 0.85rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background 0.3s, color 0.3s;
+    align-self: flex-start;
+}
+
+.contact-form button:hover {
+    background: var(--gold);
+    color: var(--navy-dark);
+}
+
+.form-success {
+    padding: 0.85rem 1rem;
+    background: rgba(201, 168, 76, 0.1);
+    border: 1px solid rgba(201, 168, 76, 0.3);
+    border-radius: 4px;
+    color: var(--gold-light);
+    font-size: 0.95rem;
+}
+
+/* ── Footer ── */
+footer {
+    text-align: center;
+    padding: 2rem;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    border-top: 1px solid rgba(201, 168, 76, 0.1);
+    background: var(--navy-dark);
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.4rem;
+        letter-spacing: 0.2em;
+    }
+
+    nav ul {
+        gap: 1rem;
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    section {
+        padding: 4rem 1.25rem;
+    }
+}
