@@ -1,6 +1,20 @@
+import os
+import smtplib
+from email.mime.text import MIMEText
+
+from dotenv import load_dotenv
+
+load_dotenv()
+
 from flask import Flask, render_template, request, redirect, url_for
 
 app = Flask(__name__)
+
+SMTP_SERVER = "smtp.yandex.ru"
+SMTP_PORT = 465
+SMTP_LOGIN = os.environ.get("SMTP_LOGIN", "")
+SMTP_PASSWORD = os.environ.get("SMTP_PASSWORD", "")
+RECIPIENT = "info@kotana.com.ru"
 
 
 @app.route("/")
@@ -13,7 +27,22 @@ def contact():
     name = request.form.get("name")
     phone = request.form.get("phone")
     email = request.form.get("email")
-    print(f"[Contact] Name: {name}, Phone: {phone}, Email: {email}")
+    subject = f"Новая заявка от {name}"
+    body = f"Имя: {name}\nТелефон: {phone}\nEmail: {email}"
+
+    msg = MIMEText(body, "plain", "utf-8")
+    msg["Subject"] = subject
+    msg["From"] = SMTP_LOGIN
+    msg["To"] = RECIPIENT
+
+    try:
+        with smtplib.SMTP_SSL(SMTP_SERVER, SMTP_PORT) as server:
+            server.login(SMTP_LOGIN, SMTP_PASSWORD)
+            server.sendmail(SMTP_LOGIN, RECIPIENT, msg.as_string())
+    except Exception as e:
+        print(f"[Contact] Email send failed: {e}")
+        return render_template("index.html", success=False)
+
     return render_template("index.html", success=True)
 
 
