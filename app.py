@@ -11,7 +11,7 @@ from flask import Flask, render_template, request, redirect, url_for
 app = Flask(__name__)
 
 SMTP_SERVER = "smtp.yandex.ru"
-SMTP_PORT = 465
+SMTP_PORT = 587
 SMTP_LOGIN = os.environ.get("SMTP_LOGIN", "")
 SMTP_PASSWORD = os.environ.get("SMTP_PASSWORD", "")
 RECIPIENT = "info@kotana.com.ru"
@@ -36,7 +36,8 @@ def contact():
     msg["To"] = RECIPIENT
 
     try:
-        with smtplib.SMTP_SSL(SMTP_SERVER, SMTP_PORT) as server:
+        with smtplib.SMTP(SMTP_SERVER, SMTP_PORT, timeout=10) as server:
+            server.starttls()
             server.login(SMTP_LOGIN, SMTP_PASSWORD)
             server.sendmail(SMTP_LOGIN, RECIPIENT, msg.as_string())
     except Exception as e:
