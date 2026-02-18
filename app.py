@@ -1,7 +1,6 @@
 import os
-import smtplib
-from email.mime.text import MIMEText
 
+import requests
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -10,10 +9,7 @@ from flask import Flask, render_template, request, redirect, url_for
 
 app = Flask(__name__)
 
-SMTP_SERVER = "smtp.yandex.ru"
-SMTP_PORT = 587
-SMTP_LOGIN = os.environ.get("SMTP_LOGIN", "")
-SMTP_PASSWORD = os.environ.get("SMTP_PASSWORD", "")
+RESEND_API_KEY = os.environ.get("RESEND_API_KEY", "")
 RECIPIENT = "info@kotana.com.ru"
 
 
@@ -27,19 +23,19 @@ def contact():
     name = request.form.get("name")
     phone = request.form.get("phone")
     email = request.form.get("email")
-    subject = f"Новая заявка от {name}"
-    body = f"Имя: {name}\nТелефон: {phone}\nEmail: {email}"
-
-    msg = MIMEText(body, "plain", "utf-8")
-    msg["Subject"] = subject
-    msg["From"] = SMTP_LOGIN
-    msg["To"] = RECIPIENT
-
     try:
-        with smtplib.SMTP(SMTP_SERVER, SMTP_PORT, timeout=10) as server:
-            server.starttls()
-            server.login(SMTP_LOGIN, SMTP_PASSWORD)
-            server.sendmail(SMTP_LOGIN, RECIPIENT, msg.as_string())
+        resp = requests.post(
+            "https://api.resend.com/emails",
+            headers={"Authorization": f"Bearer {RESEND_API_KEY}"},
+            json={
+                "from": "Kotana <onboarding@resend.dev>",
+                "to": [RECIPIENT],
+                "subject": f"Новая заявка от {name}",
+                "text": f"Имя: {name}\nТелефон: {phone}\nEmail: {email}",
+            },
+            timeout=10,
+        )
+        resp.raise_for_status()
     except Exception as e:
         print(f"[Contact] Email send failed: {e}")
         return render_template("index.html", success=False)
