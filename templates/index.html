@@ -27,35 +27,6 @@
     <video class="hero-video" autoplay muted loop playsinline>
         <source src="{{ url_for('static', filename='hero-rain.mp4') }}" type="video/mp4">
     </video>
-    <!-- Katana blade background -->
-    <svg class="katana-bg" viewBox="0 0 200 900" xmlns="http://www.w3.org/2000/svg">
-        <!-- Blade -->
-        <path d="M100 0 Q116 200 120 400 Q120 500 112 600 L100 650 L88 600 Q80 500 80 400 Q84 200 100 0Z"
-              fill="url(#blade-gradient)" opacity="0.45"/>
-        <!-- Shinogi (ridge line) -->
-        <line x1="100" y1="10" x2="100" y2="645" stroke="rgba(201,168,76,0.5)" stroke-width="0.7"/>
-        <!-- Kissaki (tip glow) -->
-        <ellipse cx="100" cy="8" rx="4" ry="10" fill="rgba(240,230,192,0.25)"/>
-        <!-- Tsuba (guard) -->
-        <ellipse cx="100" cy="660" rx="20" ry="7" fill="none" stroke="rgba(201,168,76,0.55)" stroke-width="2"/>
-        <ellipse cx="100" cy="660" rx="14" ry="5" fill="none" stroke="rgba(201,168,76,0.35)" stroke-width="1"/>
-        <!-- Tsuka (handle wrap) -->
-        <rect x="96" y="667" width="8" height="50" rx="2" fill="rgba(201,168,76,0.25)"/>
-        <line x1="95" y1="675" x2="105" y2="672" stroke="rgba(201,168,76,0.35)" stroke-width="1"/>
-        <line x1="95" y1="683" x2="105" y2="680" stroke="rgba(201,168,76,0.35)" stroke-width="1"/>
-        <line x1="95" y1="691" x2="105" y2="688" stroke="rgba(201,168,76,0.35)" stroke-width="1"/>
-        <line x1="95" y1="699" x2="105" y2="696" stroke="rgba(201,168,76,0.35)" stroke-width="1"/>
-        <line x1="95" y1="707" x2="105" y2="704" stroke="rgba(201,168,76,0.35)" stroke-width="1"/>
-        <!-- Kashira (pommel) -->
-        <ellipse cx="100" cy="719" rx="6" ry="3" fill="rgba(201,168,76,0.4)"/>
-        <defs>
-            <linearGradient id="blade-gradient" x1="100" y1="0" x2="100" y2="650" gradientUnits="userSpaceOnUse">
-                <stop offset="0%" stop-color="#f0e6c0"/>
-                <stop offset="40%" stop-color="#c9a84c"/>
-                <stop offset="100%" stop-color="#8a7030"/>
-            </linearGradient>
-        </defs>
-    </svg>
     <div class="hero-content">
         <h1>КОТАНА</h1>
         <div class="line"></div>
