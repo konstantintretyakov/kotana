@@ -2,3 +2,4 @@
 nul
 .env
 app logs
+deploy logs
