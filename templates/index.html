@@ -97,10 +97,11 @@
         <div class="divider"></div>
         <div class="contact-grid">
 
-            <form class="contact-form" method="POST" action="{{ url_for('contact') }}">
-                {% if success %}
-                <div class="form-success">Спасибо! Мы свяжемся с вами в ближайшее время.</div>
-                {% endif %}
+            <form class="contact-form" id="contact-form" action="https://api.web3forms.com/submit" method="POST">
+                <input type="hidden" name="access_key" value="826382cb-9c0c-437d-8e38-f0114ea0cc40">
+                <input type="hidden" name="subject" value="Новая заявка с сайта КОТАНА">
+                <input type="hidden" name="redirect" value="">
+                <div class="form-success" id="form-success" style="display:none;">Спасибо! <Мы></Мы> свяжемся с вами в ближайшее время.</div>
                 <div class="form-group">
                     <label for="name">Имя</label>
                     <input type="text" id="name" name="name" placeholder="Ваше имя" required>
@@ -115,6 +116,20 @@
                 </div>
                 <button type="submit">Отправить</button>
             </form>
+            <script>
+                document.getElementById('contact-form').addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    var form = this;
+                    fetch(form.action, {method: 'POST', body: new FormData(form)})
+                        .then(function(r) { return r.json(); })
+                        .then(function(data) {
+                            if (data.success) {
+                                document.getElementById('form-success').style.display = 'block';
+                                form.reset();
+                            }
+                        });
+                });
+            </script>
 
             <dl class="contact-info">
                 <dt>Email</dt>
