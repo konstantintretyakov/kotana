@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>КОТАНА — Investment Banking Boutique</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Outfit:wght@300;400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <link rel="icon" type="image/svg+xml" href="{{ url_for('static', filename='favicon.svg') }}">
 </head>
@@ -49,6 +52,61 @@
         </p>
     </div>
 </section>
+
+<!-- Stats -->
+<section class="stats" id="stats">
+    <div class="stats-grid">
+        <div class="stat-item">
+            <div class="stat-number">
+                <span class="stat-prefix">&#8381;</span><span class="stat-count" data-target="180">0</span><span class="stat-suffix"> млрд+</span>
+            </div>
+            <div class="stat-label">совершённых сделок</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">
+                <span class="stat-count" data-target="60">0</span><span class="stat-suffix">+</span>
+            </div>
+            <div class="stat-label">закрытых сделок</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">
+                <span class="stat-count" data-target="35">0</span><span class="stat-suffix"> лет</span>
+            </div>
+            <div class="stat-label">опыта работы</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">
+                <span class="stat-prefix">&#8381;</span><span class="stat-count" data-target="60">0</span><span class="stat-suffix"> млрд+</span>
+            </div>
+            <div class="stat-label">привлечённого капитала</div>
+        </div>
+    </div>
+</section>
+<script>
+    (function() {
+        var animated = false;
+        var observer = new IntersectionObserver(function(entries) {
+            if (entries[0].isIntersecting && !animated) {
+                animated = true;
+                document.querySelectorAll('.stat-count').forEach(function(el) {
+                    var target = parseInt(el.getAttribute('data-target'));
+                    var duration = 2000;
+                    var start = performance.now();
+                    function update(now) {
+                        var t = Math.min((now - start) / duration, 1);
+                        t = 1 - Math.pow(1 - t, 3);
+                        el.textContent = Math.round(target * t);
+                        if (t < 1) requestAnimationFrame(update);
+                        else el.textContent = target;
+                    }
+                    requestAnimationFrame(update);
+                });
+                observer.disconnect();
+            }
+        }, {threshold: 0.3});
+        observer.observe(document.getElementById('stats'));
+    })();
+</script>
 
 <!-- Services -->
 <section class="services" id="services">
