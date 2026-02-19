@@ -3,17 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>КОТАНА — Investment Banking Boutique</title>
+    <title>КОТАНА — Инвестиционно-банковский бутик | M&A, привлечение капитала, реструктуризация</title>
+    <meta name="description" content="КОТАНА — независимый инвестиционно-банковский бутик. Слияния и поглощения (M&A), привлечение капитала, реструктуризация. Стратегические финансовые консультации для среднего и крупного бизнеса в России.">
+    <meta name="keywords" content="инвестиционный банкинг, M&A, слияния и поглощения, привлечение капитала, реструктуризация, финансовые консультации, инвестиционный бутик, КОТАНА, котана, финансовый советник, долговое финансирование, облигации, Москва">
+    <link rel="canonical" href="https://kotana.com.ru/">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="КОТАНА — Инвестиционно-банковский бутик">
+    <meta property="og:description" content="Стратегические финансовые консультации: M&A, привлечение капитала, реструктуризация. Более 35 лет опыта, ₽180 млрд+ совершённых сделок.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://kotana.com.ru/">
+    <meta property="og:image" content="https://kotana.com.ru/static/og-image.png">
+    <meta property="og:locale" content="ru_RU">
+    <meta property="og:site_name" content="КОТАНА">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="КОТАНА — Инвестиционно-банковский бутик">
+    <meta name="twitter:description" content="Стратегические финансовые консультации: M&A, привлечение капитала, реструктуризация.">
+    <meta name="twitter:image" content="https://kotana.com.ru/static/og-image.png">
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Outfit:wght@300;400&display=swap" rel="stylesheet">
+
+    <!-- Styles & Favicon -->
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <link rel="icon" type="image/svg+xml" href="{{ url_for('static', filename='favicon.svg') }}">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FinancialService",
+        "name": "КОТАНА",
+        "alternateName": "Kotana",
+        "description": "Независимый инвестиционно-банковский бутик, специализирующийся на слияниях и поглощениях (M&A), привлечении капитала и реструктуризации для средних и крупных компаний.",
+        "url": "https://kotana.com.ru",
+        "logo": "https://kotana.com.ru/static/favicon.svg",
+        "email": "info@kotana.com.ru",
+        "telephone": "+7-916-906-98-82",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Пресненская наб., 12",
+            "addressLocality": "Москва",
+            "addressCountry": "RU"
+        },
+        "areaServed": {
+            "@type": "Country",
+            "name": "Россия"
+        },
+        "foundingDate": "1991",
+        "serviceType": ["Слияния и поглощения", "Привлечение капитала", "Реструктуризация"],
+        "sameAs": []
+    }
+    </script>
 </head>
 <body>
 
 <!-- Navigation -->
-<nav>
+<header>
+<nav aria-label="Основная навигация">
     <div class="nav-inner">
         <div class="logo">КОТАНА</div>
         <ul>
@@ -23,16 +74,22 @@
         </ul>
     </div>
 </nav>
+</header>
+
+<main>
+
+<!-- SEO intro (visually hidden, crawlable) -->
+<p class="sr-only">КОТАНА — независимый инвестиционно-банковский бутик в Москве. Мы предоставляем услуги в области слияний и поглощений (M&amp;A), привлечения долгового и долевого капитала, а также финансовой и операционной реструктуризации. Более 35 лет опыта, свыше 60 закрытых сделок и ₽180 млрд+ совершённых транзакций.</p>
 
 <!-- Hero -->
 <section class="hero" id="hero">
     <!-- Background video -->
-    <video class="hero-video" autoplay muted loop playsinline>
+    <video class="hero-video" autoplay muted loop playsinline aria-hidden="true">
         <source src="{{ url_for('static', filename='hero-rain.mp4') }}" type="video/mp4">
     </video>
     <div class="hero-content">
         <h1>КОТАНА</h1>
-        <div class="line"></div>
+        <div class="line" aria-hidden="true"></div>
         <p class="tagline">Стратегические решения для вашего капитала</p>
     </div>
 </section>
@@ -42,7 +99,7 @@
     <div class="container">
         <p class="section-title">О компании</p>
         <h2 class="section-heading">Кто мы</h2>
-        <div class="divider"></div>
+        <div class="divider" aria-hidden="true"></div>
         <p>
             КОТАНА — независимый инвестиционно-банковский бутик, специализирующийся
             на предоставлении стратегических финансовых консультаций для средних и крупных
@@ -54,7 +111,7 @@
 </section>
 
 <!-- Stats -->
-<section class="stats" id="stats">
+<section class="stats" id="stats" aria-label="Ключевые показатели">
     <div class="stats-grid">
         <div class="stat-item">
             <div class="stat-number">
@@ -82,38 +139,13 @@
         </div>
     </div>
 </section>
-<script>
-    (function() {
-        var animated = false;
-        var observer = new IntersectionObserver(function(entries) {
-            if (entries[0].isIntersecting && !animated) {
-                animated = true;
-                document.querySelectorAll('.stat-count').forEach(function(el) {
-                    var target = parseInt(el.getAttribute('data-target'));
-                    var duration = 2000;
-                    var start = performance.now();
-                    function update(now) {
-                        var t = Math.min((now - start) / duration, 1);
-                        t = 1 - Math.pow(1 - t, 3);
-                        el.textContent = Math.round(target * t);
-                        if (t < 1) requestAnimationFrame(update);
-                        else el.textContent = target;
-                    }
-                    requestAnimationFrame(update);
-                });
-                observer.disconnect();
-            }
-        }, {threshold: 0.3});
-        observer.observe(document.getElementById('stats'));
-    })();
-</script>
 
 <!-- Services -->
 <section class="services" id="services">
     <div class="container">
         <p class="section-title">Услуги</p>
         <h2 class="section-heading">Наши направления</h2>
-        <div class="divider"></div>
+        <div class="divider" aria-hidden="true"></div>
         <div class="services-grid">
 
             <div class="service-card">
@@ -152,14 +184,14 @@
     <div class="container">
         <p class="section-title">Контакты</p>
         <h2 class="section-heading">Свяжитесь с нами</h2>
-        <div class="divider"></div>
+        <div class="divider" aria-hidden="true"></div>
         <div class="contact-grid">
 
-            <form class="contact-form" id="contact-form" action="https://api.web3forms.com/submit" method="POST">
+            <form class="contact-form" id="contact-form" action="https://api.web3forms.com/submit" method="POST" aria-label="Форма обратной связи">
                 <input type="hidden" name="access_key" value="826382cb-9c0c-437d-8e38-f0114ea0cc40">
                 <input type="hidden" name="subject" value="Новая заявка с сайта КОТАНА">
                 <input type="hidden" name="redirect" value="">
-                <div class="form-success" id="form-success" style="display:none;">Спасибо! Мы свяжемся с вами в ближайшее время.</div>
+                <div class="form-success" id="form-success" style="display:none;" role="alert">Спасибо! Мы свяжемся с вами в ближайшее время.</div>
                 <div class="form-group">
                     <label for="name">Имя</label>
                     <input type="text" id="name" name="name" placeholder="Ваше имя" required>
@@ -174,36 +206,6 @@
                 </div>
                 <button type="submit">Отправить</button>
             </form>
-            <script>
-                document.getElementById('contact-form').addEventListener('submit', function(e) {
-                    e.preventDefault();
-                    var form = this;
-                    var btn = form.querySelector('button');
-                    btn.disabled = true;
-                    btn.textContent = 'Отправка...';
-                    fetch(form.action, {
-                        method: 'POST',
-                        headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
-                        body: JSON.stringify(Object.fromEntries(new FormData(form)))
-                    })
-                    .then(function(r) { return r.json(); })
-                    .then(function(data) {
-                        if (data.success) {
-                            document.getElementById('form-success').style.display = 'block';
-                            form.reset();
-                        } else {
-                            alert('Ошибка: ' + (data.message || 'Попробуйте позже'));
-                        }
-                    })
-                    .catch(function(err) {
-                        alert('Ошибка отправки: ' + err.message);
-                    })
-                    .finally(function() {
-                        btn.disabled = false;
-                        btn.textContent = 'Отправить';
-                    });
-                });
-            </script>
 
             <dl class="contact-info">
                 <dt>Email</dt>
@@ -220,10 +222,68 @@
     </div>
 </section>
 
+</main>
+
 <!-- Footer -->
 <footer>
     &copy; 2026 КОТАНА. Все права защищены.
 </footer>
+
+<!-- Scripts (deferred) -->
+<script defer>
+    (function() {
+        var animated = false;
+        var observer = new IntersectionObserver(function(entries) {
+            if (entries[0].isIntersecting && !animated) {
+                animated = true;
+                document.querySelectorAll('.stat-count').forEach(function(el) {
+                    var target = parseInt(el.getAttribute('data-target'));
+                    var duration = 2000;
+                    var start = performance.now();
+                    function update(now) {
+                        var t = Math.min((now - start) / duration, 1);
+                        t = 1 - Math.pow(1 - t, 3);
+                        el.textContent = Math.round(target * t);
+                        if (t < 1) requestAnimationFrame(update);
+                        else el.textContent = target;
+                    }
+                    requestAnimationFrame(update);
+                });
+                observer.disconnect();
+            }
+        }, {threshold: 0.3});
+        observer.observe(document.getElementById('stats'));
+    })();
+
+    document.getElementById('contact-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        var form = this;
+        var btn = form.querySelector('button');
+        btn.disabled = true;
+        btn.textContent = 'Отправка...';
+        fetch(form.action, {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
+            body: JSON.stringify(Object.fromEntries(new FormData(form)))
+        })
+        .then(function(r) { return r.json(); })
+        .then(function(data) {
+            if (data.success) {
+                document.getElementById('form-success').style.display = 'block';
+                form.reset();
+            } else {
+                alert('Ошибка: ' + (data.message || 'Попробуйте позже'));
+            }
+        })
+        .catch(function(err) {
+            alert('Ошибка отправки: ' + err.message);
+        })
+        .finally(function() {
+            btn.disabled = false;
+            btn.textContent = 'Отправить';
+        });
+    });
+</script>
 
 </body>
 </html>
