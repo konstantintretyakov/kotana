@@ -1,6 +1,8 @@
 from flask import Flask, render_template, Response
+from flask_compress import Compress
 
 app = Flask(__name__)
+Compress(app)
 
 SITE_URL = "https://kotana.com.ru"
 

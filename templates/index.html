@@ -24,13 +24,33 @@
     <meta name="twitter:description" content="Стратегические финансовые консультации: M&A, привлечение капитала, реструктуризация.">
     <meta name="twitter:image" content="https://kotana.com.ru/static/og-image.png">
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Outfit:wght@300;400&display=swap" rel="stylesheet">
+    <!-- Critical CSS (inlined to eliminate render-blocking chain) -->
+    <style>
+        *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+        :root{--navy-dark:#0a0f1e;--navy:#111833;--navy-light:#1a2444;--gold:#c9a84c;--gold-light:#ddc175;--text:#d0d4e0;--text-muted:#8891a8;--white:#f0f1f5}
+        html{scroll-behavior:smooth}
+        body{font-family:"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;background:var(--navy-dark);color:var(--text);line-height:1.7}
+        .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+        nav{position:fixed;top:0;width:100%;background:rgba(10,15,30,0.92);backdrop-filter:blur(10px);border-bottom:1px solid rgba(201,168,76,0.15);z-index:100;padding:0 2rem}
+        nav .nav-inner{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;height:64px}
+        nav .logo{font-size:1.25rem;font-weight:700;letter-spacing:0.25em;color:var(--gold)}
+        nav ul{list-style:none;display:flex;gap:2rem}
+        nav ul a{color:var(--text-muted);font-size:0.85rem;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none}
+        .hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;position:relative;overflow:hidden;background:radial-gradient(ellipse at 50% 40%,rgba(26,36,68,0.7) 0%,transparent 70%),var(--navy-dark);border-bottom:1px solid rgba(201,168,76,0.1)}
+        .hero-video{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;z-index:0;opacity:0.35}
+        .hero-content{position:relative;z-index:2}
+        .hero h1{font-size:4rem;letter-spacing:0.35em;color:var(--gold);font-weight:300;margin-bottom:1rem}
+        .hero h1::after{content:'';display:block;width:64px;height:1px;background:var(--gold);margin:2rem auto;opacity:0.5}
+        .hero .tagline{font-size:1.3rem;color:var(--white);letter-spacing:0.15em;font-weight:400}
+    </style>
 
-    <!-- Styles & Favicon -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <!-- Fonts (loaded after page ready, only used below the fold) -->
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Outfit:wght@300;400&display=swap" rel="stylesheet"></noscript>
+
+    <!-- Full stylesheet (loaded after first paint) -->
+    <noscript><link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"></noscript>
     <link rel="icon" type="image/svg+xml" href="{{ url_for('static', filename='favicon.svg') }}">
 
     <!-- JSON-LD Structured Data -->
@@ -85,12 +105,9 @@
 <!-- Hero -->
 <section class="hero" id="hero">
     <!-- Background video -->
-    <video class="hero-video" autoplay muted loop playsinline aria-hidden="true">
-        <source src="{{ url_for('static', filename='hero-rain.mp4') }}" type="video/mp4">
-    </video>
+    <video class="hero-video" autoplay muted loop playsinline aria-hidden="true" preload="metadata" src="{{ url_for('static', filename='hero-rain.mp4') }}"></video>
     <div class="hero-content">
         <h1>КОТАНА</h1>
-        <div class="line" aria-hidden="true"></div>
         <p class="tagline">Стратегические решения для вашего капитала</p>
     </div>
 </section>
@@ -100,7 +117,6 @@
     <div class="container">
         <p class="section-title">О компании</p>
         <h2 class="section-heading">Кто мы</h2>
-        <div class="divider" aria-hidden="true"></div>
         <p>
             КОТАНА — независимый инвестиционно-банковский бутик, специализирующийся
             на предоставлении стратегических финансовых консультаций для средних и крупных
@@ -115,28 +131,20 @@
 <section class="stats" id="stats" aria-label="Ключевые показатели">
     <div class="stats-grid">
         <div class="stat-item">
-            <div class="stat-number">
-                <span class="stat-prefix">&#8381;</span><span class="stat-count" data-target="180">0</span><span class="stat-suffix"> млрд+</span>
-            </div>
-            <div class="stat-label">совершённых сделок</div>
+            <p class="stat-number">&#8381;<span class="stat-count" data-target="180">0</span> млрд+</p>
+            <p class="stat-label">совершённых сделок</p>
         </div>
         <div class="stat-item">
-            <div class="stat-number">
-                <span class="stat-count" data-target="60">0</span><span class="stat-suffix">+</span>
-            </div>
-            <div class="stat-label">закрытых сделок</div>
+            <p class="stat-number"><span class="stat-count" data-target="60">0</span>+</p>
+            <p class="stat-label">закрытых сделок</p>
         </div>
         <div class="stat-item">
-            <div class="stat-number">
-                <span class="stat-count" data-target="35">0</span><span class="stat-suffix"> лет</span>
-            </div>
-            <div class="stat-label">опыта работы</div>
+            <p class="stat-number"><span class="stat-count" data-target="35">0</span> лет</p>
+            <p class="stat-label">опыта работы</p>
         </div>
         <div class="stat-item">
-            <div class="stat-number">
-                <span class="stat-prefix">&#8381;</span><span class="stat-count" data-target="60">0</span><span class="stat-suffix"> млрд+</span>
-            </div>
-            <div class="stat-label">привлечённого капитала</div>
+            <p class="stat-number">&#8381;<span class="stat-count" data-target="60">0</span> млрд+</p>
+            <p class="stat-label">привлечённого капитала</p>
         </div>
     </div>
 </section>
@@ -146,7 +154,6 @@
     <div class="container">
         <p class="section-title">Услуги</p>
         <h2 class="section-heading">Наши направления</h2>
-        <div class="divider" aria-hidden="true"></div>
         <div class="services-grid">
 
             <div class="service-card">
@@ -185,7 +192,6 @@
     <div class="container">
         <p class="section-title">Контакты</p>
         <h2 class="section-heading">Свяжитесь с нами</h2>
-        <div class="divider" aria-hidden="true"></div>
         <div class="contact-grid">
 
             <form class="contact-form" id="contact-form" action="https://api.web3forms.com/submit" method="POST" aria-label="Форма обратной связи">
@@ -230,60 +236,19 @@
     &copy; 2026 КОТАНА. Все права защищены.
 </footer>
 
-<!-- Scripts (deferred) -->
-<script defer>
-    (function() {
-        var animated = false;
-        var observer = new IntersectionObserver(function(entries) {
-            if (entries[0].isIntersecting && !animated) {
-                animated = true;
-                document.querySelectorAll('.stat-count').forEach(function(el) {
-                    var target = parseInt(el.getAttribute('data-target'));
-                    var duration = 2000;
-                    var start = performance.now();
-                    function update(now) {
-                        var t = Math.min((now - start) / duration, 1);
-                        t = 1 - Math.pow(1 - t, 3);
-                        el.textContent = Math.round(target * t);
-                        if (t < 1) requestAnimationFrame(update);
-                        else el.textContent = target;
-                    }
-                    requestAnimationFrame(update);
-                });
-                observer.disconnect();
-            }
-        }, {threshold: 0.3});
-        observer.observe(document.getElementById('stats'));
-    })();
-
-    document.getElementById('contact-form').addEventListener('submit', function(e) {
-        e.preventDefault();
-        var form = this;
-        var btn = form.querySelector('button');
-        btn.disabled = true;
-        btn.textContent = 'Отправка...';
-        fetch(form.action, {
-            method: 'POST',
-            headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
-            body: JSON.stringify(Object.fromEntries(new FormData(form)))
-        })
-        .then(function(r) { return r.json(); })
-        .then(function(data) {
-            if (data.success) {
-                document.getElementById('form-success').style.display = 'block';
-                form.reset();
-            } else {
-                alert('Ошибка: ' + (data.message || 'Попробуйте позже'));
-            }
-        })
-        .catch(function(err) {
-            alert('Ошибка отправки: ' + err.message);
-        })
-        .finally(function() {
-            btn.disabled = false;
-            btn.textContent = 'Отправить';
-        });
-    });
+<!-- Load deferred CSS and fonts after first paint -->
+<script>
+function a(h){var l=document.createElement('link');l.rel='stylesheet';l.href=h;document.head.appendChild(l)}
+requestAnimationFrame(function(){a('{{ url_for('static', filename='style.css') }}')});
+if('requestIdleCallback' in window)requestIdleCallback(function(){a('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Outfit:wght@300;400&display=swap')});else setTimeout(function(){a('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Outfit:wght@300;400&display=swap')},2e3)
+</script>
+<!-- Stats counter: runs only when section is near viewport -->
+<script>
+new IntersectionObserver(function(e,o){if(e[0].isIntersecting){document.querySelectorAll('.stat-count').forEach(function(el){var tgt=+el.dataset.target,s=performance.now();!function u(n){var t=Math.min((n-s)/2e3,1);t=1-Math.pow(1-t,3);el.textContent=Math.round(tgt*t);t<1?requestAnimationFrame(u):el.textContent=tgt}(s)});o.disconnect()}},{threshold:.3,rootMargin:'200px'}).observe(document.getElementById('stats'));
+</script>
+<!-- Form handler: runs only when form is near viewport -->
+<script>
+new IntersectionObserver(function(e,o){if(e[0].isIntersecting){o.disconnect();document.getElementById('contact-form').addEventListener('submit',function(e){e.preventDefault();var f=this,b=f.querySelector('button');b.disabled=true;b.textContent='Отправка...';fetch(f.action,{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify(Object.fromEntries(new FormData(f)))}).then(function(r){return r.json()}).then(function(d){if(d.success){document.getElementById('form-success').style.display='block';f.reset()}else alert('Ошибка: '+(d.message||'Попробуйте позже'))}).catch(function(e){alert('Ошибка отправки: '+e.message)}).finally(function(){b.disabled=false;b.textContent='Отправить'})})}},{rootMargin:'400px'}).observe(document.getElementById('contact'));
 </script>
 
 </body>
