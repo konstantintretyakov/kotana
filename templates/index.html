@@ -44,13 +44,17 @@
         .hero .tagline{font-size:1.3rem;color:var(--white);letter-spacing:0.15em;font-weight:400}
     </style>
 
-    <!-- Fonts (loaded after page ready, only used below the fold) -->
-    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
-    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
-    <noscript><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Outfit:wght@300;400&display=swap" rel="stylesheet"></noscript>
+    <!-- Preconnect to font origins (saves ~300ms on font chain) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <!-- Full stylesheet (loaded after first paint) -->
-    <noscript><link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"></noscript>
+    <!-- Non-render-blocking stylesheet loading -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Outfit:wght@300;400&display=swap" media="print" onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+        <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Outfit:wght@300;400&display=swap" rel="stylesheet">
+    </noscript>
     <link rel="icon" type="image/svg+xml" href="{{ url_for('static', filename='favicon.svg') }}">
 
     <!-- JSON-LD Structured Data -->
@@ -105,7 +109,7 @@
 <!-- Hero -->
 <section class="hero" id="hero">
     <!-- Background video -->
-    <video class="hero-video" autoplay muted loop playsinline aria-hidden="true" preload="metadata" src="{{ url_for('static', filename='hero-rain.mp4') }}"></video>
+    <video class="hero-video" autoplay muted loop playsinline aria-hidden="true" preload="auto" fetchpriority="high" src="{{ url_for('static', filename='hero-rain.mp4') }}"></video>
     <div class="hero-content">
         <h1>КОТАНА</h1>
         <p class="tagline">Стратегические решения для вашего капитала</p>
@@ -236,19 +240,9 @@
     &copy; 2026 КОТАНА. Все права защищены.
 </footer>
 
-<!-- Load deferred CSS and fonts after first paint -->
-<script>
-function a(h){var l=document.createElement('link');l.rel='stylesheet';l.href=h;document.head.appendChild(l)}
-requestAnimationFrame(function(){a('{{ url_for('static', filename='style.css') }}')});
-if('requestIdleCallback' in window)requestIdleCallback(function(){a('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Outfit:wght@300;400&display=swap')});else setTimeout(function(){a('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Outfit:wght@300;400&display=swap')},2e3)
-</script>
-<!-- Stats counter: runs only when section is near viewport -->
-<script>
-new IntersectionObserver(function(e,o){if(e[0].isIntersecting){document.querySelectorAll('.stat-count').forEach(function(el){var tgt=+el.dataset.target,s=performance.now();!function u(n){var t=Math.min((n-s)/2e3,1);t=1-Math.pow(1-t,3);el.textContent=Math.round(tgt*t);t<1?requestAnimationFrame(u):el.textContent=tgt}(s)});o.disconnect()}},{threshold:.3,rootMargin:'200px'}).observe(document.getElementById('stats'));
-</script>
-<!-- Form handler: runs only when form is near viewport -->
-<script>
-new IntersectionObserver(function(e,o){if(e[0].isIntersecting){o.disconnect();document.getElementById('contact-form').addEventListener('submit',function(e){e.preventDefault();var f=this,b=f.querySelector('button');b.disabled=true;b.textContent='Отправка...';fetch(f.action,{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify(Object.fromEntries(new FormData(f)))}).then(function(r){return r.json()}).then(function(d){if(d.success){document.getElementById('form-success').style.display='block';f.reset()}else alert('Ошибка: '+(d.message||'Попробуйте позже'))}).catch(function(e){alert('Ошибка отправки: '+e.message)}).finally(function(){b.disabled=false;b.textContent='Отправить'})})}},{rootMargin:'400px'}).observe(document.getElementById('contact'));
+<!-- Stats counter + form handler (single script, deferred to avoid main-thread blocking) -->
+<script defer>
+requestIdleCallback(function(){new IntersectionObserver(function(e,o){if(e[0].isIntersecting){document.querySelectorAll('.stat-count').forEach(function(el){var tgt=+el.dataset.target,s=performance.now();!function u(n){var t=Math.min((n-s)/2e3,1);t=1-Math.pow(1-t,3);el.textContent=Math.round(tgt*t);t<1?requestAnimationFrame(u):el.textContent=tgt}(s)});o.disconnect()}},{threshold:.3,rootMargin:'200px'}).observe(document.getElementById('stats'));new IntersectionObserver(function(e,o){if(e[0].isIntersecting){o.disconnect();document.getElementById('contact-form').addEventListener('submit',function(e){e.preventDefault();var f=this,b=f.querySelector('button');b.disabled=true;b.textContent='Отправка...';fetch(f.action,{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify(Object.fromEntries(new FormData(f)))}).then(function(r){return r.json()}).then(function(d){if(d.success){document.getElementById('form-success').style.display='block';f.reset()}else alert('Ошибка: '+(d.message||'Попробуйте позже'))}).catch(function(e){alert('Ошибка отправки: '+e.message)}).finally(function(){b.disabled=false;b.textContent='Отправить'})})}},{rootMargin:'400px'}).observe(document.getElementById('contact'))})
 </script>
 
 </body>
