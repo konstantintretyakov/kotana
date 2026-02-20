@@ -1,27 +1,48 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="{{ lang }}">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% if lang == 'en' %}
+    <title>KOTANA — Investment Banking Boutique | M&A, Capital Raising, Restructuring</title>
+    <meta name="description" content="KOTANA is an independent investment banking boutique. Mergers & acquisitions (M&A), capital raising, restructuring. Strategic financial advisory for mid-cap and large businesses in Russia.">
+    <meta name="keywords" content="investment banking, M&A, mergers and acquisitions, capital raising, restructuring, financial advisory, investment boutique, KOTANA, financial advisor, debt financing, bonds, Moscow, Russia">
+    {% else %}
     <title>КОТАНА — Инвестиционно-банковский бутик | M&A, привлечение капитала, реструктуризация</title>
     <meta name="description" content="КОТАНА — независимый инвестиционно-банковский бутик. Слияния и поглощения (M&A), привлечение капитала, реструктуризация. Стратегические финансовые консультации для среднего и крупного бизнеса в России.">
     <meta name="keywords" content="инвестиционный банкинг, M&A, слияния и поглощения, привлечение капитала, реструктуризация, финансовые консультации, инвестиционный бутик, КОТАНА, котана, финансовый советник, долговое финансирование, облигации, Москва">
-    <link rel="canonical" href="https://kotana.com.ru/">
+    {% endif %}
+    <link rel="canonical" href="https://kotana.com.ru/{{ 'en/' if lang == 'en' else '' }}">
+    <link rel="alternate" hreflang="ru" href="https://kotana.com.ru/">
+    <link rel="alternate" hreflang="en" href="https://kotana.com.ru/en/">
     <meta name="google-site-verification" content="clfHvwqziAoS0tBTDvS4WpsbIgh5HwzkhYhjh7pn8c0">
 
     <!-- Open Graph -->
+    {% if lang == 'en' %}
+    <meta property="og:title" content="KOTANA — Investment Banking Boutique">
+    <meta property="og:description" content="Strategic financial advisory: M&A, capital raising, restructuring. Over 35 years of experience, RUB 180 bn+ in completed transactions.">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:locale:alternate" content="ru_RU">
+    {% else %}
     <meta property="og:title" content="КОТАНА — Инвестиционно-банковский бутик">
     <meta property="og:description" content="Стратегические финансовые консультации: M&A, привлечение капитала, реструктуризация. Более 35 лет опыта, ₽180 млрд+ совершённых сделок.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://kotana.com.ru/">
-    <meta property="og:image" content="https://kotana.com.ru/static/og-image.png">
     <meta property="og:locale" content="ru_RU">
-    <meta property="og:site_name" content="КОТАНА">
+    <meta property="og:locale:alternate" content="en_US">
+    {% endif %}
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://kotana.com.ru/{{ 'en/' if lang == 'en' else '' }}">
+    <meta property="og:image" content="https://kotana.com.ru/static/og-image.png">
+    <meta property="og:site_name" content="KOTANA">
 
     <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
+    {% if lang == 'en' %}
+    <meta name="twitter:title" content="KOTANA — Investment Banking Boutique">
+    <meta name="twitter:description" content="Strategic financial advisory: M&A, capital raising, restructuring.">
+    {% else %}
     <meta name="twitter:title" content="КОТАНА — Инвестиционно-банковский бутик">
     <meta name="twitter:description" content="Стратегические финансовые консультации: M&A, привлечение капитала, реструктуризация.">
+    {% endif %}
+    <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content="https://kotana.com.ru/static/og-image.png">
 
     <!-- Critical CSS (inlined to eliminate render-blocking chain) -->
@@ -42,6 +63,9 @@
         .hero h1{font-size:4rem;letter-spacing:0.35em;color:var(--gold);font-weight:300;margin-bottom:1rem}
         .hero h1::after{content:'';display:block;width:64px;height:1px;background:var(--gold);margin:2rem auto;opacity:0.5}
         .hero .tagline{font-size:1.3rem;color:var(--white);letter-spacing:0.15em;font-weight:400}
+        .lang-switch{font-size:0.8rem;letter-spacing:0.08em;color:var(--text-muted)}
+        .lang-switch a{color:var(--text-muted);text-decoration:none;transition:color .2s}
+        .lang-switch a:hover,.lang-switch a.active{color:var(--gold)}
     </style>
 
     <!-- Preconnect to font origins (saves ~300ms on font chain) -->
@@ -62,25 +86,34 @@
     {
         "@context": "https://schema.org",
         "@type": "FinancialService",
+        {% if lang == 'en' %}
+        "name": "KOTANA",
+        "description": "An independent investment banking boutique specializing in mergers & acquisitions (M&A), capital raising and restructuring for mid-cap and large companies.",
+        {% else %}
         "name": "КОТАНА",
-        "alternateName": "Kotana",
         "description": "Независимый инвестиционно-банковский бутик, специализирующийся на слияниях и поглощениях (M&A), привлечении капитала и реструктуризации для средних и крупных компаний.",
+        {% endif %}
+        "alternateName": "Kotana",
         "url": "https://kotana.com.ru",
         "logo": "https://kotana.com.ru/static/favicon.svg",
         "email": "info@kotana.com.ru",
         "telephone": "+7-916-906-98-82",
         "address": {
             "@type": "PostalAddress",
-            "streetAddress": "Пресненская наб., 12",
-            "addressLocality": "Москва",
+            "streetAddress": "Presnenskaya nab., 12",
+            "addressLocality": "Moscow",
             "addressCountry": "RU"
         },
         "areaServed": {
             "@type": "Country",
-            "name": "Россия"
+            "name": "Russia"
         },
         "foundingDate": "1991",
+        {% if lang == 'en' %}
+        "serviceType": ["Mergers & Acquisitions", "Capital Raising", "Restructuring"],
+        {% else %}
         "serviceType": ["Слияния и поглощения", "Привлечение капитала", "Реструктуризация"],
+        {% endif %}
         "sameAs": []
     }
     </script>
@@ -89,13 +122,16 @@
 
 <!-- Navigation -->
 <header>
-<nav aria-label="Основная навигация">
+<nav aria-label="{{ 'Main navigation' if lang == 'en' else 'Основная навигация' }}">
     <div class="nav-inner">
-        <div class="logo">КОТАНА</div>
+        <div class="logo">{{ 'KOTANA' if lang == 'en' else 'КОТАНА' }}</div>
         <ul>
-            <li><a href="#about">О нас</a></li>
-            <li><a href="#services">Услуги</a></li>
-            <li><a href="#contact">Контакты</a></li>
+            <li><a href="#about">{{ 'About' if lang == 'en' else 'О нас' }}</a></li>
+            <li><a href="#services">{{ 'Services' if lang == 'en' else 'Услуги' }}</a></li>
+            <li><a href="#contact">{{ 'Contact' if lang == 'en' else 'Контакты' }}</a></li>
+            <li class="lang-switch">
+                <a href="/" {% if lang == 'ru' %}class="active"{% endif %}>RU</a> | <a href="/en/" {% if lang == 'en' %}class="active"{% endif %}>EN</a>
+            </li>
         </ul>
     </div>
 </nav>
@@ -104,21 +140,36 @@
 <main>
 
 <!-- SEO intro (visually hidden, crawlable) -->
+{% if lang == 'en' %}
+<p class="sr-only">KOTANA is an independent investment banking boutique in Moscow. We provide mergers &amp; acquisitions (M&amp;A), debt and equity capital raising, as well as financial and operational restructuring services. Over 35 years of experience, more than 60 closed deals and RUB 180 bn+ in completed transactions.</p>
+{% else %}
 <p class="sr-only">КОТАНА — независимый инвестиционно-банковский бутик в Москве. Мы предоставляем услуги в области слияний и поглощений (M&amp;A), привлечения долгового и долевого капитала, а также финансовой и операционной реструктуризации. Более 35 лет опыта, свыше 60 закрытых сделок и ₽180 млрд+ совершённых транзакций.</p>
+{% endif %}
 
 <!-- Hero -->
 <section class="hero" id="hero">
     <!-- Background video -->
     <video class="hero-video" autoplay muted loop playsinline aria-hidden="true" preload="auto" poster="{{ url_for('static', filename='poster.webp') }}" src="{{ url_for('static', filename='hero-rain.mp4') }}"></video>
     <div class="hero-content">
-        <h1>КОТАНА</h1>
-        <p class="tagline">Стратегические решения для вашего капитала</p>
+        <h1>{{ 'KOTANA' if lang == 'en' else 'КОТАНА' }}</h1>
+        <p class="tagline">{{ 'Strategic solutions for your capital' if lang == 'en' else 'Стратегические решения для вашего капитала' }}</p>
     </div>
 </section>
 
 <!-- About -->
 <section class="about" id="about">
     <div class="container">
+        {% if lang == 'en' %}
+        <p class="section-title">About</p>
+        <h2 class="section-heading">Who we are</h2>
+        <p>
+            KOTANA is an independent investment banking boutique specializing
+            in strategic financial advisory for mid-cap and large companies.
+            We combine deep market expertise with a tailored approach
+            to each client, delivering results that create long-term
+            value for your business.
+        </p>
+        {% else %}
         <p class="section-title">О компании</p>
         <h2 class="section-heading">Кто мы</h2>
         <p>
@@ -128,27 +179,48 @@
             к каждому клиенту, обеспечивая результаты, которые создают долгосрочную
             стоимость для бизнеса.
         </p>
+        {% endif %}
     </div>
 </section>
 
 <!-- Stats -->
-<section class="stats" id="stats" aria-label="Ключевые показатели">
+<section class="stats" id="stats" aria-label="{{ 'Key figures' if lang == 'en' else 'Ключевые показатели' }}">
     <div class="stats-grid">
         <div class="stat-item">
+            {% if lang == 'en' %}
+            <p class="stat-number">&#8381;<span class="stat-count" data-target="180">0</span> bn+</p>
+            <p class="stat-label">in completed deals</p>
+            {% else %}
             <p class="stat-number">&#8381;<span class="stat-count" data-target="180">0</span> млрд+</p>
             <p class="stat-label">совершённых сделок</p>
+            {% endif %}
         </div>
         <div class="stat-item">
+            {% if lang == 'en' %}
+            <p class="stat-number"><span class="stat-count" data-target="60">0</span>+</p>
+            <p class="stat-label">closed deals</p>
+            {% else %}
             <p class="stat-number"><span class="stat-count" data-target="60">0</span>+</p>
             <p class="stat-label">закрытых сделок</p>
+            {% endif %}
         </div>
         <div class="stat-item">
+            {% if lang == 'en' %}
+            <p class="stat-number"><span class="stat-count" data-target="35">0</span> years</p>
+            <p class="stat-label">of experience</p>
+            {% else %}
             <p class="stat-number"><span class="stat-count" data-target="35">0</span> лет</p>
             <p class="stat-label">опыта работы</p>
+            {% endif %}
         </div>
         <div class="stat-item">
+            {% if lang == 'en' %}
+            <p class="stat-number">&#8381;<span class="stat-count" data-target="60">0</span> bn+</p>
+            <p class="stat-label">capital raised</p>
+            {% else %}
             <p class="stat-number">&#8381;<span class="stat-count" data-target="60">0</span> млрд+</p>
             <p class="stat-label">привлечённого капитала</p>
+            {% endif %}
         </div>
     </div>
 </section>
@@ -156,35 +228,67 @@
 <!-- Services -->
 <section class="services" id="services">
     <div class="container">
+        {% if lang == 'en' %}
+        <p class="section-title">Services</p>
+        <h2 class="section-heading">What we do</h2>
+        {% else %}
         <p class="section-title">Услуги</p>
         <h2 class="section-heading">Наши направления</h2>
+        {% endif %}
         <div class="services-grid">
 
             <div class="service-card">
+                {% if lang == 'en' %}
+                <h3>Mergers & Acquisitions</h3>
+                <p>
+                    Full M&A transaction support — from target search and valuation
+                    to deal structuring, negotiations and closing. We protect
+                    our clients' interests at every stage.
+                </p>
+                {% else %}
                 <h3>Слияния и поглощения</h3>
                 <p>
                     Полное сопровождение сделок M&A — от поиска целей и оценки
                     до структурирования, переговоров и закрытия сделки. Мы защищаем
                     интересы наших клиентов на каждом этапе.
                 </p>
+                {% endif %}
             </div>
 
             <div class="service-card">
+                {% if lang == 'en' %}
+                <h3>Capital Raising</h3>
+                <p>
+                    Arranging debt and equity financing, bond placements
+                    and structured products. We tailor the optimal capital
+                    structure to achieve your goals.
+                </p>
+                {% else %}
                 <h3>Привлечение капитала</h3>
                 <p>
                     Организация долгового и долевого финансирования, размещение
                     облигаций и структурированных продуктов. Подбираем оптимальную
                     структуру капитала для достижения ваших целей.
                 </p>
+                {% endif %}
             </div>
 
             <div class="service-card">
+                {% if lang == 'en' %}
+                <h3>Restructuring</h3>
+                <p>
+                    Financial and operational restructuring, creditor negotiations,
+                    development of business recovery plans and support through
+                    complex situations.
+                </p>
+                {% else %}
                 <h3>Реструктуризация</h3>
                 <p>
                     Финансовая и операционная реструктуризация, переговоры
                     с кредиторами, разработка планов оздоровления бизнеса
                     и сопровождение процедур в сложных ситуациях.
                 </p>
+                {% endif %}
             </div>
 
         </div>
@@ -194,39 +298,48 @@
 <!-- Contact -->
 <section class="contact" id="contact">
     <div class="container">
+        {% if lang == 'en' %}
+        <p class="section-title">Contact</p>
+        <h2 class="section-heading">Get in touch</h2>
+        {% else %}
         <p class="section-title">Контакты</p>
         <h2 class="section-heading">Свяжитесь с нами</h2>
+        {% endif %}
         <div class="contact-grid">
 
-            <form class="contact-form" id="contact-form" action="https://api.web3forms.com/submit" method="POST" aria-label="Форма обратной связи">
+            <form class="contact-form" id="contact-form" action="https://api.web3forms.com/submit" method="POST" aria-label="{{ 'Contact form' if lang == 'en' else 'Форма обратной связи' }}">
                 <input type="hidden" name="access_key" value="826382cb-9c0c-437d-8e38-f0114ea0cc40">
-                <input type="hidden" name="subject" value="Новая заявка с сайта КОТАНА">
+                <input type="hidden" name="subject" value="{{ 'New enquiry from KOTANA website' if lang == 'en' else 'Новая заявка с сайта КОТАНА' }}">
                 <input type="hidden" name="redirect" value="">
-                <div class="form-success" id="form-success" style="display:none;" role="alert">Спасибо! Мы свяжемся с вами в ближайшее время.</div>
+                <div class="form-success" id="form-success" style="display:none;" role="alert">{{ 'Thank you! We will get back to you shortly.' if lang == 'en' else 'Спасибо! Мы свяжемся с вами в ближайшее время.' }}</div>
                 <div class="form-group">
-                    <label for="name">Имя</label>
-                    <input type="text" id="name" name="name" placeholder="Ваше имя" required>
+                    <label for="name">{{ 'Name' if lang == 'en' else 'Имя' }}</label>
+                    <input type="text" id="name" name="name" placeholder="{{ 'Your name' if lang == 'en' else 'Ваше имя' }}" required>
                 </div>
                 <div class="form-group">
-                    <label for="phone">Телефон</label>
+                    <label for="phone">{{ 'Phone' if lang == 'en' else 'Телефон' }}</label>
                     <input type="tel" id="phone" name="phone" placeholder="+7 (___) ___-__-__" required>
                 </div>
                 <div class="form-group">
                     <label for="email">Email</label>
                     <input type="email" id="email" name="email" placeholder="you@example.com" required>
                 </div>
-                <button type="submit">Отправить</button>
+                <button type="submit">{{ 'Submit' if lang == 'en' else 'Отправить' }}</button>
             </form>
 
             <dl class="contact-info">
                 <dt>Email</dt>
                 <dd><a href="mailto:info@kotana.com.ru">info@kotana.com.ru</a></dd>
 
-                <dt>Телефон</dt>
+                <dt>{{ 'Phone' if lang == 'en' else 'Телефон' }}</dt>
                 <dd><a href="tel:+79169069882">+7 (916) 906-98-82</a></dd>
 
-                <dt>Адрес</dt>
+                <dt>{{ 'Address' if lang == 'en' else 'Адрес' }}</dt>
+                {% if lang == 'en' %}
+                <dd>Moscow, Presnenskaya nab., 12</dd>
+                {% else %}
                 <dd>Москва, Пресненская наб., 12</dd>
+                {% endif %}
             </dl>
 
         </div>
@@ -237,7 +350,11 @@
 
 <!-- Footer -->
 <footer>
+    {% if lang == 'en' %}
+    &copy; 2026 KOTANA. All rights reserved.
+    {% else %}
     &copy; 2026 КОТАНА. Все права защищены.
+    {% endif %}
 </footer>
 
 <!-- Stats counter (yields to main thread via separate idle callback) -->
@@ -246,7 +363,7 @@ requestIdleCallback(function(){new IntersectionObserver(function(e,o){if(e[0].is
 </script>
 <!-- Form handler (separate idle callback to avoid single long task) -->
 <script>
-requestIdleCallback(function(){new IntersectionObserver(function(e,o){if(e[0].isIntersecting){o.disconnect();document.getElementById('contact-form').addEventListener('submit',function(e){e.preventDefault();var f=this,b=f.querySelector('button');b.disabled=true;b.textContent='Отправка...';fetch(f.action,{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify(Object.fromEntries(new FormData(f)))}).then(function(r){return r.json()}).then(function(d){if(d.success){document.getElementById('form-success').style.display='block';f.reset()}else alert('Ошибка: '+(d.message||'Попробуйте позже'))}).catch(function(e){alert('Ошибка отправки: '+e.message)}).finally(function(){b.disabled=false;b.textContent='Отправить'})})}},{rootMargin:'400px'}).observe(document.getElementById('contact'))})
+requestIdleCallback(function(){new IntersectionObserver(function(e,o){if(e[0].isIntersecting){o.disconnect();document.getElementById('contact-form').addEventListener('submit',function(e){e.preventDefault();var f=this,b=f.querySelector('button');b.disabled=true;b.textContent='{{ "Sending..." if lang == "en" else "Отправка..." }}';fetch(f.action,{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify(Object.fromEntries(new FormData(f)))}).then(function(r){return r.json()}).then(function(d){if(d.success){document.getElementById('form-success').style.display='block';f.reset()}else alert('{{ "Error: " if lang == "en" else "Ошибка: " }}'+(d.message||'{{ "Please try again later" if lang == "en" else "Попробуйте позже" }}'))}).catch(function(e){alert('{{ "Submission error: " if lang == "en" else "Ошибка отправки: " }}'+e.message)}).finally(function(){b.disabled=false;b.textContent='{{ "Submit" if lang == "en" else "Отправить" }}'})})}},{rootMargin:'400px'}).observe(document.getElementById('contact'))})
 </script>
 
 </body>
