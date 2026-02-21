@@ -66,6 +66,17 @@
         .lang-switch{font-size:0.8rem;letter-spacing:0.08em;color:var(--text-muted)}
         .lang-switch a{color:var(--text-muted);text-decoration:none;transition:color .2s}
         .lang-switch a:hover,.lang-switch a.active{color:var(--gold)}
+        .nav-right{display:flex;align-items:center;gap:2rem}
+        .burger{display:none;background:none;border:none;cursor:pointer;padding:4px}
+        .burger span{display:block;width:22px;height:2px;background:var(--gold);margin:5px 0;transition:transform .3s,opacity .3s}
+        @media(max-width:768px){
+            .burger{display:block}
+            nav ul{display:none;position:absolute;top:64px;left:0;width:100%;flex-direction:column;background:rgba(10,15,30,0.97);padding:1.5rem 2rem;gap:1.5rem;border-bottom:1px solid rgba(201,168,76,0.15)}
+            nav ul.open{display:flex}
+            .burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+            .burger.open span:nth-child(2){opacity:0}
+            .burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+        }
     </style>
 
     <!-- Preconnect to font origins (saves ~300ms on font chain) -->
@@ -125,14 +136,19 @@
 <nav aria-label="{{ 'Main navigation' if lang == 'en' else 'Основная навигация' }}">
     <div class="nav-inner">
         <div class="logo">{{ 'KOTANA' if lang == 'en' else 'КОТАНА' }}</div>
-        <ul>
-            <li><a href="#about">{{ 'About' if lang == 'en' else 'О нас' }}</a></li>
-            <li><a href="#services">{{ 'Services' if lang == 'en' else 'Услуги' }}</a></li>
-            <li><a href="#contact">{{ 'Contact' if lang == 'en' else 'Контакты' }}</a></li>
-            <li class="lang-switch">
+        <div class="nav-right">
+            <ul id="nav-menu">
+                <li><a href="#about">{{ 'About' if lang == 'en' else 'О нас' }}</a></li>
+                <li><a href="#services">{{ 'Services' if lang == 'en' else 'Услуги' }}</a></li>
+                <li><a href="#contact">{{ 'Contact' if lang == 'en' else 'Контакты' }}</a></li>
+            </ul>
+            <span class="lang-switch">
                 <a href="/" {% if lang == 'ru' %}class="active"{% endif %}>RU</a> | <a href="/en/" {% if lang == 'en' %}class="active"{% endif %}>EN</a>
-            </li>
-        </ul>
+            </span>
+            <button class="burger" id="burger" aria-label="Menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
     </div>
 </nav>
 </header>
@@ -357,6 +373,21 @@
     {% endif %}
 </footer>
 
+<!-- Burger menu toggle -->
+<script>
+document.getElementById('burger').addEventListener('click',function(){
+    this.classList.toggle('open');
+    var menu=document.getElementById('nav-menu');
+    menu.classList.toggle('open');
+    this.setAttribute('aria-expanded',menu.classList.contains('open'));
+});
+document.querySelectorAll('#nav-menu a').forEach(function(a){
+    a.addEventListener('click',function(){
+        document.getElementById('burger').classList.remove('open');
+        document.getElementById('nav-menu').classList.remove('open');
+    });
+});
+</script>
 <!-- Stats counter (with Safari fallback for requestIdleCallback) -->
 <script>
 (function(){
