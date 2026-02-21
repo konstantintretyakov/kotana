@@ -357,9 +357,56 @@
     {% endif %}
 </footer>
 
-<!-- Stats counter + Form handler (with Safari fallback for requestIdleCallback) -->
+<!-- Stats counter (with Safari fallback for requestIdleCallback) -->
 <script>
-(function(){var ric=window.requestIdleCallback||function(cb){setTimeout(cb,1)};ric(function(){new IntersectionObserver(function(e,o){if(e[0].isIntersecting){document.querySelectorAll('.stat-count').forEach(function(el){var tgt=+el.dataset.target,s=performance.now();!function u(n){var t=Math.min((n-s)/2e3,1);t=1-Math.pow(1-t,3);el.textContent=Math.round(tgt*t);t<1?requestAnimationFrame(u):el.textContent=tgt}(s)});o.disconnect()}},{threshold:.3,rootMargin:'200px'}).observe(document.getElementById('stats'))});ric(function(){new IntersectionObserver(function(e,o){if(e[0].isIntersecting){o.disconnect();document.getElementById('contact-form').addEventListener('submit',function(e){e.preventDefault();var f=this,b=f.querySelector('button');b.disabled=true;b.textContent='{{ "Sending..." if lang == "en" else "Отправка..." }}';fetch(f.action,{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify(Object.fromEntries(new FormData(f)))}).then(function(r){return r.json()}).then(function(d){if(d.success){document.getElementById('form-success').style.display='block';f.reset()}else alert('{{ "Error: " if lang == "en" else "Ошибка: " }}'+(d.message||'{{ "Please try again later" if lang == "en" else "Попробуйте позже" }}'))}).catch(function(e){alert('{{ "Submission error: " if lang == "en" else "Ошибка отправки: " }}'+e.message)}).finally(function(){b.disabled=false;b.textContent='{{ "Submit" if lang == "en" else "Отправить" }}'})})}},{rootMargin:'400px'}).observe(document.getElementById('contact'))})})()
+(function(){
+var ric=window.requestIdleCallback||function(cb){setTimeout(cb,1)};
+ric(function(){
+    new IntersectionObserver(function(entries,obs){
+        if(entries[0].isIntersecting){
+            obs.disconnect();
+            document.querySelectorAll('.stat-count').forEach(function(el){
+                var tgt=+el.dataset.target;
+                var s=performance.now();
+                function step(n){
+                    var t=Math.min((n-s)/2000,1);
+                    t=1-Math.pow(1-t,3);
+                    el.textContent=Math.round(tgt*t);
+                    if(t<1) requestAnimationFrame(step);
+                }
+                requestAnimationFrame(step);
+            });
+        }
+    },{threshold:0.3,rootMargin:'200px'}).observe(document.getElementById('stats'));
+});
+})();
+</script>
+<!-- Form handler -->
+<script>
+(function(){
+var ric=window.requestIdleCallback||function(cb){setTimeout(cb,1)};
+ric(function(){
+    new IntersectionObserver(function(entries,obs){
+        if(entries[0].isIntersecting){
+            obs.disconnect();
+            document.getElementById('contact-form').addEventListener('submit',function(e){
+                e.preventDefault();
+                var f=this,b=f.querySelector('button');
+                b.disabled=true;
+                b.textContent='{{ "Sending..." if lang == "en" else "Отправка..." }}';
+                fetch(f.action,{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify(Object.fromEntries(new FormData(f)))})
+                .then(function(r){return r.json()})
+                .then(function(d){
+                    if(d.success){document.getElementById('form-success').style.display='block';f.reset()}
+                    else alert('{{ "Error: " if lang == "en" else "Ошибка: " }}'+(d.message||'{{ "Please try again later" if lang == "en" else "Попробуйте позже" }}'))
+                })
+                .catch(function(e){alert('{{ "Submission error: " if lang == "en" else "Ошибка отправки: " }}'+e.message)})
+                .finally(function(){b.disabled=false;b.textContent='{{ "Submit" if lang == "en" else "Отправить" }}'});
+            });
+        }
+    },{rootMargin:'400px'}).observe(document.getElementById('contact'));
+});
+})();
 </script>
 
 </body>
