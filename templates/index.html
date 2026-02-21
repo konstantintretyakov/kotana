@@ -398,8 +398,9 @@ ric(function(){
             obs.disconnect();
             document.querySelectorAll('.stat-count').forEach(function(el){
                 var tgt=+el.dataset.target;
-                var s=performance.now();
+                var s;
                 function step(n){
+                    if(!s) s=n;
                     var t=Math.min((n-s)/2000,1);
                     t=1-Math.pow(1-t,3);
                     el.textContent=Math.round(tgt*t);
