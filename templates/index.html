@@ -402,7 +402,7 @@ ric(function(){
                 var s;
                 function step(n){
                     if(!s) s=n;
-                    var t=Math.min((n-s)/2000,1);
+                    var t=Math.min((n-s)/4000,1);
                     t=1-Math.pow(1-t,3);
                     el.textContent=Math.round(tgt*t);
                     if(t<1) requestAnimationFrame(step);
