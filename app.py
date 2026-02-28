@@ -1,4 +1,4 @@
-from flask import Flask, render_template, Response
+from flask import Flask, render_template, Response, send_from_directory
 from flask_compress import Compress
 
 app = Flask(__name__)
@@ -38,6 +38,11 @@ def sitemap():
     </url>
 </urlset>"""
     return Response(xml, mimetype="application/xml")
+
+
+@app.route("/favicon.svg")
+def favicon():
+    return send_from_directory(app.static_folder, "favicon.svg", mimetype="image/svg+xml")
 
 
 @app.route("/robots.txt")
