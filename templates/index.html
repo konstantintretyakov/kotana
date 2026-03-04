@@ -372,6 +372,7 @@
                 <span class="blog-read">{{ 'Read' if lang == 'en' else 'Читать' }} →</span>
             </a>
         </div>
+        <button class="blog-toggle" id="blog-toggle" data-more="{{ 'Show all' if lang == 'en' else 'Показать все' }}" data-less="{{ 'Hide' if lang == 'en' else 'Скрыть' }}">{{ 'Show all' if lang == 'en' else 'Показать все' }}</button>
     </div>
 </section>
 
@@ -437,6 +438,14 @@
     {% endif %}
 </footer>
 
+<!-- Blog toggle -->
+<script>
+document.getElementById('blog-toggle').addEventListener('click',function(){
+    var grid=document.querySelector('.blog-grid');
+    var expanded=grid.classList.toggle('expanded');
+    this.textContent=expanded?this.dataset.less:this.dataset.more;
+});
+</script>
 <!-- Burger menu toggle -->
 <script>
 document.getElementById('burger').addEventListener('click',function(){
