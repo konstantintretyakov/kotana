@@ -17,6 +17,11 @@ def index_en():
     return render_template("index.html", lang="en")
 
 
+@app.route("/blog/ma-market-2025")
+def blog_ma_market_2025():
+    return render_template("blog/ma-market-2025.html")
+
+
 @app.route("/sitemap.xml")
 def sitemap():
     xml = f"""<?xml version="1.0" encoding="UTF-8"?>
@@ -35,6 +40,11 @@ def sitemap():
         <xhtml:link rel="alternate" hreflang="en" href="{SITE_URL}/en/"/>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>{SITE_URL}/blog/ma-market-2025</loc>
+        <changefreq>yearly</changefreq>
+        <priority>0.7</priority>
     </url>
 </urlset>"""
     return Response(xml, mimetype="application/xml")

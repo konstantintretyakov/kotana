@@ -141,6 +141,7 @@
             <ul id="nav-menu">
                 <li><a href="#about">{{ 'About' if lang == 'en' else 'О нас' }}</a></li>
                 <li><a href="#services">{{ 'Services' if lang == 'en' else 'Услуги' }}</a></li>
+                <li><a href="#blog">{{ 'Blog' if lang == 'en' else 'Блог' }}</a></li>
                 <li><a href="#contact">{{ 'Contact' if lang == 'en' else 'Контакты' }}</a></li>
             </ul>
             <span class="lang-switch">
@@ -308,6 +309,32 @@
                 {% endif %}
             </div>
 
+        </div>
+    </div>
+</section>
+
+<!-- Blog -->
+<section class="services" id="blog">
+    <div class="container">
+        {% if lang == 'en' %}
+        <p class="section-title">Blog</p>
+        <h2 class="section-heading">Insights</h2>
+        {% else %}
+        <p class="section-title">Блог</p>
+        <h2 class="section-heading">Аналитика</h2>
+        {% endif %}
+        <div class="blog-grid">
+            <a href="/blog/ma-market-2025" class="blog-card">
+                <span class="blog-tag">{{ 'Analytics' if lang == 'en' else 'Аналитика' }}</span>
+                {% if lang == 'en' %}
+                <h3>M&A Market in 2025: The Year of Buyers</h3>
+                <p>Mergers and acquisitions in Russia and globally are going through a challenging period. High interest rates, foreign capital exit and sanctions pressure are shaping a new reality — but also opening a window of opportunity.</p>
+                {% else %}
+                <h3>Рынок M&A в 2025 году: год покупателей</h3>
+                <p>Слияния и поглощения в России и мире переживают непростой период. Высокая ключевая ставка, уход иностранного капитала и санкционное давление формируют новую реальность — но и открывают окно возможностей.</p>
+                {% endif %}
+                <span class="blog-read">{{ 'Read' if lang == 'en' else 'Читать' }} →</span>
+            </a>
         </div>
     </div>
 </section>

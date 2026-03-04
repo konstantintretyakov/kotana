@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Рынок M&A в 2025 году | kotana.com.ru</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --ink: #0f1117;
+      --paper: #f7f4ef;
+      --cream: #ede9e0;
+      --accent: #c8401a;
+      --accent-light: #f0d0c4;
+      --gold: #b8922a;
+      --muted: #7a7060;
+      --rule: #d4cfc5;
+      --col: clamp(320px, 66ch, 720px);
+    }
+
+    html { font-size: 17px; scroll-behavior: smooth; }
+
+    body {
+      background: var(--paper);
+      color: var(--ink);
+      font-family: 'IBM Plex Sans', sans-serif;
+      font-weight: 400;
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ─── MASTHEAD ─── */
+    .masthead {
+      background: var(--ink);
+      color: var(--paper);
+      padding: 14px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+    .masthead-logo { font-size: 1rem; font-weight: 500; color: #fff; letter-spacing: 0.05em; text-decoration: none; }
+    .masthead-logo:hover { color: var(--gold); }
+    .masthead-meta { color: #888; }
+
+    /* ─── HERO ─── */
+    .hero {
+      background: var(--ink);
+      color: var(--paper);
+      padding: 80px 40px 72px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: 'M&A';
+      position: absolute;
+      right: -20px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(120px, 18vw, 260px);
+      font-weight: 900;
+      color: rgba(255,255,255,0.04);
+      letter-spacing: -0.04em;
+      line-height: 1;
+      pointer-events: none;
+    }
+    .hero-inner { max-width: var(--col); margin: 0 auto; position: relative; }
+    .hero-tag {
+      display: inline-block;
+      border: 1px solid var(--accent);
+      color: var(--accent);
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      margin-bottom: 28px;
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.2rem, 5vw, 3.4rem);
+      font-weight: 700;
+      line-height: 1.18;
+      letter-spacing: -0.02em;
+      margin-bottom: 24px;
+      max-width: 18ch;
+    }
+    .hero h1 em { font-style: italic; color: var(--accent); }
+    .hero-lead {
+      font-size: 1.08rem;
+      color: #bbb;
+      max-width: 54ch;
+      line-height: 1.65;
+      margin-bottom: 40px;
+    }
+    .hero-byline {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      font-size: 0.8rem;
+      color: #666;
+      font-family: 'IBM Plex Mono', monospace;
+    }
+    .hero-byline span { color: #888; }
+    .hero-byline strong { color: #ccc; font-weight: 500; }
+
+    /* ─── STATS BAR ─── */
+    .stats-bar {
+      background: var(--accent);
+      padding: 0 40px;
+    }
+    .stats-inner {
+      max-width: calc(var(--col) + 200px);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      divide: var(--rule);
+    }
+    .stat-item {
+      padding: 24px 0;
+      border-right: 1px solid rgba(255,255,255,0.2);
+      padding-right: 32px;
+      padding-left: 32px;
+      color: #fff;
+    }
+    .stat-item:first-child { padding-left: 0; }
+    .stat-item:last-child { border-right: none; }
+    .stat-number {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      font-weight: 700;
+      display: block;
+      line-height: 1;
+    }
+    .stat-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      opacity: 0.8;
+      margin-top: 4px;
+      font-family: 'IBM Plex Mono', monospace;
+    }
+
+    /* ─── ARTICLE ─── */
+    .article-wrap {
+      padding: 72px 40px;
+    }
+    .article-inner {
+      max-width: var(--col);
+      margin: 0 auto;
+    }
+
+    /* Drop cap */
+    .article-inner > p:first-of-type::first-letter {
+      font-family: 'Playfair Display', serif;
+      font-size: 4.5em;
+      font-weight: 900;
+      float: left;
+      line-height: 0.78;
+      margin-right: 8px;
+      margin-top: 6px;
+      color: var(--accent);
+    }
+
+    p { margin-bottom: 1.5rem; }
+
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.7rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.25;
+      margin: 3rem 0 1.1rem;
+      color: var(--ink);
+      position: relative;
+    }
+    h2::before {
+      content: '';
+      display: block;
+      width: 32px;
+      height: 3px;
+      background: var(--accent);
+      margin-bottom: 16px;
+    }
+
+    h3 {
+      font-family: 'IBM Plex Sans', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 600;
+      letter-spacing: 0.01em;
+      margin: 2rem 0 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--gold);
+    }
+
+    /* Pull quote */
+    blockquote {
+      border-left: 3px solid var(--accent);
+      margin: 2.5rem 0;
+      padding: 20px 0 20px 32px;
+      background: none;
+    }
+    blockquote p {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.35rem;
+      font-style: italic;
+      line-height: 1.5;
+      color: var(--ink);
+      margin: 0 0 8px;
+    }
+    blockquote cite {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+      font-style: normal;
+    }
+
+    /* Inline highlight */
+    .highlight {
+      background: var(--accent-light);
+      padding: 0 4px;
+      font-weight: 500;
+    }
+
+    /* Data card */
+    .data-card {
+      background: var(--cream);
+      border: 1px solid var(--rule);
+      padding: 28px 32px;
+      margin: 2.5rem 0;
+    }
+    .data-card h4 {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--muted);
+      margin-bottom: 20px;
+    }
+    .data-rows { display: flex; flex-direction: column; gap: 12px; }
+    .data-row {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .data-row-label {
+      font-size: 0.85rem;
+      color: var(--muted);
+      width: 200px;
+      flex-shrink: 0;
+    }
+    .data-row-bar-wrap {
+      flex: 1;
+      height: 6px;
+      background: var(--rule);
+      position: relative;
+    }
+    .data-row-bar {
+      position: absolute;
+      top: 0; left: 0; height: 100%;
+      background: var(--accent);
+    }
+    .data-row-val {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.8rem;
+      font-weight: 500;
+      width: 60px;
+      text-align: right;
+    }
+
+    /* Section divider */
+    .divider {
+      border: none;
+      border-top: 1px solid var(--rule);
+      margin: 3rem 0;
+    }
+
+    /* Conclusion box */
+    .conclusion {
+      background: var(--ink);
+      color: var(--paper);
+      padding: 36px 40px;
+      margin: 3rem 0 0;
+    }
+    .conclusion h3 {
+      color: var(--accent);
+      margin-top: 0;
+    }
+    .conclusion p { color: #ccc; margin-bottom: 1rem; }
+    .conclusion p:last-child { margin-bottom: 0; }
+
+    /* Footer */
+    footer {
+      background: var(--cream);
+      border-top: 1px solid var(--rule);
+      padding: 28px 40px;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.72rem;
+      color: var(--muted);
+      text-align: center;
+      letter-spacing: 0.06em;
+    }
+    footer strong { color: var(--ink); }
+    footer a { color: var(--gold); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+
+    @media (max-width: 640px) {
+      .masthead { padding: 12px 20px; }
+      .hero { padding: 56px 20px 52px; }
+      .stats-bar { padding: 0 20px; }
+      .stats-inner { grid-template-columns: 1fr; }
+      .stat-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.2); padding: 16px 0; }
+      .article-wrap { padding: 48px 20px; }
+      .data-row-label { width: 120px; font-size: 0.78rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Masthead -->
+<header class="masthead">
+  <a href="/" class="masthead-logo">kotana.com.ru</a>
+  <span class="masthead-meta">Аналитика · Сделки · Рынки</span>
+</header>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-tag">Аналитика рынка</div>
+    <h1>Рынок M&amp;A в 2025 году: <em>год покупателей</em> в условиях неопределённости</h1>
+    <p class="hero-lead">Слияния и поглощения в России и мире переживают непростой период. Высокая ключевая ставка, уход иностранного капитала и санкционное давление формируют новую реальность — но и открывают окно возможностей для тех, кто готов действовать.</p>
+    <div class="hero-byline">
+      <strong>Редакция kotana.com.ru</strong>
+      <span>·</span>
+      <span>2025</span>
+      <span>·</span>
+      <span>12 мин чтения</span>
+    </div>
+  </div>
+</section>
+
+<!-- Stats bar -->
+<div class="stats-bar">
+  <div class="stats-inner">
+    <div class="stat-item">
+      <span class="stat-number">$4,5 трлн</span>
+      <span class="stat-label">Объём мирового рынка M&A 2025</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number">$18,7 млрд</span>
+      <span class="stat-label">Россия: I полугодие 2025</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number">−12,3%</span>
+      <span class="stat-label">Снижение объёма сделок г/г</span>
+    </div>
+  </div>
+</div>
+
+<!-- Article -->
+<main class="article-wrap">
+  <article class="article-inner">
+
+    <p>Рынок слияний и поглощений давно перестал быть исключительно инструментом экспансии. В 2025 году M&A — это прежде всего способ адаптации: компании перегруппируют активы, ищут синергии в условиях дорогого кредита и реагируют на стремительно меняющийся конкурентный ландшафт. Картина на глобальном и российском рынках при этом разительно расходится.</p>
+
+    <h2>Мировой рынок: рекордный год крупных сделок</h2>
+
+    <p>В 2025 году мировой рынок M&A достиг рекордного уровня — <span class="highlight">$4,5 трлн</span>. Главный драйвер — волна мегасделок: в течение года было заключено 68 соглашений стоимостью не менее $10 млрд каждое. Доминирует Северная Америка — на неё пришлась почти половина суммарного объёма транзакций.</p>
+
+    <p>Крупнейшей сделкой года стало поглощение американской железнодорожной компании Norfolk Southern корпорацией Union Pacific за $85 млрд — объединение создаёт трансконтинентального оператора с капитализацией около $250 млрд. Не менее резонансным стало поглощение Warner Bros. Discovery стриминговым сервисом Netflix за $82,7 млрд в декабре. В сентябре консорциум во главе с саудовским Public Investment Fund совместно с Silver Lake приобрёл Electronic Arts за $55 млрд.</p>
+
+    <div class="data-card">
+      <h4>Рост M&A по секторам в 2025 г. (год к году)</h4>
+      <div class="data-rows">
+        <div class="data-row">
+          <span class="data-row-label">Технологии</span>
+          <div class="data-row-bar-wrap"><div class="data-row-bar" style="width:77%"></div></div>
+          <span class="data-row-val">+77%</span>
+        </div>
+        <div class="data-row">
+          <span class="data-row-label">Финансовые услуги</span>
+          <div class="data-row-bar-wrap"><div class="data-row-bar" style="width:57%"></div></div>
+          <span class="data-row-val">+57%</span>
+        </div>
+        <div class="data-row">
+          <span class="data-row-label">Здравоохранение</span>
+          <div class="data-row-bar-wrap"><div class="data-row-bar" style="width:50%"></div></div>
+          <span class="data-row-val">+50%</span>
+        </div>
+        <div class="data-row">
+          <span class="data-row-label">Потребительские товары</span>
+          <div class="data-row-bar-wrap"><div class="data-row-bar" style="width:53%"></div></div>
+          <span class="data-row-val">+53%</span>
+        </div>
+        <div class="data-row">
+          <span class="data-row-label">Телекоммуникации</span>
+          <div class="data-row-bar-wrap"><div class="data-row-bar" style="width:42%"></div></div>
+          <span class="data-row-val">+42%</span>
+        </div>
+        <div class="data-row">
+          <span class="data-row-label">Энергетика и ресурсы</span>
+          <div class="data-row-bar-wrap"><div class="data-row-bar" style="width:11%"></div></div>
+          <span class="data-row-val">+11%</span>
+        </div>
+      </div>
+    </div>
+
+    <p>Особенно примечателен технологический сектор: объём сделок вырос до $555 млрд — рост на 77% по отношению к 2024 году. Гонка за искусственным интеллектом перекраивает отраслевые границы: крупные игроки поглощают ИИ-стартапы, получая не только технологии, но и таланты.</p>
+
+    <blockquote>
+      <p>«Мегасделки вернулись — и это сигнал того, что корпоративная уверенность восстановилась. Советы директоров снова готовы делать ставки на трансформацию, а не просто на оптимизацию.»</p>
+      <cite>— Общее настроение инвестбанковского сообщества, 2025</cite>
+    </blockquote>
+
+    <hr class="divider" />
+
+    <h2>Российский рынок: между адаптацией и торможением</h2>
+
+    <p>Отечественный M&A живёт по иным законам. По данным агентства AK&M, в первом полугодии 2025 года суммарная стоимость сделок составила $18,67 млрд — на 12,3% меньше, чем годом ранее. Количество транзакций также снизилось: 201 сделка против 219 за аналогичный период 2024 года.</p>
+
+    <p>2024 год уже зафиксировал тревожный сигнал: по числу закрытых сделок он стал минимальным с 2013 года — всего 383 транзакции. При этом общая стоимость выросла на 8% (до 42,2 млрд руб.) — исключительно за счёт нескольких крупных сделок.</p>
+
+    <h3>Главные тормозящие факторы</h3>
+
+    <p>Высокая ключевая ставка ЦБ РФ остаётся главным препятствием для рынка. Дорогой кредит лишает покупателей рычага — покупки возможны лишь за счёт собственных средств или нераспределённой прибыли, что резко сужает круг потенциальных приобретателей. Параллельно ужесточились условия выхода иностранцев из «недружественных» юрисдикций: актив можно продать лишь с дисконтом 60% к оценочной стоимости, а добровольный взнос в бюджет достиг 35%. Сделки с активами дороже 50 млрд рублей теперь требуют одобрения Президента.</p>
+
+    <p>Отдельным вызовом стали проблемы с трансграничными платежами — в том числе из Китая и других «дружественных» стран — в результате новых санкционных пакетов.</p>
+
+    <h3>«Год покупателей»: новая расстановка сил</h3>
+
+    <p>Аналитики прямо называют 2025-й <em>годом покупателей</em>. Инвесторы с доступом к свободной ликвидности оказались в привилегированном положении: дорогое финансирование вынуждает продавцов соглашаться на условия, которые год назад были бы неприемлемы. Компании, «пересидевшие в деньгах» и избежавшие долговой нагрузки, сейчас могут рассчитывать на выгодные приобретения.</p>
+
+    <blockquote>
+      <p>«Высокая ключевая ставка, дорогое финансирование, непонятные долгосрочные перспективы — всё это стимулирует многих инвесторов „пересидеть в деньгах". Но именно они завтра окажутся в выигрышной позиции.»</p>
+      <cite>— Александр Некторов, управляющий партнёр NSP</cite>
+    </blockquote>
+
+    <hr class="divider" />
+
+    <h2>Ключевые тренды российского M&A в 2025 году</h2>
+
+    <h3>1. Уход иностранцев завершается — начинается перепродажа</h3>
+    <p>Кейсы с выходом иностранных компаний практически сошли на нет: к 2025 году большинство желающих уже ушли или исчерпали возможности для выхода. На первый план выходит следующий акт — перепродажа активов, купленных у иностранцев в 2022–2023 годах. Менеджмент российских «дочек», который стал временным собственником в ходе MBO-сделок, ищет стратегических покупателей. Для соблюдения конфиденциальности всё активнее используются ЗПИФы.</p>
+
+    <h3>2. Консолидация в ключевых отраслях</h3>
+    <p>Классические локальные M&A-сделки становятся основой рынка — компании укрупняются, поглощая конкурентов и выстраивая вертикально интегрированные цепочки. Аналитики прогнозируют особую активность в девелопменте: компании, приобретавшие дорогостоящие земельные участки при иных ставках, теперь испытывают финансовые трудности и становятся мишенью для более устойчивых игроков.</p>
+
+    <h3>3. IT и TMT — точки роста</h3>
+    <p>Технологический сектор остаётся наиболее активным направлением: спрос на отечественные IT-решения не успевает за предложением. Уход международных провайдеров создал устойчивый «вакуум», который заполняют российские компании — и сделки M&A ускоряют этот процесс.</p>
+
+    <h3>4. Проблемные активы как инвестиционная возможность</h3>
+    <p>Высокая ставка порождает дистресс — и вместе с ним появляются возможности для покупки проблемных активов по привлекательным ценам. Строительство, розничная торговля и ряд производственных компаний оказываются в зоне риска, что формирует отдельную нишу для специализированных инвесторов.</p>
+
+    <h3>5. Государство как участник рынка</h3>
+    <p>Национализация активов стала заметным трендом: по данным AK&M, анализ сделок с государственным участием занял отдельный раздел в итогах первого полугодия. Публичные компании и структуры с госучастием всё активнее используют M&A как инструмент отраслевой политики.</p>
+
+    <hr class="divider" />
+
+    <h2>Структурные сложности: юридика и регулирование</h2>
+
+    <p>Сделки стали юридически сложнее. Многоуровневые структуры владения — через ЗПИФы, иностранные холдинги, личные фонды — требуют тщательной проработки. Регуляторные согласования по сделкам с иностранным элементом остаются непредсказуемыми по срокам. При этом участники рынка отмечают парадоксальное явление: несмотря на усложнение структур, реальные сроки на подготовку сделок нередко сокращаются — стороны стремятся закрыться быстрее, пока окно возможностей не закрылось.</p>
+
+    <p>Налоговая реформа добавила ещё один слой: обнуление с 2025 года льготы по давности владения долями ООО подтолкнуло участников рынка закрыть максимум сделок в конце 2024 года, создав временный «навес», который давит на активность в начале текущего года. Уже во втором квартале рынок начал показывать признаки восстановления.</p>
+
+    <div class="conclusion">
+      <h3>Итог: осторожный оптимизм с открытыми глазами</h3>
+      <p>Российский рынок M&A в 2025 году — это рынок контрастов. Количество сделок снижается, но их качество и стратегическая значимость растут. «Тихие» месяцы первого квартала сменились оживлением во втором — и профессионалы рынка осторожно оптимистичны.</p>
+      <p>Глобальный рынок демонстрирует противоположный вектор: рекордные объёмы, возврат мегасделок и технологическая консолидация. Это создаёт асимметрию, которая со временем будет сглаживаться — по мере нормализации геополитической и монетарной обстановки.</p>
+      <p>Для дальновидных участников рынка текущий момент — это не пауза, а возможность. Те, кто умеет действовать в условиях неопределённости, формируют позиции, которые принесут результат в следующем цикле роста.</p>
+    </div>
+
+  </article>
+</main>
+
+<footer>
+  <a href="/"><strong>kotana.com.ru</strong></a> &nbsp;·&nbsp; Аналитика рынка M&A &nbsp;·&nbsp; 2025 &nbsp;·&nbsp; Все данные носят информационный характер
+</footer>
+
+</body>
+</html>
