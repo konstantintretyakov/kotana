@@ -22,6 +22,11 @@ def blog_ma_market_2025():
     return render_template("blog/ma-market-2025.html")
 
 
+@app.route("/blog/ma-market-2026-forecast")
+def blog_ma_market_2026_forecast():
+    return render_template("blog/ma-market-2026-forecast.html")
+
+
 @app.route("/sitemap.xml")
 def sitemap():
     xml = f"""<?xml version="1.0" encoding="UTF-8"?>
@@ -43,6 +48,11 @@ def sitemap():
     </url>
     <url>
         <loc>{SITE_URL}/blog/ma-market-2025</loc>
+        <changefreq>yearly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>{SITE_URL}/blog/ma-market-2026-forecast</loc>
         <changefreq>yearly</changefreq>
         <priority>0.7</priority>
     </url>

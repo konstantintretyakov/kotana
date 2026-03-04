@@ -324,6 +324,18 @@
         <h2 class="section-heading">Аналитика</h2>
         {% endif %}
         <div class="blog-grid">
+            <a href="/blog/ma-market-2026-forecast" class="blog-card">
+                <span class="blog-tag">{{ 'Forecast' if lang == 'en' else 'Прогноз' }}</span>
+                {% if lang == 'en' %}
+                <h3>M&A Market in 2026: Awakening After the Pause</h3>
+                <p>The global M&A market is heading towards $4.9 trillion. Russia emerges from a freeze, reshapes the buyer profile and shifts from survival tactics to a growth strategy.</p>
+                {% else %}
+                <h3>Рынок M&A в 2026 году: пробуждение после паузы</h3>
+                <p>Мировой рынок слияний и поглощений движется к отметке $4,9 трлн. Российский — выходит из заморозки, меняет профиль покупателя и переходит от тактики выживания к стратегии роста.</p>
+                {% endif %}
+                <span class="blog-read">{{ 'Read' if lang == 'en' else 'Читать' }} →</span>
+            </a>
+
             <a href="/blog/ma-market-2025" class="blog-card">
                 <span class="blog-tag">{{ 'Analytics' if lang == 'en' else 'Аналитика' }}</span>
                 {% if lang == 'en' %}

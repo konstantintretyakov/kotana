@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Прогноз рынка M&A на 2026 год | kotana.com.ru</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --ink: #0f1117;
+      --paper: #f7f4ef;
+      --cream: #ede9e0;
+      --accent: #c8401a;
+      --accent-light: #f0d0c4;
+      --gold: #b8922a;
+      --muted: #7a7060;
+      --rule: #d4cfc5;
+      --col: clamp(320px, 66ch, 720px);
+    }
+
+    html { font-size: 17px; scroll-behavior: smooth; }
+
+    body {
+      background: var(--paper);
+      color: var(--ink);
+      font-family: 'IBM Plex Sans', sans-serif;
+      font-weight: 400;
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ─── MASTHEAD ─── */
+    .masthead {
+      background: var(--ink);
+      color: var(--paper);
+      padding: 14px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+    .masthead-logo { font-size: 1rem; font-weight: 500; color: #fff; letter-spacing: 0.05em; text-decoration: none; }
+    .masthead-logo:hover { color: var(--gold); }
+    .masthead-meta { color: #888; }
+
+    /* ─── HERO ─── */
+    .hero {
+      background: var(--ink);
+      color: var(--paper);
+      padding: 80px 40px 72px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '2026';
+      position: absolute;
+      right: -20px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(100px, 16vw, 240px);
+      font-weight: 900;
+      color: rgba(255,255,255,0.04);
+      letter-spacing: -0.04em;
+      line-height: 1;
+      pointer-events: none;
+    }
+    .hero-inner { max-width: var(--col); margin: 0 auto; position: relative; }
+    .hero-tag {
+      display: inline-block;
+      border: 1px solid var(--accent);
+      color: var(--accent);
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      margin-bottom: 28px;
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.2rem, 5vw, 3.4rem);
+      font-weight: 700;
+      line-height: 1.18;
+      letter-spacing: -0.02em;
+      margin-bottom: 24px;
+      max-width: 20ch;
+    }
+    .hero h1 em { font-style: italic; color: var(--accent); }
+    .hero-lead {
+      font-size: 1.08rem;
+      color: #bbb;
+      max-width: 54ch;
+      line-height: 1.65;
+      margin-bottom: 40px;
+    }
+    .hero-byline {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      font-size: 0.8rem;
+      color: #666;
+      font-family: 'IBM Plex Mono', monospace;
+    }
+    .hero-byline span { color: #888; }
+    .hero-byline strong { color: #ccc; font-weight: 500; }
+
+    /* ─── STATS BAR ─── */
+    .stats-bar {
+      background: var(--accent);
+      padding: 0 40px;
+    }
+    .stats-inner {
+      max-width: calc(var(--col) + 200px);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
+    .stat-item {
+      padding: 24px 32px;
+      border-right: 1px solid rgba(255,255,255,0.2);
+      color: #fff;
+    }
+    .stat-item:first-child { padding-left: 0; }
+    .stat-item:last-child { border-right: none; }
+    .stat-number {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      font-weight: 700;
+      display: block;
+      line-height: 1;
+    }
+    .stat-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      opacity: 0.8;
+      margin-top: 4px;
+      font-family: 'IBM Plex Mono', monospace;
+    }
+
+    /* ─── ARTICLE ─── */
+    .article-wrap { padding: 72px 40px; }
+    .article-inner { max-width: var(--col); margin: 0 auto; }
+
+    .article-inner > p:first-of-type::first-letter {
+      font-family: 'Playfair Display', serif;
+      font-size: 4.5em;
+      font-weight: 900;
+      float: left;
+      line-height: 0.78;
+      margin-right: 8px;
+      margin-top: 6px;
+      color: var(--accent);
+    }
+
+    p { margin-bottom: 1.5rem; }
+
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.7rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.25;
+      margin: 3rem 0 1.1rem;
+      color: var(--ink);
+    }
+    h2::before {
+      content: '';
+      display: block;
+      width: 32px;
+      height: 3px;
+      background: var(--accent);
+      margin-bottom: 16px;
+    }
+
+    h3 {
+      font-family: 'IBM Plex Sans', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin: 2rem 0 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--gold);
+    }
+
+    blockquote {
+      border-left: 3px solid var(--accent);
+      margin: 2.5rem 0;
+      padding: 20px 0 20px 32px;
+    }
+    blockquote p {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.35rem;
+      font-style: italic;
+      line-height: 1.5;
+      color: var(--ink);
+      margin: 0 0 8px;
+    }
+    blockquote cite {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+      font-style: normal;
+    }
+
+    .highlight {
+      background: var(--accent-light);
+      padding: 0 4px;
+      font-weight: 500;
+    }
+
+    /* Data card */
+    .data-card {
+      background: var(--cream);
+      border: 1px solid var(--rule);
+      padding: 28px 32px;
+      margin: 2.5rem 0;
+    }
+    .data-card h4 {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--muted);
+      margin-bottom: 20px;
+    }
+    .data-rows { display: flex; flex-direction: column; gap: 12px; }
+    .data-row { display: flex; align-items: center; gap: 16px; }
+    .data-row-label { font-size: 0.85rem; color: var(--muted); width: 220px; flex-shrink: 0; }
+    .data-row-bar-wrap { flex: 1; height: 6px; background: var(--rule); position: relative; }
+    .data-row-bar { position: absolute; top: 0; left: 0; height: 100%; background: var(--accent); }
+    .data-row-bar.gold { background: var(--gold); }
+    .data-row-val {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.8rem;
+      font-weight: 500;
+      width: 80px;
+      text-align: right;
+    }
+
+    /* Forecast grid */
+    .forecast-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      background: var(--rule);
+      margin: 2.5rem 0;
+      border: 1px solid var(--rule);
+    }
+    .forecast-cell {
+      background: var(--paper);
+      padding: 24px;
+    }
+    .forecast-cell-label {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+    .forecast-cell-value {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--ink);
+      line-height: 1.1;
+    }
+    .forecast-cell-value.up { color: #1a7a3c; }
+    .forecast-cell-value.down { color: var(--accent); }
+    .forecast-cell-note {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-top: 6px;
+    }
+
+    .divider {
+      border: none;
+      border-top: 1px solid var(--rule);
+      margin: 3rem 0;
+    }
+
+    .conclusion {
+      background: var(--ink);
+      color: var(--paper);
+      padding: 36px 40px;
+      margin: 3rem 0 0;
+    }
+    .conclusion h3 { color: var(--accent); margin-top: 0; }
+    .conclusion p { color: #ccc; margin-bottom: 1rem; }
+    .conclusion p:last-child { margin-bottom: 0; }
+
+    footer {
+      background: var(--cream);
+      border-top: 1px solid var(--rule);
+      padding: 28px 40px;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.72rem;
+      color: var(--muted);
+      text-align: center;
+      letter-spacing: 0.06em;
+    }
+    footer strong { color: var(--ink); }
+    footer a { color: var(--gold); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+
+    @media (max-width: 640px) {
+      .masthead { padding: 12px 20px; }
+      .hero { padding: 56px 20px 52px; }
+      .stats-bar { padding: 0 20px; }
+      .stats-inner { grid-template-columns: 1fr; }
+      .stat-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.2); padding: 16px 0; }
+      .article-wrap { padding: 48px 20px; }
+      .data-row-label { width: 130px; font-size: 0.78rem; }
+      .forecast-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Masthead -->
+<header class="masthead">
+  <a href="/" class="masthead-logo">kotana.com.ru</a>
+  <span class="masthead-meta">Аналитика · Сделки · Рынки</span>
+</header>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-tag">Прогноз · 2026</div>
+    <h1>Рынок M&amp;A в 2026 году: <em>пробуждение</em> после вынужденной паузы</h1>
+    <p class="hero-lead">Мировой рынок слияний и поглощений движется к отметке $4,9 трлн. Российский — выходит из заморозки, меняет профиль покупателя и переходит от тактики выживания к стратегии роста. Разбираем, что ждёт рынок в наступившем году.</p>
+    <div class="hero-byline">
+      <strong>Редакция kotana.com.ru</strong>
+      <span>·</span>
+      <span>Март 2026</span>
+      <span>·</span>
+      <span>13 мин чтения</span>
+    </div>
+  </div>
+</section>
+
+<!-- Stats bar -->
+<div class="stats-bar">
+  <div class="stats-inner">
+    <div class="stat-item">
+      <span class="stat-number">$4,9 трлн</span>
+      <span class="stat-label">Прогноз мирового рынка M&A</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number">$2,2 трлн</span>
+      <span class="stat-label">«Сухой порох» частного капитала</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number">80%</span>
+      <span class="stat-label">Руководителей ждут роста активности</span>
+    </div>
+  </div>
+</div>
+
+<!-- Article -->
+<main class="article-wrap">
+  <article class="article-inner">
+
+    <p>Переломный момент на рынке M&A редко объявляют заранее — он просто наступает. Именно это, судя по всему, происходит сейчас. После двух лет, когда высокие ставки, регуляторная неопределённость и геополитика сдерживали сделки, в 2026 году накопленный спрос начинает реализовываться. Инвесторы, терпеливо «сидевшие в деньгах», выходят на рынок. Продавцы, откладывавшие выход, больше не могут ждать. Окно возможностей открывается.</p>
+
+    <h2>Глобальный контекст: уверенность вместо осторожности</h2>
+
+    <p>По прогнозам исследовательской компании Pitchbook, мировой рынок M&A в 2026 году достигнет <span class="highlight">$4,9 трлн</span> — ещё один рекорд вслед за результатом 2025 года. Основания для оптимизма конкретны: снижение инфляции позволило ФРС сократить процентные ставки, а $2,2 трлн «сухого пороха» в фондах прямых инвестиций ищут точки приложения.</p>
+
+    <p>Morgan Stanley зафиксировал качественный сдвиг в структуре активности: если в 2025-м рост обеспечивали единичные мегасделки, то в 2026-м активность распространяется на все отрасли и все размерные категории. Рынок перестаёт быть игрой только крупнейших — он становится широким.</p>
+
+    <blockquote>
+      <p>«Резкие изменения в торговой политике сменились менее угрожающими переменами. Чувство облегчения переросло в уверенность, а вскоре — в опасение упустить хорошие возможности.»</p>
+      <cite>— Джейк Генри, McKinsey, руководитель подразделения по анализу слияний и поглощений</cite>
+    </blockquote>
+
+    <p>Опрос Bain &amp; Company среди 300 топ-менеджеров, занимающихся M&A, показал: 80% ожидают сохранения или роста активности в 2026 году. В опросе Goldman Sachs среди 600 корпоративных и финансовых клиентов 57% назвали масштаб бизнеса и стратегический рост главными факторами в сделочных решениях — финансовая инженерия уходит на второй план.</p>
+
+    <div class="data-card">
+      <h4>Прогноз объёма M&A по секторам мирового рынка, 2026 г.</h4>
+      <div class="data-rows">
+        <div class="data-row">
+          <span class="data-row-label">Технологии и ИИ</span>
+          <div class="data-row-bar-wrap"><div class="data-row-bar" style="width:90%"></div></div>
+          <span class="data-row-val">~$700 млрд</span>
+        </div>
+        <div class="data-row">
+          <span class="data-row-label">Энергетика и ресурсы</span>
+          <div class="data-row-bar-wrap"><div class="data-row-bar" style="width:72%"></div></div>
+          <span class="data-row-val">~$560 млрд</span>
+        </div>
+        <div class="data-row">
+          <span class="data-row-label">Финансовые услуги</span>
+          <div class="data-row-bar-wrap"><div class="data-row-bar" style="width:60%"></div></div>
+          <span class="data-row-val">~$470 млрд</span>
+        </div>
+        <div class="data-row">
+          <span class="data-row-label">Здравоохранение и biotech</span>
+          <div class="data-row-bar-wrap"><div class="data-row-bar" style="width:55%"></div></div>
+          <span class="data-row-val">~$430 млрд</span>
+        </div>
+        <div class="data-row">
+          <span class="data-row-label">Телекоммуникации</span>
+          <div class="data-row-bar-wrap"><div class="data-row-bar" style="width:28%"></div></div>
+          <span class="data-row-val">~$220 млрд</span>
+        </div>
+        <div class="data-row">
+          <span class="data-row-label">Потребительские товары</span>
+          <div class="data-row-bar-wrap"><div class="data-row-bar" style="width:22%"></div></div>
+          <span class="data-row-val">~$170 млрд</span>
+        </div>
+      </div>
+    </div>
+
+    <p>Отдельного внимания заслуживает ИИ-консолидация. Аналитики Dan Ives из Wedbush прогнозируют, что 2026-й станет годом поглощений ключевых ИИ-инфраструктурных компаний гиперскейлерами. В числе вероятных целей — Nebius Group с капитализацией около $22 млрд, специализирующаяся на обучении крупных ИИ-моделей: её выручка выросла почти в пять раз за прошедший год, что делает компанию привлекательной как для Microsoft, так и для Alphabet или Amazon.</p>
+
+    <hr class="divider" />
+
+    <h2>Российский рынок: долгожданное пробуждение</h2>
+
+    <p>Для российского M&A 2026-й обещает стать годом перехода от «выживания» к «развитию». Ещё осенью 2025 года большинство консультантов сходились во мнении: при сохранении тренда на снижение ключевой ставки ЦБ полноценного пробуждения рынка следует ожидать не ранее первого полугодия 2026 года. Этот момент наступает.</p>
+
+    <div class="forecast-grid">
+      <div class="forecast-cell">
+        <div class="forecast-cell-label">Прогноз числа сделок</div>
+        <div class="forecast-cell-value up">450+</div>
+        <div class="forecast-cell-note">против ~383 в 2024 г. и ~400 в 2025 г.</div>
+      </div>
+      <div class="forecast-cell">
+        <div class="forecast-cell-label">Прогноз объёма рынка</div>
+        <div class="forecast-cell-value up">&gt; 3 трлн руб.</div>
+        <div class="forecast-cell-note">восстановление к уровню 2022–2023 гг.</div>
+      </div>
+      <div class="forecast-cell">
+        <div class="forecast-cell-label">Средняя стоимость сделки</div>
+        <div class="forecast-cell-value">5–10 млрд руб.</div>
+        <div class="forecast-cell-note">смещение к среднему размеру</div>
+      </div>
+      <div class="forecast-cell">
+        <div class="forecast-cell-label">Фокус активности</div>
+        <div class="forecast-cell-value" style="font-size:1.15rem">IT · Финтех · Ретейл</div>
+        <div class="forecast-cell-note">+ девелопмент и агросектор</div>
+      </div>
+    </div>
+
+    <p>Рынок, который в 2025-м прошёл «этап турбулентности», в 2026-м переходит к фазе осознанной консолидации внутри национального бизнеса. Период вынужденных распродаж и ситуативных сделок остался позади — теперь в приоритете стратегические приобретения с понятным горизонтом синергии.</p>
+
+    <hr class="divider" />
+
+    <h2>Четыре главных тренда российского M&A в 2026 году</h2>
+
+    <h3>1. Стратегические сделки вместо оппортунистических</h3>
+    <p>Если в 2022–2024 годах значительную долю рынка составляли вынужденные продажи — выход иностранцев, MBO-сделки, антикризисные реструктуризации — то теперь инициатива переходит к стратегическим покупателям. Лидеры отраслей поглощают локальных игроков, чтобы получить готовую инфраструктуру, технологии и клиентскую базу — в условиях дорогого кредита это дешевле органического роста. Тренд охватывает IT, логистику, финансовые сервисы, производственные ниши с высоким оборотом.</p>
+
+    <h3>2. Новые категории покупателей</h3>
+    <p>Пожалуй, самый значимый структурный сдвиг — изменение профиля типичного покупателя. Рынок перестаёт быть монополией десятка крупнейших холдингов. На сцену выходят <em>публичные компании среднего размера</em> — динамичные игроки вроде «Группы Позитив», «Астра» или «Арена Дата», которые ещё недавно сами были потенциальными мишенями, но, получив высокую рыночную оценку после IPO, превратились в стратегических охотников. Параллельно растёт активность семейных офисов и pre-IPO фондов, для которых M&A становится основным инструментом формирования портфеля.</p>
+
+    <blockquote>
+      <p>«Плавное снижение ключевой ставки возвращает инвесторам аппетит к M&A-сделкам как альтернативе инструментам с падающей фиксированной доходностью.»</p>
+      <cite>— Арташес Оганов, партнёр инвестиционного банка</cite>
+    </blockquote>
+
+    <h3>3. Вынужденная консолидация проблемных секторов</h3>
+    <p>Высокие ставки 2024–2025 годов оставили шлейф — компании, набравшие долг в период дешёвых денег, теперь испытывают давление. Офлайн-ретейл, девелопмент и деревообработка вступают в фазу вынужденного слияния: объединение позволяет оптимизировать издержки, усилить переговорные позиции с кредиторами и пережить сложный период совместно. Аналитики прогнозируют, что именно в ретейле наиболее активным игроком станет «Лента» — компания открыто декларирует стратегию роста через поглощения, и сделка по покупке сети «О'Кей» называется экспертами наиболее вероятной.</p>
+
+    <h3>4. IT, кибербезопасность и ИИ — бессменные лидеры</h3>
+    <p>Технологический сектор сохраняет статус главного магнита для M&A-активности. Спрос на цифровую трансформацию и импортозамещение не снижается — а значит, консолидация IT-активов продолжится. Особый акцент в 2026 году смещается на кибербезопасность и нишевые B2B-решения: по мере усиления санкционного давления компании инвестируют в защиту инфраструктуры, и поглощения здесь — самый быстрый путь к компетенциям.</p>
+
+    <hr class="divider" />
+
+    <h2>Структурные вызовы: что по-прежнему сдерживает рынок</h2>
+
+    <p>Оптимизм по поводу восстановления рынка не означает устранения всех барьеров. Ряд структурных ограничений сохраняется и в 2026 году.</p>
+
+    <p>Во-первых, несмотря на начавшееся снижение, ключевая ставка остаётся высокой относительно исторических норм — а значит, заёмное финансирование сделок по-прежнему дорого. Большинство аналитиков не ожидают полноценного возврата к «докризисной» доступности кредита раньше 2027 года. Во-первых, это означает, что в приоритете останутся сделки, которые можно провести за счёт собственных средств или нераспределённой прибыли.</p>
+
+    <p>Во-вторых, замещение банковского долга акционерным капиталом — которого многие ждали — так и не стало массовым явлением в 2025 году. Инвесторы по-прежнему осторожны с акционерным финансированием сделок, предпочитая смешанные структуры.</p>
+
+    <p>В-третьих, регуляторная среда для сделок с иностранным элементом остаётся непредсказуемой: несмотря на оживившуюся дискуссию об условиях возврата нерезидентов на российский рынок, конкретных механизмов пока нет. Сделки через ЗПИФы и сложные холдинговые структуры останутся нормой.</p>
+
+    <div class="data-card">
+      <h4>Барьеры для роста российского M&A в 2026 г. (оценка интенсивности)</h4>
+      <div class="data-rows">
+        <div class="data-row">
+          <span class="data-row-label">Высокая ключевая ставка</span>
+          <div class="data-row-bar-wrap"><div class="data-row-bar gold" style="width:70%"></div></div>
+          <span class="data-row-val">Снижается</span>
+        </div>
+        <div class="data-row">
+          <span class="data-row-label">Санкционное давление</span>
+          <div class="data-row-bar-wrap"><div class="data-row-bar" style="width:85%"></div></div>
+          <span class="data-row-val">Сохраняется</span>
+        </div>
+        <div class="data-row">
+          <span class="data-row-label">Регуляторные барьеры</span>
+          <div class="data-row-bar-wrap"><div class="data-row-bar" style="width:75%"></div></div>
+          <span class="data-row-val">Стабильно</span>
+        </div>
+        <div class="data-row">
+          <span class="data-row-label">Дефицит ликвидности</span>
+          <div class="data-row-bar-wrap"><div class="data-row-bar gold" style="width:55%"></div></div>
+          <span class="data-row-val">Ослабевает</span>
+        </div>
+        <div class="data-row">
+          <span class="data-row-label">Проблемы с платежами</span>
+          <div class="data-row-bar-wrap"><div class="data-row-bar" style="width:65%"></div></div>
+          <span class="data-row-val">Сохраняется</span>
+        </div>
+      </div>
+    </div>
+
+    <hr class="divider" />
+
+    <h2>ИИ меняет не только объекты сделок, но и сам процесс</h2>
+
+    <p>В 2026 году искусственный интеллект всё заметнее меняет архитектуру M&A-процесса изнутри. По оценкам юридических консультантов, ИИ-инструменты ускоряют стандартный due diligence примерно на 40% — за счёт автоматизированного анализа массивов документов из ЕГРЮЛ, ФНС и судебных баз данных.</p>
+
+    <p>Это порождает новые вопросы — и профессиональное сообщество уже задаётся ими. Как встроить генеративный ИИ в сделочный процесс, не попав в этическую ловушку? Что делать с «галлюцинациями» модели в юридически значимых документах? Как меняются отношения юрист–клиент, когда машина берёт на себя значительную часть аналитической работы? Эти вопросы стоят в повестке ведущих M&A-форумов 2026 года — и ответы на них будут формировать отраслевой стандарт на годы вперёд.</p>
+
+    <div class="conclusion">
+      <h3>Прогноз: осторожный оптимизм становится рабочим</h3>
+      <p>2026 год — это год, когда накопленный потенциал начинает реализовываться. Мировой рынок движется к новому рекорду на волне снижения ставок, избыточной ликвидности и технологической консолидации. Российский рынок выходит из состояния вынужденной паузы, меняет профиль участников и переходит к стратегической повестке.</p>
+      <p>Ключевое отличие нового цикла — качество сделок важнее их количества. Инвесторы стали требовательнее: тщательнее проверяют бизнес-модели, глубже оценивают долговую нагрузку и скептичнее смотрят на мультипликаторы, которые ещё два года назад казались нормой. Это здоровое изменение — рынок взрослеет.</p>
+      <p>Для участников рынка сигнал один: окно возможностей открыто, но временно. Компании с чистым балансом, доступом к капиталу и стратегическим мышлением получат непропорционально большую долю стоимости в этом цикле. Те, кто продолжает ждать идеальных условий, рискуют пропустить лучший момент.</p>
+    </div>
+
+  </article>
+</main>
+
+<footer>
+  <a href="/"><strong>kotana.com.ru</strong></a> &nbsp;·&nbsp; Прогноз рынка M&A · 2026 &nbsp;·&nbsp; Все данные носят информационный характер
+</footer>
+
+</body>
+</html>
