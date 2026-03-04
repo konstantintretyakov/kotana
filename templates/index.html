@@ -324,6 +324,18 @@
         <h2 class="section-heading">Аналитика</h2>
         {% endif %}
         <div class="blog-grid">
+            <a href="/blog/corporate-lending-2026-forecast" class="blog-card">
+                <span class="blog-tag">{{ 'Forecast' if lang == 'en' else 'Прогноз' }}</span>
+                {% if lang == 'en' %}
+                <h3>Corporate Lending in 2026: Thaw Without Spring</h3>
+                <p>Rates are falling, inflation is slowing, pent-up demand has accumulated. But the regulator is in no hurry, banks tighten requirements, and a real recovery in investment lending is not expected before 2027.</p>
+                {% else %}
+                <h3>Корпоративное кредитование в 2026: оттепель без весны</h3>
+                <p>Ставка снижается, инфляция замедляется, отложенный спрос накоплен. Но регулятор не торопится, банки ужесточают требования, а реальное восстановление инвестиционного кредитования аналитики относят к 2027 году.</p>
+                {% endif %}
+                <span class="blog-read">{{ 'Read' if lang == 'en' else 'Читать' }} →</span>
+            </a>
+
             <a href="/blog/corporate-lending-2025" class="blog-card">
                 <span class="blog-tag">{{ 'Finance' if lang == 'en' else 'Финансы' }}</span>
                 {% if lang == 'en' %}

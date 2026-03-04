@@ -45,7 +45,8 @@
       letter-spacing: 0.12em;
       text-transform: uppercase;
     }
-    .masthead-logo { font-size: 1rem; font-weight: 500; color: #fff; letter-spacing: 0.05em; }
+    .masthead-logo { font-size: 1rem; font-weight: 500; color: #fff; letter-spacing: 0.05em; text-decoration: none; }
+    .masthead-logo:hover { color: var(--gold); }
     .masthead-meta { color: #888; }
 
     /* ─── HERO ─── */
@@ -372,6 +373,8 @@
       letter-spacing: 0.06em;
     }
     footer strong { color: var(--ink); }
+    footer a { color: var(--gold); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
 
     @media (max-width: 640px) {
       .masthead { padding: 12px 20px; }
@@ -390,7 +393,7 @@
 
 <!-- Masthead -->
 <header class="masthead">
-  <span class="masthead-logo">kotana.com.ru</span>
+  <a href="/" class="masthead-logo">kotana.com.ru</a>
   <span class="masthead-meta">Аналитика · Финансы · Рынки</span>
 </header>
 
@@ -661,7 +664,7 @@
 </main>
 
 <footer>
-  <strong>kotana.com.ru</strong> &nbsp;·&nbsp; Прогноз корпоративного кредитования · 2026 &nbsp;·&nbsp; Все данные носят информационный характер
+  <a href="/"><strong>kotana.com.ru</strong></a> &nbsp;·&nbsp; Прогноз корпоративного кредитования · 2026 &nbsp;·&nbsp; Все данные носят информационный характер
 </footer>
 
 </body>
