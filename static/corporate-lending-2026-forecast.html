@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Прогноз корпоративного кредитования в России на 2026 год | kotana.com.ru</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --ink: #0f1117;
+      --paper: #f7f4ef;
+      --cream: #ede9e0;
+      --accent: #c8401a;
+      --accent-light: #f0d0c4;
+      --gold: #b8922a;
+      --green: #1a7a3c;
+      --muted: #7a7060;
+      --rule: #d4cfc5;
+      --col: clamp(320px, 66ch, 720px);
+    }
+
+    html { font-size: 17px; scroll-behavior: smooth; }
+
+    body {
+      background: var(--paper);
+      color: var(--ink);
+      font-family: 'IBM Plex Sans', sans-serif;
+      font-weight: 400;
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ─── MASTHEAD ─── */
+    .masthead {
+      background: var(--ink);
+      color: var(--paper);
+      padding: 14px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+    .masthead-logo { font-size: 1rem; font-weight: 500; color: #fff; letter-spacing: 0.05em; }
+    .masthead-meta { color: #888; }
+
+    /* ─── HERO ─── */
+    .hero {
+      background: var(--ink);
+      color: var(--paper);
+      padding: 80px 40px 72px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '14%';
+      position: absolute;
+      right: -10px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(110px, 17vw, 250px);
+      font-weight: 900;
+      color: rgba(255,255,255,0.04);
+      letter-spacing: -0.04em;
+      line-height: 1;
+      pointer-events: none;
+    }
+    .hero-inner { max-width: var(--col); margin: 0 auto; position: relative; }
+    .hero-tag {
+      display: inline-block;
+      border: 1px solid var(--accent);
+      color: var(--accent);
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      margin-bottom: 28px;
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.2rem, 5vw, 3.4rem);
+      font-weight: 700;
+      line-height: 1.18;
+      letter-spacing: -0.02em;
+      margin-bottom: 24px;
+      max-width: 20ch;
+    }
+    .hero h1 em { font-style: italic; color: var(--accent); }
+    .hero-lead {
+      font-size: 1.08rem;
+      color: #bbb;
+      max-width: 54ch;
+      line-height: 1.65;
+      margin-bottom: 40px;
+    }
+    .hero-byline {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      font-size: 0.8rem;
+      color: #666;
+      font-family: 'IBM Plex Mono', monospace;
+    }
+    .hero-byline span { color: #888; }
+    .hero-byline strong { color: #ccc; font-weight: 500; }
+
+    /* ─── STATS BAR ─── */
+    .stats-bar { background: var(--accent); padding: 0 40px; }
+    .stats-inner {
+      max-width: calc(var(--col) + 200px);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
+    .stat-item {
+      padding: 24px 32px;
+      border-right: 1px solid rgba(255,255,255,0.2);
+      color: #fff;
+    }
+    .stat-item:first-child { padding-left: 0; }
+    .stat-item:last-child { border-right: none; }
+    .stat-number {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      font-weight: 700;
+      display: block;
+      line-height: 1;
+    }
+    .stat-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      opacity: 0.8;
+      margin-top: 4px;
+      font-family: 'IBM Plex Mono', monospace;
+    }
+
+    /* ─── ARTICLE ─── */
+    .article-wrap { padding: 72px 40px; }
+    .article-inner { max-width: var(--col); margin: 0 auto; }
+
+    .article-inner > p:first-of-type::first-letter {
+      font-family: 'Playfair Display', serif;
+      font-size: 4.5em;
+      font-weight: 900;
+      float: left;
+      line-height: 0.78;
+      margin-right: 8px;
+      margin-top: 6px;
+      color: var(--accent);
+    }
+
+    p { margin-bottom: 1.5rem; }
+
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.7rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.25;
+      margin: 3rem 0 1.1rem;
+      color: var(--ink);
+    }
+    h2::before {
+      content: '';
+      display: block;
+      width: 32px;
+      height: 3px;
+      background: var(--accent);
+      margin-bottom: 16px;
+    }
+
+    h3 {
+      font-family: 'IBM Plex Sans', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin: 2rem 0 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--gold);
+    }
+
+    blockquote {
+      border-left: 3px solid var(--accent);
+      margin: 2.5rem 0;
+      padding: 20px 0 20px 32px;
+    }
+    blockquote p {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.35rem;
+      font-style: italic;
+      line-height: 1.5;
+      color: var(--ink);
+      margin: 0 0 8px;
+    }
+    blockquote cite {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+      font-style: normal;
+    }
+
+    .highlight {
+      background: var(--accent-light);
+      padding: 0 4px;
+      font-weight: 500;
+    }
+
+    /* Scenario cards */
+    .scenario-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--rule);
+      border: 1px solid var(--rule);
+      margin: 2.5rem 0;
+    }
+    .scenario-card { background: var(--paper); padding: 24px 20px; }
+    .scenario-label {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+    .scenario-rate {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.7rem;
+      font-weight: 700;
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+    .scenario-rate.base { color: var(--gold); }
+    .scenario-rate.bull { color: var(--green); }
+    .scenario-rate.bear { color: var(--accent); }
+    .scenario-desc {
+      font-size: 0.8rem;
+      color: var(--muted);
+      line-height: 1.5;
+      margin-top: 8px;
+    }
+    .scenario-title {
+      font-size: 0.88rem;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    /* Data card */
+    .data-card {
+      background: var(--cream);
+      border: 1px solid var(--rule);
+      padding: 28px 32px;
+      margin: 2.5rem 0;
+    }
+    .data-card h4 {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--muted);
+      margin-bottom: 20px;
+    }
+    .data-rows { display: flex; flex-direction: column; gap: 12px; }
+    .data-row { display: flex; align-items: center; gap: 16px; }
+    .data-row-label { font-size: 0.85rem; color: var(--muted); width: 220px; flex-shrink: 0; }
+    .data-row-bar-wrap { flex: 1; height: 6px; background: var(--rule); position: relative; }
+    .data-row-bar { position: absolute; top: 0; left: 0; height: 100%; }
+    .data-row-bar.accent { background: var(--accent); }
+    .data-row-bar.gold { background: var(--gold); }
+    .data-row-bar.green { background: var(--green); }
+    .data-row-bar.muted { background: var(--muted); opacity: 0.4; }
+    .data-row-val {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.8rem;
+      font-weight: 500;
+      width: 80px;
+      text-align: right;
+    }
+
+    /* Forecast metrics */
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      background: var(--rule);
+      border: 1px solid var(--rule);
+      margin: 2.5rem 0;
+    }
+    .metric-cell { background: var(--paper); padding: 24px; }
+    .metric-label {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+    .metric-value {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.65rem;
+      font-weight: 700;
+      line-height: 1.1;
+    }
+    .metric-value.warn { color: var(--accent); }
+    .metric-value.ok { color: var(--green); }
+    .metric-value.neutral { color: var(--gold); }
+    .metric-note { font-size: 0.78rem; color: var(--muted); margin-top: 6px; }
+
+    /* Risk table */
+    .risk-list { margin: 2rem 0; display: flex; flex-direction: column; gap: 0; }
+    .risk-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+      padding: 18px 0;
+      border-bottom: 1px solid var(--rule);
+    }
+    .risk-item:last-child { border-bottom: none; }
+    .risk-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.7rem;
+      font-weight: 500;
+      margin-top: 2px;
+    }
+    .risk-icon.high { background: var(--accent-light); color: var(--accent); }
+    .risk-icon.mid { background: #f5ecd4; color: var(--gold); }
+    .risk-icon.low { background: #d0ead8; color: var(--green); }
+    .risk-body { flex: 1; }
+    .risk-title { font-weight: 600; font-size: 0.92rem; margin-bottom: 4px; }
+    .risk-desc { font-size: 0.83rem; color: var(--muted); line-height: 1.55; }
+
+    .divider {
+      border: none;
+      border-top: 1px solid var(--rule);
+      margin: 3rem 0;
+    }
+
+    .conclusion {
+      background: var(--ink);
+      color: var(--paper);
+      padding: 36px 40px;
+      margin: 3rem 0 0;
+    }
+    .conclusion h3 { color: var(--accent); margin-top: 0; }
+    .conclusion p { color: #ccc; margin-bottom: 1rem; }
+    .conclusion p:last-child { margin-bottom: 0; }
+
+    footer {
+      background: var(--cream);
+      border-top: 1px solid var(--rule);
+      padding: 28px 40px;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.72rem;
+      color: var(--muted);
+      text-align: center;
+      letter-spacing: 0.06em;
+    }
+    footer strong { color: var(--ink); }
+
+    @media (max-width: 640px) {
+      .masthead { padding: 12px 20px; }
+      .hero { padding: 56px 20px 52px; }
+      .stats-bar { padding: 0 20px; }
+      .stats-inner { grid-template-columns: 1fr; }
+      .stat-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.2); padding: 16px 0; }
+      .article-wrap { padding: 48px 20px; }
+      .scenario-grid { grid-template-columns: 1fr; }
+      .metrics-grid { grid-template-columns: 1fr; }
+      .data-row-label { width: 130px; font-size: 0.78rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Masthead -->
+<header class="masthead">
+  <span class="masthead-logo">kotana.com.ru</span>
+  <span class="masthead-meta">Аналитика · Финансы · Рынки</span>
+</header>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-tag">Прогноз · 2026</div>
+    <h1>Корпоративное кредитование в 2026 году: <em>оттепель</em> без весны</h1>
+    <p class="hero-lead">Ставка снижается, инфляция замедляется, отложенный спрос накоплен. Казалось бы, условия для разморозки корпоративного кредитования созданы. Но регулятор не торопится, банки ужесточают требования, а реальное восстановление инвестиционного кредитования аналитики относят в лучшем случае к 2027 году.</p>
+    <div class="hero-byline">
+      <strong>Редакция kotana.com.ru</strong>
+      <span>·</span>
+      <span>Март 2026</span>
+      <span>·</span>
+      <span>12 мин чтения</span>
+    </div>
+  </div>
+</section>
+
+<!-- Stats bar -->
+<div class="stats-bar">
+  <div class="stats-inner">
+    <div class="stat-item">
+      <span class="stat-number">13–15%</span>
+      <span class="stat-label">Прогноз средней ставки ЦБ на 2026 г.</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number">8–13%</span>
+      <span class="stat-label">Прогноз роста корпоративного портфеля</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number">~0%</span>
+      <span class="stat-label">Прогноз роста кредитования МСП</span>
+    </div>
+  </div>
+</div>
+
+<!-- Article -->
+<main class="article-wrap">
+  <article class="article-inner">
+
+    <p>Когда ЦБ снизил ключевую ставку с 21% до 16% за шесть месяцев 2025 года, многие ждали, что корпоративный кредитный рынок быстро оттает. Этого не произошло. Снижение ставки и снижение стоимости кредита — разные вещи, и 2026 год наглядно демонстрирует эту разницу. Предстоящий год — не год восстановления в классическом смысле. Это год осторожной нормализации, в котором каждый участник рынка заново учится работать с новыми правилами.</p>
+
+    <h2>Ключевая ставка: медленный спуск под жёстким контролем</h2>
+
+    <p>Банк России обозначил ориентир: средняя ключевая ставка в 2026 году составит <span class="highlight">13–15% годовых</span>. Это значит, что даже при плавном снижении ставка к концу года может оставаться двузначной — ЦБ прямо допускает такой сценарий. По февральскому прогнозу регулятора, диапазон с 16 февраля до конца года — 13,1–14,3%, что подтверждает: быстрого смягчения не будет.</p>
+
+    <p>Медианный прогноз рынка — средняя ставка 14,1% по итогам 2026 года. Главный экономист «Совкомбанка» прогнозирует снижение до 13% к концу года при средней 14,8% — против 19,2% в 2025-м. Большинство аналитиков ожидают паузу в феврале–марте из-за эффектов повышения НДС, после чего — плавное снижение по 0,5–1 п.п. за заседание.</p>
+
+    <div class="scenario-grid">
+      <div class="scenario-card">
+        <div class="scenario-label">Базовый сценарий</div>
+        <div class="scenario-title">Постепенный спуск</div>
+        <div class="scenario-rate base">~13%</div>
+        <div class="scenario-desc">Ставка на конец 2026 г. Плавное снижение со второго квартала, пауза в марте. Инфляция замедляется до 5–6%.</div>
+      </div>
+      <div class="scenario-card">
+        <div class="scenario-label">Оптимистичный сценарий</div>
+        <div class="scenario-title">Геополитический импульс</div>
+        <div class="scenario-rate bull">11,5%</div>
+        <div class="scenario-desc">Реализуется при улучшении геополитики, снижении экспортных дисконтов и стабилизации бюджетных рисков. Ускоренное снижение с весны.</div>
+      </div>
+      <div class="scenario-card">
+        <div class="scenario-label">Консервативный сценарий</div>
+        <div class="scenario-title">Инфляционный тормоз</div>
+        <div class="scenario-rate bear">15%+</div>
+        <div class="scenario-desc">При устойчивом инфляционном давлении ЦБ сохраняет жёсткость. Кредитование остаётся дорогим весь год.</div>
+      </div>
+    </div>
+
+    <p>Принципиально важное предупреждение звучит от председателя ЦБ: ключевая ставка сама по себе не делает кредиты дешёвыми. Умеренные ставки по кредитам возможны только при низкой инфляции. Банковские спреды — 5–6 п.п. к ключевой — сохраняются, и даже при ставке 13% реальная стоимость корпоративного кредита будет находиться в диапазоне 18–19%. Это лучше, чем в 2025-м, но далеко от «нормы» докризисного периода.</p>
+
+    <hr class="divider" />
+
+    <h2>Корпоративный портфель: умеренный рост без качественного перелома</h2>
+
+    <p>Консенсус-прогноз для совокупного корпоративного кредитного портфеля — рост на <span class="highlight">8–13% за год</span>. «Эксперт РА» называет цифру около 10%. «Ведомости» приводят тот же ориентир. Портфель, достигший 82,1 трлн рублей к концу 2025 года, к концу 2026-го может превысить 90 трлн. Но за этой цифрой скрывается структурная проблема.</p>
+
+    <p>Основной объём новых выдач крупным предприятиям в 2026 году придётся на <em>рефинансирование</em> задолженности, накопленной в 2023–2025 годах по высоким ставкам. Это не новые деньги в экономику — это замена старого долга новым, более дешёвым. Структура спроса остаётся рациональной до консервативности: компании занимают прежде всего на пополнение оборотных средств и поддержание ликвидности, а инвестиционные проекты проходят более строгий отбор с фокусом на окупаемость.</p>
+
+    <blockquote>
+      <p>«К полноценному росту в корпоративном кредитовании рынок сможет перейти только в 2027 году, когда начнёт реализовываться существенный отложенный инвестиционный спрос на оборудование.»</p>
+      <cite>— Александр Киселев, банковский аналитик (Коммерсантъ, январь 2026)</cite>
+    </blockquote>
+
+    <div class="metrics-grid">
+      <div class="metric-cell">
+        <div class="metric-label">Прогноз роста портфеля</div>
+        <div class="metric-value neutral">8–13%</div>
+        <div class="metric-note">сопоставимо с 2025 г., но иная структура спроса</div>
+      </div>
+      <div class="metric-cell">
+        <div class="metric-label">Доля кредитов с плавающей ставкой</div>
+        <div class="metric-value warn">~⅔</div>
+        <div class="metric-note">бизнес чувствителен к каждому решению ЦБ</div>
+      </div>
+      <div class="metric-cell">
+        <div class="metric-label">Прогноз прибыли банков</div>
+        <div class="metric-value ok">↑ к 2025</div>
+        <div class="metric-note">приближение к рекорду 2024 г. по оценке Эксперт РА</div>
+      </div>
+      <div class="metric-cell">
+        <div class="metric-label">Кредитование МСП (прогноз)</div>
+        <div class="metric-value warn">~0%</div>
+        <div class="metric-note">доступность остаётся ограниченной по оборотным линиям</div>
+      </div>
+    </div>
+
+    <hr class="divider" />
+
+    <h2>МСП: нулевой рост и надежда на льготные программы</h2>
+
+    <p>Для малого и среднего бизнеса 2026 год обещает быть годом стагнации портфеля. «Эксперт РА» прямо называет ожидаемую динамику «околонулевой»: доступность заёмных средств для МСП остаётся ограниченной как по инвестиционным кредитам на развитие, так и по оборотным линиям. Проблемы с обслуживанием портфелей, возникшие в 2025 году, могут усугубиться — и банки реагируют превентивным ужесточением требований к заёмщикам этого сегмента.</p>
+
+    <p>Единственный источник умеренного оптимизма — перезапуск льготной программы инвестиционного кредитования с января 2026 года. Ставка рассчитывается по формуле «ключевая ставка ЦБ минус 3,5%», что при текущих уровнях даёт реальный доступ к финансированию. Программа существенно расширила периметр получателей: к традиционным отраслям добавились креативные индустрии, малые технологические компании и бизнес из приграничных регионов. Параллельно запущены льготные программы для производителей станков и промышленных роботов на 180 млрд рублей до 2030 года.</p>
+
+    <p>Впрочем, объём льготного финансирования — 100 млрд рублей в год против 500 млрд в прежние годы — несопоставим с масштабом потребностей. Для большинства МСП 2026 год останется годом осторожного управления ликвидностью, а не годом инвестиций.</p>
+
+    <hr class="divider" />
+
+    <h2>Новое регулирование: ЦБ закручивает гайки для должников</h2>
+
+    <p>Параллельно со снижением ставки Банк России вводит ограничения, которые сдержат кредитование наиболее уязвимых заёмщиков. С 1 марта 2026 года надбавка к коэффициентам риска на прирост кредитных требований к <span class="highlight">крупным компаниям с высокой долговой нагрузкой</span> вырастет с 40% до 100%. Под ограничение попадает около 5% всех выданных корпоративных кредитов — немного по объёму, но сигнально значимо.</p>
+
+    <p>Логика регулятора понятна: именно в этом сегменте сконцентрированы реструктурированные ссуды с невыясненным качеством, накопленные в 2024–2025 годах. Новое правило не запрещает кредитование таких компаний — оно удорожает его для банков, что автоматически транслируется в ужесточение неценовых условий. Банки уже превентивно ужесточают критерии андеррайтинга, смещая фокус на твёрдый залог.</p>
+
+    <div class="data-card">
+      <h4>Ключевые регуляторные изменения, влияющие на корпоративное кредитование в 2026 г.</h4>
+      <div class="data-rows">
+        <div class="data-row">
+          <span class="data-row-label">Надбавка к риску: высоко-долговые компании</span>
+          <div class="data-row-bar-wrap"><div class="data-row-bar accent" style="width:85%"></div></div>
+          <span class="data-row-val">40% → 100%</span>
+        </div>
+        <div class="data-row">
+          <span class="data-row-label">Охват портфеля новым правилом</span>
+          <div class="data-row-bar-wrap"><div class="data-row-bar accent" style="width:10%"></div></div>
+          <span class="data-row-val">~5%</span>
+        </div>
+        <div class="data-row">
+          <span class="data-row-label">Льготное кредитование МСП (годовой лимит)</span>
+          <div class="data-row-bar-wrap"><div class="data-row-bar muted" style="width:20%"></div></div>
+          <span class="data-row-val">100 млрд ₽</span>
+        </div>
+        <div class="data-row">
+          <span class="data-row-label">Льготная программа (пром. роботы, станки)</span>
+          <div class="data-row-bar-wrap"><div class="data-row-bar green" style="width:36%"></div></div>
+          <span class="data-row-val">180 млрд ₽</span>
+        </div>
+        <div class="data-row">
+          <span class="data-row-label">Прогноз прибыли банков</span>
+          <div class="data-row-bar-wrap"><div class="data-row-bar gold" style="width:75%"></div></div>
+          <span class="data-row-val">> 3,5 трлн ₽</span>
+        </div>
+      </div>
+    </div>
+
+    <hr class="divider" />
+
+    <h2>Риски, которые нельзя игнорировать</h2>
+
+    <div class="risk-list">
+      <div class="risk-item">
+        <div class="risk-icon high">↑</div>
+        <div class="risk-body">
+          <div class="risk-title">Реструктуризации с отложенным риском</div>
+          <div class="risk-desc">За 2024–2025 годы банки реструктурировали миллионы кредитов. Качество этих ссуд ещё предстоит выяснить по мере нормализации условий. Банки доформировывают резервы, но полной картины нет — и она может оказаться хуже ожиданий.</div>
+        </div>
+      </div>
+      <div class="risk-item">
+        <div class="risk-icon high">↑</div>
+        <div class="risk-body">
+          <div class="risk-title">НДС и инфляционный навес</div>
+          <div class="risk-desc">Повышение НДС с начала 2026 года создаёт временный проинфляционный импульс. ЦБ ожидает ускорения инфляции в начале года с последующим замедлением. Если дезинфляция окажется медленнее прогноза — снижение ставки приостановится.</div>
+        </div>
+      </div>
+      <div class="risk-item">
+        <div class="risk-icon mid">~</div>
+        <div class="risk-body">
+          <div class="risk-title">Высокая доля плавающих ставок</div>
+          <div class="risk-desc">Около двух третей корпоративных кредитов выданы с плавающей ставкой. Это значит, что каждое снижение ключевой ставки быстро транслируется в снижение платёжной нагрузки — но и любое ужесточение немедленно бьёт по заёмщикам.</div>
+        </div>
+      </div>
+      <div class="risk-item">
+        <div class="risk-icon mid">~</div>
+        <div class="risk-body">
+          <div class="risk-title">Ухудшение платёжной дисциплины МСП</div>
+          <div class="risk-desc">Спрос на реструктуризации в сегменте МСП растёт с 2024 года. В 2025-м доля просроченной задолженности удержалась на приемлемом уровне — но при сохранении жёстких условий в первом полугодии 2026-го давление усилится.</div>
+        </div>
+      </div>
+      <div class="risk-item">
+        <div class="risk-icon low">↓</div>
+        <div class="risk-body">
+          <div class="risk-title">Геополитическая неопределённость</div>
+          <div class="risk-desc">Оптимистичный сценарий по ставке предполагает улучшение геополитической ситуации. Если оно реализуется, снижение ставки ускорится, экспортные дисконты сократятся и корпоративный спрос на кредит оживится быстрее прогнозов.</div>
+        </div>
+      </div>
+    </div>
+
+    <hr class="divider" />
+
+    <h2>Что меняется в банковской практике</h2>
+
+    <h3>От залога — к денежному потоку</h3>
+    <p>Традиционные модели скоринга, основанные на бухгалтерской отчётности и твёрдом залоге, уступают место гибким подходам. Банки всё активнее используют данные о движении средств по счетам, информацию из онлайн-касс, платформ электронного документооборота и реестров госзакупок. Это позволяет точнее оценивать реальную финансовую устойчивость компаний — особенно тех, у кого нет длительной кредитной истории или ликвидного залога. IT-компании и другие бизнесы с преимущественно нематериальными активами получают доступ к беззалоговому финансированию на основе Cash Flow.</p>
+
+    <h3>Адаптивные графики погашения</h3>
+    <p>Банки внедряют гибкие условия реструктуризации с графиками погашения, привязанными к реальным денежным потокам клиента. Это ответ на накопленный стресс в портфелях: вместо формального дефолта — реструктуризация с сохранением отношений. Для банков это инструмент управления качеством портфеля; для бизнеса — возможность пережить переходный период без разрыва кредитных отношений.</p>
+
+    <h3>Нефинансовые сервисы как конкурентное преимущество</h3>
+    <p>В условиях ограниченного кредитного спроса банки конкурируют не только ставкой, но и экосистемой сервисов. Расчётное обслуживание, валютный контроль, факторинг, гарантии, налоговый консалтинг — всё это становится частью корпоративного предложения. Развитие нефинансовых сервисов способно увеличить комиссионный доход банка на 5–10%, что при сжатой марже кредитного бизнеса приобретает стратегическое значение.</p>
+
+    <blockquote>
+      <p>«Для сохранения качественного корпоративного портфеля банки ограничивают кредитование высокорискованных отраслей, в большей степени ориентируются на твёрдый залог — и одновременно учатся работать без него.»</p>
+      <cite>— Александр Калинич, председатель правления банка «Кубань Кредит»</cite>
+    </blockquote>
+
+    <hr class="divider" />
+
+    <h2>Отраслевые приоритеты: кто получит кредит</h2>
+
+    <p>В 2026 году банки будут избирательнее, чем когда-либо. Спрос на кредит есть во всех секторах, но предложение становится адресным. Приоритет — компании с понятным денежным потоком, подтверждённым спросом и государственной поддержкой.</p>
+
+    <div class="data-card">
+      <h4>Отраслевые приоритеты корпоративного кредитования в 2026 г.</h4>
+      <div class="data-rows">
+        <div class="data-row">
+          <span class="data-row-label">IT, кибербезопасность, AI</span>
+          <div class="data-row-bar-wrap"><div class="data-row-bar green" style="width:90%"></div></div>
+          <span class="data-row-val">Высокий</span>
+        </div>
+        <div class="data-row">
+          <span class="data-row-label">Промышленность (импортозамещение)</span>
+          <div class="data-row-bar-wrap"><div class="data-row-bar green" style="width:78%"></div></div>
+          <span class="data-row-val">Высокий</span>
+        </div>
+        <div class="data-row">
+          <span class="data-row-label">Агропром и пищевое производство</span>
+          <div class="data-row-bar-wrap"><div class="data-row-bar gold" style="width:65%"></div></div>
+          <span class="data-row-val">Средний</span>
+        </div>
+        <div class="data-row">
+          <span class="data-row-label">Логистика и транспорт</span>
+          <div class="data-row-bar-wrap"><div class="data-row-bar gold" style="width:52%"></div></div>
+          <span class="data-row-val">Средний</span>
+        </div>
+        <div class="data-row">
+          <span class="data-row-label">Офлайн-ретейл</span>
+          <div class="data-row-bar-wrap"><div class="data-row-bar accent" style="width:30%"></div></div>
+          <span class="data-row-val">Ограниченный</span>
+        </div>
+        <div class="data-row">
+          <span class="data-row-label">Девелопмент (рыночный сегмент)</span>
+          <div class="data-row-bar-wrap"><div class="data-row-bar accent" style="width:20%"></div></div>
+          <span class="data-row-val">Ограниченный</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="conclusion">
+      <h3>Итог: нормализация — это тоже прогресс</h3>
+      <p>2026 год в корпоративном кредитовании — это год хрупкого, но реального улучшения. Ставка снижается, реструктуризации постепенно замещаются новыми выдачами, банковский сектор наращивает прибыль. Но называть это «восстановлением» в полном смысле слова — преждевременно.</p>
+      <p>Инвестиционное кредитование — то, что финансирует новые мощности и оборудование, а не покрытие кассовых разрывов, — остаётся на паузе. МСП продолжает жить в режиме жёсткой экономии. Банки ужесточают требования к заёмщикам, одновременно конкурируя за лучших клиентов по ставке и сервису.</p>
+      <p>Главный вывод для бизнеса: 2026-й — год рефинансирования накопленного долга и подготовки к инвестиционному циклу, который начнётся, по всей видимости, в 2027-м. Те, кто использует этот год для снижения долговой нагрузки и выстраивания кредитной истории с банками, окажутся в лучшей позиции, когда деньги наконец станут по-настоящему доступными.</p>
+    </div>
+
+  </article>
+</main>
+
+<footer>
+  <strong>kotana.com.ru</strong> &nbsp;·&nbsp; Прогноз корпоративного кредитования · 2026 &nbsp;·&nbsp; Все данные носят информационный характер
+</footer>
+
+</body>
+</html>
