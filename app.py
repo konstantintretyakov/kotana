@@ -81,8 +81,18 @@ def sitemap():
 
 
 @app.route("/favicon.svg")
-def favicon():
+def favicon_svg():
     return send_from_directory(app.static_folder, "favicon.svg", mimetype="image/svg+xml")
+
+
+@app.route("/favicon.ico")
+def favicon_ico():
+    return send_from_directory(app.static_folder, "favicon.ico", mimetype="image/x-icon")
+
+
+@app.route("/favicon.png")
+def favicon_png():
+    return send_from_directory(app.static_folder, "favicon.png", mimetype="image/png")
 
 
 @app.route("/robots.txt")
