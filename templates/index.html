@@ -326,6 +326,18 @@
         <h2 class="section-heading">Аналитика</h2>
         {% endif %}
         <div class="blog-grid">
+            <a href="/blog/china-fdi-russia-2025" class="blog-card">
+                <span class="blog-tag">{{ 'Analytics' if lang == 'en' else 'Аналитика' }}</span>
+                {% if lang == 'en' %}
+                <h3>Chinese Capital in Russia: Strategic Partnership in Search of Practice</h3>
+                <p>The political union of Moscow and Beijing has reached a new level. Trade is hitting records, yuan settlements are the norm. But direct investment from China into Russia remains modest — and there is logic behind that gap.</p>
+                {% else %}
+                <h3>Китайский капитал в России: стратегическое партнёрство в поисках практики</h3>
+                <p>Политический союз Москвы и Пекина достиг нового уровня. Товарооборот бьёт рекорды, расчёты в юанях стали нормой. Но прямые инвестиции из КНР в Россию по-прежнему остаются скромными — и за этим разрывом стоит своя логика.</p>
+                {% endif %}
+                <span class="blog-read">{{ 'Read' if lang == 'en' else 'Читать' }} →</span>
+            </a>
+
             <a href="/blog/corporate-lending-2026-forecast" class="blog-card">
                 <span class="blog-tag">{{ 'Forecast' if lang == 'en' else 'Прогноз' }}</span>
                 {% if lang == 'en' %}
