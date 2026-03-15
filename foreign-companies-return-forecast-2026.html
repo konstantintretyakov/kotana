@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Прогноз: возвращение иностранных компаний в Россию в 2026 году | kotana.com.ru</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --ink: #0f1117;
+      --paper: #f7f4ef;
+      --cream: #ede9e0;
+      --accent: #c8401a;
+      --accent-light: #f0d0c4;
+      --gold: #b8922a;
+      --green: #1a7a3c;
+      --muted: #7a7060;
+      --rule: #d4cfc5;
+      --col: clamp(320px, 66ch, 720px);
+    }
+
+    html { font-size: 17px; scroll-behavior: smooth; }
+    body {
+      background: var(--paper);
+      color: var(--ink);
+      font-family: 'IBM Plex Sans', sans-serif;
+      font-weight: 400;
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .masthead {
+      background: var(--ink);
+      color: var(--paper);
+      padding: 14px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+    .masthead-logo { font-size: 1rem; font-weight: 500; color: #fff; letter-spacing: 0.05em; }
+    .masthead-meta { color: #888; }
+
+    .hero {
+      background: var(--ink);
+      color: var(--paper);
+      padding: 80px 40px 72px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '2026';
+      position: absolute;
+      right: -10px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(100px, 16vw, 240px);
+      font-weight: 900;
+      color: rgba(255,255,255,0.04);
+      letter-spacing: -0.04em;
+      line-height: 1;
+      pointer-events: none;
+    }
+    .hero-inner { max-width: var(--col); margin: 0 auto; position: relative; }
+    .hero-tag {
+      display: inline-block;
+      border: 1px solid var(--accent);
+      color: var(--accent);
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      margin-bottom: 28px;
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.2rem, 5vw, 3.4rem);
+      font-weight: 700;
+      line-height: 1.18;
+      letter-spacing: -0.02em;
+      margin-bottom: 24px;
+      max-width: 22ch;
+    }
+    .hero h1 em { font-style: italic; color: var(--accent); }
+    .hero-lead {
+      font-size: 1.08rem;
+      color: #bbb;
+      max-width: 54ch;
+      line-height: 1.65;
+      margin-bottom: 40px;
+    }
+    .hero-byline {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      font-size: 0.8rem;
+      color: #666;
+      font-family: 'IBM Plex Mono', monospace;
+    }
+    .hero-byline span { color: #888; }
+    .hero-byline strong { color: #ccc; font-weight: 500; }
+
+    .stats-bar { background: var(--accent); padding: 0 40px; }
+    .stats-inner {
+      max-width: calc(var(--col) + 200px);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
+    .stat-item {
+      padding: 24px 32px;
+      border-right: 1px solid rgba(255,255,255,0.2);
+      color: #fff;
+    }
+    .stat-item:first-child { padding-left: 0; }
+    .stat-item:last-child { border-right: none; }
+    .stat-number {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      font-weight: 700;
+      display: block;
+      line-height: 1;
+    }
+    .stat-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      opacity: 0.8;
+      margin-top: 4px;
+      font-family: 'IBM Plex Mono', monospace;
+    }
+
+    .article-wrap { padding: 72px 40px; }
+    .article-inner { max-width: var(--col); margin: 0 auto; }
+
+    .article-inner > p:first-of-type::first-letter {
+      font-family: 'Playfair Display', serif;
+      font-size: 4.5em;
+      font-weight: 900;
+      float: left;
+      line-height: 0.78;
+      margin-right: 8px;
+      margin-top: 6px;
+      color: var(--accent);
+    }
+
+    p { margin-bottom: 1.5rem; }
+
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.7rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.25;
+      margin: 3rem 0 1.1rem;
+    }
+    h2::before {
+      content: '';
+      display: block;
+      width: 32px;
+      height: 3px;
+      background: var(--accent);
+      margin-bottom: 16px;
+    }
+
+    h3 {
+      font-family: 'IBM Plex Sans', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin: 2rem 0 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--gold);
+    }
+
+    blockquote {
+      border-left: 3px solid var(--accent);
+      margin: 2.5rem 0;
+      padding: 20px 0 20px 32px;
+    }
+    blockquote p {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.35rem;
+      font-style: italic;
+      line-height: 1.5;
+      color: var(--ink);
+      margin: 0 0 8px;
+    }
+    blockquote cite {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+      font-style: normal;
+    }
+
+    .highlight {
+      background: var(--accent-light);
+      padding: 0 4px;
+      font-weight: 500;
+    }
+
+    /* Scenario grid */
+    .scenario-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--rule);
+      border: 1px solid var(--rule);
+      margin: 2.5rem 0;
+    }
+    .scenario-card { background: var(--paper); padding: 24px 20px; }
+    .scenario-label {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+    .scenario-number {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.7rem;
+      font-weight: 700;
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+    .scenario-number.base { color: var(--gold); }
+    .scenario-number.bull { color: var(--green); }
+    .scenario-number.bear { color: var(--accent); }
+    .scenario-title { font-size: 0.88rem; font-weight: 600; margin-bottom: 4px; }
+    .scenario-desc { font-size: 0.8rem; color: var(--muted); line-height: 1.5; margin-top: 8px; }
+
+    /* Wave table */
+    .wave-list { margin: 2.5rem 0; }
+    .wave-item {
+      display: grid;
+      grid-template-columns: 28px 1fr;
+      gap: 18px;
+      padding: 18px 0;
+      border-bottom: 1px solid var(--rule);
+      align-items: start;
+    }
+    .wave-item:first-child { border-top: 1px solid var(--rule); }
+    .wave-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--accent);
+      line-height: 1.1;
+      text-align: right;
+    }
+    .wave-body {}
+    .wave-title { font-weight: 600; font-size: 0.92rem; margin-bottom: 4px; }
+    .wave-brands {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.72rem;
+      color: var(--gold);
+      letter-spacing: 0.06em;
+      margin-bottom: 4px;
+    }
+    .wave-desc { font-size: 0.83rem; color: var(--muted); line-height: 1.55; }
+
+    /* Conditions list */
+    .conditions-list { margin: 2rem 0; display: flex; flex-direction: column; gap: 0; }
+    .condition-item {
+      display: flex;
+      gap: 16px;
+      padding: 16px 0;
+      border-bottom: 1px solid var(--rule);
+      align-items: flex-start;
+    }
+    .condition-item:first-child { border-top: 1px solid var(--rule); }
+    .condition-num {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.72rem;
+      color: var(--muted);
+      width: 24px;
+      flex-shrink: 0;
+      padding-top: 2px;
+    }
+    .condition-body {}
+    .condition-title { font-weight: 600; font-size: 0.92rem; margin-bottom: 4px; }
+    .condition-desc { font-size: 0.83rem; color: var(--muted); line-height: 1.55; }
+
+    /* Data card */
+    .data-card {
+      background: var(--cream);
+      border: 1px solid var(--rule);
+      padding: 28px 32px;
+      margin: 2.5rem 0;
+    }
+    .data-card h4 {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--muted);
+      margin-bottom: 20px;
+    }
+    .data-rows { display: flex; flex-direction: column; gap: 12px; }
+    .data-row { display: flex; align-items: center; gap: 16px; }
+    .data-row-label { font-size: 0.85rem; color: var(--muted); width: 220px; flex-shrink: 0; }
+    .data-row-bar-wrap { flex: 1; height: 6px; background: var(--rule); position: relative; }
+    .data-row-bar { position: absolute; top: 0; left: 0; height: 100%; }
+    .data-row-bar.accent { background: var(--accent); }
+    .data-row-bar.gold { background: var(--gold); }
+    .data-row-bar.green { background: var(--green); }
+    .data-row-bar.muted { background: var(--muted); opacity: 0.4; }
+    .data-row-val {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.8rem;
+      font-weight: 500;
+      width: 80px;
+      text-align: right;
+    }
+
+    .divider { border: none; border-top: 1px solid var(--rule); margin: 3rem 0; }
+
+    .conclusion {
+      background: var(--ink);
+      color: var(--paper);
+      padding: 36px 40px;
+      margin: 3rem 0 0;
+    }
+    .conclusion h3 { color: var(--accent); margin-top: 0; }
+    .conclusion p { color: #ccc; margin-bottom: 1rem; }
+    .conclusion p:last-child { margin-bottom: 0; }
+
+    footer {
+      background: var(--cream);
+      border-top: 1px solid var(--rule);
+      padding: 28px 40px;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.72rem;
+      color: var(--muted);
+      text-align: center;
+      letter-spacing: 0.06em;
+    }
+    footer strong { color: var(--ink); }
+
+    @media (max-width: 640px) {
+      .masthead { padding: 12px 20px; }
+      .hero { padding: 56px 20px 52px; }
+      .stats-bar { padding: 0 20px; }
+      .stats-inner { grid-template-columns: 1fr; }
+      .stat-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.2); padding: 16px 0; }
+      .article-wrap { padding: 48px 20px; }
+      .scenario-grid { grid-template-columns: 1fr; }
+      .data-row-label { width: 130px; font-size: 0.78rem; }
+    }
+  </style>
+</head>
+<body>
+
+<header class="masthead">
+  <span class="masthead-logo">kotana.com.ru</span>
+  <span class="masthead-meta">Прогноз · Рынки · 2026</span>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-tag">Прогноз · 2026</div>
+    <h1>Иностранные компании в России: <em>год решений</em> или год ожиданий?</h1>
+    <p class="hero-lead">США ведут переговоры о частичном снятии санкций, Кремль разработал порядок возвращения, Госдума сформулировала условия. Бизнес следит за сигналами, продлевает товарные знаки и держит опционы наготове. 2026-й — год, когда всё решится: либо волна возвращений станет реальностью, либо окно начнёт закрываться.</p>
+    <div class="hero-byline">
+      <strong>Редакция kotana.com.ru</strong>
+      <span>·</span>
+      <span>Март 2026</span>
+      <span>·</span>
+      <span>13 мин чтения</span>
+    </div>
+  </div>
+</section>
+
+<div class="stats-bar">
+  <div class="stats-inner">
+    <div class="stat-item">
+      <span class="stat-number">до 500</span>
+      <span class="stat-label">Компаний могут вернуться при снятии санкций</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number">3–5 лет</span>
+      <span class="stat-label">Горизонт восстановления статус-кво — оценка А1</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number">$340 млрд</span>
+      <span class="stat-label">Потенциальный годовой оборот при возвращении США</span>
+    </div>
+  </div>
+</div>
+
+<main class="article-wrap">
+  <article class="article-inner">
+
+    <p>В феврале 2026 года пресс-секретарь президента Дмитрий Песков произнёс, пожалуй, самую ёмкую формулировку по теме возвращения иностранных брендов: «Со временем, конечно, вернутся. Политизированное давление на бизнес в ущерб его интересам отойдёт в сторону, и компании поспешат сюда возвращаться». Слово «поспешат» — ключевое. Оно точно описывает накопленный потенциал: деньги, которые западный бизнес перестал зарабатывать в России, никуда не исчезли — они превратились в финансовый аргумент для возвращения, как только откроется возможность.</p>
+
+    <h2>Геополитический контекст: почему 2026-й особенный</h2>
+
+    <p>Разговоры о возвращении иностранных компаний велись с 2022 года, но именно в 2026-м они впервые обрели реальный геополитический фундамент. По данным The Economist, США в рамках переговоров об урегулировании конфликта на Украине рассматривают возможность <span class="highlight">частичного снятия санкций с России</span> в обмен на экономические договорённости. Потенциальный объём экономического сотрудничества Москва оценивает в $12 трлн — сумма, которую аналитики считают завышенной, но само направление переговоров говорит о многом.</p>
+
+    <p>Параллельно идут два процесса. Первый — официальная разработка Россией порядка возвращения иностранных компаний: в марте 2025 года Путин поручил его создать, к началу 2026-го механизм в целом сформирован, включая «специальную комиссию», которая будет рассматривать каждый случай индивидуально. Второй — нарастающее давление самого бизнеса на правительства западных стран с требованием открыть путь назад на прибыльный рынок.</p>
+
+    <blockquote>
+      <p>«Все вернутся. Мне кажется, что в течение ближайших трёх–пяти лет статус-кво восстановится. Западные компании зарабатывали в России десятки миллиардов и ушли с рынка только из-за политического давления.»</p>
+      <cite>— Александр Файн, владелец и гендиректор А1, февраль 2026</cite>
+    </blockquote>
+
+    <p>Американские санкции против России насчитывают около 23 000 ограничений. Их отмена потребует согласования с Конгрессом США и с Европой — процесс небыстрый даже при самом благоприятном политическом климате. Именно поэтому 2026 год — не год массового возвращения, а год определения траектории.</p>
+
+    <hr class="divider" />
+
+    <h2>Три сценария для 2026 года</h2>
+
+    <div class="scenario-grid">
+      <div class="scenario-card">
+        <div class="scenario-label">Базовый сценарий</div>
+        <div class="scenario-title">Точечные возвращения</div>
+        <div class="scenario-number base">~50–100</div>
+        <div class="scenario-desc">Компаний возвращается в 2026 г. Санкции частично смягчаются, но не снимаются. Приходят прежде всего те, кто сохранил юрлицо, опцион или товарный знак. Фарма, люкс, часть fashion.</div>
+      </div>
+      <div class="scenario-card">
+        <div class="scenario-label">Оптимистичный сценарий</div>
+        <div class="scenario-title">Волна при перемирии</div>
+        <div class="scenario-number bull">300–500</div>
+        <div class="scenario-desc">Компаний возвращается. Достижение соглашения о прекращении огня снимает политические барьеры. Возвращаются корейские, европейские компании. Начинаются переговоры о SWIFT.</div>
+      </div>
+      <div class="scenario-card">
+        <div class="scenario-label">Консервативный сценарий</div>
+        <div class="scenario-title">Заморозка</div>
+        <div class="scenario-number bear">&lt;20</div>
+        <div class="scenario-desc">Единичные возвращения. Переговоры заходят в тупик, санкции продлеваются. Компании продолжают ждать, заморозив активы и опционы до следующего окна.</div>
+      </div>
+    </div>
+
+    <p>По оценке аналитиков, даже если американские компании получат половину довоенного объёма российского импорта и половину доходов иностранных компаний, их совокупный годовой оборот составит около $340 млрд. Это несопоставимо с заявленными $12 трлн — но всё равно колоссальная сумма, делающая возвращение финансово привлекательным при минимальном снижении санкционного давления.</p>
+
+    <hr class="divider" />
+
+    <h2>Волны возвращения: кто придёт первым</h2>
+
+    <p>Возвращение иностранных компаний не будет одновременным — оно развернётся волнами, определяемыми комбинацией санкционного статуса, наличия опционов и стратегических интересов компаний.</p>
+
+    <div class="wave-list">
+      <div class="wave-item">
+        <div class="wave-num">1</div>
+        <div class="wave-body">
+          <div class="wave-title">Фармацевтика и медтех — уже здесь</div>
+          <div class="wave-brands">Roche · AstraZeneca · Bayer · Novartis · Sanofi · Abbott</div>
+          <div class="wave-desc">Эти компании фактически никогда не уходили — и в 2026 году продолжат наращивать присутствие. Их товары не попали под прямые санкции, а гуманитарный характер бизнеса обеспечивает политическую защиту с обеих сторон. Ожидается рост регистраций новых препаратов.</div>
+        </div>
+      </div>
+      <div class="wave-item">
+        <div class="wave-num">2</div>
+        <div class="wave-body">
+          <div class="wave-title">Люкс и премиум — тихое восстановление</div>
+          <div class="wave-brands">LVMH · Dior · Trussardi · Hermès · Chanel</div>
+          <div class="wave-desc">Люксовый сегмент восстанавливается первым исторически — платёжеспособная аудитория не исчезла, обороты поддерживаются параллельным импортом. В 2026 году ожидается волна официального восстановления регистраций и открытия флагманских точек в Москве под новыми юридическими конструкциями.</div>
+        </div>
+      </div>
+      <div class="wave-item">
+        <div class="wave-num">3</div>
+        <div class="wave-body">
+          <div class="wave-title">Южнокорейские компании — при снятии санкций</div>
+          <div class="wave-brands">Samsung · LG · Hyundai · Kia</div>
+          <div class="wave-desc">Наиболее готовые к быстрому возвращению — при условии снятия американских санкций. LG уже частично перезапустила подмосковный завод. Samsung наращивает маркетинговые расходы. Главный вызов — отвоевать долю рынка у китайских конкурентов, которые успели укрепиться за три года.</div>
+        </div>
+      </div>
+      <div class="wave-item">
+        <div class="wave-num">4</div>
+        <div class="wave-body">
+          <div class="wave-title">Европейский fashion и ретейл — переговоры продолжаются</div>
+          <div class="wave-brands">Inditex (Zara, Bershka) · Uniqlo · H&M (под вопросом)</div>
+          <div class="wave-desc">Inditex ведёт неофициальные переговоры через Союз торговых центров. Российские ТЦ держат бывшие площади «в ожидании». Uniqlo не исключает возвращения. H&M официально отказала, но рынок продолжает давление. При прекращении огня этот сегмент вернётся быстро — занятые площади легко переоткрыть.</div>
+        </div>
+      </div>
+      <div class="wave-item">
+        <div class="wave-num">5</div>
+        <div class="wave-body">
+          <div class="wave-title">Автопром — через выкуп опционов</div>
+          <div class="wave-brands">Renault · Nissan · Hyundai Motor · (не вернётся: Toyota)</div>
+          <div class="wave-desc">Renault сохраняет право обратного выкупа доли в «АвтоВАЗе» и московском заводе — и публично обозначила интерес к возвращению. Nissan держит шестилетний опцион. Hyundai должна была решить вопрос с петербургским заводом до конца 2025 года. Toyota ушла без опциона — возвращение потребует строительства с нуля.</div>
+        </div>
+      </div>
+      <div class="wave-item">
+        <div class="wave-num">6</div>
+        <div class="wave-body">
+          <div class="wave-title">Фастфуд и ретейл — через бывших партнёров</div>
+          <div class="wave-brands">McDonald's · KFC/Rostic's · IKEA · Decathlon</div>
+          <div class="wave-desc">McDonald's зарегистрировал новые товарные знаки, но владелец «Вкусно — и точка» Александр Говор скептичен: он не верит в их возвращение и рассчитывает сохранить бизнес. IKEA держит товарный знак, но восстановление производства и логистики потребует 2–3 лет даже при политической воле. KFC/Rostic's — наиболее реалистичный кандидат через перелицензирование.</div>
+        </div>
+      </div>
+      <div class="wave-item">
+        <div class="wave-num">7</div>
+        <div class="wave-body">
+          <div class="wave-title">Платёжные системы — «практически неизбежно»</div>
+          <div class="wave-brands">Visa · Mastercard</div>
+          <div class="wave-desc">Эксперты называют возвращение платёжных систем неизбежным при любом сценарии нормализации. Россия так и не создала международно совместимого аналога для трансграничных расчётов, и спрос на западные карты сохраняется. Mastercard продлила товарный знак — юридически готова к быстрому возвращению.</div>
+        </div>
+      </div>
+    </div>
+
+    <hr class="divider" />
+
+    <h2>Условия российской стороны: «хорошая память»</h2>
+
+    <p>Первый вице-премьер Мантуров обозначил позицию Москвы предельно ясно: «У России хорошая память, и вернуться так же легко, как ушли, не получится». Госдума сформулировала конкретный перечень принципов, а правительство разработало механизм «специальной комиссии» для индивидуального рассмотрения каждого случая.</p>
+
+    <div class="conditions-list">
+      <div class="condition-item">
+        <div class="condition-num">01</div>
+        <div class="condition-body">
+          <div class="condition-title">Снятие санкций страной-резидентом</div>
+          <div class="condition-desc">Юридически обязательное условие для многих категорий компаний. Проблема: решение принимается правительствами, а не бизнесом. Юристы называют это «практически невыполнимым» при нынешнем санкционном дизайне — но именно для его смягчения и ведутся переговоры.</div>
+        </div>
+      </div>
+      <div class="condition-item">
+        <div class="condition-num">02</div>
+        <div class="condition-body">
+          <div class="condition-title">Выкуп активов по рыночной цене</div>
+          <div class="condition-desc">Продавшие активы по символической стоимости (Hyundai — за 10 тыс. руб.) не смогут выкупить их обратно по той же цене. Придётся платить рыночную стоимость — существенно выросшую с учётом инфляции и изменения конъюнктуры.</div>
+        </div>
+      </div>
+      <div class="condition-item">
+        <div class="condition-num">03</div>
+        <div class="condition-body">
+          <div class="condition-title">Локализация и трансфер технологий</div>
+          <div class="condition-desc">Гарантии определённого уровня локализации производства; передача технологий; создание центров R&D в России; KPI по инвестициям в исследования. По сути — требование реального инвестиционного обязательства, а не просто восстановления торгового присутствия.</div>
+        </div>
+      </div>
+      <div class="condition-item">
+        <div class="condition-num">04</div>
+        <div class="condition-body">
+          <div class="condition-title">Работа в новых регионах</div>
+          <div class="condition-desc">Вице-премьер Мантуров обозначил ещё одно условие: компании должны открыть торговые точки в новых регионах России — Крыму, ДНР, ЛНР, Запорожской и Херсонской областях. Это создаёт дополнительный санкционный риск для компаний, чьи страны не признают статус этих территорий.</div>
+        </div>
+      </div>
+      <div class="condition-item">
+        <div class="condition-num">05</div>
+        <div class="condition-body">
+          <div class="condition-title">СП с российскими партнёрами</div>
+          <div class="condition-desc">Обсуждается создание совместных предприятий с нынешними российскими акционерами бывшего бизнеса компании или с системообразующими предприятиями. Это ограничивает контроль иностранного партнёра, но снижает политические риски для обеих сторон.</div>
+        </div>
+      </div>
+    </div>
+
+    <hr class="divider" />
+
+    <h2>Кому будет сложно вернуться в любом сценарии</h2>
+
+    <div class="data-card">
+      <h4>Вероятность возвращения по категориям в 2026 г. (оценка)</h4>
+      <div class="data-rows">
+        <div class="data-row">
+          <span class="data-row-label">Фарма (никогда не уходила)</span>
+          <div class="data-row-bar-wrap"><div class="data-row-bar green" style="width:95%"></div></div>
+          <span class="data-row-val">Высокая</span>
+        </div>
+        <div class="data-row">
+          <span class="data-row-label">Люкс и премиум</span>
+          <div class="data-row-bar-wrap"><div class="data-row-bar green" style="width:80%"></div></div>
+          <span class="data-row-val">Высокая</span>
+        </div>
+        <div class="data-row">
+          <span class="data-row-label">Платёжные системы (при снятии санкций)</span>
+          <div class="data-row-bar-wrap"><div class="data-row-bar gold" style="width:70%"></div></div>
+          <span class="data-row-val">Средняя</span>
+        </div>
+        <div class="data-row">
+          <span class="data-row-label">Корейская электроника и автопром</span>
+          <div class="data-row-bar-wrap"><div class="data-row-bar gold" style="width:60%"></div></div>
+          <span class="data-row-val">Средняя</span>
+        </div>
+        <div class="data-row">
+          <span class="data-row-label">European fashion (Inditex, Uniqlo)</span>
+          <div class="data-row-bar-wrap"><div class="data-row-bar gold" style="width:50%"></div></div>
+          <span class="data-row-val">Средняя</span>
+        </div>
+        <div class="data-row">
+          <span class="data-row-label">Фастфуд (McDonald's, KFC)</span>
+          <div class="data-row-bar-wrap"><div class="data-row-bar accent" style="width:35%"></div></div>
+          <span class="data-row-val">Низкая</span>
+        </div>
+        <div class="data-row">
+          <span class="data-row-label">Американские IT (Google, Apple)</span>
+          <div class="data-row-bar-wrap"><div class="data-row-bar accent" style="width:20%"></div></div>
+          <span class="data-row-val">Очень низкая</span>
+        </div>
+        <div class="data-row">
+          <span class="data-row-label">Банки (ушедшие)</span>
+          <div class="data-row-bar-wrap"><div class="data-row-bar muted" style="width:10%"></div></div>
+          <span class="data-row-val">Минимальная</span>
+        </div>
+      </div>
+    </div>
+
+    <p>Американские IT-гиганты остаются в особой категории. Их возвращение — не коммерческое, а политическое решение, вписанное в «комплексный пакет экономического сотрудничества». Google, чьё российское юрлицо обанкротилось с миллиардными долгами, юридически не может вернуться без отдельного урегулирования. Apple зарегистрировала товарный знак — но физическое восстановление App Store и продаж потребует политического сигнала с обеих сторон. Глава РСПП Александр Шохин предостерегает от другой крайности: Россия не должна стать «Венесуэлой», отдав американскому капиталу контроль над стратегическими активами в обмен на снятие санкций.</p>
+
+    <blockquote>
+      <p>«Главное — открутить гайки, снять санкции и ограничения. Дать возможность российскому бизнесу работать в полную мощность с иностранными партнёрами. Но мы не можем привлекать американский капитал во что бы то ни стало.»</p>
+      <cite>— Александр Шохин, глава РСПП, февраль 2026</cite>
+    </blockquote>
+
+    <hr class="divider" />
+
+    <h2>Китайский вопрос: главный конкурент возвращающихся</h2>
+
+    <p>За три года отсутствия западных компаний китайский бизнес занял позиции, которые не уступит добровольно. Доля КНР в российском импорте достигла 57% в 2024 году. Xiaomi лидирует на рынке смартфонов, Haier — телевизоров, десятки китайских автобрендов поделили рынок, освободившийся от Volkswagen, Toyota, Hyundai и Kia. Расчёты переведены в юани — инфраструктура выстроена под китайского партнёра.</p>
+
+    <p>Возвращающиеся западные бренды окажутся в условиях реальной конкуренции — и это принципиально меняет их экономику возвращения. Если раньше западный бренд приходил на рынок как «первый среди равных», то теперь ему предстоит отвоёвывать позиции у укоренившихся игроков. Корейские компании сами признают: «Ключевой вопрос — как вернуть долю рынка, которую расширили китайские конкуренты».</p>
+
+    <div class="conclusion">
+      <h3>Прогноз: год решений без гарантий результата</h3>
+      <p>2026 год с высокой вероятностью станет годом, когда направление определится окончательно. Либо переговорный процесс между Россией и Западом приведёт к первым реальным послаблениям — и тогда волна точечных возвращений (прежде всего в люксе, фарме и части fashion) станет фактом. Либо переговоры зайдут в тупик — и тогда компании, держащие опционы и товарные знаки наготове, начнут от них отказываться, признавая, что окно закрылось.</p>
+      <p>Базовый прогноз — осторожный оптимизм. 50–100 компаний вернутся в 2026-м через юридические механизмы, не требующие полного снятия санкций: восстановление регистраций, открытие флагманских точек через местных партнёров, перезапуск фармацевтических поставок. Массовое возвращение — горизонт 2027–2028 года и требует политического решения, которое пока не принято.</p>
+      <p>Для российского рынка и потребителей главный вопрос звучит иначе: готова ли Россия к возвращению на прежних условиях? Ответ — нет. Условия изменились: конкуренция выросла, отечественный бизнес занял свои ниши, регуляторный контекст стал жёстче. Иностранные компании вернутся — но в другую страну, на другой рынок и с другими обязательствами.</p>
+    </div>
+
+  </article>
+</main>
+
+<footer>
+  <strong>kotana.com.ru</strong> &nbsp;·&nbsp; Прогноз возвращения иностранных компаний · 2026 &nbsp;·&nbsp; Все данные носят информационный характер
+</footer>
+
+</body>
+</html>

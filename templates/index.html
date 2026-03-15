@@ -326,6 +326,18 @@
         <h2 class="section-heading">Аналитика</h2>
         {% endif %}
         <div class="blog-grid">
+            <a href="/blog/foreign-companies-return-forecast-2026" class="blog-card">
+                <span class="blog-tag">{{ 'Forecast' if lang == 'en' else 'Прогноз' }}</span>
+                {% if lang == 'en' %}
+                <h3>Foreign Companies in Russia: The Year of Decisions</h3>
+                <p>The US is weighing partial sanctions relief, Moscow has drafted a return framework, and the State Duma has set its terms. 2026 is the year when the trajectory will be determined — either a wave of returns becomes reality, or the window begins to close.</p>
+                {% else %}
+                <h3>Иностранные компании в России: год решений или год ожиданий?</h3>
+                <p>США ведут переговоры о частичном снятии санкций, Кремль разработал порядок возвращения, Госдума сформулировала условия. 2026-й — год, когда всё решится: либо волна возвращений станет реальностью, либо окно начнёт закрываться.</p>
+                {% endif %}
+                <span class="blog-read">{{ 'Read' if lang == 'en' else 'Читать' }} →</span>
+            </a>
+
             <a href="/blog/china-fdi-russia-2025" class="blog-card">
                 <span class="blog-tag">{{ 'Analytics' if lang == 'en' else 'Аналитика' }}</span>
                 {% if lang == 'en' %}

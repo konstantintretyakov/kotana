@@ -42,6 +42,11 @@ def blog_china_fdi_russia_2025():
     return render_template("blog/china-fdi-russia-2025.html")
 
 
+@app.route("/blog/foreign-companies-return-forecast-2026")
+def blog_foreign_companies_return_forecast_2026():
+    return render_template("blog/foreign-companies-return-forecast-2026.html")
+
+
 @app.route("/sitemap.xml")
 def sitemap():
     xml = f"""<?xml version="1.0" encoding="UTF-8"?>
@@ -83,6 +88,11 @@ def sitemap():
     </url>
     <url>
         <loc>{SITE_URL}/blog/china-fdi-russia-2025</loc>
+        <changefreq>yearly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>{SITE_URL}/blog/foreign-companies-return-forecast-2026</loc>
         <changefreq>yearly</changefreq>
         <priority>0.7</priority>
     </url>
