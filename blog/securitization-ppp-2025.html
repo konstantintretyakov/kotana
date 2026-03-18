@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Секьюритизация государственных обязательств в ГЧП | kotana.com.ru</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --ink: #0f1117;
+      --paper: #f7f4ef;
+      --cream: #ede9e0;
+      --accent: #1a4d7a;
+      --accent-light: #d0e4f5;
+      --gold: #b8922a;
+      --green: #1a7a3c;
+      --muted: #7a7060;
+      --rule: #d4cfc5;
+      --col: clamp(320px, 66ch, 720px);
+    }
+    html { font-size: 17px; scroll-behavior: smooth; }
+    body {
+      background: var(--paper);
+      color: var(--ink);
+      font-family: 'IBM Plex Sans', sans-serif;
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* MASTHEAD */
+    .masthead {
+      background: var(--ink);
+      padding: 14px 40px;
+      display: flex; align-items: center; justify-content: space-between;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase;
+    }
+    .masthead-logo { font-size: 1rem; font-weight: 500; color: #fff; }
+    .masthead-meta { color: #666; }
+
+    /* HERO */
+    .hero {
+      background: var(--accent);
+      color: var(--paper);
+      padding: 80px 40px 72px;
+      position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: 'SPV';
+      position: absolute; right: -10px; top: 50%;
+      transform: translateY(-50%);
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(130px, 20vw, 280px);
+      font-weight: 900; color: rgba(255,255,255,0.05);
+      line-height: 1; pointer-events: none;
+    }
+    .hero-inner { max-width: var(--col); margin: 0 auto; position: relative; }
+    .hero-tag {
+      display: inline-block;
+      border: 1px solid rgba(255,255,255,0.3);
+      color: rgba(255,255,255,0.75);
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.72rem; letter-spacing: 0.15em;
+      text-transform: uppercase; padding: 4px 12px; margin-bottom: 28px;
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.2rem, 5vw, 3.4rem);
+      font-weight: 700; line-height: 1.18;
+      letter-spacing: -0.02em; margin-bottom: 24px; max-width: 22ch;
+    }
+    .hero h1 em { font-style: italic; color: #9fc8f0; }
+    .hero-lead {
+      font-size: 1.08rem; color: rgba(255,255,255,0.72);
+      max-width: 54ch; line-height: 1.65; margin-bottom: 40px;
+    }
+    .hero-byline {
+      display: flex; align-items: center; gap: 16px;
+      font-size: 0.8rem; color: rgba(255,255,255,0.4);
+      font-family: 'IBM Plex Mono', monospace;
+    }
+    .hero-byline span { color: rgba(255,255,255,0.25); }
+    .hero-byline strong { color: rgba(255,255,255,0.65); font-weight: 500; }
+
+    /* STATS BAR */
+    .stats-bar { background: var(--ink); padding: 0 40px; }
+    .stats-inner {
+      max-width: calc(var(--col) + 200px);
+      margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr);
+    }
+    .stat-item {
+      padding: 24px 32px;
+      border-right: 1px solid rgba(255,255,255,0.07); color: #fff;
+    }
+    .stat-item:first-child { padding-left: 0; }
+    .stat-item:last-child { border-right: none; }
+    .stat-number {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem; font-weight: 700;
+      display: block; line-height: 1; color: #9fc8f0;
+    }
+    .stat-label {
+      font-size: 0.75rem; text-transform: uppercase;
+      letter-spacing: 0.1em; opacity: 0.45; margin-top: 4px;
+      font-family: 'IBM Plex Mono', monospace;
+    }
+
+    /* ARTICLE */
+    .article-wrap { padding: 72px 40px; }
+    .article-inner { max-width: var(--col); margin: 0 auto; }
+
+    .article-inner > p:first-of-type::first-letter {
+      font-family: 'Playfair Display', serif;
+      font-size: 4.5em; font-weight: 900;
+      float: left; line-height: 0.78;
+      margin-right: 8px; margin-top: 6px; color: var(--accent);
+    }
+
+    p { margin-bottom: 1.5rem; }
+
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.7rem; font-weight: 700;
+      letter-spacing: -0.02em; line-height: 1.25; margin: 3rem 0 1.1rem;
+    }
+    h2::before {
+      content: ''; display: block; width: 32px; height: 3px;
+      background: var(--accent); margin-bottom: 16px;
+    }
+
+    h3 {
+      font-family: 'IBM Plex Sans', sans-serif;
+      font-size: 1.05rem; font-weight: 600;
+      margin: 2rem 0 0.7rem;
+      text-transform: uppercase; letter-spacing: 0.06em; color: var(--gold);
+    }
+
+    blockquote {
+      border-left: 3px solid var(--accent);
+      margin: 2.5rem 0; padding: 20px 0 20px 32px;
+    }
+    blockquote p {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.35rem; font-style: italic;
+      line-height: 1.5; color: var(--ink); margin: 0 0 8px;
+    }
+    blockquote cite {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.72rem; text-transform: uppercase;
+      letter-spacing: 0.12em; color: var(--muted); font-style: normal;
+    }
+
+    .highlight { background: var(--accent-light); padding: 0 4px; font-weight: 500; }
+
+    /* SCHEME — визуализация структуры сделки */
+    .scheme {
+      border: 1px solid var(--rule);
+      background: var(--cream);
+      padding: 28px 32px; margin: 2.5rem 0;
+    }
+    .scheme-title {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.7rem; text-transform: uppercase;
+      letter-spacing: 0.15em; color: var(--muted); margin-bottom: 24px;
+    }
+    .scheme-flow {
+      display: flex; align-items: center;
+      gap: 0; flex-wrap: wrap; row-gap: 12px;
+    }
+    .scheme-node {
+      background: var(--accent); color: #fff;
+      padding: 10px 16px; font-size: 0.82rem;
+      font-weight: 500; line-height: 1.35;
+      flex-shrink: 0;
+    }
+    .scheme-node.secondary { background: var(--gold); }
+    .scheme-node.investor { background: var(--green); }
+    .scheme-arrow {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.7rem; color: var(--muted);
+      padding: 0 10px; text-align: center;
+      flex-shrink: 0; line-height: 1.3;
+    }
+    .scheme-label {
+      font-size: 0.72rem; color: var(--muted);
+      margin-top: 6px; text-align: center;
+    }
+
+    /* COMPARISON TABLE */
+    .compare-table {
+      width: 100%; border-collapse: collapse;
+      margin: 2.5rem 0; font-size: 0.85rem;
+    }
+    .compare-table th {
+      background: var(--accent); color: #fff;
+      padding: 12px 16px; text-align: left;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.72rem; text-transform: uppercase;
+      letter-spacing: 0.1em; font-weight: 500;
+    }
+    .compare-table td {
+      padding: 11px 16px;
+      border-bottom: 1px solid var(--rule);
+      vertical-align: top;
+    }
+    .compare-table tr:nth-child(even) td { background: var(--cream); }
+    .compare-table td:first-child { font-weight: 600; color: var(--ink); }
+    .compare-table td:not(:first-child) { color: var(--muted); }
+
+    /* DATA CARD */
+    .data-card {
+      background: var(--cream); border: 1px solid var(--rule);
+      padding: 28px 32px; margin: 2.5rem 0;
+    }
+    .data-card h4 {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.7rem; text-transform: uppercase;
+      letter-spacing: 0.15em; color: var(--muted); margin-bottom: 20px;
+    }
+    .data-rows { display: flex; flex-direction: column; gap: 12px; }
+    .data-row { display: flex; align-items: center; gap: 16px; }
+    .data-row-label { font-size: 0.85rem; color: var(--muted); width: 220px; flex-shrink: 0; }
+    .data-row-bar-wrap { flex: 1; height: 6px; background: var(--rule); position: relative; }
+    .data-row-bar { position: absolute; top: 0; left: 0; height: 100%; }
+    .data-row-bar.blue  { background: var(--accent); }
+    .data-row-bar.gold  { background: var(--gold); }
+    .data-row-bar.green { background: var(--green); }
+    .data-row-bar.muted { background: var(--muted); opacity: 0.35; }
+    .data-row-val {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.8rem; font-weight: 500;
+      width: 88px; text-align: right;
+    }
+
+    /* INVESTOR GRID */
+    .investor-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 1px; background: var(--rule);
+      border: 1px solid var(--rule); margin: 2.5rem 0;
+    }
+    .investor-card { background: var(--paper); padding: 22px 24px; }
+    .investor-icon { font-size: 1.4rem; margin-bottom: 10px; display: block; }
+    .investor-type {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.68rem; text-transform: uppercase;
+      letter-spacing: 0.12em; color: var(--muted); margin-bottom: 6px;
+    }
+    .investor-name { font-weight: 600; font-size: 0.92rem; margin-bottom: 6px; }
+    .investor-desc { font-size: 0.82rem; color: var(--muted); line-height: 1.55; }
+    .investor-volume {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700; color: var(--accent);
+      font-size: 1.1rem; margin-top: 8px;
+    }
+
+    /* ROADBLOCK */
+    .risk-list { margin: 2rem 0; }
+    .risk-item {
+      display: flex; gap: 20px;
+      padding: 16px 0; border-bottom: 1px solid var(--rule); align-items: flex-start;
+    }
+    .risk-item:first-child { border-top: 1px solid var(--rule); }
+    .risk-badge {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.62rem; text-transform: uppercase;
+      letter-spacing: 0.1em; padding: 4px 10px;
+      border-radius: 2px; flex-shrink: 0; margin-top: 2px;
+    }
+    .risk-badge.high { background: #fde8e0; color: #c8401a; }
+    .risk-badge.mid  { background: #f5ecd4; color: var(--gold); }
+    .risk-badge.low  { background: #d0ead8; color: var(--green); }
+    .risk-body {}
+    .risk-title { font-weight: 600; font-size: 0.9rem; margin-bottom: 3px; }
+    .risk-desc  { font-size: 0.82rem; color: var(--muted); line-height: 1.55; }
+
+    .divider { border: none; border-top: 1px solid var(--rule); margin: 3rem 0; }
+
+    .conclusion {
+      background: var(--ink); color: var(--paper);
+      padding: 36px 40px; margin: 3rem 0 0;
+    }
+    .conclusion h3 {
+      color: #9fc8f0; margin-top: 0;
+      letter-spacing: 0.06em; font-size: 1rem; text-transform: uppercase;
+    }
+    .conclusion p { color: #ccc; margin-bottom: 1rem; }
+    .conclusion p:last-child { margin-bottom: 0; }
+
+    footer {
+      background: var(--cream); border-top: 1px solid var(--rule);
+      padding: 28px 40px;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.72rem; color: var(--muted);
+      text-align: center; letter-spacing: 0.06em;
+    }
+    footer strong { color: var(--ink); }
+
+    @media (max-width: 640px) {
+      .masthead { padding: 12px 20px; }
+      .hero { padding: 56px 20px 52px; }
+      .stats-bar { padding: 0 20px; }
+      .stats-inner { grid-template-columns: 1fr; }
+      .stat-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.07); padding: 16px 0; }
+      .article-wrap { padding: 48px 20px; }
+      .investor-grid { grid-template-columns: 1fr; }
+      .scheme-flow { flex-direction: column; align-items: flex-start; }
+      .data-row-label { width: 130px; font-size: 0.78rem; }
+      .compare-table { font-size: 0.78rem; }
+      .compare-table th, .compare-table td { padding: 9px 10px; }
+    }
+  </style>
+</head>
+<body>
+
+<header class="masthead">
+  <span class="masthead-logo">kotana.com.ru</span>
+  <span class="masthead-meta">Финансы · Инфраструктура · Рынки</span>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-tag">Финансовые инструменты · 2025–2026</div>
+    <h1>Секьюритизация ГЧП-обязательств: <em>длинные деньги</em> для инфраструктуры</h1>
+    <p class="hero-lead">Банковское кредитование дорогое и короткое. Бюджет ограничен. Инфраструктурный дефицит — 110 трлн рублей. Единственный выход — привлечь в инфраструктуру «длинные» деньги фондового рынка. Секьюритизация государственных обязательств по ГЧП-проектам — механизм, который превращает эту задачу из теоретической в практическую.</p>
+    <div class="hero-byline">
+      <strong>Редакция kotana.com.ru</strong>
+      <span>·</span>
+      <span>2025</span>
+      <span>·</span>
+      <span>15 мин чтения</span>
+    </div>
+  </div>
+</section>
+
+<div class="stats-bar">
+  <div class="stats-inner">
+    <div class="stat-item">
+      <span class="stat-number">110 трлн ₽</span>
+      <span class="stat-label">Инфраструктурный дефицит России до 2040 г.</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number">20+</span>
+      <span class="stat-label">ГЧП-проектов в очереди на концессионные облигации</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number">38,4 млн</span>
+      <span class="stat-label">Частных инвесторов на Мосбирже — потенц. покупатели</span>
+    </div>
+  </div>
+</div>
+
+<main class="article-wrap">
+  <article class="article-inner">
+
+    <p>Инфраструктурные проекты требуют денег на 20–30 лет. Банки дают деньги на 7–10 лет и под плавающую ставку. Государственный бюджет покрывает меньше половины потребности. Этот структурный разрыв — суть проблемы финансирования инфраструктуры не только в России, но и в большинстве стран мира. Мировая практика выработала ответ: секьюритизация — превращение будущих денежных потоков от инфраструктурных проектов в рыночные ценные бумаги. В России этот механизм долго оставался на периферии, но 2025 год стал переломным.</p>
+
+    <h2>Что такое секьюритизация в контексте ГЧП</h2>
+
+    <p>В классическом понимании секьюритизация — это выпуск ценных бумаг, обеспеченных будущими денежными потоками от какого-либо актива. Применительно к ГЧП речь идёт о следующем: государство берёт на себя обязательства по «плате концедента» — регулярным платежам частному партнёру за создание и эксплуатацию инфраструктурного объекта. Эти обязательства, по своей природе надёжные и предсказуемые как государственный долг, могут быть «упакованы» в ценные бумаги и проданы широкому кругу инвесторов.</p>
+
+    <p>Результат: концессионер получает рефинансирование построенного объекта через облигационный рынок, высвобождая банковский капитал для финансирования следующего проекта. Государство снижает нагрузку на бюджет в краткосрочной перспективе. Инвесторы получают квазисуверенный инструмент с доходностью выше ОФЗ. Все стороны выигрывают — при правильной архитектуре сделки.</p>
+
+    <div class="scheme">
+      <div class="scheme-title">Двухэтапная модель финансирования ГЧП-проекта через секьюритизацию</div>
+      <div class="scheme-flow">
+        <div>
+          <div class="scheme-node">Концедент<br>(государство)</div>
+          <div class="scheme-label">Плата концедента</div>
+        </div>
+        <div class="scheme-arrow">→<br>обяза-<br>тельства</div>
+        <div>
+          <div class="scheme-node secondary">SPV<br>(концессионер)</div>
+          <div class="scheme-label">Строит и эксплуатирует</div>
+        </div>
+        <div class="scheme-arrow">→<br>выпуск<br>облигаций</div>
+        <div>
+          <div class="scheme-node">Облигации<br>на рынок</div>
+          <div class="scheme-label">После завершения стройки</div>
+        </div>
+        <div class="scheme-arrow">→<br>покупка</div>
+        <div>
+          <div class="scheme-node investor">НПФ, страховщики,<br>физлица</div>
+          <div class="scheme-label">«Длинные» деньги</div>
+        </div>
+      </div>
+    </div>
+
+    <p>Ключевой момент в этой схеме — <span class="highlight">двухэтапность</span>. На первом этапе (строительство) финансирование обеспечивают банки: короткий кредит под высокую ставку, но с возможностью рефинансирования. На втором этапе (эксплуатация), когда объект построен и денежный поток стал предсказуемым, банковский кредит замещается облигациями. Инвесторы с фондового рынка заходят в уже работающий актив с минимальным строительным риском.</p>
+
+    <hr class="divider" />
+
+    <h2>Типология инструментов: от концессионных облигаций до полной секьюритизации</h2>
+
+    <p>Российский рынок выработал несколько форм «упаковки» ГЧП-обязательств в рыночные инструменты. Они различаются по степени сложности, уровню защиты инвесторов и стадии зрелости.</p>
+
+    <table class="compare-table">
+      <thead>
+        <tr>
+          <th>Инструмент</th>
+          <th>Эмитент</th>
+          <th>Обеспечение</th>
+          <th>Инвесторы</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Концессионные облигации (прямые)</td>
+          <td>SPV-концессионер</td>
+          <td>Плата концедента + права по КС</td>
+          <td>Банки, НПФ, физлица</td>
+        </tr>
+        <tr>
+          <td>Инфраструктурные облигации</td>
+          <td>SPV или агрегатор</td>
+          <td>Пул проектов + гос. гарантии</td>
+          <td>НПФ, страховщики</td>
+        </tr>
+        <tr>
+          <td>Секьюритизация пула концессий</td>
+          <td>Агрегатор (ВЭБ/Автодор)</td>
+          <td>Диверсифицированный пул активов</td>
+          <td>Институциональные инвесторы</td>
+        </tr>
+        <tr>
+          <td>ГЧП-облигации (224-ФЗ)</td>
+          <td>Частный партнёр</td>
+          <td>Права по СГЧП, объект в собственности</td>
+          <td>Банки, квал. инвесторы</td>
+        </tr>
+        <tr>
+          <td>Адаптационные / зелёные облигации</td>
+          <td>Концессионер</td>
+          <td>ESG-проект + гос. обязательства</td>
+          <td>Институциональные, ESG-фонды</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>Прямые концессионные облигации: «золотой стандарт» рынка</h3>
+    <p>Наиболее отработанный инструмент. Эмитент — специальная проектная компания (SPV), с которой заключено концессионное соглашение. Платежи держателям облигаций осуществляются из доходов проекта (плата за проезд, плата концедента). Ключевая защита инвестора: в случае расторжения концессионного соглашения государство обязано погасить основной долг и начисленные проценты. Концессионные облигации включаются в первый и второй уровни котировального списка Московской биржи, ряд выпусков попадает в ломбардный список ЦБ.</p>
+
+    <p>Практика уже есть: облигации концессионера участка М-11 «Москва – Санкт-Петербург» показали, что доля облигаций может превышать 40% общего внебюджетного финансирования проекта при эффективном сочетании с банковским кредитом. Государственная компания «Автодор» рассматривает секьюритизацию как следующий логичный шаг: большинство её проектов выходят на эксплуатационную стадию, что обеспечит стабильный денежный поток для нескольких волн рефинансирования.</p>
+
+    <h3>Секьюритизация пула: следующий уровень</h3>
+    <p>Более сложная конструкция предполагает объединение денежных потоков от нескольких ГЧП-проектов в единый пул, под который выпускаются облигации. Преимущества диверсификации очевидны: риски отдельного проекта распределяются по всему портфелю. Агрегатором и организатором такой сделки в России логично выступает ВЭБ.РФ — именно для этого его наделили функцией обязательного участника всех крупных ГЧП-проектов.</p>
+
+    <blockquote>
+      <p>«Секьюритизация обязательств, связанных с ГЧП и концессиями, позволит привлечь длинные деньги в проекты. Они предоставят инвесторам возможность взять на себя достаточно качественный государственный риск, а банкам — участвовать в более рискованных, но коротких частях.»</p>
+      <cite>— Николай Цехомский, первый зампред ВЭБ.РФ, конгресс «Развивай.РФ», декабрь 2025</cite>
+    </blockquote>
+
+    <hr class="divider" />
+
+    <h2>Кто покупает: портрет инвестора в ГЧП-секьюритизацию</h2>
+
+    <p>Главный вопрос любого нового инструмента — наличие спроса. В случае концессионных облигаций и секьюритизации ГЧП-обязательств спрос структурно обоснован: существуют категории инвесторов, которым этот инструмент нужен не меньше, чем рынку нужны они.</p>
+
+    <div class="investor-grid">
+      <div class="investor-card">
+        <span class="investor-icon">🏦</span>
+        <div class="investor-type">Институциональный</div>
+        <div class="investor-name">Негосударственные пенсионные фонды (НПФ)</div>
+        <div class="investor-desc">НПФ управляют долгосрочными обязательствами перед вкладчиками и нуждаются в надёжных долгосрочных инструментах. Квазисуверенный профиль риска ГЧП-облигаций идеально подходит. По Программе долгосрочных сбережений привлечено уже 717 млрд рублей по состоянию на январь 2026 г.</div>
+        <div class="investor-volume">717 млрд ₽ в ПДС</div>
+      </div>
+      <div class="investor-card">
+        <span class="investor-icon">🛡️</span>
+        <div class="investor-type">Институциональный</div>
+        <div class="investor-name">Страховые и управляющие компании</div>
+        <div class="investor-desc">Страховщики жизни формируют долгосрочные резервы и ищут активы с предсказуемой длительной доходностью. ГЧП-облигации обеспечивают именно это — фиксированный или привязанный к инфляции купон на 15–30 лет.</div>
+        <div class="investor-volume">Резервы на десятки трлн ₽</div>
+      </div>
+      <div class="investor-card">
+        <span class="investor-icon">🏛️</span>
+        <div class="investor-type">Квазисуверенный</div>
+        <div class="investor-name">ВЭБ.РФ и институты развития</div>
+        <div class="investor-desc">ВЭБ является не только организатором, но и потенциальным покупателем: через секьюритизацию своих ГЧП-кредитов корпорация высвобождает баланс для финансирования новых проектов. Стратегия группы предусматривает поддержку проектов объёмом свыше 30 трлн руб. до 2030 года.</div>
+        <div class="investor-volume">30 трлн ₽ до 2030 г.</div>
+      </div>
+      <div class="investor-card">
+        <span class="investor-icon">👤</span>
+        <div class="investor-type">Розничный</div>
+        <div class="investor-name">Частные инвесторы (физические лица)</div>
+        <div class="investor-desc">На Мосбирже зарегистрировано 38,4 млн частных инвесторов. За 8 месяцев 2025 года они вложили 1,52 трлн рублей — рекорд за аналогичные периоды. Этот ресурс ищет новые надёжные инструменты с доходностью выше ОФЗ и государственным обеспечением.</div>
+        <div class="investor-volume">1,52 трлн ₽ за 8 мес. 2025</div>
+      </div>
+    </div>
+
+    <p>Первый заместитель председателя правления Сбербанка Александр Ведяхин выразил позицию банковского сообщества чётко: «Пенсионные деньги — это правильный шаг для развития ГЧП. У Сбера пенсионных денег почти триллион рублей. Это огромный ресурс с определённым риск-профилем, а квазисуверенный профиль риска ГЧП-проектов позволяет вкладывать в них пенсионные деньги».</p>
+
+    <hr class="divider" />
+
+    <h2>Что делает ГЧП-облигации защищёнными: многоуровневая архитектура</h2>
+
+    <p>Надёжность концессионных облигаций обеспечивается несколькими взаимодополняющими механизмами защиты — именно это позволяет им претендовать на включение в ломбардный список ЦБ и портфели консервативных инвесторов.</p>
+
+    <div class="data-card">
+      <h4>Уровни защиты инвестора в ГЧП-секьюритизации</h4>
+      <div class="data-rows">
+        <div class="data-row">
+          <span class="data-row-label">Государственное обеспечение</span>
+          <div class="data-row-bar-wrap"><div class="data-row-bar blue" style="width:95%"></div></div>
+          <span class="data-row-val">Максимальный</span>
+        </div>
+        <div class="data-row">
+          <span class="data-row-label">Объект в госсобственности</span>
+          <div class="data-row-bar-wrap"><div class="data-row-bar blue" style="width:90%"></div></div>
+          <span class="data-row-val">Высокий</span>
+        </div>
+        <div class="data-row">
+          <span class="data-row-label">Гарантия погашения при расторжении КС</span>
+          <div class="data-row-bar-wrap"><div class="data-row-bar blue" style="width:88%"></div></div>
+          <span class="data-row-val">Высокий</span>
+        </div>
+        <div class="data-row">
+          <span class="data-row-label">Приоритет над акционерами при погашении</span>
+          <div class="data-row-bar-wrap"><div class="data-row-bar gold" style="width:80%"></div></div>
+          <span class="data-row-val">Высокий</span>
+        </div>
+        <div class="data-row">
+          <span class="data-row-label">Обязат. экспертиза ВЭБ (от 3 млрд ₽)</span>
+          <div class="data-row-bar-wrap"><div class="data-row-bar gold" style="width:75%"></div></div>
+          <span class="data-row-val">Средний</span>
+        </div>
+        <div class="data-row">
+          <span class="data-row-label">Диверсификация пула (секьюритизация)</span>
+          <div class="data-row-bar-wrap"><div class="data-row-bar green" style="width:70%"></div></div>
+          <span class="data-row-val">Средний</span>
+        </div>
+      </div>
+    </div>
+
+    <p>Среди дополнительных защитных механизмов — так называемые «концессионные события»: держатель облигаций имеет право на досрочное погашение при расторжении или существенном изменении условий концессионного соглашения. Это критически важно: даже если проект столкнётся с трудностями, инвесторы защищены от потери номинала.</p>
+
+    <hr class="divider" />
+
+    <h2>Параметры инструмента: доходность, срок, купон</h2>
+
+    <p>Концессионные облигации, обращающиеся на российском рынке, имеют специфические параметры, отличающие их от корпоративных бумаг.</p>
+
+    <p><strong>Срок:</strong> как правило, длительность размещения выпуска концессионных облигаций составляет примерно половину срока концессионного соглашения — обычно 15–25 лет. Это принципиально отличает их от большинства корпоративных облигаций с горизонтом 3–5 лет.</p>
+
+    <p><strong>Купон:</strong> исторически ставка первого купона устанавливается с премией к рынку и варьировалась в диапазоне 4–11% годовых. Далее купон привязывается к инфляции, темпу роста ВВП или ключевой ставке ЦБ. Реальный доход инвестора исторически составлял 2–4% годовых. В текущих условиях снижения ставки концессионные облигации с привязкой к инфляции обеспечивают особенно привлекательное соотношение риска и доходности.</p>
+
+    <p><strong>Доходность vs ОФЗ:</strong> доходность концессионных облигаций превышает доходность ОФЗ минимум на 1–2 п.п. Для консервативных институциональных инвесторов это существенная премия при сопоставимом кредитном риске.</p>
+
+    <hr class="divider" />
+
+    <h2>Где мы сейчас: состояние рынка в 2025–2026 годах</h2>
+
+    <p>После многолетнего периода существования в виде концепции и единичных прецедентов рынок секьюритизации ГЧП-обязательств в России получил мощный институциональный импульс. На конгрессе «Развивай.РФ» в декабре 2025 года ВЭБ.РФ и Министерство экономического развития обозначили концессионные облигации как системный приоритет — не отдельный продукт, а основу новой модели финансирования инфраструктуры.</p>
+
+    <p>К февралю 2026 года интерес к выпуску подтвердили <span class="highlight">более 20 проектов</span> с объёмом инвестиций от 5 до 100 млрд рублей каждый. Рабочая группа по концессионным облигациям действует на базе Наццентра РАЗВИВАЙ.РФ. ВЭБ.РФ и Сбербанк в сентябре 2025 года подписали соглашение о сотрудничестве по созданию новой модели финансирования ГЧП. Сбер готов предложить для рефинансирования портфель совместных с ВЭБом проектов социальной инфраструктуры.</p>
+
+    <blockquote>
+      <p>«Это двухэтапная модель финансирования для того, чтобы привлекать новые инвестиции в проекты. Под новыми инвестициями мы имеем в виду деньги фондового рынка. Новые средства фондового рынка помогут эти национальные задачи решать.»</p>
+      <cite>— Мария Скрябина, главный методолог Нац. центра ГЧП, конгресс «Развивай.РФ», декабрь 2025</cite>
+    </blockquote>
+
+    <hr class="divider" />
+
+    <h2>Барьеры: что мешает рынку вырасти быстрее</h2>
+
+    <div class="risk-list">
+      <div class="risk-item">
+        <span class="risk-badge high">Высокий</span>
+        <div class="risk-body">
+          <div class="risk-title">Регуляторная незавершённость</div>
+          <div class="risk-desc">Концессионные облигации существуют как понятие в законодательстве, однако их статус как отдельного класса активов ещё не закреплён. Для включения в портфели НПФ и страховщиков требуется специальное регулирование ЦБ и Минфина. Национальный стандарт ГЧП, завершение которого ожидалось к марту 2026 года, создаст эту базу.</div>
+        </div>
+      </div>
+      <div class="risk-item">
+        <span class="risk-badge high">Высокий</span>
+        <div class="risk-body">
+          <div class="risk-title">Узкий пул зрелых проектов</div>
+          <div class="risk-desc">Секьюритизация работает на эксплуатационной стадии — когда денежный поток стабилен и предсказуем. Большинство российских ГЧП-проектов запущены в 2020–2024 годах и ещё находятся в стадии строительства. Зрелый рынок концессионных облигаций формируется по мере выхода этих проектов на эксплуатацию: примерно с 2026–2028 годов.</div>
+        </div>
+      </div>
+      <div class="risk-item">
+        <span class="risk-badge mid">Средний</span>
+        <div class="risk-body">
+          <div class="risk-title">Дефицит доверия после провальных проектов</div>
+          <div class="risk-desc">Ряд ГЧП-проектов, структурированных в 2020–2022 годах, столкнулся с нежизнеспособными финансовыми моделями. Это сформировало у части институциональных инвесторов скептицизм в отношении инструмента. Обязательная экспертиза ВЭБ и нацстандарт направлены на восстановление доверия, но репутация строится медленно.</div>
+        </div>
+      </div>
+      <div class="risk-item">
+        <span class="risk-badge mid">Средний</span>
+        <div class="risk-body">
+          <div class="risk-title">Ограничения для ПИФов</div>
+          <div class="risk-desc">Специфика вложений паевых инвестиционных фондов в концессионные облигации пока не проработана на регуляторном уровне. Это закрывает для рынка потенциально крупный пул ритейл-инвесторов, действующих через ПИФы.</div>
+        </div>
+      </div>
+      <div class="risk-item">
+        <span class="risk-badge low">Решаемый</span>
+        <div class="risk-body">
+          <div class="risk-title">Включение в ломбардный список ЦБ</div>
+          <div class="risk-desc">Часть выпусков уже попадает в ломбардный список Банка России — это критически важно для ликвидности инструмента. Расширение практики включения позволит банкам использовать концессионные облигации как залог, что существенно повысит их привлекательность.</div>
+        </div>
+      </div>
+    </div>
+
+    <hr class="divider" />
+
+    <h2>Международный опыт: что работает там</h2>
+
+    <p>Секьюритизация инфраструктурных денежных потоков — глобальная практика. Британские PFI/PF2, австралийские Infrastructure Bonds, американские Municipal Revenue Bonds — всё это версии одного принципа: превращение надёжных государственных обязательств в ликвидные рыночные инструменты.</p>
+
+    <p>Ключевой урок мирового опыта: рынок начинает работать эффективно, когда выполнены три условия. Первое — стандартизация документации: инвесторы должны понимать, что покупают, без изучения сотен страниц специфической проектной документации. Второе — активная роль государственного агрегатора (аналог ВЭБ.РФ), который выступает организатором, гарантом и первым покупателем. Третье — регуляторный статус инструмента, позволяющий НПФ и страховщикам включать его в обязательные портфели.</p>
+
+    <p>Россия методично создаёт все три условия: нацстандарт — первое, ВЭБ как агрегатор — второе, работа с ЦБ и Минфином по статусу нового класса активов — третье.</p>
+
+    <div class="conclusion">
+      <h3>ИТОГ: рынок на пороге качественного скачка</h3>
+      <p>Секьюритизация государственных обязательств в ГЧП — это не финансовая экзотика и не теоретическая конструкция. Это практический ответ на вполне конкретную задачу: 110 трлн рублей инфраструктурного дефицита при ограниченном бюджете и дорогом банковском кредите. Других источников таких денег в нужном масштабе просто нет.</p>
+      <p>2025–2026 годы — переломный период. Институциональная архитектура наконец создана: ВЭБ как «единое окно», нацстандарт как правила игры, концессионные облигации как инструмент. Более 20 проектов уже стоят в очереди. Сбербанк с почти триллионом пенсионных денег открыто называет это «правильным шагом». 38 миллионов частных инвесторов на Мосбирже ищут надёжные долгосрочные инструменты.</p>
+      <p>Когда рынок концессионных облигаций заработает в полную силу — а это вопрос нескольких лет, не десятилетий — он не просто изменит структуру финансирования ГЧП. Он создаст новый класс активов в российской финансовой системе: предсказуемые, защищённые государством, долгосрочные бумаги, которых рынку не хватало со времён советских облигаций государственного займа. Только на этот раз — с рыночной доходностью и частным управлением.</p>
+    </div>
+
+  </article>
+</main>
+
+<footer>
+  <strong>kotana.com.ru</strong> &nbsp;·&nbsp; Секьюритизация ГЧП · 2025 &nbsp;·&nbsp; Источники: ВЭБ.РФ, Мосбиржа, ТАСС, Эксперт, ЦБ РФ, Автодор, КиберЛенинка
+</footer>
+
+</body>
+</html>

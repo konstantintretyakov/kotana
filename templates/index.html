@@ -326,6 +326,18 @@
         <h2 class="section-heading">Аналитика</h2>
         {% endif %}
         <div class="blog-grid">
+            <a href="/blog/ppp-market-russia-2025-full" class="blog-card">
+                <span class="blog-tag">{{ 'Infrastructure' if lang == 'en' else 'Инфраструктура' }}</span>
+                {% if lang == 'en' %}
+                <h3>PPP Market in 2025: Maturity Under Expensive Money</h3>
+                <p>Twenty years of concession law, a 7.5 trillion ruble portfolio, and a 21% key rate. The Russian public-private partnership market answered the challenge of expensive money by rebuilding its financial architecture — with concession bonds, a new national standard, and VEB as mandatory gatekeeper.</p>
+                {% else %}
+                <h3>Рынок ГЧП в 2025 году: зрелость механизма в условиях дорогих денег</h3>
+                <p>Двадцать лет закону о концессиях, портфель в 7,5 трлн рублей и ключевая ставка 21%. Российский рынок ГЧП ответил на вызов дорогих денег перестройкой финансовой архитектуры — концессионными облигациями, национальным стандартом и ВЭБом в роли обязательного участника.</p>
+                {% endif %}
+                <span class="blog-read">{{ 'Read' if lang == 'en' else 'Читать' }} →</span>
+            </a>
+
             <a href="/blog/ppp-market-russia-2026-forecast" class="blog-card">
                 <span class="blog-tag">{{ 'Forecast' if lang == 'en' else 'Прогноз' }}</span>
                 {% if lang == 'en' %}

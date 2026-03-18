@@ -52,6 +52,11 @@ def blog_ppp_market_russia_2025():
     return render_template("blog/ppp-market-russia-2025.html")
 
 
+@app.route("/blog/ppp-market-russia-2025-full")
+def blog_ppp_market_russia_2025_full():
+    return render_template("blog/ppp-market-russia-2025-full.html")
+
+
 @app.route("/blog/ppp-market-russia-2026-forecast")
 def blog_ppp_market_russia_2026_forecast():
     return render_template("blog/ppp-market-russia-2026-forecast.html")
@@ -108,6 +113,11 @@ def sitemap():
     </url>
     <url>
         <loc>{SITE_URL}/blog/ppp-market-russia-2025</loc>
+        <changefreq>yearly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>{SITE_URL}/blog/ppp-market-russia-2025-full</loc>
         <changefreq>yearly</changefreq>
         <priority>0.7</priority>
     </url>
