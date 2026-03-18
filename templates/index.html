@@ -326,6 +326,18 @@
         <h2 class="section-heading">Аналитика</h2>
         {% endif %}
         <div class="blog-grid">
+            <a href="/blog/commercial-real-estate-forecast-2026" class="blog-card">
+                <span class="blog-tag">{{ 'Forecast' if lang == 'en' else 'Прогноз' }}</span>
+                {% if lang == 'en' %}
+                <h3>Commercial Real Estate in 2026: Adaptation Before Recovery</h3>
+                <p>Analysts call 2026 the toughest year for Russian commercial real estate since 2022 — and the one that lays the ground for 2027's rebound. The key rate is falling, data centres and hotels emerge as new favourites, and investors shift from waiting to selective buying.</p>
+                {% else %}
+                <h3>Коммерческая недвижимость — 2026: адаптация перед оживлением</h3>
+                <p>Аналитики называют 2026-й «самым тяжёлым с 2022-го» — и одновременно годом, готовящим почву для оживления 2027-го. Ставка снижается, ЦОД и гостиницы становятся новыми фаворитами, инвесторы переходят от ожидания к избирательным покупкам.</p>
+                {% endif %}
+                <span class="blog-read">{{ 'Read' if lang == 'en' else 'Читать' }} →</span>
+            </a>
+
             <a href="/blog/commercial-real-estate-2025" class="blog-card">
                 <span class="blog-tag">{{ 'Analytics' if lang == 'en' else 'Аналитика' }}</span>
                 {% if lang == 'en' %}

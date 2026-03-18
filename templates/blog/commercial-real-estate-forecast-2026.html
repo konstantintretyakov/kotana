@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Прогноз рынка коммерческой недвижимости России на 2026 год | kotana.com.ru</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --ink:    #0f1117;
+      --paper:  #f7f4ef;
+      --cream:  #ede9e0;
+      --accent: #8b3a1c;
+      --accent-light: #f5dfd6;
+      --gold:   #b8922a;
+      --green:  #1a7a3c;
+      --red:    #c0392b;
+      --muted:  #7a7060;
+      --rule:   #d4cfc5;
+      --col:    clamp(320px, 66ch, 720px);
+    }
+    html { font-size: 17px; scroll-behavior: smooth; }
+    body {
+      background: var(--paper); color: var(--ink);
+      font-family: 'IBM Plex Sans', sans-serif;
+      line-height: 1.75; -webkit-font-smoothing: antialiased;
+    }
+
+    .masthead {
+      background: var(--ink); padding: 14px 40px;
+      display: flex; align-items: center; justify-content: space-between;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: .75rem; letter-spacing: .12em; text-transform: uppercase;
+    }
+    .masthead-logo { font-size: 1rem; font-weight: 500; color: #fff; }
+    .masthead-meta { color: #666; }
+
+    .hero {
+      background: var(--accent); color: var(--paper);
+      padding: 80px 40px 72px; position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: '2026';
+      position: absolute; right: -10px; top: 50%; transform: translateY(-50%);
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(110px, 17vw, 240px); font-weight: 900;
+      color: rgba(255,255,255,.055); line-height: 1; pointer-events: none; letter-spacing: -.04em;
+    }
+    .hero-inner { max-width: var(--col); margin: 0 auto; position: relative; }
+    .hero-tag {
+      display: inline-block;
+      border: 1px solid rgba(255,255,255,.3); color: rgba(255,255,255,.75);
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: .72rem; letter-spacing: .15em; text-transform: uppercase;
+      padding: 4px 12px; margin-bottom: 28px;
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.2rem, 5vw, 3.4rem); font-weight: 700;
+      line-height: 1.18; letter-spacing: -.02em; margin-bottom: 24px; max-width: 22ch;
+    }
+    .hero h1 em { font-style: italic; color: #f4c89a; }
+    .hero-lead {
+      font-size: 1.08rem; color: rgba(255,255,255,.72);
+      max-width: 54ch; line-height: 1.65; margin-bottom: 40px;
+    }
+    .hero-byline {
+      display: flex; align-items: center; gap: 16px;
+      font-size: .8rem; color: rgba(255,255,255,.4);
+      font-family: 'IBM Plex Mono', monospace;
+    }
+    .hero-byline span { color: rgba(255,255,255,.25); }
+    .hero-byline strong { color: rgba(255,255,255,.65); font-weight: 500; }
+
+    .stats-bar { background: var(--ink); padding: 0 40px; }
+    .stats-inner {
+      max-width: calc(var(--col) + 200px); margin: 0 auto;
+      display: grid; grid-template-columns: repeat(3,1fr);
+    }
+    .stat-item {
+      padding: 24px 32px; border-right: 1px solid rgba(255,255,255,.07); color: #fff;
+    }
+    .stat-item:first-child { padding-left: 0; }
+    .stat-item:last-child  { border-right: none; }
+    .stat-number {
+      font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 700;
+      display: block; line-height: 1; color: #f4c89a;
+    }
+    .stat-label {
+      font-size: .75rem; text-transform: uppercase;
+      letter-spacing: .1em; opacity: .45; margin-top: 4px;
+      font-family: 'IBM Plex Mono', monospace;
+    }
+
+    .article-wrap { padding: 72px 40px; }
+    .article-inner { max-width: var(--col); margin: 0 auto; }
+
+    .article-inner > p:first-of-type::first-letter {
+      font-family: 'Playfair Display', serif; font-size: 4.5em; font-weight: 900;
+      float: left; line-height: .78; margin-right: 8px; margin-top: 6px; color: var(--accent);
+    }
+    p { margin-bottom: 1.5rem; }
+
+    h2 {
+      font-family: 'Playfair Display', serif; font-size: 1.7rem; font-weight: 700;
+      letter-spacing: -.02em; line-height: 1.25; margin: 3rem 0 1.1rem;
+    }
+    h2::before { content: ''; display: block; width: 32px; height: 3px; background: var(--accent); margin-bottom: 16px; }
+
+    h3 {
+      font-family: 'IBM Plex Sans', sans-serif; font-size: 1.05rem; font-weight: 600;
+      margin: 2rem 0 .7rem; text-transform: uppercase; letter-spacing: .06em; color: var(--gold);
+    }
+
+    blockquote {
+      border-left: 3px solid var(--accent); margin: 2.5rem 0; padding: 20px 0 20px 32px;
+    }
+    blockquote p {
+      font-family: 'Playfair Display', serif; font-size: 1.35rem; font-style: italic;
+      line-height: 1.5; color: var(--ink); margin: 0 0 8px;
+    }
+    blockquote cite {
+      font-family: 'IBM Plex Mono', monospace; font-size: .72rem;
+      text-transform: uppercase; letter-spacing: .12em; color: var(--muted); font-style: normal;
+    }
+
+    .highlight { background: var(--accent-light); padding: 0 4px; font-weight: 500; }
+
+    /* ── 3 SCENARIO GRID ── */
+    .scenario-grid {
+      display: grid; grid-template-columns: repeat(3,1fr);
+      gap: 1px; background: var(--rule); border: 1px solid var(--rule); margin: 2.5rem 0;
+    }
+    .sc-card { background: var(--paper); padding: 24px 20px; }
+    .sc-label {
+      font-family: 'IBM Plex Mono', monospace; font-size: .65rem;
+      text-transform: uppercase; letter-spacing: .15em; color: var(--muted); margin-bottom: 10px;
+    }
+    .sc-value { font-family: 'Playfair Display', serif; font-size: 1.7rem; font-weight: 700; line-height: 1; margin-bottom: 6px; }
+    .sc-value.base { color: var(--gold); }
+    .sc-value.bull { color: var(--green); }
+    .sc-value.bear { color: var(--red); }
+    .sc-title { font-size: .88rem; font-weight: 600; margin-bottom: 4px; }
+    .sc-desc { font-size: .8rem; color: var(--muted); line-height: 1.5; margin-top: 8px; }
+
+    /* ── SEGMENT FORECAST TABLE ── */
+    .seg-table {
+      width: 100%; border-collapse: collapse; margin: 2.5rem 0; font-size: .85rem;
+    }
+    .seg-table th {
+      background: var(--accent); color: #fff; padding: 11px 14px; text-align: left;
+      font-family: 'IBM Plex Mono', monospace; font-size: .7rem;
+      text-transform: uppercase; letter-spacing: .1em; font-weight: 500;
+    }
+    .seg-table td { padding: 11px 14px; border-bottom: 1px solid var(--rule); vertical-align: top; }
+    .seg-table tr:nth-child(even) td { background: var(--cream); }
+    .seg-table td:first-child { font-weight: 600; }
+    .badge {
+      display: inline-block; font-family: 'IBM Plex Mono', monospace;
+      font-size: .62rem; text-transform: uppercase; letter-spacing: .1em;
+      padding: 3px 8px; border-radius: 2px;
+    }
+    .badge.up   { background: #d0ead8; color: var(--green); }
+    .badge.down { background: #fde8e0; color: var(--red); }
+    .badge.flat { background: #f5ecd4; color: var(--gold); }
+
+    /* ── DATA CARD ── */
+    .data-card {
+      background: var(--cream); border: 1px solid var(--rule);
+      padding: 28px 32px; margin: 2.5rem 0;
+    }
+    .data-card h4 {
+      font-family: 'IBM Plex Mono', monospace; font-size: .7rem;
+      text-transform: uppercase; letter-spacing: .15em; color: var(--muted); margin-bottom: 20px;
+    }
+    .data-rows { display: flex; flex-direction: column; gap: 12px; }
+    .data-row { display: flex; align-items: center; gap: 16px; }
+    .data-row-label { font-size: .85rem; color: var(--muted); width: 220px; flex-shrink: 0; }
+    .data-row-bar-wrap { flex: 1; height: 6px; background: var(--rule); position: relative; }
+    .data-row-bar { position: absolute; top: 0; left: 0; height: 100%; }
+    .data-row-bar.terra { background: var(--accent); }
+    .data-row-bar.gold  { background: var(--gold); }
+    .data-row-bar.green { background: var(--green); }
+    .data-row-bar.muted { background: var(--muted); opacity: .35; }
+    .data-row-val {
+      font-family: 'IBM Plex Mono', monospace; font-size: .8rem;
+      font-weight: 500; width: 96px; text-align: right;
+    }
+
+    /* ── TREND LIST ── */
+    .trend-list { margin: 2rem 0; }
+    .trend-item {
+      display: flex; gap: 20px; padding: 18px 0;
+      border-bottom: 1px solid var(--rule); align-items: flex-start;
+    }
+    .trend-item:first-child { border-top: 1px solid var(--rule); }
+    .trend-num {
+      font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 700;
+      color: var(--accent); line-height: 1.1; width: 28px; flex-shrink: 0; text-align: right;
+    }
+    .trend-title { font-weight: 600; font-size: .92rem; margin-bottom: 4px; }
+    .trend-desc  { font-size: .83rem; color: var(--muted); line-height: 1.55; }
+
+    /* ── CAP RATE STRIP ── */
+    .cap-strip {
+      background: var(--accent); color: #fff; padding: 28px 32px;
+      margin: 2.5rem 0; display: grid; grid-template-columns: repeat(4,1fr); gap: 20px;
+    }
+    .cap-label {
+      font-family: 'IBM Plex Mono', monospace; font-size: .65rem;
+      text-transform: uppercase; letter-spacing: .12em; opacity: .65; margin-bottom: 6px;
+    }
+    .cap-value { font-family: 'Playfair Display', serif; font-size: 1.8rem; font-weight: 700; line-height: 1; }
+    .cap-note { font-size: .75rem; opacity: .65; margin-top: 4px; }
+
+    .divider { border: none; border-top: 1px solid var(--rule); margin: 3rem 0; }
+
+    .conclusion {
+      background: var(--ink); color: var(--paper); padding: 36px 40px; margin: 3rem 0 0;
+    }
+    .conclusion h3 { color: #f4c89a; margin-top: 0; letter-spacing: .06em; font-size: 1rem; text-transform: uppercase; }
+    .conclusion p { color: #ccc; margin-bottom: 1rem; }
+    .conclusion p:last-child { margin-bottom: 0; }
+
+    footer {
+      background: var(--cream); border-top: 1px solid var(--rule);
+      padding: 28px 40px; font-family: 'IBM Plex Mono', monospace;
+      font-size: .72rem; color: var(--muted); text-align: center; letter-spacing: .06em;
+    }
+    footer strong { color: var(--ink); }
+
+    @media (max-width: 640px) {
+      .masthead { padding: 12px 20px; }
+      .hero { padding: 56px 20px 52px; }
+      .stats-bar { padding: 0 20px; }
+      .stats-inner, .scenario-grid, .cap-strip { grid-template-columns: 1fr; }
+      .stat-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,.07); padding: 16px 0; }
+      .article-wrap { padding: 48px 20px; }
+      .seg-table { font-size: .76rem; }
+      .seg-table th, .seg-table td { padding: 9px 10px; }
+      .data-row-label { width: 130px; font-size: .78rem; }
+    }
+  </style>
+</head>
+<body>
+
+<header class="masthead">
+  <span class="masthead-logo">kotana.com.ru</span>
+  <span class="masthead-meta">Прогноз · Недвижимость · 2026</span>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-tag">Прогноз · 2026</div>
+    <h1>Коммерческая недвижимость — 2026: <em>адаптация</em> перед оживлением</h1>
+    <p class="hero-lead">2026 год аналитики называют «самым тяжёлым с 2022-го» для рынка коммерческой недвижимости — и одновременно годом, который готовит почву для оживления 2027-го. Ставка снижается, инвесторы переориентируются, ЦОД и гостиницы становятся новыми фаворитами. Разбираем прогнозы по каждому сегменту.</p>
+    <div class="hero-byline">
+      <strong>Редакция kotana.com.ru</strong>
+      <span>·</span>
+      <span>Март 2026</span>
+      <span>·</span>
+      <span>13 мин чтения</span>
+    </div>
+  </div>
+</section>
+
+<div class="stats-bar">
+  <div class="stats-inner">
+    <div class="stat-item">
+      <span class="stat-number">800–900 млрд</span>
+      <span class="stat-label">Прогноз инвестиций CORE.XP (–10–20% г/г)</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number">70%</span>
+      <span class="stat-label">Доля инвестиционных сделок — рекорд</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number">12–13%</span>
+      <span class="stat-label">Ожидаемая ключевая ставка к концу года</span>
+    </div>
+  </div>
+</div>
+
+<main class="article-wrap">
+  <article class="article-inner">
+
+    <p>Рынок коммерческой недвижимости входит в 2026 год с двойственным самоощущением. С одной стороны — снижение ключевой ставки с исторического максимума в 21% открывает горизонт для нового инвестиционного цикла. С другой — повышение НДС до 22% с января 2026 года увеличивает операционные расходы собственников, стоимость строительства продолжает расти, а спрос на новые площади со стороны корпоративных пользователей остаётся осторожным. Консенсус рынка — 2026-й будет годом адаптации и оптимизации, а «реальное потепление» начнётся с 2027-го.</p>
+
+    <h2>Макрофактор: снижение ставки как главный катализатор</h2>
+
+    <p>Ключевая ставка ЦБ в декабре 2025 года снизилась до 16%. Аналитики прогнозируют продолжение этой траектории: по базовому сценарию «БКС Мир инвестиций» и Альфа-Инвестиций, к концу 2026 года ставка опустится до <span class="highlight">12–13%</span>. Это критическая отметка для рынка коммерческой недвижимости: именно при ставке ниже 17% профессиональные инвесторы возвращаются к заёмному финансированию, а математика девелоперских проектов начинает сходиться.</p>
+
+    <p>Однако скорость снижения будет небыстрой. Повышение НДС создаёт инфляционный импульс в первом квартале, что может вынудить ЦБ взять паузу. Большую часть 2026 года ставки финансирования останутся высокими — это сдержит объём новых сделок с кредитным плечом и новых стартов строительства.</p>
+
+    <div class="scenario-grid">
+      <div class="sc-card">
+        <div class="sc-label">Базовый</div>
+        <div class="sc-title">Умеренное восстановление</div>
+        <div class="sc-value base">800–900 млрд ₽</div>
+        <div class="sc-desc">Прогноз CORE.XP. Ставка снижается до 12–13%. Офисы и склады сохраняют спрос. Появляются первые ЦОД-сделки и рост гостиничного сегмента.</div>
+      </div>
+      <div class="sc-card">
+        <div class="sc-label">Оптимистичный</div>
+        <div class="sc-title">Ускоренный возврат инвесторов</div>
+        <div class="sc-value bull">&gt;1 трлн ₽</div>
+        <div class="sc-desc">При быстром снижении ставки до 10–11% и геополитической стабилизации. Профессиональные инвесторы возвращаются с кредитным плечом. Ставки капитализации снижаются.</div>
+      </div>
+      <div class="sc-card">
+        <div class="sc-label">Консервативный</div>
+        <div class="sc-title">Затяжная пауза</div>
+        <div class="sc-value bear">600–650 млрд ₽</div>
+        <div class="sc-desc">Прогноз IBC Real Estate — наиболее пессимистичная оценка. Ставка остаётся выше 15%, НДС-инфляция затягивается. Рынок сужается до сделок конечных пользователей.</div>
+      </div>
+    </div>
+
+    <hr class="divider" />
+
+    <h2>Сдвиг в мотивации: 70% сделок — ради инвестиций</h2>
+
+    <p>Один из ключевых структурных сдвигов 2026 года — изменение мотивации покупателей. По прогнозам CORE.XP и IBC Real Estate, <span class="highlight">70% сделок</span> на рынке коммерческой недвижимости будут заключены с инвестиционными целями — на 5 п.п. больше, чем в 2025-м. Корпоративный покупатель, приобретающий актив для собственных нужд, всё реже готов замораживать капитал в непрофильных объектах при стоимости денег выше 20%.</p>
+
+    <p>Напротив, финансовые инвесторы — физические лица, паи ЗПИФ — активизируются. По данным Nikoliers, ЗПИФ удвоили объём инвестиций в коммерческую недвижимость России, профинансировав покупки на рекордные 105,1 млрд рублей в 2025 году. Эта тенденция в 2026-м сохранится и усилится. Демократизация рынка через инструменты коллективных инвестиций — один из структурных трендов, меняющих базу участников.</p>
+
+    <blockquote>
+      <p>«Когда идёт экономический рост и ключевая ставка низкая, качественные объекты стоят дорого и без кредитного плеча их не купить. Сейчас рынок даёт возможности: покупать без кредита — самое время для консервативных инвесторов.»</p>
+      <cite>— Эксперт CRE, материал becar.pro «Зима близко: эксперты о кризисе 2026–27»</cite>
+    </blockquote>
+
+    <hr class="divider" />
+
+    <h2>Офисная недвижимость: дефицит сохраняется, ставки стабилизируются</h2>
+
+    <p>Офисный сегмент остаётся фаворитом и инвесторов, и арендаторов. По прогнозу Nikoliers, объём сделок с офисными площадями в Москве в 2026 году вырастет на 10% год к году — до <span class="highlight">1,6 млн кв. м</span>. Драйверы: начавшееся смягчение кредитной политики и постепенный ввод новых площадей.</p>
+
+    <p>Структурный дефицит сохранится: вакансия в классе Prime практически нулевая, вакансия в классе A — около 3,5–4% к концу 2026-го. Рост ставок аренды в офисах замедлится — консенсус-прогноз предполагает увеличение на 4–6% по итогам года, после взрывного роста 30%+ в 2025-м. Ставки продаж офисных объектов в Москве продолжат умеренно корректироваться: покупатель занял доминирующую позицию.</p>
+
+    <p>Набирает силу формат <strong>sale-leaseback</strong>: крупные корпорации продают собственные офисы с одновременным заключением долгосрочного договора аренды. Это позволяет высвободить капитал из непрофильного актива и зафиксировать арендные условия на 10–15 лет. В 2026 году аналитики ожидают роста числа таких сделок на фоне дефицита ликвидности у компаний.</p>
+
+    <h3>Ввод новых офисов: прогноз на 2026–2027</h3>
+
+    <div class="data-card">
+      <h4>Прогноз ввода офисной недвижимости в Москве, тыс. кв. м (Nikoliers)</h4>
+      <div class="data-rows">
+        <div class="data-row">
+          <span class="data-row-label">2025 (факт)</span>
+          <div class="data-row-bar-wrap"><div class="data-row-bar terra" style="width:76%"></div></div>
+          <span class="data-row-val">908 тыс. м²</span>
+        </div>
+        <div class="data-row">
+          <span class="data-row-label">2026 (прогноз)</span>
+          <div class="data-row-bar-wrap"><div class="data-row-bar gold" style="width:68%"></div></div>
+          <span class="data-row-val">813 тыс. м²</span>
+        </div>
+        <div class="data-row">
+          <span class="data-row-label">2027 (прогноз)</span>
+          <div class="data-row-bar-wrap"><div class="data-row-bar muted" style="width:52%"></div></div>
+          <span class="data-row-val">623 тыс. м²</span>
+        </div>
+      </div>
+    </div>
+
+    <p>Снижение объёмов ввода нового офисного предложения в 2026–2027 годах означает, что при сохранении спроса дефицит качественных площадей будет нарастать, а не сокращаться. Это поддержит арендные ставки и инвестиционную привлекательность сегмента на горизонте 2–3 лет.</p>
+
+    <hr class="divider" />
+
+    <h2>Складская недвижимость: балансировка после рекорда</h2>
+
+    <p>Складской рынок в 2026 году входит в фазу переваривания рекордного ввода 2025-го — 7,7 млн кв. м. По прогнозу CORE.XP, объём сделок аренды и купли-продажи в 2026 году вернётся к росту и превысит <span class="highlight">5 млн кв. м</span> (из них около 2 млн кв. м — Московский регион). Восстановление активности обусловлено форвардными сделками: компании, особенно в e-commerce, фиксируют площади в ожидании восстановления потребительской активности в 2027-м.</p>
+
+    <p>При этом арендные ставки продолжат умеренно снижаться: IBC Real Estate прогнозирует падение ещё на 5% год к году — до <span class="highlight">~10 тыс. рублей за кв. м в год</span>. Это коррекция, а не кризис: вакансия в логопарках Москвы и Подмосковья стабилизируется на уровне 5–6%, что соответствует сбалансированному рынку. Спекулятивное строительство новых складов резко замедляется — именно это создаёт почву для возврата дефицита к 2027 году.</p>
+
+    <blockquote>
+      <p>«В складском сегменте в 2026 году может сохраниться активность: компании e-commerce, которые растут опережающими темпами, в ожидании восстановления потребительской активности в 2027 году совершают форвардные сделки под будущее расширение бизнеса.»</p>
+      <cite>— Владимир Лящук, заместитель директора по исследованиям CORE.XP</cite>
+    </blockquote>
+
+    <hr class="divider" />
+
+    <h2>Торговая недвижимость: отложенный ввод и трансформация</h2>
+
+    <p>В 2026 году на рынок может выйти <span class="highlight">638 тыс. кв. м</span> торговых площадей — на 21% больше, чем годом ранее. Однако это не новый строительный цикл, а «отложенный ввод»: задержавшиеся проекты, перенесённые с 2024–2025 годов. Реальный новый девелопмент в секторе торговой недвижимости остаётся минимальным.</p>
+
+    <p>Структурная трансформация ТЦ продолжается. Средняя площадь новых объектов сократилась с 60 тыс. кв. м в 2020 году до 17,4 тыс. кв. м в 2025-м. Сегмент общепита занял 27% площади (против 22% ранее), wellness и beauty вырос с 6% до 9%, а fashion сократился с 43% до 38%. Фуд-холлы вытесняют традиционные фуд-корты. Исключение — Москва и Санкт-Петербург, где трафик вырос на 10–12%, поддерживая ставки аренды.</p>
+
+    <h3>Стрит-ретейл: полюса доходности</h3>
+    <p>В стрит-ретейле ситуация дифференцированная. Премиальные коридоры — Патрики, Кузнецкий Мост, Арбат — переживают отток арендаторов: высокие ставки (150–160 тыс. рублей за кв. м в год) плюс снижение платёжеспособного трафика. Зато районные форматы у транспортных узлов и в спальных районах чувствуют себя устойчиво — именно здесь концентрируются ПВЗ маркетплейсов, которые формируют новый слой арендаторов с предсказуемым трафиком.</p>
+
+    <hr class="divider" />
+
+    <h2>Новые фавориты: ЦОД и гостиницы</h2>
+
+    <p>Два сегмента, которые в 2026 году выходят на первый план — центры обработки данных и гостиничная недвижимость.</p>
+
+    <p><strong>Дата-центры (ЦОД)</strong> — главная новая ниша. По прогнозу CORE.XP, в 2026 году ожидается появление первых крупных инвестиционных сделок в этом сегменте. Рост e-commerce, цифровизация государственного управления, внедрение ИИ и требования к локализации данных формируют устойчивый долгосрочный спрос на вычислительные мощности. В отличие от офисов и складов, рынок ЦОД в России ещё далёк от насыщения.</p>
+
+    <p><strong>Гостиничная недвижимость</strong> демонстрирует наиболее стремительный рост среди всех сегментов: инвестиции выросли в 2,4 раза в 2025 году. Бум внутреннего туризма, программы развития туристической инфраструктуры и дефицит качественного номерного фонда в регионах создают привлекательную точку входа. В 2026 году этот тренд усилится: партнёр NF Group Марина Малахатько ожидает роста инвестиционной привлекательности гостиничного сегмента.</p>
+
+    <hr class="divider" />
+
+    <h2>Прогноз по ставкам капитализации и доходности</h2>
+
+    <p>Ставки капитализации в 2026 году останутся высокими — что означает дополнительные возможности для инвесторов с длинным горизонтом. По прогнозу конференции CORE.XP «Сила четырёх 2026», снижение ставок капитализации будет умеренным и постепенным.</p>
+
+    <div class="cap-strip">
+      <div>
+        <div class="cap-label">Офисы</div>
+        <div class="cap-value">10,25–11,25%</div>
+        <div class="cap-note">снижение на ~1 п.п. к концу года</div>
+      </div>
+      <div>
+        <div class="cap-label">Склады</div>
+        <div class="cap-value">11,25–12,25%</div>
+        <div class="cap-note">стабилизация с умеренным снижением</div>
+      </div>
+      <div>
+        <div class="cap-label">Торг. центры</div>
+        <div class="cap-value">11,5–12,5%</div>
+        <div class="cap-note">зависит от трансформации объектов</div>
+      </div>
+      <div>
+        <div class="cap-label">Light Industrial</div>
+        <div class="cap-value">14–16%</div>
+        <div class="cap-note">дефицит поддерживает высокую доходность</div>
+      </div>
+    </div>
+
+    <hr class="divider" />
+
+    <h2>Ключевые тренды и риски 2026 года</h2>
+
+    <div class="trend-list">
+      <div class="trend-item">
+        <div class="trend-num">1</div>
+        <div class="trend-body">
+          <div class="trend-title">Рост доли инвестиционных покупок через ЗПИФ</div>
+          <div class="trend-desc">ЗПИФ удвоили объём инвестиций в 2025 году и не сбавят темп. Для частного инвестора это удобный способ войти в коммерческую недвижимость без необходимости управлять объектом напрямую. Управляющие компании активно создают новые фонды под конкретные активы — офисные здания, складские парки, отели. Демократизация рынка продолжается.</div>
+        </div>
+      </div>
+      <div class="trend-item">
+        <div class="trend-num">2</div>
+        <div class="trend-body">
+          <div class="trend-title">Sale-leaseback: корпорации высвобождают капитал</div>
+          <div class="trend-desc">Компании, испытывающие давление на оборотный капитал, продают собственные офисы и производственные площадки, одновременно заключая долгосрочные договоры аренды. Для инвесторов это идеальный актив: качественный объект с надёжным арендатором на 10–15 лет и прозрачным денежным потоком.</div>
+        </div>
+      </div>
+      <div class="trend-item">
+        <div class="trend-num">3</div>
+        <div class="trend-body">
+          <div class="trend-title">Региональная экспансия логистики продолжается</div>
+          <div class="trend-desc">Доля регионов в складских сделках уже превысила 62%, и этот тренд усиливается. Логистические операторы идут в Екатеринбург, Краснодар, Новосибирск, Казань. Доходность логопарков в регионах — 14–16% — существенно выше московских показателей. Для инвесторов это возможность войти в менее конкурентные рынки с хорошей доходностью.</div>
+        </div>
+      </div>
+      <div class="trend-item">
+        <div class="trend-num">4</div>
+        <div class="trend-body">
+          <div class="trend-title">Редевелопмент устаревших объектов</div>
+          <div class="trend-desc">Превращение старых офисных и складских зданий в современные МФК — одна из наиболее активных ниш 2026 года. Цена входа ниже нового строительства, а потенциал капитализации при успешной трансформации значительный. Интеграция «умных» технологий — автоматизация, энергоэффективность — стала обязательным условием ликвидности объекта.</div>
+        </div>
+      </div>
+      <div class="trend-item">
+        <div class="trend-num">5</div>
+        <div class="trend-body">
+          <div class="trend-title">НДС как операционный риск</div>
+          <div class="trend-desc">Повышение НДС до 22% с января 2026 года увеличивает операционные расходы собственников и арендаторов. Договоры с фиксированной ставкой в рублях без поправки на НДС резко ухудшают экономику арендодателя. Пересмотр договоров и конфликты при индексации — один из ключевых рисков для рынка в первом полугодии 2026-го.</div>
+        </div>
+      </div>
+    </div>
+
+    <hr class="divider" />
+
+    <h2>Сводная таблица прогнозов по сегментам</h2>
+
+    <table class="seg-table">
+      <thead>
+        <tr>
+          <th>Сегмент</th>
+          <th>Инвестиции 2026</th>
+          <th>Ставки аренды</th>
+          <th>Вакансия</th>
+          <th>Тренд</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Офисы</td>
+          <td>Лидер рынка</td>
+          <td>+4–6% г/г</td>
+          <td>3,5–4% (Москва)</td>
+          <td><span class="badge up">Рост</span></td>
+        </tr>
+        <tr>
+          <td>Склады</td>
+          <td>Снижение</td>
+          <td>−5% до 10 тыс. ₽/м²</td>
+          <td>5–6% (логопарки)</td>
+          <td><span class="badge flat">Баланс</span></td>
+        </tr>
+        <tr>
+          <td>Торговые центры</td>
+          <td>Рост интереса</td>
+          <td>Стагнация</td>
+          <td>~8% (Москва)</td>
+          <td><span class="badge flat">Трансформация</span></td>
+        </tr>
+        <tr>
+          <td>Гостиницы</td>
+          <td>Рост инвестиций</td>
+          <td>Рост на фоне туризма</td>
+          <td>Низкая</td>
+          <td><span class="badge up">Фаворит</span></td>
+        </tr>
+        <tr>
+          <td>ЦОД</td>
+          <td>Первые крупные сделки</td>
+          <td>Устойчивый рост</td>
+          <td>Дефицит</td>
+          <td><span class="badge up">Новый лидер</span></td>
+        </tr>
+        <tr>
+          <td>Light industrial</td>
+          <td>Высокий спрос</td>
+          <td>Рост</td>
+          <td>Дефицит (спрос в 18×)</td>
+          <td><span class="badge up">Структурный рост</span></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="conclusion">
+      <h3>Прогноз: год терпения с хорошими точками входа</h3>
+      <p>2026 год — не год роста, а год подготовки к нему. Инвестиции в коммерческую недвижимость сократятся умеренно — до 800–900 млрд рублей по прогнозу CORE.XP или до 600 млрд рублей по консервативной оценке IBC Real Estate. Разброс большой: всё зависит от скорости снижения ключевой ставки.</p>
+      <p>Для инвестора год даёт редкую возможность: купить качественные активы на «рынке покупателя», без ажиотажа конкурентов и без премии за горящий рынок. Офисы в продаже дешевле, чем год назад. Складские ставки корректируются. Гостиницы и ЦОД открывают новые ниши с двузначной доходностью и структурным дефицитом предложения.</p>
+      <p>Реальное оживление — 2027-й: ставка упадёт до 10–11%, потребительская активность восстановится после адаптации к НДС, компании возобновят расширение. Те, кто зайдёт в позиции в 2026-м — до начала нового ценового цикла — окажутся в наилучшем положении.</p>
+    </div>
+
+  </article>
+</main>
+
+<footer>
+  <strong>kotana.com.ru</strong> &nbsp;·&nbsp; Прогноз коммерческой недвижимости · 2026 &nbsp;·&nbsp; Источники: CORE.XP, Nikoliers, IBC Real Estate, NF Group, Ricci, Коммерсантъ, Forbes, CRE
+</footer>
+
+</body>
+</html>
