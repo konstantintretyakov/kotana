@@ -326,6 +326,18 @@
         <h2 class="section-heading">Аналитика</h2>
         {% endif %}
         <div class="blog-grid">
+            <a href="/blog/securitization-ppp-2025" class="blog-card">
+                <span class="blog-tag">{{ 'Finance' if lang == 'en' else 'Финансы' }}</span>
+                {% if lang == 'en' %}
+                <h3>PPP Securitization: Long Money for Infrastructure</h3>
+                <p>Banking credit is expensive and short. The budget covers less than half the need. A 110 trillion ruble infrastructure gap. The solution: turning predictable state obligations under concession agreements into marketable bonds — and attracting pension funds, insurers, and retail investors into infrastructure.</p>
+                {% else %}
+                <h3>Секьюритизация ГЧП-обязательств: длинные деньги для инфраструктуры</h3>
+                <p>Банковский кредит дорог и короток. Бюджет покрывает меньше половины потребности. Инфраструктурный разрыв — 110 трлн рублей. Решение: превратить предсказуемые государственные обязательства по концессиям в рыночные облигации и привлечь в инфраструктуру деньги НПФ, страховщиков и физлиц.</p>
+                {% endif %}
+                <span class="blog-read">{{ 'Read' if lang == 'en' else 'Читать' }} →</span>
+            </a>
+
             <a href="/blog/ppp-market-russia-2025-full" class="blog-card">
                 <span class="blog-tag">{{ 'Infrastructure' if lang == 'en' else 'Инфраструктура' }}</span>
                 {% if lang == 'en' %}
