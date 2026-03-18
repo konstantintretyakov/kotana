@@ -326,6 +326,18 @@
         <h2 class="section-heading">Аналитика</h2>
         {% endif %}
         <div class="blog-grid">
+            <a href="/blog/hotel-real-estate-2025" class="blog-card">
+                <span class="blog-tag">{{ 'Analytics' if lang == 'en' else 'Аналитика' }}</span>
+                {% if lang == 'en' %}
+                <h3>Hotel Real Estate in 2025: The Only Segment with Investment Growth</h3>
+                <p>While the entire commercial real estate market contracted under rate pressure, the hotel segment bucked the trend. Investments grew 2.4×, hotel revenues exceeded 1 trillion rubles, and domestic tourism is redrawing the map of Russia.</p>
+                {% else %}
+                <h3>Рынок гостиничной недвижимости в 2025 году: единственный сегмент с ростом инвестиций</h3>
+                <p>Пока весь рынок коммерческой недвижимости сжимался под давлением ключевой ставки, гостиничный сегмент шёл против течения. Инвестиции выросли в 2,4 раза, доходы отелей превысили 1 трлн рублей, внутренний туризм переписывает карту страны.</p>
+                {% endif %}
+                <span class="blog-read">{{ 'Read' if lang == 'en' else 'Читать' }} →</span>
+            </a>
+
             <a href="/blog/commercial-real-estate-forecast-2026" class="blog-card">
                 <span class="blog-tag">{{ 'Forecast' if lang == 'en' else 'Прогноз' }}</span>
                 {% if lang == 'en' %}

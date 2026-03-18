@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Рынок гостиничной недвижимости России в 2025 году | kotana.com.ru</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --ink:    #0f1117;
+      --paper:  #f7f4ef;
+      --cream:  #ede9e0;
+      --accent: #2c5f6e;         /* глубокий морской — отели, курорты */
+      --accent-light: #cde8ef;
+      --gold:   #b8922a;
+      --green:  #1a7a3c;
+      --red:    #c0392b;
+      --muted:  #7a7060;
+      --rule:   #d4cfc5;
+      --col:    clamp(320px, 66ch, 720px);
+    }
+    html { font-size: 17px; scroll-behavior: smooth; }
+    body {
+      background: var(--paper); color: var(--ink);
+      font-family: 'IBM Plex Sans', sans-serif;
+      line-height: 1.75; -webkit-font-smoothing: antialiased;
+    }
+
+    .masthead {
+      background: var(--ink); padding: 14px 40px;
+      display: flex; align-items: center; justify-content: space-between;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: .75rem; letter-spacing: .12em; text-transform: uppercase;
+    }
+    .masthead-logo { font-size: 1rem; font-weight: 500; color: #fff; }
+    .masthead-meta { color: #666; }
+
+    .hero {
+      background: var(--accent); color: var(--paper);
+      padding: 80px 40px 72px; position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: '★';
+      position: absolute; right: 30px; top: 50%; transform: translateY(-50%);
+      font-size: clamp(200px, 30vw, 380px); font-weight: 900;
+      color: rgba(255,255,255,.05); line-height: 1; pointer-events: none;
+    }
+    .hero-inner { max-width: var(--col); margin: 0 auto; position: relative; }
+    .hero-tag {
+      display: inline-block;
+      border: 1px solid rgba(255,255,255,.3); color: rgba(255,255,255,.75);
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: .72rem; letter-spacing: .15em; text-transform: uppercase;
+      padding: 4px 12px; margin-bottom: 28px;
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.2rem, 5vw, 3.4rem); font-weight: 700;
+      line-height: 1.18; letter-spacing: -.02em; margin-bottom: 24px; max-width: 22ch;
+    }
+    .hero h1 em { font-style: italic; color: #a8dde8; }
+    .hero-lead {
+      font-size: 1.08rem; color: rgba(255,255,255,.72);
+      max-width: 54ch; line-height: 1.65; margin-bottom: 40px;
+    }
+    .hero-byline {
+      display: flex; align-items: center; gap: 16px;
+      font-size: .8rem; color: rgba(255,255,255,.4);
+      font-family: 'IBM Plex Mono', monospace;
+    }
+    .hero-byline span { color: rgba(255,255,255,.25); }
+    .hero-byline strong { color: rgba(255,255,255,.65); font-weight: 500; }
+
+    .stats-bar { background: var(--ink); padding: 0 40px; }
+    .stats-inner {
+      max-width: calc(var(--col) + 200px); margin: 0 auto;
+      display: grid; grid-template-columns: repeat(3,1fr);
+    }
+    .stat-item {
+      padding: 24px 32px; border-right: 1px solid rgba(255,255,255,.07); color: #fff;
+    }
+    .stat-item:first-child { padding-left: 0; }
+    .stat-item:last-child  { border-right: none; }
+    .stat-number {
+      font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 700;
+      display: block; line-height: 1; color: #a8dde8;
+    }
+    .stat-label {
+      font-size: .75rem; text-transform: uppercase;
+      letter-spacing: .1em; opacity: .45; margin-top: 4px;
+      font-family: 'IBM Plex Mono', monospace;
+    }
+
+    .article-wrap { padding: 72px 40px; }
+    .article-inner { max-width: var(--col); margin: 0 auto; }
+
+    .article-inner > p:first-of-type::first-letter {
+      font-family: 'Playfair Display', serif; font-size: 4.5em; font-weight: 900;
+      float: left; line-height: .78; margin-right: 8px; margin-top: 6px; color: var(--accent);
+    }
+    p { margin-bottom: 1.5rem; }
+
+    h2 {
+      font-family: 'Playfair Display', serif; font-size: 1.7rem; font-weight: 700;
+      letter-spacing: -.02em; line-height: 1.25; margin: 3rem 0 1.1rem;
+    }
+    h2::before { content: ''; display: block; width: 32px; height: 3px; background: var(--accent); margin-bottom: 16px; }
+
+    h3 {
+      font-family: 'IBM Plex Sans', sans-serif; font-size: 1.05rem; font-weight: 600;
+      margin: 2rem 0 .7rem; text-transform: uppercase; letter-spacing: .06em; color: var(--gold);
+    }
+
+    blockquote {
+      border-left: 3px solid var(--accent); margin: 2.5rem 0; padding: 20px 0 20px 32px;
+    }
+    blockquote p {
+      font-family: 'Playfair Display', serif; font-size: 1.35rem; font-style: italic;
+      line-height: 1.5; color: var(--ink); margin: 0 0 8px;
+    }
+    blockquote cite {
+      font-family: 'IBM Plex Mono', monospace; font-size: .72rem;
+      text-transform: uppercase; letter-spacing: .12em; color: var(--muted); font-style: normal;
+    }
+
+    .highlight { background: var(--accent-light); padding: 0 4px; font-weight: 500; }
+
+    /* KPI strip */
+    .kpi-strip {
+      background: var(--accent); color: #fff; padding: 28px 32px;
+      margin: 2.5rem 0; display: grid; grid-template-columns: repeat(4,1fr); gap: 16px;
+    }
+    .kpi-label {
+      font-family: 'IBM Plex Mono', monospace; font-size: .65rem;
+      text-transform: uppercase; letter-spacing: .12em; opacity: .6; margin-bottom: 6px;
+    }
+    .kpi-value {
+      font-family: 'Playfair Display', serif; font-size: 1.8rem; font-weight: 700; line-height: 1;
+    }
+    .kpi-note { font-size: .73rem; opacity: .62; margin-top: 4px; }
+
+    /* Region cards */
+    .region-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 1px; background: var(--rule); border: 1px solid var(--rule); margin: 2.5rem 0;
+    }
+    .reg-card { background: var(--paper); padding: 22px 24px; }
+    .reg-icon { font-size: 1.3rem; margin-bottom: 8px; display: block; }
+    .reg-label {
+      font-family: 'IBM Plex Mono', monospace; font-size: .65rem;
+      text-transform: uppercase; letter-spacing: .12em; color: var(--muted); margin-bottom: 6px;
+    }
+    .reg-name { font-weight: 700; font-size: 1rem; margin-bottom: 4px; }
+    .reg-adr {
+      font-family: 'Playfair Display', serif; font-size: 1.15rem;
+      font-weight: 700; color: var(--accent); margin-bottom: 4px;
+    }
+    .reg-desc { font-size: .8rem; color: var(--muted); line-height: 1.55; }
+
+    /* Data card */
+    .data-card {
+      background: var(--cream); border: 1px solid var(--rule); padding: 28px 32px; margin: 2.5rem 0;
+    }
+    .data-card h4 {
+      font-family: 'IBM Plex Mono', monospace; font-size: .7rem;
+      text-transform: uppercase; letter-spacing: .15em; color: var(--muted); margin-bottom: 20px;
+    }
+    .data-rows { display: flex; flex-direction: column; gap: 12px; }
+    .data-row { display: flex; align-items: center; gap: 16px; }
+    .data-row-label { font-size: .85rem; color: var(--muted); width: 220px; flex-shrink: 0; }
+    .data-row-bar-wrap { flex: 1; height: 6px; background: var(--rule); position: relative; }
+    .data-row-bar { position: absolute; top: 0; left: 0; height: 100%; }
+    .data-row-bar.sea  { background: var(--accent); }
+    .data-row-bar.gold { background: var(--gold); }
+    .data-row-bar.green{ background: var(--green); }
+    .data-row-bar.muted{ background: var(--muted); opacity: .35; }
+    .data-row-val {
+      font-family: 'IBM Plex Mono', monospace; font-size: .8rem;
+      font-weight: 500; width: 96px; text-align: right;
+    }
+
+    /* Metrics 2×2 */
+    .metrics-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 1px; background: var(--rule); border: 1px solid var(--rule); margin: 2.5rem 0;
+    }
+    .metric-cell { background: var(--paper); padding: 24px; }
+    .metric-label {
+      font-family: 'IBM Plex Mono', monospace; font-size: .68rem;
+      text-transform: uppercase; letter-spacing: .14em; color: var(--muted); margin-bottom: 8px;
+    }
+    .metric-value {
+      font-family: 'Playfair Display', serif; font-size: 1.65rem; font-weight: 700; line-height: 1.1;
+    }
+    .metric-value.sea  { color: var(--accent); }
+    .metric-value.gold { color: var(--gold); }
+    .metric-value.green{ color: var(--green); }
+    .metric-note { font-size: .78rem; color: var(--muted); margin-top: 6px; }
+
+    /* Trend list */
+    .trend-list { margin: 2rem 0; }
+    .trend-item {
+      display: flex; gap: 20px; padding: 18px 0;
+      border-bottom: 1px solid var(--rule); align-items: flex-start;
+    }
+    .trend-item:first-child { border-top: 1px solid var(--rule); }
+    .trend-num {
+      font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 700;
+      color: var(--accent); line-height: 1.1; width: 28px; flex-shrink: 0; text-align: right;
+    }
+    .trend-title { font-weight: 600; font-size: .92rem; margin-bottom: 4px; }
+    .trend-desc  { font-size: .83rem; color: var(--muted); line-height: 1.55; }
+
+    .divider { border: none; border-top: 1px solid var(--rule); margin: 3rem 0; }
+
+    .conclusion {
+      background: var(--ink); color: var(--paper); padding: 36px 40px; margin: 3rem 0 0;
+    }
+    .conclusion h3 { color: #a8dde8; margin-top: 0; letter-spacing: .06em; font-size: 1rem; text-transform: uppercase; }
+    .conclusion p { color: #ccc; margin-bottom: 1rem; }
+    .conclusion p:last-child { margin-bottom: 0; }
+
+    footer {
+      background: var(--cream); border-top: 1px solid var(--rule);
+      padding: 28px 40px; font-family: 'IBM Plex Mono', monospace;
+      font-size: .72rem; color: var(--muted); text-align: center; letter-spacing: .06em;
+    }
+    footer strong { color: var(--ink); }
+
+    @media (max-width: 640px) {
+      .masthead { padding: 12px 20px; }
+      .hero { padding: 56px 20px 52px; }
+      .stats-bar { padding: 0 20px; }
+      .stats-inner, .kpi-strip { grid-template-columns: 1fr; }
+      .stat-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,.07); padding: 16px 0; }
+      .article-wrap { padding: 48px 20px; }
+      .region-grid, .metrics-grid { grid-template-columns: 1fr; }
+      .data-row-label { width: 130px; font-size: .78rem; }
+    }
+  </style>
+</head>
+<body>
+
+<header class="masthead">
+  <span class="masthead-logo">kotana.com.ru</span>
+  <span class="masthead-meta">Аналитика · Недвижимость · 2025</span>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-tag">Гостиничная недвижимость · 2025</div>
+    <h1>Рынок гостиничной недвижимости: <em>единственный</em> сегмент с ростом инвестиций</h1>
+    <p class="hero-lead">В 2025 году весь рынок коммерческой недвижимости России сжимался под давлением ключевой ставки — и только гостиничный сегмент шёл против течения. Инвестиции выросли в 2,4 раза. Доходы отелей превысили 1 трлн рублей. Внутренний туризм переписывает карту страны.</p>
+    <div class="hero-byline">
+      <strong>Редакция kotana.com.ru</strong>
+      <span>·</span>
+      <span>Март 2026</span>
+      <span>·</span>
+      <span>13 мин чтения</span>
+    </div>
+  </div>
+</section>
+
+<div class="stats-bar">
+  <div class="stats-inner">
+    <div class="stat-item">
+      <span class="stat-number">×2,4</span>
+      <span class="stat-label">Рост инвестиций в гостиницы 2025 г.</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number">1,04 трлн ₽</span>
+      <span class="stat-label">Доходы российских гостиниц за год</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number">40,3 тыс.</span>
+      <span class="stat-label">Гостиниц в России (+5,2% г/г)</span>
+    </div>
+  </div>
+</div>
+
+<main class="article-wrap">
+  <article class="article-inner">
+
+    <p>На фоне всеобщего инвестиционного охлаждения в коммерческой недвижимости — снижения на 11% год к году — гостиничный сегмент выглядит настоящей аномалией. Вложения в строительство и реконструкцию отелей выросли в 2,4 раза: с 2% до 7% от общего объёма всех инвестиций в недвижимость. По оценке АЭРН, рынок привлёк 50–55 млрд рублей — и это единственный сегмент, показавший рост. Причина не в случайности, а в структурном сдвиге: внутренний туризм в России стал устойчивым мегатрендом, подкреплённым государственными субсидиями и необратимым изменением потребительских привычек.</p>
+
+    <h2>Макроконтекст: почему гостиницы растут против рынка</h2>
+
+    <p>Механизм прост в описании и сложен в реализации. Ключевая ставка в 21% заморозила девелоперские проекты в офисах и складах — там математика не сходилась. Но гостиничный сектор получил отдельный льготный режим: программа государственного кредитования туристической инфраструктуры предлагает ставки от 3 до 5% годовых на срок до 15 лет. Разрыв в стоимости капитала — 16–18 п.п. — делает гостиничный проект с господдержкой принципиально другим инвестиционным продуктом по сравнению с любым другим сегментом недвижимости.</p>
+
+    <p>Параллельно действуют налоговые льготы: обнуление НДС для отелей продлено до 2030 года, в 25 регионах действуют налоговые каникулы на имущество сроком 5 лет, Московская область компенсирует 10% капитальных затрат для проектов от 2 млрд рублей. Общий объём поддержки по программе льготного кредитования — <span class="highlight">1,9 трлн рублей</span>, которые уже позволили создать 14 тыс. новых номеров.</p>
+
+    <blockquote>
+      <p>«Гостиничный рынок в 2025 году оказался единственным сегментом в недвижимости, который показывает рост объёма инвестиций. Вложения в отели выросли на почти 50% — до 50–55 млрд рублей.»</p>
+      <cite>— Яна Кузина, президент АЭРН, декабрь 2025</cite>
+    </blockquote>
+
+    <hr class="divider" />
+
+    <h2>Ключевые операционные показатели</h2>
+
+    <p>Российский рынок гостиничных услуг вырос по итогам года до <span class="highlight">242 млн ночёвок</span> (+10% г/г). Доходы российских гостиниц впервые в истории преодолели отметку в <span class="highlight">1 трлн рублей</span>, прибавив 27% год к году. Число гостиниц достигло 40,3 тыс. (+5,2%), число классифицированных объектов с номерным фондом от 100 номеров составило к III кварталу 2025 года 179,8 тыс. номеров.</p>
+
+    <div class="kpi-strip">
+      <div>
+        <div class="kpi-label">ADR Москва (5★)</div>
+        <div class="kpi-value">~11 400 ₽</div>
+        <div class="kpi-note">+7% к 2024 г., рост замедляется</div>
+      </div>
+      <div>
+        <div class="kpi-label">Загрузка Москва</div>
+        <div class="kpi-value">74%</div>
+        <div class="kpi-note">деловой туризм + MICE</div>
+      </div>
+      <div>
+        <div class="kpi-label">ADR Россия, 1П 2025</div>
+        <div class="kpi-value">+11%</div>
+        <div class="kpi-note">против +22% в 2024 г. — замедление</div>
+      </div>
+      <div>
+        <div class="kpi-label">Доход. гостиниц</div>
+        <div class="kpi-value">+12%</div>
+        <div class="kpi-note">в год; санаторный сегмент +17%</div>
+      </div>
+    </div>
+
+    <p>Динамика операционных показателей в 2025 году — замедление на фоне высокой базы. Темпы роста ADR сократились вдвое по сравнению с 2024-м: в первом полугодии — 11% против 22% годом ранее. В ряде курортных направлений цены перестали расти или даже скорректировались: в сочинском морском кластере отельеры пересматривают тарифы вниз. Загрузка в большинстве объектов по России оказалась ниже уровня прошлого года, который был рекордным.</p>
+
+    <hr class="divider" />
+
+    <h2>Географическое измерение: карта роста</h2>
+
+    <p>Гостиничный рынок России традиционно концентрировался в Москве и Санкт-Петербурге. В 2025 году происходит принципиальный сдвиг: регионы с богатым природным и культурным потенциалом становятся самостоятельными точками инвестиционного роста.</p>
+
+    <div class="region-grid">
+      <div class="reg-card">
+        <span class="reg-icon">🏙️</span>
+        <div class="reg-label">Столичный рынок</div>
+        <div class="reg-name">Москва</div>
+        <div class="reg-adr">ADR ~11 400 ₽/ночь</div>
+        <div class="reg-desc">Загрузка 74%. MICE-ночёвки превысили уровень 2019 года на 8%. Москва превращается в «столицу туризма»: туристы частично замещают деловых гостей. За I–III кварталы открылось два новых объекта. Ввод исторической гостиницы «Россия» перенесён на 2026 год.</div>
+      </div>
+      <div class="reg-card">
+        <span class="reg-icon">🏛️</span>
+        <div class="reg-label">Северная столица</div>
+        <div class="reg-name">Санкт-Петербург</div>
+        <div class="reg-adr">Доходы +33%, до 77 млрд ₽</div>
+        <div class="reg-desc">Открытие крупного трёхзвёздочного Svet (802 номера) — четвёртого по размеру номерного фонда в городе. Продажа Four Seasons Lion Palace St. Petersburg — крупнейшая гостиничная сделка года, ~50% от всего объёма инвестиций в сегмент.</div>
+      </div>
+      <div class="reg-card">
+        <span class="reg-icon">🏖️</span>
+        <div class="reg-label">Главный курорт страны</div>
+        <div class="reg-name">Краснодарский край</div>
+        <div class="reg-adr">20 курортных проектов, 2,55 трлн ₽</div>
+        <div class="reg-desc">39% нового номерного фонда страны. Открытие пятизвёздочного ZENITH Resort в Анапе (320 номеров), «Дивотель» в Геленджике (198 номеров). Мазутное загрязнение декабря 2024 года негативно отразилось на сезоне-2025.</div>
+      </div>
+      <div class="reg-card">
+        <span class="reg-icon">⛰️</span>
+        <div class="reg-label">Новые точки роста</div>
+        <div class="reg-name">Алтай, Кавказ, Камчатка, Карелия</div>
+        <div class="reg-adr">Спрос на Камчатку +68%</div>
+        <div class="reg-desc">Карачаево-Черкесия (+500 новых номеров), горнолыжный «Архыз» (+20%). Взрывной рост экотуризма: наблюдение за северным сиянием, китами, дикой природой. Девелоперы активно идут в регионы. ADR 4 000–8 000 руб./ночь при загрузке 80%.</div>
+      </div>
+    </div>
+
+    <hr class="divider" />
+
+    <h2>Что строится: новый номерной фонд</h2>
+
+    <p>В 2024 году в России открылись более 80 новых гостиниц и апарт-отелей с совокупным фондом 9 тыс. номеров. По итогам 2025-го запланировано около 10 тыс. новых номеров — рекорд с 2018 года. Структура нового предложения: 46% — категория «четыре звезды», 30% — «пять звезд», 24% — «три звезды». Рынок растёт в среднем и верхнем ценовом сегменте.</p>
+
+    <div class="data-card">
+      <h4>Ввод нового номерного фонда по ключевым регионам, 2025 г.</h4>
+      <div class="data-rows">
+        <div class="data-row">
+          <span class="data-row-label">Краснодарский край</span>
+          <div class="data-row-bar-wrap"><div class="data-row-bar sea" style="width:100%"></div></div>
+          <span class="data-row-val">~1 900 номеров</span>
+        </div>
+        <div class="data-row">
+          <span class="data-row-label">Санкт-Петербург</span>
+          <div class="data-row-bar-wrap"><div class="data-row-bar sea" style="width:42%"></div></div>
+          <span class="data-row-val">~800 номеров</span>
+        </div>
+        <div class="data-row">
+          <span class="data-row-label">Карачаево-Черкесия</span>
+          <div class="data-row-bar-wrap"><div class="data-row-bar gold" style="width:26%"></div></div>
+          <span class="data-row-val">~500 номеров</span>
+        </div>
+        <div class="data-row">
+          <span class="data-row-label">Москва</span>
+          <div class="data-row-bar-wrap"><div class="data-row-bar gold" style="width:26%"></div></div>
+          <span class="data-row-val">~500 номеров</span>
+        </div>
+        <div class="data-row">
+          <span class="data-row-label">Тверская область</span>
+          <div class="data-row-bar-wrap"><div class="data-row-bar muted" style="width:21%"></div></div>
+          <span class="data-row-val">~400 номеров</span>
+        </div>
+      </div>
+    </div>
+
+    <h3>Параллельная экономика: глэмпинги, базы отдыха, гостевые дома</h3>
+    <p>Традиционные гостиницы — лишь часть рынка размещения. Смежные сегменты растут ещё быстрее: рынок глэмпингов вырос на 42% до 12,8 млрд рублей, рынок баз отдыха — на 18,6% до 138,3 млрд рублей. Число кемпингов за первый квартал 2025-го выросло в полтора раза. За тот же период зарегистрировано 1,5 тыс. новых гостиничных компаний (+18,7% г/г). Спрос на гостевые дома вырос на 18% за последний год.</p>
+
+    <hr class="divider" />
+
+    <h2>Тренды, меняющие рынок</h2>
+
+    <div class="trend-list">
+      <div class="trend-item">
+        <div class="trend-num">1</div>
+        <div class="trend-body">
+          <div class="trend-title">Wellness & Spa как главный продукт роста</div>
+          <div class="trend-desc">Санаторный сегмент демонстрирует доходность +17% в год — выше, чем у городских отелей. Взрывной спрос на короткие wellness-программы («детокс», «антистресс», «цифровой детокс»), комплексное медицинское обследование совместно с курортным отдыхом. Операторы активно кооперируются с медицинскими клиниками. Wellness — не дополнительная опция, а основной продукт нового поколения курортных объектов.</div>
+        </div>
+      </div>
+      <div class="trend-item">
+        <div class="trend-num">2</div>
+        <div class="trend-body">
+          <div class="trend-title">Апарт-отели: extended-stay как отдельный рынок</div>
+          <div class="trend-desc">Спрос на апарт-отели в сегменте extended-stay растёт приблизительно на 15% в год. Средняя доходность (ROI за 5 лет) — 15–19%. В Москве рынок апарт-отелей в пределах ТТК насыщается; девелоперы смещаются в Подмосковье, где 56% строящегося фонда — mid-scale форматы, 22% — resort & wellness. Загрузка при профессиональном управлении достигает 68–72% уже на второй год работы.</div>
+        </div>
+      </div>
+      <div class="trend-item">
+        <div class="trend-num">3</div>
+        <div class="trend-body">
+          <div class="trend-title">Цифровизация и онлайн-дистрибуция</div>
+          <div class="trend-desc">До 60% бронирований поступает через мобильные приложения. Крупные OTA-платформы с 1 сентября 2025 года обязаны размещать только объекты 1–5★, зарегистрированные в ФОГР — это ускорило профессионализацию и вытеснение серого сектора. Гибридные системы управления (облачные PMS + CRM) стали стандартом для сетевых объектов. Разрыв между федеральными и региональными брендами по технологиям нарастает.</div>
+        </div>
+      </div>
+      <div class="trend-item">
+        <div class="trend-num">4</div>
+        <div class="trend-body">
+          <div class="trend-title">Редевелопмент «уставших» зданий</div>
+          <div class="trend-desc">Более 12 тыс. исторических и заброшенных зданий по стране потенциально пригодны для преобразования в отели. Редевелопмент старых санаториев, пансионатов и заводских корпусов — самый активный сегмент девелопмента. Это дешевле нового строительства, быстрее по срокам и создаёт «историческую аутентичность», за которую туристы готовы платить премию.</div>
+        </div>
+      </div>
+      <div class="trend-item">
+        <div class="trend-num">5</div>
+        <div class="trend-body">
+          <div class="trend-title">Событийный туризм как новый драйвер загрузки</div>
+          <div class="trend-desc">Фестивали и культурные мероприятия в 2025 году впервые стали мощным самостоятельным драйвером загрузки отелей — не просто фоном, а первопричиной бронирований. Города Золотого кольца, Нижний Новгород, Казань формируют событийный календарь на годы вперёд. Отели, привязанные к крупным площадкам событийного туризма, демонстрируют загрузку в несезон на 20–30 п.п. выше рынка.</div>
+        </div>
+      </div>
+      <div class="trend-item">
+        <div class="trend-num">6</div>
+        <div class="trend-body">
+          <div class="trend-title">Регуляторная чистка: классификация и ЕМИСС</div>
+          <div class="trend-desc">С 1 января 2025 года все средства размещения, включая объекты до 15 номеров, обязаны пройти классификацию и подключиться к ЕМИСС. С 1 сентября OTA размещают только сертифицированные объекты. Туристический налог введён с 1 января 2025 года — 1% от стоимости проживания (минимум 100 руб./сутки), к 2029-му ставка вырастет до 5%. Всё это очищает рынок от неформального сектора и повышает надёжность гостиниц как инвестиционного актива.</div>
+        </div>
+      </div>
+    </div>
+
+    <hr class="divider" />
+
+    <h2>Инвестиционная привлекательность: цифры</h2>
+
+    <div class="metrics-grid">
+      <div class="metric-cell">
+        <div class="metric-label">Льготная ставка по госпрограмме</div>
+        <div class="metric-value sea">3–5%</div>
+        <div class="metric-note">Против 21% рыночной. Разрыв — главный инвестиционный аргумент.</div>
+      </div>
+      <div class="metric-cell">
+        <div class="metric-label">ROI апарт-отели (5 лет)</div>
+        <div class="metric-value gold">15–19%</div>
+        <div class="metric-note">Среднерыночный показатель при профессиональном управлении.</div>
+      </div>
+      <div class="metric-cell">
+        <div class="metric-label">Доходность санаторного сегмента</div>
+        <div class="metric-value green">+17% г/г</div>
+        <div class="metric-note">Лидер роста среди всех форматов размещения.</div>
+      </div>
+      <div class="metric-cell">
+        <div class="metric-label">Строительство курортов (Кубань)</div>
+        <div class="metric-value sea">6,2 трлн ₽</div>
+        <div class="metric-note">Суммарный объём курортных проектов по стране.</div>
+      </div>
+    </div>
+
+    <div class="conclusion">
+      <h3>Итог: гостиничная недвижимость — фаворит на ближайшие годы</h3>
+      <p>2025 год подтвердил статус гостиничной недвижимости как наиболее динамичного сегмента рынка. Единственный рост инвестиций среди всех типов недвижимости, доходы отрасли, впервые превысившие 1 трлн рублей, рекордный ввод новых объектов — всё это не случайность, а результат совпадения нескольких долгосрочных факторов.</p>
+      <p>Структурная история — внутренний туризм как приоритет государственной политики — никуда не уходит. Льготные кредиты, налоговые каникулы, обнуление НДС до 2030 года создают операционную среду, в которой гостиничный проект при профессиональном управлении конкурентоспособен даже при высокой ставке ЦБ. Строительство курортных объектов на 6,2 трлн рублей по всей стране — это не цикличная история, а многолетняя инфраструктурная программа.</p>
+      <p>Вызовы тоже реальны: замедление роста ADR, снижение загрузки относительно рекордного 2024 года, новый туристический налог, сезонность курортных направлений. Но в сравнении с любым другим сегментом коммерческой недвижимости гостиничный рынок выглядит как самое привлекательное инвестиционное пространство — с уникальным сочетанием государственной поддержки, структурного спроса и растущей доходности.</p>
+    </div>
+
+  </article>
+</main>
+
+<footer>
+  <strong>kotana.com.ru</strong> &nbsp;·&nbsp; Рынок гостиничной недвижимости · 2025 &nbsp;·&nbsp; Источники: CORE.XP, NF Group, АЭРН, TAdviser, АТОР, BASINN, Делового Профиля
+</footer>
+
+</body>
+</html>
