@@ -326,6 +326,18 @@
         <h2 class="section-heading">Аналитика</h2>
         {% endif %}
         <div class="blog-grid">
+            <a href="/blog/commercial-real-estate-2025" class="blog-card">
+                <span class="blog-tag">{{ 'Analytics' if lang == 'en' else 'Аналитика' }}</span>
+                {% if lang == 'en' %}
+                <h3>Commercial Real Estate in 2025: Record Supply, Investment Cooling</h3>
+                <p>Russia set a 10-year record with 9.1 million sq m of new commercial space delivered — while investment fell 24%. Offices hit historic vacancy lows, warehouses absorbed a wave of new supply, and retail quietly reinvented itself.</p>
+                {% else %}
+                <h3>Рынок коммерческой недвижимости в 2025 году: рекордный ввод и инвестиционное охлаждение</h3>
+                <p>Россия поставила рекорд за 10 лет — 9,1 млн кв. м нового коммерческого ввода, — пока инвестиции сократились на 24%. Офисы у исторического минимума вакансии, склады поглотили волну нового предложения, ретейл тихо трансформировался.</p>
+                {% endif %}
+                <span class="blog-read">{{ 'Read' if lang == 'en' else 'Читать' }} →</span>
+            </a>
+
             <a href="/blog/securitization-ppp-2025" class="blog-card">
                 <span class="blog-tag">{{ 'Finance' if lang == 'en' else 'Финансы' }}</span>
                 {% if lang == 'en' %}

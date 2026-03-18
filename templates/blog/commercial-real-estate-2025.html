@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Рынок коммерческой недвижимости России в 2025 году | kotana.com.ru</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --ink:    #0f1117;
+      --paper:  #f7f4ef;
+      --cream:  #ede9e0;
+      --accent: #8b3a1c;       /* кирпично-терракотовый — недвижимость */
+      --accent-light: #f5dfd6;
+      --gold:   #b8922a;
+      --green:  #1a7a3c;
+      --red:    #c0392b;
+      --muted:  #7a7060;
+      --rule:   #d4cfc5;
+      --col:    clamp(320px, 66ch, 720px);
+    }
+    html { font-size: 17px; scroll-behavior: smooth; }
+    body {
+      background: var(--paper); color: var(--ink);
+      font-family: 'IBM Plex Sans', sans-serif;
+      line-height: 1.75; -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── MASTHEAD ── */
+    .masthead {
+      background: var(--ink); padding: 14px 40px;
+      display: flex; align-items: center; justify-content: space-between;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: .75rem; letter-spacing: .12em; text-transform: uppercase;
+    }
+    .masthead-logo { font-size: 1rem; font-weight: 500; color: #fff; }
+    .masthead-meta { color: #666; }
+
+    /* ── HERO ── */
+    .hero {
+      background: var(--accent); color: var(--paper);
+      padding: 80px 40px 72px; position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: '2025';
+      position: absolute; right: -10px; top: 50%; transform: translateY(-50%);
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(110px, 17vw, 240px); font-weight: 900;
+      color: rgba(255,255,255,.055); line-height: 1; pointer-events: none;
+      letter-spacing: -.04em;
+    }
+    .hero-inner { max-width: var(--col); margin: 0 auto; position: relative; }
+    .hero-tag {
+      display: inline-block;
+      border: 1px solid rgba(255,255,255,.3); color: rgba(255,255,255,.75);
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: .72rem; letter-spacing: .15em; text-transform: uppercase;
+      padding: 4px 12px; margin-bottom: 28px;
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.2rem, 5vw, 3.4rem); font-weight: 700;
+      line-height: 1.18; letter-spacing: -.02em;
+      margin-bottom: 24px; max-width: 22ch;
+    }
+    .hero h1 em { font-style: italic; color: #f4c89a; }
+    .hero-lead {
+      font-size: 1.08rem; color: rgba(255,255,255,.72);
+      max-width: 54ch; line-height: 1.65; margin-bottom: 40px;
+    }
+    .hero-byline {
+      display: flex; align-items: center; gap: 16px;
+      font-size: .8rem; color: rgba(255,255,255,.4);
+      font-family: 'IBM Plex Mono', monospace;
+    }
+    .hero-byline span { color: rgba(255,255,255,.25); }
+    .hero-byline strong { color: rgba(255,255,255,.65); font-weight: 500; }
+
+    /* ── STATS BAR ── */
+    .stats-bar { background: var(--ink); padding: 0 40px; }
+    .stats-inner {
+      max-width: calc(var(--col) + 200px); margin: 0 auto;
+      display: grid; grid-template-columns: repeat(3,1fr);
+    }
+    .stat-item {
+      padding: 24px 32px; border-right: 1px solid rgba(255,255,255,.07); color:#fff;
+    }
+    .stat-item:first-child { padding-left: 0; }
+    .stat-item:last-child  { border-right: none; }
+    .stat-number {
+      font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 700;
+      display: block; line-height: 1; color: #f4c89a;
+    }
+    .stat-label {
+      font-size: .75rem; text-transform: uppercase;
+      letter-spacing: .1em; opacity: .45; margin-top: 4px;
+      font-family: 'IBM Plex Mono', monospace;
+    }
+
+    /* ── ARTICLE ── */
+    .article-wrap { padding: 72px 40px; }
+    .article-inner { max-width: var(--col); margin: 0 auto; }
+
+    .article-inner > p:first-of-type::first-letter {
+      font-family: 'Playfair Display', serif; font-size: 4.5em; font-weight: 900;
+      float: left; line-height: .78; margin-right: 8px; margin-top: 6px;
+      color: var(--accent);
+    }
+    p { margin-bottom: 1.5rem; }
+
+    h2 {
+      font-family: 'Playfair Display', serif; font-size: 1.7rem; font-weight: 700;
+      letter-spacing: -.02em; line-height: 1.25; margin: 3rem 0 1.1rem;
+    }
+    h2::before {
+      content: ''; display: block; width: 32px; height: 3px;
+      background: var(--accent); margin-bottom: 16px;
+    }
+    h3 {
+      font-family: 'IBM Plex Sans', sans-serif; font-size: 1.05rem; font-weight: 600;
+      margin: 2rem 0 .7rem; text-transform: uppercase;
+      letter-spacing: .06em; color: var(--gold);
+    }
+
+    blockquote {
+      border-left: 3px solid var(--accent); margin: 2.5rem 0;
+      padding: 20px 0 20px 32px;
+    }
+    blockquote p {
+      font-family: 'Playfair Display', serif; font-size: 1.35rem;
+      font-style: italic; line-height: 1.5; color: var(--ink); margin: 0 0 8px;
+    }
+    blockquote cite {
+      font-family: 'IBM Plex Mono', monospace; font-size: .72rem;
+      text-transform: uppercase; letter-spacing: .12em;
+      color: var(--muted); font-style: normal;
+    }
+
+    .highlight { background: var(--accent-light); padding: 0 4px; font-weight: 500; }
+
+    /* ── SEGMENT CARDS ── */
+    .segment-grid {
+      display: grid; grid-template-columns: repeat(3,1fr);
+      gap: 1px; background: var(--rule);
+      border: 1px solid var(--rule); margin: 2.5rem 0;
+    }
+    .seg-card { background: var(--paper); padding: 24px 20px; }
+    .seg-icon { font-size: 1.5rem; margin-bottom: 10px; display: block; }
+    .seg-label {
+      font-family: 'IBM Plex Mono', monospace; font-size: .65rem;
+      text-transform: uppercase; letter-spacing: .14em;
+      color: var(--muted); margin-bottom: 6px;
+    }
+    .seg-value {
+      font-family: 'Playfair Display', serif; font-size: 1.6rem;
+      font-weight: 700; line-height: 1.1; margin-bottom: 4px;
+    }
+    .seg-value.up   { color: var(--green); }
+    .seg-value.down { color: var(--red); }
+    .seg-value.flat { color: var(--gold); }
+    .seg-desc { font-size: .8rem; color: var(--muted); line-height: 1.5; margin-top: 6px; }
+
+    /* ── DATA CARD ── */
+    .data-card {
+      background: var(--cream); border: 1px solid var(--rule);
+      padding: 28px 32px; margin: 2.5rem 0;
+    }
+    .data-card h4 {
+      font-family: 'IBM Plex Mono', monospace; font-size: .7rem;
+      text-transform: uppercase; letter-spacing: .15em;
+      color: var(--muted); margin-bottom: 20px;
+    }
+    .data-rows { display: flex; flex-direction: column; gap: 12px; }
+    .data-row { display: flex; align-items: center; gap: 16px; }
+    .data-row-label { font-size: .85rem; color: var(--muted); width: 220px; flex-shrink: 0; }
+    .data-row-bar-wrap { flex: 1; height: 6px; background: var(--rule); position: relative; }
+    .data-row-bar { position: absolute; top: 0; left: 0; height: 100%; }
+    .data-row-bar.terra  { background: var(--accent); }
+    .data-row-bar.gold   { background: var(--gold); }
+    .data-row-bar.green  { background: var(--green); }
+    .data-row-bar.muted  { background: var(--muted); opacity: .35; }
+    .data-row-val {
+      font-family: 'IBM Plex Mono', monospace; font-size: .8rem;
+      font-weight: 500; width: 96px; text-align: right;
+    }
+
+    /* ── METRICS 2×2 ── */
+    .metrics-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 1px; background: var(--rule);
+      border: 1px solid var(--rule); margin: 2.5rem 0;
+    }
+    .metric-cell { background: var(--paper); padding: 24px; }
+    .metric-label {
+      font-family: 'IBM Plex Mono', monospace; font-size: .68rem;
+      text-transform: uppercase; letter-spacing: .14em;
+      color: var(--muted); margin-bottom: 8px;
+    }
+    .metric-value {
+      font-family: 'Playfair Display', serif; font-size: 1.65rem;
+      font-weight: 700; line-height: 1.1;
+    }
+    .metric-value.terra  { color: var(--accent); }
+    .metric-value.gold   { color: var(--gold); }
+    .metric-value.green  { color: var(--green); }
+    .metric-note { font-size: .78rem; color: var(--muted); margin-top: 6px; }
+
+    /* ── TREND LIST ── */
+    .trend-list { margin: 2rem 0; }
+    .trend-item {
+      display: flex; gap: 20px; padding: 18px 0;
+      border-bottom: 1px solid var(--rule); align-items: flex-start;
+    }
+    .trend-item:first-child { border-top: 1px solid var(--rule); }
+    .trend-num {
+      font-family: 'Playfair Display', serif; font-size: 1.4rem;
+      font-weight: 700; color: var(--accent); line-height: 1.1;
+      width: 28px; flex-shrink: 0; text-align: right;
+    }
+    .trend-title { font-weight: 600; font-size: .92rem; margin-bottom: 4px; }
+    .trend-desc  { font-size: .83rem; color: var(--muted); line-height: 1.55; }
+
+    /* ── CAP RATE STRIP ── */
+    .cap-strip {
+      background: var(--accent); color: #fff; padding: 28px 32px;
+      margin: 2.5rem 0; display: grid; grid-template-columns: repeat(4,1fr); gap: 20px;
+    }
+    .cap-item {}
+    .cap-label {
+      font-family: 'IBM Plex Mono', monospace; font-size: .65rem;
+      text-transform: uppercase; letter-spacing: .12em; opacity: .65; margin-bottom: 6px;
+    }
+    .cap-value {
+      font-family: 'Playfair Display', serif; font-size: 1.8rem;
+      font-weight: 700; line-height: 1;
+    }
+    .cap-note { font-size: .75rem; opacity: .65; margin-top: 4px; }
+
+    .divider { border: none; border-top: 1px solid var(--rule); margin: 3rem 0; }
+
+    .conclusion {
+      background: var(--ink); color: var(--paper);
+      padding: 36px 40px; margin: 3rem 0 0;
+    }
+    .conclusion h3 {
+      color: #f4c89a; margin-top: 0;
+      letter-spacing: .06em; font-size: 1rem; text-transform: uppercase;
+    }
+    .conclusion p { color: #ccc; margin-bottom: 1rem; }
+    .conclusion p:last-child { margin-bottom: 0; }
+
+    footer {
+      background: var(--cream); border-top: 1px solid var(--rule);
+      padding: 28px 40px; font-family: 'IBM Plex Mono', monospace;
+      font-size: .72rem; color: var(--muted); text-align: center; letter-spacing: .06em;
+    }
+    footer strong { color: var(--ink); }
+
+    @media (max-width: 640px) {
+      .masthead { padding: 12px 20px; }
+      .hero { padding: 56px 20px 52px; }
+      .stats-bar { padding: 0 20px; }
+      .stats-inner, .segment-grid, .cap-strip { grid-template-columns: 1fr; }
+      .stat-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,.07); padding: 16px 0; }
+      .article-wrap { padding: 48px 20px; }
+      .metrics-grid { grid-template-columns: 1fr; }
+      .data-row-label { width: 130px; font-size: .78rem; }
+    }
+  </style>
+</head>
+<body>
+
+<header class="masthead">
+  <span class="masthead-logo">kotana.com.ru</span>
+  <span class="masthead-meta">Аналитика · Недвижимость · 2025</span>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-tag">Коммерческая недвижимость · 2025</div>
+    <h1>Рынок коммерческой недвижимости: год <em>рекордного ввода</em> и инвестиционного охлаждения</h1>
+    <p class="hero-lead">В 2025 году российский рынок коммерческой недвижимости поставил рекорд по вводу площадей — 9,1 млн кв. м, максимум за 10 лет. Одновременно инвестиции в сектор сократились на 24–35%. Два противоположных вектора формируют портрет рынка, который учится жить с дорогими деньгами.</p>
+    <div class="hero-byline">
+      <strong>Редакция kotana.com.ru</strong>
+      <span>·</span>
+      <span>Март 2026</span>
+      <span>·</span>
+      <span>14 мин чтения</span>
+    </div>
+  </div>
+</section>
+
+<div class="stats-bar">
+  <div class="stats-inner">
+    <div class="stat-item">
+      <span class="stat-number">9,1 млн м²</span>
+      <span class="stat-label">Рекордный ввод — максимум за 10 лет</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number">~1 трлн ₽</span>
+      <span class="stat-label">Общий объём инвестиций (−24% г/г)</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number">806 млрд ₽</span>
+      <span class="stat-label">Инвестиции в коммерческую НД (−11% г/г)</span>
+    </div>
+  </div>
+</div>
+
+<main class="article-wrap">
+  <article class="article-inner">
+
+    <p>Рынок коммерческой недвижимости России в 2025 году прошёл проверку на прочность — и выдержал её по-разному в зависимости от сегмента. Высокая ключевая ставка ЦБ, достигавшая 21% в начале года, фактически заморозила новые инвестиционные сделки с заёмным финансированием. Зато рекордный ввод новых площадей, накопленный за годы предшествующего строительного бума, вышел на рынок именно тогда, когда спрос начал остывать. Итог — разнонаправленная динамика: офисный рынок дефицитен как никогда, складской переварил волну нового предложения, торговый адаптируется к новой реальности.</p>
+
+    <h2>Общая картина: цифры и контекст</h2>
+
+    <p>По оценке Nikoliers, суммарный ввод коммерческой недвижимости в России по итогам 2025 года составил <span class="highlight">9,1 млн кв. м</span> — рекорд более чем за десятилетие, превысивший предыдущий максимум 2014 года в 7,5 млн кв. м. При этом 84% нового предложения — складская недвижимость (7,7 млн кв. м): именно она определила динамику рынка.</p>
+
+    <p>Инвестиционная активность развивалась в противоположном направлении. По данным CORE.XP, общий объём инвестиций в недвижимость России составил около 1 трлн рублей — на 24% ниже 2024 года. В сегменте коммерческой недвижимости снижение более умеренное: 806 млрд рублей, минус 11% год к году. По оценке Ricci, предварительные итоги ещё более пессимистичны — 800–850 млрд рублей, что соответствует падению на 35% к уровню прошлого года.</p>
+
+    <div class="segment-grid">
+      <div class="seg-card">
+        <span class="seg-icon">🏗️</span>
+        <div class="seg-label">Складская НД</div>
+        <div class="seg-value down">−42%</div>
+        <div class="seg-desc">Инвестиции до 99 млрд руб. Рекордный ввод 7,7 млн м² при одновременном охлаждении спроса на 27–43%.</div>
+      </div>
+      <div class="seg-card">
+        <span class="seg-icon">🏢</span>
+        <div class="seg-label">Офисная НД</div>
+        <div class="seg-value down">−20%</div>
+        <div class="seg-desc">Инвестиции 227 млрд руб. Вакансия у исторического минимума. Ставки в Prime выросли почти вдвое за год.</div>
+      </div>
+      <div class="seg-card">
+        <span class="seg-icon">🛍️</span>
+        <div class="seg-label">Торговая НД</div>
+        <div class="seg-value flat">≈0%</div>
+        <div class="seg-desc">Наиболее стабильный сегмент. Ввод 705 тыс. м². Вакансия в Москве снизилась до 8%.</div>
+      </div>
+    </div>
+
+    <h3>Кто покупал и зачем</h3>
+
+    <p>Структура инвесторов претерпела значительные изменения. Доля конечных пользователей в сделках выросла до 41% против 32% годом ранее: компании предпочитают владеть активами, а не арендовать их в условиях дефицитного рынка и высоких ставок. Банки стали крупнейшими покупателями офисной недвижимости — на их долю пришлось 101 млрд рублей сделок. Доля управляющих компаний и ЗПИФов выросла с 8% до 14%. Профессиональные инвесторы, напротив, выжидают: при ставках капитализации 11–13% и стоимости кредита выше 20% классическая инвестиционная логика не работает.</p>
+
+    <hr class="divider" />
+
+    <h2>Складская недвижимость: рекордный ввод и остывание спроса</h2>
+
+    <p>Складской сегмент оказался эпицентром самых драматических изменений. С одной стороны — рекордный ввод, ставший следствием BTS-решений и собственных проектов маркетплейсов, заключённых в 2022–2023 годах. По данным Nikoliers, 2025-й стал рекордным по объёмам ввода объектов в складском сегменте: динамика +68% год к году. С другой стороны — охлаждение: маркетплейсы завершили этап экспансии, высокая ключевая ставка ограничила кредитование, а рост товарооборота замедлился.</p>
+
+    <p>Результат — резкий рост вакантности. В Москве показатель вырос с 0,5% в 2024 году до <span class="highlight">2,8%</span>, прибавив сразу 2,3 п.п. По России в целом вакансия достигла 3,1% (+2,1 п.п.). Впервые за долгое время арендные ставки начали снижаться: по данным Nikoliers, снять склад в Москве стало дешевле на 5–8%, текущие ставки стабилизировались в диапазоне 9,3–11,8 тыс. рублей за кв. м в год (triple net). Объём сделок по аренде и купле-продаже, по оценке CORE.XP, составил 3,8–4 млн кв. м — против 6,1 млн в 2024-м.</p>
+
+    <div class="data-card">
+      <h4>Складской рынок Москвы: ключевые показатели 2024–2025 гг.</h4>
+      <div class="data-rows">
+        <div class="data-row">
+          <span class="data-row-label">Ввод новых площадей</span>
+          <div class="data-row-bar-wrap"><div class="data-row-bar terra" style="width:100%"></div></div>
+          <span class="data-row-val">7,7 млн м²</span>
+        </div>
+        <div class="data-row">
+          <span class="data-row-label">Объём сделок (аренда+продажа)</span>
+          <div class="data-row-bar-wrap"><div class="data-row-bar gold" style="width:62%"></div></div>
+          <span class="data-row-val">3,8–4 млн м²</span>
+        </div>
+        <div class="data-row">
+          <span class="data-row-label">Вакансия (Москва)</span>
+          <div class="data-row-bar-wrap"><div class="data-row-bar muted" style="width:28%"></div></div>
+          <span class="data-row-val">2,8% (+2,3 п.п.)</span>
+        </div>
+        <div class="data-row">
+          <span class="data-row-label">Ставка аренды (triple net)</span>
+          <div class="data-row-bar-wrap"><div class="data-row-bar green" style="width:82%"></div></div>
+          <span class="data-row-val">9,3–11,8 тыс./м²</span>
+        </div>
+        <div class="data-row">
+          <span class="data-row-label">Инвестиции в сегмент</span>
+          <div class="data-row-bar-wrap"><div class="data-row-bar muted" style="width:38%"></div></div>
+          <span class="data-row-val">99 млрд ₽ (−42%)</span>
+        </div>
+      </div>
+    </div>
+
+    <h3>Новые форматы: light industrial и last mile</h3>
+    <p>На фоне перенасыщения классического складского рынка устойчивый дефицит наблюдается в нише light industrial — компактных производственно-складских объектов площадью до 20 000 кв. м с офисными зонами. По данным аналитиков Parametr, спрос на такие объекты в 18 раз превысил текущую вакансию. Основные арендаторы — производители (53%) и предприятия розничной торговли (20%). В 2025 году ввод в этом сегменте составил около 710 тыс. кв. м. Параллельно растёт интерес к складам «последней мили» для финальной доставки в городской черте. Доходность логистических парков в крупных регионах достигает 14–16% годовых.</p>
+
+    <blockquote>
+      <p>«Рынок постепенно движется к балансу. Значительная доля объектов строилась под конечных пользователей, поэтому в офисном и складском сегментах формируется отложенный спрос, который не будет удовлетворён вводом новых площадей.»</p>
+      <cite>— Татьяна Дивина, региональный директор по исследованиям Nikoliers</cite>
+    </blockquote>
+
+    <hr class="divider" />
+
+    <h2>Офисная недвижимость: парадокс дефицита</h2>
+
+    <p>Офисный рынок Москвы демонстрирует в 2025 году парадоксальную картину: инвестиции снижаются, зато арендные ставки и дефицит площадей бьют рекорды. Вакантность в классе А по итогам года составила <span class="highlight">5,6%</span> — исторически минимальный уровень. В сегменте Prime ситуация ещё более острая: вакансия — 1,5%, свободных блоков от 2000 кв. м в премиальных локациях фактически нет.</p>
+
+    <div class="metrics-grid">
+      <div class="metric-cell">
+        <div class="metric-label">Вакансия Prime (Москва)</div>
+        <div class="metric-value terra">1,5%</div>
+        <div class="metric-note">Исторический минимум. Свободных блоков от 2 000 м² в центре практически нет.</div>
+      </div>
+      <div class="metric-cell">
+        <div class="metric-label">Аренда Prime — ставка</div>
+        <div class="metric-value gold">75 тыс. ₽/м²</div>
+        <div class="metric-note">Рост почти в 1,9 раза за год. Замедление с весны 2025. Класс A — 30 500 руб./м².</div>
+      </div>
+      <div class="metric-cell">
+        <div class="metric-label">Ввод офисов в 2025 году</div>
+        <div class="metric-value green">908 тыс. м²</div>
+        <div class="metric-note">Прогноз Nikoliers. Значительная часть — в формате продажи, а не аренды.</div>
+      </div>
+      <div class="metric-cell">
+        <div class="metric-label">Цена продажи офисов в Москве</div>
+        <div class="metric-value terra">400 тыс. ₽/м²</div>
+        <div class="metric-note">Снижение на 8% за год (данные CMWP). Рынок покупателя создаёт возможности.</div>
+      </div>
+    </div>
+
+    <p>Причина дефицита — структурная: новых офисов строится мало, а те, что строятся, зачастую реализуются небольшими блоками в продажу, а не в аренду. Бум частных инвестиций в офисную недвижимость стал отличительной чертой 2025 года. После отмены льготной ипотеки инвесторы переключились с жилых новостроек на коммерческие активы: доход от аренды офиса в Москве при сопоставимом вложении в 2+ раза превышает доходность жилой аренды.</p>
+
+    <p>Новые деловые кластеры — Большой Сити, Мнёвники, Ходынка — активно забирают спрос у центра: доля сделок в этих зонах выросла с 11% в 2023 году до 18% в 2025-м. Ставки аренды в регионах за год выросли в среднем на 30% — под конец 2025 года свободных офисов в городах-миллионниках России практически не осталось.</p>
+
+    <hr class="divider" />
+
+    <h2>Торговая недвижимость: стабильность через трансформацию</h2>
+
+    <p>Торговая недвижимость подтвердила статус наиболее устойчивого к потрясениям сегмента. Вакансия в московских торговых центрах снизилась до 8% — ниже, чем в большинстве европейских столиц. Ввод новых торговых площадей составил около 705 тыс. кв. м по России, из которых 390 тыс. кв. м — в Москве.</p>
+
+    <p>Ключевая тенденция: физический ретейл не умер — он адаптировался. На месте ушедших западных брендов закрепились российские сети и франшизы, изменившие профиль трафика, но не уничтожившие его. Торговые центры активно меняют формат: сокращают торговые площади в пользу развлечений, гастрономии и услуг. Примерно 70% новых проектов — это малые моллы формата «у дома» и районные торговые центры. Крупные форматы испытывают давление e-commerce, но трансформируются в досугово-развлекательные хабы.</p>
+
+    <blockquote>
+      <p>«Два этажа ТРК "Континент" отданы под семейный парк аттракционов площадью 14,8 тыс. кв. м. Такая трансформация активов из торговых центров в многофункциональные досугово-развлекательные хабы стала стратегией выживания для всего рынка.»</p>
+      <cite>— Алёна Мариничева, директор по рекламе холдинга «Адамант», Санкт-Петербург</cite>
+    </blockquote>
+
+    <hr class="divider" />
+
+    <h2>Ставки капитализации и инвестиционная логика</h2>
+
+    <p>В условиях высокой ключевой ставки ставки капитализации на рынке коммерческой недвижимости существенно выросли, однако по-прежнему отстают от доходности банковских депозитов — главного конкурента за капитал инвесторов. Это и объясняет осторожность профессиональных инвесторов: математика сделки не сходится при стоимости кредита 20%+.</p>
+
+    <div class="cap-strip">
+      <div class="cap-item">
+        <div class="cap-label">Офисы</div>
+        <div class="cap-value">11–13%</div>
+        <div class="cap-note">класс A/Prime, Москва</div>
+      </div>
+      <div class="cap-item">
+        <div class="cap-label">Склады</div>
+        <div class="cap-value">10,5–12%</div>
+        <div class="cap-note">класс A, Московский регион</div>
+      </div>
+      <div class="cap-item">
+        <div class="cap-label">Торговые центры</div>
+        <div class="cap-value">12–14%</div>
+        <div class="cap-note">качественные ТЦ Москвы</div>
+      </div>
+      <div class="cap-item">
+        <div class="cap-label">Light industrial</div>
+        <div class="cap-value">14–16%</div>
+        <div class="cap-note">регионы, логопарки</div>
+      </div>
+    </div>
+
+    <p>Тем не менее доля девелоперских проектов в общем объёме инвестиций выросла до 46% (+12 п.п.): на фоне ограниченного предложения готовых объектов инвесторы идут в стройку, чтобы получить актив по себестоимости. В структуре девелопмента офисы заняли 53% (+7 п.п.), производственно-складской сегмент — 32% (−15 п.п.). Гостиничная недвижимость стала главным открытием инвестиционного года: объём вложений вырос в 2,4 раза на фоне бума внутреннего туризма.</p>
+
+    <hr class="divider" />
+
+    <h2>Ключевые тренды рынка в 2025 году</h2>
+
+    <div class="trend-list">
+      <div class="trend-item">
+        <div class="trend-num">1</div>
+        <div class="trend-body">
+          <div class="trend-title">Рынок покупателя впервые за годы</div>
+          <div class="trend-desc">Рост предложения на фоне охлаждения спроса перевернул баланс сил. В складском и частично офисном сегментах условия диктуют арендаторы и покупатели, а не собственники. Это разительное отличие от 2022–2024 годов. Стоимость офисов в Москве снизилась на 8% — впервые за несколько лет.</div>
+        </div>
+      </div>
+      <div class="trend-item">
+        <div class="trend-num">2</div>
+        <div class="trend-body">
+          <div class="trend-title">Банки и конечные пользователи как новые покупатели</div>
+          <div class="trend-desc">Профессиональные инвесторы выжидают, пока банки и крупные корпорации скупают офисную недвижимость для собственных нужд. ЛУКОЙЛ выкупил целый офисный небоскрёб. Банки совершили сделки на 101 млрд рублей в офисном сегменте. Рынок консолидируется у институциональных игроков.</div>
+        </div>
+      </div>
+      <div class="trend-item">
+        <div class="trend-num">3</div>
+        <div class="trend-body">
+          <div class="trend-title">Демократизация офисных инвестиций</div>
+          <div class="trend-desc">Девелоперы массово нарезают офисные площади на небольшие блоки от 50 м², привлекая частных инвесторов. Выбор офисных помещений для покупки вырос на 41%. Доход от аренды офиса в Москве в 2+ раза превышает доходность жилой аренды при сопоставимых инвестициях. УК и ЗПИФы активизировались: их доля в сделках выросла с 8% до 14%.</div>
+        </div>
+      </div>
+      <div class="trend-item">
+        <div class="trend-num">4</div>
+        <div class="trend-body">
+          <div class="trend-title">Региональная экспансия складов</div>
+          <div class="trend-desc">62% транзакций с складской недвижимостью пришлось на локации за пределами Московского региона. Девелоперы активно идут в города второго и третьего эшелона. Доходность региональных логистических парков — от 14 до 16% годовых — существенно превышает московские показатели.</div>
+        </div>
+      </div>
+      <div class="trend-item">
+        <div class="trend-num">5</div>
+        <div class="trend-body">
+          <div class="trend-title">ЦОД — новый инвестиционный фаворит</div>
+          <div class="trend-desc">Центры обработки данных стремительно выходят на первый план среди инвестиционных сегментов. Рост e-commerce, цифровизация экономики, внедрение ИИ создают неудовлетворённый спрос на вычислительные мощности. По прогнозу CORE.XP, в 2026 году ожидается появление первых крупных инвестиционных сделок в сегменте ЦОД.</div>
+        </div>
+      </div>
+      <div class="trend-item">
+        <div class="trend-num">6</div>
+        <div class="trend-body">
+          <div class="trend-title">МФК как ответ на вызовы ретейла</div>
+          <div class="trend-desc">Многофункциональные комплексы, объединяющие торговлю, офисы, общепит, развлечения и жильё, превращаются из тренда в стандарт. Около 70% новых торговых проектов — форматы «у дома» и районные ТЦ. Крупные торговые площади в классическом формате испытывают структурное давление со стороны e-commerce.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="conclusion">
+      <h3>Итог: рынок двух скоростей</h3>
+      <p>2025 год войдёт в историю российского рынка коммерческой недвижимости как год структурных контрастов. Рекордный ввод складских площадей при падении инвестиций — это не кризис, а балансировка после нескольких лет сверхактивного роста. Офисный дефицит при снижении цен — это рынок, который перестраивается от аренды к покупке. Стабильный ретейл при реновации форматов — это физическая торговля, которая нашла свой путь выживания рядом с e-commerce.</p>
+      <p>Главный водораздел года — ключевая ставка. Все решения инвесторов в 2025-м определялись одним вопросом: «Стоит ли вкладывать в недвижимость при депозитах под 20%?» Профессиональные инвесторы ответили «нет» — и отошли в сторону. Конечные пользователи, банки и частные инвесторы ответили «да» — и получили возможность купить активы на рынке покупателя. Это перераспределение базы инвесторов будет определять характер рынка ещё как минимум год.</p>
+      <p>Снижение ключевой ставки в 2026 году станет переломным моментом. По прогнозу CORE.XP, уже при ставке ниже 17% профессиональные инвесторы вернутся на рынок, запустив новый инвестиционный цикл. Отложенный спрос в офисах и складах обеспечит ёмкость для этого цикла — дефицит качественных площадей в обоих сегментах никуда не делся.</p>
+    </div>
+
+  </article>
+</main>
+
+<footer>
+  <strong>kotana.com.ru</strong> &nbsp;·&nbsp; Рынок коммерческой недвижимости · 2025 &nbsp;·&nbsp; Источники: CORE.XP, Nikoliers, CMWP, Ricci, Авито Недвижимость, СберПро
+</footer>
+
+</body>
+</html>
