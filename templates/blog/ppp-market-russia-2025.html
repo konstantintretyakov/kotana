@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Рынок государственно-частного партнёрства в России в 2025 году | kotana.com.ru</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --ink: #0f1117;
+      --paper: #f7f4ef;
+      --cream: #ede9e0;
+      --accent: #1a4d7a;
+      --accent-light: #d0e4f5;
+      --gold: #b8922a;
+      --green: #1a7a3c;
+      --muted: #7a7060;
+      --rule: #d4cfc5;
+      --col: clamp(320px, 66ch, 720px);
+    }
+
+    html { font-size: 17px; scroll-behavior: smooth; }
+    body {
+      background: var(--paper);
+      color: var(--ink);
+      font-family: 'IBM Plex Sans', sans-serif;
+      font-weight: 400;
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ─── MASTHEAD ─── */
+    .masthead {
+      background: var(--ink);
+      color: var(--paper);
+      padding: 14px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+    .masthead-logo { font-size: 1rem; font-weight: 500; color: #fff; letter-spacing: 0.05em; }
+    .masthead-meta { color: #888; }
+
+    /* ─── HERO ─── */
+    .hero {
+      background: var(--accent);
+      color: var(--paper);
+      padding: 80px 40px 72px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: 'ГЧП';
+      position: absolute;
+      right: -20px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(120px, 18vw, 260px);
+      font-weight: 900;
+      color: rgba(255,255,255,0.06);
+      line-height: 1;
+      pointer-events: none;
+    }
+    .hero-inner { max-width: var(--col); margin: 0 auto; position: relative; }
+    .hero-tag {
+      display: inline-block;
+      border: 1px solid rgba(255,255,255,0.3);
+      color: rgba(255,255,255,0.75);
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      margin-bottom: 28px;
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.2rem, 5vw, 3.4rem);
+      font-weight: 700;
+      line-height: 1.18;
+      letter-spacing: -0.02em;
+      margin-bottom: 24px;
+      max-width: 22ch;
+    }
+    .hero h1 em { font-style: italic; color: #9fc8f0; }
+    .hero-lead {
+      font-size: 1.08rem;
+      color: rgba(255,255,255,0.72);
+      max-width: 54ch;
+      line-height: 1.65;
+      margin-bottom: 40px;
+    }
+    .hero-byline {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.4);
+      font-family: 'IBM Plex Mono', monospace;
+    }
+    .hero-byline span { color: rgba(255,255,255,0.25); }
+    .hero-byline strong { color: rgba(255,255,255,0.65); font-weight: 500; }
+
+    /* ─── STATS BAR ─── */
+    .stats-bar { background: var(--ink); padding: 0 40px; }
+    .stats-inner {
+      max-width: calc(var(--col) + 200px);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
+    .stat-item {
+      padding: 24px 32px;
+      border-right: 1px solid rgba(255,255,255,0.07);
+      color: #fff;
+    }
+    .stat-item:first-child { padding-left: 0; }
+    .stat-item:last-child { border-right: none; }
+    .stat-number {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      font-weight: 700;
+      display: block;
+      line-height: 1;
+      color: #9fc8f0;
+    }
+    .stat-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      opacity: 0.45;
+      margin-top: 4px;
+      font-family: 'IBM Plex Mono', monospace;
+    }
+
+    /* ─── ARTICLE ─── */
+    .article-wrap { padding: 72px 40px; }
+    .article-inner { max-width: var(--col); margin: 0 auto; }
+
+    .article-inner > p:first-of-type::first-letter {
+      font-family: 'Playfair Display', serif;
+      font-size: 4.5em;
+      font-weight: 900;
+      float: left;
+      line-height: 0.78;
+      margin-right: 8px;
+      margin-top: 6px;
+      color: var(--accent);
+    }
+
+    p { margin-bottom: 1.5rem; }
+
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.7rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.25;
+      margin: 3rem 0 1.1rem;
+    }
+    h2::before {
+      content: '';
+      display: block;
+      width: 32px;
+      height: 3px;
+      background: var(--accent);
+      margin-bottom: 16px;
+    }
+
+    h3 {
+      font-family: 'IBM Plex Sans', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin: 2rem 0 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--gold);
+    }
+
+    blockquote {
+      border-left: 3px solid var(--accent);
+      margin: 2.5rem 0;
+      padding: 20px 0 20px 32px;
+    }
+    blockquote p {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.35rem;
+      font-style: italic;
+      line-height: 1.5;
+      color: var(--ink);
+      margin: 0 0 8px;
+    }
+    blockquote cite {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+      font-style: normal;
+    }
+
+    .highlight {
+      background: var(--accent-light);
+      padding: 0 4px;
+      font-weight: 500;
+    }
+
+    /* ─── Data card ─── */
+    .data-card {
+      background: var(--cream);
+      border: 1px solid var(--rule);
+      padding: 28px 32px;
+      margin: 2.5rem 0;
+    }
+    .data-card h4 {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--muted);
+      margin-bottom: 20px;
+    }
+    .data-rows { display: flex; flex-direction: column; gap: 12px; }
+    .data-row { display: flex; align-items: center; gap: 16px; }
+    .data-row-label { font-size: 0.85rem; color: var(--muted); width: 200px; flex-shrink: 0; }
+    .data-row-bar-wrap { flex: 1; height: 6px; background: var(--rule); position: relative; }
+    .data-row-bar { position: absolute; top: 0; left: 0; height: 100%; }
+    .data-row-bar.blue { background: var(--accent); }
+    .data-row-bar.gold { background: var(--gold); }
+    .data-row-bar.green { background: var(--green); }
+    .data-row-bar.muted { background: var(--muted); opacity: 0.4; }
+    .data-row-val {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.8rem;
+      font-weight: 500;
+      width: 80px;
+      text-align: right;
+    }
+
+    /* ─── Metrics grid ─── */
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      background: var(--rule);
+      border: 1px solid var(--rule);
+      margin: 2.5rem 0;
+    }
+    .metric-cell { background: var(--paper); padding: 24px; }
+    .metric-label {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+    .metric-value {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.65rem;
+      font-weight: 700;
+      line-height: 1.1;
+      color: var(--ink);
+    }
+    .metric-value.blue { color: var(--accent); }
+    .metric-value.green { color: var(--green); }
+    .metric-value.gold { color: var(--gold); }
+    .metric-note { font-size: 0.78rem; color: var(--muted); margin-top: 6px; }
+
+    /* ─── Deficit strip ─── */
+    .deficit-strip {
+      background: var(--accent);
+      color: #fff;
+      padding: 28px 32px;
+      margin: 2.5rem 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 24px;
+    }
+    .deficit-item {}
+    .deficit-label {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      opacity: 0.6;
+      margin-bottom: 6px;
+    }
+    .deficit-value {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      font-weight: 700;
+      line-height: 1;
+    }
+    .deficit-note { font-size: 0.78rem; opacity: 0.65; margin-top: 6px; }
+
+    /* ─── Trend list ─── */
+    .trend-list { margin: 2rem 0; }
+    .trend-item {
+      display: flex;
+      gap: 20px;
+      padding: 18px 0;
+      border-bottom: 1px solid var(--rule);
+      align-items: flex-start;
+    }
+    .trend-item:first-child { border-top: 1px solid var(--rule); }
+    .trend-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--accent);
+      line-height: 1.1;
+      text-align: right;
+      width: 28px;
+      flex-shrink: 0;
+    }
+    .trend-body {}
+    .trend-title { font-weight: 600; font-size: 0.92rem; margin-bottom: 4px; }
+    .trend-desc { font-size: 0.83rem; color: var(--muted); line-height: 1.55; }
+
+    /* ─── Source note ─── */
+    .source-note {
+      background: var(--cream);
+      border-left: 3px solid var(--rule);
+      padding: 14px 20px;
+      margin: 2.5rem 0;
+      font-size: 0.78rem;
+      color: var(--muted);
+      font-family: 'IBM Plex Mono', monospace;
+    }
+    .source-note a { color: var(--accent); text-decoration: none; }
+
+    .divider { border: none; border-top: 1px solid var(--rule); margin: 3rem 0; }
+
+    .conclusion {
+      background: var(--ink);
+      color: var(--paper);
+      padding: 36px 40px;
+      margin: 3rem 0 0;
+    }
+    .conclusion h3 { color: #9fc8f0; margin-top: 0; letter-spacing: 0.06em; font-size: 1rem; }
+    .conclusion p { color: #ccc; margin-bottom: 1rem; }
+    .conclusion p:last-child { margin-bottom: 0; }
+
+    footer {
+      background: var(--cream);
+      border-top: 1px solid var(--rule);
+      padding: 28px 40px;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.72rem;
+      color: var(--muted);
+      text-align: center;
+      letter-spacing: 0.06em;
+    }
+    footer strong { color: var(--ink); }
+
+    @media (max-width: 640px) {
+      .masthead { padding: 12px 20px; }
+      .hero { padding: 56px 20px 52px; }
+      .stats-bar { padding: 0 20px; }
+      .stats-inner { grid-template-columns: 1fr; }
+      .stat-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.07); padding: 16px 0; }
+      .article-wrap { padding: 48px 20px; }
+      .metrics-grid { grid-template-columns: 1fr; }
+      .deficit-strip { grid-template-columns: 1fr; }
+      .data-row-label { width: 130px; font-size: 0.78rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Masthead -->
+<header class="masthead">
+  <span class="masthead-logo">kotana.com.ru</span>
+  <span class="masthead-meta">Аналитика · Инфраструктура · Рынки</span>
+</header>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-tag">Инфраструктура · 2025</div>
+    <h1>Рынок ГЧП в 2025 году: <em>зрелость механизма</em> в условиях дорогих денег</h1>
+    <p class="hero-lead">Двадцать лет назад в России был принят закон о концессиях. За это время рынок государственно-частного партнёрства вырос в десятки раз, пережил несколько кризисов и в 2024-м поставил исторический рекорд. Но 2025-й поставил перед ним новый вопрос: как расти при ключевой ставке 21%?</p>
+    <div class="hero-byline">
+      <strong>Редакция kotana.com.ru</strong>
+      <span>·</span>
+      <span>2025</span>
+      <span>·</span>
+      <span>13 мин чтения</span>
+    </div>
+  </div>
+</section>
+
+<!-- Stats bar -->
+<div class="stats-bar">
+  <div class="stats-inner">
+    <div class="stat-item">
+      <span class="stat-number">7,5 трлн ₽</span>
+      <span class="stat-label">Общий портфель ГЧП-проектов</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number">567 млрд ₽</span>
+      <span class="stat-label">Новые инвестиции за 2025 год</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number">86%</span>
+      <span class="stat-label">Доля внебюджетных средств в 2025 г.</span>
+    </div>
+  </div>
+</div>
+
+<!-- Article -->
+<main class="article-wrap">
+  <article class="article-inner">
+
+    <p>Государственно-частное партнёрство — один из немногих инструментов, способных привлекать инфраструктурные инвестиции даже в период жёсткой денежно-кредитной политики. Пока корпоративное кредитование сжималось под давлением ключевой ставки в 21%, рынок ГЧП продолжал работать: за девять месяцев 2025 года было заключено 142 новых соглашения на 246 млрд рублей, а по итогам полного года — 249 соглашений общим объёмом 567 млрд рублей, из которых 86% составляют внебюджетные средства. Инструмент доказывает свою состоятельность именно тогда, когда деньги дороги.</p>
+
+    <div class="source-note">
+      Статья подготовлена на основе исследования «Рынок проектов государственно-частного партнёрства: тенденции, основные игроки и перспективы развития до 2040 года» (ТеДо совместно с Национальным Центром ГЧП / ВЭБ.РФ, июль 2025 г.) — <a href="https://indparks.ru/materials/publications/tedo-ppp-market-research-2025-2040.pdf">indparks.ru</a>, а также данных Минэкономразвития, Ведомостей, АИИК и открытых источников.
+    </div>
+
+    <h2>Двадцать лет механизму: от единичных опытов к системе</h2>
+
+    <p>В 2025 году российский рынок ГЧП отметил двойной юбилей: 20 лет закону о концессиях (115-ФЗ от 2005 года) и 10 лет закону о ГЧП/МЧП (224-ФЗ от 2015 года). За это время запущено более <span class="highlight">4,4 тыс. проектов</span> — от малых коммунальных концессий стоимостью до 100 млн рублей до мегапроектов федерального масштаба.</p>
+
+    <p>По данным на 1 декабря 2025 года, в стадии создания или эксплуатации находится около 3,5 тыс. концессий и соглашений ГЧП, ещё 966 успешно завершены. Совокупный портфель инвестиций достиг <span class="highlight">7,5 трлн рублей</span>, из которых 5,4 трлн — частные средства. Рынок вырос за последние пять лет в три раза, невзирая на внешние и внутренние макроэкономические потрясения.</p>
+
+    <blockquote>
+      <p>«На один рубль бюджетных инвестиций приходится три-четыре рубля акционерного и заёмного капитала частных инвесторов. ГЧП — это мультипликатор, а не замена бюджетному финансированию.»</p>
+      <cite>— Наталья Морщихина, директор департамента Минэкономразвития, октябрь 2025</cite>
+    </blockquote>
+
+    <hr class="divider" />
+
+    <h2>Инфраструктурный дефицит как главный драйвер</h2>
+
+    <p>Рост рынка ГЧП — не случайный: за ним стоит математика инфраструктурного дефицита. По оценке ТеДо и Национального Центра ГЧП, совокупная потребность российской экономики в инфраструктурных инвестициях на горизонте до 2040 года превысит <span class="highlight">180 трлн рублей</span>. Доступных бюджетных средств за тот же период наберётся не более 70 трлн рублей. Разрыв — 110 трлн рублей.</p>
+
+    <div class="deficit-strip">
+      <div class="deficit-item">
+        <div class="deficit-label">Потребность до 2040 г.</div>
+        <div class="deficit-value">&gt;180 трлн ₽</div>
+        <div class="deficit-note">накопленная потребность экономики</div>
+      </div>
+      <div class="deficit-item">
+        <div class="deficit-label">Доступно бюджетных средств</div>
+        <div class="deficit-value">~70 трлн ₽</div>
+        <div class="deficit-note">оценка ТеДо и Нац. центра ГЧП</div>
+      </div>
+      <div class="deficit-item">
+        <div class="deficit-label">Инфраструктурный разрыв</div>
+        <div class="deficit-value">110 трлн ₽</div>
+        <div class="deficit-note">потенциальная роль ГЧП</div>
+      </div>
+    </div>
+
+    <p>По международным оценкам, России необходимо направлять на развитие инфраструктуры не менее 5% ВВП в год — иначе разрыв будет нарастать. Сегодня этот показатель составляет 2,4%: больше, чем в США, Великобритании и Германии, но существенно ниже крупных развивающихся стран БРИКС и таких сопоставимых по масштабу экономик, как Австралия, Япония и Канада (свыше 2,5% ВВП). ГЧП в этой формуле — основной инструмент привлечения частного капитала в разрыв между потребностью и возможностями бюджета.</p>
+
+    <p>Государственная поддержка инфраструктурного развития до 2030 года запланирована в рамках 20 национальных проектов с совокупным объёмом финансирования около 57 трлн рублей. Они охватывают транспорт, жильё и коммунальную инфраструктуру, здравоохранение, образование, экологию и цифровую трансформацию. ГЧП — один из четырёх ключевых механизмов реализации наряду с госзаказом, инвестиционными программами госкомпаний и частными проектами.</p>
+
+    <hr class="divider" />
+
+    <h2>2025-й: год торможения после рекорда</h2>
+
+    <p>2024-й стал для рынка ГЧП историческим: было заключено 278 соглашений на 2,4 трлн рублей — рекорд за 20-летнюю историю механизма. Основной вклад внесло крупнейшее концессионное соглашение в истории России — строительство высокоскоростной магистрали «Москва — Санкт-Петербург» с общим объёмом инвестиций 1,9 трлн рублей.</p>
+
+    <p>На этом фоне 2025-й выглядит скромнее: 567 млрд рублей новых инвестиций против 2,4 трлн годом ранее. Но это ожидаемое «охлаждение после мегапроекта» — статистический эффект ВСМ, а не системный откат. Ключевая ставка в 21% при этом создавала реальное давление: стоимость проектного кредитования стала главным стоп-фактором для новых сделок, а уже выданные кредиты с плавающей ставкой угрожали экономике действующих концессий.</p>
+
+    <div class="metrics-grid">
+      <div class="metric-cell">
+        <div class="metric-label">Новые соглашения в 2025 г.</div>
+        <div class="metric-value blue">249</div>
+        <div class="metric-note">против 278 в рекордном 2024 г.</div>
+      </div>
+      <div class="metric-cell">
+        <div class="metric-label">Объём новых инвестиций</div>
+        <div class="metric-value gold">567 млрд ₽</div>
+        <div class="metric-note">86% — внебюджетные средства</div>
+      </div>
+      <div class="metric-cell">
+        <div class="metric-label">Доля частных средств в портфеле</div>
+        <div class="metric-value green">72%</div>
+        <div class="metric-note">5,3 трлн ₽ из 7,4 трлн общего портфеля</div>
+      </div>
+      <div class="metric-cell">
+        <div class="metric-label">Регион-лидер по числу соглашений</div>
+        <div class="metric-value" style="font-size:1.15rem;">Амурская обл.</div>
+        <div class="metric-note">344 соглашения; далее Тамбов (214) и Татарстан (208)</div>
+      </div>
+    </div>
+
+    <blockquote>
+      <p>«В 2025-й мы вступили с некоторыми опасениями. Ключевая ставка достигла своего исторического максимума, а высокая стоимость привлечения проектного кредитования является основным стоп-фактором для многих проектов.»</p>
+      <cite>— Игорь Коваль, первый зампред «Автодора» по инвестиционной политике, председатель АИИК</cite>
+    </blockquote>
+
+    <hr class="divider" />
+
+    <h2>Отраслевая структура: транспорт правит балом</h2>
+
+    <p>Транспортная инфраструктура остаётся бесспорным лидером рынка ГЧП — более 60% всех инвестиций. По данным ТеДо, средняя капиталоёмкость транспортных ГЧП-проектов превышает 20 млрд рублей (без учёта ВСМ). В 2024 году транспортный сегмент получил 2 230 млрд рублей инвестиций, ЖКХ — 80 млрд рублей, социальная сфера — 75 млрд рублей.</p>
+
+    <div class="data-card">
+      <h4>Структура инвестиций в ГЧП-проекты по отраслям, 2024 г.</h4>
+      <div class="data-rows">
+        <div class="data-row">
+          <span class="data-row-label">Транспорт (включая ВСМ)</span>
+          <div class="data-row-bar-wrap"><div class="data-row-bar blue" style="width:93%"></div></div>
+          <span class="data-row-val">2 230 млрд ₽</span>
+        </div>
+        <div class="data-row">
+          <span class="data-row-label">ЖКХ и коммуналка</span>
+          <div class="data-row-bar-wrap"><div class="data-row-bar gold" style="width:7%"></div></div>
+          <span class="data-row-val">80 млрд ₽</span>
+        </div>
+        <div class="data-row">
+          <span class="data-row-label">Социальная сфера</span>
+          <div class="data-row-bar-wrap"><div class="data-row-bar green" style="width:6%"></div></div>
+          <span class="data-row-val">75 млрд ₽</span>
+        </div>
+        <div class="data-row">
+          <span class="data-row-label">Прочие отрасли</span>
+          <div class="data-row-bar-wrap"><div class="data-row-bar muted" style="width:3%"></div></div>
+          <span class="data-row-val">~15 млрд ₽</span>
+        </div>
+      </div>
+    </div>
+
+    <p>ВСМ «Москва — Санкт-Петербург» — отдельный сюжет в истории российского ГЧП. Магистраль протяжённостью 679 км со временем в пути около двух часов станет первой высокоскоростной железнодорожной линией в стране. Концессионер — ООО «ВСМ Две столицы», финансирующие банки — Сбербанк, ВТБ, Газпромбанк и Совкомбанк, генеральный подрядчик — РЖД. Ввод в эксплуатацию запланирован на апрель 2028 года. Проект привлёк около 100 российских производителей компонентов и задал новую планку для всего рынка концессий.</p>
+
+    <hr class="divider" />
+
+    <h2>Ключевые тренды рынка в 2025 году</h2>
+
+    <div class="trend-list">
+      <div class="trend-item">
+        <div class="trend-num">1</div>
+        <div class="trend-body">
+          <div class="trend-title">Высокая ставка меняет структуру финансирования</div>
+          <div class="trend-desc">При ключевой ставке ЦБ 21% рыночное проектное кредитование фактически недоступно для большинства участников. Рынок адаптируется: государство берёт на себя дополнительные риски, развивая инструменты льготного финансирования через институты развития. ВЭБ.РФ планирует до 2030 года поддержать проекты на 30 трлн рублей, из которых 15 трлн — с прямым участием корпорации. Параллельно рассматривается привлечение инвесторов через фондовый рынок — секьюритизация ГЧП-обязательств.</div>
+        </div>
+      </div>
+      <div class="trend-item">
+        <div class="trend-num">2</div>
+        <div class="trend-body">
+          <div class="trend-title">Инфраструктурные холдинги занимают более 50% рынка</div>
+          <div class="trend-desc">По оценке ТеДо, многопрофильные инфраструктурные холдинги контролируют более половины рынка в ключевых транспортных и социальных отраслях — автодорожном, железнодорожном и городском транспорте, образовании, здравоохранении, спорте и культуре. Их конкурентное преимущество — компетенции управления проектами на всём жизненном цикле, опыт привлечения финансирования и отраслевая экспертиза.</div>
+        </div>
+      </div>
+      <div class="trend-item">
+        <div class="trend-num">3</div>
+        <div class="trend-body">
+          <div class="trend-title">Рост ГЧП в ЖКХ — при системных барьерах</div>
+          <div class="trend-desc">Коммунальная сфера остаётся второй по числу соглашений, но её развитие тормозят структурные проблемы: объекты, передаваемые в концессию, как правило, находятся в неудовлетворительном состоянии, а проверки начинаются немедленно — до завершения реконструкции. АИИК добивается введения моратория на административную ответственность концессионера на период реконструкции объектов ЖКХ. Тарифное регулирование остаётся ещё одним системным ограничителем.</div>
+        </div>
+      </div>
+      <div class="trend-item">
+        <div class="trend-num">4</div>
+        <div class="trend-body">
+          <div class="trend-title">Разработка национального стандарта ГЧП</div>
+          <div class="trend-desc">По поручению Путина, данному на ВЭФ-2025, ВЭБ.РФ приступил к разработке национального стандарта и модели финансирования проектов ГЧП и концессий. Стандарт вошёл в Программу национальной стандартизации на 2026 год. Цель — снизить правовую неопределённость, унифицировать подходы к оценке и структурированию проектов, привлечь институциональных инвесторов с фондового рынка.</div>
+        </div>
+      </div>
+      <div class="trend-item">
+        <div class="trend-num">5</div>
+        <div class="trend-body">
+          <div class="trend-title">Восстановление доверия к механизму концессий</div>
+          <div class="trend-desc">Накопленный опыт показал: не все концессии были структурированы грамотно. В ряде проектов финансовые модели оказались нежизнеспособны из-за неверной тарифной выручки или недооценки инфляционных рисков. Отраслевое сообщество ставит вопрос о разграничении «плохого механизма» и «плохой реализации». Восстановление доверия инвесторов названо ключевой задачей рынка на 2025–2026 годы.</div>
+        </div>
+      </div>
+      <div class="trend-item">
+        <div class="trend-num">6</div>
+        <div class="trend-body">
+          <div class="trend-title">Расширение географии: новые регионы и ГЧП в промышленности</div>
+          <div class="trend-desc">По числу соглашений лидируют Амурская область (344), Тамбовская область (214) и Татарстан (208) — регионы с высокой муниципальной активностью и развитой практикой применения ГЧП. По объёму законтрактованных средств в строительстве транспортной инфраструктуры третье место занял Санкт-Петербург с суммой свыше 352 млрд рублей (ШМСД и трамвайная линия «Славянка»). Параллельно идёт работа по распространению ГЧП на промышленность — законодательное регулирование в этом направлении активно дорабатывается.</div>
+        </div>
+      </div>
+    </div>
+
+    <hr class="divider" />
+
+    <h2>Горизонт 2040: три сценария</h2>
+
+    <p>Согласно исследованию ТеДо, в базовом сценарии объём рынка ГЧП к 2040 году может превысить <span class="highlight">34 трлн рублей</span>. Рост будет определяться уровнем бюджетного финансирования в рамках нацпроектов, запуском дополнительных мер поддержки, доступностью заёмного капитала и отсутствием новых внешних шоков.</p>
+
+    <p>Потенциал рынка, однако, существенно выше. В оптимистичном сценарии — структурная трансформация государственного подхода к финансированию инфраструктуры через частичное замещение традиционного госзаказа механизмами ГЧП — совокупный рынок может достичь <span class="highlight">110 трлн рублей</span> к 2040 году. Именно такой масштаб необходим для покрытия накопленного инфраструктурного разрыва.</p>
+
+    <div class="data-card">
+      <h4>Сценарии развития рынка ГЧП до 2040 г. (ТеДо / Нац. центр ГЧП)</h4>
+      <div class="data-rows">
+        <div class="data-row">
+          <span class="data-row-label">Базовый сценарий</span>
+          <div class="data-row-bar-wrap"><div class="data-row-bar blue" style="width:31%"></div></div>
+          <span class="data-row-val">&gt;34 трлн ₽</span>
+        </div>
+        <div class="data-row">
+          <span class="data-row-label">Оптимистичный</span>
+          <div class="data-row-bar-wrap"><div class="data-row-bar green" style="width:100%"></div></div>
+          <span class="data-row-val">до 110 трлн ₽</span>
+        </div>
+        <div class="data-row">
+          <span class="data-row-label">Текущий портфель (2025)</span>
+          <div class="data-row-bar-wrap"><div class="data-row-bar muted" style="width:7%"></div></div>
+          <span class="data-row-val">7,5 трлн ₽</span>
+        </div>
+      </div>
+    </div>
+
+    <p>Ключевые факторы роста, по оценке исследования: повышение территориальной связанности страны; развитие международных транспортных коридоров (рост перевозок в 1,5 раза к 2030 году — цель нацпроектов); модернизация ЖКХ для 20 млн человек; строительство социальных объектов — школ, кампусов, медицинских учреждений, спортивной инфраструктуры.</p>
+
+    <div class="conclusion">
+      <h3>ИТОГ · АНАЛИТИКА KOTANA.COM.RU</h3>
+      <p>Рынок ГЧП в 2025 году находится в точке зрелости: механизм доказал работоспособность, накопил компетенции и сформировал пул устойчивых игроков — инфраструктурных холдингов, занимающих более половины рынка. Фактический объём новых соглашений (567 млрд рублей) выглядит скромно после рекорда 2024-го, но это в значительной мере эффект статистической базы — масштаб ВСМ не повторяется ежегодно.</p>
+      <p>Структурный вызов — инфраструктурный дефицит в 110 трлн рублей — никуда не исчезает. Именно он создаёт долгосрочный спрос на механизм ГЧП вне зависимости от конъюнктуры ключевой ставки. Снижение стоимости заёмного капитала в 2026–2027 годах откроет новую волну крупных концессий: накопленный отложенный спрос уже формируется в виде проектов в проработке.</p>
+      <p>Главный вопрос ближайших лет — не «нужен ли ГЧП», а «как сделать его доступным при структурно высоких ставках». Ответ на него будет складываться из трёх составляющих: национального стандарта ГЧП, инструментов льготного финансирования институтов развития и привлечения институциональных инвесторов с фондового рынка через секьюритизацию.</p>
+    </div>
+
+  </article>
+</main>
+
+<footer>
+  <strong>kotana.com.ru</strong> &nbsp;·&nbsp; Рынок ГЧП · 2025 &nbsp;·&nbsp; Источники: ТеДо / Нац. центр ГЧП, Минэкономразвития, Ведомости, АИИК
+</footer>
+
+</body>
+</html>

@@ -326,6 +326,18 @@
         <h2 class="section-heading">Аналитика</h2>
         {% endif %}
         <div class="blog-grid">
+            <a href="/blog/ppp-market-russia-2026-forecast" class="blog-card">
+                <span class="blog-tag">{{ 'Forecast' if lang == 'en' else 'Прогноз' }}</span>
+                {% if lang == 'en' %}
+                <h3>PPP Market in 2026: A New Cycle Begins</h3>
+                <p>Rates are falling, the national PPP standard is launching, and concession bonds are attracting their first takers. After two years of adapting to expensive money, the public-private partnership market enters 2026 with pent-up demand and a renewed financial architecture.</p>
+                {% else %}
+                <h3>Рынок ГЧП в 2026 году: новый цикл начинается</h3>
+                <p>Ставка снижается, национальный стандарт ГЧП готовится к запуску, концессионные облигации собирают первых претендентов. После двух лет адаптации к дорогим деньгам рынок государственно-частного партнёрства входит в 2026-й с накопленным отложенным спросом и обновлённой финансовой архитектурой.</p>
+                {% endif %}
+                <span class="blog-read">{{ 'Read' if lang == 'en' else 'Читать' }} →</span>
+            </a>
+
             <a href="/blog/foreign-companies-return-forecast-2026" class="blog-card">
                 <span class="blog-tag">{{ 'Forecast' if lang == 'en' else 'Прогноз' }}</span>
                 {% if lang == 'en' %}

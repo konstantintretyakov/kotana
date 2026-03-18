@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Прогноз рынка ГЧП в России на 2026 год | kotana.com.ru</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --ink: #0f1117;
+      --paper: #f7f4ef;
+      --cream: #ede9e0;
+      --accent: #1a4d7a;
+      --accent-light: #d0e4f5;
+      --gold: #b8922a;
+      --green: #1a7a3c;
+      --muted: #7a7060;
+      --rule: #d4cfc5;
+      --col: clamp(320px, 66ch, 720px);
+    }
+    html { font-size: 17px; scroll-behavior: smooth; }
+    body {
+      background: var(--paper);
+      color: var(--ink);
+      font-family: 'IBM Plex Sans', sans-serif;
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .masthead {
+      background: var(--ink);
+      padding: 14px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+    .masthead-logo { font-size: 1rem; font-weight: 500; color: #fff; }
+    .masthead-meta { color: #666; }
+
+    .hero {
+      background: var(--accent);
+      color: var(--paper);
+      padding: 80px 40px 72px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '2026';
+      position: absolute;
+      right: -10px; top: 50%;
+      transform: translateY(-50%);
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(100px, 16vw, 230px);
+      font-weight: 900;
+      color: rgba(255,255,255,0.06);
+      letter-spacing: -0.04em;
+      line-height: 1;
+      pointer-events: none;
+    }
+    .hero-inner { max-width: var(--col); margin: 0 auto; position: relative; }
+    .hero-tag {
+      display: inline-block;
+      border: 1px solid rgba(255,255,255,0.3);
+      color: rgba(255,255,255,0.75);
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      margin-bottom: 28px;
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.2rem, 5vw, 3.4rem);
+      font-weight: 700;
+      line-height: 1.18;
+      letter-spacing: -0.02em;
+      margin-bottom: 24px;
+      max-width: 22ch;
+    }
+    .hero h1 em { font-style: italic; color: #9fc8f0; }
+    .hero-lead {
+      font-size: 1.08rem;
+      color: rgba(255,255,255,0.72);
+      max-width: 54ch;
+      line-height: 1.65;
+      margin-bottom: 40px;
+    }
+    .hero-byline {
+      display: flex; align-items: center; gap: 16px;
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.4);
+      font-family: 'IBM Plex Mono', monospace;
+    }
+    .hero-byline span { color: rgba(255,255,255,0.25); }
+    .hero-byline strong { color: rgba(255,255,255,0.65); font-weight: 500; }
+
+    .stats-bar { background: var(--ink); padding: 0 40px; }
+    .stats-inner {
+      max-width: calc(var(--col) + 200px);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
+    .stat-item {
+      padding: 24px 32px;
+      border-right: 1px solid rgba(255,255,255,0.07);
+      color: #fff;
+    }
+    .stat-item:first-child { padding-left: 0; }
+    .stat-item:last-child { border-right: none; }
+    .stat-number {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem; font-weight: 700;
+      display: block; line-height: 1;
+      color: #9fc8f0;
+    }
+    .stat-label {
+      font-size: 0.75rem; text-transform: uppercase;
+      letter-spacing: 0.1em; opacity: 0.45;
+      margin-top: 4px;
+      font-family: 'IBM Plex Mono', monospace;
+    }
+
+    .article-wrap { padding: 72px 40px; }
+    .article-inner { max-width: var(--col); margin: 0 auto; }
+
+    .article-inner > p:first-of-type::first-letter {
+      font-family: 'Playfair Display', serif;
+      font-size: 4.5em; font-weight: 900;
+      float: left; line-height: 0.78;
+      margin-right: 8px; margin-top: 6px;
+      color: var(--accent);
+    }
+
+    p { margin-bottom: 1.5rem; }
+
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.7rem; font-weight: 700;
+      letter-spacing: -0.02em; line-height: 1.25;
+      margin: 3rem 0 1.1rem;
+    }
+    h2::before {
+      content: '';
+      display: block; width: 32px; height: 3px;
+      background: var(--accent); margin-bottom: 16px;
+    }
+
+    h3 {
+      font-family: 'IBM Plex Sans', sans-serif;
+      font-size: 1.05rem; font-weight: 600;
+      margin: 2rem 0 0.7rem;
+      text-transform: uppercase; letter-spacing: 0.06em;
+      color: var(--gold);
+    }
+
+    blockquote {
+      border-left: 3px solid var(--accent);
+      margin: 2.5rem 0; padding: 20px 0 20px 32px;
+    }
+    blockquote p {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.35rem; font-style: italic;
+      line-height: 1.5; color: var(--ink);
+      margin: 0 0 8px;
+    }
+    blockquote cite {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.72rem; text-transform: uppercase;
+      letter-spacing: 0.12em; color: var(--muted);
+      font-style: normal;
+    }
+
+    .highlight { background: var(--accent-light); padding: 0 4px; font-weight: 500; }
+
+    /* Scenario grid */
+    .scenario-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 1px; background: var(--rule);
+      border: 1px solid var(--rule); margin: 2.5rem 0;
+    }
+    .scenario-card { background: var(--paper); padding: 24px 20px; }
+    .scenario-label {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.65rem; text-transform: uppercase;
+      letter-spacing: 0.15em; color: var(--muted); margin-bottom: 10px;
+    }
+    .scenario-value {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.7rem; font-weight: 700;
+      line-height: 1; margin-bottom: 6px;
+    }
+    .scenario-value.base  { color: var(--gold); }
+    .scenario-value.bull  { color: var(--green); }
+    .scenario-value.bear  { color: var(--accent); }
+    .scenario-title { font-size: 0.88rem; font-weight: 600; margin-bottom: 4px; }
+    .scenario-desc { font-size: 0.8rem; color: var(--muted); line-height: 1.5; margin-top: 8px; }
+
+    /* Timeline */
+    .timeline { margin: 2.5rem 0; position: relative; }
+    .timeline::before {
+      content: ''; position: absolute;
+      left: 12px; top: 0; bottom: 0;
+      width: 2px; background: var(--rule);
+    }
+    .tl-item { display: flex; gap: 24px; margin-bottom: 24px; position: relative; }
+    .tl-dot {
+      width: 26px; height: 26px; border-radius: 50%;
+      background: var(--paper); border: 2px solid var(--accent);
+      flex-shrink: 0; display: flex;
+      align-items: center; justify-content: center;
+      position: relative; z-index: 1;
+    }
+    .tl-dot.filled { background: var(--accent); }
+    .tl-dot-inner { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); }
+    .tl-dot.filled .tl-dot-inner { background: #fff; }
+    .tl-body { padding-top: 2px; }
+    .tl-date {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.72rem; text-transform: uppercase;
+      letter-spacing: 0.1em; color: var(--muted); margin-bottom: 4px;
+    }
+    .tl-text { font-size: 0.9rem; line-height: 1.6; }
+    .tl-val {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700; color: var(--accent); font-size: 1.05rem;
+    }
+
+    /* Data card */
+    .data-card {
+      background: var(--cream); border: 1px solid var(--rule);
+      padding: 28px 32px; margin: 2.5rem 0;
+    }
+    .data-card h4 {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.7rem; text-transform: uppercase;
+      letter-spacing: 0.15em; color: var(--muted); margin-bottom: 20px;
+    }
+    .data-rows { display: flex; flex-direction: column; gap: 12px; }
+    .data-row { display: flex; align-items: center; gap: 16px; }
+    .data-row-label { font-size: 0.85rem; color: var(--muted); width: 220px; flex-shrink: 0; }
+    .data-row-bar-wrap { flex: 1; height: 6px; background: var(--rule); position: relative; }
+    .data-row-bar { position: absolute; top: 0; left: 0; height: 100%; }
+    .data-row-bar.blue  { background: var(--accent); }
+    .data-row-bar.gold  { background: var(--gold); }
+    .data-row-bar.green { background: var(--green); }
+    .data-row-bar.muted { background: var(--muted); opacity: 0.4; }
+    .data-row-val {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.8rem; font-weight: 500;
+      width: 88px; text-align: right;
+    }
+
+    /* Metrics grid */
+    .metrics-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 1px; background: var(--rule);
+      border: 1px solid var(--rule); margin: 2.5rem 0;
+    }
+    .metric-cell { background: var(--paper); padding: 24px; }
+    .metric-label {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.68rem; text-transform: uppercase;
+      letter-spacing: 0.14em; color: var(--muted); margin-bottom: 8px;
+    }
+    .metric-value {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.65rem; font-weight: 700; line-height: 1.1;
+    }
+    .metric-value.blue  { color: var(--accent); }
+    .metric-value.gold  { color: var(--gold); }
+    .metric-value.green { color: var(--green); }
+    .metric-note { font-size: 0.78rem; color: var(--muted); margin-top: 6px; }
+
+    /* Trend list */
+    .trend-list { margin: 2rem 0; }
+    .trend-item {
+      display: flex; gap: 20px;
+      padding: 18px 0; border-bottom: 1px solid var(--rule);
+      align-items: flex-start;
+    }
+    .trend-item:first-child { border-top: 1px solid var(--rule); }
+    .trend-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem; font-weight: 700;
+      color: var(--accent); line-height: 1.1;
+      width: 28px; flex-shrink: 0; text-align: right;
+    }
+    .trend-title { font-weight: 600; font-size: 0.92rem; margin-bottom: 4px; }
+    .trend-desc { font-size: 0.83rem; color: var(--muted); line-height: 1.55; }
+
+    /* Source note */
+    .source-note {
+      background: var(--cream); border-left: 3px solid var(--rule);
+      padding: 14px 20px; margin: 2.5rem 0;
+      font-size: 0.78rem; color: var(--muted);
+      font-family: 'IBM Plex Mono', monospace; line-height: 1.65;
+    }
+    .source-note a { color: var(--accent); text-decoration: none; }
+
+    .divider { border: none; border-top: 1px solid var(--rule); margin: 3rem 0; }
+
+    .conclusion {
+      background: var(--ink); color: var(--paper);
+      padding: 36px 40px; margin: 3rem 0 0;
+    }
+    .conclusion h3 {
+      color: #9fc8f0; margin-top: 0;
+      letter-spacing: 0.06em; font-size: 1rem; text-transform: uppercase;
+    }
+    .conclusion p { color: #ccc; margin-bottom: 1rem; }
+    .conclusion p:last-child { margin-bottom: 0; }
+
+    footer {
+      background: var(--cream); border-top: 1px solid var(--rule);
+      padding: 28px 40px;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.72rem; color: var(--muted);
+      text-align: center; letter-spacing: 0.06em;
+    }
+    footer strong { color: var(--ink); }
+
+    @media (max-width: 640px) {
+      .masthead { padding: 12px 20px; }
+      .hero { padding: 56px 20px 52px; }
+      .stats-bar { padding: 0 20px; }
+      .stats-inner { grid-template-columns: 1fr; }
+      .stat-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.07); padding: 16px 0; }
+      .article-wrap { padding: 48px 20px; }
+      .scenario-grid { grid-template-columns: 1fr; }
+      .metrics-grid { grid-template-columns: 1fr; }
+      .data-row-label { width: 130px; font-size: 0.78rem; }
+    }
+  </style>
+</head>
+<body>
+
+<header class="masthead">
+  <span class="masthead-logo">kotana.com.ru</span>
+  <span class="masthead-meta">Прогноз · Инфраструктура · 2026</span>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-tag">Прогноз · 2026</div>
+    <h1>Рынок ГЧП в 2026 году: <em>новый цикл</em> начинается</h1>
+    <p class="hero-lead">Ставка снижается, национальный стандарт ГЧП готовится к запуску, концессионные облигации собирают первых претендентов. После двух лет адаптации к дорогим деньгам рынок государственно-частного партнёрства входит в 2026-й с накопленным отложенным спросом и обновлённой финансовой архитектурой.</p>
+    <div class="hero-byline">
+      <strong>Редакция kotana.com.ru</strong>
+      <span>·</span>
+      <span>Март 2026</span>
+      <span>·</span>
+      <span>13 мин чтения</span>
+    </div>
+  </div>
+</section>
+
+<div class="stats-bar">
+  <div class="stats-inner">
+    <div class="stat-item">
+      <span class="stat-number">1,8 трлн ₽</span>
+      <span class="stat-label">Прогноз капвложений в ГЧП на 2026 г.</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number">~14%</span>
+      <span class="stat-label">Средняя ключевая ставка в 2026 г.</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number">20+</span>
+      <span class="stat-label">Проектов в очереди на концессионные облигации</span>
+    </div>
+  </div>
+</div>
+
+<main class="article-wrap">
+  <article class="article-inner">
+
+    <p>Рынок государственно-частного партнёрства в России входит в 2026 год в двойственном положении. С одной стороны — накопленный отложенный спрос: десятки проектов, которые не стартовали в 2024–2025 годах из-за запретительно высокой стоимости заёмного капитала. С другой — системные изменения, которые меняют саму логику финансирования инфраструктуры: национальный стандарт ГЧП, концессионные облигации, новая роль ВЭБ.РФ. Всё это создаёт условия для нового инвестиционного цикла — при условии, что снижение ключевой ставки продолжится по прогнозному сценарию.</p>
+
+    <div class="source-note">
+      Статья подготовлена на основе: исследования «Рынок проектов государственно-частного партнёрства: тенденции, основные игроки и перспективы развития до 2040 года» (ТеДо / Нац. центр ГЧП, июль 2025) — <a href="https://indparks.ru/materials/publications/tedo-ppp-market-research-2025-2040.pdf">indparks.ru</a>; прогноза ВТБ инфраструктурного холдинга; данных РИА Новости, Ведомостей, Эксперта, Минэкономразвития.
+    </div>
+
+    <h2>Исходная точка: что рынок берёт с собой из 2025-го</h2>
+
+    <p>2025 год завершился с портфелем ГЧП-проектов в <span class="highlight">7,5 трлн рублей</span> и 567 млрд рублей новых соглашений — примерно вчетверо меньше рекордного 2024-го, сформированного эффектом ВСМ. Но именно в 2025-м были заложены институциональные основания для качественного роста: ВЭБ.РФ стал обязательным участником крупных проектов, запущена разработка национального стандарта ГЧП, озвучена концепция концессионных облигаций.</p>
+
+    <p>Ключевая ставка к началу 2026 года снизилась до 16% и продолжает траекторию снижения. По прогнозу аналитиков «БКС Мир инвестиций», к концу 2026 года она может достичь 12%. Медианный прогноз — средняя ставка около 14% по итогам года. Для рынка ГЧП это критически важно: концессионные проекты финансируются «длинными» деньгами, и именно их недоступность в 2024–2025 годах была главным ограничением.</p>
+
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-dot filled"><div class="tl-dot-inner"></div></div>
+        <div class="tl-body">
+          <div class="tl-date">Декабрь 2025</div>
+          <div class="tl-text">Ставка снижена до <span class="tl-val">16%</span>. Нацстандарт ГЧП находится в разработке, завершение — к 1 марта 2026 г. Более 20 проектов подали заявки на концессионные облигации.</div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"><div class="tl-dot-inner"></div></div>
+        <div class="tl-body">
+          <div class="tl-date">I квартал 2026</div>
+          <div class="tl-text">Публикация национального стандарта ГЧП. Ожидаемая пауза в снижении ставки на фоне эффекта повышения НДС. Ставка: <span class="tl-val">15,5–16%</span>.</div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"><div class="tl-dot-inner"></div></div>
+        <div class="tl-body">
+          <div class="tl-date">II–III кварталы 2026</div>
+          <div class="tl-text">Плавное снижение ставки, открытие новых инфраструктурных проектов. Старт апробации концессионных облигаций. Ставка: <span class="tl-val">13–14%</span>.</div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"><div class="tl-dot-inner"></div></div>
+        <div class="tl-body">
+          <div class="tl-date">IV квартал 2026</div>
+          <div class="tl-text">Реализация накопленного отложенного спроса. Ожидаемый рост числа новых соглашений. Ставка: <span class="tl-val">12–13%</span>.</div>
+        </div>
+      </div>
+    </div>
+
+    <hr class="divider" />
+
+    <h2>Три сценария для рынка ГЧП в 2026 году</h2>
+
+    <div class="scenario-grid">
+      <div class="scenario-card">
+        <div class="scenario-label">Базовый сценарий</div>
+        <div class="scenario-title">Умеренный рост</div>
+        <div class="scenario-value base">1,8 трлн ₽</div>
+        <div class="scenario-desc">Прогноз ВТБ инфраструктурного холдинга по объёму капвложений в ГЧП на 2026 год. Ставка снижается до 12–13% к концу года. Запускаются накопленные проекты транспорта и ЖКХ.</div>
+      </div>
+      <div class="scenario-card">
+        <div class="scenario-label">Оптимистичный сценарий</div>
+        <div class="scenario-title">Ускоренный запуск</div>
+        <div class="scenario-value bull">&gt;2 трлн ₽</div>
+        <div class="scenario-desc">При быстром снижении ставки и успешном запуске концессионных облигаций. Возможен старт крупных новых мегапроектов — ВСМ-2, портовая и промышленная инфраструктура.</div>
+      </div>
+      <div class="scenario-card">
+        <div class="scenario-label">Консервативный сценарий</div>
+        <div class="scenario-title">Пауза</div>
+        <div class="scenario-value bear">&lt;1 трлн ₽</div>
+        <div class="scenario-desc">При инфляционном давлении НДС и торможении снижения ставки. Региональные бюджеты под давлением ограничений Бюджетного кодекса откладывают новые соглашения.</div>
+      </div>
+    </div>
+
+    <blockquote>
+      <p>«Объём ежегодных капвложений в инфраструктурные проекты ГЧП составит в 2026–2027 годах 1,8 трлн и 1,68 трлн рублей соответственно.»</p>
+      <cite>— Прогноз ВТБ инфраструктурного холдинга, ноябрь 2025 (Ведомости)</cite>
+    </blockquote>
+
+    <hr class="divider" />
+
+    <h2>Главная новация: концессионные облигации</h2>
+
+    <p>Самое значимое событие на рынке ГЧП в 2026 году — не конкретный проект, а финансовый инструмент. Концессионные облигации призваны разорвать зависимость инфраструктурных проектов от банковского кредита: после завершения строительства концессионер выпускает облигации под государственные обязательства по плате концедента, рефинансируя тем самым первоначальный банковский долг.</p>
+
+    <p>Архитектура инструмента обеспечивает высокую надёжность через несколько уровней защиты: объект находится в государственной собственности, эмиссия происходит после завершения строительства, часть риска принимает на себя ВЭБ.РФ. По своему профилю риска концессионные облигации занимают промежуточное положение между корпоративными и государственными бумагами — квазисуверенный инструмент с более высокой доходностью, чем ОФЗ.</p>
+
+    <p>К февралю 2026 года интерес к выпуску подтвердили <span class="highlight">более 20 концессионных проектов</span> с объёмом инвестиций от 5 до 100 млрд рублей каждый. Целевая аудитория покупателей — пенсионные фонды, страховые и управляющие компании, а также физические лица. На Московской бирже зарегистрировано 38,4 млн частных инвесторов, которые за 8 месяцев 2025 года вложили в ценные бумаги 1,52 трлн рублей — рекордный показатель. Этот ресурс ищет новые надёжные инструменты.</p>
+
+    <blockquote>
+      <p>«Задача инструмента — дать проектам предсказуемую и долгосрочную финансовую основу, уменьшить нагрузку на бюджетные механизмы поддержки и одновременно расширить возможности банков для финансирования новых проектов.»</p>
+      <cite>— Иван Потехин, замгендиректора Наццентра РАЗВИВАЙ.РФ, февраль 2026</cite>
+    </blockquote>
+
+    <hr class="divider" />
+
+    <h2>Национальный стандарт ГЧП: правила игры для всех</h2>
+
+    <p>Национальный стандарт государственно-частного взаимодействия, разработка которого была поручена ВЭБ.РФ президентом на ВЭФ-2025, должен был быть завершён к 1 марта 2026 года. Включён в Программу национальной стандартизации на 2026 год. Документ принципиально меняет философию рынка: от ситуативных решений — к системным правилам.</p>
+
+    <div class="metrics-grid">
+      <div class="metric-cell">
+        <div class="metric-label">Что даёт нацстандарт участникам</div>
+        <div class="metric-value blue" style="font-size:1.1rem;">Предсказуемость</div>
+        <div class="metric-note">Апробированные решения по структурированию, распределению рисков, финансовым моделям. Снижение сроков подготовки проектов.</div>
+      </div>
+      <div class="metric-cell">
+        <div class="metric-label">Обязательная экспертиза ВЭБ</div>
+        <div class="metric-value gold">от 3 млрд ₽</div>
+        <div class="metric-note">Порог для обязательного участия ВЭБ.РФ. Для дотационных регионов — обязательна во всех случаях.</div>
+      </div>
+      <div class="metric-cell">
+        <div class="metric-label">Новая методика оценки</div>
+        <div class="metric-value blue" style="font-size:1.1rem;">ESG-включение</div>
+        <div class="metric-note">Индекс качества жизни, социальные и технологические эффекты наравне с финансовой моделью.</div>
+      </div>
+      <div class="metric-cell">
+        <div class="metric-label">Цель стандарта по капиталу</div>
+        <div class="metric-value green">Фондовый рынок</div>
+        <div class="metric-note">Создание базы для притока «длинных» денег институциональных инвесторов в ГЧП-проекты.</div>
+      </div>
+    </div>
+
+    <p>По словам Натальи Морщихиной из Минэкономразвития, стандарт «не дублирует нормы закона, он станет их практическим расширением и дорожной картой». Инвесторы, работавшие с ГЧП, годами жаловались на три системные проблемы: отсутствие длинных дешёвых денег, дискредитацию инструмента из-за чрезмерного переноса рисков на государство, и жёсткий надзор прокуратуры, воспринимавшей концессии как канал вывода государственных средств. Обязательная экспертиза ВЭБ.РФ одновременно решает проблему «арбитра» и снижает риски для всех участников.</p>
+
+    <hr class="divider" />
+
+    <h2>Приоритетные отрасли и точки роста</h2>
+
+    <h3>Транспорт: строительство ВСМ и региональные дороги</h3>
+    <p>Строительство ВСМ «Москва — Санкт-Петербург» развернулось в полную силу — 2026 год станет пиковым по объёму строительных работ. Параллельно региональные и муниципальные концессии в автодорожной сфере продолжат рост: вложения в программу «Безопасные качественные дороги» по федеральному бюджету вырастут до 769,8 млрд рублей в 2026 году против 606,5 млрд в 2024-м. Развитие транспортно-логистических центров (60 ТЛЦ к 2030 году) обеспечивает 270 млрд рублей внебюджетного финансирования по концессионным схемам.</p>
+
+    <h3>Городской транспорт: трамвайный ренессанс</h3>
+    <p>Модернизация электрического транспорта в регионах — один из самых активных сегментов 2025–2026 годов. Крупнейший проект — Нижний Новгород. За ним следуют Липецк, Таганрог, Краснодар и другие города. Каждый такой проект требует от 10 до 20 млрд рублей, что делает ГЧП единственной практической схемой финансирования. В 2026 году ожидается не менее 5–7 новых концессий в этом сегменте.</p>
+
+    <h3>ЖКХ: рост при системных барьерах</h3>
+    <p>Коммунальная инфраструктура сохраняет высокую активность по числу соглашений — основная масса приходится на водоснабжение, теплоснабжение и обращение с ТКО. Тормозящие факторы: тарифное регулирование, отсутствие моратория на проверки в период реконструкции, ненормативное состояние передаваемых объектов. АИИК добивается законодательного решения последней проблемы — принятие поправок ожидается в 2026 году.</p>
+
+    <h3>Промышленность и IT: новые фронтиры</h3>
+    <p>По оценке ТеДо, ГЧП в промышленности и технологической сфере из экзотики превращается в системный инструмент. Нацпроект «Экономика данных» запустил прецедент ГЧП в космической отрасли (спутниковая группировка «Бюро 1440»). Законодательное регулирование ГЧП в промышленности активно дорабатывается — отраслевые игроки ожидают принятия поправок в 2026 году.</p>
+
+    <hr class="divider" />
+
+    <h2>Риски и ограничения</h2>
+
+    <div class="trend-list">
+      <div class="trend-item">
+        <div class="trend-num">1</div>
+        <div class="trend-body">
+          <div class="trend-title">Бюджетные ограничения регионов</div>
+          <div class="trend-desc">Поправки в Бюджетный кодекс, принятые в 2024 году, включили ГЧП-обязательства в расчёт лимитов регионального долга. В ряде субъектов РФ доступные лимиты уже близки к исчерпанию, что фактически закрывает возможность заключения новых соглашений до их пересмотра. Это может существенно ограничить активность в ЖКХ-концессиях, традиционно инициируемых муниципалитетами.</div>
+        </div>
+      </div>
+      <div class="trend-item">
+        <div class="trend-num">2</div>
+        <div class="trend-body">
+          <div class="trend-title">Инфляционный эффект НДС в начале года</div>
+          <div class="trend-desc">Повышение НДС с начала 2026 года создаёт временный проинфляционный импульс, что может замедлить снижение ключевой ставки в I квартале. Для ГЧП-проектов, финансируемых через плавающую ставку, каждая задержка в цикле снижения — это месяцы дополнительной нагрузки на экономику.</div>
+        </div>
+      </div>
+      <div class="trend-item">
+        <div class="trend-num">3</div>
+        <div class="trend-body">
+          <div class="trend-title">Восстановление доверия к механизму</div>
+          <div class="trend-desc">Ряд проектов, структурированных в 2020–2022 годах, столкнулся с нежизнеспособными финансовыми моделями: неверно просчитана тарифная выручка или недооценены инфляционные риски. Это подорвало доверие части инвесторов к инструменту. Обязательная экспертиза ВЭБ и нацстандарт должны решить эту проблему — но репутация восстанавливается медленнее, чем разрушается.</div>
+        </div>
+      </div>
+      <div class="trend-item">
+        <div class="trend-num">4</div>
+        <div class="trend-body">
+          <div class="trend-title">Дефицит компетенций в регионах</div>
+          <div class="trend-desc">По данным ТеДо, одно из главных ограничений рынка — нехватка квалифицированных кадров в региональных органах власти для сопровождения ГЧП-проектов. Это замедляет подготовку новых соглашений и увеличивает операционные риски. РАЗВИВАЙ.РФ развивает образовательные программы, однако системное решение требует нескольких лет.</div>
+        </div>
+      </div>
+    </div>
+
+    <hr class="divider" />
+
+    <h2>Долгосрочный горизонт: прогноз ТеДо до 2040 года</h2>
+
+    <p>В базовом сценарии исследования ТеДо объём рынка ГЧП к 2040 году превысит <span class="highlight">34 трлн рублей</span>. При структурной трансформации — замещении части традиционного госзаказа механизмами ГЧП — потенциал рынка достигает <span class="highlight">110 трлн рублей</span>. Именно такой масштаб необходим для покрытия инфраструктурного дефицита в 110 трлн рублей, накопленного к 2040 году.</p>
+
+    <div class="data-card">
+      <h4>Прогноз объёма рынка ГЧП: динамика и сценарии (ТеДо / Нац. центр ГЧП)</h4>
+      <div class="data-rows">
+        <div class="data-row">
+          <span class="data-row-label">Факт 2025 (портфель)</span>
+          <div class="data-row-bar-wrap"><div class="data-row-bar muted" style="width:7%"></div></div>
+          <span class="data-row-val">7,5 трлн ₽</span>
+        </div>
+        <div class="data-row">
+          <span class="data-row-label">Прогноз 2026 (капвложения)</span>
+          <div class="data-row-bar-wrap"><div class="data-row-bar gold" style="width:16%"></div></div>
+          <span class="data-row-val">~1,8 трлн ₽</span>
+        </div>
+        <div class="data-row">
+          <span class="data-row-label">Прогноз 2027 (капвложения)</span>
+          <div class="data-row-bar-wrap"><div class="data-row-bar gold" style="width:15%"></div></div>
+          <span class="data-row-val">~1,68 трлн ₽</span>
+        </div>
+        <div class="data-row">
+          <span class="data-row-label">Базовый сценарий (2040)</span>
+          <div class="data-row-bar-wrap"><div class="data-row-bar blue" style="width:31%"></div></div>
+          <span class="data-row-val">&gt;34 трлн ₽</span>
+        </div>
+        <div class="data-row">
+          <span class="data-row-label">Оптимистичный сценарий (2040)</span>
+          <div class="data-row-bar-wrap"><div class="data-row-bar green" style="width:100%"></div></div>
+          <span class="data-row-val">до 110 трлн ₽</span>
+        </div>
+      </div>
+    </div>
+
+    <p>Темпы роста на горизонте до 2040 года будут определяться четырьмя ключевыми факторами: уровнем бюджетного финансирования в рамках нацпроектов, запуском дополнительных мер поддержки инфраструктурного строительства, доступностью заёмного капитала и отсутствием новых внешних шоков. Снижение ставки в 2026-м устраняет самый острый из текущих барьеров — но не единственный.</p>
+
+    <div class="conclusion">
+      <h3>Прогноз: год перехода от адаптации к росту</h3>
+      <p>2026 год — первый год, когда рынок ГЧП сможет работать в режиме умеренного снижения ставки, а не экстремальной адаптации к её историческому максимуму. По прогнозу ВТБ инфраструктурного холдинга, объём капвложений в инфраструктурные ГЧП-проекты составит около 1,8 трлн рублей — примерно в три раза больше фактического результата 2025 года (567 млрд рублей). Это реалистичная и подкреплённая конкретикой оценка.</p>
+      <p>Главный качественный сдвиг — финансовый. Концессионные облигации меняют саму модель привлечения капитала в инфраструктуру: вместо банковского кредита с плавающей ставкой — фондовый рынок с фиксированными долгосрочными деньгами. Это не революция, а эволюция — но именно такая, которая нужна рынку, стоящему перед задачей привлечения триллионов рублей в инфраструктуру в условиях ограниченного бюджета.</p>
+      <p>Для инвесторов сигнал однозначен: окно для входа в ГЧП-проекты открывается. Те, кто займёт позиции в 2026-м — через прямые концессии, банковское финансирование или концессионные облигации — получат доступ к классу активов, который на горизонте десятилетия вырастет в несколько раз. Инфраструктурный дефицит в 110 трлн рублей никуда не делся. А значит, спрос на инструмент его покрытия — тоже.</p>
+    </div>
+
+  </article>
+</main>
+
+<footer>
+  <strong>kotana.com.ru</strong> &nbsp;·&nbsp; Прогноз рынка ГЧП · 2026 &nbsp;·&nbsp; Источники: ТеДо / ВЭБ.РФ, ВТБ инфраструктурный холдинг, Минэкономразвития, РИА Новости, Ведомости
+</footer>
+
+</body>
+</html>
