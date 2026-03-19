@@ -326,6 +326,18 @@
         <h2 class="section-heading">Аналитика</h2>
         {% endif %}
         <div class="blog-grid">
+            <a href="/blog/hotel-real-estate-forecast-2026" class="blog-card">
+                <span class="blog-tag">{{ 'Forecast' if lang == 'en' else 'Прогноз' }}</span>
+                {% if lang == 'en' %}
+                <h3>Hotel Real Estate 2026: Slowdown Without a Stop</h3>
+                <p>Record growth of 2023–2025 gives way to maturity. Hotel market revenues will add another 10% in 2026 — driven by operational efficiency rather than surging demand. Tax pressure, cost inflation and staff shortages test the industry's resilience.</p>
+                {% else %}
+                <h3>Прогноз рынка гостиничной недвижимости на 2026 год: замедление без остановки</h3>
+                <p>Рекордный рост 2023–2025 годов уступает место зрелости. Доходы рынка прибавят ещё 10% — но за счёт операционной эффективности, а не бурного спроса. Налоговые вызовы, рост издержек и дефицит персонала проверят отрасль на устойчивость.</p>
+                {% endif %}
+                <span class="blog-read">{{ 'Read' if lang == 'en' else 'Читать' }} →</span>
+            </a>
+
             <a href="/blog/hotel-real-estate-2025" class="blog-card">
                 <span class="blog-tag">{{ 'Analytics' if lang == 'en' else 'Аналитика' }}</span>
                 {% if lang == 'en' %}

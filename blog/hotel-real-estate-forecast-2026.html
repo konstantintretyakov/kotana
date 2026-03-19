@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Прогноз рынка гостиничной недвижимости России на 2026 год | kotana.com.ru</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --ink:    #0f1117;
+      --paper:  #f7f4ef;
+      --cream:  #ede9e0;
+      --accent: #2c5f6e;
+      --accent-light: #cde8ef;
+      --gold:   #b8922a;
+      --green:  #1a7a3c;
+      --red:    #c0392b;
+      --muted:  #7a7060;
+      --rule:   #d4cfc5;
+      --col:    clamp(320px, 66ch, 720px);
+    }
+    html { font-size: 17px; scroll-behavior: smooth; }
+    body {
+      background: var(--paper); color: var(--ink);
+      font-family: 'IBM Plex Sans', sans-serif;
+      line-height: 1.75; -webkit-font-smoothing: antialiased;
+    }
+
+    .masthead {
+      background: var(--ink); padding: 14px 40px;
+      display: flex; align-items: center; justify-content: space-between;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: .75rem; letter-spacing: .12em; text-transform: uppercase;
+    }
+    .masthead-logo { font-size: 1rem; font-weight: 500; color: #fff; }
+    .masthead-meta { color: #666; }
+
+    .hero {
+      background: var(--accent); color: var(--paper);
+      padding: 80px 40px 72px; position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: '2026';
+      position: absolute; right: -10px; top: 50%; transform: translateY(-50%);
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(110px, 17vw, 240px); font-weight: 900;
+      color: rgba(255,255,255,.06); letter-spacing: -.04em; line-height: 1; pointer-events: none;
+    }
+    .hero-inner { max-width: var(--col); margin: 0 auto; position: relative; }
+    .hero-tag {
+      display: inline-block;
+      border: 1px solid rgba(255,255,255,.3); color: rgba(255,255,255,.75);
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: .72rem; letter-spacing: .15em; text-transform: uppercase;
+      padding: 4px 12px; margin-bottom: 28px;
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.2rem, 5vw, 3.4rem); font-weight: 700;
+      line-height: 1.18; letter-spacing: -.02em; margin-bottom: 24px; max-width: 22ch;
+    }
+    .hero h1 em { font-style: italic; color: #a8dde8; }
+    .hero-lead {
+      font-size: 1.08rem; color: rgba(255,255,255,.72);
+      max-width: 54ch; line-height: 1.65; margin-bottom: 40px;
+    }
+    .hero-byline {
+      display: flex; align-items: center; gap: 16px;
+      font-size: .8rem; color: rgba(255,255,255,.4);
+      font-family: 'IBM Plex Mono', monospace;
+    }
+    .hero-byline span { color: rgba(255,255,255,.25); }
+    .hero-byline strong { color: rgba(255,255,255,.65); font-weight: 500; }
+
+    .stats-bar { background: var(--ink); padding: 0 40px; }
+    .stats-inner {
+      max-width: calc(var(--col) + 200px); margin: 0 auto;
+      display: grid; grid-template-columns: repeat(3,1fr);
+    }
+    .stat-item {
+      padding: 24px 32px; border-right: 1px solid rgba(255,255,255,.07); color: #fff;
+    }
+    .stat-item:first-child { padding-left: 0; }
+    .stat-item:last-child  { border-right: none; }
+    .stat-number {
+      font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 700;
+      display: block; line-height: 1; color: #a8dde8;
+    }
+    .stat-label {
+      font-size: .75rem; text-transform: uppercase;
+      letter-spacing: .1em; opacity: .45; margin-top: 4px;
+      font-family: 'IBM Plex Mono', monospace;
+    }
+
+    .article-wrap { padding: 72px 40px; }
+    .article-inner { max-width: var(--col); margin: 0 auto; }
+
+    .article-inner > p:first-of-type::first-letter {
+      font-family: 'Playfair Display', serif; font-size: 4.5em; font-weight: 900;
+      float: left; line-height: .78; margin-right: 8px; margin-top: 6px; color: var(--accent);
+    }
+    p { margin-bottom: 1.5rem; }
+
+    h2 {
+      font-family: 'Playfair Display', serif; font-size: 1.7rem; font-weight: 700;
+      letter-spacing: -.02em; line-height: 1.25; margin: 3rem 0 1.1rem;
+    }
+    h2::before { content: ''; display: block; width: 32px; height: 3px; background: var(--accent); margin-bottom: 16px; }
+
+    h3 {
+      font-family: 'IBM Plex Sans', sans-serif; font-size: 1.05rem; font-weight: 600;
+      margin: 2rem 0 .7rem; text-transform: uppercase; letter-spacing: .06em; color: var(--gold);
+    }
+
+    blockquote {
+      border-left: 3px solid var(--accent); margin: 2.5rem 0; padding: 20px 0 20px 32px;
+    }
+    blockquote p {
+      font-family: 'Playfair Display', serif; font-size: 1.35rem; font-style: italic;
+      line-height: 1.5; color: var(--ink); margin: 0 0 8px;
+    }
+    blockquote cite {
+      font-family: 'IBM Plex Mono', monospace; font-size: .72rem;
+      text-transform: uppercase; letter-spacing: .12em; color: var(--muted); font-style: normal;
+    }
+
+    .highlight { background: var(--accent-light); padding: 0 4px; font-weight: 500; }
+
+    /* 3 scenario grid */
+    .scenario-grid {
+      display: grid; grid-template-columns: repeat(3,1fr);
+      gap: 1px; background: var(--rule); border: 1px solid var(--rule); margin: 2.5rem 0;
+    }
+    .sc-card { background: var(--paper); padding: 24px 20px; }
+    .sc-label {
+      font-family: 'IBM Plex Mono', monospace; font-size: .65rem;
+      text-transform: uppercase; letter-spacing: .15em; color: var(--muted); margin-bottom: 10px;
+    }
+    .sc-value { font-family: 'Playfair Display', serif; font-size: 1.7rem; font-weight: 700; line-height: 1; margin-bottom: 6px; }
+    .sc-value.base { color: var(--gold); }
+    .sc-value.bull { color: var(--green); }
+    .sc-value.bear { color: var(--red); }
+    .sc-title { font-size: .88rem; font-weight: 600; margin-bottom: 4px; }
+    .sc-desc { font-size: .8rem; color: var(--muted); line-height: 1.5; margin-top: 8px; }
+
+    /* Metrics 2×2 */
+    .metrics-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 1px; background: var(--rule); border: 1px solid var(--rule); margin: 2.5rem 0;
+    }
+    .metric-cell { background: var(--paper); padding: 24px; }
+    .metric-label {
+      font-family: 'IBM Plex Mono', monospace; font-size: .68rem;
+      text-transform: uppercase; letter-spacing: .14em; color: var(--muted); margin-bottom: 8px;
+    }
+    .metric-value {
+      font-family: 'Playfair Display', serif; font-size: 1.65rem; font-weight: 700; line-height: 1.1;
+    }
+    .metric-value.sea  { color: var(--accent); }
+    .metric-value.gold { color: var(--gold); }
+    .metric-value.green{ color: var(--green); }
+    .metric-value.red  { color: var(--red); }
+    .metric-note { font-size: .78rem; color: var(--muted); margin-top: 6px; }
+
+    /* Data card */
+    .data-card {
+      background: var(--cream); border: 1px solid var(--rule); padding: 28px 32px; margin: 2.5rem 0;
+    }
+    .data-card h4 {
+      font-family: 'IBM Plex Mono', monospace; font-size: .7rem;
+      text-transform: uppercase; letter-spacing: .15em; color: var(--muted); margin-bottom: 20px;
+    }
+    .data-rows { display: flex; flex-direction: column; gap: 12px; }
+    .data-row { display: flex; align-items: center; gap: 16px; }
+    .data-row-label { font-size: .85rem; color: var(--muted); width: 220px; flex-shrink: 0; }
+    .data-row-bar-wrap { flex: 1; height: 6px; background: var(--rule); position: relative; }
+    .data-row-bar { position: absolute; top: 0; left: 0; height: 100%; }
+    .data-row-bar.sea  { background: var(--accent); }
+    .data-row-bar.gold { background: var(--gold); }
+    .data-row-bar.green{ background: var(--green); }
+    .data-row-bar.red  { background: var(--red); opacity: .6; }
+    .data-row-bar.muted{ background: var(--muted); opacity: .35; }
+    .data-row-val {
+      font-family: 'IBM Plex Mono', monospace; font-size: .8rem;
+      font-weight: 500; width: 96px; text-align: right;
+    }
+
+    /* Trend list */
+    .trend-list { margin: 2rem 0; }
+    .trend-item {
+      display: flex; gap: 20px; padding: 18px 0;
+      border-bottom: 1px solid var(--rule); align-items: flex-start;
+    }
+    .trend-item:first-child { border-top: 1px solid var(--rule); }
+    .trend-num {
+      font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 700;
+      color: var(--accent); line-height: 1.1; width: 28px; flex-shrink: 0; text-align: right;
+    }
+    .trend-title { font-weight: 600; font-size: .92rem; margin-bottom: 4px; }
+    .trend-desc  { font-size: .83rem; color: var(--muted); line-height: 1.55; }
+
+    /* Risk strip */
+    .risk-list { margin: 2rem 0; }
+    .risk-item {
+      display: flex; gap: 16px; padding: 16px 0;
+      border-bottom: 1px solid var(--rule); align-items: flex-start;
+    }
+    .risk-item:first-child { border-top: 1px solid var(--rule); }
+    .risk-badge {
+      font-family: 'IBM Plex Mono', monospace; font-size: .62rem;
+      text-transform: uppercase; letter-spacing: .1em;
+      padding: 4px 10px; border-radius: 2px; flex-shrink: 0; margin-top: 2px;
+    }
+    .risk-badge.high { background: #fde8e0; color: var(--red); }
+    .risk-badge.mid  { background: #f5ecd4; color: var(--gold); }
+    .risk-badge.low  { background: #d0ead8; color: var(--green); }
+    .risk-title { font-weight: 600; font-size: .9rem; margin-bottom: 3px; }
+    .risk-desc  { font-size: .82rem; color: var(--muted); line-height: 1.55; }
+
+    /* Region table */
+    .region-table {
+      width: 100%; border-collapse: collapse; margin: 2.5rem 0; font-size: .85rem;
+    }
+    .region-table th {
+      background: var(--accent); color: #fff; padding: 11px 14px; text-align: left;
+      font-family: 'IBM Plex Mono', monospace; font-size: .7rem;
+      text-transform: uppercase; letter-spacing: .1em; font-weight: 500;
+    }
+    .region-table td { padding: 11px 14px; border-bottom: 1px solid var(--rule); vertical-align: top; }
+    .region-table tr:nth-child(even) td { background: var(--cream); }
+    .region-table td:first-child { font-weight: 600; }
+
+    .divider { border: none; border-top: 1px solid var(--rule); margin: 3rem 0; }
+
+    .conclusion {
+      background: var(--ink); color: var(--paper); padding: 36px 40px; margin: 3rem 0 0;
+    }
+    .conclusion h3 { color: #a8dde8; margin-top: 0; letter-spacing: .06em; font-size: 1rem; text-transform: uppercase; }
+    .conclusion p { color: #ccc; margin-bottom: 1rem; }
+    .conclusion p:last-child { margin-bottom: 0; }
+
+    footer {
+      background: var(--cream); border-top: 1px solid var(--rule);
+      padding: 28px 40px; font-family: 'IBM Plex Mono', monospace;
+      font-size: .72rem; color: var(--muted); text-align: center; letter-spacing: .06em;
+    }
+    footer strong { color: var(--ink); }
+
+    @media (max-width: 640px) {
+      .masthead { padding: 12px 20px; }
+      .hero { padding: 56px 20px 52px; }
+      .stats-bar { padding: 0 20px; }
+      .stats-inner, .scenario-grid { grid-template-columns: 1fr; }
+      .stat-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,.07); padding: 16px 0; }
+      .article-wrap { padding: 48px 20px; }
+      .metrics-grid { grid-template-columns: 1fr; }
+      .data-row-label { width: 130px; font-size: .78rem; }
+      .region-table { font-size: .76rem; }
+      .region-table th, .region-table td { padding: 9px 10px; }
+    }
+  </style>
+</head>
+<body>
+
+<header class="masthead">
+  <span class="masthead-logo">kotana.com.ru</span>
+  <span class="masthead-meta">Прогноз · Гостиничная недвижимость · 2026</span>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-tag">Прогноз · 2026</div>
+    <h1>Гостиничная недвижимость — 2026: <em>замедление</em> без остановки</h1>
+    <p class="hero-lead">Рекордный рост 2023–2025 годов уступает место зрелости. Доходы гостиничного рынка в 2026-м прибавят ещё 10% — но уже не за счёт стремительного спроса, а через операционную эффективность. Новые вызовы — налоговые, конкурентные и тарифные — проверят отрасль на устойчивость.</p>
+    <div class="hero-byline">
+      <strong>Редакция kotana.com.ru</strong>
+      <span>·</span>
+      <span>Март 2026</span>
+      <span>·</span>
+      <span>12 мин чтения</span>
+    </div>
+  </div>
+</section>
+
+<div class="stats-bar">
+  <div class="stats-inner">
+    <div class="stat-item">
+      <span class="stat-number">1,28 трлн ₽</span>
+      <span class="stat-label">Прогноз доходов рынка в 2026 г. (+10%)</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number">11 тыс.</span>
+      <span class="stat-label">Новых номеров ввод в 2026 году</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number">3–6%</span>
+      <span class="stat-label">Рост турпотока по России (IBC Real Estate)</span>
+    </div>
+  </div>
+</div>
+
+<main class="article-wrap">
+  <article class="article-inner">
+
+    <p>Гостиничный рынок России входит в 2026 год на развилке: позади — три года бурного роста, поддержанного государственными субсидиями и перенаправлением туристических потоков внутрь страны. Впереди — сложная комбинация из замедляющегося спроса, растущих издержек и ужесточения налоговой нагрузки. Рынок не падает — он взрослеет. Переход от экстенсивного роста к интенсивному ставит новые требования к операционной эффективности, дифференциации продукта и управлению загрузкой. Те, кто успеет перестроиться, получат конкурентное преимущество на годы вперёд.</p>
+
+    <h2>Прогноз доходов: рост продолжается, но замедляется</h2>
+
+    <p>По прогнозу Nikoliers, совокупный доход коллективных средств размещения в России в 2026 году составит <span class="highlight">1,28 трлн рублей</span> — на 10% больше, чем в 2025-м (1,16 трлн рублей). Рост обеспечат два фактора: увеличение числа ночёвок на 5% — до 368,1 тыс. — и рост количества гостей на 7%, до 95,8 млн человек. Однако темп замедляется: в 2025-м рынок прибавил 11,5%, годом ранее — ещё больше.</p>
+
+    <p>Для понимания масштаба замедления показательна динамика RevPAR — доходности на доступный номер. В Москве в 2024 году она выросла на 47% год к году, в 2025-м — уже на 5%. В Санкт-Петербурге — 20% и 11% соответственно. Эпоха «гарантированного роста тарифов» заканчивается. Гендиректор IBC Real Estate Алексей Ефимов констатирует: «У отельеров сейчас нет возможности существенно повышать тарифы».</p>
+
+    <div class="scenario-grid">
+      <div class="sc-card">
+        <div class="sc-label">Базовый сценарий</div>
+        <div class="sc-title">Умеренный рост</div>
+        <div class="sc-value base">+10%</div>
+        <div class="sc-desc">Прогноз Nikoliers. Доходы — 1,28 трлн руб. Турпоток +3–6%. Загрузка снижается на 1–2 п.п. Ставки аренды — инфляционная индексация.</div>
+      </div>
+      <div class="sc-card">
+        <div class="sc-label">Оптимистичный</div>
+        <div class="sc-title">Геополитический импульс</div>
+        <div class="sc-value bull">+15–18%</div>
+        <div class="sc-desc">При нормализации геополитической ситуации и возобновлении въездного туризма. Открытие международных рейсов добавляет 5–8% иностранных гостей.</div>
+      </div>
+      <div class="sc-card">
+        <div class="sc-label">Консервативный</div>
+        <div class="sc-title">Стагнация</div>
+        <div class="sc-value bear">+5–7%</div>
+        <div class="sc-desc">При сохранении высокой инфляции и замедлении реальных доходов населения. Спрос перетекает в бюджетный сегмент. Рентабельность падает.</div>
+      </div>
+    </div>
+
+    <hr class="divider" />
+
+    <h2>Туристический спрос: плато после бума</h2>
+
+    <p>Внутренний туризм в России вышел на плато. Рост есть, но он уже не двузначный. По прогнозу Nikoliers, количество туристических прибытий в Москву в 2026 году увеличится на 1,9% — до 27,3 млн, в Санкт-Петербург — на 3,2%, до 12,8 млн человек. Суммарный рост российского турпотока, по оценке IBC Real Estate, составит 3–6% год к году.</p>
+
+    <p>Главный тренд года — сегментация спроса. Путешествовать по России стало дорого: цены в отелях, авиабилеты, питание индексировались выше инфляции несколько лет подряд. Массовый турист начинает переориентироваться: выбирает более короткие поездки, трёхзвёздочные объекты, гостевые дома и апартаменты. Премиальный сегмент остаётся устойчивым — состоятельный гость не отказывается от качественного отеля, но сокращает продолжительность пребывания.</p>
+
+    <blockquote>
+      <p>«Рынок перешёл к сдержанному росту из-за высокой конкуренции за гостя. Внутренний туризм растёт, но уже не с той динамикой, как прежде.»</p>
+      <cite>— Александр Биба, президент Cosmos Hotel Group, январь 2026</cite>
+    </blockquote>
+
+    <p>Исключение — <strong>Крым</strong>, где отельеры удержали лояльную ценовую политику: рост спроса составляет 60–65%. По данным АТОР, при сохранении курса «не поднимать цену» регион может выйти на 10 млн туристов в год. Противоположный пример — Краснодарский край, где ценовая агрессия 2024–2025 годов перекрыла рост турпотока и начала переключать гостей на альтернативные направления.</p>
+
+    <hr class="divider" />
+
+    <h2>Ввод новых объектов: замедление строительства</h2>
+
+    <p>В 2026 году в России будет введено около <span class="highlight">11 тыс. новых номеров</span> — на 4,7% больше, чем в 2025-м (10,5 тыс.). Для сравнения: в 2025-м рост показателя составлял 16,7%. Замедление темпов ввода обусловлено прежде всего стоимостью заимствований: при ключевой ставке 16–18% строить отель в рыночном кредитовании экономически нецелесообразно без субсидий. Часть проектов перенесена на 2027–2028 годы.</p>
+
+    <div class="data-card">
+      <h4>Ввод номерного фонда в ключевых городах, прогноз 2026 (Nikoliers / IBC Real Estate)</h4>
+      <div class="data-rows">
+        <div class="data-row">
+          <span class="data-row-label">Россия (всего)</span>
+          <div class="data-row-bar-wrap"><div class="data-row-bar sea" style="width:100%"></div></div>
+          <span class="data-row-val">~11 000 ном.</span>
+        </div>
+        <div class="data-row">
+          <span class="data-row-label">Краснодарский край</span>
+          <div class="data-row-bar-wrap"><div class="data-row-bar gold" style="width:36%"></div></div>
+          <span class="data-row-val">~4 000 ном.</span>
+        </div>
+        <div class="data-row">
+          <span class="data-row-label">Москва</span>
+          <div class="data-row-bar-wrap"><div class="data-row-bar muted" style="width:6%"></div></div>
+          <span class="data-row-val">661 ном. (−37%)</span>
+        </div>
+        <div class="data-row">
+          <span class="data-row-label">Санкт-Петербург</span>
+          <div class="data-row-bar-wrap"><div class="data-row-bar muted" style="width:5%"></div></div>
+          <span class="data-row-val">614 ном. (−23%)</span>
+        </div>
+        <div class="data-row">
+          <span class="data-row-label">По програм. льготного кредит.</span>
+          <div class="data-row-bar-wrap"><div class="data-row-bar green" style="width:7%"></div></div>
+          <span class="data-row-val">800 ном.</span>
+        </div>
+      </div>
+    </div>
+
+    <p>Примечательно, что в обеих столицах ожидается <em>отрицательная или нулевая</em> динамика ввода. Москва получит лишь 661 новый номер — на 37% меньше 2025-го. Санкт-Петербург — 614 (−23%). Это означает, что дефицит качественного номерного фонда в городах-лидерах по спросу не сократится, а продолжит поддерживать ставки. Инвесторы и девелоперы уходят в регионы: Северный Кавказ, Черноморское побережье, Алтай, Дальний Восток — там, где господдержка и туристический потенциал создают более привлекательную комбинацию.</p>
+
+    <hr class="divider" />
+
+    <h2>Налоговые вызовы: двойной удар</h2>
+
+    <p>2026 год принёс гостиничному бизнесу сразу два регуляторных изменения, создающих давление на рентабельность.</p>
+
+    <p><strong>Туристический налог вырос вдвое</strong>: с 1 января 2026 года максимальная ставка увеличилась с 1% до 2% от стоимости проживания. К 2029 году она достигнет 5%. Для отеля со средним ADR 8 000 рублей это означает 160 рублей дополнительных отчислений с каждой ночёвки — сумму, которую либо переложат на гостя (и потеряют в конкурентоспособности), либо абсорбируют из маржи.</p>
+
+    <p><strong>НДС для малого бизнеса</strong>: около 60% гостиничных предприятий России работало по упрощённой системе налогообложения. С переходом части из них на НДС в рамках реформы 2025–2026 годов административная и фискальная нагрузка на малый гостиничный бизнес резко возросла. Особенно болезненно это для курортных гостевых домов, глэмпингов и небольших объектов.</p>
+
+    <blockquote>
+      <p>«Увеличение налоговой и страховой нагрузки станет значимым фактором давления на отрасль. Рост издержек продолжит снижать рентабельность при ограниченных возможностях повышать цены.»</p>
+      <cite>— Алексей Мусакин, вице-президент РСТ, управляющий партнёр Cronwell Hospitality Group</cite>
+    </blockquote>
+
+    <hr class="divider" />
+
+    <h2>Ключевые тренды и точки роста</h2>
+
+    <div class="trend-list">
+      <div class="trend-item">
+        <div class="trend-num">1</div>
+        <div class="trend-body">
+          <div class="trend-title">Регионализация: рост за пределами столиц</div>
+          <div class="trend-desc">В 2026–2028 годах основной прирост числа открытий придётся на Северный Кавказ, Черноморское побережье, Алтай и Дальний Восток. Среднегодовой рост номерного фонда по России до 2030 года составит 5–6% в год — именно за счёт регионов. Малые города с населением до 100 тыс. человек становятся точками инвестиционного интереса: там ниже конкуренция, выше уникальность предложения и есть государственные субсидии. Туризм в регионах растёт на 25–30% благодаря экотуризму и «медленному туризму».</div>
+        </div>
+      </div>
+      <div class="trend-item">
+        <div class="trend-num">2</div>
+        <div class="trend-body">
+          <div class="trend-title">Wellness и санаторный формат: устойчивый рост</div>
+          <div class="trend-desc">Доходность санаторного сегмента в 2025 году выросла на 17% — быстрее любого другого формата размещения. В 2026-м тренд сохранится: устойчивый спрос на короткие wellness-программы («детокс», «антистресс», «цифровой детокс»), медицинские чекапы, совмещённые с отдыхом. Отели, интегрирующие wellness как основной продукт, а не дополнительный сервис, выигрывают в загрузке внесезонные периоды и формируют лояльную аудиторию.</div>
+        </div>
+      </div>
+      <div class="trend-item">
+        <div class="trend-num">3</div>
+        <div class="trend-body">
+          <div class="trend-title">Апарт-отели: extended-stay продолжает расти</div>
+          <div class="trend-desc">Сегмент апарт-отелей и курортных комплексов растёт быстрее классических городских гостиниц. Спрос на форматы extended-stay увеличивается примерно на 15% в год. Средняя доходность (ROI за 5 лет) — 15–19%. В 2026-м девелоперы смещаются из насыщенных столиц в Подмосковье и региональные курорты, где конкуренция ниже, а потенциал роста выше.</div>
+        </div>
+      </div>
+      <div class="trend-item">
+        <div class="trend-num">4</div>
+        <div class="trend-body">
+          <div class="trend-title">Гиперлокальность как конкурентное преимущество</div>
+          <div class="trend-desc">Туристы всё чаще выбирают отель не только за локацию, но и за уникальный аутентичный опыт. Авторские экскурсии, коллаборации с региональными мастерами, локальная гастрономия, экомаршруты — всё это позволяет отелю формировать собственную ценность и назначать более высокий тариф без прямой конкуренции по цене. В 2026-м гиперлокальность перестаёт быть маркетинговым приёмом и становится операционной стратегией.</div>
+        </div>
+      </div>
+      <div class="trend-item">
+        <div class="trend-num">5</div>
+        <div class="trend-body">
+          <div class="trend-title">«Тихие оазисы»: ответ на цифровую усталость</div>
+          <div class="trend-desc">В 2026 году тренд на «антицифровые» пространства становится мейнстримом. Зоны без гаджетов в лобби, мягкий свет, натуральные материалы, тишина как конкурентное преимущество. Гости выбирают отели, где можно восстановиться не только физически, но и эмоционально. Wellness-программы, включающие цифровой детокс как структурный элемент, показывают наибольший рост в сегменте «выходного отдыха».</div>
+        </div>
+      </div>
+      <div class="trend-item">
+        <div class="trend-num">6</div>
+        <div class="trend-body">
+          <div class="trend-title">Дефицит персонала как системный ограничитель</div>
+          <div class="trend-desc">Рынок испытывает острый дефицит квалифицированного персонала — особенно в регионах и новых курортных зонах. Открытие новых объектов в Северном Кавказе, Алтае и на Дальнем Востоке сталкивается с невозможностью укомплектовать команду за разумные деньги. В 2026-м кадровый вопрос становится не менее критичным, чем финансирование строительства. Отели, инвестирующие в обучение и удержание персонала, получают ощутимое конкурентное преимущество.</div>
+        </div>
+      </div>
+    </div>
+
+    <hr class="divider" />
+
+    <h2>Риски и ограничения</h2>
+
+    <div class="risk-list">
+      <div class="risk-item">
+        <div class="risk-badge high">Высокий</div>
+        <div>
+          <div class="risk-title">Рост издержек опережает рост тарифов</div>
+          <div class="risk-desc">Инфляция строительных материалов, рост ФОТ, увеличение налоговой нагрузки — всё это сжимает маржу. Возможности перекладывать рост затрат в цену ограничены замедлением туристического спроса. Рентабельность гостиничного бизнеса снизится у большинства игроков.</div>
+        </div>
+      </div>
+      <div class="risk-item">
+        <div class="risk-badge high">Высокий</div>
+        <div>
+          <div class="risk-title">Ввод новых номеров создаёт давление на загрузку</div>
+          <div class="risk-desc">11 тыс. новых номеров при замедлении турпотока означает усиление конкуренции. IBC Real Estate допускает снижение загрузки на 1–2 п.п. год к году. Новые объекты традиционно «перетягивают» рынок, создавая давление на действующие отели, особенно не прошедшие реновацию.</div>
+        </div>
+      </div>
+      <div class="risk-item">
+        <div class="risk-badge mid">Средний</div>
+        <div>
+          <div class="risk-title">Сезонность усиливается</div>
+          <div class="risk-desc">Особенно критично для курортных регионов, где спрос концентрируется в мае–сентябре. Внесезонная загрузка падает. Отели, не предлагающие специализированного зимнего или событийного продукта, оказываются в уязвимой позиции на 6–7 месяцев в году.</div>
+        </div>
+      </div>
+      <div class="risk-item">
+        <div class="risk-badge mid">Средний</div>
+        <div>
+          <div class="risk-title">Высокая стоимость кредита тормозит развитие</div>
+          <div class="risk-desc">При ключевой ставке 16% рыночное финансирование нового строительства экономически нецелесообразно. Проекты, не попавшие под государственные программы льготного кредитования (ставка 3–5%), переносятся. Рынок концентрируется в сегменте с господдержкой.</div>
+        </div>
+      </div>
+      <div class="risk-item">
+        <div class="risk-badge low">Управляемый</div>
+        <div>
+          <div class="risk-title">Конкуренция с неклассическими форматами</div>
+          <div class="risk-desc">Апартаменты, глэмпинги, гостевые дома на платформах — быстрорастущие альтернативы. Гость выбирает формат, а не «номер на ночь». Отели, не предлагающие уникальный опыт, начинают проигрывать этим форматам по соотношению цена/ценность.</div>
+        </div>
+      </div>
+    </div>
+
+    <hr class="divider" />
+
+    <h2>Региональный прогноз</h2>
+
+    <table class="region-table">
+      <thead>
+        <tr>
+          <th>Регион / направление</th>
+          <th>Прогноз спроса</th>
+          <th>Ввод номеров</th>
+          <th>Главный драйвер</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Москва</td>
+          <td>+1,9% туристов</td>
+          <td>661 (−37% г/г)</td>
+          <td>Деловой туризм, MICE</td>
+        </tr>
+        <tr>
+          <td>Санкт-Петербург</td>
+          <td>+3,2% туристов</td>
+          <td>614 (−23% г/г)</td>
+          <td>Культурный туризм, круизы</td>
+        </tr>
+        <tr>
+          <td>Краснодарский край</td>
+          <td>Стабильный</td>
+          <td>~4 000 (лидер)</td>
+          <td>Черноморский курорт</td>
+        </tr>
+        <tr>
+          <td>Крым</td>
+          <td>+60–65% спроса</td>
+          <td>Умеренный</td>
+          <td>Ценовая доступность</td>
+        </tr>
+        <tr>
+          <td>Северный Кавказ</td>
+          <td>Высокий рост</td>
+          <td>Растущий</td>
+          <td>Горнолыжный, wellness</td>
+        </tr>
+        <tr>
+          <td>Алтай, Карелия</td>
+          <td>Экотуризм +35%</td>
+          <td>Ускоряется</td>
+          <td>Экотуризм, приключения</td>
+        </tr>
+        <tr>
+          <td>Дальний Восток</td>
+          <td>Камчатка +68%</td>
+          <td>Растущий</td>
+          <td>Уникальная природа</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <hr class="divider" />
+
+    <h2>Прогноз инвестиций: фаворит среди коммерческой недвижимости</h2>
+
+    <div class="metrics-grid">
+      <div class="metric-cell">
+        <div class="metric-label">Доля в общем объёме инвестиций в НД</div>
+        <div class="metric-value sea">~10%</div>
+        <div class="metric-note">По итогам 2025 г. — 9,9%, рост с 5,4% в 2024-м. Тенденция сохранится.</div>
+      </div>
+      <div class="metric-cell">
+        <div class="metric-label">Рост инвестиций в 2025 г.</div>
+        <div class="metric-value gold">+38,9%</div>
+        <div class="metric-note">73,7 млрд руб. — рекорд. В 2026-м рост умеренный, но сегмент сохраняет лидерство.</div>
+      </div>
+      <div class="metric-cell">
+        <div class="metric-label">Среднегодовой рост номерного фонда до 2030</div>
+        <div class="metric-value green">5–6%</div>
+        <div class="metric-note">Прогноз Александра Бибы (Cosmos Hotel Group). Длинный цикл, стабильный рост.</div>
+      </div>
+      <div class="metric-cell">
+        <div class="metric-label">ROI апарт-отелей (5 лет)</div>
+        <div class="metric-value sea">15–19%</div>
+        <div class="metric-note">Сохраняется при профессиональном управлении. Главный аргумент для частных инвесторов.</div>
+      </div>
+    </div>
+
+    <div class="conclusion">
+      <h3>Прогноз: год взросления рынка</h3>
+      <p>2026-й станет для российского рынка гостиничной недвижимости годом смены парадигмы. Эпоха, когда рост был гарантирован самим фактом бурного развития внутреннего туризма, завершается. Наступает время, когда выигрывают те, кто умеет управлять операционной эффективностью, дифференцировать продукт и предугадывать потребности гостя.</p>
+      <p>Структурные факторы роста никуда не делись: государственная поддержка, льготное кредитование, отсутствие реальной альтернативы внутреннему туризму для большинства россиян. Nikoliers прогнозирует +10% доходов — это неплохо даже по мировым стандартам. Но этот рост будет неравномерным: премиальный и специализированный сегменты обгонят рынок, массовый — отстанет. Регионы вырастут быстрее столиц. Wellness и событийный туризм обгонят классический отдых.</p>
+      <p>Для инвестора 2026 год создаёт точки входа, которые следующие 3–5 лет будут выглядеть удачными. Дефицит качественных номеров в Москве и Петербурге, устойчивый поток в новые регионы, государственные субсидии на строительство — всё это формирует инвестиционный тезис с разумным соотношением риска и доходности при горизонте 5–7 лет.</p>
+    </div>
+
+  </article>
+</main>
+
+<footer>
+  <strong>kotana.com.ru</strong> &nbsp;·&nbsp; Прогноз гостиничной недвижимости · 2026 &nbsp;·&nbsp; Источники: Nikoliers, NF Group, IBC Real Estate, РСТ, Коммерсантъ, АТОР
+</footer>
+
+</body>
+</html>
