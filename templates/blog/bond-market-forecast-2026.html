@@ -1,0 +1,520 @@
+1<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Прогноз рынка облигаций России на 2026 год | kotana.com.ru</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --ink:    #0f1117;
+      --paper:  #f7f4ef;
+      --cream:  #ede9e0;
+      --accent: #1c4a2e;
+      --accent-light: #c8ecd5;
+      --gold:   #b8922a;
+      --green:  #1a7a3c;
+      --red:    #c0392b;
+      --muted:  #7a7060;
+      --rule:   #d4cfc5;
+      --col:    clamp(320px, 66ch, 720px);
+    }
+    html { font-size: 17px; scroll-behavior: smooth; }
+    body {
+      background: var(--paper); color: var(--ink);
+      font-family: 'IBM Plex Sans', sans-serif;
+      line-height: 1.75; -webkit-font-smoothing: antialiased;
+    }
+
+    .masthead {
+      background: var(--ink); padding: 14px 40px;
+      display: flex; align-items: center; justify-content: space-between;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: .75rem; letter-spacing: .12em; text-transform: uppercase;
+    }
+    .masthead-logo { font-size: 1rem; font-weight: 500; color: #fff; }
+    .masthead-meta { color: #666; }
+
+    .hero {
+      background: var(--accent); color: var(--paper);
+      padding: 80px 40px 72px; position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: '2026';
+      position: absolute; right: -10px; top: 50%; transform: translateY(-50%);
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(110px, 17vw, 240px); font-weight: 900;
+      color: rgba(255,255,255,.06); letter-spacing: -.04em; line-height: 1; pointer-events: none;
+    }
+    .hero-inner { max-width: var(--col); margin: 0 auto; position: relative; }
+    .hero-tag {
+      display: inline-block;
+      border: 1px solid rgba(255,255,255,.3); color: rgba(255,255,255,.75);
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: .72rem; letter-spacing: .15em; text-transform: uppercase;
+      padding: 4px 12px; margin-bottom: 28px;
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.2rem, 5vw, 3.4rem); font-weight: 700;
+      line-height: 1.18; letter-spacing: -.02em; margin-bottom: 24px; max-width: 22ch;
+    }
+    .hero h1 em { font-style: italic; color: #8de0a8; }
+    .hero-lead {
+      font-size: 1.08rem; color: rgba(255,255,255,.72);
+      max-width: 54ch; line-height: 1.65; margin-bottom: 40px;
+    }
+    .hero-byline {
+      display: flex; align-items: center; gap: 16px;
+      font-size: .8rem; color: rgba(255,255,255,.4);
+      font-family: 'IBM Plex Mono', monospace;
+    }
+    .hero-byline span { color: rgba(255,255,255,.25); }
+    .hero-byline strong { color: rgba(255,255,255,.65); font-weight: 500; }
+
+    .stats-bar { background: var(--ink); padding: 0 40px; }
+    .stats-inner {
+      max-width: calc(var(--col) + 200px); margin: 0 auto;
+      display: grid; grid-template-columns: repeat(3,1fr);
+    }
+    .stat-item {
+      padding: 24px 32px; border-right: 1px solid rgba(255,255,255,.07); color: #fff;
+    }
+    .stat-item:first-child { padding-left: 0; }
+    .stat-item:last-child  { border-right: none; }
+    .stat-number {
+      font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 700;
+      display: block; line-height: 1; color: #8de0a8;
+    }
+    .stat-label {
+      font-size: .75rem; text-transform: uppercase;
+      letter-spacing: .1em; opacity: .45; margin-top: 4px;
+      font-family: 'IBM Plex Mono', monospace;
+    }
+
+    .article-wrap { padding: 72px 40px; }
+    .article-inner { max-width: var(--col); margin: 0 auto; }
+
+    .article-inner > p:first-of-type::first-letter {
+      font-family: 'Playfair Display', serif; font-size: 4.5em; font-weight: 900;
+      float: left; line-height: .78; margin-right: 8px; margin-top: 6px; color: var(--accent);
+    }
+    p { margin-bottom: 1.5rem; }
+
+    h2 {
+      font-family: 'Playfair Display', serif; font-size: 1.7rem; font-weight: 700;
+      letter-spacing: -.02em; line-height: 1.25; margin: 3rem 0 1.1rem;
+    }
+    h2::before { content: ''; display: block; width: 32px; height: 3px; background: var(--accent); margin-bottom: 16px; }
+
+    h3 {
+      font-family: 'IBM Plex Sans', sans-serif; font-size: 1.05rem; font-weight: 600;
+      margin: 2rem 0 .7rem; text-transform: uppercase; letter-spacing: .06em; color: var(--gold);
+    }
+
+    blockquote {
+      border-left: 3px solid var(--accent); margin: 2.5rem 0; padding: 20px 0 20px 32px;
+    }
+    blockquote p {
+      font-family: 'Playfair Display', serif; font-size: 1.35rem; font-style: italic;
+      line-height: 1.5; color: var(--ink); margin: 0 0 8px;
+    }
+    blockquote cite {
+      font-family: 'IBM Plex Mono', monospace; font-size: .72rem;
+      text-transform: uppercase; letter-spacing: .12em; color: var(--muted); font-style: normal;
+    }
+
+    .highlight { background: var(--accent-light); padding: 0 4px; font-weight: 500; }
+
+    /* Scenario grid */
+    .scenario-grid {
+      display: grid; grid-template-columns: repeat(3,1fr);
+      gap: 1px; background: var(--rule); border: 1px solid var(--rule); margin: 2.5rem 0;
+    }
+    .sc-card { background: var(--paper); padding: 24px 20px; }
+    .sc-label {
+      font-family: 'IBM Plex Mono', monospace; font-size: .65rem;
+      text-transform: uppercase; letter-spacing: .15em; color: var(--muted); margin-bottom: 10px;
+    }
+    .sc-value { font-family: 'Playfair Display', serif; font-size: 1.7rem; font-weight: 700; line-height: 1; margin-bottom: 6px; }
+    .sc-value.base { color: var(--gold); }
+    .sc-value.bull { color: var(--green); }
+    .sc-value.bear { color: var(--red); }
+    .sc-title { font-size: .88rem; font-weight: 600; margin-bottom: 4px; }
+    .sc-source { font-family: 'IBM Plex Mono', monospace; font-size: .63rem; color: var(--muted); margin-bottom: 4px; }
+    .sc-desc { font-size: .8rem; color: var(--muted); line-height: 1.5; margin-top: 8px; }
+
+    /* Instrument cards */
+    .instr-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 1px; background: var(--rule); border: 1px solid var(--rule); margin: 2.5rem 0;
+    }
+    .instr-card { background: var(--paper); padding: 24px; }
+    .instr-icon { font-size: 1.3rem; margin-bottom: 8px; display: block; }
+    .instr-type {
+      font-family: 'IBM Plex Mono', monospace; font-size: .65rem;
+      text-transform: uppercase; letter-spacing: .12em; color: var(--muted); margin-bottom: 6px;
+    }
+    .instr-name { font-weight: 700; font-size: .97rem; margin-bottom: 4px; }
+    .instr-yield {
+      font-family: 'Playfair Display', serif; font-weight: 700;
+      color: var(--accent); font-size: 1.15rem; margin-bottom: 4px;
+    }
+    .instr-label {
+      display: inline-block; font-family: 'IBM Plex Mono', monospace;
+      font-size: .6rem; text-transform: uppercase; letter-spacing: .1em;
+      padding: 3px 8px; border-radius: 2px; margin-bottom: 8px;
+    }
+    .instr-label.hot  { background: var(--accent-light); color: var(--accent); }
+    .instr-label.warm { background: #f5ecd4; color: var(--gold); }
+    .instr-label.risk { background: #fde8e0; color: var(--red); }
+    .instr-desc { font-size: .8rem; color: var(--muted); line-height: 1.55; }
+
+    /* Data card */
+    .data-card {
+      background: var(--cream); border: 1px solid var(--rule); padding: 28px 32px; margin: 2.5rem 0;
+    }
+    .data-card h4 {
+      font-family: 'IBM Plex Mono', monospace; font-size: .7rem;
+      text-transform: uppercase; letter-spacing: .15em; color: var(--muted); margin-bottom: 20px;
+    }
+    .data-rows { display: flex; flex-direction: column; gap: 12px; }
+    .data-row { display: flex; align-items: center; gap: 16px; }
+    .data-row-label { font-size: .85rem; color: var(--muted); width: 220px; flex-shrink: 0; }
+    .data-row-bar-wrap { flex: 1; height: 6px; background: var(--rule); position: relative; }
+    .data-row-bar { position: absolute; top: 0; left: 0; height: 100%; }
+    .data-row-bar.forest { background: var(--accent); }
+    .data-row-bar.gold   { background: var(--gold); }
+    .data-row-bar.green  { background: var(--green); }
+    .data-row-bar.red    { background: var(--red); opacity: .7; }
+    .data-row-bar.muted  { background: var(--muted); opacity: .35; }
+    .data-row-val {
+      font-family: 'IBM Plex Mono', monospace; font-size: .8rem;
+      font-weight: 500; width: 100px; text-align: right;
+    }
+
+    /* Metrics 2x2 */
+    .metrics-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 1px; background: var(--rule); border: 1px solid var(--rule); margin: 2.5rem 0;
+    }
+    .metric-cell { background: var(--paper); padding: 24px; }
+    .metric-label {
+      font-family: 'IBM Plex Mono', monospace; font-size: .68rem;
+      text-transform: uppercase; letter-spacing: .14em; color: var(--muted); margin-bottom: 8px;
+    }
+    .metric-value { font-family: 'Playfair Display', serif; font-size: 1.65rem; font-weight: 700; line-height: 1.1; }
+    .metric-value.forest { color: var(--accent); }
+    .metric-value.gold   { color: var(--gold); }
+    .metric-value.green  { color: var(--green); }
+    .metric-value.red    { color: var(--red); }
+    .metric-note { font-size: .78rem; color: var(--muted); margin-top: 6px; }
+
+    /* Risk list */
+    .risk-list { margin: 2rem 0; }
+    .risk-item {
+      display: flex; gap: 16px; padding: 16px 0;
+      border-bottom: 1px solid var(--rule); align-items: flex-start;
+    }
+    .risk-item:first-child { border-top: 1px solid var(--rule); }
+    .risk-badge {
+      font-family: 'IBM Plex Mono', monospace; font-size: .62rem;
+      text-transform: uppercase; letter-spacing: .1em;
+      padding: 4px 10px; border-radius: 2px; flex-shrink: 0; margin-top: 2px;
+    }
+    .risk-badge.high { background: #fde8e0; color: var(--red); }
+    .risk-badge.mid  { background: #f5ecd4; color: var(--gold); }
+    .risk-badge.low  { background: #d0ead8; color: var(--green); }
+    .risk-title { font-weight: 600; font-size: .9rem; margin-bottom: 3px; }
+    .risk-desc  { font-size: .82rem; color: var(--muted); line-height: 1.55; }
+
+    .divider { border: none; border-top: 1px solid var(--rule); margin: 3rem 0; }
+
+    .conclusion {
+      background: var(--ink); color: var(--paper); padding: 36px 40px; margin: 3rem 0 0;
+    }
+    .conclusion h3 { color: #8de0a8; margin-top: 0; letter-spacing: .06em; font-size: 1rem; text-transform: uppercase; }
+    .conclusion p { color: #ccc; margin-bottom: 1rem; }
+    .conclusion p:last-child { margin-bottom: 0; }
+
+    footer {
+      background: var(--cream); border-top: 1px solid var(--rule);
+      padding: 28px 40px; font-family: 'IBM Plex Mono', monospace;
+      font-size: .72rem; color: var(--muted); text-align: center; letter-spacing: .06em;
+    }
+    footer strong { color: var(--ink); }
+
+    @media (max-width: 640px) {
+      .masthead { padding: 12px 20px; }
+      .hero { padding: 56px 20px 52px; }
+      .stats-bar { padding: 0 20px; }
+      .stats-inner, .scenario-grid { grid-template-columns: 1fr; }
+      .stat-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,.07); padding: 16px 0; }
+      .article-wrap { padding: 48px 20px; }
+      .instr-grid, .metrics-grid { grid-template-columns: 1fr; }
+      .data-row-label { width: 130px; font-size: .78rem; }
+    }
+  </style>
+</head>
+<body>
+
+<header class="masthead">
+  <span class="masthead-logo">kotana.com.ru</span>
+  <span class="masthead-meta">Прогноз · Долговой рынок · 2026</span>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-tag">Прогноз · Рынок облигаций · 2026</div>
+    <h1>Рынок облигаций — 2026: год <em>длинных ОФЗ и стены погашений</em></h1>
+    <p class="hero-lead">ЦБ снижает ставку. Инвесторы перекладываются из флоатеров в фиксированный купон. Потенциал длинных ОФЗ — до 25–27% совокупной доходности. Но одновременно рынок столкнётся с беспрецедентным «навесом» рефинансирования в 4,9–6,75 трлн рублей и ростом дефолтов в сегменте ВДО.</p>
+    <div class="hero-byline">
+      <strong>Редакция kotana.com.ru</strong>
+      <span>·</span>
+      <span>Март 2026</span>
+      <span>·</span>
+      <span>14 мин чтения</span>
+    </div>
+  </div>
+</section>
+
+<div class="stats-bar">
+  <div class="stats-inner">
+    <div class="stat-item">
+      <span class="stat-number">13–15%</span>
+      <span class="stat-label">Прогноз ЦБ средней ключевой ставки на 2026 г.</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number">4,9–6,75 трлн</span>
+      <span class="stat-label">Объём погашений / оферт — рекордный навес</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number">25–27%</span>
+      <span class="stat-label">Потенциал длинных ОФЗ по базовому сценарию</span>
+    </div>
+  </div>
+</div>
+
+<main class="article-wrap">
+  <article class="article-inner">
+
+    <p>Рынок облигаций России входит в 2026 год на перекрёстке двух разнонаправленных сил. С одной стороны — снижение ключевой ставки с 21% до 16% открывает эпоху переоценки: инвесторы, успевшие купить длинные ОФЗ при высоких ставках, будут смотреть на рост цен своих бумаг. С другой стороны — беспрецедентный «навес» рефинансирования: корпоративному рынку предстоит переварить 4,9–6,75 трлн рублей погашений и оферт, что на 40–70% превышает уровень прошлого года. Эта комбинация делает 2026-й одним из самых технически сложных лет для долгового рынка — с высокой потенциальной доходностью для осторожных инвесторов и нарастающими рисками для тех, кто поставил на слабые эмитенты.</p>
+
+    <h2>Ставка ЦБ: главный драйвер всего рынка</h2>
+
+    <p>Банк России в феврале 2026 года продолжил смягчение и снизил ключевую ставку до 15,5%, подтвердив прогноз средней ставки 13–15% по итогам года. По базовому сценарию большинства аналитиков, к концу 2026 года ставка опустится до <span class="highlight">12–13%</span>. Альфа-Инвестиции ожидают среднюю ставку 14,3% и 12–13% к декабрю. БКС прогнозирует снижение до 12% при благоприятном развитии событий.</p>
+
+    <p>Механизм воздействия на рынок прямолинеен: когда ставка снижается, ранее купленные облигации с фиксированным купоном дорожают — покупатель, заплативший за бумагу с доходностью 16% в период высокой ставки, видит её рост в цене, как только рынок переоценивается под новый уровень 12–13%. Чем длиннее бумага, тем сильнее этот эффект.</p>
+
+    <div class="scenario-grid">
+      <div class="sc-card">
+        <div class="sc-label">Базовый сценарий</div>
+        <div class="sc-title">Плавное снижение</div>
+        <div class="sc-value base">12–13%</div>
+        <div class="sc-source">Консенсус рынка / ЦБ РФ</div>
+        <div class="sc-desc">Ставка к концу года — 12–13%. Длинные ОФЗ приносят 25–27% совокупной доходности. Корпоративные облигации AA–A — 18–20%. Рынок растёт на 18–23% в год.</div>
+      </div>
+      <div class="sc-card">
+        <div class="sc-label">Оптимистичный</div>
+        <div class="sc-title">Ускоренное смягчение</div>
+        <div class="sc-value bull">10–11%</div>
+        <div class="sc-source">Оптимистичные прогнозы</div>
+        <div class="sc-desc">При дезинфляции и геополитической стабилизации. Длинные ОФЗ — до 40% совокупной доходности за счёт роста цены. Переток из депозитов резко ускоряется.</div>
+      </div>
+      <div class="sc-card">
+        <div class="sc-label">Консервативный</div>
+        <div class="sc-title">Задержка снижения</div>
+        <div class="sc-value bear">15–16%</div>
+        <div class="sc-source">При инфляционном давлении</div>
+        <div class="sc-desc">Инфляция от НДС и тарифов удерживает ставку на высоком уровне. Флоатеры сохраняют привлекательность. Переоценка длинных ОФЗ откладывается на 2027-й.</div>
+      </div>
+    </div>
+
+    <hr class="divider" />
+
+    <h2>«Стена погашений» — главное испытание года</h2>
+
+    <p>Ключевой риск 2026 года для корпоративного рынка облигаций — беспрецедентный объём обязательств к погашению и оферте. По расчётам Альфа-банка, плановый объём к погашению и оферте составляет <span class="highlight">4,9 трлн рублей</span> — на 70% выше показателя 2025 года (2,9 трлн). SberCIB оценивает суммарную потребность в рефинансировании ещё шире: с учётом пут-опционов — до <span class="highlight">6,75 трлн рублей</span>. Только рублёвых погашений — 3,65 трлн, что на 26% выше прошлого года.</p>
+
+    <div class="data-card">
+      <h4>Объём корпоративных погашений / оферт: динамика и 2026 г.</h4>
+      <div class="data-rows">
+        <div class="data-row">
+          <span class="data-row-label">2024 (факт)</span>
+          <div class="data-row-bar-wrap"><div class="data-row-bar muted" style="width:38%"></div></div>
+          <span class="data-row-val">~2,3 трлн ₽</span>
+        </div>
+        <div class="data-row">
+          <span class="data-row-label">2025 (факт)</span>
+          <div class="data-row-bar-wrap"><div class="data-row-bar gold" style="width:57%"></div></div>
+          <span class="data-row-val">~2,9 трлн ₽</span>
+        </div>
+        <div class="data-row">
+          <span class="data-row-label">2026 (базовый прогноз)</span>
+          <div class="data-row-bar-wrap"><div class="data-row-bar forest" style="width:97%"></div></div>
+          <span class="data-row-val">~4,9 трлн ₽</span>
+        </div>
+        <div class="data-row">
+          <span class="data-row-label">2026 (с пут-опционами)</span>
+          <div class="data-row-bar-wrap"><div class="data-row-bar red" style="width:100%"></div></div>
+          <span class="data-row-val">до 6,75 трлн ₽</span>
+        </div>
+      </div>
+    </div>
+
+    <p>Что означает эта «стена» на практике? Компании, привлёкшие облигационный долг в 2022–2024 годах по ставкам 12–18%, в 2026 году должны его погасить или рефинансировать. Те, у кого операционный денежный поток покрывает обязательства, сделают это штатно. Те, у кого покрытия нет, встанут перед выбором: разместить новый выпуск по ставке 18–20% и поставить бизнес в убыток — или допустить дефолт. Пик нагрузки традиционно приходится на четвёртый квартал.</p>
+
+    <blockquote>
+      <p>«Общая потребность в рефинансировании в 2026 году может достичь 6,75 трлн рублей. Существенный навес рефинансирования приведёт к росту конкуренции за средства инвесторов.»</p>
+      <cite>— Екатерина Сидорова, начальник отдела долговых рынков SberCIB Investment Research</cite>
+    </blockquote>
+
+    <hr class="divider" />
+
+    <h2>Дефолты: риск нарастает</h2>
+
+    <p>2025 год завершился с 48 случаями неисполнения обязательств по данным Cbonds — против 25 в 2024-м и 27 в 2023-м. Рост в 2 раза. Особенно болезненным стал дефолт логистической платформы «Монополия» в конце января 2026 года: компания не погасила выпуск на 3 млрд рублей, спровоцировав волну распродаж по всему сегменту ВДО. В обращении оставалось 7 выпусков «Монополии» на 6,7 млрд рублей.</p>
+
+    <p>На высокодоходные облигации в 2025 году пришлась почти половина всех дефолтов — 23,4 млрд из 58 млрд рублей общего объёма неисполненных обязательств. В 2026-м риск ещё выше: налоговое давление от повышения НДС, отмена льготных страховых взносов и рост тарифов создают дополнительную нагрузку на операционную прибыль уязвимых эмитентов. По оценкам аналитиков, число дефолтов может вырасти до 30 компаний.</p>
+
+    <div class="risk-list">
+      <div class="risk-item">
+        <div class="risk-badge high">Высокий</div>
+        <div>
+          <div class="risk-title">ВДО рейтинга B–BB</div>
+          <div class="risk-desc">Категория с наибольшим числом дефолтов 2025 года. Эмитенты, рефинансировавшиеся под 30%+, не генерируют достаточного денежного потока для обслуживания долга. Оптовая торговля (32%), профессиональные услуги (27%), строительство (16%) — проблемные секторы.</div>
+        </div>
+      </div>
+      <div class="risk-item">
+        <div class="risk-badge high">Высокий</div>
+        <div>
+          <div class="risk-title">«Стена погашений» Q4 2026</div>
+          <div class="risk-desc">138 эмитентов категории BBB+–B- столкнутся с погашениями или офертами в 2026 году — на 33% больше, чем годом ранее. Пик нагрузки — IV квартал. Часть эмитентов окажется неспособна рефинансироваться даже при снизившейся ставке.</div>
+        </div>
+      </div>
+      <div class="risk-item">
+        <div class="risk-badge mid">Средний</div>
+        <div>
+          <div class="risk-title">Инфляционный всплеск от НДС</div>
+          <div class="risk-desc">Повышение НДС в начале 2026 года создаёт проинфляционный импульс, который может задержать снижение ставки ЦБ. Если ставка застрянет выше 15%, бенефициар длинных ОФЗ не реализуется, а ВДО-сегмент получит дополнительную волну дефолтов.</div>
+        </div>
+      </div>
+      <div class="risk-item">
+        <div class="risk-badge mid">Средний</div>
+        <div>
+          <div class="risk-title">Геополитическая волатильность</div>
+          <div class="risk-desc">Длинные ОФЗ чувствительны к геополитическим событиям. Любой негативный всплеск — эскалация, ужесточение санкций — может привести к резкому падению котировок. Это основной аргумент Альфа-банка против концентрации в длинных ОФЗ.</div>
+        </div>
+      </div>
+      <div class="risk-item">
+        <div class="risk-badge low">Управляемый</div>
+        <div>
+          <div class="risk-title">Ликвидность флоатеров при снижении ставки</div>
+          <div class="risk-desc">Держатели флоатеров, переключающиеся на фиксированный купон, могут столкнуться с низкой ликвидностью при выходе. Флоатеры не растут в цене при снижении ставки — мотивации держать их становится меньше, но выйти разом не всем удастся.</div>
+        </div>
+      </div>
+    </div>
+
+    <hr class="divider" />
+
+    <h2>Ключевые инструменты: что рекомендуют аналитики</h2>
+
+    <div class="instr-grid">
+      <div class="instr-card">
+        <span class="instr-icon">🏛️</span>
+        <div class="instr-type">Государственные</div>
+        <div class="instr-name">Длинные ОФЗ с фиксированным купоном</div>
+        <span class="instr-label hot">Фаворит 2026</span>
+        <div class="instr-yield">25–27% базовый / до 40% оптим.</div>
+        <div class="instr-desc">Главная инвестиционная идея года. При снижении ставки до 12–13% длинные ОФЗ (дюрация 10+ лет) принесут купонный доход плюс существенный рост цены. Выпуски 26254, 26253, 26247, 26230 — наиболее рекомендуемые аналитиками. Риск: геополитическая волатильность может резко снизить котировки.</div>
+      </div>
+      <div class="instr-card">
+        <span class="instr-icon">🏢</span>
+        <div class="instr-type">Корпоративные</div>
+        <div class="instr-name">Фиксированный купон А–АА, дюрация 3–5 лет</div>
+        <span class="instr-label hot">Оптимальный риск/доходность</span>
+        <div class="instr-yield">18–20% годовых по итогам года</div>
+        <div class="instr-desc">Золотая середина рынка. Высокая надёжность при доходности выше ОФЗ на 2–3 п.п. Размещения в начале 2026 года — по привлекательным ставкам из-за ещё высокого рынка. Альфа-банк и Т-Инвестиции рекомендуют именно этот сегмент как основу портфеля.</div>
+      </div>
+      <div class="instr-card">
+        <span class="instr-icon">💱</span>
+        <div class="instr-type">Валютные</div>
+        <div class="instr-name">Замещающие и юаневые облигации</div>
+        <span class="instr-label warm">Страховка от рубля</span>
+        <div class="instr-yield">25–30% в рублях (с ослаблением)</div>
+        <div class="instr-desc">При ожидаемом ослаблении рубля к 90–95 руб./$ рублёвая доходность валютных облигаций может достичь 25–30%. Альфа-Инвестиции называют валютные бонды приоритетным активом 2026 года наравне с длинными ОФЗ. Газпром — крупнейший эмитент, половина рынка ЗО.</div>
+      </div>
+      <div class="instr-card">
+        <span class="instr-icon">⚡</span>
+        <div class="instr-type">С плавающим купоном</div>
+        <div class="instr-name">Флоатеры: сужающаяся ниша</div>
+        <span class="instr-label risk">Теряют привлекательность</span>
+        <div class="instr-yield">Ниже фиксированного купона</div>
+        <div class="instr-desc">При снижении ставки доходность флоатеров падает ниже доходности фиксированных бумаг. Сохраняют смысл для краткосрочных вложений и ликвидности. ОФЗ-ПК — как буфер. Из-за разворота ставки — не главная идея 2026 года. Минфин намерен сократить их долю в госдолге с 38% до 25–30%.</div>
+      </div>
+    </div>
+
+    <hr class="divider" />
+
+    <h2>Прогноз объёма рынка и размещений</h2>
+
+    <p>По оценке «Эксперт РА», рынок корпоративных облигаций вырастет на <span class="highlight">18–23%</span> в 2026 году. Драйверы — снижение ставки, масштабное рефинансирование и приток частных инвесторов. По прогнозу Коммерсанта, ссылающегося на BK «Регион», 2026 год может побить рекорд 2025-го по объёму размещений. Частные инвесторы, перекладывающиеся из депозитов в бонды, сформируют стабильный спрос.</p>
+
+    <div class="metrics-grid">
+      <div class="metric-cell">
+        <div class="metric-label">Рост рынка корп. облигаций</div>
+        <div class="metric-value forest">18–23%</div>
+        <div class="metric-note">Прогноз «Эксперт РА». Снижение ставки + рефинансирование + приток инвесторов.</div>
+      </div>
+      <div class="metric-cell">
+        <div class="metric-label">Доходность длинных ОФЗ</div>
+        <div class="metric-value gold">25–27%</div>
+        <div class="metric-note">Базовый сценарий Альфа-Инвестиций на 2026 год. При оптимистичном — до 40%.</div>
+      </div>
+      <div class="metric-cell">
+        <div class="metric-label">Погашения / оферты в 2026</div>
+        <div class="metric-value red">4,9–6,75 трлн</div>
+        <div class="metric-note">На 40–70% выше 2025-го. Пик — IV квартал. Главный риск для слабых эмитентов.</div>
+      </div>
+      <div class="metric-cell">
+        <div class="metric-label">Норматив ННКЛ — новый фактор</div>
+        <div class="metric-value green">BBB- и выше</div>
+        <div class="metric-note">Новый банковский норматив откроет банкам инвестиции в корпоративные облигации BBB- и выше — дополнительный спрос на качественный долг.</div>
+      </div>
+    </div>
+
+    <blockquote>
+      <p>«С учётом начавшегося цикла понижения ключевой ставки, а также высоких объёмов погашений 2026 год может побить рекорд минувшего года.»</p>
+      <cite>— Коммерсантъ, январь 2026, со ссылкой на аналитиков BK «Регион»</cite>
+    </blockquote>
+
+    <hr class="divider" />
+
+    <h2>Стратегии для разных типов инвесторов</h2>
+
+    <h3>Консервативный инвестор</h3>
+    <p>Портфель на 50–60% — ОФЗ с фиксированным купоном, на 30–40% — корпоративные облигации первого эшелона с рейтингом AA–AAA. Ориентир: дюрация 3–7 лет как оптимальное соотношение потенциала переоценки и рыночного риска. Ожидаемая совокупная доходность при базовом сценарии — 18–22% годовых. По мнению «Цифра брокер», длинные ОФЗ сроком 10–15 лет с доходностью 14–14,5% могут принести 25–30% по итогам года при снижении ставки.</p>
+
+    <h3>Умеренно агрессивный инвестор</h3>
+    <p>Ядро — длинные ОФЗ выпусков 26254, 26253, 26247. Дополнение — корпоративные облигации А–АА- с дюрацией 1–1,5 года и доходностью 18–19% как стабилизирующий компонент. Валютные облигации — 15–25% портфеля как страховка от ослабления рубля и источник дополнительной доходности. Флоатеры — минимально, только как ликвидный буфер.</p>
+
+    <h3>Что избегать</h3>
+    <p>Сегмент ВДО рейтинга B и ниже без глубокого анализа отдельных эмитентов — рост числа дефолтов до 30 компаний в 2026-м делает широкую экспозицию неоправданной. Корпоративные AAA-бонды по рыночным ценам — спред к ОФЗ сократился до ~1%, потенциала переоценки практически нет. Короткие ОФЗ — теряют привлекательность по мере снижения ставки.</p>
+
+    <div class="conclusion">
+      <h3>Прогноз: двойная повестка — возможности и испытания</h3>
+      <p>2026 год предлагает рынку облигаций редкий тип возможности: купить качественный фиксированный доход в самом начале цикла снижения ставок. Исторически это один из лучших моментов для входа в длинные государственные и качественные корпоративные облигации — именно тогда инвестор фиксирует высокую купонную ставку и одновременно выигрывает от роста цены бумаги.</p>
+      <p>Одновременно 2026-й — год проверки корпоративного рынка на прочность. «Стена погашений» в 4,9–6,75 трлн рублей отделит устойчивых эмитентов от тех, кто накопил долговую нагрузку сверх разумного. Число дефолтов вырастет — и это не катастрофа для рынка в целом, но болезненный урок для держателей необеспеченных ВДО без анализа финансовых метрик.</p>
+      <p>Главный принцип года звучит просто: качество важнее доходности. Премия 2–4 п.п. за рейтинг BBB против AA не стоит риска дефолта в год, когда на рефинансирование идут 6+ трлн рублей. А длинные ОФЗ при ставке, снижающейся с 16% к 12%, — один из немногих инструментов, способных принести 25–30% без кредитного риска.</p>
+    </div>
+
+  </article>
+</main>
+
+<footer>
+  <strong>kotana.com.ru</strong> &nbsp;·&nbsp; Прогноз рынка облигаций · 2026 &nbsp;·&nbsp; Источники: Альфа-банк, Эксперт РА, SberCIB, Т-Инвестиции, Коммерсантъ, БКС, Мосбиржа
+</footer>
+
+</body>
+</html>
