@@ -326,6 +326,18 @@
         <h2 class="section-heading">Аналитика</h2>
         {% endif %}
         <div class="blog-grid">
+            <a href="/blog/ipo-market-russia-2025" class="blog-card">
+                <span class="blog-tag">{{ 'Analytics' if lang == 'en' else 'Аналитика' }}</span>
+                {% if lang == 'en' %}
+                <h3>Russian IPO Market in 2025: Four Instead of Twenty</h3>
+                <p>Sber and VTB forecast 10–20 new issuers at the start of 2025. Four companies actually listed. Capital raised halved to 33 billion rubles, and the Moscow Exchange IPO Index lost 17%. We break down what happened, who made it to market, and what comes next.</p>
+                {% else %}
+                <h3>Рынок IPO в России в 2025 году: четыре вместо двадцати</h3>
+                <p>В начале 2025-го Сбер и ВТБ прогнозировали 10–20 новых эмитентов. По итогам года на биржи вышли четыре. Объём привлечённых средств упал вдвое — до 33 млрд рублей. Индекс IPO Мосбиржи потерял 17%. Разбираем, что произошло и что ждёт рынок дальше.</p>
+                {% endif %}
+                <span class="blog-read">{{ 'Read' if lang == 'en' else 'Читать' }} →</span>
+            </a>
+
             <a href="/blog/hotel-real-estate-forecast-2026" class="blog-card">
                 <span class="blog-tag">{{ 'Forecast' if lang == 'en' else 'Прогноз' }}</span>
                 {% if lang == 'en' %}

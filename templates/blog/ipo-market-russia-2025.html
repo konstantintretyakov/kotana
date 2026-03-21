@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Рынок IPO в России в 2025 году | kotana.com.ru</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --ink:    #0f1117;
+      --paper:  #f7f4ef;
+      --cream:  #ede9e0;
+      --accent: #6b2d8e;        /* фиолетовый — биржа, IPO */
+      --accent-light: #ead5f5;
+      --gold:   #b8922a;
+      --green:  #1a7a3c;
+      --red:    #c0392b;
+      --muted:  #7a7060;
+      --rule:   #d4cfc5;
+      --col:    clamp(320px, 66ch, 720px);
+    }
+    html { font-size: 17px; scroll-behavior: smooth; }
+    body {
+      background: var(--paper); color: var(--ink);
+      font-family: 'IBM Plex Sans', sans-serif;
+      line-height: 1.75; -webkit-font-smoothing: antialiased;
+    }
+
+    .masthead {
+      background: var(--ink); padding: 14px 40px;
+      display: flex; align-items: center; justify-content: space-between;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: .75rem; letter-spacing: .12em; text-transform: uppercase;
+    }
+    .masthead-logo { font-size: 1rem; font-weight: 500; color: #fff; }
+    .masthead-meta { color: #666; }
+
+    /* HERO */
+    .hero {
+      background: var(--accent); color: var(--paper);
+      padding: 80px 40px 72px; position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: 'IPO';
+      position: absolute; right: -20px; top: 50%; transform: translateY(-50%);
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(150px, 22vw, 320px); font-weight: 900;
+      color: rgba(255,255,255,.06); letter-spacing: -.04em;
+      line-height: 1; pointer-events: none;
+    }
+    .hero-inner { max-width: var(--col); margin: 0 auto; position: relative; }
+    .hero-tag {
+      display: inline-block;
+      border: 1px solid rgba(255,255,255,.3); color: rgba(255,255,255,.75);
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: .72rem; letter-spacing: .15em; text-transform: uppercase;
+      padding: 4px 12px; margin-bottom: 28px;
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.2rem, 5vw, 3.4rem); font-weight: 700;
+      line-height: 1.18; letter-spacing: -.02em; margin-bottom: 24px; max-width: 22ch;
+    }
+    .hero h1 em { font-style: italic; color: #d8adff; }
+    .hero-lead {
+      font-size: 1.08rem; color: rgba(255,255,255,.72);
+      max-width: 54ch; line-height: 1.65; margin-bottom: 40px;
+    }
+    .hero-byline {
+      display: flex; align-items: center; gap: 16px;
+      font-size: .8rem; color: rgba(255,255,255,.4);
+      font-family: 'IBM Plex Mono', monospace;
+    }
+    .hero-byline span { color: rgba(255,255,255,.25); }
+    .hero-byline strong { color: rgba(255,255,255,.65); font-weight: 500; }
+
+    /* STATS BAR */
+    .stats-bar { background: var(--ink); padding: 0 40px; }
+    .stats-inner {
+      max-width: calc(var(--col) + 200px); margin: 0 auto;
+      display: grid; grid-template-columns: repeat(3,1fr);
+    }
+    .stat-item {
+      padding: 24px 32px; border-right: 1px solid rgba(255,255,255,.07); color: #fff;
+    }
+    .stat-item:first-child { padding-left: 0; }
+    .stat-item:last-child  { border-right: none; }
+    .stat-number {
+      font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 700;
+      display: block; line-height: 1; color: #d8adff;
+    }
+    .stat-label {
+      font-size: .75rem; text-transform: uppercase;
+      letter-spacing: .1em; opacity: .45; margin-top: 4px;
+      font-family: 'IBM Plex Mono', monospace;
+    }
+
+    /* ARTICLE */
+    .article-wrap { padding: 72px 40px; }
+    .article-inner { max-width: var(--col); margin: 0 auto; }
+
+    .article-inner > p:first-of-type::first-letter {
+      font-family: 'Playfair Display', serif; font-size: 4.5em; font-weight: 900;
+      float: left; line-height: .78; margin-right: 8px; margin-top: 6px; color: var(--accent);
+    }
+    p { margin-bottom: 1.5rem; }
+
+    h2 {
+      font-family: 'Playfair Display', serif; font-size: 1.7rem; font-weight: 700;
+      letter-spacing: -.02em; line-height: 1.25; margin: 3rem 0 1.1rem;
+    }
+    h2::before { content: ''; display: block; width: 32px; height: 3px; background: var(--accent); margin-bottom: 16px; }
+
+    h3 {
+      font-family: 'IBM Plex Sans', sans-serif; font-size: 1.05rem; font-weight: 600;
+      margin: 2rem 0 .7rem; text-transform: uppercase; letter-spacing: .06em; color: var(--gold);
+    }
+
+    blockquote {
+      border-left: 3px solid var(--accent); margin: 2.5rem 0; padding: 20px 0 20px 32px;
+    }
+    blockquote p {
+      font-family: 'Playfair Display', serif; font-size: 1.35rem; font-style: italic;
+      line-height: 1.5; color: var(--ink); margin: 0 0 8px;
+    }
+    blockquote cite {
+      font-family: 'IBM Plex Mono', monospace; font-size: .72rem;
+      text-transform: uppercase; letter-spacing: .12em; color: var(--muted); font-style: normal;
+    }
+
+    .highlight { background: var(--accent-light); padding: 0 4px; font-weight: 500; }
+
+    /* IPO TABLE */
+    .ipo-table {
+      width: 100%; border-collapse: collapse; margin: 2.5rem 0; font-size: .85rem;
+    }
+    .ipo-table th {
+      background: var(--accent); color: #fff; padding: 11px 14px; text-align: left;
+      font-family: 'IBM Plex Mono', monospace; font-size: .7rem;
+      text-transform: uppercase; letter-spacing: .1em; font-weight: 500;
+    }
+    .ipo-table td { padding: 11px 14px; border-bottom: 1px solid var(--rule); vertical-align: top; }
+    .ipo-table tr:nth-child(even) td { background: var(--cream); }
+    .ipo-table td:first-child { font-weight: 600; }
+    .perf {
+      font-family: 'IBM Plex Mono', monospace; font-weight: 700; font-size: .85rem;
+    }
+    .perf.up   { color: var(--green); }
+    .perf.down { color: var(--red); }
+
+    /* TIMELINE */
+    .timeline { margin: 2.5rem 0; position: relative; }
+    .timeline::before {
+      content: ''; position: absolute; left: 12px; top: 0; bottom: 0;
+      width: 2px; background: var(--rule);
+    }
+    .tl-item { display: flex; gap: 24px; margin-bottom: 24px; position: relative; }
+    .tl-dot {
+      width: 26px; height: 26px; border-radius: 50%;
+      background: var(--paper); border: 2px solid var(--accent);
+      flex-shrink: 0; position: relative; z-index: 1;
+    }
+    .tl-dot.filled { background: var(--accent); }
+    .tl-body { padding-top: 2px; }
+    .tl-date {
+      font-family: 'IBM Plex Mono', monospace; font-size: .72rem;
+      text-transform: uppercase; letter-spacing: .1em; color: var(--muted); margin-bottom: 4px;
+    }
+    .tl-issuer { font-weight: 700; font-size: .95rem; margin-bottom: 2px; }
+    .tl-desc { font-size: .83rem; color: var(--muted); line-height: 1.55; }
+    .tl-amount {
+      font-family: 'Playfair Display', serif; font-weight: 700;
+      color: var(--accent); font-size: 1.05rem;
+    }
+
+    /* DATA CARD */
+    .data-card {
+      background: var(--cream); border: 1px solid var(--rule); padding: 28px 32px; margin: 2.5rem 0;
+    }
+    .data-card h4 {
+      font-family: 'IBM Plex Mono', monospace; font-size: .7rem;
+      text-transform: uppercase; letter-spacing: .15em; color: var(--muted); margin-bottom: 20px;
+    }
+    .data-rows { display: flex; flex-direction: column; gap: 12px; }
+    .data-row { display: flex; align-items: center; gap: 16px; }
+    .data-row-label { font-size: .85rem; color: var(--muted); width: 220px; flex-shrink: 0; }
+    .data-row-bar-wrap { flex: 1; height: 6px; background: var(--rule); position: relative; }
+    .data-row-bar { position: absolute; top: 0; left: 0; height: 100%; }
+    .data-row-bar.purple { background: var(--accent); }
+    .data-row-bar.gold   { background: var(--gold); }
+    .data-row-bar.green  { background: var(--green); }
+    .data-row-bar.red    { background: var(--red); opacity: .7; }
+    .data-row-bar.muted  { background: var(--muted); opacity: .35; }
+    .data-row-val {
+      font-family: 'IBM Plex Mono', monospace; font-size: .8rem;
+      font-weight: 500; width: 96px; text-align: right;
+    }
+
+    /* METRICS 2×2 */
+    .metrics-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 1px; background: var(--rule); border: 1px solid var(--rule); margin: 2.5rem 0;
+    }
+    .metric-cell { background: var(--paper); padding: 24px; }
+    .metric-label {
+      font-family: 'IBM Plex Mono', monospace; font-size: .68rem;
+      text-transform: uppercase; letter-spacing: .14em; color: var(--muted); margin-bottom: 8px;
+    }
+    .metric-value { font-family: 'Playfair Display', serif; font-size: 1.65rem; font-weight: 700; line-height: 1.1; }
+    .metric-value.purple { color: var(--accent); }
+    .metric-value.gold   { color: var(--gold); }
+    .metric-value.green  { color: var(--green); }
+    .metric-value.red    { color: var(--red); }
+    .metric-note { font-size: .78rem; color: var(--muted); margin-top: 6px; }
+
+    /* TREND LIST */
+    .trend-list { margin: 2rem 0; }
+    .trend-item {
+      display: flex; gap: 20px; padding: 18px 0;
+      border-bottom: 1px solid var(--rule); align-items: flex-start;
+    }
+    .trend-item:first-child { border-top: 1px solid var(--rule); }
+    .trend-num {
+      font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 700;
+      color: var(--accent); line-height: 1.1; width: 28px; flex-shrink: 0; text-align: right;
+    }
+    .trend-title { font-weight: 600; font-size: .92rem; margin-bottom: 4px; }
+    .trend-desc  { font-size: .83rem; color: var(--muted); line-height: 1.55; }
+
+    /* CANDIDATES */
+    .candidates-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 1px; background: var(--rule); border: 1px solid var(--rule); margin: 2.5rem 0;
+    }
+    .cand-card { background: var(--paper); padding: 20px 22px; }
+    .cand-sector {
+      font-family: 'IBM Plex Mono', monospace; font-size: .65rem;
+      text-transform: uppercase; letter-spacing: .12em; color: var(--muted); margin-bottom: 6px;
+    }
+    .cand-name { font-weight: 700; font-size: .95rem; margin-bottom: 4px; }
+    .cand-desc { font-size: .8rem; color: var(--muted); line-height: 1.5; }
+    .cand-badge {
+      display: inline-block; margin-top: 8px;
+      font-family: 'IBM Plex Mono', monospace; font-size: .62rem;
+      text-transform: uppercase; letter-spacing: .1em; padding: 3px 8px; border-radius: 2px;
+    }
+    .cand-badge.hot  { background: var(--accent-light); color: var(--accent); }
+    .cand-badge.warm { background: #f5ecd4; color: var(--gold); }
+
+    .divider { border: none; border-top: 1px solid var(--rule); margin: 3rem 0; }
+
+    .conclusion {
+      background: var(--ink); color: var(--paper); padding: 36px 40px; margin: 3rem 0 0;
+    }
+    .conclusion h3 { color: #d8adff; margin-top: 0; letter-spacing: .06em; font-size: 1rem; text-transform: uppercase; }
+    .conclusion p { color: #ccc; margin-bottom: 1rem; }
+    .conclusion p:last-child { margin-bottom: 0; }
+
+    footer {
+      background: var(--cream); border-top: 1px solid var(--rule);
+      padding: 28px 40px; font-family: 'IBM Plex Mono', monospace;
+      font-size: .72rem; color: var(--muted); text-align: center; letter-spacing: .06em;
+    }
+    footer strong { color: var(--ink); }
+
+    @media (max-width: 640px) {
+      .masthead { padding: 12px 20px; }
+      .hero { padding: 56px 20px 52px; }
+      .stats-bar { padding: 0 20px; }
+      .stats-inner { grid-template-columns: 1fr; }
+      .stat-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,.07); padding: 16px 0; }
+      .article-wrap { padding: 48px 20px; }
+      .metrics-grid, .candidates-grid { grid-template-columns: 1fr; }
+      .ipo-table { font-size: .76rem; }
+      .ipo-table th, .ipo-table td { padding: 9px 10px; }
+      .data-row-label { width: 130px; font-size: .78rem; }
+    }
+  </style>
+</head>
+<body>
+
+<header class="masthead">
+  <span class="masthead-logo">kotana.com.ru</span>
+  <span class="masthead-meta">Фондовый рынок · IPO · 2025</span>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-tag">IPO · 2025</div>
+    <h1>Рынок IPO в 2025 году: <em>анабиоз</em> после рекорда</h1>
+    <p class="hero-lead">В начале 2025-го Сбер и ВТБ прогнозировали 10–20 новых эмитентов. По итогам года на биржи вышли четыре. Объём привлечённых средств упал вдвое — до 33 млрд рублей. Индекс IPO Мосбиржи потерял 17%. Разбираем, что произошло, кто всё же вышел и что ждёт рынок дальше.</p>
+    <div class="hero-byline">
+      <strong>Редакция kotana.com.ru</strong>
+      <span>·</span>
+      <span>Март 2026</span>
+      <span>·</span>
+      <span>12 мин чтения</span>
+    </div>
+  </div>
+</section>
+
+<div class="stats-bar">
+  <div class="stats-inner">
+    <div class="stat-item">
+      <span class="stat-number">4</span>
+      <span class="stat-label">Новых эмитента вместо 10–20 ожидавшихся</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number">33 млрд ₽</span>
+      <span class="stat-label">Объём привлечённых средств (−59% к 2024)</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number">−17%</span>
+      <span class="stat-label">Индекс IPO Мосбиржи за 2025 год</span>
+    </div>
+  </div>
+</div>
+
+<main class="article-wrap">
+  <article class="article-inner">
+
+    <p>Если бы рынок IPO 2025 года снимали кино, жанром стала бы разочаровывающая драма с несколькими неожиданными поворотами. В январе банки обещали волну размещений. Прошёл март — вышла одна краудлендинговая платформа с 476 млн рублей. Прошло девять месяцев — рынок всё ещё стоял на месте. Только в октябре–декабре ожил: три эмитента, одно крупное размещение. Финальная цифра года — 33 млрд рублей при ожиданиях в 150 млрд — стала наглядным свидетельством того, что ключевая ставка в 21% убивает IPO-активность эффективнее любого кризиса.</p>
+
+    <h2>Контекст: почему 2025-й оказался столь слабым</h2>
+
+    <p>Механизм подавления IPO при высокой ставке прямолинеен. Во-первых, альтернативные инструменты — депозиты и облигации с доходностью 18–22% — резко снизили привлекательность акций как класса активов. Частный инвестор, к 2025 году ставший доминирующим участником рынка вместо ушедших иностранных институционалов, предпочитал предсказуемую доходность рискованным акциям нераскрученных эмитентов. Во-вторых, сами компании переоценивали свою стоимость: исторически большинство IPO в России проходило по завышенным мультипликаторам, и когда рынок перестал «переваривать» агрессивные оценки, эмитенты предпочли уйти на паузу.</p>
+
+    <p>Дополнительным фактором стал плохой послужной список предыдущих размещений. По данным на август 2025 года, лишь 7 из 23 компаний, вышедших на IPO с начала 2023 года, обогнали индекс Мосбиржи. 13 из 23 принесли инвесторам убыток. <span class="highlight">Индекс IPO Мосбиржи за 2025 год потерял более 17%</span> — против −5% по основному индексу. Такая статистика не создаёт благоприятного климата для новых размещений.</p>
+
+    <blockquote>
+      <p>«Суммарно четыре новых эмитента привлекли менее 33 млрд рублей — в 42 раза меньше ежегодного объёма, необходимого для выполнения поручения президента об удвоении капитализации рынка к 2030 году.»</p>
+      <cite>— Forbes, январь 2026</cite>
+    </blockquote>
+
+    <hr class="divider" />
+
+    <h2>Четыре IPO 2025 года: хроника</h2>
+
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-dot filled"></div>
+        <div class="tl-body">
+          <div class="tl-date">Март 2025 · СПБ Биржа</div>
+          <div class="tl-issuer">JetLend — краудлендинговая платформа</div>
+          <div class="tl-desc">Первое IPO года и единственное на СПБ Бирже. Объём — <span class="tl-amount">476 млн ₽</span>. Размещение прошло по нижней границе диапазона (60 руб./акцию). Free-float — всего 7,6%. Мультипликатор P/S = 8,66 — дорого для компании без прибыли. Уже в первые дни акции начали падение. К концу года — минус 46% от цены IPO. Один из сотрудников компании продал акции для покупки квартиры — и двумя сделками при минимальной ликвидности обвалил цену на 40%.</div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot filled"></div>
+        <div class="tl-body">
+          <div class="tl-date">Октябрь 2025 · Мосбиржа</div>
+          <div class="tl-issuer">GloraX — региональный девелопер</div>
+          <div class="tl-desc">Первое IPO на Мосбирже за весь год — через 10 месяцев после января. Объём — <span class="tl-amount">2,1 млрд ₽</span>. Оценка — 18,1 млрд рублей. Размещение прошло по нижней границе диапазона (64 руб./акцию). Free-float — 11,6%. Уникальная «гарантия» для инвесторов: оферта на выкуп акций по цене IPO +19,5% через год, если цена окажется ниже. По итогам года акции потеряли около 9%.</div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot filled"></div>
+        <div class="tl-body">
+          <div class="tl-date">Ноябрь 2025 · Мосбиржа</div>
+          <div class="tl-issuer">Дом.РФ — государственный институт развития</div>
+          <div class="tl-desc">Крупнейшее и самое успешное IPO года. Объём — <span class="tl-amount">25 млрд ₽</span> (+2 млрд на стабилизацию). Рыночная капитализация — 315 млрд рублей. Первый крупный эмитент за несколько лет. Акции быстро попали в ключевые биржевые индексы. По итогам года — плюс 3,26% к цене размещения. Наилучший результат среди всех IPO 2025 года.</div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot filled"></div>
+        <div class="tl-body">
+          <div class="tl-date">Декабрь 2025 · Мосбиржа</div>
+          <div class="tl-issuer">ГК Базис — IT-разработчик («внучка» Ростелекома)</div>
+          <div class="tl-desc">Последнее IPO года. Объём — <span class="tl-amount">3 млрд ₽</span>. Редкий случай: размещение прошло по верхней границе диапазона (109 руб./акцию), что говорит о реальном интересе инвесторов к IT в условиях технологического суверенитета. Free-float — 16,7%. В первый день торгов акции просели на 11%, но затем стабилизировались. По итогам года — плюс 6,74%.</div>
+        </div>
+      </div>
+    </div>
+
+    <hr class="divider" />
+
+    <h2>Итоговая таблица: четыре эмитента, четыре истории</h2>
+
+    <table class="ipo-table">
+      <thead>
+        <tr>
+          <th>Эмитент</th>
+          <th>Биржа</th>
+          <th>Объём</th>
+          <th>Free-float</th>
+          <th>Результат к году</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>JetLend</td>
+          <td>СПБ Биржа</td>
+          <td>476 млн ₽</td>
+          <td>7,6%</td>
+          <td><span class="perf down">−45,86%</span></td>
+        </tr>
+        <tr>
+          <td>GloraX (девелопер)</td>
+          <td>Мосбиржа</td>
+          <td>2,1 млрд ₽</td>
+          <td>11,6%</td>
+          <td><span class="perf down">−8,69%</span></td>
+        </tr>
+        <tr>
+          <td>Дом.РФ</td>
+          <td>Мосбиржа</td>
+          <td>25 млрд ₽</td>
+          <td>н/д</td>
+          <td><span class="perf up">+3,26%</span></td>
+        </tr>
+        <tr>
+          <td>ГК Базис (IT)</td>
+          <td>Мосбиржа</td>
+          <td>3 млрд ₽</td>
+          <td>16,7%</td>
+          <td><span class="perf up">+6,74%</span></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>Вывод из таблицы очевиден: <span class="highlight">государственные и квазигосударственные эмитенты обогнали частных</span>. Дом.РФ и Базис (дочерняя структура Ростелекома) показали положительную динамику. JetLend и GloraX, размещавшиеся с агрессивной оценкой и небольшим free-float — в минусе. Рынок 2025 года чётко показал: российский розничный инвестор готов платить за понятный государственный риск и не прощает переоценённых бизнес-моделей.</p>
+
+    <hr class="divider" />
+
+    <h2>SPO: вторичный рынок заменил первичный</h2>
+
+    <p>Пока рынок IPO замер, SPO (вторичные размещения) стали настоящим событием года. ВТБ привлёк <span class="highlight">рекордные 84,7 млрд рублей</span> — спрос инвесторов превысил предложение более чем в два раза. МТС Банк разместил дополнительные акции на 4 млрд рублей, Озон Фармацевтика — на 2,8 млрд рублей. Суммарно SPO привлекли в разы больше, чем все IPO года вместе взятые. Это симптоматично: инвесторы предпочитают доверять известным именам с историей торгов, а не рисковать с новыми эмитентами.</p>
+
+    <hr class="divider" />
+
+    <h2>Структурные проблемы рынка</h2>
+
+    <div class="trend-list">
+      <div class="trend-item">
+        <div class="trend-num">1</div>
+        <div class="trend-body">
+          <div class="trend-title">Депозиты vs акции: математика не работает в пользу IPO</div>
+          <div class="trend-desc">При ключевой ставке 21% вкладчик получает 20–22% годовых в безрисковом инструменте. Чтобы акция нового эмитента выглядела привлекательнее, она должна обещать доходность 30%+ с учётом рисков. При типичных оценках российских IPO (P/E 15–25) это математически невозможно без сильного роста. Инвесторы это понимают — и выбирают депозиты.</div>
+        </div>
+      </div>
+      <div class="trend-item">
+        <div class="trend-num">2</div>
+        <div class="trend-body">
+          <div class="trend-title">Доминирование розницы при слабости институционалов</div>
+          <div class="trend-desc">После ухода иностранных инвесторов российский рынок акций держится на частных инвесторах — 38,4 млн зарегистрированных на Мосбирже. Но розничный инвестор неустойчив: реагирует на эмоции, скачет между инструментами. Российские институциональные инвесторы — банки, ПИФы, НПФ — проявляют повышенную осторожность. Без якорных институционалов IPO нестабильно уже в первые дни торгов.</div>
+        </div>
+      </div>
+      <div class="trend-item">
+        <div class="trend-num">3</div>
+        <div class="trend-body">
+          <div class="trend-title">Качество эмитентов и проблема оценки</div>
+          <div class="trend-desc">2023–2024 годы дали рынку волну IPO с завышенными мультипликаторами и малым free-float (5–15%). Компании с ограниченным объёмом акций в обращении уязвимы к манипуляциям и внезапным обвалам — кейс JetLend, где несколько продаж одного сотрудника обрушили акции на 40%, — наглядная иллюстрация. Эксперты ставят вопрос об ужесточении стандартов листинга и минимальных требованиях к free-float.</div>
+        </div>
+      </div>
+      <div class="trend-item">
+        <div class="trend-num">4</div>
+        <div class="trend-body">
+          <div class="trend-title">Цель удвоения капитализации к 2030 году: дефицит реализма</div>
+          <div class="trend-desc">В июле 2025 года девять из десяти опрошенных владельцев и директоров крупных компаний признали, что указ об удвоении капитализации рынка выполнен не будет. Для его реализации нужны 23–55 трлн рублей ежегодного роста и сотни IPO. Суммарная капитализация всех 36 эмитентов, вышедших на IPO с 2020 по 2024 год, составила лишь 3,5 трлн рублей. Масштаб разрыва очевиден.</div>
+        </div>
+      </div>
+    </div>
+
+    <hr class="divider" />
+
+    <h2>Количественный портрет: объёмы и динамика</h2>
+
+    <div class="data-card">
+      <h4>Динамика рынка IPO России по годам</h4>
+      <div class="data-rows">
+        <div class="data-row">
+          <span class="data-row-label">2022 (минимум)</span>
+          <div class="data-row-bar-wrap"><div class="data-row-bar muted" style="width:5%"></div></div>
+          <span class="data-row-val">~3 млрд ₽</span>
+        </div>
+        <div class="data-row">
+          <span class="data-row-label">2023 (восстановление)</span>
+          <div class="data-row-bar-wrap"><div class="data-row-bar gold" style="width:40%"></div></div>
+          <span class="data-row-val">~40 млрд ₽</span>
+        </div>
+        <div class="data-row">
+          <span class="data-row-label">2024 (пик, 14 эмитентов)</span>
+          <div class="data-row-bar-wrap"><div class="data-row-bar green" style="width:100%"></div></div>
+          <span class="data-row-val">81 млрд ₽</span>
+        </div>
+        <div class="data-row">
+          <span class="data-row-label">2025 (4 эмитента)</span>
+          <div class="data-row-bar-wrap"><div class="data-row-bar red" style="width:41%"></div></div>
+          <span class="data-row-val">33 млрд ₽</span>
+        </div>
+        <div class="data-row">
+          <span class="data-row-label">2026 (прогноз базовый)</span>
+          <div class="data-row-bar-wrap"><div class="data-row-bar purple" style="width:74%"></div></div>
+          <span class="data-row-val">60–120 млрд ₽</span>
+        </div>
+      </div>
+    </div>
+
+    <hr class="divider" />
+
+    <h2>Ожидаемые эмитенты 2026 года</h2>
+
+    <p>Около 20 компаний находятся в высокой степени готовности к выходу на рынок, сообщил председатель правления Мосбиржи Виктор Жидков. В долгосрочной перспективе в России насчитывается 400–500 компаний, которые по масштабу и структуре могут быть публичными. Часть из них технически готова — и ждёт лишь снижения ставки.</p>
+
+    <div class="candidates-grid">
+      <div class="cand-card">
+        <div class="cand-sector">Нефтехимия</div>
+        <div class="cand-name">СИБУР</div>
+        <div class="cand-desc">Крупнейший потенциальный эмитент, которого инвесторы ждут уже несколько лет. Масштаб и известность бренда обеспечат спрос — вопрос только в оценке и сроках.</div>
+        <span class="cand-badge hot">Главный ожидаемый</span>
+      </div>
+      <div class="cand-card">
+        <div class="cand-sector">Финансы</div>
+        <div class="cand-name">ДОМ.РФ (доп. размещение)</div>
+        <div class="cand-desc">Успешное IPO 2025 года создало базу для дополнительных размещений. Стабильная динамика акций и попадание в индексы сделали эмитент привлекательным для институционалов.</div>
+        <span class="cand-badge warm">Вероятно в 2026</span>
+      </div>
+      <div class="cand-card">
+        <div class="cand-sector">IT и технологии</div>
+        <div class="cand-name">Дочки Ростелекома и Сбера</div>
+        <div class="cand-desc">Технологические компании с государственным участием — наиболее реалистичные кандидаты. Кейс Базиса (+6,74%) показал, что IT-эмитенты с господдержкой пользуются спросом.</div>
+        <span class="cand-badge hot">Активная готовность</span>
+      </div>
+      <div class="cand-card">
+        <div class="cand-sector">Потребительский сектор</div>
+        <div class="cand-name">Девелоперы и ретейл</div>
+        <div class="cand-desc">Ряд девелоперов и торговых сетей технически готов к выходу. Главный вопрос — оценка: после неудачного 2025-го инвесторы стали значительно придирчивее к мультипликаторам.</div>
+        <span class="cand-badge warm">При снижении ставки</span>
+      </div>
+    </div>
+
+    <hr class="divider" />
+
+    <h2>Прогноз на 2026 год</h2>
+
+    <div class="metrics-grid">
+      <div class="metric-cell">
+        <div class="metric-label">Базовый прогноз объёма</div>
+        <div class="metric-value purple">60–120 млрд ₽</div>
+        <div class="metric-note">Оценка БКС и Freedom Finance. Рост ×2–4 к 2025-му при снижении ставки.</div>
+      </div>
+      <div class="metric-cell">
+        <div class="metric-label">Число новых эмитентов</div>
+        <div class="metric-value gold">~10–15</div>
+        <div class="metric-note">Ожидания при ставке ниже 15% к середине года. Выходить будут «волнами».</div>
+      </div>
+      <div class="metric-cell">
+        <div class="metric-label">Ключевое условие</div>
+        <div class="metric-value green">Ставка &lt;15%</div>
+        <div class="metric-note">Именно этот порог называют аналитики для оживления инвестиционного спроса.</div>
+      </div>
+      <div class="metric-cell">
+        <div class="metric-label">Риск смещения</div>
+        <div class="metric-value red">Зима 2026/27</div>
+        <div class="metric-note">Если ставка не снизится быстро — часть размещений перейдёт на следующий год.</div>
+      </div>
+    </div>
+
+    <blockquote>
+      <p>«При благоприятном развитии ситуации размещения могут превзойти показатели 2024 года — многие компании технически готовы к IPO, но отложили выход из-за высоких ставок в 2025 году.»</p>
+      <cite>— Олег Решетников, эксперт «БКС Мир инвестиций», Forbes, январь 2026</cite>
+    </blockquote>
+
+    <div class="conclusion">
+      <h3>Итог: год упущённых ожиданий и накопленного потенциала</h3>
+      <p>2025 год стал самым тихим для рынка IPO за несколько лет — четыре эмитента, 33 млрд рублей, индекс IPO в минусе на 17%. Но называть его провальным было бы неверно. IPO Дом.РФ показало, что крупный ликвидный эмитент с понятным государственным риском находит спрос даже при ключевой ставке 21%. Это важный сигнал: рынок жив, инвесторы готовы вкладываться — но только в правильно оценённые и прозрачные активы.</p>
+      <p>Ключевой урок 2025 года — переоцененность и низкий free-float убивают IPO. Эмитенты, разместившиеся с P/S 8+ без прибыли и с 7% акций в обращении, обречены на разочарование. Рынок больше не прощает «венчурных» оценок в публичном формате — это стандарт доинтернетовой эпохи.</p>
+      <p>2026-й несёт в себе накопленный потенциал: около 20 компаний готовы, ставка снижается, настроения улучшаются. При снижении ключевой ставки до 12–13% к концу года рынок IPO может пережить быстрое восстановление. Главный вопрос — успеют ли эмитенты выйти до следующего разворота рынка.</p>
+    </div>
+
+  </article>
+</main>
+
+<footer>
+  <strong>kotana.com.ru</strong> &nbsp;·&nbsp; Рынок IPO · 2025 &nbsp;·&nbsp; Источники: Forbes, РБК, Альфа-Инвестор, БКС, Мосбиржа, DixiNews, LogiRus
+</footer>
+
+</body>
+</html>
