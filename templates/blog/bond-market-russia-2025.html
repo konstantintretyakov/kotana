@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Рынок облигаций России в 2025 году | kotana.com.ru</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --ink:    #0f1117;
+      --paper:  #f7f4ef;
+      --cream:  #ede9e0;
+      --accent: #1c4a2e;
+      --accent-light: #c8ecd5;
+      --gold:   #b8922a;
+      --green:  #1a7a3c;
+      --red:    #c0392b;
+      --muted:  #7a7060;
+      --rule:   #d4cfc5;
+      --col:    clamp(320px, 66ch, 720px);
+    }
+    html { font-size: 17px; scroll-behavior: smooth; }
+    body {
+      background: var(--paper); color: var(--ink);
+      font-family: 'IBM Plex Sans', sans-serif;
+      line-height: 1.75; -webkit-font-smoothing: antialiased;
+    }
+
+    .masthead {
+      background: var(--ink); padding: 14px 40px;
+      display: flex; align-items: center; justify-content: space-between;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: .75rem; letter-spacing: .12em; text-transform: uppercase;
+    }
+    .masthead-logo { font-size: 1rem; font-weight: 500; color: #fff; }
+    .masthead-meta { color: #666; }
+
+    .hero {
+      background: var(--accent); color: var(--paper);
+      padding: 80px 40px 72px; position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: '₽';
+      position: absolute; right: -20px; top: 50%; transform: translateY(-50%);
+      font-size: clamp(220px, 34vw, 460px); font-weight: 900;
+      color: rgba(255,255,255,.055); line-height: 1; pointer-events: none;
+    }
+    .hero-inner { max-width: var(--col); margin: 0 auto; position: relative; }
+    .hero-tag {
+      display: inline-block;
+      border: 1px solid rgba(255,255,255,.3); color: rgba(255,255,255,.75);
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: .72rem; letter-spacing: .15em; text-transform: uppercase;
+      padding: 4px 12px; margin-bottom: 28px;
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.2rem, 5vw, 3.4rem); font-weight: 700;
+      line-height: 1.18; letter-spacing: -.02em; margin-bottom: 24px; max-width: 22ch;
+    }
+    .hero h1 em { font-style: italic; color: #8de0a8; }
+    .hero-lead {
+      font-size: 1.08rem; color: rgba(255,255,255,.72);
+      max-width: 54ch; line-height: 1.65; margin-bottom: 40px;
+    }
+    .hero-byline {
+      display: flex; align-items: center; gap: 16px;
+      font-size: .8rem; color: rgba(255,255,255,.4);
+      font-family: 'IBM Plex Mono', monospace;
+    }
+    .hero-byline span { color: rgba(255,255,255,.25); }
+    .hero-byline strong { color: rgba(255,255,255,.65); font-weight: 500; }
+
+    .stats-bar { background: var(--ink); padding: 0 40px; }
+    .stats-inner {
+      max-width: calc(var(--col) + 200px); margin: 0 auto;
+      display: grid; grid-template-columns: repeat(3,1fr);
+    }
+    .stat-item {
+      padding: 24px 32px; border-right: 1px solid rgba(255,255,255,.07); color: #fff;
+    }
+    .stat-item:first-child { padding-left: 0; }
+    .stat-item:last-child  { border-right: none; }
+    .stat-number {
+      font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 700;
+      display: block; line-height: 1; color: #8de0a8;
+    }
+    .stat-label {
+      font-size: .75rem; text-transform: uppercase;
+      letter-spacing: .1em; opacity: .45; margin-top: 4px;
+      font-family: 'IBM Plex Mono', monospace;
+    }
+
+    .article-wrap { padding: 72px 40px; }
+    .article-inner { max-width: var(--col); margin: 0 auto; }
+
+    .article-inner > p:first-of-type::first-letter {
+      font-family: 'Playfair Display', serif; font-size: 4.5em; font-weight: 900;
+      float: left; line-height: .78; margin-right: 8px; margin-top: 6px; color: var(--accent);
+    }
+    p { margin-bottom: 1.5rem; }
+
+    h2 {
+      font-family: 'Playfair Display', serif; font-size: 1.7rem; font-weight: 700;
+      letter-spacing: -.02em; line-height: 1.25; margin: 3rem 0 1.1rem;
+    }
+    h2::before { content: ''; display: block; width: 32px; height: 3px; background: var(--accent); margin-bottom: 16px; }
+
+    h3 {
+      font-family: 'IBM Plex Sans', sans-serif; font-size: 1.05rem; font-weight: 600;
+      margin: 2rem 0 .7rem; text-transform: uppercase; letter-spacing: .06em; color: var(--gold);
+    }
+
+    blockquote {
+      border-left: 3px solid var(--accent); margin: 2.5rem 0; padding: 20px 0 20px 32px;
+    }
+    blockquote p {
+      font-family: 'Playfair Display', serif; font-size: 1.35rem; font-style: italic;
+      line-height: 1.5; color: var(--ink); margin: 0 0 8px;
+    }
+    blockquote cite {
+      font-family: 'IBM Plex Mono', monospace; font-size: .72rem;
+      text-transform: uppercase; letter-spacing: .12em; color: var(--muted); font-style: normal;
+    }
+
+    .highlight { background: var(--accent-light); padding: 0 4px; font-weight: 500; }
+
+    /* Record strip — 4 ключевых показателя */
+    .record-strip {
+      background: var(--accent); color: #fff; padding: 28px 32px;
+      margin: 2.5rem 0; display: grid; grid-template-columns: repeat(4,1fr); gap: 16px;
+    }
+    .rec-label {
+      font-family: 'IBM Plex Mono', monospace; font-size: .65rem;
+      text-transform: uppercase; letter-spacing: .12em; opacity: .6; margin-bottom: 6px;
+    }
+    .rec-value {
+      font-family: 'Playfair Display', serif; font-size: 1.65rem; font-weight: 700; line-height: 1;
+    }
+    .rec-note { font-size: .73rem; opacity: .6; margin-top: 4px; }
+
+    /* Segment cards — 4 типа облигаций */
+    .seg-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 1px; background: var(--rule); border: 1px solid var(--rule); margin: 2.5rem 0;
+    }
+    .seg-card { background: var(--paper); padding: 24px; }
+    .seg-icon { font-size: 1.4rem; margin-bottom: 10px; display: block; }
+    .seg-type {
+      font-family: 'IBM Plex Mono', monospace; font-size: .65rem;
+      text-transform: uppercase; letter-spacing: .14em; color: var(--muted); margin-bottom: 6px;
+    }
+    .seg-name { font-weight: 700; font-size: .98rem; margin-bottom: 4px; }
+    .seg-yield {
+      font-family: 'Playfair Display', serif; font-weight: 700;
+      color: var(--accent); font-size: 1.15rem; margin-bottom: 6px;
+    }
+    .seg-desc { font-size: .8rem; color: var(--muted); line-height: 1.55; }
+
+    /* Data card */
+    .data-card {
+      background: var(--cream); border: 1px solid var(--rule); padding: 28px 32px; margin: 2.5rem 0;
+    }
+    .data-card h4 {
+      font-family: 'IBM Plex Mono', monospace; font-size: .7rem;
+      text-transform: uppercase; letter-spacing: .15em; color: var(--muted); margin-bottom: 20px;
+    }
+    .data-rows { display: flex; flex-direction: column; gap: 12px; }
+    .data-row { display: flex; align-items: center; gap: 16px; }
+    .data-row-label { font-size: .85rem; color: var(--muted); width: 220px; flex-shrink: 0; }
+    .data-row-bar-wrap { flex: 1; height: 6px; background: var(--rule); position: relative; }
+    .data-row-bar { position: absolute; top: 0; left: 0; height: 100%; }
+    .data-row-bar.forest { background: var(--accent); }
+    .data-row-bar.gold   { background: var(--gold); }
+    .data-row-bar.green  { background: var(--green); }
+    .data-row-bar.red    { background: var(--red); opacity: .7; }
+    .data-row-bar.muted  { background: var(--muted); opacity: .35; }
+    .data-row-val {
+      font-family: 'IBM Plex Mono', monospace; font-size: .8rem;
+      font-weight: 500; width: 100px; text-align: right;
+    }
+
+    /* Metrics 2x2 */
+    .metrics-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 1px; background: var(--rule); border: 1px solid var(--rule); margin: 2.5rem 0;
+    }
+    .metric-cell { background: var(--paper); padding: 24px; }
+    .metric-label {
+      font-family: 'IBM Plex Mono', monospace; font-size: .68rem;
+      text-transform: uppercase; letter-spacing: .14em; color: var(--muted); margin-bottom: 8px;
+    }
+    .metric-value { font-family: 'Playfair Display', serif; font-size: 1.65rem; font-weight: 700; line-height: 1.1; }
+    .metric-value.forest { color: var(--accent); }
+    .metric-value.gold   { color: var(--gold); }
+    .metric-value.green  { color: var(--green); }
+    .metric-value.red    { color: var(--red); }
+    .metric-note { font-size: .78rem; color: var(--muted); margin-top: 6px; }
+
+    /* Trend list */
+    .trend-list { margin: 2rem 0; }
+    .trend-item {
+      display: flex; gap: 20px; padding: 18px 0;
+      border-bottom: 1px solid var(--rule); align-items: flex-start;
+    }
+    .trend-item:first-child { border-top: 1px solid var(--rule); }
+    .trend-num {
+      font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 700;
+      color: var(--accent); line-height: 1.1; width: 28px; flex-shrink: 0; text-align: right;
+    }
+    .trend-title { font-weight: 600; font-size: .92rem; margin-bottom: 4px; }
+    .trend-desc  { font-size: .83rem; color: var(--muted); line-height: 1.55; }
+
+    /* Warning box */
+    .warn-box {
+      background: #fdf5e0; border-left: 3px solid var(--gold);
+      padding: 18px 24px; margin: 2.5rem 0; font-size: .86rem; line-height: 1.65;
+    }
+    .warn-box strong { color: var(--gold); }
+
+    .divider { border: none; border-top: 1px solid var(--rule); margin: 3rem 0; }
+
+    .conclusion {
+      background: var(--ink); color: var(--paper); padding: 36px 40px; margin: 3rem 0 0;
+    }
+    .conclusion h3 { color: #8de0a8; margin-top: 0; letter-spacing: .06em; font-size: 1rem; text-transform: uppercase; }
+    .conclusion p { color: #ccc; margin-bottom: 1rem; }
+    .conclusion p:last-child { margin-bottom: 0; }
+
+    footer {
+      background: var(--cream); border-top: 1px solid var(--rule);
+      padding: 28px 40px; font-family: 'IBM Plex Mono', monospace;
+      font-size: .72rem; color: var(--muted); text-align: center; letter-spacing: .06em;
+    }
+    footer strong { color: var(--ink); }
+
+    @media (max-width: 640px) {
+      .masthead { padding: 12px 20px; }
+      .hero { padding: 56px 20px 52px; }
+      .stats-bar { padding: 0 20px; }
+      .stats-inner, .record-strip { grid-template-columns: 1fr; }
+      .stat-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,.07); padding: 16px 0; }
+      .article-wrap { padding: 48px 20px; }
+      .seg-grid, .metrics-grid { grid-template-columns: 1fr; }
+      .data-row-label { width: 130px; font-size: .78rem; }
+    }
+  </style>
+</head>
+<body>
+
+<header class="masthead">
+  <span class="masthead-logo">kotana.com.ru</span>
+  <span class="masthead-meta">Аналитика · Долговой рынок · 2025</span>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-tag">Рынок облигаций · Итоги 2025</div>
+    <h1>Рынок облигаций России: <em>год абсолютных рекордов</em></h1>
+    <p class="hero-lead">В 2025 году российский рынок облигаций рос вопреки логике: ставка — 21%, экономика охлаждалась, дефолты участились. Но корпоративные размещения поставили исторический рекорд в 9 трлн рублей, торги на Мосбирже — 42 трлн, а частные инвесторы вложили в бонды в 2,4 раза больше, чем годом ранее. Объясняем, как это стало возможным.</p>
+    <div class="hero-byline">
+      <strong>Редакция kotana.com.ru</strong>
+      <span>·</span>
+      <span>Март 2026</span>
+      <span>·</span>
+      <span>15 мин чтения</span>
+    </div>
+  </div>
+</section>
+
+<div class="stats-bar">
+  <div class="stats-inner">
+    <div class="stat-item">
+      <span class="stat-number">66,2 трлн ₽</span>
+      <span class="stat-label">Общий объём рынка (+20,69% г/г)</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number">&gt;9 трлн ₽</span>
+      <span class="stat-label">Корп. размещения — рекорд за всю историю</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number">2,1 трлн ₽</span>
+      <span class="stat-label">Покупки частных инвесторов (×2,4 г/г)</span>
+    </div>
+  </div>
+</div>
+
+<main class="article-wrap">
+  <article class="article-inner">
+
+    <p>Рынок облигаций России в 2025 году преподал парадоксальный урок финансовой логике. Ключевая ставка достигала 21% — исторического максимума. Корпоративные прибыли падали. Дефолты учащались. Казалось бы, в такой обстановке долговой рынок должен был сжаться. Вместо этого он поставил рекорды сразу по всем показателям: объём рынка вырос почти до 66 трлн рублей, корпоративные заёмщики привлекли более 9 трлн — в полтора раза больше, чем в рекордном 2024-м. Председатель правления Мосбиржи Виктор Жидков назвал 2025-й «годом облигаций» и допустил, что 2026-й станет ещё одним годом облигаций.</p>
+
+    <h2>Рекордная макрокартина: как это работало</h2>
+
+    <p>Механизм роста понятен, если смотреть не на ставку, а на мотивацию участников. Корпорации занимали не потому, что деньги были дешёвыми, а потому, что у них не было выбора: нужно было рефинансировать долги, привлечённые в 2022–2023 годах, и финансировать операционную деятельность в условиях, когда банки ужесточали условия кредитования. Государство занимало для покрытия бюджетного дефицита. Частные инвесторы — бежали из депозитов в инструменты с более высокой и предсказуемой доходностью.</p>
+
+    <p>Итог: по данным Cbonds, к 31 декабря 2025 года объём рынка российских облигаций достиг <span class="highlight">66,2 трлн рублей</span> — рост на 20,69% за год. Рынок корпоративных облигаций достиг 35,5 трлн рублей, прибавив 14,45% г/г. ОФЗ разместились на рекордные с 2015 года <span class="highlight">8,05 трлн рублей</span>. Суммарный объём торгов облигациями на Мосбирже составил <span class="highlight">42 трлн рублей</span> — абсолютный рекорд.</p>
+
+    <div class="record-strip">
+      <div>
+        <div class="rec-label">Корп. размещения</div>
+        <div class="rec-value">&gt;9 трлн</div>
+        <div class="rec-note">Рекорд за всю историю наблюдений</div>
+      </div>
+      <div>
+        <div class="rec-label">Размещения ОФЗ</div>
+        <div class="rec-value">8,05 трлн</div>
+        <div class="rec-note">Рекорд с 2015 года</div>
+      </div>
+      <div>
+        <div class="rec-label">Новых эмитентов</div>
+        <div class="rec-value">212</div>
+        <div class="rec-note">Против 171 годом ранее (+24%)</div>
+      </div>
+      <div>
+        <div class="rec-label">Вторичные торги</div>
+        <div class="rec-value">19,4 трлн</div>
+        <div class="rec-note">Почти вдвое выше 2024-го (10 трлн)</div>
+      </div>
+    </div>
+
+    <blockquote>
+      <p>«Облигационный рынок заканчивает 2025 год с рекордными показателями: объём торгов вырос на 91%. Поэтому 2025 год мы называем годом облигаций. Возможно, мы назовём и 2026-й — годом облигаций.»</p>
+      <cite>— Виктор Жидков, председатель правления Московской биржи, декабрь 2025</cite>
+    </blockquote>
+
+    <hr class="divider" />
+
+    <h2>Корпоративный сегмент: рекорд рефинансирования</h2>
+
+    <p>Корпоративные заёмщики в 2025 году привлекли более 9 трлн рублей — в полтора раза выше рекорда 2024 года. 288 эмитентов разместили 1200 выпусков. Только в декабре объём размещений превысил 1,2 трлн рублей. Реальный сектор экономики занял доминирующее положение: на его долю пришлось более 64% всего объёма размещений — на 12,3 п.п. больше, чем в 2024-м. Банки второй год подряд сокращали активность: 21,9% против 32,1% годом ранее.</p>
+
+    <p>Главная причина рекорда — масштабное рефинансирование. В 2025 году эмитенты погасили облигации на <span class="highlight">8 трлн рублей</span> — на четверть больше, чем в 2024-м. Большинство погашений тут же переоформлялись в новые выпуски, часто по более высоким ставкам. Для части эмитентов это был вынужденный шаг: компании, занявшие в 2020–2021 годах под 13–15%, в 2024–2025 годах столкнулись с необходимостью перекредитоваться под 26–35%.</p>
+
+    <h3>Структура эмитентов по рейтингам</h3>
+    <div class="data-card">
+      <h4>Объём корп. размещений по рейтинговым категориям, I–IX кв. 2025 (Эксперт РА)</h4>
+      <div class="data-rows">
+        <div class="data-row">
+          <span class="data-row-label">Первый эшелон (ААА–АА)</span>
+          <div class="data-row-bar-wrap"><div class="data-row-bar forest" style="width:100%"></div></div>
+          <span class="data-row-val">64%+ объёма</span>
+        </div>
+        <div class="data-row">
+          <span class="data-row-label">Второй эшелон (А–BBB)</span>
+          <div class="data-row-bar-wrap"><div class="data-row-bar gold" style="width:52%"></div></div>
+          <span class="data-row-val">~21%</span>
+        </div>
+        <div class="data-row">
+          <span class="data-row-label">ВДО (BBB+–B)</span>
+          <div class="data-row-bar-wrap"><div class="data-row-bar muted" style="width:16%"></div></div>
+          <span class="data-row-val">~15%</span>
+        </div>
+        <div class="data-row">
+          <span class="data-row-label">Дебютанты рынка</span>
+          <div class="data-row-bar-wrap"><div class="data-row-bar green" style="width:6%"></div></div>
+          <span class="data-row-val">67 за 11 мес.</span>
+        </div>
+      </div>
+    </div>
+
+    <hr class="divider" />
+
+    <h2>Четыре главных инструмента года</h2>
+
+    <div class="seg-grid">
+      <div class="seg-card">
+        <span class="seg-icon">📈</span>
+        <div class="seg-type">Самый популярный</div>
+        <div class="seg-name">Флоатеры (облигации с плавающим купоном)</div>
+        <div class="seg-yield">~22% годовых</div>
+        <div class="seg-desc">Купон привязан к ключевой ставке (RUONIA). При ставке 21% — лучший инструмент защиты от роста ставок и главная альтернатива депозиту. Объём в обращении фактически сравнялся с ОФЗ-ПД. Риск: при снижении ставки доходность падает, и ликвидность может резко сократиться.</div>
+      </div>
+      <div class="seg-card">
+        <span class="seg-icon">🏛️</span>
+        <div class="seg-type">Государственные</div>
+        <div class="seg-name">ОФЗ с постоянным купоном (ПД)</div>
+        <div class="seg-yield">23,5% — средняя полная доходность</div>
+        <div class="seg-desc">Рекордное размещение в 8,05 трлн рублей. Декабрь 2025: первые ОФЗ в юанях — 20 млрд юаней в двух выпусках (6% и 7% годовых). Инвесторы, купившие длинные ОФЗ в начале 2025-го, получили совокупную доходность до 23,5% за год на фоне начавшегося снижения ставки.</div>
+      </div>
+      <div class="seg-card">
+        <span class="seg-icon">💱</span>
+        <div class="seg-type">Валютные</div>
+        <div class="seg-name">Замещающие облигации и юаневые бонды</div>
+        <div class="seg-yield">10–12% в валюте (квази)</div>
+        <div class="seg-desc">Выпускаются взамен заблокированных еврооблигаций. Номинал и купон — в валюте, расчёты — в рублях по курсу ЦБ. Газпром разместил 6 новых валютных выпусков на 2,9 млрд долларов. Рынок юаневых облигаций составляет $33+ млрд, 65% — в юанях. Защищают от девальвации рубля.</div>
+      </div>
+      <div class="seg-card">
+        <span class="seg-icon">🔥</span>
+        <div class="seg-type">Высокодоходные</div>
+        <div class="seg-name">ВДО (высокодоходные облигации)</div>
+        <div class="seg-yield">28–33% медианная доходность</div>
+        <div class="seg-desc">Первое полугодие: объём размещений 47 млрд рублей — столько же, сколько за весь 2024-й. Но год отмечен ростом дефолтов: около 20 дефолтов эмитентов облигаций и 10+ по ЦФА. Спред к ОФЗ вырос на 5–9 п.п. Дефолты концентрировались в рейтинговой категории B+–BB.</div>
+      </div>
+    </div>
+
+    <hr class="divider" />
+
+    <h2>Частный инвестор: рекордный поворот в сторону облигаций</h2>
+
+    <p>Главной структурной новостью 2025 года стал беспрецедентный приток частных инвесторов на долговой рынок. По данным Мосбиржи, вложения физических лиц в облигации превысили <span class="highlight">2,1 трлн рублей</span> — в 2,4 раза больше, чем в 2024-м (860 млрд рублей). Ещё показательнее данные ЦБ: покупки ОФЗ розничными инвесторами составили 490 млрд рублей — рекорд за всю историю. В предыдущие годы этот показатель не превышал 196 млрд.</p>
+
+    <p>Структура инвестиций физлиц: 73,5% — в корпоративные облигации, 26,5% — в ОФЗ и региональные бонды. Операции частных инвесторов на рынке облигаций выросли на 44% — до 5,2 трлн рублей с 3,6 трлн в 2024-м. Доля физлиц в объёме торгов составила 31,3%.</p>
+
+    <div class="metrics-grid">
+      <div class="metric-cell">
+        <div class="metric-label">Покупки ОФЗ физлицами</div>
+        <div class="metric-value forest">490 млрд ₽</div>
+        <div class="metric-note">Рекорд за всю историю. В 2024-м — 196 млрд, в 2023-м — ещё меньше.</div>
+      </div>
+      <div class="metric-cell">
+        <div class="metric-label">Всего вложено в облигации</div>
+        <div class="metric-value forest">2,1 трлн ₽</div>
+        <div class="metric-note">В 2,4 раза больше, чем в 2024-м. 73,5% — корпоративные бумаги.</div>
+      </div>
+      <div class="metric-cell">
+        <div class="metric-label">Средняя доходность флоатеров</div>
+        <div class="metric-value gold">22% г/г</div>
+        <div class="metric-note">Лучший инструмент первой половины года. В 2024-м — 16% при средней ставке 17,5%.</div>
+      </div>
+      <div class="metric-cell">
+        <div class="metric-label">Полная доходность ОФЗ</div>
+        <div class="metric-value green">23,5% г/г</div>
+        <div class="metric-note">С начала года до середины ноября. Корп. долг средней дюрации — 27,5%.</div>
+      </div>
+    </div>
+
+    <p>Почему инвесторы в массовом порядке переходили из депозитов в облигации? Мотив прост: при сопоставимой доходности облигации с постоянным купоном позволяют зафиксировать ставку на 2–5 лет. Когда стало ясно, что ставка ЦБ начала снижение с пика в 21%, инвесторы поняли: сейчас последний шанс зафиксировать 20–22% на длинный срок. Этот перелом в поведении розничного инвестора стал одним из самых важных структурных изменений года.</p>
+
+    <blockquote>
+      <p>«Россияне отказываются от депозитов в поисках той доходности, к которой начали привыкать на фоне крайне высокой ключевой ставки. Фиксируется растущий интерес физлиц к инвестициям в облигации — это плавная тенденция перетока капитала.»</p>
+      <cite>— Елена Курицына, старший управляющий директор Мосбиржи</cite>
+    </blockquote>
+
+    <hr class="divider" />
+
+    <h2>Теневая сторона рекорда: дефолты и кредитный стресс</h2>
+
+    <p>За фасадом рекордных объёмов скрывается нарастающая кредитная напряжённость. По итогам 2025 года зафиксировано около <span class="highlight">20 дефолтов эмитентов облигаций</span> и более 10 дефолтов по ЦФА. Компании, привлекавшие долг в 2020–2021 годах под 13–15%, в 2024–2025 годах столкнулись с необходимостью перекредитоваться под 26–35%. Даже снижение ставки к концу года не спасло тех, у кого накопились кассовые разрывы.</p>
+
+    <div class="warn-box">
+      <strong>Проблемные секторы 2025 года:</strong> оптовая торговля — 32,2% от общего объёма проблемных обязательств; профессиональные услуги — 27%; строительство — 16%. Рейтинговые категории с наибольшим числом дефолтов — B+ до BB по национальной шкале. Доходность третьего эшелона выросла до 33,08% — рынок требует всё более высокую премию за риск. Число эмитентов, которым предстоит погасить выпуски или пройти оферту в 2026 году, вырастет на 33% — до 138 компаний.
+    </div>
+
+    <p>Рост дефолтов изменил поведение инвесторов: они стали уходить из рискованных категорий в более качественные инструменты. Цены на ОФЗ росли, тогда как корпоративные облигации третьего эшелона падали. Кривая ОФЗ приняла нормализованную форму — краткосрочные ставки стали ниже долгосрочных, — что свидетельствует о начале полноценного цикла снижения ставок.</p>
+
+    <hr class="divider" />
+
+    <h2>Ключевые тренды и структурные изменения</h2>
+
+    <div class="trend-list">
+      <div class="trend-item">
+        <div class="trend-num">1</div>
+        <div class="trend-body">
+          <div class="trend-title">Замещение банковского кредита облигациями</div>
+          <div class="trend-desc">В условиях охлаждения банковского кредитования компании активно переориентировались на публичный долговой рынок. Корпоративные портфели банков сжимались — рынок облигаций рос. Для крупных эмитентов первого эшелона это дало экономию на стоимости привлечения: доходность первоэшелонных бондов (21,99%) оставалась ниже ставки по банковскому кредиту.</div>
+        </div>
+      </div>
+      <div class="trend-item">
+        <div class="trend-num">2</div>
+        <div class="trend-body">
+          <div class="trend-title">Взрывной рост валютных инструментов</div>
+          <div class="trend-desc">В 2025 году размещено 97 выпусков валютных облигаций в эквиваленте 1,88 трлн рублей — в 2,7 раза больше, чем в 2024-м. 60% — в долларах, 38% — в юанях. В декабре Минфин впервые разместил ОФЗ в юанях на 20 млрд юаней — важный шаг для развития рынка валютных заимствований. Замещающие облигации превратились из временного инструмента в самостоятельный класс активов.</div>
+        </div>
+      </div>
+      <div class="trend-item">
+        <div class="trend-num">3</div>
+        <div class="trend-body">
+          <div class="trend-title">Победа флоатеров, начало заката</div>
+          <div class="trend-desc">Флоатеры стали главным инструментом 2024–2025 годов — объём в обращении почти сравнялся с ОФЗ-ПД. Но с началом снижения ставок ЦБ их эпоха заканчивается: инвесторы переключаются на фиксированный купон, чтобы зафиксировать высокую доходность на годы вперёд. Минфин заявил о намерении сократить долю флоатеров в госдолге с 38% до целевых 25–30%.</div>
+        </div>
+      </div>
+      <div class="trend-item">
+        <div class="trend-num">4</div>
+        <div class="trend-body">
+          <div class="trend-title">Демократизация через дебютантов</div>
+          <div class="trend-desc">За 11 месяцев 2025 года дебютировали 67 новых эмитентов, разместив облигации на рекордные 350 млрд рублей — против 240 млрд за весь 2024-й. Порог входа на облигационный рынок снизился: малый и средний бизнес активно использует публичный долг как альтернативу банковскому кредиту. Доля физлиц в корпоративных размещениях превысила 20%.</div>
+        </div>
+      </div>
+      <div class="trend-item">
+        <div class="trend-num">5</div>
+        <div class="trend-body">
+          <div class="trend-title">ЦФА — цифровой финансовый актив как конкурент</div>
+          <div class="trend-desc">Рынок цифровых финансовых активов (ЦФА) активно развивался параллельно с классическими облигациями. Более 10 дефолтов по ЦФА в 2025-м показали, что молодой инструмент подвержен тем же кредитным рискам. Тем не менее интеграция ЦФА в облигационную экосистему ускоряется: в декабре 116 эмитентов разместили 312 выпусков, включая ЦФА.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="conclusion">
+      <h3>Итог: рынок, изменивший своё назначение</h3>
+      <p>2025 год изменил роль облигационного рынка в российской финансовой системе. Он перестал быть нишевым инструментом для институционалов и стал массовым. 38,4 млн частных инвесторов на Мосбирже «открыли» для себя облигации как реальную альтернативу депозиту — с сопоставимой надёжностью, более высокой доходностью и возможностью зафиксировать ставку на годы вперёд.</p>
+      <p>Рекорд в 9+ трлн рублей корпоративных размещений — не показатель здоровья экономики, а показатель её адаптации к сложным условиям. Компании занимали вынужденно, рефинансируя старые обязательства. Но сам факт, что рынок справился с таким объёмом при ставке 21%, — свидетельство зрелости и глубины долгового рынка России.</p>
+      <p>Теперь цикл снижения ставок открывает новую главу: от «год флоатеров» рынок переходит в «год длинных ОФЗ и корпоративных бондов с фиксированным купоном». Те, кто зафиксировал доходность в 20%+ на 3–5 лет в 2025-м, через год будут выглядеть как самые дальновидные инвесторы десятилетия.</p>
+    </div>
+
+  </article>
+</main>
+
+<footer>
+  <strong>kotana.com.ru</strong> &nbsp;·&nbsp; Рынок облигаций · 2025 &nbsp;·&nbsp; Источники: Cbonds, Мосбиржа, ЦБ РФ, Коммерсантъ, Ведомости, Forbes, Эксперт РА, Т-Инвестиции
+</footer>
+
+</body>
+</html>
