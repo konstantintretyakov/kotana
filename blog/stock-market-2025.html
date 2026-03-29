@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Мировой рынок акций 2025: итоги года | kotana.com.ru</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --ink:    #0f1117;
+      --paper:  #f7f4ef;
+      --cream:  #ede9e0;
+      --accent: #1c4a2e;
+      --accent-light: #c8ecd5;
+      --gold:   #b8922a;
+      --green:  #1a7a3c;
+      --red:    #c0392b;
+      --muted:  #7a7060;
+      --rule:   #d4cfc5;
+      --col:    clamp(320px, 66ch, 720px);
+    }
+    html { font-size: 17px; scroll-behavior: smooth; }
+    body {
+      background: var(--paper); color: var(--ink);
+      font-family: 'IBM Plex Sans', sans-serif;
+      line-height: 1.75; -webkit-font-smoothing: antialiased;
+    }
+
+    .masthead {
+      background: var(--ink); padding: 14px 40px;
+      display: flex; align-items: center; justify-content: space-between;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: .75rem; letter-spacing: .12em; text-transform: uppercase;
+    }
+    .masthead-logo { font-size: 1rem; font-weight: 500; color: #fff; }
+    .masthead-meta { color: #666; }
+
+    .hero {
+      background: var(--accent); color: var(--paper);
+      padding: 80px 40px 72px; position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: '2025';
+      position: absolute; right: -10px; top: 50%; transform: translateY(-50%);
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(110px, 17vw, 240px); font-weight: 900;
+      color: rgba(255,255,255,.06); letter-spacing: -.04em; line-height: 1; pointer-events: none;
+    }
+    .hero-inner { max-width: var(--col); margin: 0 auto; position: relative; }
+    .hero-tag {
+      display: inline-block;
+      border: 1px solid rgba(255,255,255,.3); color: rgba(255,255,255,.75);
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: .72rem; letter-spacing: .15em; text-transform: uppercase;
+      padding: 4px 12px; margin-bottom: 28px;
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.2rem, 5vw, 3.4rem); font-weight: 700;
+      line-height: 1.18; letter-spacing: -.02em; margin-bottom: 24px; max-width: 22ch;
+    }
+    .hero h1 em { font-style: italic; color: #8de0a8; }
+    .hero-lead {
+      font-size: 1.08rem; color: rgba(255,255,255,.72);
+      max-width: 54ch; line-height: 1.65; margin-bottom: 40px;
+    }
+    .hero-byline {
+      display: flex; align-items: center; gap: 16px;
+      font-size: .8rem; color: rgba(255,255,255,.4);
+      font-family: 'IBM Plex Mono', monospace;
+    }
+    .hero-byline span { color: rgba(255,255,255,.25); }
+    .hero-byline strong { color: rgba(255,255,255,.65); font-weight: 500; }
+
+    .stats-bar { background: var(--ink); padding: 0 40px; }
+    .stats-inner {
+      max-width: calc(var(--col) + 200px); margin: 0 auto;
+      display: grid; grid-template-columns: repeat(3,1fr);
+    }
+    .stat-item {
+      padding: 24px 32px; border-right: 1px solid rgba(255,255,255,.07); color: #fff;
+    }
+    .stat-item:first-child { padding-left: 0; }
+    .stat-item:last-child  { border-right: none; }
+    .stat-number {
+      font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 700;
+      display: block; line-height: 1; color: #8de0a8;
+    }
+    .stat-label {
+      font-size: .75rem; text-transform: uppercase;
+      letter-spacing: .1em; opacity: .45; margin-top: 4px;
+      font-family: 'IBM Plex Mono', monospace;
+    }
+
+    .article-wrap { padding: 72px 40px; }
+    .article-inner { max-width: var(--col); margin: 0 auto; }
+
+    .article-inner > p:first-of-type::first-letter {
+      font-family: 'Playfair Display', serif; font-size: 4.5em; font-weight: 900;
+      float: left; line-height: .78; margin-right: 8px; margin-top: 6px; color: var(--accent);
+    }
+    p { margin-bottom: 1.5rem; }
+
+    h2 {
+      font-family: 'Playfair Display', serif; font-size: 1.7rem; font-weight: 700;
+      letter-spacing: -.02em; line-height: 1.25; margin: 3rem 0 1.1rem;
+    }
+    h2::before { content: ''; display: block; width: 32px; height: 3px; background: var(--accent); margin-bottom: 16px; }
+
+    h3 {
+      font-family: 'IBM Plex Sans', sans-serif; font-size: 1.05rem; font-weight: 600;
+      margin: 2rem 0 .7rem; text-transform: uppercase; letter-spacing: .06em; color: var(--gold);
+    }
+
+    blockquote {
+      border-left: 3px solid var(--accent); margin: 2.5rem 0; padding: 20px 0 20px 32px;
+    }
+    blockquote p {
+      font-family: 'Playfair Display', serif; font-size: 1.35rem; font-style: italic;
+      line-height: 1.5; color: var(--ink); margin: 0 0 8px;
+    }
+    blockquote cite {
+      font-family: 'IBM Plex Mono', monospace; font-size: .72rem;
+      text-transform: uppercase; letter-spacing: .12em; color: var(--muted); font-style: normal;
+    }
+
+    .highlight { background: var(--accent-light); padding: 0 4px; font-weight: 500; }
+
+    /* Scenario grid — 3 col */
+    .scenario-grid {
+      display: grid; grid-template-columns: repeat(3,1fr);
+      gap: 1px; background: var(--rule); border: 1px solid var(--rule); margin: 2.5rem 0;
+    }
+    .sc-card { background: var(--paper); padding: 24px 20px; }
+    .sc-label {
+      font-family: 'IBM Plex Mono', monospace; font-size: .65rem;
+      text-transform: uppercase; letter-spacing: .15em; color: var(--muted); margin-bottom: 10px;
+    }
+    .sc-value { font-family: 'Playfair Display', serif; font-size: 1.7rem; font-weight: 700; line-height: 1; margin-bottom: 6px; }
+    .sc-value.base { color: var(--gold); }
+    .sc-value.bull { color: var(--green); }
+    .sc-value.bear { color: var(--red); }
+    .sc-title { font-size: .88rem; font-weight: 600; margin-bottom: 4px; }
+    .sc-source { font-family: 'IBM Plex Mono', monospace; font-size: .63rem; color: var(--muted); margin-bottom: 4px; }
+    .sc-desc { font-size: .8rem; color: var(--muted); line-height: 1.5; margin-top: 8px; }
+
+    /* Market cards (2-col, same as instr-grid) */
+    .market-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 1px; background: var(--rule); border: 1px solid var(--rule); margin: 2.5rem 0;
+    }
+    .market-card { background: var(--paper); padding: 24px; }
+    .market-icon { font-size: 1.3rem; margin-bottom: 8px; display: block; }
+    .market-region {
+      font-family: 'IBM Plex Mono', monospace; font-size: .65rem;
+      text-transform: uppercase; letter-spacing: .12em; color: var(--muted); margin-bottom: 6px;
+    }
+    .market-name { font-weight: 600; font-size: .97rem; margin-bottom: 4px; }
+    .market-return {
+      font-family: 'Playfair Display', serif; font-weight: 700;
+      color: var(--accent); font-size: 1.15rem; margin-bottom: 4px;
+    }
+    .market-label {
+      display: inline-block; font-family: 'IBM Plex Mono', monospace;
+      font-size: .6rem; text-transform: uppercase; letter-spacing: .1em;
+      padding: 3px 8px; border-radius: 2px; margin-bottom: 8px;
+    }
+    .market-label.hot  { background: var(--accent-light); color: var(--accent); }
+    .market-label.warm { background: #f5ecd4; color: var(--gold); }
+    .market-label.risk { background: #fde8e0; color: var(--red); }
+    .market-desc { font-size: .8rem; color: var(--muted); line-height: 1.55; }
+
+    /* Data card with bars */
+    .data-card {
+      background: var(--cream); border: 1px solid var(--rule); padding: 28px 32px; margin: 2.5rem 0;
+    }
+    .data-card h4 {
+      font-family: 'IBM Plex Mono', monospace; font-size: .7rem;
+      text-transform: uppercase; letter-spacing: .15em; color: var(--muted); margin-bottom: 20px;
+    }
+    .data-rows { display: flex; flex-direction: column; gap: 12px; }
+    .data-row { display: flex; align-items: center; gap: 16px; }
+    .data-row-label { font-size: .85rem; color: var(--muted); width: 220px; flex-shrink: 0; }
+    .data-row-bar-wrap { flex: 1; height: 6px; background: var(--rule); position: relative; }
+    .data-row-bar { position: absolute; top: 0; left: 0; height: 100%; }
+    .data-row-bar.forest { background: var(--accent); }
+    .data-row-bar.gold   { background: var(--gold); }
+    .data-row-bar.green  { background: var(--green); }
+    .data-row-bar.red    { background: var(--red); opacity: .7; }
+    .data-row-bar.muted  { background: var(--muted); opacity: .35; }
+    .data-row-val {
+      font-family: 'IBM Plex Mono', monospace; font-size: .8rem;
+      font-weight: 500; width: 100px; text-align: right;
+    }
+
+    /* Metrics 2×2 */
+    .metrics-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 1px; background: var(--rule); border: 1px solid var(--rule); margin: 2.5rem 0;
+    }
+    .metric-cell { background: var(--paper); padding: 24px; }
+    .metric-label {
+      font-family: 'IBM Plex Mono', monospace; font-size: .68rem;
+      text-transform: uppercase; letter-spacing: .14em; color: var(--muted); margin-bottom: 8px;
+    }
+    .metric-value { font-family: 'Playfair Display', serif; font-size: 1.65rem; font-weight: 700; line-height: 1.1; }
+    .metric-value.forest { color: var(--accent); }
+    .metric-value.gold   { color: var(--gold); }
+    .metric-value.green  { color: var(--green); }
+    .metric-value.red    { color: var(--red); }
+    .metric-note { font-size: .78rem; color: var(--muted); margin-top: 6px; }
+
+    /* Event / risk list */
+    .risk-list { margin: 2rem 0; }
+    .risk-item {
+      display: flex; gap: 16px; padding: 16px 0;
+      border-bottom: 1px solid var(--rule); align-items: flex-start;
+    }
+    .risk-item:first-child { border-top: 1px solid var(--rule); }
+    .risk-badge {
+      font-family: 'IBM Plex Mono', monospace; font-size: .62rem;
+      text-transform: uppercase; letter-spacing: .1em;
+      padding: 4px 10px; border-radius: 2px; flex-shrink: 0; margin-top: 2px;
+    }
+    .risk-badge.high { background: #fde8e0; color: var(--red); }
+    .risk-badge.mid  { background: #f5ecd4; color: var(--gold); }
+    .risk-badge.low  { background: #d0ead8; color: var(--green); }
+    .risk-title { font-weight: 600; font-size: .9rem; margin-bottom: 3px; }
+    .risk-desc  { font-size: .82rem; color: var(--muted); line-height: 1.55; }
+
+    .divider { border: none; border-top: 1px solid var(--rule); margin: 3rem 0; }
+
+    .conclusion {
+      background: var(--ink); color: var(--paper); padding: 36px 40px; margin: 3rem 0 0;
+    }
+    .conclusion h3 { color: #8de0a8; margin-top: 0; letter-spacing: .06em; font-size: 1rem; text-transform: uppercase; }
+    .conclusion p { color: #ccc; margin-bottom: 1rem; }
+    .conclusion p:last-child { margin-bottom: 0; }
+
+    footer {
+      background: var(--cream); border-top: 1px solid var(--rule);
+      padding: 28px 40px; font-family: 'IBM Plex Mono', monospace;
+      font-size: .72rem; color: var(--muted); text-align: center; letter-spacing: .06em;
+    }
+    footer strong { color: var(--ink); }
+
+    @media (max-width: 640px) {
+      .masthead { padding: 12px 20px; }
+      .hero { padding: 56px 20px 52px; }
+      .stats-bar { padding: 0 20px; }
+      .stats-inner, .scenario-grid { grid-template-columns: 1fr; }
+      .stat-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,.07); padding: 16px 0; }
+      .article-wrap { padding: 48px 20px; }
+      .market-grid, .metrics-grid { grid-template-columns: 1fr; }
+      .data-row-label { width: 130px; font-size: .78rem; }
+    }
+  </style>
+</head>
+<body>
+
+<header class="masthead">
+  <span class="masthead-logo">kotana.com.ru</span>
+  <span class="masthead-meta">Обзор · Рынок акций · 2025</span>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-tag">Итоги года · Рынок акций · 2025</div>
+    <h1>Рынок акций — 2025: год <em>ИИ-революции и тарифных потрясений</em></h1>
+    <p class="hero-lead">S&P 500 вырос на 17,9% — третий год подряд. Nvidia прибавила 40% и дала рынку более 15 п.п. прироста. Но под капотом ралли — беспрецедентная концентрация в ИИ-акциях, тарифный шок апреля и два разных мира: западный и российский.</p>
+    <div class="hero-byline">
+      <strong>Редакция kotana.com.ru</strong>
+      <span>·</span>
+      <span>Декабрь 2025</span>
+      <span>·</span>
+      <span>12 мин чтения</span>
+    </div>
+  </div>
+</section>
+
+<div class="stats-bar">
+  <div class="stats-inner">
+    <div class="stat-item">
+      <span class="stat-number">+17,9%</span>
+      <span class="stat-label">S&P 500 — третий год роста подряд</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number">42%</span>
+      <span class="stat-label">Доля «Великолепной семёрки» в доходности S&P 500</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number">+8%</span>
+      <span class="stat-label">Мосбиржа с дивидендами — рынок устоял</span>
+    </div>
+  </div>
+</div>
+
+<main class="article-wrap">
+  <article class="article-inner">
+
+    <p>Рынок акций в 2025 году преподал инвесторам привычный урок: паника — плохая стратегия. За двенадцать месяцев глобальные индексы пережили «шок DeepSeek» в январе, тарифный обвал в апреле и бесконечный поток опасений насчёт ИИ-пузыря — и всё равно завершили год на рекордных отметках. S&P 500 прибавил 17,9%, Nasdaq-100 — 20,2%, Dow Jones — 13%. Главным двигателем роста, его же главным риском и главным источником волатильности стал искусственный интеллект.</p>
+
+    <h2>Главный нарратив года: от хайпа — к прибыли</h2>
+
+    <p>2025-й вошёл в историю как год, когда рынок перестал платить за обещания. После трёх лет разговоров о трансформирующем потенциале ИИ инвесторы потребовали реальных финансовых результатов — и ведущие технологические компании их дали. Прибыль сектора информационных технологий выросла на <span class="highlight">22% в первом квартале</span> и ускорилась до 29% в третьем квартале в годовом выражении.</p>
+
+    <p>Крупнейшие технологические компании направили на капитальные вложения, связанные с ИИ, порядка <span class="highlight">400 миллиардов долларов</span> — почти на 70% больше, чем в 2024 году. Это создало мощный мультипликатор для поставщиков инфраструктуры: чипов, серверов, энергетики и сетевого оборудования.</p>
+
+    <div class="scenario-grid">
+      <div class="sc-card">
+        <div class="sc-label">S&P 500</div>
+        <div class="sc-title">Широкий рынок США</div>
+        <div class="sc-value base">+17,9%</div>
+        <div class="sc-source">Statista / FactSet / S&P Dow Jones</div>
+        <div class="sc-desc">Третий год двузначного роста подряд. IT и коммуникации обеспечили 63,1% совокупной доходности. Без техсектора рост составил бы лишь 6%.</div>
+      </div>
+      <div class="sc-card">
+        <div class="sc-label">Nasdaq-100</div>
+        <div class="sc-title">Технологический индекс</div>
+        <div class="sc-value bull">+20,2%</div>
+        <div class="sc-source">Bloomberg / RBC Wealth Management</div>
+        <div class="sc-desc">Лидер среди американских индексов. Следует за рекордными годами 2023 (+43,4%) и 2024 (+28,6%). Доля ИИ-компаний достигла исторических максимумов.</div>
+      </div>
+      <div class="sc-card">
+        <div class="sc-label">Индекс Мосбиржи</div>
+        <div class="sc-title">Российский рынок</div>
+        <div class="sc-value bear">≈ 0%</div>
+        <div class="sc-source">Мосбиржа / SberCIB / РБК</div>
+        <div class="sc-desc">Ценовой индекс практически не изменился. С учётом дивидендов — около +8% полной доходности. Рынок не падает второй год подряд — редкая статистика.</div>
+      </div>
+    </div>
+
+    <hr class="divider" />
+
+    <h2>Три потрясения, которые рынок преодолел</h2>
+
+    <p>Год не был лёгким. Дважды рынки оказывались на краю серьёзного обвала — и дважды отскакивали сильнее прежнего. Понимание механики этих разворотов важнее итоговых цифр.</p>
+
+    <div class="risk-list">
+      <div class="risk-item">
+        <div class="risk-badge high">Январь</div>
+        <div>
+          <div class="risk-title">«Шок DeepSeek»</div>
+          <div class="risk-desc">Китайская компания DeepSeek выпустила высокоэффективную языковую модель, обученную с минимальными затратами. Инвесторы испугались: не окажутся ли многомиллиардные капзатраты американских техгигантов напрасными? Nvidia в один торговый день упала на 17% — крупнейшее однодневное уничтожение рыночной капитализации в истории. Однако квартальные отчёты развеяли страхи: спрос на ИИ-инфраструктуру не упал, а вырос.</div>
+        </div>
+      </div>
+      <div class="risk-item">
+        <div class="risk-badge high">Апрель</div>
+        <div>
+          <div class="risk-title">«Тарифные потрясения»</div>
+          <div class="risk-desc">2 апреля администрация Трампа ввела ультравысокие «зеркальные» тарифы на десятки стран. Рынки обвалились. Но последовавшие торговые переговоры, снижение тарифов и временное перемирие с Китаем развернули ситуацию: S&P 500 взлетел почти на 39% от апрельских минимумов до конца года. Компании, ставившие на «решоринг», показали лучшие результаты по прибыли за пять лет.</div>
+        </div>
+      </div>
+      <div class="risk-item">
+        <div class="risk-badge mid">Весь год</div>
+        <div>
+          <div class="risk-title">Страхи ИИ-пузыря и вопрос оценок</div>
+          <div class="risk-desc">P/E мультипликатор S&P 500 завершил год вблизи отметки 31 — максимум с 1999 года. Goldman Sachs прямо указывал: «текущая комбинация высоких оценок, экстремальной концентрации и сильных недавних результатов рифмуется с несколькими перегретыми рынками прошлого века». Пузырь не лопнул — но риск остаётся главной темой дискуссий на 2026-й.</div>
+        </div>
+      </div>
+      <div class="risk-item">
+        <div class="risk-badge low">Позитив</div>
+        <div>
+          <div class="risk-title">Расширение ралли за пределы техсектора</div>
+          <div class="risk-desc">В отличие от 2023–2024 годов, ралли постепенно распространилось на другие отрасли. Финансы обеспечили 12% доходности S&P 500, промышленность — около 10%. ФРС трижды снизила ставку на 25 б.п. Потребительский спрос среди домохозяйств с высоким доходом оставался устойчивым весь год.</div>
+        </div>
+      </div>
+    </div>
+
+    <blockquote>
+      <p>«Рынок завершил год ростом — несмотря на тарифы, DeepSeek и страхи пузыря. Это переход от эпохи хайпа к эпохе результатов.»</p>
+      <cite>— Консенсус аналитиков Wall Street, итоги 2025 года</cite>
+    </blockquote>
+
+    <hr class="divider" />
+
+    <h2>«Великолепная семёрка» и концентрация рынка</h2>
+
+    <p>Главный структурный феномен 2025 года — беспрецедентная концентрация доходности в руках нескольких компаний. Семь акций обеспечили чуть больше половины всего прироста S&P 500: Nvidia, Alphabet, Microsoft, Broadcom, JPMorgan Chase, Palantir и Meta. Все они так или иначе связаны с ИИ-темой.</p>
+
+    <div class="data-card">
+      <h4>Вклад в доходность S&P 500 — компании и секторы</h4>
+      <div class="data-rows">
+        <div class="data-row">
+          <span class="data-row-label">Nvidia (один эмитент)</span>
+          <div class="data-row-bar-wrap"><div class="data-row-bar forest" style="width:24%"></div></div>
+          <span class="data-row-val">15,5% вклада</span>
+        </div>
+        <div class="data-row">
+          <span class="data-row-label">«Великолепная семёрка»</span>
+          <div class="data-row-bar-wrap"><div class="data-row-bar gold" style="width:66%"></div></div>
+          <span class="data-row-val">42% вклада</span>
+        </div>
+        <div class="data-row">
+          <span class="data-row-label">IT + Коммуникации</span>
+          <div class="data-row-bar-wrap"><div class="data-row-bar forest" style="width:100%"></div></div>
+          <span class="data-row-val">63,1% вклада</span>
+        </div>
+        <div class="data-row">
+          <span class="data-row-label">Финансовый сектор</span>
+          <div class="data-row-bar-wrap"><div class="data-row-bar green" style="width:19%"></div></div>
+          <span class="data-row-val">12% вклада</span>
+        </div>
+        <div class="data-row">
+          <span class="data-row-label">Все прочие секторы</span>
+          <div class="data-row-bar-wrap"><div class="data-row-bar muted" style="width:37%"></div></div>
+          <span class="data-row-val">~25% вклада</span>
+        </div>
+      </div>
+    </div>
+
+    <p>Топ-5 компаний по капитализации составляют более <span class="highlight">25% стоимости всего S&P 500</span>. Goldman Sachs прямо назвал это ключевым риском: «по мере роста концентрации растёт идиосинкратический риск, встроенный в индекс». Один плохой квартал одного из гигантов способен потянуть вниз весь рынок. Рост спекулятивной активности в 2025-м остался значительно ниже уровней 2000 и 2021 годов — что удерживает аналитиков от прямого сравнения с дотком-пузырём.</p>
+
+    <hr class="divider" />
+
+    <h2>Мировая картина: неожиданные победители</h2>
+
+    <p>Показательная деталь: S&P 500, обновив исторические максимумы, всё же отстал от ряда зарубежных рынков. Канада прибавила 28,9%, Мексика — 25,2%, европейские индексы — около 16%. Торговые войны США не сломили зарубежные рынки — напротив, часть из них выиграла от перераспределения цепочек поставок.</p>
+
+    <div class="market-grid">
+      <div class="market-card">
+        <span class="market-icon">🇨🇦</span>
+        <div class="market-region">Северная Америка</div>
+        <div class="market-name">Канада и Мексика</div>
+        <span class="market-label hot">Лучший результат в мире</span>
+        <div class="market-return">+28,9% / +25,2%</div>
+        <div class="market-desc">Оба рынка обогнали S&P 500, несмотря на американские тарифы. Решоринг и переориентация цепочек поставок создали дополнительный спрос на производственные мощности стран-соседей.</div>
+      </div>
+      <div class="market-card">
+        <span class="market-icon">🇪🇺</span>
+        <div class="market-region">Европа</div>
+        <div class="market-name">Euro Stoxx 50</div>
+        <span class="market-label warm">Неожиданная устойчивость</span>
+        <div class="market-return">≈ +16%</div>
+        <div class="market-desc">Европейские индексы наравне с S&P 500. Снижение ставок ЕЦБ, рост оборонных расходов и частичная дедолларизация резервов поддержали рынок вопреки слабому росту ВВП.</div>
+      </div>
+      <div class="market-card">
+        <span class="market-icon">🥇</span>
+        <div class="market-region">Сырьё / Защитные активы</div>
+        <div class="market-name">Золото</div>
+        <span class="market-label hot">Актив года</span>
+        <div class="market-return">+26% / свыше $4 300</div>
+        <div class="market-desc">Цены впервые в истории превысили $4 300 за унцию. Мировой тренд на дедолларизацию, покупки центральных банков и геополитическая неопределённость — три главных драйвера. Акции «Полюса» +74%.</div>
+      </div>
+      <div class="market-card">
+        <span class="market-icon">🇷🇺</span>
+        <div class="market-region">Россия</div>
+        <div class="market-name">Индекс Мосбиржи</div>
+        <span class="market-label risk">Аутсайдер по цене</span>
+        <div class="market-return">≈ 0% цена / +8% полная</div>
+        <div class="market-desc">Высокая ключевая ставка, крепкий рубль, снижение нефтяных цен и санкции удерживали рынок под давлением. Чемпионами стали компании с устойчивым внутренним бизнесом и экспортёры золота.</div>
+      </div>
+    </div>
+
+    <hr class="divider" />
+
+    <h2>Россия: год двух рынков внутри одного</h2>
+
+    <p>Российский рынок в 2025-м фактически разделился. Устойчивые внутренние бизнесы с сильным денежным потоком росли на десятки процентов, тогда как закредитованные компании и нефтяные экспортёры испытывали давление. Год был нервным: фактор «мир / не мир» держал инвесторов в напряжении, порождая движения в 25–30% на ожиданиях переговоров и разочаровании в их отсутствии.</p>
+
+    <div class="metrics-grid">
+      <div class="metric-cell">
+        <div class="metric-label">Мосбиржа — полная доходность</div>
+        <div class="metric-value forest">+8%</div>
+        <div class="metric-note">Дивиденды спасли от официального минуса. Рынок не падает второй год подряд — редкая статистика, которая снова сработала.</div>
+      </div>
+      <div class="metric-cell">
+        <div class="metric-label">Лидер года — «Полюс»</div>
+        <div class="metric-value gold">+74%</div>
+        <div class="metric-note">Цены на золото впервые превысили $4 300/унц. Экспортёры драгоценных металлов — главные бенефициары 2025 года на российском рынке.</div>
+      </div>
+      <div class="metric-cell">
+        <div class="metric-label">Пик ключевой ставки ЦБ</div>
+        <div class="metric-value red">21%</div>
+        <div class="metric-note">Рекордный уровень давил на закредитованные компании и создавал жёсткую конкуренцию для акций со стороны депозитов. Снижение началось в конце года.</div>
+      </div>
+      <div class="metric-cell">
+        <div class="metric-label">Внутренние чемпионы</div>
+        <div class="metric-value green">+66%</div>
+        <div class="metric-note">«Лента» и «Мать и Дитя» — каждая прибавила по 66% благодаря устойчивому операционному росту без зависимости от курса рубля и нефти.</div>
+      </div>
+    </div>
+
+    <blockquote>
+      <p>«Рынок не сломался. В периоды затишья он ориентировался на экономику: ставку ЦБ, цены на сырьё и состояние отдельных компаний. Геополитика осталась волатильностью — а не трендом.»</p>
+      <cite>— Аналитический обзор, Investing.com, январь 2026</cite>
+    </blockquote>
+
+    <hr class="divider" />
+
+    <h2>Стратегии: что работало, что нет</h2>
+
+    <h3>Победители 2025 года</h3>
+    <p>ИИ-инфраструктура — бесспорный глобальный лидер. Nvidia (+40%), Broadcom, Palantir показали трёхзначную или близкую к ней доходность. Среди лучших акций года по S&P 500 — SanDisk (+559%), который выиграл от ажиотажного спроса на ИИ-хранилища после выделения из Western Digital. На российском рынке: золотодобытчики, ретейл и компании внутреннего потребления с низким долгом.</p>
+
+    <h3>Разочарования года</h3>
+    <p>Tesla и Amazon показали скромные +5–8% на фоне остального техсектора. Потребительский сектор в США пострадал от давления на доходы домохозяйств со средним доходом. В России — нефтяные экспортёры пострадали от крепкого рубля и ценового дисконта Urals к Brent. Большинство IT-IPO на Мосбирже разочаровали инвесторов: новые имена в среднем ушли в минус.</p>
+
+    <h3>Главный урок: не выходить в кэш на страхах</h3>
+    <p>Оба крупнейших обвала 2025 года — DeepSeek и тарифный шок — были полностью отыграны в течение нескольких месяцев. Инвесторы, продавшие акции на панике, зафиксировали убытки и пропустили восстановление. В России вложения в фонды денежного рынка как альтернатива акциям принесли менее 20% — ниже результата активно управляемых фондов акций малой и средней капитализации.</p>
+
+    <div class="conclusion">
+      <h3>Итог: рынок, карабкающийся по стене беспокойства</h3>
+      <p>2025 год подтвердил старую биржевую максиму: бычий рынок умеет карабкаться по «стене беспокойства». Тарифы, DeepSeek, ИИ-пузырь, геополитика — поводов для паники было в избытке. Долгосрочные инвесторы, сохранившие позиции, заработали двузначную доходность на развитых рынках. Всё выросло разом: золото +26%, развивающиеся рынки +23%, S&P 500 +16%, европейские акции +16% и даже глобальные облигации +7%.</p>
+      <p>Ключевой вопрос на 2026-й — устойчивость ИИ-темы. Капзатраты техгигантов достигли 75% от свободного денежного потока — уровень, последний раз виданный в эпоху доткомов. История показывает: первые игроки технологических революций не всегда оказываются главными бенефициарами. Рынок сделал ставку — теперь он ждёт отдачи от вложенных сотен миллиардов.</p>
+      <p>Россия входит в 2026 год с исторически низкими оценками акций, начавшимся циклом снижения ставки и надеждой на геополитическое урегулирование. При реализации этих факторов потенциал переоценки рынка значителен. Главный принцип не изменился: качество бизнеса важнее красивого нарратива — особенно в год, когда рефинансирование долгов проверит устойчивость слабых эмитентов.</p>
+    </div>
+
+  </article>
+</main>
+
+<footer>
+  <strong>kotana.com.ru</strong> &nbsp;·&nbsp; Обзор рынка акций · 2025 &nbsp;·&nbsp; Источники: RBC Wealth Management, Goldman Sachs Research, J.P. Morgan, Statista, SberCIB, Investing.com, РБК Инвестиции, University of Wisconsin
+</footer>
+
+</body>
+</html>

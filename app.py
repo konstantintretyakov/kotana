@@ -102,6 +102,21 @@ def blog_ppp_market_russia_2026_forecast():
     return render_template("blog/ppp-market-russia-2026-forecast.html")
 
 
+@app.route("/blog/stock-market-2025")
+def blog_stock_market_2025():
+    return render_template("blog/stock-market-2025.html")
+
+
+@app.route("/blog/stock-market-forecast-2026")
+def blog_stock_market_forecast_2026():
+    return render_template("blog/stock-market-forecast-2026.html")
+
+
+@app.route("/blog/cfa-market-russia")
+def blog_cfa_market_russia():
+    return render_template("blog/cfa-market-russia.html")
+
+
 @app.route("/sitemap.xml")
 def sitemap():
     xml = f"""<?xml version="1.0" encoding="UTF-8"?>
@@ -203,6 +218,21 @@ def sitemap():
     </url>
     <url>
         <loc>{SITE_URL}/blog/ppp-market-russia-2026-forecast</loc>
+        <changefreq>yearly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>{SITE_URL}/blog/stock-market-2025</loc>
+        <changefreq>yearly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>{SITE_URL}/blog/stock-market-forecast-2026</loc>
+        <changefreq>yearly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>{SITE_URL}/blog/cfa-market-russia</loc>
         <changefreq>yearly</changefreq>
         <priority>0.7</priority>
     </url>

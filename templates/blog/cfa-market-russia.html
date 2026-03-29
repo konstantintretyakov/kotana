@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Рынок ЦФА в России: итоги и перспективы | kotana.com.ru</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --ink:    #0f1117;
+      --paper:  #f7f4ef;
+      --cream:  #ede9e0;
+      --accent: #2a2a7a;        /* глубокий синий — блокчейн, технологии */
+      --accent-light: #d5d5f5;
+      --gold:   #b8922a;
+      --green:  #1a7a3c;
+      --red:    #c0392b;
+      --muted:  #7a7060;
+      --rule:   #d4cfc5;
+      --col:    clamp(320px, 66ch, 720px);
+    }
+    html { font-size: 17px; scroll-behavior: smooth; }
+    body {
+      background: var(--paper); color: var(--ink);
+      font-family: 'IBM Plex Sans', sans-serif;
+      line-height: 1.75; -webkit-font-smoothing: antialiased;
+    }
+
+    .masthead {
+      background: var(--ink); padding: 14px 40px;
+      display: flex; align-items: center; justify-content: space-between;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: .75rem; letter-spacing: .12em; text-transform: uppercase;
+    }
+    .masthead-logo { font-size: 1rem; font-weight: 500; color: #fff; }
+    .masthead-meta { color: #666; }
+
+    .hero {
+      background: var(--accent); color: var(--paper);
+      padding: 80px 40px 72px; position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: 'ЦФА';
+      position: absolute; right: -20px; top: 50%; transform: translateY(-50%);
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(130px, 18vw, 260px); font-weight: 900;
+      color: rgba(255,255,255,.07); line-height: 1; pointer-events: none; letter-spacing: -.04em;
+    }
+    .hero-inner { max-width: var(--col); margin: 0 auto; position: relative; }
+    .hero-tag {
+      display: inline-block;
+      border: 1px solid rgba(255,255,255,.3); color: rgba(255,255,255,.75);
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: .72rem; letter-spacing: .15em; text-transform: uppercase;
+      padding: 4px 12px; margin-bottom: 28px;
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.2rem, 5vw, 3.4rem); font-weight: 700;
+      line-height: 1.18; letter-spacing: -.02em; margin-bottom: 24px; max-width: 22ch;
+    }
+    .hero h1 em { font-style: italic; color: #a0a8ff; }
+    .hero-lead {
+      font-size: 1.08rem; color: rgba(255,255,255,.72);
+      max-width: 54ch; line-height: 1.65; margin-bottom: 40px;
+    }
+    .hero-byline {
+      display: flex; align-items: center; gap: 16px;
+      font-size: .8rem; color: rgba(255,255,255,.4);
+      font-family: 'IBM Plex Mono', monospace;
+    }
+    .hero-byline span { color: rgba(255,255,255,.25); }
+    .hero-byline strong { color: rgba(255,255,255,.65); font-weight: 500; }
+
+    .stats-bar { background: var(--ink); padding: 0 40px; }
+    .stats-inner {
+      max-width: calc(var(--col) + 200px); margin: 0 auto;
+      display: grid; grid-template-columns: repeat(3,1fr);
+    }
+    .stat-item {
+      padding: 24px 32px; border-right: 1px solid rgba(255,255,255,.07); color: #fff;
+    }
+    .stat-item:first-child { padding-left: 0; }
+    .stat-item:last-child  { border-right: none; }
+    .stat-number {
+      font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 700;
+      display: block; line-height: 1; color: #a0a8ff;
+    }
+    .stat-label {
+      font-size: .75rem; text-transform: uppercase;
+      letter-spacing: .1em; opacity: .45; margin-top: 4px;
+      font-family: 'IBM Plex Mono', monospace;
+    }
+
+    .article-wrap { padding: 72px 40px; }
+    .article-inner { max-width: var(--col); margin: 0 auto; }
+
+    .article-inner > p:first-of-type::first-letter {
+      font-family: 'Playfair Display', serif; font-size: 4.5em; font-weight: 900;
+      float: left; line-height: .78; margin-right: 8px; margin-top: 6px; color: var(--accent);
+    }
+    p { margin-bottom: 1.5rem; }
+
+    h2 {
+      font-family: 'Playfair Display', serif; font-size: 1.7rem; font-weight: 700;
+      letter-spacing: -.02em; line-height: 1.25; margin: 3rem 0 1.1rem;
+    }
+    h2::before { content: ''; display: block; width: 32px; height: 3px; background: var(--accent); margin-bottom: 16px; }
+
+    h3 {
+      font-family: 'IBM Plex Sans', sans-serif; font-size: 1.05rem; font-weight: 600;
+      margin: 2rem 0 .7rem; text-transform: uppercase; letter-spacing: .06em; color: var(--gold);
+    }
+
+    blockquote {
+      border-left: 3px solid var(--accent); margin: 2.5rem 0; padding: 20px 0 20px 32px;
+    }
+    blockquote p {
+      font-family: 'Playfair Display', serif; font-size: 1.35rem; font-style: italic;
+      line-height: 1.5; color: var(--ink); margin: 0 0 8px;
+    }
+    blockquote cite {
+      font-family: 'IBM Plex Mono', monospace; font-size: .72rem;
+      text-transform: uppercase; letter-spacing: .12em; color: var(--muted); font-style: normal;
+    }
+
+    .highlight { background: var(--accent-light); padding: 0 4px; font-weight: 500; }
+
+    /* Growth timeline */
+    .growth-strip {
+      background: var(--accent); color: #fff; padding: 28px 32px;
+      margin: 2.5rem 0; display: grid; grid-template-columns: repeat(4,1fr); gap: 16px;
+    }
+    .gr-label {
+      font-family: 'IBM Plex Mono', monospace; font-size: .65rem;
+      text-transform: uppercase; letter-spacing: .12em; opacity: .6; margin-bottom: 6px;
+    }
+    .gr-value {
+      font-family: 'Playfair Display', serif; font-size: 1.65rem; font-weight: 700; line-height: 1;
+    }
+    .gr-note { font-size: .73rem; opacity: .6; margin-top: 4px; }
+
+    /* Platform table */
+    .platform-table {
+      width: 100%; border-collapse: collapse; margin: 2.5rem 0; font-size: .85rem;
+    }
+    .platform-table th {
+      background: var(--accent); color: #fff; padding: 11px 14px; text-align: left;
+      font-family: 'IBM Plex Mono', monospace; font-size: .7rem;
+      text-transform: uppercase; letter-spacing: .1em; font-weight: 500;
+    }
+    .platform-table td { padding: 11px 14px; border-bottom: 1px solid var(--rule); vertical-align: top; }
+    .platform-table tr:nth-child(even) td { background: var(--cream); }
+    .platform-table td:first-child { font-weight: 600; }
+    .share-bar { height: 4px; background: var(--accent); border-radius: 2px; display: inline-block; }
+
+    /* Data card */
+    .data-card {
+      background: var(--cream); border: 1px solid var(--rule); padding: 28px 32px; margin: 2.5rem 0;
+    }
+    .data-card h4 {
+      font-family: 'IBM Plex Mono', monospace; font-size: .7rem;
+      text-transform: uppercase; letter-spacing: .15em; color: var(--muted); margin-bottom: 20px;
+    }
+    .data-rows { display: flex; flex-direction: column; gap: 12px; }
+    .data-row { display: flex; align-items: center; gap: 16px; }
+    .data-row-label { font-size: .85rem; color: var(--muted); width: 220px; flex-shrink: 0; }
+    .data-row-bar-wrap { flex: 1; height: 6px; background: var(--rule); position: relative; }
+    .data-row-bar { position: absolute; top: 0; left: 0; height: 100%; }
+    .data-row-bar.blue  { background: var(--accent); }
+    .data-row-bar.gold  { background: var(--gold); }
+    .data-row-bar.green { background: var(--green); }
+    .data-row-bar.red   { background: var(--red); opacity: .7; }
+    .data-row-bar.muted { background: var(--muted); opacity: .35; }
+    .data-row-val {
+      font-family: 'IBM Plex Mono', monospace; font-size: .8rem;
+      font-weight: 500; width: 100px; text-align: right;
+    }
+
+    /* Asset type grid */
+    .asset-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 1px; background: var(--rule); border: 1px solid var(--rule); margin: 2.5rem 0;
+    }
+    .asset-card { background: var(--paper); padding: 22px; }
+    .asset-icon { font-size: 1.3rem; margin-bottom: 8px; display: block; }
+    .asset-type {
+      font-family: 'IBM Plex Mono', monospace; font-size: .65rem;
+      text-transform: uppercase; letter-spacing: .12em; color: var(--muted); margin-bottom: 5px;
+    }
+    .asset-name { font-weight: 700; font-size: .95rem; margin-bottom: 5px; }
+    .asset-share {
+      font-family: 'Playfair Display', serif; font-size: 1.15rem;
+      font-weight: 700; color: var(--accent); margin-bottom: 5px;
+    }
+    .asset-desc { font-size: .8rem; color: var(--muted); line-height: 1.55; }
+
+    /* Metrics 2×2 */
+    .metrics-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 1px; background: var(--rule); border: 1px solid var(--rule); margin: 2.5rem 0;
+    }
+    .metric-cell { background: var(--paper); padding: 24px; }
+    .metric-label {
+      font-family: 'IBM Plex Mono', monospace; font-size: .68rem;
+      text-transform: uppercase; letter-spacing: .14em; color: var(--muted); margin-bottom: 8px;
+    }
+    .metric-value { font-family: 'Playfair Display', serif; font-size: 1.65rem; font-weight: 700; line-height: 1.1; }
+    .metric-value.blue  { color: var(--accent); }
+    .metric-value.gold  { color: var(--gold); }
+    .metric-value.green { color: var(--green); }
+    .metric-value.red   { color: var(--red); }
+    .metric-note { font-size: .78rem; color: var(--muted); margin-top: 6px; }
+
+    /* Trend list */
+    .trend-list { margin: 2rem 0; }
+    .trend-item {
+      display: flex; gap: 20px; padding: 18px 0;
+      border-bottom: 1px solid var(--rule); align-items: flex-start;
+    }
+    .trend-item:first-child { border-top: 1px solid var(--rule); }
+    .trend-num {
+      font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 700;
+      color: var(--accent); line-height: 1.1; width: 28px; flex-shrink: 0; text-align: right;
+    }
+    .trend-title { font-weight: 600; font-size: .92rem; margin-bottom: 4px; }
+    .trend-desc  { font-size: .83rem; color: var(--muted); line-height: 1.55; }
+
+    /* Barrier box */
+    .barrier-box {
+      background: #f0f0fc; border-left: 3px solid var(--accent);
+      padding: 18px 24px; margin: 2.5rem 0; font-size: .86rem; line-height: 1.65;
+    }
+    .barrier-box strong { color: var(--accent); }
+
+    .divider { border: none; border-top: 1px solid var(--rule); margin: 3rem 0; }
+
+    .conclusion {
+      background: var(--ink); color: var(--paper); padding: 36px 40px; margin: 3rem 0 0;
+    }
+    .conclusion h3 { color: #a0a8ff; margin-top: 0; letter-spacing: .06em; font-size: 1rem; text-transform: uppercase; }
+    .conclusion p { color: #ccc; margin-bottom: 1rem; }
+    .conclusion p:last-child { margin-bottom: 0; }
+
+    footer {
+      background: var(--cream); border-top: 1px solid var(--rule);
+      padding: 28px 40px; font-family: 'IBM Plex Mono', monospace;
+      font-size: .72rem; color: var(--muted); text-align: center; letter-spacing: .06em;
+    }
+    footer strong { color: var(--ink); }
+
+    @media (max-width: 640px) {
+      .masthead { padding: 12px 20px; }
+      .hero { padding: 56px 20px 52px; }
+      .stats-bar { padding: 0 20px; }
+      .stats-inner, .growth-strip { grid-template-columns: 1fr; }
+      .stat-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,.07); padding: 16px 0; }
+      .article-wrap { padding: 48px 20px; }
+      .asset-grid, .metrics-grid { grid-template-columns: 1fr; }
+      .platform-table { font-size: .76rem; }
+      .platform-table th, .platform-table td { padding: 9px 10px; }
+      .data-row-label { width: 130px; font-size: .78rem; }
+    }
+  </style>
+</head>
+<body>
+
+<header class="masthead">
+  <span class="masthead-logo">kotana.com.ru</span>
+  <span class="masthead-meta">Аналитика · Цифровые активы · ЦФА</span>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-tag">Рынок ЦФА · Итоги и перспективы</div>
+    <h1>Рынок ЦФА в России: от <em>эксперимента</em> к полноценному классу активов</h1>
+    <p class="hero-lead">За три года существования российский рынок цифровых финансовых активов вырос с нуля до 1,5+ трлн рублей суммарных размещений. 2025-й стал переломным: рынок пробил отметку в 1 трлн рублей, столкнулся с первыми дефолтами и начал формировать по-настоящему разнообразную экосистему инструментов.</p>
+    <div class="hero-byline">
+      <strong>Редакция kotana.com.ru</strong>
+      <span>·</span>
+      <span>Март 2026</span>
+      <span>·</span>
+      <span>14 мин чтения</span>
+    </div>
+  </div>
+</section>
+
+<div class="stats-bar">
+  <div class="stats-inner">
+    <div class="stat-item">
+      <span class="stat-number">&gt;1,5 трлн ₽</span>
+      <span class="stat-label">Суммарные размещения с момента запуска</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number">×34</span>
+      <span class="stat-label">Рост рынка за 2 года (2023–2025)</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number">560,9 тыс.</span>
+      <span class="stat-label">Зарегистрированных пользователей платформ</span>
+    </div>
+  </div>
+</div>
+
+<main class="article-wrap">
+  <article class="article-inner">
+
+    <p>Рынок цифровых финансовых активов России начался в июне 2022 года почти без инвесторов, без ликвидного вторичного рынка и без понимания, зачем это вообще нужно. Три года спустя картина кардинально иная: суммарный объём размещений превысил 1,5 трлн рублей, на платформах зарегистрировано более полумиллиона пользователей, а осведомлённость о ЦФА среди россиян, интересующихся инвестициями, достигла 93%. Это не просто технологический эксперимент — это состоявшийся рыночный инструмент с собственной экосистемой, регуляторной базой и — впервые — собственными дефолтами.</p>
+
+    <h2>Рост в цифрах: от 44 млрд до 1,5 трлн за два года</h2>
+
+    <p>Динамика рынка ЦФА поражает своей крутизной. В 2023 году — начальном для всерьёз — суммарный объём размещений составил 44 млрд рублей. В 2024-м — 604 млрд. В 2025-м компании разместили ЦФА на <span class="highlight">1,65 трлн рублей</span> — в 2,8 раза выше 2024-го. Суммарный объём с момента запуска превысил 1,5 трлн рублей. По данным ComNews, это в 34 раза выше показателя 2023 года.</p>
+
+    <div class="growth-strip">
+      <div>
+        <div class="gr-label">2022 (старт)</div>
+        <div class="gr-value">~0,5 млрд</div>
+        <div class="gr-note">Первые размещения, рынок формируется</div>
+      </div>
+      <div>
+        <div class="gr-label">2023</div>
+        <div class="gr-value">44 млрд</div>
+        <div class="gr-note">Первые крупные корпоративные эмитенты</div>
+      </div>
+      <div>
+        <div class="gr-label">2024</div>
+        <div class="gr-value">604 млрд</div>
+        <div class="gr-note">×14 за год. Банки входят как инвесторы</div>
+      </div>
+      <div>
+        <div class="gr-label">2025</div>
+        <div class="gr-value">1,65 трлн</div>
+        <div class="gr-note">×2,8 за год. Рынок пробивает 1 трлн</div>
+      </div>
+    </div>
+
+    <p>При этом важно разделить два показателя. Объём <em>размещений</em> — это суммарный поток новых выпусков за год, который включает короткие ЦФА, погашаемые за несколько недель. Объём ЦФА <em>в обращении</em> на конец 2025 года составил 172 млрд рублей (+11,5% г/г по данным Cbonds), а число активных выпусков — 997. Разница объясняется тем, что 60% всех ЦФА — краткосрочные инструменты со сроком до одного месяца, которые быстро погашаются и выпускаются заново.</p>
+
+    <hr class="divider" />
+
+    <h2>Что такое ЦФА: инструмент для тех, кто понимает</h2>
+
+    <p>Цифровой финансовый актив — это токенизированное финансовое право, выпущенное в информационной системе на основе распределённого реестра (блокчейна). Ключевое отличие от традиционных ценных бумаг: не нужна государственная регистрация выпуска, что радикально сокращает скорость и стоимость привлечения капитала. Эмитент размещает ЦФА за один-два дня против нескольких недель для облигаций.</p>
+
+    <p>ЦФА не являются криптовалютой — они обращаются в частных блокчейн-системах операторов информационных систем (ОИС), регулируются Банком России и обеспечены реальными правами инвестора. Принципиальное отличие и от RWA-токенов криптомира: ЦФА существуют строго в российской регуляторной экосистеме.</p>
+
+    <div class="asset-grid">
+      <div class="asset-card">
+        <span class="asset-icon">📄</span>
+        <div class="asset-type">Доминирующий тип</div>
+        <div class="asset-name">Долговые ЦФА</div>
+        <div class="asset-share">96–98%</div>
+        <div class="asset-desc">Цифровой аналог облигаций и займов. Фиксированный купон, срок, погашение. Доходность при размещении на 0,4–1,1 п.п. выше, чем у сопоставимых корпоративных облигаций — за счёт премии за новизну инструмента.</div>
+      </div>
+      <div class="asset-card">
+        <span class="asset-icon">🔁</span>
+        <div class="asset-type">Растущий сегмент</div>
+        <div class="asset-name">Гибридные цифровые права</div>
+        <div class="asset-share">~3–4%</div>
+        <div class="asset-desc">Инвестор может выбрать: получить деньги или реальный актив — золото, вино, металл. «Токеон» выпускал токены на вино, парфюм, недвижимость. «Атомайз» — арт-токены и ЦФА на алюминий, редкие металлы. Сбер — на нефть, какао, пшеницу.</div>
+      </div>
+      <div class="asset-card">
+        <span class="asset-icon">📊</span>
+        <div class="asset-type">Новый класс</div>
+        <div class="asset-name">Долевые и квазиакционерные ЦФА</div>
+        <div class="asset-share">Появился в 2025</div>
+        <div class="asset-desc">Закон позволяет выпускать акции в виде ЦФА, опционы на ценные бумаги и квазидепозитарные расписки. Пока единичные выпуски, но открывает путь к токенизации equity для непубличных компаний.</div>
+      </div>
+      <div class="asset-card">
+        <span class="asset-icon">🏅</span>
+        <div class="asset-type">Коммодити</div>
+        <div class="asset-name">Сырьевые ЦФА</div>
+        <div class="asset-share">Расширение 2025</div>
+        <div class="asset-desc">Золото, серебро, платина, палладий, родий, рутений, иридий, алюминий, бриллианты. В 2025-м Сбер добавил нефть (Brent), битум, какао, пшеницу. Покупка металла без хранения физического актива.</div>
+      </div>
+    </div>
+
+    <hr class="divider" />
+
+    <h2>Операторы: кто управляет рынком</h2>
+
+    <p>К концу 2025 года в реестр ЦБ вошли 17 операторов информационных систем (ОИС). Но рынок высококонцентрирован: на трёх крупнейших платформ — «А-Токен», «Токеон» и «НРД» — приходится 72% всего объёма размещений.</p>
+
+    <table class="platform-table">
+      <thead>
+        <tr>
+          <th>Платформа (ОИС)</th>
+          <th>Собственник</th>
+          <th>Объём 2025</th>
+          <th>Выпуски</th>
+          <th>Фокус</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>А-Токен</td>
+          <td>Альфа-банк</td>
+          <td>313,3 млрд ₽</td>
+          <td>717</td>
+          <td>Голубые фишки, собственные выпуски</td>
+        </tr>
+        <tr>
+          <td>Сбер (А-Токен / СберЦФА)</td>
+          <td>Сбербанк</td>
+          <td>~300+ млрд ₽</td>
+          <td>908+ выпусков</td>
+          <td>Сырьевые ЦФА, корпоративный долг</td>
+        </tr>
+        <tr>
+          <td>Мосбиржа (ЦФА-платформа)</td>
+          <td>Группа Мосбиржи</td>
+          <td>158,4 млрд ₽</td>
+          <td>Растёт</td>
+          <td>Биржевая инфраструктура</td>
+        </tr>
+        <tr>
+          <td>Токеон</td>
+          <td>Независимый</td>
+          <td>Значительный</td>
+          <td>Диверс.</td>
+          <td>Нетрадиционные активы, гибриды</td>
+        </tr>
+        <tr>
+          <td>Атомайз</td>
+          <td>«Интеррос»</td>
+          <td>Умеренный</td>
+          <td>Уник.</td>
+          <td>Драгметаллы, арт-токены, смарт-активы</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>В 2024–2025 годах в реестр ОИС вошли ВТБ Капитал Трейдинг, БКС и ряд других игроков. Ozon в январе 2026 года объявил о создании собственного оператора — «Озон Капитал». Присутствие крупнейших банков и биржи как эмитентов и операторов одновременно — специфика российского рынка ЦФА. Примерно 60% всего объёма разместили три банка-владельца ОИС.</p>
+
+    <hr class="divider" />
+
+    <h2>Кто и зачем выпускает ЦФА</h2>
+
+    <p>В 2025 году число эмитентов, размещавших только ЦФА и не выходивших на облигационный рынок, выросло с 62 до <span class="highlight">161 компании</span>. Это принципиальный показатель: ЦФА стали инструментом привлечения капитала для бизнеса, который раньше не имел доступа к публичному рынку долга.</p>
+
+    <div class="data-card">
+      <h4>Отраслевая структура эмитентов ЦФА 2025 (активные сектора)</h4>
+      <div class="data-rows">
+        <div class="data-row">
+          <span class="data-row-label">Ритейл и потреб. сектор</span>
+          <div class="data-row-bar-wrap"><div class="data-row-bar blue" style="width:88%"></div></div>
+          <span class="data-row-val">Лидер</span>
+        </div>
+        <div class="data-row">
+          <span class="data-row-label">Телекоммуникации</span>
+          <div class="data-row-bar-wrap"><div class="data-row-bar gold" style="width:72%"></div></div>
+          <span class="data-row-val">Активен</span>
+        </div>
+        <div class="data-row">
+          <span class="data-row-label">Промышленность</span>
+          <div class="data-row-bar-wrap"><div class="data-row-bar blue" style="width:68%"></div></div>
+          <span class="data-row-val">Активен</span>
+        </div>
+        <div class="data-row">
+          <span class="data-row-label">Недвижимость и девелопмент</span>
+          <div class="data-row-bar-wrap"><div class="data-row-bar gold" style="width:58%"></div></div>
+          <span class="data-row-val">Растёт</span>
+        </div>
+        <div class="data-row">
+          <span class="data-row-label">IT-компании</span>
+          <div class="data-row-bar-wrap"><div class="data-row-bar green" style="width:52%"></div></div>
+          <span class="data-row-val">Растёт</span>
+        </div>
+        <div class="data-row">
+          <span class="data-row-label">Пищевая промышленность</span>
+          <div class="data-row-bar-wrap"><div class="data-row-bar muted" style="width:40%"></div></div>
+          <span class="data-row-val">МСБ-сегмент</span>
+        </div>
+      </div>
+    </div>
+
+    <p>215 эмитентов с рейтингом B и ниже разместили ЦФА на суммарную сумму 128 млрд рублей — это компании МСБ, которые прежде не имели доступа к облигационному рынку. Ключевое преимущество для них: скорость выпуска (один-два дня против нескольких недель), меньшие расходы на подготовку документации и возможность привлечь небольшие суммы — от нескольких десятков до сотен миллионов рублей.</p>
+
+    <blockquote>
+      <p>«ЦФА за счёт низкой стоимости и высокой скорости выпуска откроет МСП доступ на рынок фондирования, который ранее для них был недоступен через традиционные инструменты.»</p>
+      <cite>— «Яков и Партнёры» / Центральный университет, исследование о ЦФА в БРИКС</cite>
+    </blockquote>
+
+    <hr class="divider" />
+
+    <h2>Инвесторы: физлица открывают новый рынок</h2>
+
+    <p>К началу 2026 года число зарегистрированных пользователей ОИС достигло <span class="highlight">560,9 тыс. человек</span> (+68% к предыдущему кварталу). Число активных инвесторов — 97,1 тыс., из которых 99,8% — физические лица. В 2024 году вложения физлиц достигли 159 млрд рублей при 215 тыс. сделок. В 2025-м наблюдался экспоненциальный рост.</p>
+
+    <div class="metrics-grid">
+      <div class="metric-cell">
+        <div class="metric-label">Осведомлённость о ЦФА</div>
+        <div class="metric-value blue">93%</div>
+        <div class="metric-note">Среди интересующихся инвестициями россиян. В 2023-м было 74%.</div>
+      </div>
+      <div class="metric-cell">
+        <div class="metric-label">Доля банков в объёме сделок</div>
+        <div class="metric-value gold">~80%</div>
+        <div class="metric-note">По объёму сделок. По числу инвесторов — 99,8% физлица.</div>
+      </div>
+      <div class="metric-cell">
+        <div class="metric-label">Активных инвесторов</div>
+        <div class="metric-value blue">97,1 тыс.</div>
+        <div class="metric-note">На конец 2025 года. Рост в несколько раз за год.</div>
+      </div>
+      <div class="metric-cell">
+        <div class="metric-label">Доля ЦФА в мировом рынке</div>
+        <div class="metric-value green">~20%</div>
+        <div class="metric-note">Доля России в мировом объёме рынка ЦФА по данным 2025 года.</div>
+      </div>
+    </div>
+
+    <hr class="divider" />
+
+    <h2>Дефолты: первое испытание зрелостью</h2>
+
+    <p>2025 год принёс рынку ЦФА испытание, которого он ещё не знал: первые дефолты. По данным ЦБ, 11 эмитентов не смогли своевременно погасить 12 выпусков ЦФА. В дополнение к этому зафиксировано более 10 дефолтов по ЦФА с начала 2026 года. Наиболее резонансный случай — «Автосити»: крупная сеть автосалонов не смогла исполнить обязательства по ЦФА.</p>
+
+    <p>По данным Cbonds, суммарно в 2025 году зафиксировано 48 случаев неисполнения обязательств, часть из которых — по ЦФА, а не по классическим облигациям. Характерная черта дефолтных эмитентов: они преимущественно из категорий без кредитного рейтинга, не выходившие ранее на публичный рынок долга. Именно открытость рынка ЦФА для таких игроков — главное конкурентное преимущество инструмента — одновременно является главным источником кредитного риска для инвесторов.</p>
+
+    <hr class="divider" />
+
+    <h2>Ключевые тренды и барьеры роста</h2>
+
+    <div class="trend-list">
+      <div class="trend-item">
+        <div class="trend-num">1</div>
+        <div class="trend-body">
+          <div class="trend-title">Инструмент для МСБ: доступ туда, куда облигации не идут</div>
+          <div class="trend-desc">161 компания в 2025 году использовала ЦФА как единственный инструмент публичного привлечения. Для МСБ — это революционный доступ: размещение за 1–2 дня, минимальный порог от 10–50 млн рублей, нет требований к истории публичных заимствований. В сравнении с банковским кредитом под 25%+ ставка по ЦФА может быть на 3–5 п.п. ниже при хорошем кредитном качестве.</div>
+        </div>
+      </div>
+      <div class="trend-item">
+        <div class="trend-num">2</div>
+        <div class="trend-body">
+          <div class="trend-title">Сырьевые и гибридные ЦФА: за пределами финансовых инструментов</div>
+          <div class="trend-desc">Россия стала мировым лидером в сегменте токенизации нетрадиционных активов. Золото, серебро, нефть, какао, бриллианты, палладий — всё это доступно через ЦФА-платформы. Гибридные инструменты позволяют инвестору выбрать: деньги или физический актив. Это открывает рынок для новых категорий инвесторов, ориентированных на реальные активы.</div>
+        </div>
+      </div>
+      <div class="trend-item">
+        <div class="trend-num">3</div>
+        <div class="trend-body">
+          <div class="trend-title">ЦФА в международных расчётах: стратегический вектор</div>
+          <div class="trend-desc">Важнейшее направление, которое Банк России называет приоритетным: использование ЦФА в расчётах со странами БРИКС и дружественными государствами в обход санкционной инфраструктуры SWIFT. По оценке «Яков и Партнёры», экономический эффект от внедрения ЦФА в международные расчёты БРИКС может достичь 50 млрд долларов. Россия — один из немногих рынков с готовой регуляторной и технологической базой.</div>
+        </div>
+      </div>
+      <div class="trend-item">
+        <div class="trend-num">4</div>
+        <div class="trend-body">
+          <div class="trend-title">Банки vs финтех: структурный конфликт рынка</div>
+          <div class="trend-desc">80% объёма сделок на рынке ЦФА приходится на банки — и как эмитентов, и как инвесторов. Это порождает специфику: банки, владея ОИС, выпускают ЦФА для связанных структур и сами их покупают. Реального перераспределения капитала через независимый рынок пока недостаточно. Развитие розничного и корпоративного сегментов вне банковских экосистем — ключевое направление для масштабирования.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="barrier-box">
+      <strong>Системные барьеры роста:</strong> отсутствие полноценного вторичного рынка (инвестор не может легко перепродать ЦФА); налоговые ограничения (выравнивание с рынком ценных бумаг всё ещё не завершено); недопуск институциональных инвесторов — НПФ и страховых компаний; фрагментация: платформы не совместимы между собой, активы с одной платформы нельзя перевести на другую. Банк России обозначил все четыре как приоритетные задачи 2025–2026 годов.
+    </div>
+
+    <hr class="divider" />
+
+    <h2>Прогноз: от 280 млрд до 10 трлн — диапазон возможного</h2>
+
+    <p>Прогнозы по рынку ЦФА расходятся в разы в зависимости от предположений о регуляторной либерализации. Консервативный сценарий Пересичана (Cbonds) — объём в обращении к концу 2026 года вырастет до 250 млрд рублей (+45%), кумулятивный объём превысит 2 трлн. Аналитики SberCIB ожидают в среднесрочной перспективе (5–7 лет) объём в обращении 1,5–3,9 трлн рублей. Оптимистичный прогноз Альфа-банка — к 2028–2030 году рынок может достичь 10 трлн рублей при снятии ключевых регуляторных барьеров.</p>
+
+    <div class="conclusion">
+      <h3>ЦФА — рынок состоялся, масштабирование впереди</h3>
+      <p>За три года с момента запуска российский рынок ЦФА прошёл путь от регуляторного эксперимента до сложившегося класса активов. 1,65 трлн рублей размещений в 2025-м, 560 тыс. зарегистрированных пользователей, 17 операторов, международное признание — Россия входит в число мировых лидеров по объёму рынка ЦФА.</p>
+      <p>Дефолты 2025 года — болезненное, но закономерное взросление. Рынок, открытый для МСБ без требований к рейтингу, неизбежно сталкивается с дефолтными эмитентами. Для устойчивого развития необходимы те самые элементы, которых ещё не хватает: вторичный рынок, независимая рейтинговая оценка, допуск НПФ и страховщиков, межплатформенная совместимость.</p>
+      <p>Если эти барьеры будут сняты — а ЦБ и Минфин уже движутся в этом направлении — рынок ЦФА способен в течение 5–7 лет трансформировать российский финансовый рынок: создать новый класс ликвидных инструментов, открыть МСБ доступ к капиталу и стать инфраструктурой для международных расчётов в рублях и другим валютах без зависимости от западной инфраструктуры.</p>
+    </div>
+
+  </article>
+</main>
+
+<footer>
+  <strong>kotana.com.ru</strong> &nbsp;·&nbsp; Рынок ЦФА в России &nbsp;·&nbsp; Источники: Cbonds, SberCIB, TAdviser, Interfax, Ведомости, Коммерсантъ, Эксперт РА, ЦБ РФ, ComNews
+</footer>
+
+</body>
+</html>

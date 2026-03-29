@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Прогноз рынка акций на 2026 год | kotana.com.ru</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --ink:          #0f1117;
+      --paper:        #f7f4ef;
+      --cream:        #ede9e0;
+      --accent:       #8b1a1a;
+      --accent-light: #f5d5d5;
+      --gold:         #b8922a;
+      --green:        #1a7a3c;
+      --red:          #c0392b;
+      --muted:        #7a7060;
+      --rule:         #d4cfc5;
+      --col:          clamp(320px, 66ch, 720px);
+    }
+    html { font-size: 17px; scroll-behavior: smooth; }
+    body {
+      background: var(--paper); color: var(--ink);
+      font-family: 'IBM Plex Sans', sans-serif;
+      line-height: 1.75; -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── MASTHEAD ─────────────────────────── */
+    .masthead {
+      background: var(--ink); padding: 14px 40px;
+      display: flex; align-items: center; justify-content: space-between;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: .75rem; letter-spacing: .12em; text-transform: uppercase;
+    }
+    .masthead-logo { font-size: 1rem; font-weight: 500; color: #fff; }
+    .masthead-meta { color: #666; }
+
+    /* ── HERO ─────────────────────────────── */
+    .hero {
+      background: var(--accent); color: var(--paper);
+      padding: 80px 40px 72px; position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: '2026';
+      position: absolute; right: -10px; top: 50%; transform: translateY(-50%);
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(110px, 17vw, 240px); font-weight: 900;
+      color: rgba(255,255,255,.06); letter-spacing: -.04em; line-height: 1; pointer-events: none;
+    }
+    .hero-inner { max-width: var(--col); margin: 0 auto; position: relative; }
+    .hero-tag {
+      display: inline-block;
+      border: 1px solid rgba(255,255,255,.3); color: rgba(255,255,255,.75);
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: .72rem; letter-spacing: .15em; text-transform: uppercase;
+      padding: 4px 12px; margin-bottom: 28px;
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.2rem, 5vw, 3.4rem); font-weight: 700;
+      line-height: 1.18; letter-spacing: -.02em; margin-bottom: 24px; max-width: 22ch;
+    }
+    .hero h1 em { font-style: italic; color: #f5a0a0; }
+    .hero-lead {
+      font-size: 1.08rem; color: rgba(255,255,255,.72);
+      max-width: 54ch; line-height: 1.65; margin-bottom: 40px;
+    }
+    .hero-byline {
+      display: flex; align-items: center; gap: 16px;
+      font-size: .8rem; color: rgba(255,255,255,.4);
+      font-family: 'IBM Plex Mono', monospace;
+    }
+    .hero-byline span { color: rgba(255,255,255,.25); }
+    .hero-byline strong { color: rgba(255,255,255,.65); font-weight: 500; }
+
+    /* ── STATS BAR ────────────────────────── */
+    .stats-bar { background: var(--ink); padding: 0 40px; }
+    .stats-inner {
+      max-width: calc(var(--col) + 200px); margin: 0 auto;
+      display: grid; grid-template-columns: repeat(3,1fr);
+    }
+    .stat-item {
+      padding: 24px 32px; border-right: 1px solid rgba(255,255,255,.07); color: #fff;
+    }
+    .stat-item:first-child { padding-left: 0; }
+    .stat-item:last-child  { border-right: none; }
+    .stat-number {
+      font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 700;
+      display: block; line-height: 1; color: #f5a0a0;
+    }
+    .stat-label {
+      font-size: .75rem; text-transform: uppercase;
+      letter-spacing: .1em; opacity: .45; margin-top: 4px;
+      font-family: 'IBM Plex Mono', monospace;
+    }
+
+    /* ── ARTICLE ──────────────────────────── */
+    .article-wrap { padding: 72px 40px; }
+    .article-inner { max-width: var(--col); margin: 0 auto; }
+
+    .article-inner > p:first-of-type::first-letter {
+      font-family: 'Playfair Display', serif; font-size: 4.5em; font-weight: 900;
+      float: left; line-height: .78; margin-right: 8px; margin-top: 6px; color: var(--accent);
+    }
+    p { margin-bottom: 1.5rem; }
+
+    h2 {
+      font-family: 'Playfair Display', serif; font-size: 1.7rem; font-weight: 700;
+      letter-spacing: -.02em; line-height: 1.25; margin: 3rem 0 1.1rem;
+    }
+    h2::before { content: ''; display: block; width: 32px; height: 3px; background: var(--accent); margin-bottom: 16px; }
+
+    h3 {
+      font-family: 'IBM Plex Sans', sans-serif; font-size: 1.05rem; font-weight: 600;
+      margin: 2rem 0 .7rem; text-transform: uppercase; letter-spacing: .06em; color: var(--gold);
+    }
+
+    blockquote {
+      border-left: 3px solid var(--accent); margin: 2.5rem 0; padding: 20px 0 20px 32px;
+    }
+    blockquote p {
+      font-family: 'Playfair Display', serif; font-size: 1.35rem; font-style: italic;
+      line-height: 1.5; color: var(--ink); margin: 0 0 8px;
+    }
+    blockquote cite {
+      font-family: 'IBM Plex Mono', monospace; font-size: .72rem;
+      text-transform: uppercase; letter-spacing: .12em; color: var(--muted); font-style: normal;
+    }
+
+    .highlight { background: var(--accent-light); padding: 0 4px; font-weight: 500; }
+
+    /* ── SCENARIO GRID ────────────────────── */
+    .scenario-grid {
+      display: grid; grid-template-columns: repeat(3,1fr);
+      gap: 1px; background: var(--rule); border: 1px solid var(--rule); margin: 2.5rem 0;
+    }
+    .sc-card { background: var(--paper); padding: 24px 20px; }
+    .sc-label {
+      font-family: 'IBM Plex Mono', monospace; font-size: .65rem;
+      text-transform: uppercase; letter-spacing: .15em; color: var(--muted); margin-bottom: 10px;
+    }
+    .sc-value { font-family: 'Playfair Display', serif; font-size: 1.7rem; font-weight: 700; line-height: 1; margin-bottom: 6px; }
+    .sc-value.base { color: var(--gold); }
+    .sc-value.bull { color: var(--green); }
+    .sc-value.bear { color: var(--red); }
+    .sc-title { font-size: .88rem; font-weight: 600; margin-bottom: 4px; }
+    .sc-source { font-family: 'IBM Plex Mono', monospace; font-size: .63rem; color: var(--muted); margin-bottom: 4px; }
+    .sc-desc { font-size: .8rem; color: var(--muted); line-height: 1.5; margin-top: 8px; }
+
+    /* ── DATA CARD (bar chart) ────────────── */
+    .data-card {
+      background: var(--cream); border: 1px solid var(--rule); padding: 28px 32px; margin: 2.5rem 0;
+    }
+    .data-card h4 {
+      font-family: 'IBM Plex Mono', monospace; font-size: .7rem;
+      text-transform: uppercase; letter-spacing: .15em; color: var(--muted); margin-bottom: 20px;
+    }
+    .data-rows { display: flex; flex-direction: column; gap: 12px; }
+    .data-row { display: flex; align-items: center; gap: 16px; }
+    .data-row-label { font-size: .85rem; color: var(--muted); width: 220px; flex-shrink: 0; }
+    .data-row-bar-wrap { flex: 1; height: 6px; background: var(--rule); position: relative; }
+    .data-row-bar { position: absolute; top: 0; left: 0; height: 100%; }
+    .data-row-bar.crimson { background: var(--accent); }
+    .data-row-bar.gold    { background: var(--gold); }
+    .data-row-bar.green   { background: var(--green); }
+    .data-row-bar.red     { background: var(--red); opacity: .7; }
+    .data-row-bar.muted   { background: var(--muted); opacity: .35; }
+    .data-row-val {
+      font-family: 'IBM Plex Mono', monospace; font-size: .8rem;
+      font-weight: 500; width: 100px; text-align: right;
+    }
+
+    /* ── SECTOR CARDS (2-col) ─────────────── */
+    .sector-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 1px; background: var(--rule); border: 1px solid var(--rule); margin: 2.5rem 0;
+    }
+    .sector-card { background: var(--paper); padding: 24px; }
+    .sector-icon { font-size: 1.3rem; margin-bottom: 8px; display: block; }
+    .sector-type {
+      font-family: 'IBM Plex Mono', monospace; font-size: .65rem;
+      text-transform: uppercase; letter-spacing: .12em; color: var(--muted); margin-bottom: 6px;
+    }
+    .sector-name { font-weight: 600; font-size: .97rem; margin-bottom: 4px; }
+    .sector-upside {
+      font-family: 'Playfair Display', serif; font-weight: 700;
+      color: var(--accent); font-size: 1.15rem; margin-bottom: 4px;
+    }
+    .sector-label {
+      display: inline-block; font-family: 'IBM Plex Mono', monospace;
+      font-size: .6rem; text-transform: uppercase; letter-spacing: .1em;
+      padding: 3px 8px; border-radius: 2px; margin-bottom: 8px;
+    }
+    .sector-label.hot  { background: var(--accent-light); color: var(--accent); }
+    .sector-label.warm { background: #f5ecd4; color: var(--gold); }
+    .sector-label.risk { background: #fde8e0; color: var(--red); }
+    .sector-label.ok   { background: #d0ead8; color: var(--green); }
+    .sector-desc { font-size: .8rem; color: var(--muted); line-height: 1.55; }
+
+    /* ── METRICS 2×2 ─────────────────────── */
+    .metrics-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 1px; background: var(--rule); border: 1px solid var(--rule); margin: 2.5rem 0;
+    }
+    .metric-cell { background: var(--paper); padding: 24px; }
+    .metric-label {
+      font-family: 'IBM Plex Mono', monospace; font-size: .68rem;
+      text-transform: uppercase; letter-spacing: .14em; color: var(--muted); margin-bottom: 8px;
+    }
+    .metric-value { font-family: 'Playfair Display', serif; font-size: 1.65rem; font-weight: 700; line-height: 1.1; }
+    .metric-value.crimson { color: var(--accent); }
+    .metric-value.gold    { color: var(--gold); }
+    .metric-value.green   { color: var(--green); }
+    .metric-value.red     { color: var(--red); }
+    .metric-note { font-size: .78rem; color: var(--muted); margin-top: 6px; }
+
+    /* ── RISK LIST ────────────────────────── */
+    .risk-list { margin: 2rem 0; }
+    .risk-item {
+      display: flex; gap: 16px; padding: 16px 0;
+      border-bottom: 1px solid var(--rule); align-items: flex-start;
+    }
+    .risk-item:first-child { border-top: 1px solid var(--rule); }
+    .risk-badge {
+      font-family: 'IBM Plex Mono', monospace; font-size: .62rem;
+      text-transform: uppercase; letter-spacing: .1em;
+      padding: 4px 10px; border-radius: 2px; flex-shrink: 0; margin-top: 2px;
+    }
+    .risk-badge.high { background: #fde8e0; color: var(--red); }
+    .risk-badge.mid  { background: #f5ecd4; color: var(--gold); }
+    .risk-badge.low  { background: #d0ead8; color: var(--green); }
+    .risk-title { font-weight: 600; font-size: .9rem; margin-bottom: 3px; }
+    .risk-desc  { font-size: .82rem; color: var(--muted); line-height: 1.55; }
+
+    .divider { border: none; border-top: 1px solid var(--rule); margin: 3rem 0; }
+
+    /* ── CONCLUSION ───────────────────────── */
+    .conclusion {
+      background: var(--ink); color: var(--paper); padding: 36px 40px; margin: 3rem 0 0;
+    }
+    .conclusion h3 { color: #f5a0a0; margin-top: 0; letter-spacing: .06em; font-size: 1rem; text-transform: uppercase; }
+    .conclusion p { color: #ccc; margin-bottom: 1rem; }
+    .conclusion p:last-child { margin-bottom: 0; }
+
+    /* ── FOOTER ───────────────────────────── */
+    footer {
+      background: var(--cream); border-top: 1px solid var(--rule);
+      padding: 28px 40px; font-family: 'IBM Plex Mono', monospace;
+      font-size: .72rem; color: var(--muted); text-align: center; letter-spacing: .06em;
+    }
+    footer strong { color: var(--ink); }
+
+    /* ── RESPONSIVE ───────────────────────── */
+    @media (max-width: 640px) {
+      .masthead { padding: 12px 20px; }
+      .hero { padding: 56px 20px 52px; }
+      .stats-bar { padding: 0 20px; }
+      .stats-inner, .scenario-grid { grid-template-columns: 1fr; }
+      .stat-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,.07); padding: 16px 0; }
+      .article-wrap { padding: 48px 20px; }
+      .sector-grid, .metrics-grid { grid-template-columns: 1fr; }
+      .data-row-label { width: 130px; font-size: .78rem; }
+    }
+  </style>
+</head>
+<body>
+
+<header class="masthead">
+  <span class="masthead-logo">kotana.com.ru</span>
+  <span class="masthead-meta">Прогноз · Рынок акций · 2026</span>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-tag">Прогноз · Рынок акций · 2026</div>
+    <h1>Рынок акций — 2026: год <em>переоценки, ставки и большого выбора</em></h1>
+    <p class="hero-lead">Мосбиржа дёшева, ставка снижается, геополитика даёт шанс. На Западе — четвёртый год роста S&P 500 подряд при P/E выше 30. Две противоположные истории, один ключевой вопрос: оправдают ли прибыли ожидания?</p>
+    <div class="hero-byline">
+      <strong>Редакция kotana.com.ru</strong>
+      <span>·</span>
+      <span>Март 2026</span>
+      <span>·</span>
+      <span>13 мин чтения</span>
+    </div>
+  </div>
+</section>
+
+<div class="stats-bar">
+  <div class="stats-inner">
+    <div class="stat-item">
+      <span class="stat-number">3 150–3 600</span>
+      <span class="stat-label">Консенсус по индексу Мосбиржи на конец 2026 г.</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number">23–29%</span>
+      <span class="stat-label">Полная доходность Мосбиржи с дивидендами — базовый прогноз</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number">7 100–8 000</span>
+      <span class="stat-label">Диапазон целей Wall Street по S&P 500 на 2026 г.</span>
+    </div>
+  </div>
+</div>
+
+<main class="article-wrap">
+  <article class="article-inner">
+
+    <p>Рынок акций входит в 2026 год с двойственным настроем. На западных площадках инвесторы ставят на четвёртый год роста подряд: ни один из 21 опрошенного Bloomberg стратега не прогнозирует снижения S&P 500. В России картина иная — рынок дважды закрылся в минусе, но именно это делает его привлекательным: Мосбиржа торгуется с дисконтом около 30% к историческим средним оценкам. Снижение ключевой ставки, дивиденды в 7–8% и потенциальное геополитическое урегулирование создают редкое стечение попутных ветров. Вопрос лишь в том, задуют ли они все одновременно.</p>
+
+    <h2>Россия: главный фактор — ключевая ставка</h2>
+
+    <p>Траектория ставки ЦБ — безоговорочный первый фактор для российского рынка акций в 2026 году. По прогнозу большинства аналитиков, Банк России продолжит цикл смягчения, опустив ставку до <span class="highlight">12–13% к концу года</span> с нынешних 16%. ВТБ Мои Инвестиции ожидают продолжения цикла минимум три года — до 9% в 2027-м. БКС подсчитали: рост рынка акций в 2026 году на 80–90% будет обеспечен именно снижением ставки, а не улучшением корпоративных прибылей.</p>
+
+    <p>Механизм прямой. При снижении безрисковой доходности справедливая оценка акций по модели DCF растёт автоматически — даже без роста прибылей. Дополнительный импульс: переток капитала из депозитов и облигаций в акции. За 11 месяцев 2025 года россияне вложили в облигации 1,85 трлн рублей — вдвое больше, чем за весь 2024-й. По мере снижения ставки часть этого потока развернётся в сторону акций.</p>
+
+    <div class="scenario-grid">
+      <div class="sc-card">
+        <div class="sc-label">Базовый сценарий</div>
+        <div class="sc-title">Ставка снижается до 12–13%</div>
+        <div class="sc-value base">3 150–3 500</div>
+        <div class="sc-source">Консенсус: Альфа, БКС, Финам, Атон</div>
+        <div class="sc-desc">Индекс Мосбиржи +16–27% от уровня 2766 п. Полная доходность с дивидендами 23–29%. Геополитика не ухудшается, рубль умеренно слабеет к 92–94 руб./$ к концу года.</div>
+      </div>
+      <div class="sc-card">
+        <div class="sc-label">Оптимистичный</div>
+        <div class="sc-title">Урегулирование + ставка 10–11%</div>
+        <div class="sc-value bull">3 600–4 000</div>
+        <div class="sc-source">ВТБ Мои Инвестиции, Рамблер-финансы</div>
+        <div class="sc-desc">При достижении мирного соглашения рынок получает фундаментальный переоценочный импульс. Акции «санкционных аутсайдеров» — Аэрофлот, НОВАТЭК, Совкомфлот — могут вырасти в разы.</div>
+      </div>
+      <div class="sc-card">
+        <div class="sc-label">Осторожный</div>
+        <div class="sc-title">Ставка 15–16%, боковик</div>
+        <div class="sc-value bear">2 350–2 750</div>
+        <div class="sc-source">«Цифра брокер», Коммерсантъ</div>
+        <div class="sc-desc">ЦБ замедляет смягчение из-за НДС и тарифного инфляционного импульса. Геополитика ухудшается. Индекс проводит большую часть года в боковом тренде с высокой волатильностью.</div>
+      </div>
+    </div>
+
+    <hr class="divider" />
+
+    <h2>Переоценка: откуда возьмётся рост</h2>
+
+    <p>Российский рынок сегодня торгуется на исторически низких оценках. Это — и главный аргумент в пользу роста, и главное объяснение того, почему он дешёв. Мосбиржа по мультипликатору P/E оценена примерно на <span class="highlight">30% ниже исторических средних</span>. Отдельные бумаги дают ещё больший дисконт: P/E Мосбиржи (акции биржи) — 6,2х при среднем историческом значении 10–11х.</p>
+
+    <div class="data-card">
+      <h4>Целевые уровни индекса Мосбиржи на конец 2026 г. — консенсус аналитиков</h4>
+      <div class="data-rows">
+        <div class="data-row">
+          <span class="data-row-label">ВТБ Мои Инвестиции</span>
+          <div class="data-row-bar-wrap"><div class="data-row-bar green" style="width:100%"></div></div>
+          <span class="data-row-val">3 610 п. (+31%)</span>
+        </div>
+        <div class="data-row">
+          <span class="data-row-label">Финам / Атон</span>
+          <div class="data-row-bar-wrap"><div class="data-row-bar green" style="width:88%"></div></div>
+          <span class="data-row-val">3 450–3 500 п.</span>
+        </div>
+        <div class="data-row">
+          <span class="data-row-label">SberCIB</span>
+          <div class="data-row-bar-wrap"><div class="data-row-bar gold" style="width:83%"></div></div>
+          <span class="data-row-val">3 400 п. (+23%)</span>
+        </div>
+        <div class="data-row">
+          <span class="data-row-label">БКС Мир Инвестиций</span>
+          <div class="data-row-bar-wrap"><div class="data-row-bar gold" style="width:78%"></div></div>
+          <span class="data-row-val">3 300 п. (+21%)</span>
+        </div>
+        <div class="data-row">
+          <span class="data-row-label">Альфа-Инвестиции</span>
+          <div class="data-row-bar-wrap"><div class="data-row-bar crimson" style="width:70%"></div></div>
+          <span class="data-row-val">3 150–3 300 п.</span>
+        </div>
+        <div class="data-row">
+          <span class="data-row-label">«Цифра брокер» (осторожно)</span>
+          <div class="data-row-bar-wrap"><div class="data-row-bar muted" style="width:45%"></div></div>
+          <span class="data-row-val">Боковик H1 2026</span>
+        </div>
+      </div>
+    </div>
+
+    <p>Средняя дивидендная доходность рынка в 2026 году прогнозируется на уровне <span class="highlight">7–8%</span> — высокая, но заметно ниже пиковых депозитных ставок. По мере снижения ставок ЦБ этот спред начнёт работать в пользу акций. Сбербанк, «Транснефть» (преф.), финансовый сектор и экспортёры золота — лидеры по дивидендным ожиданиям.</p>
+
+    <blockquote>
+      <p>«В 2026 году мы ожидаем продолжение снижения ключевой ставки до 13%. Такое снижение способно заметно улучшить деловую активность, что должно позитивно отразиться на рынке акций.»</p>
+      <cite>— Алексей Корнилов, инвестиционный стратег ВТБ Мои Инвестиции</cite>
+    </blockquote>
+
+    <hr class="divider" />
+
+    <h2>Сектора: фавориты и аутсайдеры</h2>
+
+    <div class="sector-grid">
+      <div class="sector-card">
+        <span class="sector-icon">🏦</span>
+        <div class="sector-type">Финансы</div>
+        <div class="sector-name">Сбербанк, Т-Технологии, ВТБ</div>
+        <span class="sector-label hot">Фаворит года</span>
+        <div class="sector-upside">Консенсус: «покупать»</div>
+        <div class="sector-desc">Главные бенефициары снижения ставки. Чистая прибыль сектора — 3–3,5 трлн рублей в 2025-м, дивиденды Сбера около 12%. По мере охлаждения кредитного стресса снизится стоимость риска. Т-Технологии — история роста с ожидаемым выходом в топ-3 финтех в СНГ.</div>
+      </div>
+      <div class="sector-card">
+        <span class="sector-icon">🛒</span>
+        <div class="sector-type">Потребительский ретейл</div>
+        <div class="sector-name">Х5 Group, «Лента», Ozon</div>
+        <span class="sector-label hot">Иммунитет к санкциям</span>
+        <div class="sector-upside">+15–30% потенциал</div>
+        <div class="sector-desc">Внутренний рынок, минимальная зависимость от курса и нефти. Ozon впервые показал органическую прибыль во II квартале 2025-го — ожидается первый дивиденд. Х5 — устойчивая доля рынка, рост выручки двузначный. БКС ставит 43–58% потенциал роста по этим двум бумагам.</div>
+      </div>
+      <div class="sector-card">
+        <span class="sector-icon">💻</span>
+        <div class="sector-type">Технологии / IT</div>
+        <div class="sector-name">«Яндекс», «Хэдхантер», «Промомед»</div>
+        <span class="sector-label warm">Точечный выбор</span>
+        <div class="sector-upside">Рост выше рынка</div>
+        <div class="sector-desc">«Яндекс» — прогноз EBITDA +58% г/г в IV квартале 2025-го. «Хэдхантер» выиграет от оживления рынка труда по мере снижения ставки. «Промомед» и «Озон Фарм» — бенефициары импортозамещения в фарме, нечувствительны к геополитике.</div>
+      </div>
+      <div class="sector-card">
+        <span class="sector-icon">🥇</span>
+        <div class="sector-type">Металлы и добыча</div>
+        <div class="sector-name">«Полюс», «Норникель», сталелитейщики</div>
+        <span class="sector-label warm">Золото + девальвация</span>
+        <div class="sector-upside">Золото $4 200–4 500</div>
+        <div class="sector-desc">Альфа-Инвестиции ожидают среднюю цену золота $4 200–4 300 за унцию в 2026-м с возможным обновлением максимумов. «Полюс» — низкий долг, сильный денежный поток, выигрывает от девальвации рубля. Сталелитейщики восстановятся по мере оживления внутреннего спроса.</div>
+      </div>
+      <div class="sector-card">
+        <span class="sector-icon">🏗️</span>
+        <div class="sector-type">Девелоперы и строители</div>
+        <div class="sector-name">ГК «Самолёт», ГК «ЛСР»</div>
+        <span class="sector-label ok">Ставка-зависимые</span>
+        <div class="sector-upside">Долговая нагрузка ↓</div>
+        <div class="sector-desc">Компании с высокой долей плавающего долга получат прямой выигрыш от снижения ставки через улучшение финансового результата. «ЛСР» — единственная публичная девелоперская компания с дивидендной политикой, ожидается ~78 руб. на акцию весной 2026-го.</div>
+      </div>
+      <div class="sector-card">
+        <span class="sector-icon">🛢️</span>
+        <div class="sector-type">Нефтегаз</div>
+        <div class="sector-name">ЛУКОЙЛ, «Транснефть», НОВАТЭК</div>
+        <span class="sector-label risk">Под давлением цен</span>
+        <div class="sector-upside">Базовый прогноз Brent $56–59</div>
+        <div class="sector-desc">Альфа-Инвестиции прогнозируют среднюю цену Brent в 2026-м на уровне $56–59 — в связи с восстановлением добычи ОПЕК+ и профицитом. Крепкий рубль дополнительно давит на рублёвую выручку. Исключение — ЛУКОЙЛ и «Транснефть» (преф.) с сильным дивидендным профилем.</div>
+      </div>
+    </div>
+
+    <hr class="divider" />
+
+    <h2>Глобальный контекст: S&P 500 на четвёртый год подряд</h2>
+
+    <p>На западных рынках консенсус на редкость единодушен: ни один из 21 стратега, опрошенного Bloomberg, не предсказывает снижения S&P 500 в 2026 году. Средний прогноз подразумевает рост индекса примерно на <span class="highlight">9–10%</span> от уровня закрытия 2025 года — то есть диапазон 7 100–7 500 пунктов. Наиболее агрессивная цель — 8 000–8 100 (Deutsche Bank, Oppenheimer), консервативная — 7 100 (Bank of America).</p>
+
+    <div class="metrics-grid">
+      <div class="metric-cell">
+        <div class="metric-label">Прогноз прибыли S&P 500 — 2026</div>
+        <div class="metric-value gold">+12–15%</div>
+        <div class="metric-note">Консенсус EPS на 2026 г. — около $306–310. Основная нагрузка на крупнейшие ИИ-компании и финсектор.</div>
+      </div>
+      <div class="metric-cell">
+        <div class="metric-label">Целевой уровень S&P 500</div>
+        <div class="metric-value crimson">7 100–8 000</div>
+        <div class="metric-note">Диапазон 21 прогнозиста Bloomberg. Медиана — 7 500. JPMorgan: 7 500. Goldman Sachs: конструктивно, но более скромный рост, чем в 2025-м.</div>
+      </div>
+      <div class="metric-cell">
+        <div class="metric-label">P/E S&P 500 на начало 2026</div>
+        <div class="metric-value red">~31х</div>
+        <div class="metric-note">Максимум с 1999 года (без учёта кризисных лет). Оценки давят — рынок не терпит разочарований в прибылях.</div>
+      </div>
+      <div class="metric-cell">
+        <div class="metric-label">ИИ-капзатраты 2026</div>
+        <div class="metric-value green">$400+ млрд</div>
+        <div class="metric-note">Продолжение строительства дата-центров. Акцент смещается с инфраструктуры на «усыновителей ИИ» — следующие 500 компаний S&P 500.</div>
+      </div>
+    </div>
+
+    <p>J.P. Morgan формулирует прогноз через три силы: неравномерная монетарная политика, неостановимый ИИ-цикл и углубляющаяся поляризация рынков. При этом банк ожидает <span class="highlight">расширения ИИ-ралли</span> — от инфраструктурных бенефициаров к компаниям, реально внедряющим ИИ в операционную деятельность: банки, здравоохранение, логистика, энергетика. Это поддержит рост прибылей шире, чем в 2025-м.</p>
+
+    <blockquote>
+      <p>«ИИ-суперцикл обеспечивает рост прибылей выше тренда на 13–15% как минимум ещё два года. Ралли должно расшириться на усыновителей ИИ — следующие 500 компаний индекса.»</p>
+      <cite>— Мислав Матейка, стратег J.P. Morgan по глобальным и европейским акциям</cite>
+    </blockquote>
+
+    <hr class="divider" />
+
+    <h2>Ключевые риски 2026 года</h2>
+
+    <div class="risk-list">
+      <div class="risk-item">
+        <div class="risk-badge high">Высокий</div>
+        <div>
+          <div class="risk-title">Геополитика: главная бинарная развилка для России</div>
+          <div class="risk-desc">По мнению большинства аналитиков, именно геополитический фактор определит, в каком сценарии окажется рынок — оптимистичном или осторожном. Санкционное ужесточение или эскалация конфликта обрушат рынок к 2 350–2 500 пунктам. Урегулирование — переоценит его к 3 600–4 000. Промежуточный сценарий — боковик с высокой волатильностью.</div>
+        </div>
+      </div>
+      <div class="risk-item">
+        <div class="risk-badge high">Высокий</div>
+        <div>
+          <div class="risk-title">Инфляционный всплеск от НДС и тарифов в России</div>
+          <div class="risk-desc">Повышение НДС до 22% с 1 января 2026 года создаёт проинфляционный импульс. Если инфляция не укладывается в прогноз ЦБ, темп снижения ставки замедляется — и главный драйвер для рынка акций ослабевает. «Цифра брокер» называет именно это главным риском первого полугодия.</div>
+        </div>
+      </div>
+      <div class="risk-item">
+        <div class="risk-badge high">Высокий</div>
+        <div>
+          <div class="risk-title">ИИ-разочарование — глобальный риск</div>
+          <div class="risk-desc">Капзатраты техгигантов достигают 75% свободного денежного потока. Если отдача на инвестиции в ИИ окажется ниже ожиданий — или если конкуренция со стороны незападных моделей усилится — переоценка вниз затронет весь рынок. P/E выше 31 не терпит промахов по прибыли. Один разочаровывающий отчёт Nvidia способен уронить весь Nasdaq.</div>
+        </div>
+      </div>
+      <div class="risk-item">
+        <div class="risk-badge mid">Средний</div>
+        <div>
+          <div class="risk-title">Нефть ниже $60 — удар по российским экспортёрам</div>
+          <div class="risk-desc">Альфа-Инвестиции прогнозируют среднюю цену Brent $56–59 в 2026-м. При крепком рубле и санкционном дисконте Urals рублёвая выручка нефтяников оказывается под давлением. Учитывая вес нефтегаза в индексе, это ограничивает общий потенциал роста Мосбиржи даже при позитивных внутренних факторах.</div>
+        </div>
+      </div>
+      <div class="risk-item">
+        <div class="risk-badge mid">Средний</div>
+        <div>
+          <div class="risk-title">Тарифы и торговые войны — глобальный риск</div>
+          <div class="risk-desc">Соглашение США–Мексика–Канада истекает в 2026-м. Тарифное обострение способно повторить апрельский 2025 года сценарий — обвал и отскок. Единственное отличие: при P/E 31 рынок не имеет буфера, который был годом ранее. Волатильность будет высокой.</div>
+        </div>
+      </div>
+      <div class="risk-item">
+        <div class="risk-badge low">Управляемый</div>
+        <div>
+          <div class="risk-title">Переток из депозитов — медленнее ожиданий</div>
+          <div class="risk-desc">Даже при снижении ставки ЦБ до 13% депозиты остаются конкурентоспособными. Переток капитала из 1,85 трлн рублей, накопленных в облигациях за 2025 год, в акции будет постепенным. Рынок не получит «взрывного» спроса — скорее, плавный приток в течение года.</div>
+        </div>
+      </div>
+    </div>
+
+    <hr class="divider" />
+
+    <h2>Стратегии для разных типов инвесторов</h2>
+
+    <h3>Консервативный инвестор</h3>
+    <p>Акцент на дивидендных историях с низким долгом: Сбербанк, «Транснефть» (преф.), «Лукойл», «Полюс». Дивидендная доходность в диапазоне 10–15% при умеренном потенциале ценового роста. Доля акций — не более 40% портфеля, остальное — облигации с фиксированным купоном, выигрывающие от снижения ставки. Дюрация 3–5 лет.</p>
+
+    <h3>Умеренно агрессивный инвестор</h3>
+    <p>Ядро — финансовый сектор (Сбербанк, Т-Технологии) и внутренний ретейл (Х5, Ozon). Дополнение — «Яндекс» и «Хэдхантер» как ставка на восстановление деловой активности. Золото через акции «Полюса» — страховка от девальвации и геополитики. Нефтяные мейджоры — только «Лукойл» и «Транснефть» с дивидендным профилем.</p>
+
+    <h3>Что стоит избегать</h3>
+    <p>Высокодолговые компании с рефинансированием в 2026 году — «стена погашений» на долговом рынке создаёт угрозу для эмитентов без устойчивого денежного потока. Нефтяные экспортёры без дивидендов при прогнозе Brent ниже $60. Новые IPO без доказанной прибыли — 2025 год показал: большинство разочаровывают. Глобально: избегать чрезмерной концентрации в 5–7 ИИ-акциях без учёта остальной части портфеля.</p>
+
+    <div class="conclusion">
+      <h3>Прогноз: исторически дешёвый рынок в начале цикла смягчения</h3>
+      <p>2026 год предлагает российскому инвестору редкую комбинацию: рынок, оценённый с 30%-м дисконтом к историческим средним, плюс начало многолетнего цикла снижения ставок. Исторически вхождение в акции на этом перекрёстке приносило двузначную доходность. Полная доходность Мосбиржи с дивидендами в базовом сценарии — 23–29%. При геополитическом позитиве — существенно выше.</p>
+      <p>Глобально — иная история. S&P 500 при P/E выше 31 не имеет права на ошибку. Ни один из стратегов Wall Street не ждёт падения — это само по себе сигнал осторожности: единодушный оптимизм исторически предшествует разочарованиям. ИИ-суперцикл реален, но капзатраты в $400+ млрд должны конвертироваться в прибыль — а это займёт время.</p>
+      <p>Главный принцип года — два рынка, два подхода. На Мосбирже: качество бизнеса + дивиденды + низкий долг. На западных площадках: диверсификация за пределы «Великолепной семёрки» и бдительность в отношении оценок. Тем, кто умеет терпеть волатильность, оба рынка предлагают реальные возможности. Тем, кто не умеет, — пусть ставка по депозиту напоминает, что альтернативы ещё существуют.</p>
+    </div>
+
+  </article>
+</main>
+
+<footer>
+  <strong>kotana.com.ru</strong> &nbsp;·&nbsp; Прогноз рынка акций · 2026 &nbsp;·&nbsp; Источники: Альфа-Инвестиции, БКС, SberCIB, ВТБ МИ, Финам, J.P. Morgan, Goldman Sachs, Bloomberg, РБК Инвестиции
+</footer>
+
+</body>
+</html>
