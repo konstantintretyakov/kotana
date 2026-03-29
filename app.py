@@ -117,6 +117,11 @@ def blog_cfa_market_russia():
     return render_template("blog/cfa-market-russia.html")
 
 
+@app.route("/blog/cybersecurity-market-2025-2026")
+def blog_cybersecurity_market_2025_2026():
+    return render_template("blog/cybersecurity-market-2025-2026.html")
+
+
 @app.route("/sitemap.xml")
 def sitemap():
     xml = f"""<?xml version="1.0" encoding="UTF-8"?>
@@ -233,6 +238,11 @@ def sitemap():
     </url>
     <url>
         <loc>{SITE_URL}/blog/cfa-market-russia</loc>
+        <changefreq>yearly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>{SITE_URL}/blog/cybersecurity-market-2025-2026</loc>
         <changefreq>yearly</changefreq>
         <priority>0.7</priority>
     </url>
