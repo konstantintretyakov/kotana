@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Рынок нефти 2025–2026: от профицита к шоку | kotana.com.ru</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --ink:          #0f1117;
+      --paper:        #f7f4ef;
+      --cream:        #ede9e0;
+      --accent:       #7a3020;
+      --accent-light: #f0d4cc;
+      --gold:         #b8922a;
+      --green:        #1a7a3c;
+      --red:          #c0392b;
+      --muted:        #7a7060;
+      --rule:         #d4cfc5;
+      --col:          clamp(320px, 66ch, 720px);
+    }
+    html { font-size: 17px; scroll-behavior: smooth; }
+    body {
+      background: var(--paper); color: var(--ink);
+      font-family: 'IBM Plex Sans', sans-serif;
+      line-height: 1.75; -webkit-font-smoothing: antialiased;
+    }
+    .masthead {
+      background: var(--ink); padding: 14px 40px;
+      display: flex; align-items: center; justify-content: space-between;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: .75rem; letter-spacing: .12em; text-transform: uppercase;
+    }
+    .masthead-logo { font-size: 1rem; font-weight: 500; color: #fff; }
+    .masthead-meta { color: #666; }
+    .hero {
+      background: var(--accent); color: var(--paper);
+      padding: 80px 40px 72px; position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: 'OIL';
+      position: absolute; right: -16px; top: 50%; transform: translateY(-50%);
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(110px, 17vw, 240px); font-weight: 900;
+      color: rgba(255,255,255,.06); letter-spacing: -.04em; line-height: 1; pointer-events: none;
+    }
+    .hero-inner { max-width: var(--col); margin: 0 auto; position: relative; }
+    .hero-tag {
+      display: inline-block;
+      border: 1px solid rgba(255,255,255,.3); color: rgba(255,255,255,.75);
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: .72rem; letter-spacing: .15em; text-transform: uppercase;
+      padding: 4px 12px; margin-bottom: 28px;
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.2rem, 5vw, 3.4rem); font-weight: 700;
+      line-height: 1.18; letter-spacing: -.02em; margin-bottom: 24px; max-width: 22ch;
+    }
+    .hero h1 em { font-style: italic; color: #f5c4b0; }
+    .hero-lead {
+      font-size: 1.08rem; color: rgba(255,255,255,.72);
+      max-width: 54ch; line-height: 1.65; margin-bottom: 40px;
+    }
+    .hero-byline {
+      display: flex; align-items: center; gap: 16px;
+      font-size: .8rem; color: rgba(255,255,255,.4);
+      font-family: 'IBM Plex Mono', monospace;
+    }
+    .hero-byline span { color: rgba(255,255,255,.25); }
+    .hero-byline strong { color: rgba(255,255,255,.65); font-weight: 500; }
+    .stats-bar { background: var(--ink); padding: 0 40px; }
+    .stats-inner {
+      max-width: calc(var(--col) + 200px); margin: 0 auto;
+      display: grid; grid-template-columns: repeat(3,1fr);
+    }
+    .stat-item {
+      padding: 24px 32px; border-right: 1px solid rgba(255,255,255,.07); color: #fff;
+    }
+    .stat-item:first-child { padding-left: 0; }
+    .stat-item:last-child  { border-right: none; }
+    .stat-number {
+      font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 700;
+      display: block; line-height: 1; color: #f5c4b0;
+    }
+    .stat-label {
+      font-size: .75rem; text-transform: uppercase;
+      letter-spacing: .1em; opacity: .45; margin-top: 4px;
+      font-family: 'IBM Plex Mono', monospace;
+    }
+    .article-wrap { padding: 72px 40px; }
+    .article-inner { max-width: var(--col); margin: 0 auto; }
+    .article-inner > p:first-of-type::first-letter {
+      font-family: 'Playfair Display', serif; font-size: 4.5em; font-weight: 900;
+      float: left; line-height: .78; margin-right: 8px; margin-top: 6px; color: var(--accent);
+    }
+    p { margin-bottom: 1.5rem; }
+    h2 {
+      font-family: 'Playfair Display', serif; font-size: 1.7rem; font-weight: 700;
+      letter-spacing: -.02em; line-height: 1.25; margin: 3rem 0 1.1rem;
+    }
+    h2::before { content: ''; display: block; width: 32px; height: 3px; background: var(--accent); margin-bottom: 16px; }
+    h3 {
+      font-family: 'IBM Plex Sans', sans-serif; font-size: 1.05rem; font-weight: 600;
+      margin: 2rem 0 .7rem; text-transform: uppercase; letter-spacing: .06em; color: var(--gold);
+    }
+    blockquote {
+      border-left: 3px solid var(--accent); margin: 2.5rem 0; padding: 20px 0 20px 32px;
+    }
+    blockquote p {
+      font-family: 'Playfair Display', serif; font-size: 1.35rem; font-style: italic;
+      line-height: 1.5; color: var(--ink); margin: 0 0 8px;
+    }
+    blockquote cite {
+      font-family: 'IBM Plex Mono', monospace; font-size: .72rem;
+      text-transform: uppercase; letter-spacing: .12em; color: var(--muted); font-style: normal;
+    }
+    .highlight { background: var(--accent-light); padding: 0 4px; font-weight: 500; }
+    .scenario-grid {
+      display: grid; grid-template-columns: repeat(3,1fr);
+      gap: 1px; background: var(--rule); border: 1px solid var(--rule); margin: 2.5rem 0;
+    }
+    .sc-card { background: var(--paper); padding: 24px 20px; }
+    .sc-label {
+      font-family: 'IBM Plex Mono', monospace; font-size: .65rem;
+      text-transform: uppercase; letter-spacing: .15em; color: var(--muted); margin-bottom: 10px;
+    }
+    .sc-value { font-family: 'Playfair Display', serif; font-size: 1.7rem; font-weight: 700; line-height: 1; margin-bottom: 6px; }
+    .sc-value.base  { color: var(--gold); }
+    .sc-value.bull  { color: var(--green); }
+    .sc-value.bear  { color: var(--red); }
+    .sc-value.terra { color: var(--accent); }
+    .sc-title  { font-size: .88rem; font-weight: 600; margin-bottom: 4px; }
+    .sc-source { font-family: 'IBM Plex Mono', monospace; font-size: .63rem; color: var(--muted); margin-bottom: 4px; }
+    .sc-desc   { font-size: .8rem; color: var(--muted); line-height: 1.5; margin-top: 8px; }
+    .data-card {
+      background: var(--cream); border: 1px solid var(--rule); padding: 28px 32px; margin: 2.5rem 0;
+    }
+    .data-card h4 {
+      font-family: 'IBM Plex Mono', monospace; font-size: .7rem;
+      text-transform: uppercase; letter-spacing: .15em; color: var(--muted); margin-bottom: 20px;
+    }
+    .data-rows { display: flex; flex-direction: column; gap: 12px; }
+    .data-row { display: flex; align-items: center; gap: 16px; }
+    .data-row-label { font-size: .85rem; color: var(--muted); width: 220px; flex-shrink: 0; }
+    .data-row-bar-wrap { flex: 1; height: 6px; background: var(--rule); position: relative; }
+    .data-row-bar { position: absolute; top: 0; left: 0; height: 100%; }
+    .data-row-bar.terra { background: var(--accent); }
+    .data-row-bar.gold  { background: var(--gold); }
+    .data-row-bar.green { background: var(--green); }
+    .data-row-bar.red   { background: var(--red); opacity: .8; }
+    .data-row-bar.muted { background: var(--muted); opacity: .35; }
+    .data-row-val {
+      font-family: 'IBM Plex Mono', monospace; font-size: .8rem;
+      font-weight: 500; width: 100px; text-align: right;
+    }
+    .segment-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 1px; background: var(--rule); border: 1px solid var(--rule); margin: 2.5rem 0;
+    }
+    .segment-card { background: var(--paper); padding: 24px; }
+    .segment-icon { font-size: 1.3rem; margin-bottom: 8px; display: block; }
+    .segment-type {
+      font-family: 'IBM Plex Mono', monospace; font-size: .65rem;
+      text-transform: uppercase; letter-spacing: .12em; color: var(--muted); margin-bottom: 6px;
+    }
+    .segment-name { font-weight: 600; font-size: .97rem; margin-bottom: 4px; }
+    .segment-stat {
+      font-family: 'Playfair Display', serif; font-weight: 700;
+      color: var(--accent); font-size: 1.15rem; margin-bottom: 4px;
+    }
+    .segment-label {
+      display: inline-block; font-family: 'IBM Plex Mono', monospace;
+      font-size: .6rem; text-transform: uppercase; letter-spacing: .1em;
+      padding: 3px 8px; border-radius: 2px; margin-bottom: 8px;
+    }
+    .segment-label.hot  { background: var(--accent-light); color: var(--accent); }
+    .segment-label.warm { background: #f5ecd4; color: var(--gold); }
+    .segment-label.risk { background: #fde8e0; color: var(--red); }
+    .segment-label.ok   { background: #d0ead8; color: var(--green); }
+    .segment-desc { font-size: .8rem; color: var(--muted); line-height: 1.55; }
+    .metrics-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 1px; background: var(--rule); border: 1px solid var(--rule); margin: 2.5rem 0;
+    }
+    .metric-cell { background: var(--paper); padding: 24px; }
+    .metric-label {
+      font-family: 'IBM Plex Mono', monospace; font-size: .68rem;
+      text-transform: uppercase; letter-spacing: .14em; color: var(--muted); margin-bottom: 8px;
+    }
+    .metric-value { font-family: 'Playfair Display', serif; font-size: 1.65rem; font-weight: 700; line-height: 1.1; }
+    .metric-value.terra { color: var(--accent); }
+    .metric-value.gold  { color: var(--gold); }
+    .metric-value.green { color: var(--green); }
+    .metric-value.red   { color: var(--red); }
+    .metric-note { font-size: .78rem; color: var(--muted); margin-top: 6px; }
+    .risk-list { margin: 2rem 0; }
+    .risk-item {
+      display: flex; gap: 16px; padding: 16px 0;
+      border-bottom: 1px solid var(--rule); align-items: flex-start;
+    }
+    .risk-item:first-child { border-top: 1px solid var(--rule); }
+    .risk-badge {
+      font-family: 'IBM Plex Mono', monospace; font-size: .62rem;
+      text-transform: uppercase; letter-spacing: .1em;
+      padding: 4px 10px; border-radius: 2px; flex-shrink: 0; margin-top: 2px;
+    }
+    .risk-badge.high  { background: #fde8e0; color: var(--red); }
+    .risk-badge.mid   { background: #f5ecd4; color: var(--gold); }
+    .risk-badge.low   { background: #d0ead8; color: var(--green); }
+    .risk-badge.terra { background: var(--accent-light); color: var(--accent); }
+    .risk-title { font-weight: 600; font-size: .9rem; margin-bottom: 3px; }
+    .risk-desc  { font-size: .82rem; color: var(--muted); line-height: 1.55; }
+    .divider { border: none; border-top: 1px solid var(--rule); margin: 3rem 0; }
+    .conclusion {
+      background: var(--ink); color: var(--paper); padding: 36px 40px; margin: 3rem 0 0;
+    }
+    .conclusion h3 { color: #f5c4b0; margin-top: 0; letter-spacing: .06em; font-size: 1rem; text-transform: uppercase; }
+    .conclusion p { color: #ccc; margin-bottom: 1rem; }
+    .conclusion p:last-child { margin-bottom: 0; }
+    footer {
+      background: var(--cream); border-top: 1px solid var(--rule);
+      padding: 28px 40px; font-family: 'IBM Plex Mono', monospace;
+      font-size: .72rem; color: var(--muted); text-align: center; letter-spacing: .06em;
+    }
+    footer strong { color: var(--ink); }
+    @media (max-width: 640px) {
+      .masthead { padding: 12px 20px; }
+      .hero { padding: 56px 20px 52px; }
+      .stats-bar { padding: 0 20px; }
+      .stats-inner, .scenario-grid { grid-template-columns: 1fr; }
+      .stat-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,.07); padding: 16px 0; }
+      .article-wrap { padding: 48px 20px; }
+      .segment-grid, .metrics-grid { grid-template-columns: 1fr; }
+      .data-row-label { width: 130px; font-size: .78rem; }
+    }
+  </style>
+</head>
+<body>
+
+<header class="masthead">
+  <span class="masthead-logo">kotana.com.ru</span>
+  <span class="masthead-meta">Обзор · Рынок нефти · 2025–2026</span>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-tag">Обзор рынка · Нефть · 2025–2026</div>
+    <h1>Рынок нефти: <em>год профицита, квартал шока</em></h1>
+    <p class="hero-lead">В 2025-м Brent сползла с $80 до $60 на рекордном профиците в 2,6 млн барр./сутки. В марте 2026-го военный удар США и Израиля по Ирану перевернул рынок за три недели: нефть выросла на 59% до $115. Два сценария живут одновременно.</p>
+    <div class="hero-byline">
+      <strong>Редакция kotana.com.ru</strong>
+      <span>·</span>
+      <span>Март 2026</span>
+      <span>·</span>
+      <span>13 мин чтения</span>
+    </div>
+  </div>
+</section>
+
+<div class="stats-bar">
+  <div class="stats-inner">
+    <div class="stat-item">
+      <span class="stat-number">~$68</span>
+      <span class="stat-label">Средняя цена Brent в 2025 г. — минимум с 2021 г.</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number">+59%</span>
+      <span class="stat-label">Рост Brent за март 2026 — рекорд со времён Войны в Заливе</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number">20%</span>
+      <span class="stat-label">Доля мировых морских поставок нефти через Ормузский пролив</span>
+    </div>
+  </div>
+</div>
+
+<main class="article-wrap">
+  <article class="article-inner">
+
+    <p>Нефтяной рынок в 2025 году жил под знаком профицита. Впервые за несколько лет предложение заметно опередило спрос: добыча росла быстрее и со стороны США, Бразилии, Канады, и со стороны самого ОПЕК+, ускорившего снятие добровольных ограничений. Brent планомерно сползала с $80 в январе до $60 в декабре — средняя за год немного превысила $68 за баррель. А затем, 28 февраля 2026 года, США и Израиль начали военную операцию против Ирана. За один месяц нефть выросла на 59% — самый резкий месячный скачок как минимум с Войны в Персидском заливе 1990 года. Рынок, весь год отрабатывавший фундаментальный профицит, столкнулся с геополитическим шоком предложения невиданного со времён пандемии масштаба.</p>
+
+    <h2>2025 год: анатомия профицита</h2>
+
+    <p>2025-й стал переломным по балансу спроса и предложения. Если в 2024-м мировое потребление почти соответствовало добыче, то в 2025-м рынок ушёл в устойчивый структурный профицит. По итогам года предложение составило <span class="highlight">106,3 млн барр./сутки</span> — на 2,9 млн барр./сутки больше, чем годом ранее. Профицит по оценке Kept достиг <span class="highlight">2,6 млн барр./сутки</span> — рекорд за последние пять лет.</p>
+
+    <div class="data-card">
+      <h4>Прирост мирового предложения нефти в 2025 г. по источникам, млн барр./сутки</h4>
+      <div class="data-rows">
+        <div class="data-row">
+          <span class="data-row-label">США (сланец + оффшор)</span>
+          <div class="data-row-bar-wrap"><div class="data-row-bar red" style="width:100%"></div></div>
+          <span class="data-row-val">+0,8 млн б/с</span>
+        </div>
+        <div class="data-row">
+          <span class="data-row-label">Страны ОПЕК+ (снятие огр.)</span>
+          <div class="data-row-bar-wrap"><div class="data-row-bar terra" style="width:75%"></div></div>
+          <span class="data-row-val">+0,6 млн б/с</span>
+        </div>
+        <div class="data-row">
+          <span class="data-row-label">Бразилия</span>
+          <div class="data-row-bar-wrap"><div class="data-row-bar gold" style="width:50%"></div></div>
+          <span class="data-row-val">+0,4 млн б/с</span>
+        </div>
+        <div class="data-row">
+          <span class="data-row-label">Канада</span>
+          <div class="data-row-bar-wrap"><div class="data-row-bar gold" style="width:38%"></div></div>
+          <span class="data-row-val">+0,3 млн б/с</span>
+        </div>
+        <div class="data-row">
+          <span class="data-row-label">Гайана и прочие</span>
+          <div class="data-row-bar-wrap"><div class="data-row-bar muted" style="width:25%"></div></div>
+          <span class="data-row-val">+0,2 млн б/с</span>
+        </div>
+        <div class="data-row">
+          <span class="data-row-label">Итоговый профицит рынка</span>
+          <div class="data-row-bar-wrap"><div class="data-row-bar muted" style="width:75%"></div></div>
+          <span class="data-row-val">2,6 млн б/с</span>
+        </div>
+      </div>
+    </div>
+
+    <p>Спрос при этом рос — но медленнее. По различным оценкам, мировое потребление в 2025 году увеличилось на 0,85–1,3 млн барр./сутки, достигнув <span class="highlight">103,7–105,1 млн барр./сутки</span>. Главной неожиданностью стало замедление спроса со стороны Китая. В 2023-м на КНР приходилось около 70% прироста мирового спроса на нефть, в 2025-м — значительно меньше. Переход на электромобили и замедление промышленного роста сделали китайский спрос структурно более слабым.</p>
+
+    <p>Рынок выработал своеобразный иммунитет к геополитическим шокам. Во второй половине 2025 года даже серьёзные ближневосточные события не могли надолго поднять котировки: профицит предложения всякий раз брал своё. Это создало ложное ощущение стабильности — и именно оно сделало мартовский шок 2026-го таким резким.</p>
+
+    <div class="scenario-grid">
+      <div class="sc-card">
+        <div class="sc-label">Профицит 2025</div>
+        <div class="sc-title">Рекорд за 5 лет</div>
+        <div class="sc-value terra">2,6 млн б/с</div>
+        <div class="sc-source">Kept / МЭА / EIA — оценка итогов 2025</div>
+        <div class="sc-desc">МЭА оценивало профицит в 2,4 млн б/с, EIA — в 1,8 млн б/с. Разброс велик, но все три организации фиксируют рекордный за пятилетие избыток предложения.</div>
+      </div>
+      <div class="sc-card">
+        <div class="sc-label">Средняя Brent 2025</div>
+        <div class="sc-title">Возврат к уровням 2021 г.</div>
+        <div class="sc-value base">~$68</div>
+        <div class="sc-source">Финам / Изв. — средняя за год</div>
+        <div class="sc-desc">Начало года — $80/барр., конец — $60/барр. До начала конфликта Goldman Sachs прогнозировал среднюю $56 на 2026-й, МЭА — профицит до 4,1 млн б/с.</div>
+      </div>
+      <div class="sc-card">
+        <div class="sc-label">Urals IV кв. 2025</div>
+        <div class="sc-title">Давление на бюджет РФ</div>
+        <div class="sc-value bear">$45,9</div>
+        <div class="sc-source">Минэкономразвития РФ — IV кв. 2025</div>
+        <div class="sc-desc">Санкции против «Роснефти» и «Лукойла» в 2025-м вновь расширили дисконт. Бюджет сверстан из цены $60/барр. — реальность оказалась суровее.</div>
+      </div>
+    </div>
+
+    <blockquote>
+      <p>«Главный вызов 2026 года — ожидаемый аналитиками "суперизбыток" предложения, когда рост добычи будет почти втрое опережать рост потребления.»</p>
+      <cite>— МК, январь 2026 — прогноз, написанный до начала войны на Ближнем Востоке</cite>
+    </blockquote>
+
+    <hr class="divider" />
+
+    <h2>Март 2026: Ормузский шок</h2>
+
+    <p>28 февраля 2026 года США и Израиль начали военную операцию против Ирана. Погиб верховный лидер — аятолла Хаменеи. Иран ответил ударами по военным базам США в Персидском заливе и по Израилю. 9 марта, в первый торговый понедельник после начала конфликта, Brent пробила $119 — рост более чем на 26% за торговую сессию. 28 марта в конфликт вступили йеменские хуситы, атаковав Израиль. По состоянию на 30 марта нефть торгуется около <span class="highlight">$115</span> с перспективой дальнейшего роста.</p>
+
+    <div class="metrics-grid">
+      <div class="metric-cell">
+        <div class="metric-label">Рост Brent за март 2026</div>
+        <div class="metric-value red">+59%</div>
+        <div class="metric-note">Самый резкий месячный рост со времён войны в Персидском заливе 1990 года. С $72 в конце февраля до $115 на 30 марта.</div>
+      </div>
+      <div class="metric-cell">
+        <div class="metric-label">Brent на 30.03.2026</div>
+        <div class="metric-value terra">$115,65</div>
+        <div class="metric-note">Рекорд за десятилетие. Российский Urals в отдельные моменты торговался с премией к Brent — впервые за годы санкций.</div>
+      </div>
+      <div class="metric-cell">
+        <div class="metric-label">Потери добычи — Персидский залив</div>
+        <div class="metric-value red">–13,77 млн б/с</div>
+        <div class="metric-note">Оценка Bloomberg: с 20,47 до 6,7 млн б/с. Ирак, ОАЭ и Саудовская Аравия вынуждены сокращать производство из-за блокады Ормуза.</div>
+      </div>
+      <div class="metric-cell">
+        <div class="metric-label">Газ TTF в начале марта</div>
+        <div class="metric-value gold">$830/тыс. м³</div>
+        <div class="metric-note">Цена природного газа в Европе удвоилась. Через Ормуз проходит около трети мировых поставок СПГ — это создаёт отдельный энергетический кризис.</div>
+      </div>
+    </div>
+
+    <p>Ключевая точка риска — <span class="highlight">Ормузский пролив</span>. Через него проходит около 20% всех мировых морских поставок нефти и треть мировых поставок СПГ. Иран блокирует проход танкеров: страховщики отказывают в покрытии рисков, суда стоят на рейде. Bloomberg оценил совокупные потери в нефтедобыче стран Персидского залива в 13,77 млн барр./сутки — около 13% мирового производства.</p>
+
+    <p>Россия в этой ситуации оказалась неожиданным бенефициаром. Urals, прежде торговавшийся с дисконтом $15–20 к Brent из-за санкций, вышел на паритет и в отдельные торговые сессии — с премией. Мировые покупатели, теряя ближневосточные поставки, готовы платить за российскую нефть по-новому. Дополнительно растёт спрос на российский уголь — страны, лишённые ближневосточных углеводородов, ищут альтернативы.</p>
+
+    <blockquote>
+      <p>«Котировки нефти сейчас остро реагируют на заявления Трампа и Ирана по поводу переговоров. Рынок штормит. Любое сообщение о срыве контактов мгновенно вызывает резкие скачки цен.»</p>
+      <cite>— Дмитрий Вишневский, аналитик, март 2026</cite>
+    </blockquote>
+
+    <hr class="divider" />
+
+    <h2>Три сценария для рынка нефти</h2>
+
+    <p>По состоянию на 30 марта 2026 года рынок живёт в условиях острейшей неопределённости. Переговоры США и Ирана, по данным CNN, могут пройти «в ближайшие дни» в Пакистане — но рынок практически отверг перспективу быстрого урегулирования. Goldman Sachs пересмотрел прогноз Brent на 2026-й с $56 до $85. Три сценария принципиально различаются по последствиям для рынка.</p>
+
+    <div class="risk-list">
+      <div class="risk-item">
+        <div class="risk-badge terra">Текущий</div>
+        <div>
+          <div class="risk-title">Геополитическая премия сохраняется: Brent $90–115</div>
+          <div class="risk-desc">Конфликт продолжается, Ормузский пролив частично заблокирован. Рынок удерживает высокую геополитическую премию. Аналитики «Цифра брокер» оценивают устойчивый диапазон в $90–100 при сохранении текущей напряжённости. Goldman Sachs пересмотрел годовую цель до $85 средней (до конфликта — $56). Бенефициары: Россия, Норвегия, США (сланец при ценах выше $60).</div>
+        </div>
+      </div>
+      <div class="risk-item">
+        <div class="risk-badge high">Риск</div>
+        <div>
+          <div class="risk-title">Эскалация и наземная операция: Brent $120–150+</div>
+          <div class="risk-desc">Иран перекрывает Ормузский пролив полностью, наносит удары по нефтяной инфраструктуре Саудовской Аравии. В конфликт втягиваются хуситы — их первые атаки на Израиль уже произошли 28 марта. Мировой рынок лишается 20%+ морских поставок. Главный экономист JPMorgan предупредил: цены выше $120 ведут к глобальной рецессии. Администрация Трампа прорабатывает сценарий $200 за баррель.</div>
+        </div>
+      </div>
+      <div class="risk-item">
+        <div class="risk-badge low">Позитив</div>
+        <div>
+          <div class="risk-title">Переговорная деэскалация: Brent $65–80</div>
+          <div class="risk-desc">США и Иран заключают перемирие при посредничестве Пакистана или третьей стороны. Ормузский пролив открывается. Геополитическая премия снимается, рынок возвращается к фундаментальному профициту предложения — который никуда не делся. Goldman Sachs до конфликта прогнозировал среднюю $56 в 2026-м; деэскалация вернёт котировки в этот коридор. Для России — возврат к санкционным дисконтам.</div>
+        </div>
+      </div>
+    </div>
+
+    <hr class="divider" />
+
+    <h2>Россия: между санкциями и неожиданной удачей</h2>
+
+    <p>Для российской нефтяной отрасли 2025 год стал годом адаптации. Экспортные потоки стабилизировались, логистика переориентирована на азиатские рынки. Главная проблема — низкая цена. При Brent $60–68 и дисконте Urals в $15–20 фактическая цена российской нефти опускалась до $45–50 — ниже бюджетного ориентира $60. Санкции против «Роснефти» и «Лукойла», введённые в 2025-м, временно расширили дисконт и создали дополнительное давление.</p>
+
+    <div class="segment-grid">
+      <div class="segment-card">
+        <span class="segment-icon">🛢️</span>
+        <div class="segment-type">Главный бенефициар конфликта</div>
+        <div class="segment-name">«Роснефть» и «Лукойл»</div>
+        <span class="segment-label hot">Urals с премией к Brent</span>
+        <div class="segment-stat">Дисконт → паритет → премия</div>
+        <div class="segment-desc">При $115 Brent и сужении дисконта рублёвая выручка резко растёт. Аналитики называют их главными выгодоприобретателями ближневосточного сценария. Оба попали под американские санкции в 2025-м — конфликт парадоксально снижает санкционную дискриминацию.</div>
+      </div>
+      <div class="segment-card">
+        <span class="segment-icon">⭐</span>
+        <div class="segment-type">Устойчив в любом сценарии</div>
+        <div class="segment-name">«Татнефть» и «Транснефть» (преф.)</div>
+        <span class="segment-label warm">Дивидендная история</span>
+        <div class="segment-stat">~15% дивидендная доходность</div>
+        <div class="segment-desc">«Татнефть» — умеренный долг, стабильные дивиденды, меньший санкционный риск. «Транснефть» (преф.) — регулируемый тариф, не зависящий напрямую от цены нефти. Оба привлекательны при любом ценовом сценарии выше $50.</div>
+      </div>
+      <div class="segment-card">
+        <span class="segment-icon">📉</span>
+        <div class="segment-type">Под структурным давлением</div>
+        <div class="segment-name">«Газпром» и «Новатэк»</div>
+        <span class="segment-label risk">Санкции + цены 2025</span>
+        <div class="segment-stat">Аутсайдеры года</div>
+        <div class="segment-desc">«Газпром» страдает от падения экспорта в Европу. «Новатэк» — проект «Арктик СПГ 2» под санкциями. Однако двукратный рост газовых цен в Европе в марте 2026-го создаёт потенциал восстановления при деэскалации.</div>
+      </div>
+      <div class="segment-card">
+        <span class="segment-icon">💡</span>
+        <div class="segment-type">Ставка на нормализацию</div>
+        <div class="segment-name">«Совкомфлот» и «Аэрофлот»</div>
+        <span class="segment-label ok">При деэскалации</span>
+        <div class="segment-stat">Потенциал 40–60%</div>
+        <div class="segment-desc">«Совкомфлот» при урегулировании конфликта и снятии санкций — возможен резкий рост фрахтовых ставок и оценки. «Аэрофлот» при геополитической нормализации восстановит авиационный спрос. Оба — ставки на позитивный сценарий.</div>
+      </div>
+    </div>
+
+    <hr class="divider" />
+
+    <h2>Долгосрочный горизонт: фундаментал вернётся</h2>
+
+    <h3>Профицит никуда не делся</h3>
+    <p>Геополитический шок снял поверхностный слой, но не устранил структурный профицит предложения. Когда бы конфликт ни завершился, рынок вернётся к фундаменталу: росту добычи вне ОПЕК+, замедлению китайского спроса, наращиванию доли электромобилей. Goldman Sachs до начала конфликта прогнозировал $56/барр. на 2026 год в базовом сценарии. МЭА — профицит 4,1 млн б/с. Эти прогнозы вернутся в силу при деэскалации.</p>
+
+    <h3>Недоинвестирование — сценарий нового суперцикла</h3>
+    <p>Ценовое давление 2025-го уже оказывает влияние на инвестиционные решения. Сланцевые проекты в США нерентабельны при $50–60 за баррель. Goldman Sachs ожидает, что к концу 2028-го Brent восстановится до $80 на фоне исчерпания отложенных проектов и недоинвестирования в разведку. Ряд аналитиков допускает новый суперцикл цен во второй половине десятилетия.</p>
+
+    <h3>МЭА пересмотрело пик спроса</h3>
+    <p>В ноябре 2025 года МЭА скорректировало прогноз: теперь агентство ожидает роста мирового спроса на нефть до 2050 года. Это меняет долгосрочную инвестиционную логику: нефть остаётся структурно значимым активом на горизонте нескольких десятилетий — несмотря на энергетический переход.</p>
+
+    <div class="conclusion">
+      <h3>Рынок на перекрёстке двух логик</h3>
+      <p>В 2025 году нефтяной рынок развивался строго по фундаментальным законам: профицит — снижение цен — иммунитет к геополитике. Аналитики наперебой снижали прогнозы: МЭА говорило о профиците 4 млн барр./сутки, Goldman Sachs прогнозировал $56, Финам — $63–65. И всё это было верно — до 28 февраля 2026 года.</p>
+      <p>Мартовский шок — наглядный урок о пределах фундаментального анализа на нефтяном рынке. Ормузский пролив — не просто географическая точка; это главный нервный узел глобального энергоснабжения, через который проходит пятая часть мировой морской нефти. Угроза его блокады немедленно обнуляет любые модели профицита.</p>
+      <p>Для российских инвесторов ситуация парадоксальна: чем хуже на Ближнем Востоке, тем лучше для нефтяников — высокие цены плюс сужение дисконта Urals дают резкий рост рублёвой выручки. Но ровно тот же шок создаёт риск глобальной рецессии, которая в итоге ударит по спросу и опустит цены уже с другой стороны. Рынок нефти редко бывает простым. В 2026-м он особенно сложен.</p>
+    </div>
+
+  </article>
+</main>
+
+<footer>
+  <strong>kotana.com.ru</strong> &nbsp;·&nbsp; Обзор рынка нефти · 2025–2026 &nbsp;·&nbsp; Источники: МЭА, EIA, ОПЕК, Goldman Sachs, Kept, Финам, SberCIB, Альфа-Инвестиции, Фонтанка, РБК, Ведомости, Reuters, Bloomberg
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Рынок табачной продукции России 2025–2026 | kotana.com.ru</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --ink:          #0f1117;
+      --paper:        #f7f4ef;
+      --cream:        #ede9e0;
+      --accent:       #2d4a3e;
+      --accent-light: #c6ddd6;
+      --gold:         #b8922a;
+      --green:        #1a7a3c;
+      --red:          #c0392b;
+      --muted:        #7a7060;
+      --rule:         #d4cfc5;
+      --col:          clamp(320px, 66ch, 720px);
+    }
+    html { font-size: 17px; scroll-behavior: smooth; }
+    body {
+      background: var(--paper); color: var(--ink);
+      font-family: 'IBM Plex Sans', sans-serif;
+      line-height: 1.75; -webkit-font-smoothing: antialiased;
+    }
+
+    .masthead {
+      background: var(--ink); padding: 14px 40px;
+      display: flex; align-items: center; justify-content: space-between;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: .75rem; letter-spacing: .12em; text-transform: uppercase;
+    }
+    .masthead-logo { font-size: 1rem; font-weight: 500; color: #fff; }
+    .masthead-meta { color: #666; }
+
+    .hero {
+      background: var(--accent); color: var(--paper);
+      padding: 80px 40px 72px; position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: 'TAB';
+      position: absolute; right: -20px; top: 50%; transform: translateY(-50%);
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(120px, 18vw, 260px); font-weight: 900;
+      color: rgba(255,255,255,.05); letter-spacing: -.04em; line-height: 1; pointer-events: none;
+    }
+    .hero-inner { max-width: var(--col); margin: 0 auto; position: relative; }
+    .hero-tag {
+      display: inline-block;
+      border: 1px solid rgba(255,255,255,.3); color: rgba(255,255,255,.75);
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: .72rem; letter-spacing: .15em; text-transform: uppercase;
+      padding: 4px 12px; margin-bottom: 28px;
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.2rem, 5vw, 3.4rem); font-weight: 700;
+      line-height: 1.18; letter-spacing: -.02em; margin-bottom: 24px; max-width: 22ch;
+    }
+    .hero h1 em { font-style: italic; color: #a8d4c6; }
+    .hero-lead {
+      font-size: 1.08rem; color: rgba(255,255,255,.72);
+      max-width: 54ch; line-height: 1.65; margin-bottom: 40px;
+    }
+    .hero-byline {
+      display: flex; align-items: center; gap: 16px;
+      font-size: .8rem; color: rgba(255,255,255,.4);
+      font-family: 'IBM Plex Mono', monospace;
+    }
+    .hero-byline span { color: rgba(255,255,255,.25); }
+    .hero-byline strong { color: rgba(255,255,255,.65); font-weight: 500; }
+
+    .stats-bar { background: var(--ink); padding: 0 40px; }
+    .stats-inner {
+      max-width: calc(var(--col) + 200px); margin: 0 auto;
+      display: grid; grid-template-columns: repeat(3,1fr);
+    }
+    .stat-item {
+      padding: 24px 32px; border-right: 1px solid rgba(255,255,255,.07); color: #fff;
+    }
+    .stat-item:first-child { padding-left: 0; }
+    .stat-item:last-child  { border-right: none; }
+    .stat-number {
+      font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 700;
+      display: block; line-height: 1; color: #a8d4c6;
+    }
+    .stat-label {
+      font-size: .75rem; text-transform: uppercase;
+      letter-spacing: .1em; opacity: .45; margin-top: 4px;
+      font-family: 'IBM Plex Mono', monospace;
+    }
+
+    .article-wrap { padding: 72px 40px; }
+    .article-inner { max-width: var(--col); margin: 0 auto; }
+
+    .article-inner > p:first-of-type::first-letter {
+      font-family: 'Playfair Display', serif; font-size: 4.5em; font-weight: 900;
+      float: left; line-height: .78; margin-right: 8px; margin-top: 6px; color: var(--accent);
+    }
+    p { margin-bottom: 1.5rem; }
+
+    h2 {
+      font-family: 'Playfair Display', serif; font-size: 1.7rem; font-weight: 700;
+      letter-spacing: -.02em; line-height: 1.25; margin: 3rem 0 1.1rem;
+    }
+    h2::before { content: ''; display: block; width: 32px; height: 3px; background: var(--accent); margin-bottom: 16px; }
+
+    h3 {
+      font-family: 'IBM Plex Sans', sans-serif; font-size: 1.05rem; font-weight: 600;
+      margin: 2rem 0 .7rem; text-transform: uppercase; letter-spacing: .06em; color: var(--gold);
+    }
+
+    blockquote {
+      border-left: 3px solid var(--accent); margin: 2.5rem 0; padding: 20px 0 20px 32px;
+    }
+    blockquote p {
+      font-family: 'Playfair Display', serif; font-size: 1.35rem; font-style: italic;
+      line-height: 1.5; color: var(--ink); margin: 0 0 8px;
+    }
+    blockquote cite {
+      font-family: 'IBM Plex Mono', monospace; font-size: .72rem;
+      text-transform: uppercase; letter-spacing: .12em; color: var(--muted); font-style: normal;
+    }
+
+    .highlight { background: var(--accent-light); padding: 0 4px; font-weight: 500; }
+
+    /* Scenario grid */
+    .scenario-grid {
+      display: grid; grid-template-columns: repeat(3,1fr);
+      gap: 1px; background: var(--rule); border: 1px solid var(--rule); margin: 2.5rem 0;
+    }
+    .sc-card { background: var(--paper); padding: 24px 20px; }
+    .sc-label {
+      font-family: 'IBM Plex Mono', monospace; font-size: .65rem;
+      text-transform: uppercase; letter-spacing: .15em; color: var(--muted); margin-bottom: 10px;
+    }
+    .sc-value { font-family: 'Playfair Display', serif; font-size: 1.7rem; font-weight: 700; line-height: 1; margin-bottom: 6px; }
+    .sc-value.base { color: var(--gold); }
+    .sc-value.bull { color: var(--green); }
+    .sc-value.bear { color: var(--red); }
+    .sc-title { font-size: .88rem; font-weight: 600; margin-bottom: 4px; }
+    .sc-source { font-family: 'IBM Plex Mono', monospace; font-size: .63rem; color: var(--muted); margin-bottom: 4px; }
+    .sc-desc { font-size: .8rem; color: var(--muted); line-height: 1.5; margin-top: 8px; }
+
+    /* Data card */
+    .data-card {
+      background: var(--cream); border: 1px solid var(--rule); padding: 28px 32px; margin: 2.5rem 0;
+    }
+    .data-card h4 {
+      font-family: 'IBM Plex Mono', monospace; font-size: .7rem;
+      text-transform: uppercase; letter-spacing: .15em; color: var(--muted); margin-bottom: 20px;
+    }
+    .data-rows { display: flex; flex-direction: column; gap: 12px; }
+    .data-row { display: flex; align-items: center; gap: 16px; }
+    .data-row-label { font-size: .85rem; color: var(--muted); width: 220px; flex-shrink: 0; }
+    .data-row-bar-wrap { flex: 1; height: 6px; background: var(--rule); position: relative; }
+    .data-row-bar { position: absolute; top: 0; left: 0; height: 100%; }
+    .data-row-bar.olive { background: var(--accent); }
+    .data-row-bar.gold  { background: var(--gold); }
+    .data-row-bar.green { background: var(--green); }
+    .data-row-bar.red   { background: var(--red); opacity: .7; }
+    .data-row-bar.muted { background: var(--muted); opacity: .35; }
+    .data-row-val {
+      font-family: 'IBM Plex Mono', monospace; font-size: .8rem;
+      font-weight: 500; width: 110px; text-align: right;
+    }
+
+    /* Segment / product grid (2-col) */
+    .segment-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 1px; background: var(--rule); border: 1px solid var(--rule); margin: 2.5rem 0;
+    }
+    .segment-card { background: var(--paper); padding: 24px; }
+    .segment-icon { font-size: 1.3rem; margin-bottom: 8px; display: block; }
+    .segment-type {
+      font-family: 'IBM Plex Mono', monospace; font-size: .65rem;
+      text-transform: uppercase; letter-spacing: .12em; color: var(--muted); margin-bottom: 6px;
+    }
+    .segment-name { font-weight: 600; font-size: .97rem; margin-bottom: 4px; }
+    .segment-stat {
+      font-family: 'Playfair Display', serif; font-weight: 700;
+      color: var(--accent); font-size: 1.15rem; margin-bottom: 4px;
+    }
+    .segment-label {
+      display: inline-block; font-family: 'IBM Plex Mono', monospace;
+      font-size: .6rem; text-transform: uppercase; letter-spacing: .1em;
+      padding: 3px 8px; border-radius: 2px; margin-bottom: 8px;
+    }
+    .segment-label.hot  { background: var(--accent-light); color: var(--accent); }
+    .segment-label.warm { background: #f5ecd4; color: var(--gold); }
+    .segment-label.risk { background: #fde8e0; color: var(--red); }
+    .segment-label.ok   { background: #d0ead8; color: var(--green); }
+    .segment-desc { font-size: .8rem; color: var(--muted); line-height: 1.55; }
+
+    /* Metrics 2×2 */
+    .metrics-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 1px; background: var(--rule); border: 1px solid var(--rule); margin: 2.5rem 0;
+    }
+    .metric-cell { background: var(--paper); padding: 24px; }
+    .metric-label {
+      font-family: 'IBM Plex Mono', monospace; font-size: .68rem;
+      text-transform: uppercase; letter-spacing: .14em; color: var(--muted); margin-bottom: 8px;
+    }
+    .metric-value { font-family: 'Playfair Display', serif; font-size: 1.65rem; font-weight: 700; line-height: 1.1; }
+    .metric-value.olive { color: var(--accent); }
+    .metric-value.gold  { color: var(--gold); }
+    .metric-value.green { color: var(--green); }
+    .metric-value.red   { color: var(--red); }
+    .metric-note { font-size: .78rem; color: var(--muted); margin-top: 6px; }
+
+    /* Risk / factor list */
+    .risk-list { margin: 2rem 0; }
+    .risk-item {
+      display: flex; gap: 16px; padding: 16px 0;
+      border-bottom: 1px solid var(--rule); align-items: flex-start;
+    }
+    .risk-item:first-child { border-top: 1px solid var(--rule); }
+    .risk-badge {
+      font-family: 'IBM Plex Mono', monospace; font-size: .62rem;
+      text-transform: uppercase; letter-spacing: .1em;
+      padding: 4px 10px; border-radius: 2px; flex-shrink: 0; margin-top: 2px;
+    }
+    .risk-badge.high { background: #fde8e0; color: var(--red); }
+    .risk-badge.mid  { background: #f5ecd4; color: var(--gold); }
+    .risk-badge.low  { background: #d0ead8; color: var(--green); }
+    .risk-title { font-weight: 600; font-size: .9rem; margin-bottom: 3px; }
+    .risk-desc  { font-size: .82rem; color: var(--muted); line-height: 1.55; }
+
+    .divider { border: none; border-top: 1px solid var(--rule); margin: 3rem 0; }
+
+    .conclusion {
+      background: var(--ink); color: var(--paper); padding: 36px 40px; margin: 3rem 0 0;
+    }
+    .conclusion h3 { color: #a8d4c6; margin-top: 0; letter-spacing: .06em; font-size: 1rem; text-transform: uppercase; }
+    .conclusion p { color: #ccc; margin-bottom: 1rem; }
+    .conclusion p:last-child { margin-bottom: 0; }
+
+    footer {
+      background: var(--cream); border-top: 1px solid var(--rule);
+      padding: 28px 40px; font-family: 'IBM Plex Mono', monospace;
+      font-size: .72rem; color: var(--muted); text-align: center; letter-spacing: .06em;
+    }
+    footer strong { color: var(--ink); }
+
+    @media (max-width: 640px) {
+      .masthead { padding: 12px 20px; }
+      .hero { padding: 56px 20px 52px; }
+      .stats-bar { padding: 0 20px; }
+      .stats-inner, .scenario-grid { grid-template-columns: 1fr; }
+      .stat-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,.07); padding: 16px 0; }
+      .article-wrap { padding: 48px 20px; }
+      .segment-grid, .metrics-grid { grid-template-columns: 1fr; }
+      .data-row-label { width: 130px; font-size: .78rem; }
+    }
+  </style>
+</head>
+<body>
+
+<header class="masthead">
+  <span class="masthead-logo">kotana.com.ru</span>
+  <span class="masthead-meta">Обзор · Табачный рынок · 2025–2026</span>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-tag">Обзор рынка · Табак · 2025–2026</div>
+    <h1>Табачный рынок России: <em>обеление, альтернативы и акцизная спираль</em></h1>
+    <p class="hero-lead">Продажи сигарет достигли ₽1,4 трлн. Вейпы и системы нагревания выросли в 9 раз за пять лет. Нелегальный оборот сигарет в первом полугодии 2025-го снизился до рекордных 9,5%. Но акцизная спираль снова раскручивается — и опять толкает курильщиков к контрабанде из ЕАЭС.</p>
+    <div class="hero-byline">
+      <strong>Редакция kotana.com.ru</strong>
+      <span>·</span>
+      <span>Март 2026</span>
+      <span>·</span>
+      <span>12 мин чтения</span>
+    </div>
+  </div>
+</section>
+
+<div class="stats-bar">
+  <div class="stats-inner">
+    <div class="stat-item">
+      <span class="stat-number">₽1,4 трлн</span>
+      <span class="stat-label">Продажи сигарет в рознице — годовой объём рынка</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number">9,5%</span>
+      <span class="stat-label">Доля нелегального табака в H1 2025 — 6-летний минимум</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number">245 млн шт.</span>
+      <span class="stat-label">Продажи вейпов и СНТ в 2024 г. — рост ×8,8 за 5 лет</span>
+    </div>
+  </div>
+</div>
+
+<main class="article-wrap">
+  <article class="article-inner">
+
+    <p>Российский табачный рынок живёт по собственной, довольно причудливой логике. Государство хочет, чтобы люди курили меньше — и одновременно рассчитывает получить от отрасли <span class="highlight">3,4 трлн рублей</span> акцизных поступлений за 2026–2028 годы. Международные концерны Philip Morris, BAT и JTI в 2022 году объявили об ограничении деятельности — но продолжают работать через российские юрлица и суммарно формируют около 80% легального рынка. Распространённость курения за 15 лет снизилась вдвое — до 18,6%. Зато вейпов и систем нагревания табака стало в 9 раз больше. Рынок меняется быстро — но не туда, куда хочет Минздрав.</p>
+
+    <h2>Структура рынка: три кластера, три динамики</h2>
+
+    <p>Российский рынок никотиносодержащей продукции сегодня отчётливо делится на три сегмента с разными трендами. Традиционные сигареты — сокращаются в натуральном выражении, но растут в рублях за счёт акцизного роста. Альтернативные устройства (вейпы, системы нагревания табака) — стремительно растут. Нелегальный рынок — медленно, но снижается благодаря маркировке, однако новый виток акцизов угрожает развернуть эту тенденцию.</p>
+
+    <div class="data-card">
+      <h4>Ключевые показатели российского табачного рынка</h4>
+      <div class="data-rows">
+        <div class="data-row">
+          <span class="data-row-label">Продажи сигарет, руб.</span>
+          <div class="data-row-bar-wrap"><div class="data-row-bar olive" style="width:100%"></div></div>
+          <span class="data-row-val">₽1,4 трлн</span>
+        </div>
+        <div class="data-row">
+          <span class="data-row-label">Выручка производителей</span>
+          <div class="data-row-bar-wrap"><div class="data-row-bar olive" style="width:27%"></div></div>
+          <span class="data-row-val">₽375 млрд</span>
+        </div>
+        <div class="data-row">
+          <span class="data-row-label">Производство, пачки</span>
+          <div class="data-row-bar-wrap"><div class="data-row-bar gold" style="width:74%"></div></div>
+          <span class="data-row-val">10,3 млрд пачек</span>
+        </div>
+        <div class="data-row">
+          <span class="data-row-label">Рынок вейпов / СНТ (2024)</span>
+          <div class="data-row-bar-wrap"><div class="data-row-bar green" style="width:18%"></div></div>
+          <span class="data-row-val">₽250 млрд</span>
+        </div>
+        <div class="data-row">
+          <span class="data-row-label">Нелегальный оборот (H1 2025)</span>
+          <div class="data-row-bar-wrap"><div class="data-row-bar red" style="width:9.5%"></div></div>
+          <span class="data-row-val">9,5% рынка</span>
+        </div>
+        <div class="data-row">
+          <span class="data-row-label">Потери бюджета от нелегала (2024)</span>
+          <div class="data-row-bar-wrap"><div class="data-row-bar muted" style="width:7%"></div></div>
+          <span class="data-row-val">₽101 млрд</span>
+        </div>
+      </div>
+    </div>
+
+    <p>Минимальная розничная цена пачки сигарет с 1 января 2025 года составляет <span class="highlight">135 рублей</span>. Для сравнения: в 2021 году она была 108 рублей, в 2013-м — около 50 рублей. Рост в 2,7 раза за 12 лет. При этом нелегальная пачка белорусского производства стоит в рознице 50–70 рублей — разница почти двукратная, и это создаёт постоянный структурный стимул для теневого рынка.</p>
+
+    <h2>Нелегальный рынок: рекорд обеления — и новая угроза</h2>
+
+    <p>Главная хорошая новость 2025 года: <span class="highlight">доля нелегального табака в первом полугодии снизилась до 9,5%</span> — шестилетний минимум с момента запуска обязательной маркировки в 2019 году. По данным Минпромторга, с 2019-го нелегальный оборот сократился почти на 40%. Система «Честный знак» охватила всю цепочку от производства до кассы; производство и хранение немаркированной продукции с июля 2025 года влечёт уголовную ответственность до трёх лет лишения свободы.</p>
+
+    <div class="metrics-grid">
+      <div class="metric-cell">
+        <div class="metric-label">Нелег. оборот — H1 2025 (рекорд)</div>
+        <div class="metric-value olive">9,5%</div>
+        <div class="metric-note">Снизился с 10,8% год к году (-12%). Для сравнения: в 2019-м до маркировки было 15,6%. Лидеры по минимуму — Дальний Восток и Сибирь: менее 1%.</div>
+      </div>
+      <div class="metric-cell">
+        <div class="metric-label">Потери бюджета — 2024</div>
+        <div class="metric-value red">₽101 млрд</div>
+        <div class="metric-note">Недополученные акцизы и НДС по итогам 2024 года. За H1 2025 — уже 46 млрд рублей. Антирекорд — до маркировки: свыше 150 млрд рублей в год.</div>
+      </div>
+      <div class="metric-cell">
+        <div class="metric-label">Источник нелегала — ЕАЭС</div>
+        <div class="metric-value gold">54,8%</div>
+        <div class="metric-note">Более половины нелегальных сигарет ввозится из стран ЕАЭС. Из них 84,5% — белорусская продукция. Открытые границы и разница в акцизах — главная системная проблема.</div>
+      </div>
+      <div class="metric-cell">
+        <div class="metric-label">Антилидеры по нелегалу</div>
+        <div class="metric-value red">~33%</div>
+        <div class="metric-note">Рязанская область — 33,1%, КБР — 32,2%, Чечня — 30,5%. СКФО: рост с 20,3% до 22,3%. Географическая близость к Белоруссии и Кавказу — ключевой фактор.</div>
+      </div>
+    </div>
+
+    <p>Главный системный риск для обелённого рынка — очередное повышение акцизов. С 1 января 2026 года минимальный порог вырос до <span class="highlight">4 452 рубля за тысячу штук</span> (против 3 825 рублей в 2025-м). Рост почти на 16%. При этом в Белоруссии акциз на сигареты остаётся в 4–5 раз ниже российского. Прецедент уже есть: после резкого роста акцизов в 2019–2021 годах доля нелегального рынка выросла с 11% до 15,6%. Обеление было достигнуто не только маркировкой, но и относительной стабилизацией разрыва в акцизах. Новый скачок может всё откатить.</p>
+
+    <blockquote>
+      <p>«Нелегальная торговля табачными изделиями 10 лет назад не превышала 1%. Сегодня — 13,3%. Это не исторический максимум: до маркировки было 15,6%.»</p>
+      <cite>— Алексей Чиков, управляющий Philip Morris International в России</cite>
+    </blockquote>
+
+    <hr class="divider" />
+
+    <h2>Три сценария для рынка в 2026–2027 годах</h2>
+
+    <div class="scenario-grid">
+      <div class="sc-card">
+        <div class="sc-label">Базовый сценарий</div>
+        <div class="sc-title">Медленное обеление при умеренном росте нелегала</div>
+        <div class="sc-value base">9–11%</div>
+        <div class="sc-source">Минпромторг, ННЦК / прогноз 2026</div>
+        <div class="sc-desc">Нелегальный рынок незначительно вырастет из-за нового акцизного скачка, но остаётся ниже 12%. Маркировка удерживает ситуацию. Легальные продажи сигарет продолжают снижаться в штуках, но растут в рублях. Акцизные поступления достигают плана.</div>
+      </div>
+      <div class="sc-card">
+        <div class="sc-label">Оптимистичный</div>
+        <div class="sc-title">Гармонизация акцизов ЕАЭС</div>
+        <div class="sc-value bull">&lt;8%</div>
+        <div class="sc-source">Позиция Минфина / цель ЕАЭС</div>
+        <div class="sc-desc">Россия договаривается с Белоруссией и Казахстаном о синхронном повышении акцизов. Ценовой разрыв сокращается. Нелегальный оборот падает ниже 8%. Бюджет получает дополнительные 50–80 млрд рублей в год. Пример: обеление кальянного табака после пересмотра акцизов.</div>
+      </div>
+      <div class="sc-card">
+        <div class="sc-label">Негативный</div>
+        <div class="sc-title">Акцизная спираль — откат к 13–15%</div>
+        <div class="sc-value bear">13–15%</div>
+        <div class="sc-source">Сценарий 2019–2021 / экспертная оценка</div>
+        <div class="sc-desc">Акцизы 2026–2027 годов толкают розничную цену выше ₽175–200, ценовой разрыв с Белоруссией расширяется. Нелегал откатывается к уровням до маркировки. Потери бюджета снова превышают 130–150 млрд рублей.</div>
+      </div>
+    </div>
+
+    <hr class="divider" />
+
+    <h2>Альтернативные продукты: взрывной рост с оговорками</h2>
+
+    <p>Самый динамичный сегмент рынка — альтернативные средства доставки никотина. По данным BusinesStat, за 2020–2024 годы продажи вейпов и систем нагревания табака (СНТ) выросли почти в <span class="highlight">9 раз</span>: с 28 до 245 млн единиц. Рынок в денежном выражении достиг 250 млрд рублей в 2024 году, увеличившись на 51,9% год к году. По оценкам ННЦК, в России насчитывается более 5 млн пользователей только вейпов и около 12,5 млн «дуалистов», совмещающих разные никотинпродукты.</p>
+
+    <div class="segment-grid">
+      <div class="segment-card">
+        <span class="segment-icon">🔥</span>
+        <div class="segment-type">Системы нагревания табака</div>
+        <div class="segment-name">IQOS (Philip Morris) и GLO (BAT)</div>
+        <span class="segment-label hot">15,5% потребителей</span>
+        <div class="segment-stat">Рост ×2,5 за 3 года</div>
+        <div class="segment-desc">Лидирующий альтернативный сегмент. IQOS появился в России в 2015 году, GLO — в 2017-м. Активнее других переходят молодые (18–34 лет): каждый четвёртый. Стики облагаются акцизом 9 377 руб./кг в 2025-м. Маркировка введена с 2022 года, нелегальный оборот значительно ниже, чем у сигарет.</div>
+      </div>
+      <div class="segment-card">
+        <span class="segment-icon">💨</span>
+        <div class="segment-type">Вейпы и ЭСДН</div>
+        <div class="segment-name">Одноразовые и многоразовые устройства</div>
+        <span class="segment-label risk">Кризис акцизов</span>
+        <div class="segment-stat">12,5 млн потребителей</div>
+        <div class="segment-desc">Одноразовые — 10% потребителей, многоразовые — 13,5%. Акциз на жидкости в 2024-м повышен на 110% — до 42 руб./мл. Разница между легальным и нелегальным вейпом стала практически двукратной. В H1 2025 ущерб бюджету от нелегальных вейп-жидкостей составил 26,35 млрд рублей.</div>
+      </div>
+      <div class="segment-card">
+        <span class="segment-icon">🚬</span>
+        <div class="segment-type">Традиционные сигареты</div>
+        <div class="segment-name">Основная категория — в длинном спаде</div>
+        <span class="segment-label warm">Натуральный спад, рублёвый рост</span>
+        <div class="segment-stat">МРЦ ₽135 / пачка (2025)</div>
+        <div class="segment-desc">В 2022–2024 годах легальное производство сократилось на 17% к уровню 2021-го — до 10,3 млрд пачек. Уход международных вендоров снизил мощности. Распространённость курения снизилась с 36% (2012) до 18,6% (2025). Выручка производителей выросла на 18% до ₽375,4 млрд — только за счёт цен.</div>
+      </div>
+      <div class="segment-card">
+        <span class="segment-icon">🌿</span>
+        <div class="segment-type">Кальянный табак</div>
+        <div class="segment-name">История успешного обеления</div>
+        <span class="segment-label ok">Образцовый кейс</span>
+        <div class="segment-stat">С 95% нелегала — к легальному</div>
+        <div class="segment-desc">Кейс, на который ссылаются сторонники разумной акцизной политики. При экстремально высоком нелегальном обороте (95%) государство пересмотрело акцизную ставку на кальянный табак — и рынок быстро перешёл в легальный сегмент. Аргумент против бесконтрольного роста акцизов на вейпы.</div>
+      </div>
+    </div>
+
+    <hr class="divider" />
+
+    <h2>Ключевые факторы и риски</h2>
+
+    <div class="risk-list">
+      <div class="risk-item">
+        <div class="risk-badge high">Высокий</div>
+        <div>
+          <div class="risk-title">Акцизная спираль и ценовой разрыв с ЕАЭС</div>
+          <div class="risk-desc">Минимальный порог акциза с 2026 года — 4 452 руб./тыс. шт. (+16% к 2025-му). К 2027-му он вырастет до 4 630 руб. При этом в Белоруссии акциз в 4–5 раз ниже российского, а граница открыта. Это единственная системная причина устойчивости нелегального рынка. Без гармонизации акцизов в ЕАЭС маркировка работает лишь как сдерживающий, но не устраняющий фактор.</div>
+        </div>
+      </div>
+      <div class="risk-item">
+        <div class="risk-badge high">Высокий</div>
+        <div>
+          <div class="risk-title">Кризис акцизов на вейп-жидкости</div>
+          <div class="risk-desc">Акциз на жидкости для ЭСДН повышен в 2024 году в 2,1 раза — до 42 руб./мл. Разрыв между легальным и нелегальным вейпом стал практически двукратным. Потребители мигрируют в нелегальный сегмент. Ущерб бюджету за H1 2025 — уже 26,35 млрд рублей. Без пересмотра акциза вейп-рынок может повторить путь кальянного табака — только в обратном направлении (из легального в нелегальный).</div>
+        </div>
+      </div>
+      <div class="risk-item">
+        <div class="risk-badge mid">Средний</div>
+        <div>
+          <div class="risk-title">Санкции против международных производителей</div>
+          <div class="risk-desc">Philip Morris, BAT и JTI после 2022 года объявили об ограничении инвестиций и деятельности, однако продолжают работу через российские структуры. Производство за 2022–2024 годы сократилось на 17%. При полном уходе мейджоров образовавшийся вакуум будет заполнен нелегальной продукцией — масштаб потерь бюджета превысит все предыдущие оценки. Пока этот риск теоретический.</div>
+        </div>
+      </div>
+      <div class="risk-item">
+        <div class="risk-badge mid">Средний</div>
+        <div>
+          <div class="risk-title">Запрет вейпов: популизм против экономики</div>
+          <div class="risk-desc">Президент Путин подписал закон об ограничении оборота электронных сигарет. Эксперты рынка предупреждают: запрет не уничтожит спрос, а переместит его в нелегальный сегмент. Число точек продаж вейпов в городах-миллионниках к июню 2025-го — 11 656. Даже при запрете они продолжат работу, просто без маркировки и без акцизов.</div>
+        </div>
+      </div>
+      <div class="risk-item">
+        <div class="risk-badge low">Управляемый</div>
+        <div>
+          <div class="risk-title">Снижение числа курильщиков</div>
+          <div class="risk-desc">Распространённость курения снизилась с 36% в 2012 году до 18,6% в 2025-м — почти вдвое. Число курильщиков снизилось до 25,5 млн человек (-12,8% за последние годы). Потребление сигарет в штуках на душу населения — ниже 1 000 в год. Долгосрочно это угроза для доходов бюджета, но в ближайшие 3–5 лет перекрывается ростом акцизов и расширением базы вейп/СНТ.</div>
+        </div>
+      </div>
+    </div>
+
+    <hr class="divider" />
+
+    <h2>Акцизный вклад в бюджет: 2% доходов страны</h2>
+
+    <p>Табачная отрасль — один из крупнейших налогоплательщиков страны. <span class="highlight">Только поступления от табачных акцизов составляют около 2% федерального бюджета.</span> По подписанному Путиным закону об акцизах, бюджет в 2026–2028 годах получит от табачной и никотиновой индустрии около <span class="highlight">3,4 трлн рублей</span> — это «существенная доля доходов», как прямо сформулировал представитель Минфина Федотов. При этом отраслевым игрокам сохранена нулевая ставка НДС на российское ПО — сигнал стратегической значимости отрасли.</p>
+
+    <p>Парадокс государственной политики в том, что две её цели прямо противоречат друг другу. Антитабачная политика Минздрава направлена на снижение числа курильщиков — и успешна: распространённость курения вдвое ниже, чем в 2012-м. Фискальная политика Минфина зависит от сохранения курящего населения в размере, достаточном для сбора 1,1+ трлн рублей акцизов в год. Чем эффективнее первая цель, тем больше давление на вторую.</p>
+
+    <div class="conclusion">
+      <h3>Итог: рынок на трёх развилках одновременно</h3>
+      <p>Российский табачный рынок 2025–2026 годов стоит на трёх развилках. Первая — акцизная: государство повышает ставки, чтобы получить 3,4 трлн за три года, но рискует снова раздуть нелегальный рынок и потерять ту же сумму. Прецедент 2019–2021 годов уже показал: акцизный нажим без гармонизации в ЕАЭС даёт обратный эффект.</p>
+      <p>Вторая — регуляторная: вейпы и электронные сигареты росли в 9 раз быстрее традиционного табака и стали массовым явлением. Запрет переместит их в нелегальный сегмент — опыт кальянного табака показал, что разумный акциз работает лучше запрета. Третья развилка — структурная: международные мейджоры де-факто остаются, но вполне могут уйти окончательно. Заменить их производственные мощности и технологии в краткосрочной перспективе нечем.</p>
+      <p>Рынок, дающий государству 2% бюджета, будет существовать в любом сценарии. Вопрос лишь в том, какая его доля останется легальной — и будет ли она платить акцизы.</p>
+    </div>
+
+  </article>
+</main>
+
+<footer>
+  <strong>kotana.com.ru</strong> &nbsp;·&nbsp; Обзор табачного рынка · 2025–2026 &nbsp;·&nbsp; Источники: ННЦК, Минпромторг, Минфин, BusinesStat, РБК Тренды, Ведомости, Деловой Петербург, РИА Новости
+</footer>
+
+</body>
+</html>

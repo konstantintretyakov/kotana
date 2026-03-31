@@ -122,6 +122,21 @@ def blog_cybersecurity_market_2025_2026():
     return render_template("blog/cybersecurity-market-2025-2026.html")
 
 
+@app.route("/blog/oil-market-2025-2026")
+def blog_oil_market_2025_2026():
+    return render_template("blog/oil-market-2025-2026.html")
+
+
+@app.route("/blog/tobacco-market-2025-2026")
+def blog_tobacco_market_2025_2026():
+    return render_template("blog/tobacco-market-2025-2026.html")
+
+
+@app.route("/blog/dog-food-market-2025-2026")
+def blog_dog_food_market_2025_2026():
+    return render_template("blog/dog-food-market-2025-2026.html")
+
+
 @app.route("/sitemap.xml")
 def sitemap():
     xml = f"""<?xml version="1.0" encoding="UTF-8"?>
@@ -243,6 +258,21 @@ def sitemap():
     </url>
     <url>
         <loc>{SITE_URL}/blog/cybersecurity-market-2025-2026</loc>
+        <changefreq>yearly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>{SITE_URL}/blog/oil-market-2025-2026</loc>
+        <changefreq>yearly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>{SITE_URL}/blog/tobacco-market-2025-2026</loc>
+        <changefreq>yearly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>{SITE_URL}/blog/dog-food-market-2025-2026</loc>
         <changefreq>yearly</changefreq>
         <priority>0.7</priority>
     </url>

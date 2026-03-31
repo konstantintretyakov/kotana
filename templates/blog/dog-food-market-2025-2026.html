@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Рынок кормов для собак России 2025–2026 | kotana.com.ru</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --ink:          #0f1117;
+      --paper:        #f7f4ef;
+      --cream:        #ede9e0;
+      --accent:       #7a4f1a;
+      --accent-light: #f0dfc4;
+      --gold:         #b8922a;
+      --green:        #1a7a3c;
+      --red:          #c0392b;
+      --muted:        #7a7060;
+      --rule:         #d4cfc5;
+      --col:          clamp(320px, 66ch, 720px);
+    }
+    html { font-size: 17px; scroll-behavior: smooth; }
+    body {
+      background: var(--paper); color: var(--ink);
+      font-family: 'IBM Plex Sans', sans-serif;
+      line-height: 1.75; -webkit-font-smoothing: antialiased;
+    }
+
+    .masthead {
+      background: var(--ink); padding: 14px 40px;
+      display: flex; align-items: center; justify-content: space-between;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: .75rem; letter-spacing: .12em; text-transform: uppercase;
+    }
+    .masthead-logo { font-size: 1rem; font-weight: 500; color: #fff; }
+    .masthead-meta { color: #666; }
+
+    .hero {
+      background: var(--accent); color: var(--paper);
+      padding: 80px 40px 72px; position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: 'PET';
+      position: absolute; right: -20px; top: 50%; transform: translateY(-50%);
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(120px, 18vw, 260px); font-weight: 900;
+      color: rgba(255,255,255,.05); letter-spacing: -.04em; line-height: 1; pointer-events: none;
+    }
+    .hero-inner { max-width: var(--col); margin: 0 auto; position: relative; }
+    .hero-tag {
+      display: inline-block;
+      border: 1px solid rgba(255,255,255,.3); color: rgba(255,255,255,.75);
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: .72rem; letter-spacing: .15em; text-transform: uppercase;
+      padding: 4px 12px; margin-bottom: 28px;
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.2rem, 5vw, 3.4rem); font-weight: 700;
+      line-height: 1.18; letter-spacing: -.02em; margin-bottom: 24px; max-width: 22ch;
+    }
+    .hero h1 em { font-style: italic; color: #f5d9a8; }
+    .hero-lead {
+      font-size: 1.08rem; color: rgba(255,255,255,.72);
+      max-width: 54ch; line-height: 1.65; margin-bottom: 40px;
+    }
+    .hero-byline {
+      display: flex; align-items: center; gap: 16px;
+      font-size: .8rem; color: rgba(255,255,255,.4);
+      font-family: 'IBM Plex Mono', monospace;
+    }
+    .hero-byline span { color: rgba(255,255,255,.25); }
+    .hero-byline strong { color: rgba(255,255,255,.65); font-weight: 500; }
+
+    .stats-bar { background: var(--ink); padding: 0 40px; }
+    .stats-inner {
+      max-width: calc(var(--col) + 200px); margin: 0 auto;
+      display: grid; grid-template-columns: repeat(3,1fr);
+    }
+    .stat-item {
+      padding: 24px 32px; border-right: 1px solid rgba(255,255,255,.07); color: #fff;
+    }
+    .stat-item:first-child { padding-left: 0; }
+    .stat-item:last-child  { border-right: none; }
+    .stat-number {
+      font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 700;
+      display: block; line-height: 1; color: #f5d9a8;
+    }
+    .stat-label {
+      font-size: .75rem; text-transform: uppercase;
+      letter-spacing: .1em; opacity: .45; margin-top: 4px;
+      font-family: 'IBM Plex Mono', monospace;
+    }
+
+    .article-wrap { padding: 72px 40px; }
+    .article-inner { max-width: var(--col); margin: 0 auto; }
+
+    .article-inner > p:first-of-type::first-letter {
+      font-family: 'Playfair Display', serif; font-size: 4.5em; font-weight: 900;
+      float: left; line-height: .78; margin-right: 8px; margin-top: 6px; color: var(--accent);
+    }
+    p { margin-bottom: 1.5rem; }
+
+    h2 {
+      font-family: 'Playfair Display', serif; font-size: 1.7rem; font-weight: 700;
+      letter-spacing: -.02em; line-height: 1.25; margin: 3rem 0 1.1rem;
+    }
+    h2::before { content: ''; display: block; width: 32px; height: 3px; background: var(--accent); margin-bottom: 16px; }
+
+    h3 {
+      font-family: 'IBM Plex Sans', sans-serif; font-size: 1.05rem; font-weight: 600;
+      margin: 2rem 0 .7rem; text-transform: uppercase; letter-spacing: .06em; color: var(--gold);
+    }
+
+    blockquote {
+      border-left: 3px solid var(--accent); margin: 2.5rem 0; padding: 20px 0 20px 32px;
+    }
+    blockquote p {
+      font-family: 'Playfair Display', serif; font-size: 1.35rem; font-style: italic;
+      line-height: 1.5; color: var(--ink); margin: 0 0 8px;
+    }
+    blockquote cite {
+      font-family: 'IBM Plex Mono', monospace; font-size: .72rem;
+      text-transform: uppercase; letter-spacing: .12em; color: var(--muted); font-style: normal;
+    }
+
+    .highlight { background: var(--accent-light); padding: 0 4px; font-weight: 500; }
+
+    /* Scenario grid */
+    .scenario-grid {
+      display: grid; grid-template-columns: repeat(3,1fr);
+      gap: 1px; background: var(--rule); border: 1px solid var(--rule); margin: 2.5rem 0;
+    }
+    .sc-card { background: var(--paper); padding: 24px 20px; }
+    .sc-label {
+      font-family: 'IBM Plex Mono', monospace; font-size: .65rem;
+      text-transform: uppercase; letter-spacing: .15em; color: var(--muted); margin-bottom: 10px;
+    }
+    .sc-value { font-family: 'Playfair Display', serif; font-size: 1.7rem; font-weight: 700; line-height: 1; margin-bottom: 6px; }
+    .sc-value.base { color: var(--gold); }
+    .sc-value.bull { color: var(--green); }
+    .sc-value.bear { color: var(--red); }
+    .sc-title { font-size: .88rem; font-weight: 600; margin-bottom: 4px; }
+    .sc-source { font-family: 'IBM Plex Mono', monospace; font-size: .63rem; color: var(--muted); margin-bottom: 4px; }
+    .sc-desc { font-size: .8rem; color: var(--muted); line-height: 1.5; margin-top: 8px; }
+
+    /* Data card */
+    .data-card {
+      background: var(--cream); border: 1px solid var(--rule); padding: 28px 32px; margin: 2.5rem 0;
+    }
+    .data-card h4 {
+      font-family: 'IBM Plex Mono', monospace; font-size: .7rem;
+      text-transform: uppercase; letter-spacing: .15em; color: var(--muted); margin-bottom: 20px;
+    }
+    .data-rows { display: flex; flex-direction: column; gap: 12px; }
+    .data-row { display: flex; align-items: center; gap: 16px; }
+    .data-row-label { font-size: .85rem; color: var(--muted); width: 220px; flex-shrink: 0; }
+    .data-row-bar-wrap { flex: 1; height: 6px; background: var(--rule); position: relative; }
+    .data-row-bar { position: absolute; top: 0; left: 0; height: 100%; }
+    .data-row-bar.amber { background: var(--accent); }
+    .data-row-bar.gold  { background: var(--gold); }
+    .data-row-bar.green { background: var(--green); }
+    .data-row-bar.red   { background: var(--red); opacity: .7; }
+    .data-row-bar.muted { background: var(--muted); opacity: .35; }
+    .data-row-val {
+      font-family: 'IBM Plex Mono', monospace; font-size: .8rem;
+      font-weight: 500; width: 110px; text-align: right;
+    }
+
+    /* Segment / brand cards (2-col) */
+    .segment-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 1px; background: var(--rule); border: 1px solid var(--rule); margin: 2.5rem 0;
+    }
+    .segment-card { background: var(--paper); padding: 24px; }
+    .segment-icon { font-size: 1.3rem; margin-bottom: 8px; display: block; }
+    .segment-type {
+      font-family: 'IBM Plex Mono', monospace; font-size: .65rem;
+      text-transform: uppercase; letter-spacing: .12em; color: var(--muted); margin-bottom: 6px;
+    }
+    .segment-name { font-weight: 600; font-size: .97rem; margin-bottom: 4px; }
+    .segment-stat {
+      font-family: 'Playfair Display', serif; font-weight: 700;
+      color: var(--accent); font-size: 1.15rem; margin-bottom: 4px;
+    }
+    .segment-label {
+      display: inline-block; font-family: 'IBM Plex Mono', monospace;
+      font-size: .6rem; text-transform: uppercase; letter-spacing: .1em;
+      padding: 3px 8px; border-radius: 2px; margin-bottom: 8px;
+    }
+    .segment-label.hot  { background: var(--accent-light); color: var(--accent); }
+    .segment-label.warm { background: #f5ecd4; color: var(--gold); }
+    .segment-label.risk { background: #fde8e0; color: var(--red); }
+    .segment-label.ok   { background: #d0ead8; color: var(--green); }
+    .segment-desc { font-size: .8rem; color: var(--muted); line-height: 1.55; }
+
+    /* Metrics 2×2 */
+    .metrics-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 1px; background: var(--rule); border: 1px solid var(--rule); margin: 2.5rem 0;
+    }
+    .metric-cell { background: var(--paper); padding: 24px; }
+    .metric-label {
+      font-family: 'IBM Plex Mono', monospace; font-size: .68rem;
+      text-transform: uppercase; letter-spacing: .14em; color: var(--muted); margin-bottom: 8px;
+    }
+    .metric-value { font-family: 'Playfair Display', serif; font-size: 1.65rem; font-weight: 700; line-height: 1.1; }
+    .metric-value.amber { color: var(--accent); }
+    .metric-value.gold  { color: var(--gold); }
+    .metric-value.green { color: var(--green); }
+    .metric-value.red   { color: var(--red); }
+    .metric-note { font-size: .78rem; color: var(--muted); margin-top: 6px; }
+
+    /* Risk / trend list */
+    .risk-list { margin: 2rem 0; }
+    .risk-item {
+      display: flex; gap: 16px; padding: 16px 0;
+      border-bottom: 1px solid var(--rule); align-items: flex-start;
+    }
+    .risk-item:first-child { border-top: 1px solid var(--rule); }
+    .risk-badge {
+      font-family: 'IBM Plex Mono', monospace; font-size: .62rem;
+      text-transform: uppercase; letter-spacing: .1em;
+      padding: 4px 10px; border-radius: 2px; flex-shrink: 0; margin-top: 2px;
+    }
+    .risk-badge.high { background: #fde8e0; color: var(--red); }
+    .risk-badge.mid  { background: #f5ecd4; color: var(--gold); }
+    .risk-badge.low  { background: #d0ead8; color: var(--green); }
+    .risk-title { font-weight: 600; font-size: .9rem; margin-bottom: 3px; }
+    .risk-desc  { font-size: .82rem; color: var(--muted); line-height: 1.55; }
+
+    .divider { border: none; border-top: 1px solid var(--rule); margin: 3rem 0; }
+
+    .conclusion {
+      background: var(--ink); color: var(--paper); padding: 36px 40px; margin: 3rem 0 0;
+    }
+    .conclusion h3 { color: #f5d9a8; margin-top: 0; letter-spacing: .06em; font-size: 1rem; text-transform: uppercase; }
+    .conclusion p { color: #ccc; margin-bottom: 1rem; }
+    .conclusion p:last-child { margin-bottom: 0; }
+
+    footer {
+      background: var(--cream); border-top: 1px solid var(--rule);
+      padding: 28px 40px; font-family: 'IBM Plex Mono', monospace;
+      font-size: .72rem; color: var(--muted); text-align: center; letter-spacing: .06em;
+    }
+    footer strong { color: var(--ink); }
+
+    @media (max-width: 640px) {
+      .masthead { padding: 12px 20px; }
+      .hero { padding: 56px 20px 52px; }
+      .stats-bar { padding: 0 20px; }
+      .stats-inner, .scenario-grid { grid-template-columns: 1fr; }
+      .stat-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,.07); padding: 16px 0; }
+      .article-wrap { padding: 48px 20px; }
+      .segment-grid, .metrics-grid { grid-template-columns: 1fr; }
+      .data-row-label { width: 130px; font-size: .78rem; }
+    }
+  </style>
+</head>
+<body>
+
+<header class="masthead">
+  <span class="masthead-logo">kotana.com.ru</span>
+  <span class="masthead-meta">Обзор · Корма для собак · 2025–2026</span>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-tag">Обзор рынка · Корма для собак · 2025–2026</div>
+    <h1>Рынок собачьих кормов: <em>гуманизация, суперпремиум и русский ответ Mars</em></h1>
+    <p class="hero-lead">Собаки в России стали членами семьи — и рынок отреагировал. Продажи кормов для собак выросли на 15% в деньгах и на 9% в объёме. Суперпремиум занял уже 55% рынка кормов. Российские бренды отвоевали 96% натурального объёма у транснациональных концернов. К 2030 году рынок может достичь ₽1 трлн.</p>
+    <div class="hero-byline">
+      <strong>Редакция kotana.com.ru</strong>
+      <span>·</span>
+      <span>Март 2026</span>
+      <span>·</span>
+      <span>12 мин чтения</span>
+    </div>
+  </div>
+</section>
+
+<div class="stats-bar">
+  <div class="stats-inner">
+    <div class="stat-item">
+      <span class="stat-number">+15%</span>
+      <span class="stat-label">Рост продаж кормов для собак в 2025 г. в денежном выражении</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number">55,5%</span>
+      <span class="stat-label">Доля суперпремиума во всём рынке кормов в рублях — 2024 г.</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number">96%</span>
+      <span class="stat-label">Доля российских брендов по натуральному объёму рынка к 2026 г.</span>
+    </div>
+  </div>
+</div>
+
+<main class="article-wrap">
+  <article class="article-inner">
+
+    <p>Есть рынки, которые растут вопреки всему: кризисам, инфляции, геополитике. Рынок кормов для собак — один из них. Пока потребители срезали расходы на одежду и рестораны, на своих питомцев они не экономили. Более того — тратили больше и выбирали лучшее. За 2024–2025 годы средняя цена килограмма собачьего корма выросла со 151 до 240 рублей, но объёмы в килограммах при этом тоже увеличились на 9%. Рынок, который ещё двадцать лет назад был монополией транснациональных корпораций, теперь переживает один из самых интересных эпизодов в своей истории: российские бренды бросают вызов Mars и Nestlé на их собственной территории.</p>
+
+    <h2>Рынок в цифрах: от натурального роста к премиумизации</h2>
+
+    <p>Совокупный оборот рынка зоотоваров России в 2025 году вырос до <span class="highlight">590 млрд рублей</span>. Корма занимают около 80% этого объёма — примерно 470–480 млрд рублей. Рынок кормов для кошек и собак в 2024 году оценивался в 564 млрд рублей, в 2025-м вырос на 15% в денежном выражении. Продажи кормов для собак в частности прибавили <span class="highlight">9% в натуральном выражении и 15% в рублях</span>, средняя цена килограмма достигла 240 рублей.</p>
+
+    <div class="data-card">
+      <h4>Ключевые показатели рынка кормов для собак, 2021–2025 гг.</h4>
+      <div class="data-rows">
+        <div class="data-row">
+          <span class="data-row-label">Зоорынок в целом (2025)</span>
+          <div class="data-row-bar-wrap"><div class="data-row-bar amber" style="width:100%"></div></div>
+          <span class="data-row-val">₽590 млрд</span>
+        </div>
+        <div class="data-row">
+          <span class="data-row-label">Рынок кормов (2024)</span>
+          <div class="data-row-bar-wrap"><div class="data-row-bar amber" style="width:95%"></div></div>
+          <span class="data-row-val">₽564 млрд</span>
+        </div>
+        <div class="data-row">
+          <span class="data-row-label">Суперпремиум сегмент (2024)</span>
+          <div class="data-row-bar-wrap"><div class="data-row-bar gold" style="width:53%"></div></div>
+          <span class="data-row-val">₽313 млрд</span>
+        </div>
+        <div class="data-row">
+          <span class="data-row-label">Зоорынок в 2021 году (база)</span>
+          <div class="data-row-bar-wrap"><div class="data-row-bar muted" style="width:45%"></div></div>
+          <span class="data-row-val">₽265 млрд</span>
+        </div>
+        <div class="data-row">
+          <span class="data-row-label">Рост корм. собак (2025, руб.)</span>
+          <div class="data-row-bar-wrap"><div class="data-row-bar green" style="width:15%"></div></div>
+          <span class="data-row-val">+15%</span>
+        </div>
+        <div class="data-row">
+          <span class="data-row-label">Рост корм. собак (2025, кг)</span>
+          <div class="data-row-bar-wrap"><div class="data-row-bar green" style="width:9%"></div></div>
+          <span class="data-row-val">+9%</span>
+        </div>
+      </div>
+    </div>
+
+    <p>Примечательно, что темпы роста кормов для собак в 2025 году <span class="highlight">превысили показатели рынка продуктов питания в целом</span> — по данным аналитической компании NTech. Это явление повторяется из года в год и объясняется одним фундаментальным трендом: «гуманизацией» отношения к питомцам. Пока продовольственная инфляция сдерживает расходы домохозяйств на еду для людей, расходы на еду для собак растут обгоняющими темпами. Средние ежемесячные траты на содержание питомца достигают <span class="highlight">4 500 рублей</span>, из которых 90% приходится на питание и лакомства.</p>
+
+    <h2>Главный двигатель рынка: собака как член семьи</h2>
+
+    <p>Феномен «гуманизации» питомцев — не маркетинговый термин, а задокументированный социальный сдвиг. По данным НАФИ, <span class="highlight">73% россиян относятся к питомцам как к близким людям</span>. В крупных городах более 90% владельцев считают своих кошек и собак полноправными членами семьи. Переход от модели «животное во дворе» к модели «компаньон в квартире» происходит уже несколько десятилетий, но последние 5–7 лет этот процесс ускорился.</p>
+
+    <p>Гуманизация напрямую перестраивает структуру спроса. Если раньше хозяин выбирал «какой-нибудь корм», то сегодня он изучает состав, ищет беззерновые формулы, холистики и функциональное питание — точно так же, как делает это для собственного рациона. Именно этим объясняется феномен суперпремиумизации: <span class="highlight">55,5% всего рынка кормов в денежном выражении в 2024 году пришлось на сегмент суперпремиум</span>, который рос со средним темпом 20,8%.</p>
+
+    <blockquote>
+      <p>«С детьми с определённого возраста можно договориться. Со своей кошкой договориться нельзя. Россияне начинают кормить питомцев более дорогими кормами — это и есть премиумизация.»</p>
+      <cite>— Руководитель Mars Petcare в России, Коммерсантъ</cite>
+    </blockquote>
+
+    <hr class="divider" />
+
+    <h2>Импортозамещение: как российские бренды победили транснационалов</h2>
+
+    <p>Уход западных инвестиций в 2022 году создал структурную пустоту, которую российские производители заполнили быстрее, чем ожидалось. К началу 2026 года <span class="highlight">российские бренды заняли 96% рынка кормов</span> в натуральном объёме. Производство готовых кормов для домашних животных в 2024 году достигло 1,5–1,56 млн тонн, показав рост на 7–13% в зависимости от методологии подсчёта. В 2023 году импорт кормов упал ещё на 28% — до 53,3 тыс. тонн против 74,3 тыс. годом ранее.</p>
+
+    <div class="metrics-grid">
+      <div class="metric-cell">
+        <div class="metric-label">Доля отечественных — натур. объём</div>
+        <div class="metric-value amber">96%</div>
+        <div class="metric-note">К началу 2026 года. Ещё в 2019-м доля импорта составляла 14,3%, к 2023-му — лишь 6,1% от общего объёма продаж.</div>
+      </div>
+      <div class="metric-cell">
+        <div class="metric-label">Производство кормов (2024)</div>
+        <div class="metric-value gold">1,5 млн т</div>
+        <div class="metric-note">Рост на 7% год к году (Росстат). Центральный ФО — 342,7 тыс. т только по собачьим кормам. 86% выпуска сосредоточено в Московской, Калужской областях и Новосибирске.</div>
+      </div>
+      <div class="metric-cell">
+        <div class="metric-label">Рост продаж отечест. брендов собак</div>
+        <div class="metric-value green">+35%</div>
+        <div class="metric-note">Продажи российских брендов собачьих кормов выросли на 35% — против 15,2% роста всей категории. Бренды СТМ показали рост 57,4% в рублях.</div>
+      </div>
+      <div class="metric-cell">
+        <div class="metric-label">Падение импорта (2024 к 2023)</div>
+        <div class="metric-value red">−28%</div>
+        <div class="metric-note">Импорт кормов и лакомств сократился с 74,3 до 53,3 тыс. тонн. Лидер поставок — Бельгия (33%), второй по объёму — Франция (15% стоимостного объёма).</div>
+      </div>
+    </div>
+
+    <p>Ключевой парадокс рынка: крупнейшие «иностранные» бренды де-факто остаются российскими производителями. Mars производит Pedigree, Chappi, Royal Canin, Cesar на заводах в Луховицах и Новосибирске, используя 95% местного сырья. Nestlé локализовала Pro Plan и Purina. Когда компании объявили о «приостановке инвестиций», они продолжили операционную деятельность: <span class="highlight">физически рынок не остался без продукта</span>. Зато ценовое преимущество и пространство в верхних ценовых сегментах частично освободилось для отечественных новаторов.</p>
+
+    <hr class="divider" />
+
+    <h2>Игроки: от «регулярной армии» до «партизанских отрядов»</h2>
+
+    <div class="segment-grid">
+      <div class="segment-card">
+        <span class="segment-icon">🌍</span>
+        <div class="segment-type">Транснационалы / локализованные</div>
+        <div class="segment-name">Mars Petcare — Pedigree, Chappi, Royal Canin, Cesar</div>
+        <span class="segment-label warm">Лидер рынка</span>
+        <div class="segment-stat">~40% рынка собачьих кормов</div>
+        <div class="segment-desc">Pedigree и Chappi исторически занимали 41,7% российского рынка кормов для собак (Euromonitor, 2020). Производство полностью локализовано на двух российских заводах, 95% сырья — российское. Уход инвестиций не означал ухода продукта. TOP-1–4 бренды растут умеренно — около 3%, удерживая позиции за счёт дистрибуции в «Пятёрочке» и «Магните».</div>
+      </div>
+      <div class="segment-card">
+        <span class="segment-icon">🇷🇺</span>
+        <div class="segment-type">Российский суперпремиум</div>
+        <div class="segment-name">AlphaPet, SIRIUS, Мираторг Winner, Blitz</div>
+        <span class="segment-label hot">Быстрорастущие</span>
+        <div class="segment-stat">+35% продажи в 2025 г.</div>
+        <div class="segment-desc">AlphaPet — завод в Дмитровском районе МО, швейцарские технологии BUHLER, свежее мясо в рецептуре. SIRIUS — сильный середняк с хорошей репутацией. «Мираторг» — собственная производственная база Winner + ветеринарные диеты. Работают как «партизаны»: быстро занимают высокомаржинальные ниши (холистики, беззерновые корма).</div>
+      </div>
+      <div class="segment-card">
+        <span class="segment-icon">🏪</span>
+        <div class="segment-type">Собственные торговые марки ретейла</div>
+        <div class="segment-name">СТМ «Лента», «Магнит», ВкусВилл и пр.</div>
+        <span class="segment-label hot">Рост +57% в рублях</span>
+        <div class="segment-stat">57,4% рост продаж (2025)</div>
+        <div class="segment-desc">Самый быстрый рост на рынке. СТМ в кормах для собак выросли на 57,4% в рублях и 59,2% в упаковках в 2025-м. Ретейл научился создавать продукты, конкурентные по качеству с брендами, — и по привлекательной цене. Второй этап развития СТМ — бренды-имитаторы превращаются в самостоятельные марки.</div>
+      </div>
+      <div class="segment-card">
+        <span class="segment-icon">📱</span>
+        <div class="segment-type">Онлайн и маркетплейсы</div>
+        <div class="segment-name">Wildberries, Ozon, Яндекс Маркет, зоошопы</div>
+        <span class="segment-label ok">22% рынка и растёт</span>
+        <div class="segment-stat">+18% продажи в янв. 2025</div>
+        <div class="segment-desc">Онлайн-канал — главный драйвер натурального роста: люди покупают больше, а не просто дороже. Сухие корма для собак занимают 47% от всей онлайн-торговли зоотоварами — крупнейшая категория. За 12 месяцев доля онлайна выросла на 2,6 п.п. до 22%. Маркетплейсы снижают барьеры для новых российских брендов.</div>
+      </div>
+    </div>
+
+    <hr class="divider" />
+
+    <h2>Три сценария роста: от умеренного до ₽1 трлн</h2>
+
+    <div class="scenario-grid">
+      <div class="sc-card">
+        <div class="sc-label">Базовый</div>
+        <div class="sc-title">Устойчивый рост</div>
+        <div class="sc-value base">CAGR 8–12%</div>
+        <div class="sc-source">Zoobiznes.com, аналитика 2025</div>
+        <div class="sc-desc">Наиболее вероятный сценарий. Гуманизация продолжается, популяция собак стабильно растёт, российское производство наращивает мощности. Рынок опережает FMCG. К 2030 году — около 800 млрд рублей только по кормам.</div>
+      </div>
+      <div class="sc-card">
+        <div class="sc-label">Оптимистичный</div>
+        <div class="sc-title">Экспорт и премиум-бум</div>
+        <div class="sc-value bull">CAGR 15%+</div>
+        <div class="sc-source">Zoobiznes.com / ЦФО-прогноз</div>
+        <div class="sc-desc">Российские бренды выходят на рынки Азии и Ближнего Востока. Рост реальных доходов населения ускоряет премиумизацию. Локализация производства витаминных премиксов снижает себестоимость. Рынок кормов к 2030 году достигает ₽1 трлн.</div>
+      </div>
+      <div class="sc-card">
+        <div class="sc-label">Консервативный</div>
+        <div class="sc-title">Давление инфляции</div>
+        <div class="sc-value bear">CAGR 5–7%</div>
+        <div class="sc-source">Оценка при ухудшении доходов</div>
+        <div class="sc-desc">Снижение реальных доходов населения разворачивает премиумизацию: покупатели возвращаются в эконом-сегмент. Рост продаж СТМ ускоряется за счёт цены, а не качества. Натуральные объёмы стагнируют, денежный рост — только за счёт инфляции.</div>
+      </div>
+    </div>
+
+    <hr class="divider" />
+
+    <h2>Ключевые тренды и факторы 2026 года</h2>
+
+    <div class="risk-list">
+      <div class="risk-item">
+        <div class="risk-badge high">Тренд</div>
+        <div>
+          <div class="risk-title">Суперпремиумизация: платить больше за меньший объём</div>
+          <div class="risk-desc">Суперпремиум уже занимает 55,5% рынка кормов в деньгах при среднем темпе роста сегмента 20,8%. Владельцы выбирают корма с высоким содержанием мяса, без зерна, с пробиотиками и функциональными добавками. Средняя цена за килограмм выросла с 93,8 рублей в 2019 году до 240 рублей в 2025-м — рост в 2,5 раза. Тренд сильнее в городах-миллионниках и среди молодых владельцев 25–40 лет.</div>
+        </div>
+      </div>
+      <div class="risk-item">
+        <div class="risk-badge high">Тренд</div>
+        <div>
+          <div class="risk-title">Лакомства — самый быстрорастущий сегмент</div>
+          <div class="risk-desc">Лакомства для собак выросли на 20,3% в рублях и 21,8% в упаковках — быстрее, чем основной корм. В онлайне — +27,6%, в зоомагазинах — +13,5%. Лакомство — эмоциональная покупка: способ наградить и выразить любовь. Именно здесь строятся самые маржинальные бренды. Число SKU лакомств в специализированных магазинах достигло 78 позиций.</div>
+        </div>
+      </div>
+      <div class="risk-item">
+        <div class="risk-badge mid">Тренд</div>
+        <div>
+          <div class="risk-title">Онлайн-канал переписывает правила дистрибуции</div>
+          <div class="risk-desc">Доля онлайна выросла до 22% рынка (+2,6 п.п. за год). В январе 2025-го интернет-канал прибавил 18% против 8% в офлайн-зоомагазинах. Сухие корма для собак — самая популярная категория в e-commerce: 47% всех зоопокупок онлайн. Маркетплейсы де-факто стали главным лифтом для новых российских брендов, снижая зависимость от места на полке в сетевых магазинах.</div>
+        </div>
+      </div>
+      <div class="risk-item">
+        <div class="risk-badge mid">Вызов</div>
+        <div>
+          <div class="risk-title">Зависимость от импортных ингредиентов</div>
+          <div class="risk-desc">Несмотря на доминирование российских брендов по объёму, ключевые ингредиенты — витаминные премиксы, аминокислоты, специальные стабилизаторы — по-прежнему импортируются. Локализация сырьевой базы остаётся структурным ограничением. В 2025 году инфляция на корма составляла около 32%, что перекладывается на покупателей или сжимает маржу производителей.</div>
+        </div>
+      </div>
+      <div class="risk-item">
+        <div class="risk-badge mid">Вызов</div>
+        <div>
+          <div class="risk-title">Маркировка «Честный знак» — новый фильтр рынка</div>
+          <div class="risk-desc">Обязательная маркировка кормов для животных «Честным знаком» станет реальностью к 2025–2026 годам. Для крупных игроков это операционные расходы; для небольших производителей — серьёзный барьер входа. С другой стороны, маркировка выдавит с рынка нелегальную продукцию и контрафакт, что поддержит легальных участников.</div>
+        </div>
+      </div>
+      <div class="risk-item">
+        <div class="risk-badge low">Возможность</div>
+        <div>
+          <div class="risk-title">Конвертация в готовые корма — огромный нетронутый рынок</div>
+          <div class="risk-desc">По данным Mars, в России на полнорационные корма переведены далеко не все собаки: многие хозяева продолжают кормить питомцев «с хозяйского стола» или дешёвыми кормами-добавками. Во Франции и Германии 100%-ная конвертация заняла почти 100 лет — российскому рынку работы ещё на десятилетия. Каждый процент конвертации — это миллиарды рублей нового спроса.</div>
+        </div>
+      </div>
+    </div>
+
+    <hr class="divider" />
+
+    <h2>Каналы и региональная картина</h2>
+
+    <h3>Онлайн опережает офлайн</h3>
+    <p>Онлайн-канал уже контролирует 22% зоорынка и растёт быстрее всех остальных. В январе 2025-го интернет-продажи зоотоваров выросли на 18%, зоомагазины — на 8%, неспециализированная розница — на 13%. Средний чек на корм для собак в онлайне в июне 2025 года составил 895 рублей (+9% г/г). Оборот категории в марте–мае 2025-го вырос на 39% к тому же периоду 2024-го.</p>
+
+    <h3>Региональная динамика</h3>
+    <p>Центральный федеральный округ остаётся крупнейшим рынком зоотоваров страны с долей 34,8%. Лидером по <em>темпам</em> роста стал Юг России: +18,4% в деньгах и +10,8% в упаковках. Хорошую динамику показывают Сибирь и Дальний Восток: +14,4% и +7,9% соответственно. При этом 86% производства кормов сосредоточено в Московской, Калужской областях и Новосибирске — географическая концентрация создаёт логистические риски для региональных поставок.</p>
+
+    <div class="conclusion">
+      <h3>Итог: рынок, на котором побеждает тот, кто понимает «пет-родителя»</h3>
+      <p>Рынок кормов для собак в России — один из немногих потребительских сегментов, демонстрирующих устойчивый натуральный рост на фоне общей экономической неопределённости. Фундамент этого роста — глубокая эмоциональная связь владельцев со своими питомцами, которая оказывается сильнее любого внешнего кризиса. Гуманизация — это не тренд, это долгосрочный социальный переход, которому в развитых рынках Западной Европы уже 100 лет. Россия в самом начале этого пути.</p>
+      <p>Русские бренды прошли путь от «дешёвой альтернативы» до реальных конкурентов международных концернов за три года форс-мажорного импортозамещения. AlphaPet, SIRIUS, «Мираторг» и десятки других — это уже не просто аналоги, это продукты с собственным позиционированием, технологиями и лояльной аудиторией. Следующий рубеж — экспорт на рынки Азии и Ближнего Востока, где российская производственная база может стать конкурентным преимуществом.</p>
+      <p>Главный принцип рынка на ближайшие 5 лет: побеждает не тот, кто производит дешевле, а тот, кто лучше понимает «пет-родителя». Собака в современной российской семье — это член семьи с индивидуальными потребностями, историей болезней и диетическими предпочтениями. Рынок, который ответит на этот запрос экосистемой — корм, ветеринария, страховка, лакомства, гаджеты — получит клиента на всю жизнь питомца.</p>
+    </div>
+
+  </article>
+</main>
+
+<footer>
+  <strong>kotana.com.ru</strong> &nbsp;·&nbsp; Обзор рынка кормов для собак · 2025–2026 &nbsp;·&nbsp; Источники: NielsenIQ, NTech, BusinesStat, Zoobiznes.com, Zooinform, РБК Тренды, НАФИ, Россельхознадзор, Mars Petcare
+</footer>
+
+</body>
+</html>
