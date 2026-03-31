@@ -137,6 +137,21 @@ def blog_dog_food_market_2025_2026():
     return render_template("blog/dog-food-market-2025-2026.html")
 
 
+@app.route("/blog/food-retail-market-2025-2026")
+def blog_food_retail_market_2025_2026():
+    return render_template("blog/food-retail-market-2025-2026.html")
+
+
+@app.route("/blog/fashion-retail-2026")
+def blog_fashion_retail_2026():
+    return render_template("blog/fashion-retail-2026.html")
+
+
+@app.route("/blog/cosmetics-market-2026")
+def blog_cosmetics_market_2026():
+    return render_template("blog/cosmetics-market-2026.html")
+
+
 @app.route("/sitemap.xml")
 def sitemap():
     xml = f"""<?xml version="1.0" encoding="UTF-8"?>
@@ -273,6 +288,21 @@ def sitemap():
     </url>
     <url>
         <loc>{SITE_URL}/blog/dog-food-market-2025-2026</loc>
+        <changefreq>yearly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>{SITE_URL}/blog/food-retail-market-2025-2026</loc>
+        <changefreq>yearly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>{SITE_URL}/blog/fashion-retail-2026</loc>
+        <changefreq>yearly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>{SITE_URL}/blog/cosmetics-market-2026</loc>
         <changefreq>yearly</changefreq>
         <priority>0.7</priority>
     </url>

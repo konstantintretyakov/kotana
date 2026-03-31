@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Рынок одежды в России — 2026: год выживания и консолидации | kotana.com.ru</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --ink:    #0f1117;
+      --paper:  #f7f4ef;
+      --cream:  #ede9e0;
+      --accent: #8b3a62;
+      --accent-light: #f2d4e4;
+      --gold:   #b8922a;
+      --green:  #1a7a3c;
+      --red:    #c0392b;
+      --muted:  #7a7060;
+      --rule:   #d4cfc5;
+      --col:    clamp(320px, 66ch, 720px);
+    }
+    html { font-size: 17px; scroll-behavior: smooth; }
+    body {
+      background: var(--paper); color: var(--ink);
+      font-family: 'IBM Plex Sans', sans-serif;
+      line-height: 1.75; -webkit-font-smoothing: antialiased;
+    }
+
+    .masthead {
+      background: var(--ink); padding: 14px 40px;
+      display: flex; align-items: center; justify-content: space-between;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: .75rem; letter-spacing: .12em; text-transform: uppercase;
+    }
+    .masthead-logo { font-size: 1rem; font-weight: 500; color: #fff; }
+    .masthead-meta { color: #666; }
+
+    .hero {
+      background: var(--accent); color: var(--paper);
+      padding: 80px 40px 72px; position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: 'МОДА';
+      position: absolute; right: -10px; top: 50%; transform: translateY(-50%);
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(90px, 14vw, 200px); font-weight: 900;
+      color: rgba(255,255,255,.05); letter-spacing: -.04em; line-height: 1; pointer-events: none;
+    }
+    .hero-inner { max-width: var(--col); margin: 0 auto; position: relative; }
+    .hero-tag {
+      display: inline-block;
+      border: 1px solid rgba(255,255,255,.3); color: rgba(255,255,255,.75);
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: .72rem; letter-spacing: .15em; text-transform: uppercase;
+      padding: 4px 12px; margin-bottom: 28px;
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.2rem, 5vw, 3.4rem); font-weight: 700;
+      line-height: 1.18; letter-spacing: -.02em; margin-bottom: 24px; max-width: 22ch;
+    }
+    .hero h1 em { font-style: italic; color: #f4b8d4; }
+    .hero-lead {
+      font-size: 1.08rem; color: rgba(255,255,255,.72);
+      max-width: 54ch; line-height: 1.65; margin-bottom: 40px;
+    }
+    .hero-byline {
+      display: flex; align-items: center; gap: 16px;
+      font-size: .8rem; color: rgba(255,255,255,.4);
+      font-family: 'IBM Plex Mono', monospace;
+    }
+    .hero-byline span { color: rgba(255,255,255,.25); }
+    .hero-byline strong { color: rgba(255,255,255,.65); font-weight: 500; }
+
+    .stats-bar { background: var(--ink); padding: 0 40px; }
+    .stats-inner {
+      max-width: calc(var(--col) + 200px); margin: 0 auto;
+      display: grid; grid-template-columns: repeat(3,1fr);
+    }
+    .stat-item {
+      padding: 24px 32px; border-right: 1px solid rgba(255,255,255,.07); color: #fff;
+    }
+    .stat-item:first-child { padding-left: 0; }
+    .stat-item:last-child  { border-right: none; }
+    .stat-number {
+      font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 700;
+      display: block; line-height: 1; color: #f4b8d4;
+    }
+    .stat-label {
+      font-size: .75rem; text-transform: uppercase;
+      letter-spacing: .1em; opacity: .45; margin-top: 4px;
+      font-family: 'IBM Plex Mono', monospace;
+    }
+
+    .article-wrap { padding: 72px 40px; }
+    .article-inner { max-width: var(--col); margin: 0 auto; }
+
+    .article-inner > p:first-of-type::first-letter {
+      font-family: 'Playfair Display', serif; font-size: 4.5em; font-weight: 900;
+      float: left; line-height: .78; margin-right: 8px; margin-top: 6px; color: var(--accent);
+    }
+    p { margin-bottom: 1.5rem; }
+
+    h2 {
+      font-family: 'Playfair Display', serif; font-size: 1.7rem; font-weight: 700;
+      letter-spacing: -.02em; line-height: 1.25; margin: 3rem 0 1.1rem;
+    }
+    h2::before { content: ''; display: block; width: 32px; height: 3px; background: var(--accent); margin-bottom: 16px; }
+
+    h3 {
+      font-family: 'IBM Plex Sans', sans-serif; font-size: 1.05rem; font-weight: 600;
+      margin: 2rem 0 .7rem; text-transform: uppercase; letter-spacing: .06em; color: var(--gold);
+    }
+
+    blockquote {
+      border-left: 3px solid var(--accent); margin: 2.5rem 0; padding: 20px 0 20px 32px;
+    }
+    blockquote p {
+      font-family: 'Playfair Display', serif; font-size: 1.35rem; font-style: italic;
+      line-height: 1.5; color: var(--ink); margin: 0 0 8px;
+    }
+    blockquote cite {
+      font-family: 'IBM Plex Mono', monospace; font-size: .72rem;
+      text-transform: uppercase; letter-spacing: .12em; color: var(--muted); font-style: normal;
+    }
+
+    .highlight { background: var(--accent-light); padding: 0 4px; font-weight: 500; }
+
+    /* Scenario grid */
+    .scenario-grid {
+      display: grid; grid-template-columns: repeat(3,1fr);
+      gap: 1px; background: var(--rule); border: 1px solid var(--rule); margin: 2.5rem 0;
+    }
+    .sc-card { background: var(--paper); padding: 24px 20px; }
+    .sc-label {
+      font-family: 'IBM Plex Mono', monospace; font-size: .65rem;
+      text-transform: uppercase; letter-spacing: .15em; color: var(--muted); margin-bottom: 10px;
+    }
+    .sc-value { font-family: 'Playfair Display', serif; font-size: 1.7rem; font-weight: 700; line-height: 1; margin-bottom: 6px; }
+    .sc-value.base { color: var(--gold); }
+    .sc-value.bull { color: var(--green); }
+    .sc-value.bear { color: var(--red); }
+    .sc-title { font-size: .88rem; font-weight: 600; margin-bottom: 4px; }
+    .sc-source { font-family: 'IBM Plex Mono', monospace; font-size: .63rem; color: var(--muted); margin-bottom: 4px; }
+    .sc-desc { font-size: .8rem; color: var(--muted); line-height: 1.5; margin-top: 8px; }
+
+    /* Segment cards */
+    .instr-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 1px; background: var(--rule); border: 1px solid var(--rule); margin: 2.5rem 0;
+    }
+    .instr-card { background: var(--paper); padding: 24px; }
+    .instr-icon { font-size: 1.3rem; margin-bottom: 8px; display: block; }
+    .instr-type {
+      font-family: 'IBM Plex Mono', monospace; font-size: .65rem;
+      text-transform: uppercase; letter-spacing: .12em; color: var(--muted); margin-bottom: 6px;
+    }
+    .instr-name { font-weight: 700; font-size: .97rem; margin-bottom: 4px; }
+    .instr-yield {
+      font-family: 'Playfair Display', serif; font-weight: 700;
+      color: var(--accent); font-size: 1.15rem; margin-bottom: 4px;
+    }
+    .instr-label {
+      display: inline-block; font-family: 'IBM Plex Mono', monospace;
+      font-size: .6rem; text-transform: uppercase; letter-spacing: .1em;
+      padding: 3px 8px; border-radius: 2px; margin-bottom: 8px;
+    }
+    .instr-label.hot  { background: var(--accent-light); color: var(--accent); }
+    .instr-label.warm { background: #f5ecd4; color: var(--gold); }
+    .instr-label.risk { background: #fde8e0; color: var(--red); }
+    .instr-label.ok   { background: #d0ead8; color: var(--green); }
+    .instr-desc { font-size: .8rem; color: var(--muted); line-height: 1.55; }
+
+    /* Data card */
+    .data-card {
+      background: var(--cream); border: 1px solid var(--rule); padding: 28px 32px; margin: 2.5rem 0;
+    }
+    .data-card h4 {
+      font-family: 'IBM Plex Mono', monospace; font-size: .7rem;
+      text-transform: uppercase; letter-spacing: .15em; color: var(--muted); margin-bottom: 20px;
+    }
+    .data-rows { display: flex; flex-direction: column; gap: 12px; }
+    .data-row { display: flex; align-items: center; gap: 16px; }
+    .data-row-label { font-size: .85rem; color: var(--muted); width: 220px; flex-shrink: 0; }
+    .data-row-bar-wrap { flex: 1; height: 6px; background: var(--rule); position: relative; }
+    .data-row-bar { position: absolute; top: 0; left: 0; height: 100%; }
+    .data-row-bar.rose   { background: var(--accent); }
+    .data-row-bar.gold   { background: var(--gold); }
+    .data-row-bar.green  { background: var(--green); }
+    .data-row-bar.red    { background: var(--red); opacity: .7; }
+    .data-row-bar.muted  { background: var(--muted); opacity: .35; }
+    .data-row-val {
+      font-family: 'IBM Plex Mono', monospace; font-size: .8rem;
+      font-weight: 500; width: 100px; text-align: right;
+    }
+
+    /* Metrics 2x2 */
+    .metrics-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 1px; background: var(--rule); border: 1px solid var(--rule); margin: 2.5rem 0;
+    }
+    .metric-cell { background: var(--paper); padding: 24px; }
+    .metric-label {
+      font-family: 'IBM Plex Mono', monospace; font-size: .68rem;
+      text-transform: uppercase; letter-spacing: .14em; color: var(--muted); margin-bottom: 8px;
+    }
+    .metric-value { font-family: 'Playfair Display', serif; font-size: 1.65rem; font-weight: 700; line-height: 1.1; }
+    .metric-value.rose   { color: var(--accent); }
+    .metric-value.gold   { color: var(--gold); }
+    .metric-value.green  { color: var(--green); }
+    .metric-value.red    { color: var(--red); }
+    .metric-note { font-size: .78rem; color: var(--muted); margin-top: 6px; }
+
+    /* Risk list */
+    .risk-list { margin: 2rem 0; }
+    .risk-item {
+      display: flex; gap: 16px; padding: 16px 0;
+      border-bottom: 1px solid var(--rule); align-items: flex-start;
+    }
+    .risk-item:first-child { border-top: 1px solid var(--rule); }
+    .risk-badge {
+      font-family: 'IBM Plex Mono', monospace; font-size: .62rem;
+      text-transform: uppercase; letter-spacing: .1em;
+      padding: 4px 10px; border-radius: 2px; flex-shrink: 0; margin-top: 2px;
+    }
+    .risk-badge.high { background: #fde8e0; color: var(--red); }
+    .risk-badge.mid  { background: #f5ecd4; color: var(--gold); }
+    .risk-badge.low  { background: #d0ead8; color: var(--green); }
+    .risk-title { font-weight: 600; font-size: .9rem; margin-bottom: 3px; }
+    .risk-desc  { font-size: .82rem; color: var(--muted); line-height: 1.55; }
+
+    .divider { border: none; border-top: 1px solid var(--rule); margin: 3rem 0; }
+
+    .conclusion {
+      background: var(--ink); color: var(--paper); padding: 36px 40px; margin: 3rem 0 0;
+    }
+    .conclusion h3 { color: #f4b8d4; margin-top: 0; letter-spacing: .06em; font-size: 1rem; text-transform: uppercase; }
+    .conclusion p { color: #ccc; margin-bottom: 1rem; }
+    .conclusion p:last-child { margin-bottom: 0; }
+
+    footer {
+      background: var(--cream); border-top: 1px solid var(--rule);
+      padding: 28px 40px; font-family: 'IBM Plex Mono', monospace;
+      font-size: .72rem; color: var(--muted); text-align: center; letter-spacing: .06em;
+    }
+    footer strong { color: var(--ink); }
+
+    @media (max-width: 640px) {
+      .masthead { padding: 12px 20px; }
+      .hero { padding: 56px 20px 52px; }
+      .stats-bar { padding: 0 20px; }
+      .stats-inner, .scenario-grid { grid-template-columns: 1fr; }
+      .stat-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,.07); padding: 16px 0; }
+      .article-wrap { padding: 48px 20px; }
+      .instr-grid, .metrics-grid { grid-template-columns: 1fr; }
+      .data-row-label { width: 130px; font-size: .78rem; }
+    }
+  </style>
+</head>
+<body>
+
+<header class="masthead">
+  <span class="masthead-logo">kotana.com.ru</span>
+  <span class="masthead-meta">Обзор · Fashion-ритейл · 2026</span>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-tag">Анализ · Рынок одежды · 2026</div>
+    <h1>Рынок одежды — 2026: год <em>выживания и большой консолидации</em></h1>
+    <p class="hero-lead">Объём рынка достиг 4,4–4,8 трлн рублей, но за цифрами роста скрывается структурный перелом: трафик офлайна падает, маркетплейсы поглощают спрос, налоговая реформа добивает слабых. Для крупных — окно возможностей. Для средних — экзамен на выживание.</p>
+    <div class="hero-byline">
+      <strong>Редакция kotana.com.ru</strong>
+      <span>·</span>
+      <span>Март 2026</span>
+      <span>·</span>
+      <span>13 мин чтения</span>
+    </div>
+  </div>
+</section>
+
+<div class="stats-bar">
+  <div class="stats-inner">
+    <div class="stat-item">
+      <span class="stat-number">4,4–4,8 трлн</span>
+      <span class="stat-label">Объём рынка одежды, обуви и аксессуаров в 2025 г.</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number">94%</span>
+      <span class="stat-label">Доля маркетплейсов в онлайн-продажах одежды</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number">25+</span>
+      <span class="stat-label">Fashion-брендов ушли с рынка только за 2025 год</span>
+    </div>
+  </div>
+</div>
+
+<main class="article-wrap">
+  <article class="article-inner">
+
+    <p>Российский рынок одежды входит в 2026 год с парадоксальной статистикой: в деньгах он вырос, в штуках — сжался. По итогам 2025 года объём рынка одежды, обуви и аксессуаров достиг <span class="highlight">4,4–4,8 трлн рублей</span>, прибавив 7–17% к предыдущему году. Но это денежный рост на фоне инфляции и роста средних цен — число покупок на одного активного клиента за четыре года сократилось с 16 до 11. Потребитель не исчез: он стал рациональнее, осторожнее и переместился на маркетплейсы. Рынок отвечает на это болезненной консолидацией: за 2025 год офлайн покинули более 25 брендов — Incity, Etam, I Am Studio, Deseo, Yollo и другие. В 2026-м волна закрытий продолжится, но уже среди тех, кто казался устойчивым.</p>
+
+    <h2>Структурная перестройка: маркетплейсы выиграли войну</h2>
+
+    <p>Главный итог последних трёх лет для fashion-рынка — безоговорочная победа маркетплейсов как канала продаж. Одежду и обувь на маркетплейсах за последний год покупали <span class="highlight">69% россиян</span>, тогда как торговые центры выбирали лишь 48%. Собственные интернет-магазины брендов — и того меньше, около 18%. Маркетплейсы обеспечивают 94% всего онлайн-оборота в категории одежды и обуви: на Wildberries продажи в сегменте за год выросли на 66%, на Ozon — на 97%.</p>
+
+    <p>Интернет-продажи fashion в 2025 году превысили 2,6 трлн рублей — больше половины совокупного оборота рынка. При этом для локальных брендов картина принципиально иная: более 80% их выручки по-прежнему приходится на офлайн, а доля цифровых каналов едва достигает 15–20%. Крупные сети — Melon Fashion Group, Lime — работают в режиме полноценного омниканала, тогда как малый и средний fashion-бизнес оказался в структурной ловушке: офлайн-трафик падает, но перейти в онлайн без потери маржи не получается.</p>
+
+    <div class="data-card">
+      <h4>Каналы покупки одежды в России: аудитория, 2025 г.</h4>
+      <div class="data-rows">
+        <div class="data-row">
+          <span class="data-row-label">Маркетплейсы (WB, Ozon…)</span>
+          <div class="data-row-bar-wrap"><div class="data-row-bar rose" style="width:100%"></div></div>
+          <span class="data-row-val">69% покупателей</span>
+        </div>
+        <div class="data-row">
+          <span class="data-row-label">Торговые центры</span>
+          <div class="data-row-bar-wrap"><div class="data-row-bar gold" style="width:70%"></div></div>
+          <span class="data-row-val">48% покупателей</span>
+        </div>
+        <div class="data-row">
+          <span class="data-row-label">Интернет-магазины брендов</span>
+          <div class="data-row-bar-wrap"><div class="data-row-bar muted" style="width:26%"></div></div>
+          <span class="data-row-val">18% покупателей</span>
+        </div>
+        <div class="data-row">
+          <span class="data-row-label">Доля онлайн в обороте рынка</span>
+          <div class="data-row-bar-wrap"><div class="data-row-bar green" style="width:76%"></div></div>
+          <span class="data-row-val">~55%</span>
+        </div>
+      </div>
+    </div>
+
+    <p>Посещаемость магазинов одежды в торговых центрах в первом полугодии 2025 года снизилась на 6% в целом по стране и на 9% в Москве. Вакантность в торговых центрах, достигшая минимума в 6,4% в 2024 году, к концу 2026-го может вырасти до 9,7% — по мере того как средние и крупные сети продолжат оптимизацию сети и освобождают площади.</p>
+
+    <hr class="divider" />
+
+    <h2>Сценарии: от осторожного роста до стагнации</h2>
+
+    <p>Развитие рынка в 2026 году определяется двумя ключевыми переменными: динамикой реальных доходов населения и темпами снижения ключевой ставки ЦБ. При высокой ставке — потребительский кредит дорог, покупки дискреционных товаров откладываются. При снижении ставки — оживляется кредитование, ускоряется переток средств из депозитов в потребление.</p>
+
+    <div class="scenario-grid">
+      <div class="sc-card">
+        <div class="sc-label">Базовый сценарий</div>
+        <div class="sc-title">Умеренный рост</div>
+        <div class="sc-value base">+7–10%</div>
+        <div class="sc-source">Агентство Shift / консенсус</div>
+        <div class="sc-desc">Рост рынка в деньгах за счёт инфляции и умеренного восстановления спроса при снижении ставки во II полугодии. Консолидация ускоряется, но крупные игроки наращивают долю. Число закрытий меньше, чем в 2025-м.</div>
+      </div>
+      <div class="sc-card">
+        <div class="sc-label">Оптимистичный</div>
+        <div class="sc-title">Ускорение спроса</div>
+        <div class="sc-value bull">+15–17%</div>
+        <div class="sc-source">При быстром снижении ставки</div>
+        <div class="sc-desc">Быстрое смягчение ДКП оживляет потребкредит. Покупатели возвращаются в ТЦ. Онлайн-продажи продолжают расти двузначными темпами. Локальные бренды среднего сегмента восстанавливают маржу.</div>
+      </div>
+      <div class="sc-card">
+        <div class="sc-label">Консервативный</div>
+        <div class="sc-title">Стагнация</div>
+        <div class="sc-value bear">+3–5%</div>
+        <div class="sc-source">При инфляционном давлении</div>
+        <div class="sc-desc">Инфляция от роста тарифов и НДС съедает реальные доходы. Потребитель максимально рационален. Закрытия продолжаются, крупные сети откладывают экспансию. Реальный рост — нулевой.</div>
+      </div>
+    </div>
+
+    <hr class="divider" />
+
+    <h2>Кто закрывается и почему: анатомия волны уходов</h2>
+
+    <p>2025 год стал самым жёстким по числу закрытий для российского fashion-рынка за последние годы. Среди покинувших рынок: Incity, Deseo, I Am Studio, Etam, Face Code, Just Clothes, Yollo, Ready! Steady! Go!, Mellow, Luzeen, Urban Vibes, Inspire Girls, Mollis — и это только часть списка. Производители детской одежды Orby и Loloclo инициировали процедуру банкротства. В начале 2026 года под угрозой оказался Zenden: к управляющей компании предъявлено 20 исков на общую сумму 43,6 млн рублей — в три раза больше, чем годом ранее.</p>
+
+    <blockquote>
+      <p>«Настроения на fashion-рынке пессимистические, и 2026 год будет годом выживания. Потребители будут и дальше сокращать покупки и переходить на максимально рациональное потребление.»</p>
+      <cite>— Дмитрий Томилин, генеральный директор «Этерны»</cite>
+    </blockquote>
+
+    <p>Механика ухода одинакова у большинства: компании, вышедшие на рынок в 2022–2023 годах на волне освободившихся площадей после ухода Inditex и H&M Group, активно инвестировали в маркетинг и команду, не успев выстроить операционную эффективность. Высокая аренда в торговых центрах, налоговые изменения и сжатие потребительского спроса обнажили структурную слабость бизнес-моделей, которые работали только в условиях попутного ветра.</p>
+
+    <p>Особенно уязвимы компании с годовым оборотом до 1,5 млрд рублей: они не имеют ни масштаба для переговоров с арендодателями, ни ресурсов для цифровой трансформации. По оценке главы Melon Fashion Group Антона Летушева, таким компаниям в 2026 году придётся тяжелее всего — изменения налогового законодательства, таможенных процедур и потребительского поведения ударят именно по ним.</p>
+
+    <div class="risk-list">
+      <div class="risk-item">
+        <div class="risk-badge high">Высокий</div>
+        <div>
+          <div class="risk-title">Малый fashion-ритейл с оборотом до 1,5 млрд руб.</div>
+          <div class="risk-desc">Нет переговорной силы с ТЦ, нет бюджета на цифровизацию, нет буфера под налоговые изменения. Закрытия в 2026-м продолжатся. Часть уйдёт в чисто онлайн-модель через маркетплейсы — без фирменной розницы.</div>
+        </div>
+      </div>
+      <div class="risk-item">
+        <div class="risk-badge high">Высокий</div>
+        <div>
+          <div class="risk-title">Рост арендных ставок при падении трафика</div>
+          <div class="risk-desc">Арендные ставки в ТЦ продолжают расти, тогда как посещаемость fashion-магазинов снижается. К концу 2026 года вакантность может вырасти до 9,7% — против нынешних значений. Ритейлеры давят на скидки, ТЦ держат ставки: патовая ситуация.</div>
+        </div>
+      </div>
+      <div class="risk-item">
+        <div class="risk-badge high">Высокий</div>
+        <div>
+          <div class="risk-title">Налоговая нагрузка и таможенные барьеры</div>
+          <div class="risk-desc">Повышение НДС, отмена части льгот, усиление контроля за «схемами» дробления бизнеса — всё это бьёт по себестоимости прежде всего у игроков, работавших на грани рентабельности. Большинство российских брендов зависят от импортных тканей и фурнитуры.</div>
+        </div>
+      </div>
+      <div class="risk-item">
+        <div class="risk-badge mid">Средний</div>
+        <div>
+          <div class="risk-title">Комиссии маркетплейсов съедают маржу</div>
+          <div class="risk-desc">Wildberries и Ozon занимают доминирующее положение (80% рынка), что позволяет им повышать комиссии и требования к продавцам. Для небольших брендов работа через маркетплейс перестаёт быть выгодной — это уже не альтернатива офлайну, а зависимость от платформы.</div>
+        </div>
+      </div>
+      <div class="risk-item">
+        <div class="risk-badge mid">Средний</div>
+        <div>
+          <div class="risk-title">Рационализация потребительского поведения</div>
+          <div class="risk-desc">Среднее число покупок на одного активного клиента снизилось с 16 (2021) до 11 (2024). Покупатель всё требовательнее: если бренд не может объяснить свою ценность, продаж не будет. Сегменты эконом и «умный масс-маркет» выигрывают у среднего ценового диапазона.</div>
+        </div>
+      </div>
+      <div class="risk-item">
+        <div class="risk-badge low">Управляемый</div>
+        <div>
+          <div class="risk-title">Дефицит качественных площадей в ТЦ</div>
+          <div class="risk-desc">Парадоксально, но закрытия слабых игроков создают возможность для сильных: высвобождаются локации с хорошим трафиком. Ввод новых ТЦ в 2026 году — 292 тыс. кв. м — также добавит предложение. Крупные сети получают шанс на перезаключение договоров на выгодных условиях.</div>
+        </div>
+      </div>
+    </div>
+
+    <hr class="divider" />
+
+    <h2>Победители: кто выигрывает от консолидации</h2>
+
+    <div class="instr-grid">
+      <div class="instr-card">
+        <span class="instr-icon">🏆</span>
+        <div class="instr-type">Лидер рынка</div>
+        <div class="instr-name">Limé — новый №1 российского fashion</div>
+        <span class="instr-label hot">Лидер рейтинга РБК 2025</span>
+        <div class="instr-yield">+66% оборота за 2024 год</div>
+        <div class="instr-desc">Бренд стремительно вышел на первое место в рейтинге РБК Fashion 500, сместив Gloria Jeans. Выручка в 2024 году выросла на 66% — до 34,6 млрд рублей без НДС. Ставка на среднюю ценовую категорию, сильное визуальное позиционирование и агрессивная экспансия в ТЦ дали результат.</div>
+      </div>
+      <div class="instr-card">
+        <span class="instr-icon">🏢</span>
+        <div class="instr-type">Федеральный холдинг</div>
+        <div class="instr-name">Melon Fashion Group — LVMH по-русски</div>
+        <span class="instr-label hot">Потенциальное IPO</span>
+        <div class="instr-yield">Zarina, Befree, Love Republic, Sela, Idol</div>
+        <div class="instr-desc">MFG перестраивает управленческую модель в формат мультибрендового холдинга по образцу LVMH или Inditex. В 2025 году компания не закрыла ни одного магазина по экономическим причинам, только проводила релокации на более крупные площади. Рассматривает IPO.</div>
+      </div>
+      <div class="instr-card">
+        <span class="instr-icon">🌐</span>
+        <div class="instr-type">E-commerce чемпион</div>
+        <div class="instr-name">Wildberries — абсолютный fashion-доминант</div>
+        <span class="instr-label warm">94% онлайн-продаж одежды</span>
+        <div class="instr-yield">Рост fashion-категории +66% г/г</div>
+        <div class="instr-desc">Wildberries сохраняет лидерство в fashion-сегменте и доминирует среди женской аудитории. В декабре 2025 года Ozon запустил Ozon Селект — премиум-направление для брендовых товаров, пытаясь отвоевать долю. Платформенная война за fashion-аудиторию продолжается.</div>
+      </div>
+      <div class="instr-card">
+        <span class="instr-icon">🌍</span>
+        <div class="instr-type">Новые игроки</div>
+        <div class="instr-name">Турецкие и азиатские бренды заполняют ниши</div>
+        <span class="instr-label ok">Активная экспансия</span>
+        <div class="instr-yield">33+ иностранных бренда вышло в 2024 г.</div>
+        <div class="instr-desc">После ухода Inditex и H&M освободившиеся ниши заняли не только российские игроки: турецкие сети и азиатские бренды активно входят на рынок. Рынок становится более многополярным. Покупатели переключились быстро — восприятие качества импортных азиатских товаров нейтральное.</div>
+      </div>
+    </div>
+
+    <hr class="divider" />
+
+    <h2>Ключевые метрики рынка</h2>
+
+    <div class="metrics-grid">
+      <div class="metric-cell">
+        <div class="metric-label">Объём рынка 2025 (факт)</div>
+        <div class="metric-value rose">4,4–4,8 трлн</div>
+        <div class="metric-note">Рост +7–17% г/г в деньгах. Реальный рост — ниже из-за ценовой инфляции в сегменте.</div>
+      </div>
+      <div class="metric-cell">
+        <div class="metric-label">Онлайн-продажи fashion</div>
+        <div class="metric-value gold">&gt;2,6 трлн</div>
+        <div class="metric-note">Впервые превысили половину рынка. Маркетплейсы — 94% этого объёма.</div>
+      </div>
+      <div class="metric-cell">
+        <div class="metric-label">Покупок на клиента в год</div>
+        <div class="metric-value red">11 vs 16</div>
+        <div class="metric-note">В 2021 году было 16 покупок. К 2024-му — 11. Потребитель покупает реже, но дороже за единицу.</div>
+      </div>
+      <div class="metric-cell">
+        <div class="metric-label">Новых ТЦ в 2026 г.</div>
+        <div class="metric-value green">292 тыс. м²</div>
+        <div class="metric-note">Больше, чем в 2025-м (216 тыс. м²). Новое предложение создаёт возможности для ротации арендаторов.</div>
+      </div>
+    </div>
+
+    <blockquote>
+      <p>«Рынок будет консолидироваться вокруг сильных игроков, которые умеют быстро адаптироваться, инвестировать в современные технологии и логистику.»</p>
+      <cite>— Юлия Кузнецова, директор департамента торговой недвижимости Nikoliers</cite>
+    </blockquote>
+
+    <hr class="divider" />
+
+    <h2>Стратегии: как выжить и вырасти в 2026 году</h2>
+
+    <h3>Для крупных федеральных игроков</h3>
+    <p>Момент для экспансии. Закрытия конкурентов освобождают лучшие локации в торговых центрах — часто на льготных условиях. Ротация арендаторов создаёт окно для переговоров об аренде. Одновременно необходимо форсировать омниканальность: доля онлайн-продаж у крупных брендов уже сопоставима с рынком (~50%), но инструменты персонализации, ИИ-стилисты и интеграция маркетплейса с собственным D2C-каналом становятся конкурентным преимуществом.</p>
+
+    <h3>Для среднего бизнеса (оборот 1,5–10 млрд руб.)</h3>
+    <p>Чёткий ответ на вопрос «зачем покупатель идёт именно к нам». Бренды без внятного позиционирования теряют клиентов — покупатели из среднего ценового сегмента мигрируют либо вниз (в эконом), либо вверх (в нишевый премиум). Ставка на капсульные коллекции, коллаборации и эмоциональную связь с аудиторией работает. Оптимизация сети магазинов — сократить нерентабельные точки, усилить флагманские.</p>
+
+    <h3>Что избегать</h3>
+    <p>Экстенсивного роста — открытия новых магазинов без роста выручки на квадратный метр. Бизнеса исключительно через маркетплейсы без собственного бренд-присутствия: платформенная зависимость — стратегический риск при росте комиссий. Игнорирования налогового и таможенного комплаенса: схемы «дробления» и серый импорт под контролем ФНС и таможни.</p>
+
+    <div class="conclusion">
+      <h3>Прогноз: не рост, а перераспределение</h3>
+      <p>2026 год для российского fashion-рынка — это не год роста в привычном смысле. Денежный объём вырастет на 7–10% за счёт инфляции и умеренного восстановления спроса, но реальное потребление в штуках останется под давлением. Главное, что произойдёт — перераспределение долей: от слабых к сильным, от офлайна к онлайну, от монобрендов среднего уровня к крупным федеральным холдингам и нишевым игрокам с чётким позиционированием.</p>
+      <p>Маркетплейсы продолжат поглощать трафик. Wildberries и Ozon уже контролируют 94% онлайн-продаж одежды, и этот показатель будет только расти. Для брендов это означает неизбежную двойственность: маркетплейс как витрина и канал для остатков — и одновременно угроза маржинальности при повышении комиссий. Выиграют те, кто умеет работать в обоих режимах.</p>
+      <p>Главный принцип года — эффективность важнее экспансии. Три года «захвата» освободившихся после Inditex и H&M площадей закончились. Теперь рынок переходит в режим, где побеждает не тот, кто открыл больше магазинов, а тот, кто умеет зарабатывать в каждой точке контакта с покупателем — будь то магазин в ТЦ, карточка на Wildberries или приложение с ИИ-стилистом.</p>
+    </div>
+
+  </article>
+</main>
+
+<footer>
+  <strong>kotana.com.ru</strong> &nbsp;·&nbsp; Рынок одежды и fashion-ритейл · 2026 &nbsp;·&nbsp; Источники: Agentstvo Antro / Shift, РБК Исследования рынков, Коммерсантъ, Melon Fashion Group, Nikoliers, Focus Technologies, Data Insight, АКИТ
+</footer>
+
+</body>
+</html>

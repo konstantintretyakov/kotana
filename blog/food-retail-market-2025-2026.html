@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Рынок пищевого ритейла России 2025–2026 | kotana.com.ru</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --ink:          #0f1117;
+      --paper:        #f7f4ef;
+      --cream:        #ede9e0;
+      --accent:       #1e2d6b;
+      --accent-light: #c8d0f0;
+      --gold:         #b8922a;
+      --green:        #1a7a3c;
+      --red:          #c0392b;
+      --muted:        #7a7060;
+      --rule:         #d4cfc5;
+      --col:          clamp(320px, 66ch, 720px);
+    }
+    html { font-size: 17px; scroll-behavior: smooth; }
+    body {
+      background: var(--paper); color: var(--ink);
+      font-family: 'IBM Plex Sans', sans-serif;
+      line-height: 1.75; -webkit-font-smoothing: antialiased;
+    }
+
+    .masthead {
+      background: var(--ink); padding: 14px 40px;
+      display: flex; align-items: center; justify-content: space-between;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: .75rem; letter-spacing: .12em; text-transform: uppercase;
+    }
+    .masthead-logo { font-size: 1rem; font-weight: 500; color: #fff; }
+    .masthead-meta { color: #666; }
+
+    .hero {
+      background: var(--accent); color: var(--paper);
+      padding: 80px 40px 72px; position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: 'FMCG';
+      position: absolute; right: -20px; top: 50%; transform: translateY(-50%);
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(90px, 14vw, 200px); font-weight: 900;
+      color: rgba(255,255,255,.05); letter-spacing: -.04em; line-height: 1; pointer-events: none;
+    }
+    .hero-inner { max-width: var(--col); margin: 0 auto; position: relative; }
+    .hero-tag {
+      display: inline-block;
+      border: 1px solid rgba(255,255,255,.3); color: rgba(255,255,255,.75);
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: .72rem; letter-spacing: .15em; text-transform: uppercase;
+      padding: 4px 12px; margin-bottom: 28px;
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.2rem, 5vw, 3.4rem); font-weight: 700;
+      line-height: 1.18; letter-spacing: -.02em; margin-bottom: 24px; max-width: 22ch;
+    }
+    .hero h1 em { font-style: italic; color: #a8b8f0; }
+    .hero-lead {
+      font-size: 1.08rem; color: rgba(255,255,255,.72);
+      max-width: 54ch; line-height: 1.65; margin-bottom: 40px;
+    }
+    .hero-byline {
+      display: flex; align-items: center; gap: 16px;
+      font-size: .8rem; color: rgba(255,255,255,.4);
+      font-family: 'IBM Plex Mono', monospace;
+    }
+    .hero-byline span { color: rgba(255,255,255,.25); }
+    .hero-byline strong { color: rgba(255,255,255,.65); font-weight: 500; }
+
+    .stats-bar { background: var(--ink); padding: 0 40px; }
+    .stats-inner {
+      max-width: calc(var(--col) + 200px); margin: 0 auto;
+      display: grid; grid-template-columns: repeat(3,1fr);
+    }
+    .stat-item {
+      padding: 24px 32px; border-right: 1px solid rgba(255,255,255,.07); color: #fff;
+    }
+    .stat-item:first-child { padding-left: 0; }
+    .stat-item:last-child  { border-right: none; }
+    .stat-number {
+      font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 700;
+      display: block; line-height: 1; color: #a8b8f0;
+    }
+    .stat-label {
+      font-size: .75rem; text-transform: uppercase;
+      letter-spacing: .1em; opacity: .45; margin-top: 4px;
+      font-family: 'IBM Plex Mono', monospace;
+    }
+
+    .article-wrap { padding: 72px 40px; }
+    .article-inner { max-width: var(--col); margin: 0 auto; }
+
+    .article-inner > p:first-of-type::first-letter {
+      font-family: 'Playfair Display', serif; font-size: 4.5em; font-weight: 900;
+      float: left; line-height: .78; margin-right: 8px; margin-top: 6px; color: var(--accent);
+    }
+    p { margin-bottom: 1.5rem; }
+
+    h2 {
+      font-family: 'Playfair Display', serif; font-size: 1.7rem; font-weight: 700;
+      letter-spacing: -.02em; line-height: 1.25; margin: 3rem 0 1.1rem;
+    }
+    h2::before { content: ''; display: block; width: 32px; height: 3px; background: var(--accent); margin-bottom: 16px; }
+
+    h3 {
+      font-family: 'IBM Plex Sans', sans-serif; font-size: 1.05rem; font-weight: 600;
+      margin: 2rem 0 .7rem; text-transform: uppercase; letter-spacing: .06em; color: var(--gold);
+    }
+
+    blockquote {
+      border-left: 3px solid var(--accent); margin: 2.5rem 0; padding: 20px 0 20px 32px;
+    }
+    blockquote p {
+      font-family: 'Playfair Display', serif; font-size: 1.35rem; font-style: italic;
+      line-height: 1.5; color: var(--ink); margin: 0 0 8px;
+    }
+    blockquote cite {
+      font-family: 'IBM Plex Mono', monospace; font-size: .72rem;
+      text-transform: uppercase; letter-spacing: .12em; color: var(--muted); font-style: normal;
+    }
+
+    .highlight { background: var(--accent-light); padding: 0 4px; font-weight: 500; }
+
+    /* Scenario grid */
+    .scenario-grid {
+      display: grid; grid-template-columns: repeat(3,1fr);
+      gap: 1px; background: var(--rule); border: 1px solid var(--rule); margin: 2.5rem 0;
+    }
+    .sc-card { background: var(--paper); padding: 24px 20px; }
+    .sc-label {
+      font-family: 'IBM Plex Mono', monospace; font-size: .65rem;
+      text-transform: uppercase; letter-spacing: .15em; color: var(--muted); margin-bottom: 10px;
+    }
+    .sc-value { font-family: 'Playfair Display', serif; font-size: 1.7rem; font-weight: 700; line-height: 1; margin-bottom: 6px; }
+    .sc-value.base { color: var(--gold); }
+    .sc-value.bull { color: var(--green); }
+    .sc-value.bear { color: var(--red); }
+    .sc-title { font-size: .88rem; font-weight: 600; margin-bottom: 4px; }
+    .sc-source { font-family: 'IBM Plex Mono', monospace; font-size: .63rem; color: var(--muted); margin-bottom: 4px; }
+    .sc-desc { font-size: .8rem; color: var(--muted); line-height: 1.5; margin-top: 8px; }
+
+    /* Data card */
+    .data-card {
+      background: var(--cream); border: 1px solid var(--rule); padding: 28px 32px; margin: 2.5rem 0;
+    }
+    .data-card h4 {
+      font-family: 'IBM Plex Mono', monospace; font-size: .7rem;
+      text-transform: uppercase; letter-spacing: .15em; color: var(--muted); margin-bottom: 20px;
+    }
+    .data-rows { display: flex; flex-direction: column; gap: 12px; }
+    .data-row { display: flex; align-items: center; gap: 16px; }
+    .data-row-label { font-size: .85rem; color: var(--muted); width: 220px; flex-shrink: 0; }
+    .data-row-bar-wrap { flex: 1; height: 6px; background: var(--rule); position: relative; }
+    .data-row-bar { position: absolute; top: 0; left: 0; height: 100%; }
+    .data-row-bar.indigo { background: var(--accent); }
+    .data-row-bar.gold   { background: var(--gold); }
+    .data-row-bar.green  { background: var(--green); }
+    .data-row-bar.red    { background: var(--red); opacity: .7; }
+    .data-row-bar.muted  { background: var(--muted); opacity: .35; }
+    .data-row-val {
+      font-family: 'IBM Plex Mono', monospace; font-size: .8rem;
+      font-weight: 500; width: 110px; text-align: right;
+    }
+
+    /* Player / format cards (2-col) */
+    .player-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 1px; background: var(--rule); border: 1px solid var(--rule); margin: 2.5rem 0;
+    }
+    .player-card { background: var(--paper); padding: 24px; }
+    .player-icon { font-size: 1.3rem; margin-bottom: 8px; display: block; }
+    .player-type {
+      font-family: 'IBM Plex Mono', monospace; font-size: .65rem;
+      text-transform: uppercase; letter-spacing: .12em; color: var(--muted); margin-bottom: 6px;
+    }
+    .player-name { font-weight: 600; font-size: .97rem; margin-bottom: 4px; }
+    .player-stat {
+      font-family: 'Playfair Display', serif; font-weight: 700;
+      color: var(--accent); font-size: 1.15rem; margin-bottom: 4px;
+    }
+    .player-label {
+      display: inline-block; font-family: 'IBM Plex Mono', monospace;
+      font-size: .6rem; text-transform: uppercase; letter-spacing: .1em;
+      padding: 3px 8px; border-radius: 2px; margin-bottom: 8px;
+    }
+    .player-label.hot  { background: var(--accent-light); color: var(--accent); }
+    .player-label.warm { background: #f5ecd4; color: var(--gold); }
+    .player-label.risk { background: #fde8e0; color: var(--red); }
+    .player-label.ok   { background: #d0ead8; color: var(--green); }
+    .player-desc { font-size: .8rem; color: var(--muted); line-height: 1.55; }
+
+    /* Metrics 2×2 */
+    .metrics-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 1px; background: var(--rule); border: 1px solid var(--rule); margin: 2.5rem 0;
+    }
+    .metric-cell { background: var(--paper); padding: 24px; }
+    .metric-label {
+      font-family: 'IBM Plex Mono', monospace; font-size: .68rem;
+      text-transform: uppercase; letter-spacing: .14em; color: var(--muted); margin-bottom: 8px;
+    }
+    .metric-value { font-family: 'Playfair Display', serif; font-size: 1.65rem; font-weight: 700; line-height: 1.1; }
+    .metric-value.indigo { color: var(--accent); }
+    .metric-value.gold   { color: var(--gold); }
+    .metric-value.green  { color: var(--green); }
+    .metric-value.red    { color: var(--red); }
+    .metric-note { font-size: .78rem; color: var(--muted); margin-top: 6px; }
+
+    /* Trend / risk list */
+    .risk-list { margin: 2rem 0; }
+    .risk-item {
+      display: flex; gap: 16px; padding: 16px 0;
+      border-bottom: 1px solid var(--rule); align-items: flex-start;
+    }
+    .risk-item:first-child { border-top: 1px solid var(--rule); }
+    .risk-badge {
+      font-family: 'IBM Plex Mono', monospace; font-size: .62rem;
+      text-transform: uppercase; letter-spacing: .1em;
+      padding: 4px 10px; border-radius: 2px; flex-shrink: 0; margin-top: 2px;
+    }
+    .risk-badge.high { background: #fde8e0; color: var(--red); }
+    .risk-badge.mid  { background: #f5ecd4; color: var(--gold); }
+    .risk-badge.low  { background: #d0ead8; color: var(--green); }
+    .risk-title { font-weight: 600; font-size: .9rem; margin-bottom: 3px; }
+    .risk-desc  { font-size: .82rem; color: var(--muted); line-height: 1.55; }
+
+    .divider { border: none; border-top: 1px solid var(--rule); margin: 3rem 0; }
+
+    .conclusion {
+      background: var(--ink); color: var(--paper); padding: 36px 40px; margin: 3rem 0 0;
+    }
+    .conclusion h3 { color: #a8b8f0; margin-top: 0; letter-spacing: .06em; font-size: 1rem; text-transform: uppercase; }
+    .conclusion p { color: #ccc; margin-bottom: 1rem; }
+    .conclusion p:last-child { margin-bottom: 0; }
+
+    footer {
+      background: var(--cream); border-top: 1px solid var(--rule);
+      padding: 28px 40px; font-family: 'IBM Plex Mono', monospace;
+      font-size: .72rem; color: var(--muted); text-align: center; letter-spacing: .06em;
+    }
+    footer strong { color: var(--ink); }
+
+    @media (max-width: 640px) {
+      .masthead { padding: 12px 20px; }
+      .hero { padding: 56px 20px 52px; }
+      .stats-bar { padding: 0 20px; }
+      .stats-inner, .scenario-grid { grid-template-columns: 1fr; }
+      .stat-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,.07); padding: 16px 0; }
+      .article-wrap { padding: 48px 20px; }
+      .player-grid, .metrics-grid { grid-template-columns: 1fr; }
+      .data-row-label { width: 130px; font-size: .78rem; }
+    }
+  </style>
+</head>
+<body>
+
+<header class="masthead">
+  <span class="masthead-logo">kotana.com.ru</span>
+  <span class="masthead-meta">Обзор · Пищевой ритейл · 2025–2026</span>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-tag">Обзор рынка · Пищевой ритейл · 2025–2026</div>
+    <h1>Рынок пищевого ритейла: <em>рост в рублях, стагнация в тарелках</em></h1>
+    <p class="hero-lead">Оборот впервые превысил 60 трлн рублей. Топ-10 сетей с маркетплейсами заняли половину всей розницы страны. «Чижик» вырос на 67%. СТМ впервые пробили 15% рынка FMCG. Но за рублёвым ростом скрывается тревожная правда: физическое потребление не растёт — растут только цены и упаковки, из которых убрали граммы.</p>
+    <div class="hero-byline">
+      <strong>Редакция kotana.com.ru</strong>
+      <span>·</span>
+      <span>Март 2026</span>
+      <span>·</span>
+      <span>13 мин чтения</span>
+    </div>
+  </div>
+</section>
+
+<div class="stats-bar">
+  <div class="stats-inner">
+    <div class="stat-item">
+      <span class="stat-number">&gt; 60 трлн ₽</span>
+      <span class="stat-label">Оборот розничной торговли России по итогам 2025 г.</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number">4,64 трлн ₽</span>
+      <span class="stat-label">Выручка X5 за 2025 г. — абсолютный рекорд пищевого ритейла</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number">15,1%</span>
+      <span class="stat-label">Доля СТМ на рынке FMCG — исторический максимум</span>
+    </div>
+  </div>
+</div>
+
+<main class="article-wrap">
+  <article class="article-inner">
+
+    <p>Российский продуктовый ритейл завершил 2025 год с парадоксальной статистикой. В рублях — рекорды: оборот впервые превысил 60 трлн рублей, X5 набрала 4,64 трлн в одиночку, «Чижик» вырос на 67%, онлайн-доставка продуктов прибавила почти 28%. В килограммах и литрах — стагнация: физические объёмы продаж продовольствия практически не росли, в третьем квартале начали снижаться. Рост рынка обеспечивала инфляция — её вклад достиг более 12% всего прироста FMCG-продаж. Покупатели покупают столько же или меньше, но платят заметно больше — и всё чаще обнаруживают, что в привычной упаковке теперь на 50–100 граммов меньше продукта.</p>
+
+    <h2>Рынок в цифрах: два экрана одной реальности</h2>
+
+    <p>По итогам 2025 года оборот розничной торговли в России впервые превысил <span class="highlight">60 трлн рублей</span>, показав рост около 7,5% год к году в номинальном выражении. В сопоставимых ценах — лишь около 2,4%. Для продовольственного сегмента в частности: продажи продуктов питания за первое полугодие выросли на 3,1% в реальном выражении, до 6,9 трлн рублей. Но с третьего квартала даже номинальные темпы начали замедляться, а физические объёмы — снижаться год к году.</p>
+
+    <div class="data-card">
+      <h4>Ключевые показатели пищевого ритейла России, 2025 г.</h4>
+      <div class="data-rows">
+        <div class="data-row">
+          <span class="data-row-label">Оборот розн. торговли всего</span>
+          <div class="data-row-bar-wrap"><div class="data-row-bar indigo" style="width:100%"></div></div>
+          <span class="data-row-val">&gt; 60 трлн ₽</span>
+        </div>
+        <div class="data-row">
+          <span class="data-row-label">Выручка X5 (лидер рынка)</span>
+          <div class="data-row-bar-wrap"><div class="data-row-bar indigo" style="width:77%"></div></div>
+          <span class="data-row-val">4,64 трлн ₽</span>
+        </div>
+        <div class="data-row">
+          <span class="data-row-label">Выручка «Магнит» (оценка)</span>
+          <div class="data-row-bar-wrap"><div class="data-row-bar gold" style="width:58%"></div></div>
+          <span class="data-row-val">3,50 трлн ₽</span>
+        </div>
+        <div class="data-row">
+          <span class="data-row-label">Выручка «Лента»</span>
+          <div class="data-row-bar-wrap"><div class="data-row-bar gold" style="width:18%"></div></div>
+          <span class="data-row-val">1,1 трлн ₽</span>
+        </div>
+        <div class="data-row">
+          <span class="data-row-label">Онлайн-продажи продовольствия (H1)</span>
+          <div class="data-row-bar-wrap"><div class="data-row-bar green" style="width:13%"></div></div>
+          <span class="data-row-val">773 млрд ₽</span>
+        </div>
+        <div class="data-row">
+          <span class="data-row-label">Реальный рост потребления</span>
+          <div class="data-row-bar-wrap"><div class="data-row-bar muted" style="width:2.4%"></div></div>
+          <span class="data-row-val">~2,4%</span>
+        </div>
+      </div>
+    </div>
+
+    <p>Совокупные продажи топ-10 ритейлеров и крупнейших маркетплейсов в 2025 году выросли на 19,7% до <span class="highlight">22,22 трлн рублей</span>, заняв 49,2% всего розничного рынка страны — впервые приблизившись к отметке 50%. Пять крупнейших продуктовых сетей контролируют 38% рынка, ещё три года назад их доля была 31–32%. Консолидация идёт быстрее, чем ожидалось.</p>
+
+    <blockquote>
+      <p>«2025 год стал самым тяжёлым для розничного рынка за долгое время. Но за счёт общей консолидации крупнейшие игроки продолжат расти опережающими темпами.»</p>
+      <cite>— Михаил Бурмистров, генеральный директор «INFOLine-Аналитики», март 2026</cite>
+    </blockquote>
+
+    <hr class="divider" />
+
+    <h2>Форматная война: дискаунтеры побеждают гипермаркеты</h2>
+
+    <p>Наиболее важное структурное изменение рынка 2025 года — окончательная смена лидирующего формата. Гипермаркеты продолжают терять долю, магазины «у дома» сохраняют 31% рынка, а жёсткие дискаунтеры — самый быстрорастущий сегмент — приближаются к 6% при почти нулевой базе пять лет назад. Обе ведущие сети — X5 с «Чижиком» и «Магнит» с «Моя цена» — делают ставку именно на этот формат.</p>
+
+    <div class="player-grid">
+      <div class="player-card">
+        <span class="player-icon">🛒</span>
+        <div class="player-type">Лидер рынка</div>
+        <div class="player-name">X5 — «Пятёрочка», «Чижик», «Перекрёсток»</div>
+        <span class="player-label hot">+18,8% выручки за 2025</span>
+        <div class="player-stat">4,64 трлн ₽</div>
+        <div class="player-desc">«Пятёрочка» прибавила 16% до 3,6 трлн ₽, «Чижик» взлетел на 67,3% до 417,5 млрд ₽. Сеть насчитывает 29 011 магазинов. Цифровые сервисы выросли на 61,9% до 200+ млрд ₽. Стратегия до 2028-го: «Чижик» — 5 000 магазинов, генерирующих 1 трлн выручки. Доля X5 на рынке — 15,6% (+1,1 п.п.).</div>
+      </div>
+      <div class="player-card">
+        <span class="player-icon">🏪</span>
+        <div class="player-type">Второй игрок</div>
+        <div class="player-name">«Магнит» — «Магнит», «Азбука вкуса», «Моя цена»</div>
+        <span class="player-label warm">+15% выручки за 2025</span>
+        <div class="player-stat">3,50 трлн ₽</div>
+        <div class="player-desc">В 2025 году купил «Азбуку вкуса» — выход в премиум-сегмент и Москву. Параллельно масштабирует дискаунтер «Моя цена». Неоднозначная мультиформатная стратегия: одновременно идёт вверх (премиум) и вниз (хард-дискаунт) по ценовому спектру.</div>
+      </div>
+      <div class="player-card">
+        <span class="player-icon">📦</span>
+        <div class="player-type">Быстрорастущий</div>
+        <div class="player-name">«Лента» + «Монетка» + «Супер Лента»</div>
+        <span class="player-label ok">+24,2% выручки за 2025</span>
+        <div class="player-stat">1,1 трлн ₽</div>
+        <div class="player-desc">Активная интеграция купленной в 2023-м «Монетки». Трансформация гипермаркетов в суперсторы и магазины у дома. Самые высокие темпы роста в тройке лидеров благодаря низкой базе и интеграционному эффекту.</div>
+      </div>
+      <div class="player-card">
+        <span class="player-icon">💻</span>
+        <div class="player-type">Цифровые каналы</div>
+        <div class="player-name">«Самокат», «Яндекс Лавка», Ozon Fresh, ВкусВилл</div>
+        <span class="player-label hot">+27,8% онлайн-прод. продуктов H1</span>
+        <div class="player-stat">773 млрд ₽ за H1 2025</div>
+        <div class="player-desc">Онлайн-канал занял 5,5% рынка продовольствия (+0,6 п.п.). Категория «доставка продуктов» впервые вышла на первое место в е-коме по объёму продаж — 16,7%. Среднегодовой рост составил 28% в первом полугодии. Но рынок переходит от бурного роста к насыщению: большинство активных покупателей уже онлайн.</div>
+      </div>
+    </div>
+
+    <hr class="divider" />
+
+    <h2>СТМ: частная марка как главное оружие</h2>
+
+    <p>В первые четыре месяца 2025 года доля собственных торговых марок (СТМ) на омниканальном рынке FMCG впервые в истории превысила <span class="highlight">15%</span> в денежном выражении, достигнув 15,1%. За пять лет доля выросла вдвое: с менее чем 7–8% в 2020 году. У «Перекрёстка» доля СТМ достигает 24%, к концу 2025-го планировалось довести её до 30%.</p>
+
+    <div class="metrics-grid">
+      <div class="metric-cell">
+        <div class="metric-label">Доля СТМ на FMCG (H1 2025)</div>
+        <div class="metric-value indigo">15,1%</div>
+        <div class="metric-note">Исторический максимум. Годом ранее — 14,4%, в 2023-м — 14,1%. Вклад инфляции в рост FMCG-продаж — более 12% всего прироста.</div>
+      </div>
+      <div class="metric-cell">
+        <div class="metric-label">Рост СТМ у прод. ритейлеров (2024)</div>
+        <div class="metric-value gold">22%</div>
+        <div class="metric-note">Доля СТМ в продажах продовольственных ритейлеров по итогам 2024 года достигла 22% — против 10% в начале 2024-го (ТАСС).</div>
+      </div>
+      <div class="metric-cell">
+        <div class="metric-label">Рост среднего чека при покупке СТМ</div>
+        <div class="metric-value green">+32%</div>
+        <div class="metric-note">Наличие СТМ в корзине повышает средний чек на 32% — вопреки стереотипу о том, что СТМ это только «дешёвое». Ритейлеры запускают премиальные линейки.</div>
+      </div>
+      <div class="metric-cell">
+        <div class="metric-label">Доля СТМ среди новых брендов (2024)</div>
+        <div class="metric-value red">45%</div>
+        <div class="metric-note">В 2024-м 45% всех новых брендов — это СТМ. В 2025-м прогноз превысить 50%. Половина всего инновационного потока в FMCG генерируется ритейлерами, а не производителями.</div>
+      </div>
+    </div>
+
+    <p>Главный сдвиг в стратегии СТМ: частные марки перестали быть только «бюджетной альтернативой». Сети запускают их во всех ценовых сегментах, в том числе в премиуме. «Перекрёсток», «Азбука вкуса», ВкусВилл выводят под собственными марками органические, функциональные и ЗОЖ-продукты. <span class="highlight">25% покупателей поколения Z</span> уже воспринимают СТМ не как компромисс, а как равноправную альтернативу национальным брендам.</p>
+
+    <hr class="divider" />
+
+    <h2>Консолидация: рынок по немецкой модели</h2>
+
+    <p>Российский продуктовый ритейл идёт по пути Западной Европы — только быстрее. В Германии и Чехии пять крупнейших сетей контролируют 75% рынка. В России три года назад топ-5 удерживали 31–32%, сейчас — <span class="highlight">38%</span>, к 2028 году менеджмент X5 ожидает около 50%. Механизмы консолидации работают одновременно по нескольким направлениям.</p>
+
+    <div class="scenario-grid">
+      <div class="sc-card">
+        <div class="sc-label">Органический рост</div>
+        <div class="sc-title">Открытие новых точек</div>
+        <div class="sc-value base">+29 011</div>
+        <div class="sc-source">X5 — магазинов на конец 2025 г.</div>
+        <div class="sc-desc">«Пятёрочка» прибавила 8% торговых площадей. «Чижик» нарастил количество магазинов на 44% за девять месяцев. Органический рост — через собственные инвестиции в плотность сети, особенно в регионах.</div>
+      </div>
+      <div class="sc-card">
+        <div class="sc-label">M&A сделки</div>
+        <div class="sc-title">Поглощение региональных сетей</div>
+        <div class="sc-value bull">+24%</div>
+        <div class="sc-source">Рост выручки «Ленты» за счёт «Монетки»</div>
+        <div class="sc-desc">«Магнит» купил «Азбуку вкуса», «Лента» интегрировала «Монетку». Региональные и независимые сети продолжают поглощаться. Антимонопольный предел в 25% доли в регионе — основное ограничение для слияний.</div>
+      </div>
+      <div class="sc-card">
+        <div class="sc-label">Франчайзинг</div>
+        <div class="sc-title">Обход регуляторных ограничений</div>
+        <div class="sc-value bear">Тренд 2026</div>
+        <div class="sc-source">INFOLine, прогноз 2026 г.</div>
+        <div class="sc-desc">Франчайзинг называется одним из ключевых трендов 2026-го: он позволяет сетям расти в регионах, где они уже упираются в антимонопольный потолок в 25%. «Пятёрочка» активно развивает программу франшизы для МСБ.</div>
+      </div>
+    </div>
+
+    <hr class="divider" />
+
+    <h2>Вызовы: семь структурных проблем</h2>
+
+    <div class="risk-list">
+      <div class="risk-item">
+        <div class="risk-badge high">Критично</div>
+        <div>
+          <div class="risk-title">Маржинальность на историческом минимуме</div>
+          <div class="risk-desc">Продовольственный ритейл работает в условиях рекордно низкой маржинальности. Рост затрат на персонал (дефицит кадров), аренду, логистику и фискальную нагрузку опережает рост выручки в реальном выражении. EBITDA-маржа X5 — 6–8% по МСФО, притом что капзатраты составляют около 5% выручки. Рост среднего чека (~10%) перекрывает инфляцию себестоимости, но пространство для манёвра сужается.</div>
+        </div>
+      </div>
+      <div class="risk-item">
+        <div class="risk-badge high">Критично</div>
+        <div>
+          <div class="risk-title">Дефицит кадров: кассиры дороже полок</div>
+          <div class="risk-desc">Кадровый дефицит — системная проблема ритейла. На фоне рекордно низкой безработицы ставки оплаты линейного персонала выросли на 20–30%. Ответом становится автоматизация: кассы самообслуживания, роботы-сборщики, автоматизированные склады. Инвестиции в «технологии без людей» в 2025–2026 годах ускоряются по всей отрасли.</div>
+        </div>
+      </div>
+      <div class="risk-item">
+        <div class="risk-badge high">Критично</div>
+        <div>
+          <div class="risk-title">Шринкфляция: граммы исчезают из упаковки</div>
+          <div class="risk-desc">Шринкфляция — сокращение фасовки при сохранении или незначительном снижении цены — стала массовым явлением в базовых категориях: молочные, мясные, бакалея. Покупатель платит ту же сумму, но получает на 8–15% меньше продукта. Это лакмусовая бумажка того, что реальный рост потребления отсутствует — производители и ритейлеры подстраивают упаковку, а не снижают цену.</div>
+        </div>
+      </div>
+      <div class="risk-item">
+        <div class="risk-badge mid">Значимый</div>
+        <div>
+          <div class="risk-title">Государственное регулирование цен</div>
+          <div class="risk-desc">Ограничения на торговые наценки на социально значимые продукты, ценовые соглашения с крупными сетями — привычный инструментарий. В периоды инфляционных всплесков (яйца 2023, мясо 2024) государство прибегало к добровольно-принудительной фиксации цен. Регуляторные риски ограничивают возможность ритейлеров перекладывать рост затрат в цену.</div>
+        </div>
+      </div>
+      <div class="risk-item">
+        <div class="risk-badge mid">Значимый</div>
+        <div>
+          <div class="risk-title">Демография: потребители убывают</div>
+          <div class="risk-desc">Сокращение численности населения напрямую влияет на объёмы потребления в ряде категорий — прежде всего детском питании. В долгосрочной перспективе убыль населения будет давить на физические объёмы рынка. Ответ — рост доходности на покупателя через премиумизацию, СТМ и готовую еду, а не через расширение аудитории.</div>
+        </div>
+      </div>
+      <div class="risk-item">
+        <div class="risk-badge low">Управляемый</div>
+        <div>
+          <div class="risk-title">Онлайн-конкуренция с маркетплейсами</div>
+          <div class="risk-desc">Wildberries, Ozon и «Яндекс Маркет» совокупно заработали 8,59 трлн рублей в 2025-м (+32,2%). В категории «продукты питания» маркетплейсы пока занимают ограниченную нишу — свежие и скоропортящиеся товары им труднее логистически. Но продуктовые ритейлеры правы в опасениях: в бакалее, бытовой химии и ЗОЖ-товарах конкуренция уже ощутима.</div>
+        </div>
+      </div>
+    </div>
+
+    <hr class="divider" />
+
+    <h2>Стратегии роста: три точки прорыва</h2>
+
+    <h3>Готовая еда — следующий фронтир</h3>
+    <p>Рынок готовой еды в 2025 году оценивается в <span class="highlight">1,14 трлн рублей</span> (+20% к 2024-му). Ритейлеры переразмечают торговые площади под кулинарные зоны, инвестируют в фабрики-кухни, развивают собственные бренды готовых блюд. X5 и «Магнит» открывают корнеры с горячей едой внутри «Пятёрочек» и «Магнитов». Формат «продуктовый магазин + кафе» перестаёт быть нишевым и становится стандартом.</p>
+
+    <h3>Цифровые экосистемы и лояльность</h3>
+    <p>Цифровые сервисы X5 выросли на 61,9% до 200+ млрд рублей в 2024-м. Ритейлеры конкурируют не только полками, но и приложениями, программами лояльности и персонализированными предложениями. Экосистема «Альфа-Групп» объединила X5, «Альфа-Банк», «Билайн» и «АльфаСтрахование» через программу «Апельсин». Данные о покупках становятся ценнее, чем сами продажи — ритейлеры монетизируют их через рекламные платформы.</p>
+
+    <h3>Оптовые и B2B-каналы</h3>
+    <p>СТМ становятся инструментом масштабирования за пределы розничной полки — в оптовые и корпоративные каналы. Поставки готовой еды и продуктов в офисы, предприятия HoReCa и корпоративный сегмент рассматриваются как перспективное направление, способное смягчить давление на розничную маржу.</p>
+
+    <div class="conclusion">
+      <h3>Итог: рынок, который растёт не ввысь, а вширь</h3>
+      <p>Пищевой ритейл России в 2025–2026 годах — это рынок консолидации, а не роста спроса. Физическое потребление стагнирует, инфляция маскирует это рублёвыми рекордами. Выигрывают те, кто захватывает долю за счёт экспансии в форматы (дискаунтеры), каналы (онлайн) и сегменты (готовая еда, СТМ-премиум), а не те, кто рассчитывает на органический рост рынка.</p>
+      <p>Консолидация неизбежна. Через 5–7 лет российский рынок, по всей видимости, придёт к модели, при которой три-четыре федеральных игрока контролируют половину и более розничного рынка страны — как это произошло в Германии, Польше, Чехии. Для небольших независимых сетей это означает постепенное вытеснение — или поглощение, или франчайзинг под чужим брендом.</p>
+      <p>Главный вопрос следующего цикла — не «кто выживет», а «чем будут отличаться победители». Ответ, вероятно, лежит не в торговой площади и не в количестве магазинов, а в глубине данных о покупателе, силе цифровой экосистемы и доле готовой еды в обороте. Тот, кто знает, что лежит в тарелке у потребителя сегодня вечером, управляет рынком завтра.</p>
+    </div>
+
+  </article>
+</main>
+
+<footer>
+  <strong>kotana.com.ru</strong> &nbsp;·&nbsp; Обзор рынка пищевого ритейла · 2025–2026 &nbsp;·&nbsp; Источники: INFOLine, NielsenIQ, АКОРТ, X5 Group (отчётность), Минэкономразвития, РБК, Retail.ru, Sostav
+</footer>
+
+</body>
+</html>

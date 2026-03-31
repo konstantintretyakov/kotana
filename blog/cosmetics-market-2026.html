@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Рынок косметики в России — 2026: эпоха R-Beauty и маркетплейс-революции | kotana.com.ru</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --ink:    #0f1117;
+      --paper:  #f7f4ef;
+      --cream:  #ede9e0;
+      --accent: #1a6b6b;
+      --accent-light: #caeaea;
+      --gold:   #b8922a;
+      --green:  #1a7a3c;
+      --red:    #c0392b;
+      --muted:  #7a7060;
+      --rule:   #d4cfc5;
+      --col:    clamp(320px, 66ch, 720px);
+    }
+    html { font-size: 17px; scroll-behavior: smooth; }
+    body {
+      background: var(--paper); color: var(--ink);
+      font-family: 'IBM Plex Sans', sans-serif;
+      line-height: 1.75; -webkit-font-smoothing: antialiased;
+    }
+
+    .masthead {
+      background: var(--ink); padding: 14px 40px;
+      display: flex; align-items: center; justify-content: space-between;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: .75rem; letter-spacing: .12em; text-transform: uppercase;
+    }
+    .masthead-logo { font-size: 1rem; font-weight: 500; color: #fff; }
+    .masthead-meta { color: #666; }
+
+    .hero {
+      background: var(--accent); color: var(--paper);
+      padding: 80px 40px 72px; position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: 'БЬЮТИ';
+      position: absolute; right: -10px; top: 50%; transform: translateY(-50%);
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(80px, 13vw, 185px); font-weight: 900;
+      color: rgba(255,255,255,.05); letter-spacing: -.04em; line-height: 1; pointer-events: none;
+    }
+    .hero-inner { max-width: var(--col); margin: 0 auto; position: relative; }
+    .hero-tag {
+      display: inline-block;
+      border: 1px solid rgba(255,255,255,.3); color: rgba(255,255,255,.75);
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: .72rem; letter-spacing: .15em; text-transform: uppercase;
+      padding: 4px 12px; margin-bottom: 28px;
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.2rem, 5vw, 3.4rem); font-weight: 700;
+      line-height: 1.18; letter-spacing: -.02em; margin-bottom: 24px; max-width: 22ch;
+    }
+    .hero h1 em { font-style: italic; color: #9de8e8; }
+    .hero-lead {
+      font-size: 1.08rem; color: rgba(255,255,255,.72);
+      max-width: 54ch; line-height: 1.65; margin-bottom: 40px;
+    }
+    .hero-byline {
+      display: flex; align-items: center; gap: 16px;
+      font-size: .8rem; color: rgba(255,255,255,.4);
+      font-family: 'IBM Plex Mono', monospace;
+    }
+    .hero-byline span { color: rgba(255,255,255,.25); }
+    .hero-byline strong { color: rgba(255,255,255,.65); font-weight: 500; }
+
+    .stats-bar { background: var(--ink); padding: 0 40px; }
+    .stats-inner {
+      max-width: calc(var(--col) + 200px); margin: 0 auto;
+      display: grid; grid-template-columns: repeat(3,1fr);
+    }
+    .stat-item {
+      padding: 24px 32px; border-right: 1px solid rgba(255,255,255,.07); color: #fff;
+    }
+    .stat-item:first-child { padding-left: 0; }
+    .stat-item:last-child  { border-right: none; }
+    .stat-number {
+      font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 700;
+      display: block; line-height: 1; color: #9de8e8;
+    }
+    .stat-label {
+      font-size: .75rem; text-transform: uppercase;
+      letter-spacing: .1em; opacity: .45; margin-top: 4px;
+      font-family: 'IBM Plex Mono', monospace;
+    }
+
+    .article-wrap { padding: 72px 40px; }
+    .article-inner { max-width: var(--col); margin: 0 auto; }
+
+    .article-inner > p:first-of-type::first-letter {
+      font-family: 'Playfair Display', serif; font-size: 4.5em; font-weight: 900;
+      float: left; line-height: .78; margin-right: 8px; margin-top: 6px; color: var(--accent);
+    }
+    p { margin-bottom: 1.5rem; }
+
+    h2 {
+      font-family: 'Playfair Display', serif; font-size: 1.7rem; font-weight: 700;
+      letter-spacing: -.02em; line-height: 1.25; margin: 3rem 0 1.1rem;
+    }
+    h2::before { content: ''; display: block; width: 32px; height: 3px; background: var(--accent); margin-bottom: 16px; }
+
+    h3 {
+      font-family: 'IBM Plex Sans', sans-serif; font-size: 1.05rem; font-weight: 600;
+      margin: 2rem 0 .7rem; text-transform: uppercase; letter-spacing: .06em; color: var(--gold);
+    }
+
+    blockquote {
+      border-left: 3px solid var(--accent); margin: 2.5rem 0; padding: 20px 0 20px 32px;
+    }
+    blockquote p {
+      font-family: 'Playfair Display', serif; font-size: 1.35rem; font-style: italic;
+      line-height: 1.5; color: var(--ink); margin: 0 0 8px;
+    }
+    blockquote cite {
+      font-family: 'IBM Plex Mono', monospace; font-size: .72rem;
+      text-transform: uppercase; letter-spacing: .12em; color: var(--muted); font-style: normal;
+    }
+
+    .highlight { background: var(--accent-light); padding: 0 4px; font-weight: 500; }
+
+    /* Scenario grid */
+    .scenario-grid {
+      display: grid; grid-template-columns: repeat(3,1fr);
+      gap: 1px; background: var(--rule); border: 1px solid var(--rule); margin: 2.5rem 0;
+    }
+    .sc-card { background: var(--paper); padding: 24px 20px; }
+    .sc-label {
+      font-family: 'IBM Plex Mono', monospace; font-size: .65rem;
+      text-transform: uppercase; letter-spacing: .15em; color: var(--muted); margin-bottom: 10px;
+    }
+    .sc-value { font-family: 'Playfair Display', serif; font-size: 1.7rem; font-weight: 700; line-height: 1; margin-bottom: 6px; }
+    .sc-value.base { color: var(--gold); }
+    .sc-value.bull { color: var(--green); }
+    .sc-value.bear { color: var(--red); }
+    .sc-title { font-size: .88rem; font-weight: 600; margin-bottom: 4px; }
+    .sc-source { font-family: 'IBM Plex Mono', monospace; font-size: .63rem; color: var(--muted); margin-bottom: 4px; }
+    .sc-desc { font-size: .8rem; color: var(--muted); line-height: 1.5; margin-top: 8px; }
+
+    /* Segment cards */
+    .instr-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 1px; background: var(--rule); border: 1px solid var(--rule); margin: 2.5rem 0;
+    }
+    .instr-card { background: var(--paper); padding: 24px; }
+    .instr-icon { font-size: 1.3rem; margin-bottom: 8px; display: block; }
+    .instr-type {
+      font-family: 'IBM Plex Mono', monospace; font-size: .65rem;
+      text-transform: uppercase; letter-spacing: .12em; color: var(--muted); margin-bottom: 6px;
+    }
+    .instr-name { font-weight: 700; font-size: .97rem; margin-bottom: 4px; }
+    .instr-yield {
+      font-family: 'Playfair Display', serif; font-weight: 700;
+      color: var(--accent); font-size: 1.15rem; margin-bottom: 4px;
+    }
+    .instr-label {
+      display: inline-block; font-family: 'IBM Plex Mono', monospace;
+      font-size: .6rem; text-transform: uppercase; letter-spacing: .1em;
+      padding: 3px 8px; border-radius: 2px; margin-bottom: 8px;
+    }
+    .instr-label.hot  { background: var(--accent-light); color: var(--accent); }
+    .instr-label.warm { background: #f5ecd4; color: var(--gold); }
+    .instr-label.risk { background: #fde8e0; color: var(--red); }
+    .instr-label.ok   { background: #d0ead8; color: var(--green); }
+    .instr-desc { font-size: .8rem; color: var(--muted); line-height: 1.55; }
+
+    /* Data card */
+    .data-card {
+      background: var(--cream); border: 1px solid var(--rule); padding: 28px 32px; margin: 2.5rem 0;
+    }
+    .data-card h4 {
+      font-family: 'IBM Plex Mono', monospace; font-size: .7rem;
+      text-transform: uppercase; letter-spacing: .15em; color: var(--muted); margin-bottom: 20px;
+    }
+    .data-rows { display: flex; flex-direction: column; gap: 12px; }
+    .data-row { display: flex; align-items: center; gap: 16px; }
+    .data-row-label { font-size: .85rem; color: var(--muted); width: 220px; flex-shrink: 0; }
+    .data-row-bar-wrap { flex: 1; height: 6px; background: var(--rule); position: relative; }
+    .data-row-bar { position: absolute; top: 0; left: 0; height: 100%; }
+    .data-row-bar.teal  { background: var(--accent); }
+    .data-row-bar.gold  { background: var(--gold); }
+    .data-row-bar.green { background: var(--green); }
+    .data-row-bar.red   { background: var(--red); opacity: .7; }
+    .data-row-bar.muted { background: var(--muted); opacity: .35; }
+    .data-row-val {
+      font-family: 'IBM Plex Mono', monospace; font-size: .8rem;
+      font-weight: 500; width: 100px; text-align: right;
+    }
+
+    /* Metrics 2x2 */
+    .metrics-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 1px; background: var(--rule); border: 1px solid var(--rule); margin: 2.5rem 0;
+    }
+    .metric-cell { background: var(--paper); padding: 24px; }
+    .metric-label {
+      font-family: 'IBM Plex Mono', monospace; font-size: .68rem;
+      text-transform: uppercase; letter-spacing: .14em; color: var(--muted); margin-bottom: 8px;
+    }
+    .metric-value { font-family: 'Playfair Display', serif; font-size: 1.65rem; font-weight: 700; line-height: 1.1; }
+    .metric-value.teal  { color: var(--accent); }
+    .metric-value.gold  { color: var(--gold); }
+    .metric-value.green { color: var(--green); }
+    .metric-value.red   { color: var(--red); }
+    .metric-note { font-size: .78rem; color: var(--muted); margin-top: 6px; }
+
+    /* Risk list */
+    .risk-list { margin: 2rem 0; }
+    .risk-item {
+      display: flex; gap: 16px; padding: 16px 0;
+      border-bottom: 1px solid var(--rule); align-items: flex-start;
+    }
+    .risk-item:first-child { border-top: 1px solid var(--rule); }
+    .risk-badge {
+      font-family: 'IBM Plex Mono', monospace; font-size: .62rem;
+      text-transform: uppercase; letter-spacing: .1em;
+      padding: 4px 10px; border-radius: 2px; flex-shrink: 0; margin-top: 2px;
+    }
+    .risk-badge.high { background: #fde8e0; color: var(--red); }
+    .risk-badge.mid  { background: #f5ecd4; color: var(--gold); }
+    .risk-badge.low  { background: #d0ead8; color: var(--green); }
+    .risk-title { font-weight: 600; font-size: .9rem; margin-bottom: 3px; }
+    .risk-desc  { font-size: .82rem; color: var(--muted); line-height: 1.55; }
+
+    .divider { border: none; border-top: 1px solid var(--rule); margin: 3rem 0; }
+
+    .conclusion {
+      background: var(--ink); color: var(--paper); padding: 36px 40px; margin: 3rem 0 0;
+    }
+    .conclusion h3 { color: #9de8e8; margin-top: 0; letter-spacing: .06em; font-size: 1rem; text-transform: uppercase; }
+    .conclusion p { color: #ccc; margin-bottom: 1rem; }
+    .conclusion p:last-child { margin-bottom: 0; }
+
+    footer {
+      background: var(--cream); border-top: 1px solid var(--rule);
+      padding: 28px 40px; font-family: 'IBM Plex Mono', monospace;
+      font-size: .72rem; color: var(--muted); text-align: center; letter-spacing: .06em;
+    }
+    footer strong { color: var(--ink); }
+
+    @media (max-width: 640px) {
+      .masthead { padding: 12px 20px; }
+      .hero { padding: 56px 20px 52px; }
+      .stats-bar { padding: 0 20px; }
+      .stats-inner, .scenario-grid { grid-template-columns: 1fr; }
+      .stat-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,.07); padding: 16px 0; }
+      .article-wrap { padding: 48px 20px; }
+      .instr-grid, .metrics-grid { grid-template-columns: 1fr; }
+      .data-row-label { width: 130px; font-size: .78rem; }
+    }
+  </style>
+</head>
+<body>
+
+<header class="masthead">
+  <span class="masthead-logo">kotana.com.ru</span>
+  <span class="masthead-meta">Обзор · Рынок косметики · 2026</span>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-tag">Анализ · Beauty-рынок · 2026</div>
+    <h1>Рынок косметики — 2026: эпоха <em>R-Beauty и маркетплейс-революции</em></h1>
+    <p class="hero-lead">Рынок парфюмерии и косметики перевалил за 1,1 трлн рублей. Отечественные бренды заняли 68% полки. Корейская косметика растёт на маркетплейсах на 225% в год. Индустрия красоты переживает глубинную перестройку — от аптечного полюса до K-beauty и «зелёной» косметики нового поколения.</p>
+    <div class="hero-byline">
+      <strong>Редакция kotana.com.ru</strong>
+      <span>·</span>
+      <span>Март 2026</span>
+      <span>·</span>
+      <span>12 мин чтения</span>
+    </div>
+  </div>
+</section>
+
+<div class="stats-bar">
+  <div class="stats-inner">
+    <div class="stat-item">
+      <span class="stat-number">1,11 трлн ₽</span>
+      <span class="stat-label">Объём рынка парфюмерии, косметики и ухода за телом в 2024 г.</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number">68%</span>
+      <span class="stat-label">Доля отечественных брендов на российском рынке в 2025 г.</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number">2 000+</span>
+      <span class="stat-label">Отечественных производителей косметики — рост 30% за год</span>
+    </div>
+  </div>
+</div>
+
+<main class="article-wrap">
+  <article class="article-inner">
+
+    <p>Российский рынок косметики входит в 2026 год с двойственной статистикой, которая на первый взгляд кажется противоречивой. В рублях рынок демонстрирует уверенный рост: по данным INFOLine, объём продаж парфюмерии, косметики и товаров для ухода за телом в 2024 году вырос на <span class="highlight">16,8%</span> и достиг 1,11 трлн рублей. Число отечественных производителей за год выросло на 30% — до более чем 2 000 компаний. Но в натуральных показателях картина сложнее: продажи косметики в штуках в 2025 году снизились на 2% — до 3,86–3,9 млрд единиц, причиной чего стало падение офлайн-розницы. Деньги остались на рынке, но перетекли в другой канал — в онлайн и прежде всего на маркетплейсы, которые уже контролируют более 31% всех продаж категории. Индустрия красоты в России переживает не просто количественный рост — она меняет свою архитектуру.</p>
+
+    <h2>R-Beauty: российская косметика перестаёт быть «альтернативой»</h2>
+
+    <p>Ключевой структурный сдвиг последних трёх лет — утверждение отечественных брендов не в роли заменителей ушедших западных гигантов, а в роли самостоятельных игроков с претензией на глобальную повестку. По данным Минпромторга, доля отечественных брендов на рынке парфюмерии и косметики в 2025 году составила <span class="highlight">около 68%</span>, а уровень локализации производства достиг 51% — с планом роста до 70% к 2026 году. Отечественной уходовой косметике доверяют 71% россиянок.</p>
+
+    <p>Если ещё в 2023–2024 годах центральным вопросом отраслевых обзоров было «смогут ли наши заменить ушедшие бренды?», то в 2025-м риторика изменилась. Российская косметика перестаёт быть просто альтернативой западной и начинает восприниматься как самостоятельный тренд — R-Beauty. Драйверами этого феномена выступают маркетплейсы, открывшие доступ на рынок с минимальными инвестициями, и социальные сети, где beauty-блогеры обеспечивают брендам охват, сопоставимый с федеральной рекламой.</p>
+
+    <div class="data-card">
+      <h4>Рост продаж в ключевых категориях на маркетплейсах, 2024–2025 гг.</h4>
+      <div class="data-rows">
+        <div class="data-row">
+          <span class="data-row-label">Корейская косметика (WB)</span>
+          <div class="data-row-bar-wrap"><div class="data-row-bar teal" style="width:100%"></div></div>
+          <span class="data-row-val">+225%</span>
+        </div>
+        <div class="data-row">
+          <span class="data-row-label">Солнцезащита (SPF)</span>
+          <div class="data-row-bar-wrap"><div class="data-row-bar teal" style="width:92%"></div></div>
+          <span class="data-row-val">+283%</span>
+        </div>
+        <div class="data-row">
+          <span class="data-row-label">Декоративная (кушоны, пудра)</span>
+          <div class="data-row-bar-wrap"><div class="data-row-bar gold" style="width:60%"></div></div>
+          <span class="data-row-val">+152%</span>
+        </div>
+        <div class="data-row">
+          <span class="data-row-label">Уходовая косметика для лица</span>
+          <div class="data-row-bar-wrap"><div class="data-row-bar green" style="width:45%"></div></div>
+          <span class="data-row-val">+44%</span>
+        </div>
+        <div class="data-row">
+          <span class="data-row-label">Средства для волос</span>
+          <div class="data-row-bar-wrap"><div class="data-row-bar muted" style="width:22%"></div></div>
+          <span class="data-row-val">+18%</span>
+        </div>
+      </div>
+    </div>
+
+    <p>Среди российских игроков лидерами по узнаваемости остаются Natura Siberica, Art&Fact и Mixit — тройка самых упоминаемых брендов в российском медиапространстве. Из мастодонтов традиционно сильны «Невская косметика», «Свобода», Faberlic, «Юникосметик», «Арнест». Новая волна — нишевые бренды с точным позиционированием: Mixit, Cha U Kao, Aravia Laboratories, «Краснополянская косметика». По рейтингу РБК Стиль, лидером среди всех российских брендов в 2025 году стала Natura Siberica, в топ-3 вошли Vivienne Sabo и Shik Studio.</p>
+
+    <hr class="divider" />
+
+    <h2>Маркетплейсы как главный канал роста</h2>
+
+    <p>Маркетплейсы увеличили долю в совокупном объёме продаж косметики с 20,7% до <span class="highlight">31%</span> за последний год. Интернет-продажи товаров для красоты и здоровья в России выросли на 17,2% — до 449,2 млрд рублей. Wildberries сохраняет лидерство в сегменте: только продажи мужской косметики на платформе в 2025 году составили 24,78 млрд рублей — в 1,7 раза больше, чем на Ozon (14,51 млрд). Категория «Красота» на Wildberries входит в топ-3 по выручке с показателем 42 млрд рублей.</p>
+
+    <blockquote>
+      <p>«Мы живем в период, когда российская косметика перестает быть просто альтернативой западной, а становится полноценным трендсеттером.»</p>
+      <cite>— Кристина Судеревская, сооснователь «Краснополянской косметики», РБК Визионеры</cite>
+    </blockquote>
+
+    <p>Параллельно Ozon выстраивает собственную стратегию дифференциации в beauty-сегменте, делая ставку на более высокую маржинальность — парфюмерию и средства ухода за волосами. В декабре 2025 года платформа запустила Ozon Селект — направление для брендовых товаров с акцентом на уходовую косметику и российские нишевые марки. Корейская косметика остаётся одной из самых быстрорастущих категорий на обеих платформах: ежемесячный оборот K-beauty на Wildberries превышает 563 млн рублей.</p>
+
+    <hr class="divider" />
+
+    <h2>Сегменты и сценарии: между ростом и перестройкой</h2>
+
+    <div class="scenario-grid">
+      <div class="sc-card">
+        <div class="sc-label">Базовый сценарий</div>
+        <div class="sc-title">Устойчивый рост в деньгах</div>
+        <div class="sc-value base">+10–12%</div>
+        <div class="sc-source">Statista CAGR / консенсус 2024–2028</div>
+        <div class="sc-desc">Рынок растёт в деньгах за счёт роста средних цен и смещения в онлайн. В натуральных показателях — стагнация или слабый рост. Маркетплейсы продолжают отбирать долю у традиционной розницы. Отечественные бренды укрепляют позиции.</div>
+      </div>
+      <div class="sc-card">
+        <div class="sc-label">Оптимистичный</div>
+        <div class="sc-title">Ускорение R-Beauty</div>
+        <div class="sc-value bull">+15–17%</div>
+        <div class="sc-source">При росте экспорта и инноваций</div>
+        <div class="sc-desc">Российские бренды выходят на международные рынки СНГ, Ближнего Востока, Азии. Декоративный сегмент восстанавливается после спада. Нишевые бренды с уникальными формулами занимают премиальный сегмент, ранее занятый западными марками.</div>
+      </div>
+      <div class="sc-card">
+        <div class="sc-label">Консервативный</div>
+        <div class="sc-title">Сжатие офлайна</div>
+        <div class="sc-value bear">+5–7%</div>
+        <div class="sc-source">При инфляции и падении доходов</div>
+        <div class="sc-desc">Инфляция съедает реальные расходы на дискреционные товары. Покупатели переходят в эконом-сегмент. Специализированные сети (Л'Этуаль, Рив Гош) ускоряют закрытие нерентабельных точек. Декоративная косметика теряет в штуках.</div>
+      </div>
+    </div>
+
+    <hr class="divider" />
+
+    <h2>Четыре полюса роста: где деньги в 2026 году</h2>
+
+    <div class="instr-grid">
+      <div class="instr-card">
+        <span class="instr-icon">🌿</span>
+        <div class="instr-type">Уходовая косметика</div>
+        <div class="instr-name">Функциональный уход: аптека встречает бьюти</div>
+        <span class="instr-label hot">Главный драйвер рынка</span>
+        <div class="instr-yield">+44% онлайн-продаж за год</div>
+        <div class="instr-desc">Средства по уходу за кожей — второй по объёму сегмент рынка ($610 млн). Около 32% россиянок регулярно используют антиэйдж-продукты, причём почти половина из них начала это делать до 35 лет. Покупатели выбирают косметику с доказанной эффективностью и «аптечными» активами: ретинол, гиалуроновая кислота, пептиды. Бренды Aravia Laboratories, Librederm, Kora работают на стыке дерматологии и масс-маркета.</div>
+      </div>
+      <div class="instr-card">
+        <span class="instr-icon">🇰🇷</span>
+        <div class="instr-type">K-Beauty</div>
+        <div class="instr-name">Корейская косметика: самый быстрый рост</div>
+        <span class="instr-label hot">+225% на маркетплейсах</span>
+        <div class="instr-yield">563 млн ₽/мес. оборот на Wildberries</div>
+        <div class="instr-desc">Корейская косметика уверенно стала отдельной категорией российского рынка, а не нишевым увлечением. Импорт K-beauty в Россию в 2024 году вырос на 12%, достигнув исторического максимума. Топ-продукты: кушоны (+152%), солнцезащита SPF (+283%), патчи, сыворотки. Драйвер — сочетание технологичных формул и доступных цен по сравнению с люксом.</div>
+      </div>
+      <div class="instr-card">
+        <span class="instr-icon">💄</span>
+        <div class="instr-type">Декоративная косметика</div>
+        <div class="instr-name">Масс-маркет декора восстанавливается</div>
+        <span class="instr-label warm">Спад сменяется ростом</span>
+        <div class="instr-yield">Тональники, пудра +47% онлайн</div>
+        <div class="instr-desc">Рынок декоративной косметики в штуках сократился на 12% в 2025 году до 421 млн единиц — сказалось падение офлайн-продаж. Но онлайн-канал компенсирует потери: декоративка растёт на маркетплейсах двузначными темпами. Лидеры отечественного масс-маркета — Vivienne Sabo, Beauty Bomb, Stellary (все принадлежат НТС Градиент), Divage. Молодая аудитория активно поддерживает категорию.</div>
+      </div>
+      <div class="instr-card">
+        <span class="instr-icon">♻️</span>
+        <div class="instr-type">«Зелёная» косметика</div>
+        <div class="instr-name">Органик и eco-beauty: долгосрочный тренд</div>
+        <span class="instr-label ok">Растущая ниша</span>
+        <div class="instr-yield">Натуральный состав — критерий №1 для молодёжи</div>
+        <div class="instr-desc">Интерес к натуральным и органическим формулам устойчив и прежде всего характерен для аудитории 18–35 лет. Natura Siberica, «Краснополянская косметика», Organic Shop работают в этой нише. «Арнест» вывел линейку BioCode с 8-векторной гиалуроновой кислотой. Отечественные производители инвестируют в «зелёную» химию как в стратегическое направление экспортного позиционирования.</div>
+      </div>
+    </div>
+
+    <hr class="divider" />
+
+    <h2>Риски и вызовы для участников рынка</h2>
+
+    <div class="risk-list">
+      <div class="risk-item">
+        <div class="risk-badge high">Высокий</div>
+        <div>
+          <div class="risk-title">Зависимость от импортного сырья</div>
+          <div class="risk-desc">Несмотря на рост локализации до 51%, большинство российских производителей всё ещё зависят от импортных активных компонентов, упаковки и оборудования — преимущественно из Китая и Кореи. Волатильность курса рубля напрямую транслируется в себестоимость. При ослаблении рубля к 90–95 руб./$ издержки производителей существенно вырастут.</div>
+        </div>
+      </div>
+      <div class="risk-item">
+        <div class="risk-badge high">Высокий</div>
+        <div>
+          <div class="risk-title">Маркетплейс-зависимость малых брендов</div>
+          <div class="risk-desc">Для нишевых брендов маркетплейсы — основной или единственный канал продаж. Рост комиссий, изменение алгоритмов и требований платформ напрямую влияет на их экономику. Платные рекламные инструменты внутри площадок становятся дороже и сложнее — барьер для входа для новых игроков растёт.</div>
+        </div>
+      </div>
+      <div class="risk-item">
+        <div class="risk-badge mid">Средний</div>
+        <div>
+          <div class="risk-title">Падение офлайн-розницы и перестройка сетей</div>
+          <div class="risk-desc">Специализированные сети (Л'Этуаль, Рив Гош, «Подружка», «Улыбка радуги») сталкиваются с падением трафика и конкуренцией со стороны маркетплейсов и «Магнит Косметик». Часть форматов будет закрываться или трансформироваться. Рост «Магнит Косметик» — особое давление на средний ценовой сегмент.</div>
+        </div>
+      </div>
+      <div class="risk-item">
+        <div class="risk-badge mid">Средний</div>
+        <div>
+          <div class="risk-title">Гиперконкуренция в нишевом сегменте</div>
+          <div class="risk-desc">Низкий порог входа через маркетплейсы привёл к тому, что рынок переполнен новыми нишевыми брендами. Большинство из них не могут обеспечить устойчивый сбыт без постоянных вложений в рекламу. Консолидация неизбежна: выживут те, у кого есть чёткое позиционирование, R&D и лояльная аудитория.</div>
+        </div>
+      </div>
+      <div class="risk-item">
+        <div class="risk-badge low">Управляемый</div>
+        <div>
+          <div class="risk-title">Регуляторное давление: маркировка и сертификация</div>
+          <div class="risk-desc">Ужесточение требований к маркировке и сертификации косметических средств в рамках ЕАЭС создаёт дополнительную операционную нагрузку, особенно для небольших игроков. При этом для крупных брендов это — барьер для новых конкурентов, снижающий угрозу со стороны «серых» поставщиков.</div>
+        </div>
+      </div>
+    </div>
+
+    <hr class="divider" />
+
+    <h2>Ключевые метрики и ориентиры</h2>
+
+    <div class="metrics-grid">
+      <div class="metric-cell">
+        <div class="metric-label">Объём рынка 2024 (факт)</div>
+        <div class="metric-value teal">1,11 трлн ₽</div>
+        <div class="metric-note">Рост +16,8% г/г. Прогнозируемый CAGR до 2028 года — 10,36%, целевой объём — $4,5 млрд.</div>
+      </div>
+      <div class="metric-cell">
+        <div class="metric-label">Интернет-продажи beauty</div>
+        <div class="metric-value gold">449 млрд ₽</div>
+        <div class="metric-note">Рост +17,2% за год. Доля маркетплейсов в онлайн-продажах косметики — 31% и продолжает расти.</div>
+      </div>
+      <div class="metric-cell">
+        <div class="metric-label">Доля отечественных брендов</div>
+        <div class="metric-value green">68%</div>
+        <div class="metric-note">По данным Минпромторга на 2025 год. Доверяют отечественной косметике 71% россиянок (НАФИ).</div>
+      </div>
+      <div class="metric-cell">
+        <div class="metric-label">Декоративная косметика (штуки)</div>
+        <div class="metric-value red">−12%</div>
+        <div class="metric-note">Спад в 2025 году до 421 млн единиц. Офлайн сжимается, онлайн компенсирует падение — но не полностью.</div>
+      </div>
+    </div>
+
+    <blockquote>
+      <p>«2026 год станет точкой, после которой российская косметика начнёт восприниматься как полноценный, конкурентоспособный сегмент глобальной индустрии — с понятными стандартами качества, сильными брендами и долгосрочной стратегией развития.»</p>
+      <cite>— Владимир Гурьянов, председатель совета директоров АО «Арнест»</cite>
+    </blockquote>
+
+    <hr class="divider" />
+
+    <h2>Стратегии: как выиграть в переходный период</h2>
+
+    <h3>Для производителей и брендов</h3>
+    <p>2026 год — год качественного роста, а не количественной экспансии. Инвестиции в R&D и разработку собственных формул становятся ключевым конкурентным преимуществом: рынок перенасыщен «белыми метками» с одинаковым составом. Бренды с уникальными активами и доказанной клинической эффективностью формируют лояльность, которую невозможно купить только рекламой. Для экспортно ориентированных игроков открывается окно в СНГ, Ближний Восток и Юго-Восточную Азию — туда, где «сделано в России» ещё не стало клише.</p>
+
+    <h3>Для ритейлеров и дистрибьюторов</h3>
+    <p>Омниканальность — не конкурентное преимущество, а гигиенический минимум. Специализированные сети, конкурирующие с маркетплейсами только по ассортименту, проигрывают. Побеждает формат, сочетающий экспертизу (консультация, подбор, тестирование), уникальные бренды и сервис постпродажного сопровождения — то, что маркетплейс дать не может. «Магнит Косметик» с его агрессивным расширением и доступными ценами уже переформатирует низкий ценовой сегмент — специализированным сетям нужен чёткий ответ «зачем идти к нам».</p>
+
+    <h3>Что избегать</h3>
+    <p>Запуска ещё одного нишевого бренда без собственной технологии или чёткого позиционирования — рынок перенасыщен «красивыми баночками». Ставки исключительно на маркетплейс без D2C-канала и собственного бренд-присутствия — платформенная зависимость при росте комиссий становится экзистенциальным риском. Копирования западных формул без адаптации под вкусы и потребности российского потребителя: R-Beauty выигрывает именно тогда, когда опирается на локальные культурные коды и сибирское сырьё.</p>
+
+    <div class="conclusion">
+      <h3>Прогноз: качество формул, сила бренда, экспортный горизонт</h3>
+      <p>Рынок косметики в России в 2026 году — один из немногих потребительских сегментов, где структурный рост не вызывает сомнений. Индустрия красоты исторически устойчива к экономическим спадам: люди сокращают расходы на одежду и развлечения быстрее, чем на уход за собой. Объём рынка в деньгах продолжит расти на 10–12% в год даже в умеренном сценарии — за счёт роста среднего чека, смещения в онлайн и дальнейшей замены офлайн-покупок маркетплейс-заказами.</p>
+      <p>Главная тенденция года — созревание R-Beauty. Отечественные бренды пришли к точке, когда количество перешло в качество: 2 000+ производителей — это уже не ажиотажный старт, а зрелая индустрия с конкуренцией за формулы, упаковку и позиционирование. Лучшие из них готовятся к экспорту — и это хороший знак для всего рынка.</p>
+      <p>Главный принцип года — технология важнее маркетинга. Покупатель стал грамотнее: он читает составы, изучает клинические исследования, сравнивает активы. Бренд, который умеет объяснить, почему его формула работает, получает лояльность. Бренд, который умеет только продавать красивую историю — теряет её при первом неудачном опыте. R-Beauty будущего — это наука плюс культурный код, а не просто «натуральные сибирские травы».</p>
+    </div>
+
+  </article>
+</main>
+
+<footer>
+  <strong>kotana.com.ru</strong> &nbsp;·&nbsp; Рынок косметики и beauty-ритейл · 2026 &nbsp;·&nbsp; Источники: INFOLine, BusinesStat, Minpromtorg RF, НАФИ, РБК Стиль, Wildberries / Ozon, Easy Commerce, Statista, Эксперт Юг, Retail.ru
+</footer>
+
+</body>
+</html>
