@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Рынок золота — 2026: исторические максимумы и новая архитектура спроса | kotana.com.ru</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --ink:    #0f1117;
+      --paper:  #f7f4ef;
+      --cream:  #ede9e0;
+      --accent: #6b4c0a;
+      --accent-light: #f0e0b0;
+      --gold:   #b8922a;
+      --green:  #1a7a3c;
+      --red:    #c0392b;
+      --muted:  #7a7060;
+      --rule:   #d4cfc5;
+      --col:    clamp(320px, 66ch, 720px);
+    }
+    html { font-size: 17px; scroll-behavior: smooth; }
+    body {
+      background: var(--paper); color: var(--ink);
+      font-family: 'IBM Plex Sans', sans-serif;
+      line-height: 1.75; -webkit-font-smoothing: antialiased;
+    }
+
+    .masthead {
+      background: var(--ink); padding: 14px 40px;
+      display: flex; align-items: center; justify-content: space-between;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: .75rem; letter-spacing: .12em; text-transform: uppercase;
+    }
+    .masthead-logo { font-size: 1rem; font-weight: 500; color: #fff; }
+    .masthead-meta { color: #666; }
+
+    .hero {
+      background: var(--accent); color: var(--paper);
+      padding: 80px 40px 72px; position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: 'Au';
+      position: absolute; right: -10px; top: 50%; transform: translateY(-50%);
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(130px, 22vw, 300px); font-weight: 900;
+      color: rgba(255,255,255,.05); letter-spacing: -.04em; line-height: 1; pointer-events: none;
+    }
+    .hero-inner { max-width: var(--col); margin: 0 auto; position: relative; }
+    .hero-tag {
+      display: inline-block;
+      border: 1px solid rgba(255,255,255,.3); color: rgba(255,255,255,.75);
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: .72rem; letter-spacing: .15em; text-transform: uppercase;
+      padding: 4px 12px; margin-bottom: 28px;
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.2rem, 5vw, 3.4rem); font-weight: 700;
+      line-height: 1.18; letter-spacing: -.02em; margin-bottom: 24px; max-width: 22ch;
+    }
+    .hero h1 em { font-style: italic; color: #f5d98a; }
+    .hero-lead {
+      font-size: 1.08rem; color: rgba(255,255,255,.72);
+      max-width: 54ch; line-height: 1.65; margin-bottom: 40px;
+    }
+    .hero-byline {
+      display: flex; align-items: center; gap: 16px;
+      font-size: .8rem; color: rgba(255,255,255,.4);
+      font-family: 'IBM Plex Mono', monospace;
+    }
+    .hero-byline span { color: rgba(255,255,255,.25); }
+    .hero-byline strong { color: rgba(255,255,255,.65); font-weight: 500; }
+
+    .stats-bar { background: var(--ink); padding: 0 40px; }
+    .stats-inner {
+      max-width: calc(var(--col) + 200px); margin: 0 auto;
+      display: grid; grid-template-columns: repeat(3,1fr);
+    }
+    .stat-item {
+      padding: 24px 32px; border-right: 1px solid rgba(255,255,255,.07); color: #fff;
+    }
+    .stat-item:first-child { padding-left: 0; }
+    .stat-item:last-child  { border-right: none; }
+    .stat-number {
+      font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 700;
+      display: block; line-height: 1; color: #f5d98a;
+    }
+    .stat-label {
+      font-size: .75rem; text-transform: uppercase;
+      letter-spacing: .1em; opacity: .45; margin-top: 4px;
+      font-family: 'IBM Plex Mono', monospace;
+    }
+
+    .article-wrap { padding: 72px 40px; }
+    .article-inner { max-width: var(--col); margin: 0 auto; }
+
+    .article-inner > p:first-of-type::first-letter {
+      font-family: 'Playfair Display', serif; font-size: 4.5em; font-weight: 900;
+      float: left; line-height: .78; margin-right: 8px; margin-top: 6px; color: var(--accent);
+    }
+    p { margin-bottom: 1.5rem; }
+
+    h2 {
+      font-family: 'Playfair Display', serif; font-size: 1.7rem; font-weight: 700;
+      letter-spacing: -.02em; line-height: 1.25; margin: 3rem 0 1.1rem;
+    }
+    h2::before { content: ''; display: block; width: 32px; height: 3px; background: var(--accent); margin-bottom: 16px; }
+
+    h3 {
+      font-family: 'IBM Plex Sans', sans-serif; font-size: 1.05rem; font-weight: 600;
+      margin: 2rem 0 .7rem; text-transform: uppercase; letter-spacing: .06em; color: var(--gold);
+    }
+
+    blockquote {
+      border-left: 3px solid var(--accent); margin: 2.5rem 0; padding: 20px 0 20px 32px;
+    }
+    blockquote p {
+      font-family: 'Playfair Display', serif; font-size: 1.35rem; font-style: italic;
+      line-height: 1.5; color: var(--ink); margin: 0 0 8px;
+    }
+    blockquote cite {
+      font-family: 'IBM Plex Mono', monospace; font-size: .72rem;
+      text-transform: uppercase; letter-spacing: .12em; color: var(--muted); font-style: normal;
+    }
+
+    .highlight { background: var(--accent-light); padding: 0 4px; font-weight: 500; }
+
+    /* Scenario grid */
+    .scenario-grid {
+      display: grid; grid-template-columns: repeat(3,1fr);
+      gap: 1px; background: var(--rule); border: 1px solid var(--rule); margin: 2.5rem 0;
+    }
+    .sc-card { background: var(--paper); padding: 24px 20px; }
+    .sc-label {
+      font-family: 'IBM Plex Mono', monospace; font-size: .65rem;
+      text-transform: uppercase; letter-spacing: .15em; color: var(--muted); margin-bottom: 10px;
+    }
+    .sc-value { font-family: 'Playfair Display', serif; font-size: 1.7rem; font-weight: 700; line-height: 1; margin-bottom: 6px; }
+    .sc-value.base { color: var(--gold); }
+    .sc-value.bull { color: var(--green); }
+    .sc-value.bear { color: var(--red); }
+    .sc-title { font-size: .88rem; font-weight: 600; margin-bottom: 4px; }
+    .sc-source { font-family: 'IBM Plex Mono', monospace; font-size: .63rem; color: var(--muted); margin-bottom: 4px; }
+    .sc-desc { font-size: .8rem; color: var(--muted); line-height: 1.5; margin-top: 8px; }
+
+    /* Cards grid */
+    .instr-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 1px; background: var(--rule); border: 1px solid var(--rule); margin: 2.5rem 0;
+    }
+    .instr-card { background: var(--paper); padding: 24px; }
+    .instr-icon { font-size: 1.3rem; margin-bottom: 8px; display: block; }
+    .instr-type {
+      font-family: 'IBM Plex Mono', monospace; font-size: .65rem;
+      text-transform: uppercase; letter-spacing: .12em; color: var(--muted); margin-bottom: 6px;
+    }
+    .instr-name { font-weight: 700; font-size: .97rem; margin-bottom: 4px; }
+    .instr-yield {
+      font-family: 'Playfair Display', serif; font-weight: 700;
+      color: var(--accent); font-size: 1.15rem; margin-bottom: 4px;
+    }
+    .instr-label {
+      display: inline-block; font-family: 'IBM Plex Mono', monospace;
+      font-size: .6rem; text-transform: uppercase; letter-spacing: .1em;
+      padding: 3px 8px; border-radius: 2px; margin-bottom: 8px;
+    }
+    .instr-label.hot  { background: var(--accent-light); color: var(--accent); }
+    .instr-label.warm { background: #f5ecd4; color: var(--gold); }
+    .instr-label.risk { background: #fde8e0; color: var(--red); }
+    .instr-label.ok   { background: #d0ead8; color: var(--green); }
+    .instr-desc { font-size: .8rem; color: var(--muted); line-height: 1.55; }
+
+    /* Data card */
+    .data-card {
+      background: var(--cream); border: 1px solid var(--rule); padding: 28px 32px; margin: 2.5rem 0;
+    }
+    .data-card h4 {
+      font-family: 'IBM Plex Mono', monospace; font-size: .7rem;
+      text-transform: uppercase; letter-spacing: .15em; color: var(--muted); margin-bottom: 20px;
+    }
+    .data-rows { display: flex; flex-direction: column; gap: 12px; }
+    .data-row { display: flex; align-items: center; gap: 16px; }
+    .data-row-label { font-size: .85rem; color: var(--muted); width: 220px; flex-shrink: 0; }
+    .data-row-bar-wrap { flex: 1; height: 6px; background: var(--rule); position: relative; }
+    .data-row-bar { position: absolute; top: 0; left: 0; height: 100%; }
+    .data-row-bar.amber { background: var(--accent); }
+    .data-row-bar.gold  { background: var(--gold); }
+    .data-row-bar.green { background: var(--green); }
+    .data-row-bar.red   { background: var(--red); opacity: .7; }
+    .data-row-bar.muted { background: var(--muted); opacity: .35; }
+    .data-row-val {
+      font-family: 'IBM Plex Mono', monospace; font-size: .8rem;
+      font-weight: 500; width: 110px; text-align: right;
+    }
+
+    /* Metrics 2x2 */
+    .metrics-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 1px; background: var(--rule); border: 1px solid var(--rule); margin: 2.5rem 0;
+    }
+    .metric-cell { background: var(--paper); padding: 24px; }
+    .metric-label {
+      font-family: 'IBM Plex Mono', monospace; font-size: .68rem;
+      text-transform: uppercase; letter-spacing: .14em; color: var(--muted); margin-bottom: 8px;
+    }
+    .metric-value { font-family: 'Playfair Display', serif; font-size: 1.65rem; font-weight: 700; line-height: 1.1; }
+    .metric-value.amber { color: var(--accent); }
+    .metric-value.gold  { color: var(--gold); }
+    .metric-value.green { color: var(--green); }
+    .metric-value.red   { color: var(--red); }
+    .metric-note { font-size: .78rem; color: var(--muted); margin-top: 6px; }
+
+    /* Risk list */
+    .risk-list { margin: 2rem 0; }
+    .risk-item {
+      display: flex; gap: 16px; padding: 16px 0;
+      border-bottom: 1px solid var(--rule); align-items: flex-start;
+    }
+    .risk-item:first-child { border-top: 1px solid var(--rule); }
+    .risk-badge {
+      font-family: 'IBM Plex Mono', monospace; font-size: .62rem;
+      text-transform: uppercase; letter-spacing: .1em;
+      padding: 4px 10px; border-radius: 2px; flex-shrink: 0; margin-top: 2px;
+    }
+    .risk-badge.high { background: #fde8e0; color: var(--red); }
+    .risk-badge.mid  { background: #f5ecd4; color: var(--gold); }
+    .risk-badge.low  { background: #d0ead8; color: var(--green); }
+    .risk-title { font-weight: 600; font-size: .9rem; margin-bottom: 3px; }
+    .risk-desc  { font-size: .82rem; color: var(--muted); line-height: 1.55; }
+
+    .divider { border: none; border-top: 1px solid var(--rule); margin: 3rem 0; }
+
+    .conclusion {
+      background: var(--ink); color: var(--paper); padding: 36px 40px; margin: 3rem 0 0;
+    }
+    .conclusion h3 { color: #f5d98a; margin-top: 0; letter-spacing: .06em; font-size: 1rem; text-transform: uppercase; }
+    .conclusion p { color: #ccc; margin-bottom: 1rem; }
+    .conclusion p:last-child { margin-bottom: 0; }
+
+    footer {
+      background: var(--cream); border-top: 1px solid var(--rule);
+      padding: 28px 40px; font-family: 'IBM Plex Mono', monospace;
+      font-size: .72rem; color: var(--muted); text-align: center; letter-spacing: .06em;
+    }
+    footer strong { color: var(--ink); }
+
+    @media (max-width: 640px) {
+      .masthead { padding: 12px 20px; }
+      .hero { padding: 56px 20px 52px; }
+      .stats-bar { padding: 0 20px; }
+      .stats-inner, .scenario-grid { grid-template-columns: 1fr; }
+      .stat-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,.07); padding: 16px 0; }
+      .article-wrap { padding: 48px 20px; }
+      .instr-grid, .metrics-grid { grid-template-columns: 1fr; }
+      .data-row-label { width: 130px; font-size: .78rem; }
+    }
+  </style>
+</head>
+<body>
+
+<header class="masthead">
+  <span class="masthead-logo">kotana.com.ru</span>
+  <span class="masthead-meta">Анализ · Рынок золота · 2026</span>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-tag">Анализ · Драгоценные металлы · 2026</div>
+    <h1>Рынок золота — 2026: <em>$5 000 за унцию и новая эра центробанковского спроса</em></h1>
+    <p class="hero-lead">Золото преодолело $5 000 за унцию, обновив рекорд более 50 раз за 2025 год. Центральные банки скупили 863 тонны. Россия держит второе место в мировой добыче, а её резервы в золоте впервые достигли $402 млрд. Эпоха дедолларизации переписывает правила ценообразования металла.</p>
+    <div class="hero-byline">
+      <strong>Редакция kotana.com.ru</strong>
+      <span>·</span>
+      <span>Апрель 2026</span>
+      <span>·</span>
+      <span>13 мин чтения</span>
+    </div>
+  </div>
+</section>
+
+<div class="stats-bar">
+  <div class="stats-inner">
+    <div class="stat-item">
+      <span class="stat-number">$5 000+</span>
+      <span class="stat-label">Цена золота за унцию — исторические максимумы 2026 г.</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number">863 т</span>
+      <span class="stat-label">Покупки центробанков мира в 2025 г. — рекорд спроса</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number">2-е место</span>
+      <span class="stat-label">Позиция России в мировой добыче — 300–330 т в год</span>
+    </div>
+  </div>
+</div>
+
+<main class="article-wrap">
+  <article class="article-inner">
+
+    <p>Золото в 2026 году — не просто защитный актив. Это геополитический инструмент, барометр доверия к доллару и стратегический ресурс суверенитета. На рубеже 2025–2026 годов металл преодолел отметку $5 000 за унцию, обновив исторический максимум выше $5 600 в начале января 2026 года. За весь 2025 год цена золота обновляла рекорды более 50 раз и выросла более чем на <span class="highlight">60%</span> — лучший годовой результат с конца 1970-х годов. В рублёвом выражении стоимость грамма впервые перевалила за 11 000 рублей. Россия в этом уравнении занимает особое место: второй крупнейший производитель в мире, пятый по официальным резервам, и страна, чья стратегия дедолларизации ЗВР уже зафиксировала золото в роли главного суверенного актива.</p>
+
+    <h2>Почему золото больше не коррелирует со ставками ФРС</h2>
+
+    <p>Десятилетиями аналитики объясняли динамику золота через реальные ставки в США: дорогой доллар — дешевле металл, дешёвый — дороже. Эта зависимость работала с 1970-х по 2010-е. В 2022–2026 годах она сломалась. Реальные ставки США оставались высокими, но золото продолжало расти, игнорируя классическую модель ценообразования. Причина — структурный сдвиг в природе спроса.</p>
+
+    <p>Покупки центральных банков стали <span class="highlight">системными и нечувствительными к цене</span>. В 2025 году мировые ЦБ приобрели 863 тонны золота, а глобальный инвестиционный спрос вырос до 2 175 тонн — на 84% год к году. Параллельно рост госдолга США, фискальные риски и снижение доверия к доллару подтолкнули суверенных инвесторов к диверсификации. Традиционная корреляция с реальными ставками уступила место новой логике: геополитические риски и функция «убежища» доминируют в ценообразовании. Именно это делает текущий цикл структурно иным по сравнению со всеми предыдущими ралли.</p>
+
+    <div class="data-card">
+      <h4>Динамика цены золота: ключевые отметки 2024–2026 гг.</h4>
+      <div class="data-rows">
+        <div class="data-row">
+          <span class="data-row-label">Начало 2024 (факт)</span>
+          <div class="data-row-bar-wrap"><div class="data-row-bar muted" style="width:39%"></div></div>
+          <span class="data-row-val">~$2 000/унц.</span>
+        </div>
+        <div class="data-row">
+          <span class="data-row-label">Конец 2024 (факт)</span>
+          <div class="data-row-bar-wrap"><div class="data-row-bar gold" style="width:54%"></div></div>
+          <span class="data-row-val">~$2 700/унц.</span>
+        </div>
+        <div class="data-row">
+          <span class="data-row-label">Конец 2025 (факт)</span>
+          <div class="data-row-bar-wrap"><div class="data-row-bar amber" style="width:82%"></div></div>
+          <span class="data-row-val">~$4 550/унц.</span>
+        </div>
+        <div class="data-row">
+          <span class="data-row-label">Пик января 2026 (факт)</span>
+          <div class="data-row-bar-wrap"><div class="data-row-bar amber" style="width:100%"></div></div>
+          <span class="data-row-val">$5 596/унц.</span>
+        </div>
+        <div class="data-row">
+          <span class="data-row-label">Прогноз конец 2026 (базовый)</span>
+          <div class="data-row-bar-wrap"><div class="data-row-bar green" style="width:88%"></div></div>
+          <span class="data-row-val">$4 800–5 000</span>
+        </div>
+      </div>
+    </div>
+
+    <blockquote>
+      <p>«На рынке по факту сформировался новый, долгосрочный покупатель, который снижает вероятность глубоких падений и поддерживает золото в режиме высокой равновесной цены. Именно это отличает текущий цикл от предыдущих ралли.»</p>
+      <cite>— Алена Николаева, инвестиционный аналитик Astero Falcon, Коммерсантъ</cite>
+    </blockquote>
+
+    <hr class="divider" />
+
+    <h2>Сценарии: от консолидации до нового рывка</h2>
+
+    <p>После исторического максимума $5 596 в январе 2026 года рынок вошёл в фазу коррекции — к середине марта котировки опустились до $4 090 на фоне опасений относительно инфляции и геополитической нестабильности на Ближнем Востоке. Это стандартная техническая пауза после сильного ралли, а не разворот тренда. Консенсус ведущих финансовых институтов предполагает сохранение восходящего движения.</p>
+
+    <div class="scenario-grid">
+      <div class="sc-card">
+        <div class="sc-label">Базовый сценарий</div>
+        <div class="sc-title">Устойчивый бычий рынок</div>
+        <div class="sc-value base">$4 500–5 200</div>
+        <div class="sc-source">Консенсус банков / J.P. Morgan</div>
+        <div class="sc-desc">Центробанки сохраняют системные покупки ~1 000 тонн в год. ФРС продолжает цикл снижения ставок. Геополитическая напряжённость поддерживает спрос на «убежища». Коррекция — временная, ралли возобновляется во II полугодии.</div>
+      </div>
+      <div class="sc-card">
+        <div class="sc-label">Оптимистичный</div>
+        <div class="sc-title">Новый исторический максимум</div>
+        <div class="sc-value bull">$6 000–6 300</div>
+        <div class="sc-source">J.P. Morgan / UBS / Bank of America</div>
+        <div class="sc-desc">Ускорение дедолларизации, новая волна геополитической напряжённости или финансовый стресс в США подталкивают котировки выше $6 000. Bank of America допускает $6 000 к середине 2026 года. Saxo Bank — $5 500 уже в текущем году.</div>
+      </div>
+      <div class="sc-card">
+        <div class="sc-label">Консервативный</div>
+        <div class="sc-title">Глубокая коррекция</div>
+        <div class="sc-value bear">$3 500–4 000</div>
+        <div class="sc-source">При нормализации рисков</div>
+        <div class="sc-desc">Геополитическая деэскалация, ужесточение политики ФРС или сильный доллар давят на котировки. Рост добычи из-за сверхприбылей отрасли увеличивает предложение. Ювелирный сектор уже сократил потребление на 23% год к году — это сигнал ценового перегрева.</div>
+      </div>
+    </div>
+
+    <hr class="divider" />
+
+    <h2>Россия: добыча, резервы и переориентация на Восток</h2>
+
+    <p>Россия занимает второе место в мире по добыче золота, ежегодно производя <span class="highlight">300–330 тонн</span>. Несмотря на санкционные ограничения, отрасль демонстрирует операционную устойчивость: прирост запасов в 2024 году составил 542 тонны — на 13% выше объёма добычи. «Полюс», крупнейший производитель страны, сохраняет рентабельность по EBITDA около 73% благодаря одной из самых низких себестоимостей в мире. Компания планирует удвоить производство к 2030–2032 годам за счёт разработки Сухого Лога — одного из крупнейших неосвоенных месторождений планеты.</p>
+
+    <p>Золотые резервы Банка России достигли 2 326–2 340 тонн, составляя <span class="highlight">48,3% от ЗВР</span> — исторический максимум с 1995 года. В долларовом выражении стоимость золота в резервах превысила $402 млрд. Это результат не столько новых покупок (ЦБ в 2025 году совершал лишь тактические операции — продал около 6 тонн за год), сколько стремительного роста цены металла. Более 80% нынешних резервов сформировано в период с 2002 по 2025 год.</p>
+
+    <p>Экспортные потоки кардинально переориентированы. В 2025 году экспорт российского золота в Китай вырос в девять раз, достигнув 25,3 тонны на сумму $3,29 млрд. Западный рынок фактически закрыт после введения санкций на российское золото Великобританией, ЕС и G7 в 2022 году. Внутренний спрос остаётся высоким: в 2024 году граждане приобрели 75,6 тонны металла — около четверти годовой добычи страны.</p>
+
+    <hr class="divider" />
+
+    <h2>Инструменты инвестирования в золото</h2>
+
+    <div class="instr-grid">
+      <div class="instr-card">
+        <span class="instr-icon">🪙</span>
+        <div class="instr-type">Физическое золото</div>
+        <div class="instr-name">Слитки и инвестиционные монеты</div>
+        <span class="instr-label hot">Прямое владение металлом</span>
+        <div class="instr-yield">Цена от 11 000 ₽/г и выше</div>
+        <div class="instr-desc">С 2022 года НДС на покупку золотых слитков для физлиц отменён, что сделало их полноценным инвестиционным инструментом. В 2024 году россияне купили рекордный объём слитков и монет. Минус — расходы на хранение и спред при покупке/продаже. Инвестиционные монеты («Георгий Победоносец», «Сеятель») — более ликвидный вариант небольших вложений.</div>
+      </div>
+      <div class="instr-card">
+        <span class="instr-icon">📈</span>
+        <div class="instr-type">Биржевое золото</div>
+        <div class="instr-name">GLDRUB на Московской бирже</div>
+        <span class="instr-label hot">Высокая ликвидность</span>
+        <div class="instr-yield">Цена за грамм в реальном времени</div>
+        <div class="instr-desc">Биржевой инструмент, позволяющий покупать золото в граммах без физического владения металлом. Высокая ликвидность, низкий порог входа, отсутствие необходимости хранения. Подходит для активной торговли и долгосрочного инвестирования. Ключевой инструмент для розничных инвесторов на российском рынке в условиях санкций.</div>
+      </div>
+      <div class="instr-card">
+        <span class="instr-icon">🏭</span>
+        <div class="instr-type">Акции золотодобытчиков</div>
+        <div class="instr-name">Полюс, Селигдар, ЮГК</div>
+        <span class="instr-label warm">Рычаг на цену металла</span>
+        <div class="instr-yield">Операционный рычаг к цене Au</div>
+        <div class="instr-desc">При росте цены золота акции добывающих компаний, как правило, опережают сам металл за счёт операционного рычага. «Полюс» — фаворит аналитиков: рентабельность EBITDA ~73%, один из самых низких TCC в мире. Риски — налоговое давление (повышение НДПИ) и корпоративное управление. ЮГК — для ставки на рост добычи в Сибири.</div>
+      </div>
+      <div class="instr-card">
+        <span class="instr-icon">🏦</span>
+        <div class="instr-type">Обезличенные металлические счета</div>
+        <div class="instr-name">ОМС в банках</div>
+        <span class="instr-label warm">Без физического хранения</span>
+        <div class="instr-yield">+1–2% потенциально — золотые вклады</div>
+        <div class="instr-desc">Традиционный инструмент для консервативных инвесторов. Не застрахован АСВ, но позволяет участвовать в росте цены без издержек на хранение. В 2025 году принят ряд законопроектов, регулирующих «золотые вклады» с начислением процентов — новый продукт ожидается на рынке в 2026 году и может дать дополнительную доходность 1–2% годовых.</div>
+      </div>
+    </div>
+
+    <hr class="divider" />
+
+    <h2>Риски: что может остановить ралли</h2>
+
+    <div class="risk-list">
+      <div class="risk-item">
+        <div class="risk-badge high">Высокий</div>
+        <div>
+          <div class="risk-title">Геополитическая деэскалация и разворот ФРС</div>
+          <div class="risk-desc">Снижение глобальной напряжённости или неожиданное ужесточение монетарной политики ФРС способны резко охладить спрос на защитные активы. После пика $5 596 в январе 2026 года рынок уже скорректировался до $4 090 к середине марта — в 2,5 раза быстрее, чем ожидало большинство аналитиков. Волатильность в 2026 году аномально высока.</div>
+        </div>
+      </div>
+      <div class="risk-item">
+        <div class="risk-badge high">Высокий</div>
+        <div>
+          <div class="risk-title">Рост предложения из-за сверхприбылей отрасли</div>
+          <div class="risk-desc">При цене $4 000–5 000 за унцию даже самые низкомаржинальные производители зарабатывают: TCC большинства майнеров — около $2 500. Высокая рентабельность стимулирует рост капиталовложений и разработку ранее нерентабельных месторождений. Через 2–3 года предложение начнёт давить на котировки. Мировая добыча в 2025 году уже выросла на 0,5%, до 3 600 тонн.</div>
+        </div>
+      </div>
+      <div class="risk-item">
+        <div class="risk-badge mid">Средний</div>
+        <div>
+          <div class="risk-title">Налоговое давление на российских добытчиков</div>
+          <div class="risk-desc">Повышение НДПИ на драгоценные металлы способно принести бюджету до 1 трлн рублей, но ударит по рентабельности компаний второго эшелона. «Полюс» с его низкой себестоимостью устоит, тогда как небольшие золотодобытчики окажутся в сложном положении при высокой рублёвой себестоимости и нестабильном курсе.</div>
+        </div>
+      </div>
+      <div class="risk-item">
+        <div class="risk-badge mid">Средний</div>
+        <div>
+          <div class="risk-title">Снижение ювелирного спроса</div>
+          <div class="risk-desc">Ювелиры — традиционно крупнейший потребитель металла — уже сокращают закупки. В III квартале 2025 года потребление ювелирной отраслью упало до 419 тонн против 547 тонн годом ранее. Рост розничных цен на украшения в 2026 году — ещё минимум 10–15% — продолжит подавлять штучный спрос. Это частично компенсирует покупки ЦБ, но добавляет структурный дисбаланс.</div>
+        </div>
+      </div>
+      <div class="risk-item">
+        <div class="risk-badge low">Управляемый</div>
+        <div>
+          <div class="risk-title">Санкционные ограничения российского экспорта</div>
+          <div class="risk-desc">Западные рынки закрыты, но переориентация на Китай и другие азиатские рынки состоялась. Экспорт в Китай в 2025 году вырос в девять раз — до 25,3 тонны. Дисконт к мировой цене при продаже в «дружественные» юрисдикции существует, но не критичен при текущих ценовых уровнях.</div>
+        </div>
+      </div>
+    </div>
+
+    <hr class="divider" />
+
+    <h2>Ключевые метрики: Россия и мировой рынок</h2>
+
+    <div class="metrics-grid">
+      <div class="metric-cell">
+        <div class="metric-label">Золото в резервах ЦБ РФ</div>
+        <div class="metric-value amber">$402 млрд</div>
+        <div class="metric-note">2 326–2 340 тонн. Доля в ЗВР — 48,3%: исторический максимум с 1995 года.</div>
+      </div>
+      <div class="metric-cell">
+        <div class="metric-label">ЗВР России (октябрь 2025)</div>
+        <div class="metric-value gold">$742 млрд</div>
+        <div class="metric-note">Исторический максимум, зафиксированный 17 октября 2025 года. Рост с начала года — более $104 млрд.</div>
+      </div>
+      <div class="metric-cell">
+        <div class="metric-label">Покупки золота гражданами РФ</div>
+        <div class="metric-value green">75,6 т</div>
+        <div class="metric-note">В 2024 году. Примерно 25% годовой добычи страны. Спрос поддерживается отменой НДС на слитки.</div>
+      </div>
+      <div class="metric-cell">
+        <div class="metric-label">Экспорт в Китай (2025)</div>
+        <div class="metric-value red">×9 к 2024</div>
+        <div class="metric-note">25,3 тонны на $3,29 млрд. Западные рынки закрыты — переориентация на Восток завершена.</div>
+      </div>
+    </div>
+
+    <blockquote>
+      <p>«Сейчас золотодобытчики получают сверхприбыли: даже у самых низкомаржинальных компаний себестоимость добычи составляет около $2 500 за унцию. Поэтому даже при сохранении текущих цен предложение золота будет нарастать.»</p>
+      <cite>— Алексей Михеев, инвестиционный стратег «ВТБ Мои инвестиции», Коммерсантъ</cite>
+    </blockquote>
+
+    <hr class="divider" />
+
+    <h2>Инвестиционные стратегии: как работать с золотом в 2026 году</h2>
+
+    <h3>Для долгосрочного инвестора</h3>
+    <p>Золото в 2026 году — это не спекуляция, а стратегическое хеджирование. При доле 10–15% в диверсифицированном портфеле металл выполняет функцию страховки от геополитических и валютных рисков. Оптимальные инструменты для долгосрочного горизонта — биржевое золото (GLDRUB) или ОМС для минимизации издержек хранения, либо слитки и монеты при желании физического владения. Акции «Полюса» дополняют позицию для тех, кто готов к более высокой волатильности в обмен на операционный рычаг.</p>
+
+    <h3>Для тактического инвестора</h3>
+    <p>Коррекция с $5 596 до $4 090 в марте 2026 года — потенциальная точка входа при подтверждении разворота. Консенсус-прогноз на конец года ($4 800–5 000) предполагает 15–20% апсайда от мартовских уровней. Ювелирный спрос подавлен высокими ценами — покупатели металла в этом цикле это центробанки и институциональные инвесторы, а не ювелиры. Это означает, что нижняя граница рынка устойчивее, чем в прошлых циклах.</p>
+
+    <h3>Чего избегать</h3>
+    <p>Покупки на пике после 50%+ роста без понимания собственного горизонта инвестирования. Концентрации в акциях золотодобытчиков второго эшелона без анализа операционных затрат и долговой нагрузки — налоговые изменения и высокая ставка ЦБ создают дополнительное давление на финансовые модели малых добывающих компаний. Ставки на сохранение текущего ценового уровня без учёта структурного роста предложения по мере ввода новых мощностей в 2027–2028 годах.</p>
+
+    <div class="conclusion">
+      <h3>Прогноз: новая равновесная цена и стратегическая роль металла</h3>
+      <p>2026 год — это не просто очередной год ралли золота. Это период, когда рынок переходит к новой равновесной цене, принципиально более высокой, чем в предыдущем десятилетии. Центральные банки суверенных государств, покупающие металл вне зависимости от колебаний котировок, сформировали постоянный структурный спрос, которого прежде не существовало. Снизить этот спрос способна только геополитическая стабилизация и восстановление доверия к доллару — оба сценария в горизонте 2026 года выглядят маловероятными.</p>
+      <p>Для России золото — это одновременно добывающая отрасль с мировым лидерством, суверенный резервный актив стоимостью $402 млрд и инструмент финансовой независимости от западной инфраструктуры. В условиях, когда половина валютных резервов страны заморожена на западных счетах, золото стало не просто «страховкой», а несущей конструкцией российских ЗВР. Этот статус сохранится и в 2027–2030 годах.</p>
+      <p>Главный принцип года для инвестора в золото: волатильность — не враг, а возможность. Коррекции на 20–30% от пиков будут происходить, но структурный тренд — дедолларизация, геополитические риски, исторически низкие реальные активы у розничного инвестора — работает в пользу металла. Консенсус банков говорит о $4 800–5 200 к концу 2026 года. Оптимисты — о $6 000. Убеждённые медведи — о $3 500. Но никто не ждёт возврата к $2 000.</p>
+    </div>
+
+  </article>
+</main>
+
+<footer>
+  <strong>kotana.com.ru</strong> &nbsp;·&nbsp; Рынок золота · 2026 &nbsp;·&nbsp; Источники: World Gold Council, SberCIB, РБК Инвестиции, Коммерсантъ, Банк России, Альфа-Инвестиции, J.P. Morgan, Bank of America, Saxo Bank, delprof.ru, gold.ru
+</footer>
+
+</body>
+</html>

@@ -326,6 +326,18 @@
         <h2 class="section-heading">Аналитика</h2>
         {% endif %}
         <div class="blog-grid">
+            <a href="/blog/gold-market-2026" class="blog-card">
+                <span class="blog-tag">{{ 'Analytics' if lang == 'en' else 'Аналитика' }}</span>
+                {% if lang == 'en' %}
+                <h3>Gold Market 2026: $5,000 per Ounce and a New Era of Central Bank Demand</h3>
+                <p>Gold has broken through $5,000 per ounce, setting more than 50 record highs in 2025. Central banks bought 863 tonnes. Russia ranks second in global mining, and its gold reserves crossed $402 billion for the first time. De-dollarisation is rewriting the rules of pricing for the metal.</p>
+                {% else %}
+                <h3>Рынок золота — 2026: $5 000 за унцию и новая эра центробанковского спроса</h3>
+                <p>Золото преодолело $5 000 за унцию, обновив рекорд более 50 раз за 2025 год. Центральные банки скупили 863 тонны. Россия держит второе место в мировой добыче, а её резервы в золоте впервые достигли $402 млрд. Эпоха дедолларизации переписывает правила ценообразования металла.</p>
+                {% endif %}
+                <span class="blog-read">{{ 'Read' if lang == 'en' else 'Читать' }} →</span>
+            </a>
+
             <a href="/blog/cosmetics-market-2026" class="blog-card">
                 <span class="blog-tag">{{ 'Analytics' if lang == 'en' else 'Аналитика' }}</span>
                 {% if lang == 'en' %}
