@@ -152,6 +152,11 @@ def blog_cosmetics_market_2026():
     return render_template("blog/cosmetics-market-2026.html")
 
 
+@app.route("/blog/coal-market-2026")
+def blog_coal_market_2026():
+    return render_template("blog/coal-market-2026.html")
+
+
 @app.route("/blog/gold-market-2026")
 def blog_gold_market_2026():
     return render_template("blog/gold-market-2026.html")
@@ -308,6 +313,11 @@ def sitemap():
     </url>
     <url>
         <loc>{SITE_URL}/blog/cosmetics-market-2026</loc>
+        <changefreq>yearly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>{SITE_URL}/blog/coal-market-2026</loc>
         <changefreq>yearly</changefreq>
         <priority>0.7</priority>
     </url>

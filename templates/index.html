@@ -326,6 +326,18 @@
         <h2 class="section-heading">Аналитика</h2>
         {% endif %}
         <div class="blog-grid">
+            <a href="/blog/coal-market-2026" class="blog-card">
+                <span class="blog-tag">{{ 'Analytics' if lang == 'en' else 'Аналитика' }}</span>
+                {% if lang == 'en' %}
+                <h3>Coal Market 2026: Energy Transition, Export Pivot and New Price Reality</h3>
+                <p>Global coal consumption hit a record 8.9 billion tonnes, yet prices have dropped 40% from 2022 peaks. Russia — the world's third-largest exporter — has redirected flows to Asia but faces railway bottlenecks and razor-thin margins at $110 per tonne.</p>
+                {% else %}
+                <h3>Рынок угля — 2026: энергопереход, экспортный разворот и новая ценовая реальность</h3>
+                <p>Мировое потребление угля достигло рекордных 8,9 млрд тонн, но цены упали на 40% от пиков 2022 года. Россия — третий экспортёр планеты — развернула потоки на Восток, но столкнулась с дефицитом пропускной способности ж/д и минимальной маржинальностью при $110 за тонну.</p>
+                {% endif %}
+                <span class="blog-read">{{ 'Read' if lang == 'en' else 'Читать' }} →</span>
+            </a>
+
             <a href="/blog/gold-market-2026" class="blog-card">
                 <span class="blog-tag">{{ 'Analytics' if lang == 'en' else 'Аналитика' }}</span>
                 {% if lang == 'en' %}

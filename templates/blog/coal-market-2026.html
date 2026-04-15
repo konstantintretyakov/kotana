@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Рынок угля — 2026: энергопереход, экспортный разворот и новая ценовая реальность | kotana.com.ru</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --ink:    #0f1117;
+      --paper:  #f7f4ef;
+      --cream:  #ede9e0;
+      --accent: #3a3a3a;
+      --accent-light: #e8e4dc;
+      --gold:   #7a6830;
+      --green:  #1a7a3c;
+      --red:    #c0392b;
+      --muted:  #7a7060;
+      --rule:   #d4cfc5;
+      --col:    clamp(320px, 66ch, 720px);
+    }
+    html { font-size: 17px; scroll-behavior: smooth; }
+    body {
+      background: var(--paper); color: var(--ink);
+      font-family: 'IBM Plex Sans', sans-serif;
+      line-height: 1.75; -webkit-font-smoothing: antialiased;
+    }
+
+    .masthead {
+      background: var(--ink); padding: 14px 40px;
+      display: flex; align-items: center; justify-content: space-between;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: .75rem; letter-spacing: .12em; text-transform: uppercase;
+    }
+    .masthead-logo { font-size: 1rem; font-weight: 500; color: #fff; }
+    .masthead-meta { color: #666; }
+
+    .hero {
+      background: var(--accent); color: var(--paper);
+      padding: 80px 40px 72px; position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: 'C';
+      position: absolute; right: -10px; top: 50%; transform: translateY(-50%);
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(130px, 22vw, 300px); font-weight: 900;
+      color: rgba(255,255,255,.05); letter-spacing: -.04em; line-height: 1; pointer-events: none;
+    }
+    .hero-inner { max-width: var(--col); margin: 0 auto; position: relative; }
+    .hero-tag {
+      display: inline-block;
+      border: 1px solid rgba(255,255,255,.3); color: rgba(255,255,255,.75);
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: .72rem; letter-spacing: .15em; text-transform: uppercase;
+      padding: 4px 12px; margin-bottom: 28px;
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.2rem, 5vw, 3.4rem); font-weight: 700;
+      line-height: 1.18; letter-spacing: -.02em; margin-bottom: 24px; max-width: 22ch;
+    }
+    .hero h1 em { font-style: italic; color: #c4b078; }
+    .hero-lead {
+      font-size: 1.08rem; color: rgba(255,255,255,.72);
+      max-width: 54ch; line-height: 1.65; margin-bottom: 40px;
+    }
+    .hero-byline {
+      display: flex; align-items: center; gap: 16px;
+      font-size: .8rem; color: rgba(255,255,255,.4);
+      font-family: 'IBM Plex Mono', monospace;
+    }
+    .hero-byline span { color: rgba(255,255,255,.25); }
+    .hero-byline strong { color: rgba(255,255,255,.65); font-weight: 500; }
+
+    .stats-bar { background: var(--ink); padding: 0 40px; }
+    .stats-inner {
+      max-width: calc(var(--col) + 200px); margin: 0 auto;
+      display: grid; grid-template-columns: repeat(3,1fr);
+    }
+    .stat-item {
+      padding: 24px 32px; border-right: 1px solid rgba(255,255,255,.07); color: #fff;
+    }
+    .stat-item:first-child { padding-left: 0; }
+    .stat-item:last-child  { border-right: none; }
+    .stat-number {
+      font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 700;
+      display: block; line-height: 1; color: #c4b078;
+    }
+    .stat-label {
+      font-size: .75rem; text-transform: uppercase;
+      letter-spacing: .1em; opacity: .45; margin-top: 4px;
+      font-family: 'IBM Plex Mono', monospace;
+    }
+
+    .article-wrap { padding: 72px 40px; }
+    .article-inner { max-width: var(--col); margin: 0 auto; }
+
+    .article-inner > p:first-of-type::first-letter {
+      font-family: 'Playfair Display', serif; font-size: 4.5em; font-weight: 900;
+      float: left; line-height: .78; margin-right: 8px; margin-top: 6px; color: var(--accent);
+    }
+    p { margin-bottom: 1.5rem; }
+
+    h2 {
+      font-family: 'Playfair Display', serif; font-size: 1.7rem; font-weight: 700;
+      letter-spacing: -.02em; line-height: 1.25; margin: 3rem 0 1.1rem;
+    }
+    h2::before { content: ''; display: block; width: 32px; height: 3px; background: var(--accent); margin-bottom: 16px; }
+
+    h3 {
+      font-family: 'IBM Plex Sans', sans-serif; font-size: 1.05rem; font-weight: 600;
+      margin: 2rem 0 .7rem; text-transform: uppercase; letter-spacing: .06em; color: var(--gold);
+    }
+
+    blockquote {
+      border-left: 3px solid var(--accent); margin: 2.5rem 0; padding: 20px 0 20px 32px;
+    }
+    blockquote p {
+      font-family: 'Playfair Display', serif; font-size: 1.35rem; font-style: italic;
+      line-height: 1.5; color: var(--ink); margin: 0 0 8px;
+    }
+    blockquote cite {
+      font-family: 'IBM Plex Mono', monospace; font-size: .72rem;
+      text-transform: uppercase; letter-spacing: .12em; color: var(--muted); font-style: normal;
+    }
+
+    .highlight { background: var(--accent-light); padding: 0 4px; font-weight: 500; }
+
+    /* Scenario grid */
+    .scenario-grid {
+      display: grid; grid-template-columns: repeat(3,1fr);
+      gap: 1px; background: var(--rule); border: 1px solid var(--rule); margin: 2.5rem 0;
+    }
+    .sc-card { background: var(--paper); padding: 24px 20px; }
+    .sc-label {
+      font-family: 'IBM Plex Mono', monospace; font-size: .65rem;
+      text-transform: uppercase; letter-spacing: .15em; color: var(--muted); margin-bottom: 10px;
+    }
+    .sc-value { font-family: 'Playfair Display', serif; font-size: 1.7rem; font-weight: 700; line-height: 1; margin-bottom: 6px; }
+    .sc-value.base { color: var(--gold); }
+    .sc-value.bull { color: var(--green); }
+    .sc-value.bear { color: var(--red); }
+    .sc-title { font-size: .88rem; font-weight: 600; margin-bottom: 4px; }
+    .sc-source { font-family: 'IBM Plex Mono', monospace; font-size: .63rem; color: var(--muted); margin-bottom: 4px; }
+    .sc-desc { font-size: .8rem; color: var(--muted); line-height: 1.5; margin-top: 8px; }
+
+    /* Cards grid */
+    .instr-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 1px; background: var(--rule); border: 1px solid var(--rule); margin: 2.5rem 0;
+    }
+    .instr-card { background: var(--paper); padding: 24px; }
+    .instr-icon { font-size: 1.3rem; margin-bottom: 8px; display: block; }
+    .instr-type {
+      font-family: 'IBM Plex Mono', monospace; font-size: .65rem;
+      text-transform: uppercase; letter-spacing: .12em; color: var(--muted); margin-bottom: 6px;
+    }
+    .instr-name { font-weight: 700; font-size: .97rem; margin-bottom: 4px; }
+    .instr-yield {
+      font-family: 'Playfair Display', serif; font-weight: 700;
+      color: var(--accent); font-size: 1.15rem; margin-bottom: 4px;
+    }
+    .instr-label {
+      display: inline-block; font-family: 'IBM Plex Mono', monospace;
+      font-size: .6rem; text-transform: uppercase; letter-spacing: .1em;
+      padding: 3px 8px; border-radius: 2px; margin-bottom: 8px;
+    }
+    .instr-label.hot  { background: var(--accent-light); color: var(--accent); }
+    .instr-label.warm { background: #f5ecd4; color: var(--gold); }
+    .instr-label.risk { background: #fde8e0; color: var(--red); }
+    .instr-label.ok   { background: #d0ead8; color: var(--green); }
+    .instr-desc { font-size: .8rem; color: var(--muted); line-height: 1.55; }
+
+    /* Data card */
+    .data-card {
+      background: var(--cream); border: 1px solid var(--rule); padding: 28px 32px; margin: 2.5rem 0;
+    }
+    .data-card h4 {
+      font-family: 'IBM Plex Mono', monospace; font-size: .7rem;
+      text-transform: uppercase; letter-spacing: .15em; color: var(--muted); margin-bottom: 20px;
+    }
+    .data-rows { display: flex; flex-direction: column; gap: 12px; }
+    .data-row { display: flex; align-items: center; gap: 16px; }
+    .data-row-label { font-size: .85rem; color: var(--muted); width: 220px; flex-shrink: 0; }
+    .data-row-bar-wrap { flex: 1; height: 6px; background: var(--rule); position: relative; }
+    .data-row-bar { position: absolute; top: 0; left: 0; height: 100%; }
+    .data-row-bar.amber { background: var(--accent); }
+    .data-row-bar.gold  { background: var(--gold); }
+    .data-row-bar.green { background: var(--green); }
+    .data-row-bar.red   { background: var(--red); opacity: .7; }
+    .data-row-bar.muted { background: var(--muted); opacity: .35; }
+    .data-row-val {
+      font-family: 'IBM Plex Mono', monospace; font-size: .8rem;
+      font-weight: 500; width: 110px; text-align: right;
+    }
+
+    /* Metrics 2x2 */
+    .metrics-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 1px; background: var(--rule); border: 1px solid var(--rule); margin: 2.5rem 0;
+    }
+    .metric-cell { background: var(--paper); padding: 24px; }
+    .metric-label {
+      font-family: 'IBM Plex Mono', monospace; font-size: .68rem;
+      text-transform: uppercase; letter-spacing: .14em; color: var(--muted); margin-bottom: 8px;
+    }
+    .metric-value { font-family: 'Playfair Display', serif; font-size: 1.65rem; font-weight: 700; line-height: 1.1; }
+    .metric-value.amber { color: var(--accent); }
+    .metric-value.gold  { color: var(--gold); }
+    .metric-value.green { color: var(--green); }
+    .metric-value.red   { color: var(--red); }
+    .metric-note { font-size: .78rem; color: var(--muted); margin-top: 6px; }
+
+    /* Risk list */
+    .risk-list { margin: 2rem 0; }
+    .risk-item {
+      display: flex; gap: 16px; padding: 16px 0;
+      border-bottom: 1px solid var(--rule); align-items: flex-start;
+    }
+    .risk-item:first-child { border-top: 1px solid var(--rule); }
+    .risk-badge {
+      font-family: 'IBM Plex Mono', monospace; font-size: .62rem;
+      text-transform: uppercase; letter-spacing: .1em;
+      padding: 4px 10px; border-radius: 2px; flex-shrink: 0; margin-top: 2px;
+    }
+    .risk-badge.high { background: #fde8e0; color: var(--red); }
+    .risk-badge.mid  { background: #f5ecd4; color: var(--gold); }
+    .risk-badge.low  { background: #d0ead8; color: var(--green); }
+    .risk-title { font-weight: 600; font-size: .9rem; margin-bottom: 3px; }
+    .risk-desc  { font-size: .82rem; color: var(--muted); line-height: 1.55; }
+
+    .divider { border: none; border-top: 1px solid var(--rule); margin: 3rem 0; }
+
+    .conclusion {
+      background: var(--ink); color: var(--paper); padding: 36px 40px; margin: 3rem 0 0;
+    }
+    .conclusion h3 { color: #c4b078; margin-top: 0; letter-spacing: .06em; font-size: 1rem; text-transform: uppercase; }
+    .conclusion p { color: #ccc; margin-bottom: 1rem; }
+    .conclusion p:last-child { margin-bottom: 0; }
+
+    footer {
+      background: var(--cream); border-top: 1px solid var(--rule);
+      padding: 28px 40px; font-family: 'IBM Plex Mono', monospace;
+      font-size: .72rem; color: var(--muted); text-align: center; letter-spacing: .06em;
+    }
+    footer strong { color: var(--ink); }
+
+    @media (max-width: 640px) {
+      .masthead { padding: 12px 20px; }
+      .hero { padding: 56px 20px 52px; }
+      .stats-bar { padding: 0 20px; }
+      .stats-inner, .scenario-grid { grid-template-columns: 1fr; }
+      .stat-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,.07); padding: 16px 0; }
+      .article-wrap { padding: 48px 20px; }
+      .instr-grid, .metrics-grid { grid-template-columns: 1fr; }
+      .data-row-label { width: 130px; font-size: .78rem; }
+    }
+  </style>
+</head>
+<body>
+
+<header class="masthead">
+  <span class="masthead-logo">kotana.com.ru</span>
+  <span class="masthead-meta">Анализ · Рынок угля · 2026</span>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-tag">Анализ · Энергоносители · 2026</div>
+    <h1>Рынок угля — 2026: <em>энергопереход, экспортный разворот и новая ценовая реальность</em></h1>
+    <p class="hero-lead">Мировой рынок угля в 2026 году оказался между двумя полюсами: ускоряющийся энергопереход в Европе и рекордный спрос в Азии. Россия — третий крупнейший экспортёр планеты — перенаправила потоки на Восток, но столкнулась с логистическими ограничениями и падением мировых цен. Отрасль на пороге структурной трансформации.</p>
+    <div class="hero-byline">
+      <strong>Редакция kotana.com.ru</strong>
+      <span>·</span>
+      <span>Апрель 2026</span>
+      <span>·</span>
+      <span>14 мин чтения</span>
+    </div>
+  </div>
+</section>
+
+<div class="stats-bar">
+  <div class="stats-inner">
+    <div class="stat-item">
+      <span class="stat-number">8,9 млрд т</span>
+      <span class="stat-label">Мировое потребление угля в 2025 г. — исторический максимум</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number">$110/т</span>
+      <span class="stat-label">Энергетический уголь FOB Ньюкасл — на 40% ниже пика 2022 г.</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number">3-е место</span>
+      <span class="stat-label">Россия в мировом экспорте угля — 200+ млн т в год</span>
+    </div>
+  </div>
+</div>
+
+<main class="article-wrap">
+  <article class="article-inner">
+
+    <p>Уголь в 2026 году остаётся самым противоречивым из энергоносителей. С одной стороны — мировое потребление достигло нового рекорда в 8,9 млрд тонн, Китай и Индия продолжают наращивать спрос, а угольная генерация по-прежнему обеспечивает более <span class="highlight">35% мировой электроэнергии</span>. С другой — цены упали на 40% от пиков 2022 года, Европа методично сокращает импорт, а глобальные инвесторы бегут от угольных активов под давлением ESG-повестки. Россия оказалась в центре этих противоречий: потеряв премиальный европейский рынок, она развернула экспортные потоки на Восток, но столкнулась с дефицитом пропускной способности железных дорог и портов.</p>
+
+    <h2>Глобальный рынок: рекордный спрос при падающих ценах</h2>
+
+    <p>Парадокс угольного рынка 2025–2026 годов заключается в сочетании рекордного физического спроса и снижающихся цен. Мировое потребление угля в 2025 году выросло на 1,2%, достигнув 8,9 млрд тонн. Основные драйверы — Китай (потребление превысило 4,5 млрд тонн), Индия (рост на 6–8% год к году) и Юго-Восточная Азия (Вьетнам, Филиппины, Бангладеш). При этом цены на энергетический уголь (бенчмарк FOB Newcastle) снизились до $110 за тонну — против $180 в начале 2024 года и рекордных $450 в сентябре 2022 года.</p>
+
+    <p>Причина падения цен — нормализация предложения после энергетического шока 2022 года, рекордная добыча в Индонезии (более 700 млн тонн в 2025 году) и увеличение экспорта из Австралии. Одновременно мягкая зима в Европе и Северо-Восточной Азии в сезоне 2025/26 снизила спотовый спрос. Результат — профицит предложения на мировом рынке, давящий на котировки.</p>
+
+    <div class="data-card">
+      <h4>Динамика цены энергетического угля (FOB Newcastle): 2022–2026 гг.</h4>
+      <div class="data-rows">
+        <div class="data-row">
+          <span class="data-row-label">Пик сентября 2022 (факт)</span>
+          <div class="data-row-bar-wrap"><div class="data-row-bar amber" style="width:100%"></div></div>
+          <span class="data-row-val">~$450/т</span>
+        </div>
+        <div class="data-row">
+          <span class="data-row-label">Среднее за 2023 (факт)</span>
+          <div class="data-row-bar-wrap"><div class="data-row-bar gold" style="width:42%"></div></div>
+          <span class="data-row-val">~$180/т</span>
+        </div>
+        <div class="data-row">
+          <span class="data-row-label">Начало 2024 (факт)</span>
+          <div class="data-row-bar-wrap"><div class="data-row-bar gold" style="width:40%"></div></div>
+          <span class="data-row-val">~$175/т</span>
+        </div>
+        <div class="data-row">
+          <span class="data-row-label">Конец 2025 (факт)</span>
+          <div class="data-row-bar-wrap"><div class="data-row-bar muted" style="width:28%"></div></div>
+          <span class="data-row-val">~$115/т</span>
+        </div>
+        <div class="data-row">
+          <span class="data-row-label">Прогноз конец 2026 (базовый)</span>
+          <div class="data-row-bar-wrap"><div class="data-row-bar green" style="width:24%"></div></div>
+          <span class="data-row-val">$95–115/т</span>
+        </div>
+      </div>
+    </div>
+
+    <blockquote>
+      <p>«Уголь остаётся фундаментом электрогенерации в Азии и будет оставаться им как минимум до 2035 года. Энергопереход — это реальность, но он не линеен и не синхронен. Глобальный пик угля ещё не пройден.»</p>
+      <cite>— Международное энергетическое агентство (IEA), Coal 2025 Report</cite>
+    </blockquote>
+
+    <hr class="divider" />
+
+    <h2>Сценарии: консолидация или дальнейшее снижение</h2>
+
+    <p>После нормализации с пиков 2022 года рынок угля входит в фазу долгосрочного ценового давления. Избыток предложения из Индонезии и Австралии, развитие возобновляемой энергетики в Китае и закрытие угольных электростанций в Европе формируют устойчивый понижательный тренд. Однако сезонные всплески и геополитические шоки могут генерировать краткосрочную волатильность.</p>
+
+    <div class="scenario-grid">
+      <div class="sc-card">
+        <div class="sc-label">Базовый сценарий</div>
+        <div class="sc-title">Мягкая посадка</div>
+        <div class="sc-value base">$95–115/т</div>
+        <div class="sc-source">Консенсус / Fitch Ratings / IEA</div>
+        <div class="sc-desc">Спрос в Азии растёт на 1–2% в год, но компенсируется падением в Европе и сокращением импорта КНР. Индонезия сохраняет добычу >700 млн тонн. Цены стабилизируются в диапазоне $95–115, что делает российский экспорт низкорентабельным при текущей логистике.</div>
+      </div>
+      <div class="sc-card">
+        <div class="sc-label">Оптимистичный</div>
+        <div class="sc-title">Ценовой отскок</div>
+        <div class="sc-value bull">$130–155/т</div>
+        <div class="sc-source">При дефиците газа / жарком лете в Азии</div>
+        <div class="sc-desc">Аномально жаркое лето в Южной и Восточной Азии увеличивает потребление электроэнергии и спрос на уголь. Перебои с поставками СПГ или эскалация на Ближнем Востоке толкают цены вверх. Индия наращивает импорт. Российские экспортёры возвращаются к прибыльности.</div>
+      </div>
+      <div class="sc-card">
+        <div class="sc-label">Консервативный</div>
+        <div class="sc-title">Структурный спад</div>
+        <div class="sc-value bear">$75–90/т</div>
+        <div class="sc-source">При ускорении энергоперехода</div>
+        <div class="sc-desc">Китай досрочно выходит на пик потребления угля. Индонезия продолжает демпинговать. Европа полностью отказывается от угольной генерации к 2028 году. Российские угольные компании фиксируют операционные убытки на восточном направлении при себестоимости доставки $85–95 за тонну.</div>
+      </div>
+    </div>
+
+    <hr class="divider" />
+
+    <h2>Россия: разворот на Восток и логистический тупик</h2>
+
+    <p>Россия в 2025 году добыла около <span class="highlight">440 млн тонн угля</span>, сохранив позицию шестого крупнейшего производителя в мире. Экспорт составил порядка 200–210 млн тонн, из которых более 75% направлено в Азиатско-Тихоокеанский регион — прежде всего в Китай, Индию, Турцию и страны Юго-Восточной Азии. Ещё в 2021 году доля Европы в российском угольном экспорте превышала 30%. К 2026 году она сократилась практически до нуля после введения эмбарго ЕС в августе 2022 года.</p>
+
+    <p>Ключевое узкое место — пропускная способность Восточного полигона (БАМ и Транссиб). Несмотря на масштабную программу расширения, провозная способность в восточном направлении в 2025 году составила около 180 млн тонн, при заявленной потребности угольщиков в 230–250 млн тонн. Дефицит пропускной способности оценивается в 50–70 млн тонн в год. Это системное ограничение, которое не будет полностью устранено до 2030 года.</p>
+
+    <p>Себестоимость экспортной поставки российского угля на рынки АТР с учётом ж/д тарифа, перевалки в портах и фрахта достигает <span class="highlight">$85–95 за тонну</span>. При текущих ценах FOB Newcastle $110 и дисконте $10–15 к мировым бенчмаркам для российского угля, маржинальность восточного экспорта стремится к нулю. Компании Кузбасса, расположенные дальше всего от восточных портов, уже фиксируют убытки на экспортных поставках.</p>
+
+    <div class="data-card">
+      <h4>Структура экспорта российского угля по направлениям (2025)</h4>
+      <div class="data-rows">
+        <div class="data-row">
+          <span class="data-row-label">Китай</span>
+          <div class="data-row-bar-wrap"><div class="data-row-bar amber" style="width:100%"></div></div>
+          <span class="data-row-val">~75 млн т</span>
+        </div>
+        <div class="data-row">
+          <span class="data-row-label">Индия</span>
+          <div class="data-row-bar-wrap"><div class="data-row-bar gold" style="width:45%"></div></div>
+          <span class="data-row-val">~35 млн т</span>
+        </div>
+        <div class="data-row">
+          <span class="data-row-label">Турция</span>
+          <div class="data-row-bar-wrap"><div class="data-row-bar green" style="width:30%"></div></div>
+          <span class="data-row-val">~25 млн т</span>
+        </div>
+        <div class="data-row">
+          <span class="data-row-label">Юго-Восточная Азия</span>
+          <div class="data-row-bar-wrap"><div class="data-row-bar green" style="width:25%"></div></div>
+          <span class="data-row-val">~20 млн т</span>
+        </div>
+        <div class="data-row">
+          <span class="data-row-label">Прочие направления</span>
+          <div class="data-row-bar-wrap"><div class="data-row-bar muted" style="width:55%"></div></div>
+          <span class="data-row-val">~45 млн т</span>
+        </div>
+      </div>
+    </div>
+
+    <blockquote>
+      <p>«При текущих мировых ценах и логистических издержках российский угольный экспорт на восточном направлении работает на грани рентабельности. Для компаний Кузбасса каждое снижение бенчмарка на $10 означает переход из зоны прибыли в зону убытков.»</p>
+      <cite>— Центр ценовых индексов (ЦЦИ), Аналитический обзор рынка угля</cite>
+    </blockquote>
+
+    <hr class="divider" />
+
+    <h2>Ключевые игроки российской угольной отрасли</h2>
+
+    <div class="instr-grid">
+      <div class="instr-card">
+        <span class="instr-icon">⛏️</span>
+        <div class="instr-type">Крупнейший экспортёр</div>
+        <div class="instr-name">СУЭК</div>
+        <span class="instr-label hot">Лидер отрасли</span>
+        <div class="instr-yield">~110 млн т добычи</div>
+        <div class="instr-desc">Крупнейшая угольная компания России и один из ведущих мировых экспортёров. Диверсифицированная география добычи (Кузбасс, Хакасия, Красноярский край, Забайкалье, Бурятия). Собственная портовая инфраструктура на Дальнем Востоке снижает логистические издержки. Непубличная компания.</div>
+      </div>
+      <div class="instr-card">
+        <span class="instr-icon">🏔️</span>
+        <div class="instr-type">Кузбасский лидер</div>
+        <div class="instr-name">Кузбассразрезуголь (УГМК)</div>
+        <span class="instr-label warm">Крупнейший в Кузбассе</span>
+        <div class="instr-yield">~45 млн т добычи</div>
+        <div class="instr-desc">Крупнейший производитель угля открытым способом в России. Входит в группу УГМК. Основные активы сосредоточены в Кемеровской области. Высокая зависимость от ж/д тарифов и пропускной способности Восточного полигона. Фокус на энергетический уголь.</div>
+      </div>
+      <div class="instr-card">
+        <span class="instr-icon">📊</span>
+        <div class="instr-type">Публичная компания</div>
+        <div class="instr-name">Мечел (MTLR)</div>
+        <span class="instr-label risk">Высокая долговая нагрузка</span>
+        <div class="instr-yield">Коксующийся + энергетический</div>
+        <div class="instr-desc">Единственный крупный публичный угольный актив на Мосбирже. Добывает как коксующийся, так и энергетический уголь. Высокая долговая нагрузка (Net Debt/EBITDA >3x) делает компанию крайне чувствительной к ценовым циклам. Коксующийся уголь торгуется с премией к энергетическому.</div>
+      </div>
+      <div class="instr-card">
+        <span class="instr-icon">🔬</span>
+        <div class="instr-type">Коксующийся уголь</div>
+        <div class="instr-name">Распадская (Evraz)</div>
+        <span class="instr-label ok">Премиальный сегмент</span>
+        <div class="instr-yield">~28 млн т добычи</div>
+        <div class="instr-desc">Ведущий производитель коксующегося угля в России. Входит в группу Evraz. Коксующийся уголь — более маржинальный сегмент, востребованный в металлургии. Менее подвержен давлению энергоперехода, так как замещение кокса в доменном производстве остаётся технологически ограниченным.</div>
+      </div>
+    </div>
+
+    <hr class="divider" />
+
+    <h2>Риски: что угрожает отрасли</h2>
+
+    <div class="risk-list">
+      <div class="risk-item">
+        <div class="risk-badge high">Высокий</div>
+        <div>
+          <div class="risk-title">Дальнейшее падение мировых цен</div>
+          <div class="risk-desc">При снижении бенчмарка FOB Newcastle ниже $95 за тонну российский экспорт энергетического угля из Кузбасса становится убыточным. Профицит предложения из Индонезии и Австралии, а также ускорение ввода солнечных и ветровых мощностей в Китае создают устойчивое давление на котировки. Консенсус-прогноз предполагает дальнейшее снижение к $90–100 к 2027 году.</div>
+        </div>
+      </div>
+      <div class="risk-item">
+        <div class="risk-badge high">Высокий</div>
+        <div>
+          <div class="risk-title">Логистические ограничения Восточного полигона</div>
+          <div class="risk-desc">Дефицит пропускной способности БАМа и Транссиба в 50–70 млн тонн в год — структурная проблема, ограничивающая экспортный потенциал отрасли. Расширение инфраструктуры идёт с отставанием от графика. При этом уголь конкурирует за провозную способность с контейнерными, нефтяными и зерновыми грузами, приоритет которых растёт.</div>
+        </div>
+      </div>
+      <div class="risk-item">
+        <div class="risk-badge mid">Средний</div>
+        <div>
+          <div class="risk-title">Пик потребления угля в Китае</div>
+          <div class="risk-desc">Китай — крупнейший потребитель угля в мире (более 50% мирового спроса). Страна ввела рекордные 300 ГВт солнечных и ветровых мощностей в 2025 году. Ряд аналитиков полагает, что пик угольного потребления в КНР будет пройден в 2026–2027 годах. Это фундаментально изменит баланс мирового рынка.</div>
+        </div>
+      </div>
+      <div class="risk-item">
+        <div class="risk-badge mid">Средний</div>
+        <div>
+          <div class="risk-title">Регуляторное и налоговое давление</div>
+          <div class="risk-desc">Повышение НДПИ на уголь, экологические платежи и рост ж/д тарифов увеличивают себестоимость добычи и транспортировки. Обсуждение углеродного налога в рамках CBAM ЕС создаёт прецедент, который может распространиться на азиатские рынки. Для компаний с высокой долговой нагрузкой каждый процент роста себестоимости критичен.</div>
+        </div>
+      </div>
+      <div class="risk-item">
+        <div class="risk-badge low">Управляемый</div>
+        <div>
+          <div class="risk-title">ESG-давление и уход инвесторов</div>
+          <div class="risk-desc">Глобальные банки и фонды продолжают выходить из угольных активов. Это ограничивает доступ к международному финансированию для новых проектов. Для российских компаний, уже отрезанных от западных рынков капитала, эффект менее выражен, но сужает возможности для привлечения азиатского капитала.</div>
+        </div>
+      </div>
+    </div>
+
+    <hr class="divider" />
+
+    <h2>Ключевые метрики: Россия и мировой рынок</h2>
+
+    <div class="metrics-grid">
+      <div class="metric-cell">
+        <div class="metric-label">Добыча угля в России (2025)</div>
+        <div class="metric-value amber">~440 млн т</div>
+        <div class="metric-note">6-е место в мире. Основные бассейны — Кузбасс (>50% добычи), Канско-Ачинский, Забайкалье.</div>
+      </div>
+      <div class="metric-cell">
+        <div class="metric-label">Экспорт угля из России (2025)</div>
+        <div class="metric-value gold">~205 млн т</div>
+        <div class="metric-note">3-й крупнейший экспортёр в мире после Индонезии и Австралии. 75%+ — в АТР.</div>
+      </div>
+      <div class="metric-cell">
+        <div class="metric-label">Мировое потребление угля (2025)</div>
+        <div class="metric-value green">8,9 млрд т</div>
+        <div class="metric-note">Исторический максимум. Китай — >50%, Индия — ~14%. Рост +1,2% год к году.</div>
+      </div>
+      <div class="metric-cell">
+        <div class="metric-label">Дефицит пропускной способности ж/д</div>
+        <div class="metric-value red">50–70 млн т</div>
+        <div class="metric-note">Разрыв между потребностью угольщиков и провозной способностью Восточного полигона.</div>
+      </div>
+    </div>
+
+    <blockquote>
+      <p>«Угольная отрасль России находится в ситуации, когда рынок есть, но дорога к нему — узка. Инвестиции в Восточный полигон определят будущее отрасли на ближайшее десятилетие.»</p>
+      <cite>— Институт проблем естественных монополий (ИПЕМ), Прогноз развития угольной отрасли 2026</cite>
+    </blockquote>
+
+    <hr class="divider" />
+
+    <h2>Перспективы: энергопереход против азиатского спроса</h2>
+
+    <h3>Коксующийся уголь — более устойчивый сегмент</h3>
+    <p>В отличие от энергетического угля, коксующийся уголь защищён от энергоперехода: его потребление определяется объёмами выплавки стали в доменных печах. Технологии прямого восстановления железа (DRI) на водороде пока не готовы к масштабному замещению коксового процесса. Россия — крупный экспортёр коксующегося угля, и этот сегмент сохранит маржинальность даже при падении цен на энергетический уголь.</p>
+
+    <h3>Внутренний рынок — стабильный якорь</h3>
+    <p>Внутреннее потребление угля в России составляет около 180–200 млн тонн в год. Угольная генерация обеспечивает порядка 15% электроэнергии страны, причём в Сибири и на Дальнем Востоке её доля значительно выше — до 40–50%. Замещение угольных станций газовыми или возобновляемыми источниками в этих регионах экономически нецелесообразно в горизонте до 2035 года.</p>
+
+    <h3>Чего избегать</h3>
+    <p>Инвестиций в чисто экспортные угольные проекты без собственной логистической инфраструктуры — при текущих ценах и ж/д тарифах маржинальность стремится к нулю. Ставок на восстановление цен до уровней 2022 года — энергетический шок был разовым событием, а не новой норму. Недооценки скорости ввода ВИЭ в Китае: 300 ГВт солнечных и ветровых мощностей в год — это эквивалент десятков крупных угольных станций.</p>
+
+    <div class="conclusion">
+      <h3>Прогноз: структурная трансформация при сохранении физического спроса</h3>
+      <p>Рынок угля в 2026 году — это рынок двух скоростей. В Азии спрос продолжает расти, подпитываемый индустриализацией Индии, урбанизацией Юго-Восточной Азии и инерцией китайской энергетической системы. В остальном мире уголь стремительно уходит из энергобаланса: Европа закрывает последние станции, а глобальный капитал избегает угольных активов.</p>
+      <p>Для России главный вызов — не отсутствие спроса, а логистика и себестоимость. При мировых ценах $95–115 за тонну и стоимости доставки до портов АТР $85–95 маржинальность экспорта минимальна. Расширение Восточного полигона, развитие портовой инфраструктуры и оптимизация ж/д тарифов — три условия, при которых отрасль сохранит конкурентоспособность.</p>
+      <p>Стратегически уголь в России не исчезнет: внутренний спрос стабилен, коксующийся сегмент защищён от энергоперехода, а разведанные запасы (>270 млрд тонн) обеспечивают добычу на столетия. Но эпоха сверхприбылей 2021–2022 годов завершена. Отрасль входит в фазу, где выживаемость определяется операционной эффективностью, близостью к портам и доступом к железнодорожной инфраструктуре.</p>
+    </div>
+
+  </article>
+</main>
+
+<footer>
+  <strong>kotana.com.ru</strong> &nbsp;·&nbsp; Рынок угля · 2026 &nbsp;·&nbsp; Источники: IEA, Минэнерго России, ЦЦИ, РЖД, Коммерсантъ, РБК, Fitch Ratings, ИПЕМ, World Coal Association
+</footer>
+
+</body>
+</html>
