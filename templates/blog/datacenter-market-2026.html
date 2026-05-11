@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Russian Data Centre Market — 2026: Sovereign Cloud, AI Demand and the Infrastructure Race | kotana.com.ru</title>
+  <meta name="description" content="Russia's data centre market is projected to reach 70 000+ rack capacity by end of 2026. Sovereign cloud mandates, AI compute demand and import substitution are reshaping the sector. Full analytical review." />
+  <meta property="og:title" content="Russian Data Centre Market — 2026: Sovereign Cloud, AI Demand and the Infrastructure Race" />
+  <meta property="og:description" content="Russia's data centre market is projected to reach 70 000+ rack capacity by end of 2026. Sovereign cloud mandates, AI compute demand and import substitution are reshaping the sector." />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://kotana.com.ru/blog/datacenter-market-2026" />
+  <meta property="og:site_name" content="kotana.com.ru" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Russian Data Centre Market — 2026" />
+  <meta name="twitter:description" content="Sovereign cloud, AI compute demand and the infrastructure race reshaping Russia's data centre industry." />
+  <link rel="canonical" href="https://kotana.com.ru/blog/datacenter-market-2026" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --ink:    #0f1117;
+      --paper:  #f7f4ef;
+      --cream:  #ede9e0;
+      --accent: #1b3a5c;
+      --accent-light: #c8ddf0;
+      --gold:   #b8922a;
+      --green:  #1a7a3c;
+      --red:    #c0392b;
+      --muted:  #7a7060;
+      --rule:   #d4cfc5;
+      --col:    clamp(320px, 66ch, 720px);
+    }
+    html { font-size: 17px; scroll-behavior: smooth; }
+    body {
+      background: var(--paper); color: var(--ink);
+      font-family: 'IBM Plex Sans', sans-serif;
+      line-height: 1.75; -webkit-font-smoothing: antialiased;
+    }
+
+    .masthead {
+      background: var(--ink); padding: 14px 40px;
+      display: flex; align-items: center; justify-content: space-between;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: .75rem; letter-spacing: .12em; text-transform: uppercase;
+    }
+    .masthead-logo { font-size: 1rem; font-weight: 500; color: #fff; }
+    .masthead-meta { color: #666; }
+
+    .hero {
+      background: var(--accent); color: var(--paper);
+      padding: 80px 40px 72px; position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: 'DC';
+      position: absolute; right: -20px; top: 50%; transform: translateY(-50%);
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(80px, 13vw, 185px); font-weight: 900;
+      color: rgba(255,255,255,.05); letter-spacing: -.04em; line-height: 1; pointer-events: none;
+    }
+    .hero-inner { max-width: var(--col); margin: 0 auto; position: relative; }
+    .hero-tag {
+      display: inline-block;
+      border: 1px solid rgba(255,255,255,.3); color: rgba(255,255,255,.75);
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: .72rem; letter-spacing: .15em; text-transform: uppercase;
+      padding: 4px 12px; margin-bottom: 28px;
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.2rem, 5vw, 3.4rem); font-weight: 700;
+      line-height: 1.18; letter-spacing: -.02em; margin-bottom: 24px; max-width: 22ch;
+    }
+    .hero h1 em { font-style: italic; color: #8dc4f0; }
+    .hero-lead {
+      font-size: 1.08rem; color: rgba(255,255,255,.72);
+      max-width: 54ch; line-height: 1.65; margin-bottom: 40px;
+    }
+    .hero-byline {
+      display: flex; align-items: center; gap: 16px;
+      font-size: .8rem; color: rgba(255,255,255,.4);
+      font-family: 'IBM Plex Mono', monospace;
+    }
+    .hero-byline span { color: rgba(255,255,255,.25); }
+    .hero-byline strong { color: rgba(255,255,255,.65); font-weight: 500; }
+
+    .stats-bar { background: var(--ink); padding: 0 40px; }
+    .stats-inner {
+      max-width: calc(var(--col) + 200px); margin: 0 auto;
+      display: grid; grid-template-columns: repeat(3,1fr);
+    }
+    .stat-item {
+      padding: 24px 32px; border-right: 1px solid rgba(255,255,255,.07); color: #fff;
+    }
+    .stat-item:first-child { padding-left: 0; }
+    .stat-item:last-child  { border-right: none; }
+    .stat-number {
+      font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 700;
+      display: block; line-height: 1; color: #8dc4f0;
+    }
+    .stat-label {
+      font-size: .75rem; text-transform: uppercase;
+      letter-spacing: .1em; opacity: .45; margin-top: 4px;
+      font-family: 'IBM Plex Mono', monospace;
+    }
+
+    .article-wrap { padding: 72px 40px; }
+    .article-inner { max-width: var(--col); margin: 0 auto; }
+
+    .article-inner > p:first-of-type::first-letter {
+      font-family: 'Playfair Display', serif; font-size: 4.5em; font-weight: 900;
+      float: left; line-height: .78; margin-right: 8px; margin-top: 6px; color: var(--accent);
+    }
+    p { margin-bottom: 1.5rem; }
+
+    h2 {
+      font-family: 'Playfair Display', serif; font-size: 1.7rem; font-weight: 700;
+      letter-spacing: -.02em; line-height: 1.25; margin: 3rem 0 1.1rem;
+    }
+    h2::before { content: ''; display: block; width: 32px; height: 3px; background: var(--accent); margin-bottom: 16px; }
+
+    h3 {
+      font-family: 'IBM Plex Sans', sans-serif; font-size: 1.05rem; font-weight: 600;
+      margin: 2rem 0 .7rem; text-transform: uppercase; letter-spacing: .06em; color: var(--gold);
+    }
+
+    blockquote {
+      border-left: 3px solid var(--accent); margin: 2.5rem 0; padding: 20px 0 20px 32px;
+    }
+    blockquote p {
+      font-family: 'Playfair Display', serif; font-size: 1.35rem; font-style: italic;
+      line-height: 1.5; color: var(--ink); margin: 0 0 8px;
+    }
+    blockquote cite {
+      font-family: 'IBM Plex Mono', monospace; font-size: .72rem;
+      text-transform: uppercase; letter-spacing: .12em; color: var(--muted); font-style: normal;
+    }
+
+    .highlight { background: var(--accent-light); padding: 0 4px; font-weight: 500; }
+
+    /* Scenario grid */
+    .scenario-grid {
+      display: grid; grid-template-columns: repeat(3,1fr);
+      gap: 1px; background: var(--rule); border: 1px solid var(--rule); margin: 2.5rem 0;
+    }
+    .sc-card { background: var(--paper); padding: 24px 20px; }
+    .sc-label {
+      font-family: 'IBM Plex Mono', monospace; font-size: .65rem;
+      text-transform: uppercase; letter-spacing: .15em; color: var(--muted); margin-bottom: 10px;
+    }
+    .sc-value { font-family: 'Playfair Display', serif; font-size: 1.7rem; font-weight: 700; line-height: 1; margin-bottom: 6px; }
+    .sc-value.base { color: var(--gold); }
+    .sc-value.bull { color: var(--green); }
+    .sc-value.bear { color: var(--red); }
+    .sc-title { font-size: .88rem; font-weight: 600; margin-bottom: 4px; }
+    .sc-source { font-family: 'IBM Plex Mono', monospace; font-size: .63rem; color: var(--muted); margin-bottom: 4px; }
+    .sc-desc { font-size: .8rem; color: var(--muted); line-height: 1.5; margin-top: 8px; }
+
+    /* Cards 2x2 */
+    .instr-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 1px; background: var(--rule); border: 1px solid var(--rule); margin: 2.5rem 0;
+    }
+    .instr-card { background: var(--paper); padding: 24px; }
+    .instr-icon { font-size: 1.3rem; margin-bottom: 8px; display: block; }
+    .instr-type {
+      font-family: 'IBM Plex Mono', monospace; font-size: .65rem;
+      text-transform: uppercase; letter-spacing: .12em; color: var(--muted); margin-bottom: 6px;
+    }
+    .instr-name { font-weight: 700; font-size: .97rem; margin-bottom: 4px; }
+    .instr-yield {
+      font-family: 'Playfair Display', serif; font-weight: 700;
+      color: var(--accent); font-size: 1.15rem; margin-bottom: 4px;
+    }
+    .instr-label {
+      display: inline-block; font-family: 'IBM Plex Mono', monospace;
+      font-size: .6rem; text-transform: uppercase; letter-spacing: .1em;
+      padding: 3px 8px; border-radius: 2px; margin-bottom: 8px;
+    }
+    .instr-label.hot  { background: var(--accent-light); color: var(--accent); }
+    .instr-label.warm { background: #f5ecd4; color: var(--gold); }
+    .instr-label.risk { background: #fde8e0; color: var(--red); }
+    .instr-label.ok   { background: #d0ead8; color: var(--green); }
+    .instr-desc { font-size: .8rem; color: var(--muted); line-height: 1.55; }
+
+    /* Data card */
+    .data-card {
+      background: var(--cream); border: 1px solid var(--rule); padding: 28px 32px; margin: 2.5rem 0;
+    }
+    .data-card h4 {
+      font-family: 'IBM Plex Mono', monospace; font-size: .7rem;
+      text-transform: uppercase; letter-spacing: .15em; color: var(--muted); margin-bottom: 20px;
+    }
+    .data-rows { display: flex; flex-direction: column; gap: 12px; }
+    .data-row { display: flex; align-items: center; gap: 16px; }
+    .data-row-label { font-size: .85rem; color: var(--muted); width: 220px; flex-shrink: 0; }
+    .data-row-bar-wrap { flex: 1; height: 6px; background: var(--rule); position: relative; }
+    .data-row-bar { position: absolute; top: 0; left: 0; height: 100%; }
+    .data-row-bar.forest { background: var(--accent); }
+    .data-row-bar.gold   { background: var(--gold); }
+    .data-row-bar.green  { background: var(--green); }
+    .data-row-bar.red    { background: var(--red); opacity: .7; }
+    .data-row-bar.muted  { background: var(--muted); opacity: .35; }
+    .data-row-val {
+      font-family: 'IBM Plex Mono', monospace; font-size: .8rem;
+      font-weight: 500; width: 110px; text-align: right;
+    }
+
+    /* Metrics 2x2 */
+    .metrics-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 1px; background: var(--rule); border: 1px solid var(--rule); margin: 2.5rem 0;
+    }
+    .metric-cell { background: var(--paper); padding: 24px; }
+    .metric-label {
+      font-family: 'IBM Plex Mono', monospace; font-size: .68rem;
+      text-transform: uppercase; letter-spacing: .14em; color: var(--muted); margin-bottom: 8px;
+    }
+    .metric-value { font-family: 'Playfair Display', serif; font-size: 1.65rem; font-weight: 700; line-height: 1.1; }
+    .metric-value.forest { color: var(--accent); }
+    .metric-value.gold   { color: var(--gold); }
+    .metric-value.green  { color: var(--green); }
+    .metric-value.red    { color: var(--red); }
+    .metric-note { font-size: .78rem; color: var(--muted); margin-top: 6px; }
+
+    /* Risk list */
+    .risk-list { margin: 2rem 0; }
+    .risk-item {
+      display: flex; gap: 16px; padding: 16px 0;
+      border-bottom: 1px solid var(--rule); align-items: flex-start;
+    }
+    .risk-item:first-child { border-top: 1px solid var(--rule); }
+    .risk-badge {
+      font-family: 'IBM Plex Mono', monospace; font-size: .62rem;
+      text-transform: uppercase; letter-spacing: .1em;
+      padding: 4px 10px; border-radius: 2px; flex-shrink: 0; margin-top: 2px;
+    }
+    .risk-badge.high { background: #fde8e0; color: var(--red); }
+    .risk-badge.mid  { background: #f5ecd4; color: var(--gold); }
+    .risk-badge.low  { background: #d0ead8; color: var(--green); }
+    .risk-title { font-weight: 600; font-size: .9rem; margin-bottom: 3px; }
+    .risk-desc  { font-size: .82rem; color: var(--muted); line-height: 1.55; }
+
+    .divider { border: none; border-top: 1px solid var(--rule); margin: 3rem 0; }
+
+    .conclusion {
+      background: var(--ink); color: var(--paper); padding: 36px 40px; margin: 3rem 0 0;
+    }
+    .conclusion h3 { color: #8dc4f0; margin-top: 0; letter-spacing: .06em; font-size: 1rem; text-transform: uppercase; }
+    .conclusion p { color: #ccc; margin-bottom: 1rem; }
+    .conclusion p:last-child { margin-bottom: 0; }
+
+    footer {
+      background: var(--cream); border-top: 1px solid var(--rule);
+      padding: 28px 40px; font-family: 'IBM Plex Mono', monospace;
+      font-size: .72rem; color: var(--muted); text-align: center; letter-spacing: .06em;
+    }
+    footer strong { color: var(--ink); }
+
+    @media (max-width: 640px) {
+      .masthead { padding: 12px 20px; }
+      .hero { padding: 56px 20px 52px; }
+      .stats-bar { padding: 0 20px; }
+      .stats-inner, .scenario-grid { grid-template-columns: 1fr; }
+      .stat-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,.07); padding: 16px 0; }
+      .article-wrap { padding: 48px 20px; }
+      .instr-grid, .metrics-grid { grid-template-columns: 1fr; }
+      .data-row-label { width: 130px; font-size: .78rem; }
+    }
+  </style>
+</head>
+<body>
+
+<header class="masthead">
+  <span class="masthead-logo">kotana.com.ru</span>
+  <span class="masthead-meta">Analysis &middot; Data Centres &middot; 2026</span>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-tag">Infrastructure Analysis &middot; Data Centres &middot; 2026</div>
+    <h1>Russian Data Centre Market &mdash; 2026: <em>sovereign cloud, AI compute and the infrastructure race</em></h1>
+    <p class="hero-lead">Russia's commercial data centre capacity has surpassed 70&thinsp;000 racks. AI workloads, sovereign cloud mandates and the departure of Western hyperscalers have triggered the largest infrastructure build-out in the sector's history &mdash; with over 350 billion roubles committed to new capacity through 2028.</p>
+    <div class="hero-byline">
+      <strong>kotana.com.ru Editorial</strong>
+      <span>&middot;</span>
+      <span>May 2026</span>
+      <span>&middot;</span>
+      <span>13 min read</span>
+    </div>
+  </div>
+</section>
+
+<div class="stats-bar">
+  <div class="stats-inner">
+    <div class="stat-item">
+      <span class="stat-number">70 000+</span>
+      <span class="stat-label">Commercial rack capacity in Russia &mdash; end of 2026E</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number">&gt;350 bn &ruble;</span>
+      <span class="stat-label">Committed investment in new data centre capacity through 2028</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number">+28%</span>
+      <span class="stat-label">Year-on-year growth in Russian cloud services market &mdash; 2025</span>
+    </div>
+  </div>
+</div>
+
+<main class="article-wrap">
+  <article class="article-inner">
+
+    <p>Russia's data centre industry has entered a structural growth phase unlike anything in its history. The combined effects of Western hyperscaler withdrawal, government mandates for sovereign data localisation, explosive growth in AI compute demand and a broader digital transformation push have created a supply-demand imbalance that the market is racing to close. Total commercial rack capacity crossed <span class="highlight">70&thinsp;000 racks by mid-2026</span>, up from roughly 50&thinsp;000 in 2023, with another 15&thinsp;000&ndash;20&thinsp;000 racks under active construction. The Russian cloud services market grew 28% year-on-year in 2025 to approximately 150 billion roubles ($1.7 billion), driven by enterprise migration from on-premise infrastructure to domestic IaaS and PaaS platforms. Yandex Cloud, SberCloud (now Cloud.ru), MTS RED and Rostelecom&rsquo;s RT Cloud are locked in a fierce battle for market share, while independent colocation operators &mdash; IXcellerate, DataLine, 3data and Selectel &mdash; are building capacity at an unprecedented pace. The departure of Google Cloud, AWS and Microsoft Azure from the Russian market in 2022 removed competitors but also removed the benchmark infrastructure that enterprise clients had come to expect. Filling that gap &mdash; in compute density, service quality and GPU availability &mdash; is the central challenge of 2026.</p>
+
+    <h2>Market Structure: Who Owns Russia's Data Centre Capacity</h2>
+
+    <p>The Russian data centre market is concentrated among a dozen major players, split between telecom-affiliated operators, independent colocation providers and cloud-native platforms. Rostelecom &mdash; through its subsidiaries RT Cloud and DataLine (acquired in 2021) &mdash; controls the largest share of commercial rack capacity in the country, with facilities spanning Moscow, St Petersburg, Novosibirsk and Yekaterinburg. IXcellerate operates three Tier III data centres in the Moscow region totalling over 8&thinsp;000 racks, with a fourth facility under construction. Selectel, headquartered in St Petersburg, has expanded to six data centres and positions itself as the leading independent cloud and bare-metal provider. 3data has pursued an aggressive regional strategy, opening facilities in Rostov-on-Don, Kazan and the Moscow region. MTS, through its MTS RED division, has committed over 50 billion roubles to data centre construction through 2028.</p>
+
+    <div class="data-card">
+      <h4>Russia's data centre market &mdash; capacity by major operator, 2026E</h4>
+      <div class="data-rows">
+        <div class="data-row">
+          <span class="data-row-label">Rostelecom / DataLine / RT Cloud</span>
+          <div class="data-row-bar-wrap"><div class="data-row-bar forest" style="width:100%"></div></div>
+          <span class="data-row-val">~15 000 racks</span>
+        </div>
+        <div class="data-row">
+          <span class="data-row-label">IXcellerate</span>
+          <div class="data-row-bar-wrap"><div class="data-row-bar gold" style="width:55%"></div></div>
+          <span class="data-row-val">~8 200 racks</span>
+        </div>
+        <div class="data-row">
+          <span class="data-row-label">MTS RED</span>
+          <div class="data-row-bar-wrap"><div class="data-row-bar green" style="width:45%"></div></div>
+          <span class="data-row-val">~6 500 racks</span>
+        </div>
+        <div class="data-row">
+          <span class="data-row-label">Selectel</span>
+          <div class="data-row-bar-wrap"><div class="data-row-bar gold" style="width:38%"></div></div>
+          <span class="data-row-val">~5 500 racks</span>
+        </div>
+        <div class="data-row">
+          <span class="data-row-label">3data</span>
+          <div class="data-row-bar-wrap"><div class="data-row-bar green" style="width:30%"></div></div>
+          <span class="data-row-val">~4 200 racks</span>
+        </div>
+        <div class="data-row">
+          <span class="data-row-label">Yandex Cloud</span>
+          <div class="data-row-bar-wrap"><div class="data-row-bar forest" style="width:35%"></div></div>
+          <span class="data-row-val">~5 000 racks</span>
+        </div>
+        <div class="data-row">
+          <span class="data-row-label">Cloud.ru (ex-SberCloud)</span>
+          <div class="data-row-bar-wrap"><div class="data-row-bar muted" style="width:28%"></div></div>
+          <span class="data-row-val">~4 000 racks</span>
+        </div>
+      </div>
+    </div>
+
+    <p>Moscow and the Moscow Oblast account for roughly 65% of all commercial data centre capacity &mdash; a concentration driven by proximity to corporate headquarters, network interconnection points and the M9-IX and MSK-IX internet exchanges. St Petersburg holds approximately 15%, with the remaining 20% distributed across Novosibirsk, Yekaterinburg, Kazan, Vladivostok and an expanding set of regional hubs. The geographic imbalance is a persistent structural issue: enterprise demand for low-latency services in Siberia and the Russian Far East is growing faster than supply, creating opportunities for regional operators and driving government subsidies for data centre construction outside the two capitals.</p>
+
+    <hr class="divider" />
+
+    <h2>Four Growth Drivers Reshaping the Market</h2>
+
+    <div class="instr-grid">
+      <div class="instr-card">
+        <span class="instr-icon">&#x1F3DB;&#xFE0F;</span>
+        <div class="instr-type">Sovereign Cloud</div>
+        <div class="instr-name">Federal data localisation &amp; GosCloud mandates</div>
+        <span class="instr-label hot">Policy-driven demand</span>
+        <div class="instr-yield">100% of federal data must reside on Russian soil by 2027</div>
+        <div class="instr-desc">Federal Law 152-FZ and the expanded data localisation requirements under the 2025 amendments mandate that all personal data of Russian citizens and all government information systems operate on infrastructure physically located in Russia. The GosCloud (State Cloud) programme, managed by Rostelecom, aims to consolidate federal IT systems into a unified sovereign cloud platform by 2027. This has triggered a wave of migration from legacy on-premise systems and created guaranteed long-term demand for certified Tier III+ facilities.</div>
+      </div>
+      <div class="instr-card">
+        <span class="instr-icon">&#x1F916;</span>
+        <div class="instr-type">AI &amp; GPU Compute</div>
+        <div class="instr-name">LLM training, inference and high-density racks</div>
+        <span class="instr-label hot">Fastest-growing segment</span>
+        <div class="instr-yield">GPU rack demand grew 3x in 2025 vs. 2024</div>
+        <div class="instr-desc">The AI boom has hit Russian data centres with full force. Yandex, Sber and a growing cohort of AI startups require high-density GPU clusters for training and inference of large language models. A single AI training rack can draw 40&ndash;60 kW &mdash; four to six times the power density of a standard enterprise rack. Operators are retrofitting existing facilities and designing new builds specifically for liquid-cooled, high-density AI workloads. The scarcity of Nvidia H100/H200 GPUs due to export controls has made GPU-as-a-service a premium product with wait lists at every major provider.</div>
+      </div>
+      <div class="instr-card">
+        <span class="instr-icon">&#x1F4BB;</span>
+        <div class="instr-type">Enterprise Cloud Migration</div>
+        <div class="instr-name">On-premise to IaaS/PaaS shift accelerating</div>
+        <span class="instr-label warm">Structural tailwind</span>
+        <div class="instr-yield">Russian cloud market: ~150 bn roubles in 2025 (+28% YoY)</div>
+        <div class="instr-desc">Russian enterprise cloud adoption remains well below Western benchmarks &mdash; an estimated 15&ndash;18% of enterprise IT workloads run in public or private cloud, compared with 40&ndash;50% in the US and Europe. The gap represents enormous latent demand. The departure of Western SaaS platforms (Salesforce, SAP Cloud, ServiceNow) has forced Russian enterprises to rebuild IT stacks on domestic platforms, driving colocation and managed hosting demand. The 1C ecosystem, Bitrix24, MyOffice and domestic CRM/ERP vendors are the primary beneficiaries.</div>
+      </div>
+      <div class="instr-card">
+        <span class="instr-icon">&#x1F310;</span>
+        <div class="instr-type">Import Substitution</div>
+        <div class="instr-name">Domestic servers, networking gear and cooling systems</div>
+        <span class="instr-label ok">Long-term strategic priority</span>
+        <div class="instr-yield">Domestic server production: ~120 000 units in 2025</div>
+        <div class="instr-desc">Sanctions on Intel, AMD and Nvidia exports to Russia have accelerated the domestic hardware programme. Yadro, Kraftway, Depo Computers and Aquarius are assembling servers from a mix of Chinese-sourced components and locally designed boards. The Baikal-S and Elbrus processors have entered limited production, though performance gaps relative to Intel Xeon and AMD EPYC remain significant for compute-intensive workloads. Cooling systems &mdash; traditionally sourced from Schneider Electric and Vertiv &mdash; are increasingly supplied by Chinese manufacturers (Huawei, Envicool) and domestic startups.</div>
+      </div>
+    </div>
+
+    <hr class="divider" />
+
+    <h2>The AI Infrastructure Gap: GPUs, Power and Liquid Cooling</h2>
+
+    <p>Artificial intelligence has introduced a fundamentally new demand profile for Russian data centres. Traditional enterprise colocation operates at 5&ndash;10 kW per rack. An AI training cluster built around Nvidia A100 or H100 GPUs requires 40&ndash;60 kW per rack &mdash; and next-generation configurations targeting Nvidia B200 (where accessible) or equivalent Chinese accelerators push beyond 100 kW. This has created a two-tier market: operators that can deliver high-density, liquid-cooled capacity command premium pricing and enjoy near-zero vacancy rates, while standard-density facilities face growing oversupply risk in the medium term.</p>
+
+    <p>Yandex has invested heavily in proprietary AI infrastructure, operating what is reported to be the largest GPU cluster in Russia &mdash; built primarily around Nvidia A100 GPUs acquired before export restrictions tightened. Sber&rsquo;s AI division has taken a similar path, deploying GPU capacity across Cloud.ru facilities for its GigaChat LLM and enterprise AI products. The constraint is not capital but hardware: <span class="highlight">US export controls have effectively blocked the sale of data-centre-grade GPUs to Russia since late 2022</span>, forcing buyers into grey-market procurement channels via intermediaries in the UAE, Turkey and Central Asia, at premiums of 50&ndash;150% over list price. Chinese alternatives &mdash; Huawei Ascend 910B and Biren BR100 &mdash; are entering the Russian market but trail Nvidia in software ecosystem maturity and training performance.</p>
+
+    <blockquote>
+      <p>&ldquo;The Russian data centre market has never grown this fast. But the bottleneck is not demand or capital &mdash; it is power. Every new megawatt-scale facility in the Moscow region now takes 18&ndash;24 months just for grid connection approvals.&rdquo;</p>
+      <cite>&mdash; Industry executive, Russia Data Centre Congress 2025</cite>
+    </blockquote>
+
+    <p>Power availability has emerged as the binding constraint for new data centre construction. Moscow Oblast grid capacity is approaching saturation for large-scale facilities, pushing operators to explore sites in Kaluga, Tver and Vladimir oblasts where power is cheaper and more available. Rostelecom&rsquo;s new 10&thinsp;000-rack facility near Udomlya, Tver Oblast &mdash; sited adjacent to the Kalininskaya nuclear power plant &mdash; exemplifies the trend toward co-location with power generation assets. MTS has announced plans for a hyperscale campus near Saratov, drawing power from the Balakovo nuclear plant. The logic is straightforward: at 40&ndash;60 MW per large facility, grid connection is no longer a utility request &mdash; it is a strategic infrastructure partnership.</p>
+
+    <hr class="divider" />
+
+    <h2>Investment Landscape: Who Is Building and How Much</h2>
+
+    <div class="metrics-grid">
+      <div class="metric-cell">
+        <div class="metric-label">Total committed capex 2024&ndash;2028</div>
+        <div class="metric-value forest">&gt;350 bn &ruble;</div>
+        <div class="metric-note">Aggregate announced investment across major operators, per iKS-Consulting and CNews Analytics.</div>
+      </div>
+      <div class="metric-cell">
+        <div class="metric-label">MTS data centre investment</div>
+        <div class="metric-value gold">50 bn &ruble;</div>
+        <div class="metric-note">Committed through 2028 for new construction in Moscow, Novosibirsk and Saratov regions.</div>
+      </div>
+      <div class="metric-cell">
+        <div class="metric-label">Rostelecom / GosCloud capex</div>
+        <div class="metric-value green">80 bn &ruble;</div>
+        <div class="metric-note">Federal budget allocation for sovereign cloud and government data centre infrastructure.</div>
+      </div>
+      <div class="metric-cell">
+        <div class="metric-label">Colocation price growth (Moscow)</div>
+        <div class="metric-value red">+15&ndash;20%</div>
+        <div class="metric-note">Year-on-year rack rental price increase in Moscow Tier III facilities, 2025. Demand outpacing supply.</div>
+      </div>
+    </div>
+
+    <p>The financing environment for Russian data centre construction has evolved significantly since 2022. With Western project finance and export credit agencies unavailable, operators are relying on a mix of domestic bank lending (Sberbank, VTB, Gazprombank), internal cash flow, government subsidies and, increasingly, Chinese equipment financing tied to Huawei or ZTE infrastructure supply contracts. Interest rates on rouble-denominated construction loans remain elevated at 18&ndash;22%, compressing returns and favouring large, well-capitalised operators. VEB.RF and the Russian Direct Investment Fund (RDIF) have signalled interest in data centre infrastructure as a strategic priority, though disbursements have been slower than industry expectations.</p>
+
+    <p>The price signal is unambiguous: Moscow colocation rates have risen 15&ndash;20% year-on-year, reflecting genuine supply scarcity rather than speculative pricing. Vacancy rates in Tier III and above facilities in Moscow fell below 5% in late 2025, with several operators reporting wait lists of 6&ndash;12 months for enterprise-grade rack space. This pricing dynamic makes new construction economically attractive despite high borrowing costs &mdash; a rare alignment of demand fundamentals and investment incentive.</p>
+
+    <hr class="divider" />
+
+    <h2>Sovereign Cloud and GosCloud: The Government Mandate</h2>
+
+    <p>The most consequential policy driver for Russian data centre growth is the GosCloud (Gosudarstvennoye Oblako) programme &mdash; a federal initiative to create a unified cloud platform for all government information systems. Managed by Rostelecom under a presidential mandate, GosCloud aims to consolidate thousands of disparate federal and regional IT systems onto a single, certified, sovereign infrastructure layer. The programme has been allocated approximately 80 billion roubles through 2028 and is expected to generate sustained demand for high-security, government-certified data centre capacity across multiple Russian regions.</p>
+
+    <p>The requirements are stringent: GosCloud-certified facilities must meet FSTEC (Federal Service for Technical and Export Control) security standards, support domestic encryption protocols (GOST cryptography), and operate exclusively on Russian-manufactured or FSTEC-approved hardware. This creates a parallel demand stream that is largely insulated from commercial market cycles &mdash; but also imposes compliance costs that only the largest operators can absorb. Rostelecom, Yandex Cloud and Cloud.ru are the primary contenders for GosCloud workloads, with MTS RED positioning aggressively for regional government contracts.</p>
+
+    <hr class="divider" />
+
+    <h2>Scenarios: Russian Data Centre Market Through 2028</h2>
+
+    <div class="scenario-grid">
+      <div class="sc-card">
+        <div class="sc-label">Base Case</div>
+        <div class="sc-title">Sustained growth, power-constrained</div>
+        <div class="sc-value base">85&ndash;90 000</div>
+        <div class="sc-source">Total commercial racks by end 2028</div>
+        <div class="sc-desc">Market grows at 15&ndash;18% CAGR. Moscow capacity hits 50&thinsp;000 racks; regional facilities expand in Novosibirsk, Yekaterinburg and the Volga Federal District. AI demand absorbs premium capacity. Power grid constraints slow Moscow-area construction. Import-substituted hardware reaches 40&ndash;50% of new deployments by component count. Cloud market exceeds 250 bn roubles.</div>
+      </div>
+      <div class="sc-card">
+        <div class="sc-label">Optimistic</div>
+        <div class="sc-title">AI supercycle &amp; nuclear co-location</div>
+        <div class="sc-value bull">100 000+</div>
+        <div class="sc-source">Total commercial racks by end 2028</div>
+        <div class="sc-desc">Government accelerates power grid investment and nuclear co-location approvals. Chinese GPU alternatives achieve software parity. Russia becomes a regional AI compute hub for CIS and allied nations. BRICS digital infrastructure agreements bring Kazakh, Uzbek and Indian workloads to Russian facilities. Cloud market reaches 350+ bn roubles. Multiple operators IPO on MOEX.</div>
+      </div>
+      <div class="sc-card">
+        <div class="sc-label">Conservative</div>
+        <div class="sc-title">Sanctions deepen, hardware scarce</div>
+        <div class="sc-value bear">65&ndash;70 000</div>
+        <div class="sc-source">Total commercial racks by end 2028</div>
+        <div class="sc-desc">Tightened secondary sanctions close grey-market GPU channels. Domestic processor programme (Baikal, Elbrus) faces further delays. High interest rates suppress private investment. GosCloud programme proceeds on schedule but commercial market growth decelerates to 8&ndash;10% CAGR. Regional expansion stalls outside Moscow and St Petersburg.</div>
+      </div>
+    </div>
+
+    <hr class="divider" />
+
+    <h2>Risks and Structural Constraints</h2>
+
+    <div class="risk-list">
+      <div class="risk-item">
+        <div class="risk-badge high">Critical</div>
+        <div>
+          <div class="risk-title">GPU and advanced chip supply under export controls</div>
+          <div class="risk-desc">US Commerce Department restrictions on data-centre-grade GPU and AI accelerator exports to Russia are the single most significant constraint on the country's AI infrastructure ambitions. Grey-market procurement is unreliable, expensive and legally precarious. Chinese alternatives are improving but remain 12&ndash;18 months behind Nvidia in training performance and software ecosystem. Any further tightening of controls &mdash; particularly targeting Chinese intermediaries &mdash; would severely impact AI capacity expansion.</div>
+        </div>
+      </div>
+      <div class="risk-item">
+        <div class="risk-badge high">High</div>
+        <div>
+          <div class="risk-title">Power grid saturation in the Moscow region</div>
+          <div class="risk-desc">Moscow Oblast, which hosts 65% of Russia's data centre capacity, is approaching grid saturation for large-scale facilities. New connections require 18&ndash;24 months of lead time, and allocated power quotas are increasingly contested between data centres, industrial users and residential development. Operators unable to secure power at scale in Moscow are forced to build in less commercially attractive locations, with higher latency to enterprise clients and network exchanges.</div>
+        </div>
+      </div>
+      <div class="risk-item">
+        <div class="risk-badge high">High</div>
+        <div>
+          <div class="risk-title">Interest rate environment suppresses investment returns</div>
+          <div class="risk-desc">Central Bank of Russia key rate at 21% (as of early 2026) translates to 18&ndash;22% borrowing costs for data centre construction loans. At these rates, IRR on new facilities is compressed to single digits unless operators can secure premium pricing or government subsidy. Only operators with strong balance sheets or state backing can sustain large-scale construction programmes. Smaller independent operators face refinancing risk on existing debt.</div>
+        </div>
+      </div>
+      <div class="risk-item">
+        <div class="risk-badge mid">Medium</div>
+        <div>
+          <div class="risk-title">Domestic hardware performance gap</div>
+          <div class="risk-desc">Russian-manufactured servers using Baikal-S and Elbrus processors meet compliance requirements for government workloads but lack the per-core performance of Intel Xeon and AMD EPYC for demanding enterprise applications. The component base relies heavily on Chinese-sourced CPUs, memory and storage, creating supply chain dependency that mirrors &mdash; rather than resolves &mdash; the original sanctions vulnerability. True import substitution at the silicon level remains a multi-year effort.</div>
+        </div>
+      </div>
+      <div class="risk-item">
+        <div class="risk-badge mid">Medium</div>
+        <div>
+          <div class="risk-title">Talent shortage in data centre operations and engineering</div>
+          <div class="risk-desc">Rapid capacity expansion has created acute demand for data centre engineers, network architects, cooling specialists and security professionals. The talent pool is limited &mdash; historically, Russia's best infrastructure engineers were employed by Western cloud providers or worked remotely for international firms. Salary inflation in the sector exceeds 25% year-on-year for senior roles, and operators report 6&ndash;9 month hiring cycles for critical positions.</div>
+        </div>
+      </div>
+      <div class="risk-item">
+        <div class="risk-badge low">Structural</div>
+        <div>
+          <div class="risk-title">Geographic concentration risk</div>
+          <div class="risk-desc">With 65% of capacity in the Moscow region and 15% in St Petersburg, Russia's data centre infrastructure is heavily concentrated in two metropolitan areas. A major grid disruption, natural disaster or infrastructure failure in the Moscow region would affect a disproportionate share of the country's digital economy. Government policy incentivises regional diversification, but commercial economics continue to favour Moscow-area construction.</div>
+        </div>
+      </div>
+    </div>
+
+    <hr class="divider" />
+
+    <h2>Key Metrics: Russian Data Centre Market 2026</h2>
+
+    <div class="metrics-grid">
+      <div class="metric-cell">
+        <div class="metric-label">Commercial rack capacity (2026E)</div>
+        <div class="metric-value forest">70 000+</div>
+        <div class="metric-note">Up from ~50 000 in 2023. Moscow accounts for ~65% of total capacity. Growth rate 15&ndash;18% CAGR.</div>
+      </div>
+      <div class="metric-cell">
+        <div class="metric-label">Cloud services market (2025)</div>
+        <div class="metric-value gold">~150 bn &ruble;</div>
+        <div class="metric-note">IaaS, PaaS and SaaS combined. +28% YoY. Enterprise adoption at 15&ndash;18% of workloads, well below Western benchmarks.</div>
+      </div>
+      <div class="metric-cell">
+        <div class="metric-label">Moscow Tier III vacancy rate</div>
+        <div class="metric-value green">&lt;5%</div>
+        <div class="metric-note">Near-full utilisation driving 15&ndash;20% YoY price increases. Wait lists of 6&ndash;12 months at major operators.</div>
+      </div>
+      <div class="metric-cell">
+        <div class="metric-label">Domestic server production (2025)</div>
+        <div class="metric-value red">~120 000 units</div>
+        <div class="metric-note">Yadro, Kraftway, Depo, Aquarius. Mix of Chinese components and domestic assembly. Performance gap remains vs. Intel/AMD platforms.</div>
+      </div>
+    </div>
+
+    <hr class="divider" />
+
+    <h2>What This Means for Investors and Businesses</h2>
+
+    <h3>For data centre operators</h3>
+    <p>The fundamental economics are favourable: demand exceeds supply, pricing power is strong, and government policy provides a structural demand floor through GosCloud and data localisation mandates. The strategic question is where to build and at what density. Operators that can deliver high-density, liquid-cooled capacity for AI workloads will command the highest margins. Those building standard-density facilities face medium-term oversupply risk as the construction pipeline matures. Power procurement is the single most important operational variable &mdash; securing long-term power purchase agreements near generation assets is now a competitive advantage, not a cost line.</p>
+
+    <h3>For enterprise IT decision-makers</h3>
+    <p>Cloud migration is no longer optional. The domestic platform ecosystem &mdash; Yandex Cloud, Cloud.ru, Selectel, MTS RED &mdash; has matured significantly since 2022, offering IaaS and PaaS capabilities that cover 80&ndash;90% of standard enterprise workloads. Colocation remains the preferred model for regulated industries (banking, insurance, healthcare) where data sovereignty requirements mandate physical control over infrastructure. The key risk is vendor concentration: the departure of Western providers has reduced competitive pressure, and contract terms are tightening in the operators&rsquo; favour.</p>
+
+    <h3>For technology investors</h3>
+    <p>The Russian data centre sector is one of the few infrastructure verticals where domestic demand growth is structural, government-backed and insulated from geopolitical export dependencies (unlike, say, semiconductor manufacturing). Several operators &mdash; IXcellerate, 3data, Selectel &mdash; have publicly discussed IPO timelines on MOEX. The sector&rsquo;s combination of tangible assets, recurring revenue and policy tailwinds makes it attractive by Russian market standards. The principal risks are interest rate sensitivity on leveraged balance sheets and the hardware dependency on Chinese supply chains.</p>
+
+    <div class="conclusion">
+      <h3>Outlook: Infrastructure as Strategic Asset</h3>
+      <p>Russia's data centre market in 2026 is defined by a paradox: the fastest demand growth in the sector's history is colliding with the most constrained supply environment the industry has ever faced. GPU export controls limit AI capacity. Power grid saturation limits construction in Moscow. Interest rates limit financing for smaller operators. Domestic hardware limits performance for enterprise workloads. Each of these constraints is being addressed &mdash; through nuclear co-location for power, Chinese alternatives for hardware, government subsidies for financing &mdash; but none has been fully resolved.</p>
+      <p>The structural trajectory is clear: data centre infrastructure is now treated as a strategic national asset on par with energy pipelines and transport networks. The GosCloud programme, AI compute requirements and enterprise digital transformation guarantee sustained demand growth through the end of the decade. The operators that secure power, build at scale and solve the GPU supply problem will dominate a market that is on track to exceed 100&thinsp;000 racks and 300 billion roubles in annual cloud revenue by 2028&ndash;2029.</p>
+      <p>For investors, the signal is straightforward: this is a supply-constrained growth market with pricing power, government backing and a multi-year construction cycle that creates significant barriers to entry. The question is not whether the market will grow &mdash; it is which operators will capture that growth, and whether the hardware and power constraints can be resolved fast enough to meet the demand that is already here.</p>
+    </div>
+
+  </article>
+</main>
+
+<footer>
+  <strong>kotana.com.ru</strong> &nbsp;&middot;&nbsp; Russian Data Centre Market &middot; 2026 &nbsp;&middot;&nbsp; Sources: iKS-Consulting, CNews Analytics, Rostelecom, MTS, IXcellerate, Selectel, 3data, Yandex Cloud, Cloud.ru, FSTEC, Russia Data Centre Congress 2025, Ministry of Digital Development
+</footer>
+
+</body>
+</html>

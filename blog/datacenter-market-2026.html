@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Рынок ЦОД в России — 2026: дефицит мощностей, ИИ-нагрузки и энергетический предел | kotana.com.ru</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --ink:    #0f1117;
+      --paper:  #f7f4ef;
+      --cream:  #ede9e0;
+      --accent: #293b4a;
+      --accent-light: #c4d4e0;
+      --gold:   #b8922a;
+      --green:  #1a7a3c;
+      --red:    #c0392b;
+      --muted:  #7a7060;
+      --rule:   #d4cfc5;
+      --col:    clamp(320px, 66ch, 720px);
+    }
+    html { font-size: 17px; scroll-behavior: smooth; }
+    body {
+      background: var(--paper); color: var(--ink);
+      font-family: 'IBM Plex Sans', sans-serif;
+      line-height: 1.75; -webkit-font-smoothing: antialiased;
+    }
+
+    .masthead {
+      background: var(--ink); padding: 14px 40px;
+      display: flex; align-items: center; justify-content: space-between;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: .75rem; letter-spacing: .12em; text-transform: uppercase;
+    }
+    .masthead-logo { font-size: 1rem; font-weight: 500; color: #fff; }
+    .masthead-meta { color: #666; }
+
+    .hero {
+      background: var(--accent); color: var(--paper);
+      padding: 80px 40px 72px; position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: 'DATA';
+      position: absolute; right: -20px; top: 50%; transform: translateY(-50%);
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(90px, 15vw, 210px); font-weight: 900;
+      color: rgba(255,255,255,.05); letter-spacing: -.04em; line-height: 1; pointer-events: none;
+    }
+    .hero-inner { max-width: var(--col); margin: 0 auto; position: relative; }
+    .hero-tag {
+      display: inline-block;
+      border: 1px solid rgba(255,255,255,.3); color: rgba(255,255,255,.75);
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: .72rem; letter-spacing: .15em; text-transform: uppercase;
+      padding: 4px 12px; margin-bottom: 28px;
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.2rem, 5vw, 3.4rem); font-weight: 700;
+      line-height: 1.18; letter-spacing: -.02em; margin-bottom: 24px; max-width: 22ch;
+    }
+    .hero h1 em { font-style: italic; color: #9ec8e8; }
+    .hero-lead {
+      font-size: 1.08rem; color: rgba(255,255,255,.72);
+      max-width: 54ch; line-height: 1.65; margin-bottom: 40px;
+    }
+    .hero-byline {
+      display: flex; align-items: center; gap: 16px;
+      font-size: .8rem; color: rgba(255,255,255,.4);
+      font-family: 'IBM Plex Mono', monospace;
+    }
+    .hero-byline span { color: rgba(255,255,255,.25); }
+    .hero-byline strong { color: rgba(255,255,255,.65); font-weight: 500; }
+
+    .stats-bar { background: var(--ink); padding: 0 40px; }
+    .stats-inner {
+      max-width: calc(var(--col) + 200px); margin: 0 auto;
+      display: grid; grid-template-columns: repeat(3,1fr);
+    }
+    .stat-item {
+      padding: 24px 32px; border-right: 1px solid rgba(255,255,255,.07); color: #fff;
+    }
+    .stat-item:first-child { padding-left: 0; }
+    .stat-item:last-child  { border-right: none; }
+    .stat-number {
+      font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 700;
+      display: block; line-height: 1; color: #9ec8e8;
+    }
+    .stat-label {
+      font-size: .75rem; text-transform: uppercase;
+      letter-spacing: .1em; opacity: .45; margin-top: 4px;
+      font-family: 'IBM Plex Mono', monospace;
+    }
+
+    .article-wrap { padding: 72px 40px; }
+    .article-inner { max-width: var(--col); margin: 0 auto; }
+
+    .article-inner > p:first-of-type::first-letter {
+      font-family: 'Playfair Display', serif; font-size: 4.5em; font-weight: 900;
+      float: left; line-height: .78; margin-right: 8px; margin-top: 6px; color: var(--accent);
+    }
+    p { margin-bottom: 1.5rem; }
+
+    h2 {
+      font-family: 'Playfair Display', serif; font-size: 1.7rem; font-weight: 700;
+      letter-spacing: -.02em; line-height: 1.25; margin: 3rem 0 1.1rem;
+    }
+    h2::before { content: ''; display: block; width: 32px; height: 3px; background: var(--accent); margin-bottom: 16px; }
+
+    h3 {
+      font-family: 'IBM Plex Sans', sans-serif; font-size: 1.05rem; font-weight: 600;
+      margin: 2rem 0 .7rem; text-transform: uppercase; letter-spacing: .06em; color: var(--gold);
+    }
+
+    blockquote {
+      border-left: 3px solid var(--accent); margin: 2.5rem 0; padding: 20px 0 20px 32px;
+    }
+    blockquote p {
+      font-family: 'Playfair Display', serif; font-size: 1.35rem; font-style: italic;
+      line-height: 1.5; color: var(--ink); margin: 0 0 8px;
+    }
+    blockquote cite {
+      font-family: 'IBM Plex Mono', monospace; font-size: .72rem;
+      text-transform: uppercase; letter-spacing: .12em; color: var(--muted); font-style: normal;
+    }
+
+    .highlight { background: var(--accent-light); padding: 0 4px; font-weight: 500; }
+
+    .scenario-grid {
+      display: grid; grid-template-columns: repeat(3,1fr);
+      gap: 1px; background: var(--rule); border: 1px solid var(--rule); margin: 2.5rem 0;
+    }
+    .sc-card { background: var(--paper); padding: 24px 20px; }
+    .sc-label {
+      font-family: 'IBM Plex Mono', monospace; font-size: .65rem;
+      text-transform: uppercase; letter-spacing: .15em; color: var(--muted); margin-bottom: 10px;
+    }
+    .sc-value { font-family: 'Playfair Display', serif; font-size: 1.7rem; font-weight: 700; line-height: 1; margin-bottom: 6px; }
+    .sc-value.base { color: var(--gold); }
+    .sc-value.bull { color: var(--green); }
+    .sc-value.bear { color: var(--red); }
+    .sc-title { font-size: .88rem; font-weight: 600; margin-bottom: 4px; }
+    .sc-source { font-family: 'IBM Plex Mono', monospace; font-size: .63rem; color: var(--muted); margin-bottom: 4px; }
+    .sc-desc { font-size: .8rem; color: var(--muted); line-height: 1.5; margin-top: 8px; }
+
+    .instr-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 1px; background: var(--rule); border: 1px solid var(--rule); margin: 2.5rem 0;
+    }
+    .instr-card { background: var(--paper); padding: 24px; }
+    .instr-icon { font-size: 1.3rem; margin-bottom: 8px; display: block; }
+    .instr-type {
+      font-family: 'IBM Plex Mono', monospace; font-size: .65rem;
+      text-transform: uppercase; letter-spacing: .12em; color: var(--muted); margin-bottom: 6px;
+    }
+    .instr-name { font-weight: 700; font-size: .97rem; margin-bottom: 4px; }
+    .instr-yield {
+      font-family: 'Playfair Display', serif; font-weight: 700;
+      color: var(--accent); font-size: 1.15rem; margin-bottom: 4px;
+    }
+    .instr-label {
+      display: inline-block; font-family: 'IBM Plex Mono', monospace;
+      font-size: .6rem; text-transform: uppercase; letter-spacing: .1em;
+      padding: 3px 8px; border-radius: 2px; margin-bottom: 8px;
+    }
+    .instr-label.hot  { background: var(--accent-light); color: var(--accent); }
+    .instr-label.warm { background: #f5ecd4; color: var(--gold); }
+    .instr-label.risk { background: #fde8e0; color: var(--red); }
+    .instr-label.ok   { background: #d0ead8; color: var(--green); }
+    .instr-desc { font-size: .8rem; color: var(--muted); line-height: 1.55; }
+
+    .data-card {
+      background: var(--cream); border: 1px solid var(--rule); padding: 28px 32px; margin: 2.5rem 0;
+    }
+    .data-card h4 {
+      font-family: 'IBM Plex Mono', monospace; font-size: .7rem;
+      text-transform: uppercase; letter-spacing: .15em; color: var(--muted); margin-bottom: 20px;
+    }
+    .data-rows { display: flex; flex-direction: column; gap: 12px; }
+    .data-row { display: flex; align-items: center; gap: 16px; }
+    .data-row-label { font-size: .85rem; color: var(--muted); width: 220px; flex-shrink: 0; }
+    .data-row-bar-wrap { flex: 1; height: 6px; background: var(--rule); position: relative; }
+    .data-row-bar { position: absolute; top: 0; left: 0; height: 100%; }
+    .data-row-bar.slate { background: var(--accent); }
+    .data-row-bar.gold  { background: var(--gold); }
+    .data-row-bar.green { background: var(--green); }
+    .data-row-bar.red   { background: var(--red); opacity: .7; }
+    .data-row-bar.muted { background: var(--muted); opacity: .35; }
+    .data-row-val {
+      font-family: 'IBM Plex Mono', monospace; font-size: .8rem;
+      font-weight: 500; width: 110px; text-align: right;
+    }
+
+    .metrics-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 1px; background: var(--rule); border: 1px solid var(--rule); margin: 2.5rem 0;
+    }
+    .metric-cell { background: var(--paper); padding: 24px; }
+    .metric-label {
+      font-family: 'IBM Plex Mono', monospace; font-size: .68rem;
+      text-transform: uppercase; letter-spacing: .14em; color: var(--muted); margin-bottom: 8px;
+    }
+    .metric-value { font-family: 'Playfair Display', serif; font-size: 1.65rem; font-weight: 700; line-height: 1.1; }
+    .metric-value.slate { color: var(--accent); }
+    .metric-value.gold  { color: var(--gold); }
+    .metric-value.green { color: var(--green); }
+    .metric-value.red   { color: var(--red); }
+    .metric-note { font-size: .78rem; color: var(--muted); margin-top: 6px; }
+
+    .risk-list { margin: 2rem 0; }
+    .risk-item {
+      display: flex; gap: 16px; padding: 16px 0;
+      border-bottom: 1px solid var(--rule); align-items: flex-start;
+    }
+    .risk-item:first-child { border-top: 1px solid var(--rule); }
+    .risk-badge {
+      font-family: 'IBM Plex Mono', monospace; font-size: .62rem;
+      text-transform: uppercase; letter-spacing: .1em;
+      padding: 4px 10px; border-radius: 2px; flex-shrink: 0; margin-top: 2px;
+    }
+    .risk-badge.high { background: #fde8e0; color: var(--red); }
+    .risk-badge.mid  { background: #f5ecd4; color: var(--gold); }
+    .risk-badge.low  { background: #d0ead8; color: var(--green); }
+    .risk-title { font-weight: 600; font-size: .9rem; margin-bottom: 3px; }
+    .risk-desc  { font-size: .82rem; color: var(--muted); line-height: 1.55; }
+
+    .divider { border: none; border-top: 1px solid var(--rule); margin: 3rem 0; }
+
+    .conclusion {
+      background: var(--ink); color: var(--paper); padding: 36px 40px; margin: 3rem 0 0;
+    }
+    .conclusion h3 { color: #9ec8e8; margin-top: 0; letter-spacing: .06em; font-size: 1rem; text-transform: uppercase; }
+    .conclusion p { color: #ccc; margin-bottom: 1rem; }
+    .conclusion p:last-child { margin-bottom: 0; }
+
+    footer {
+      background: var(--cream); border-top: 1px solid var(--rule);
+      padding: 28px 40px; font-family: 'IBM Plex Mono', monospace;
+      font-size: .72rem; color: var(--muted); text-align: center; letter-spacing: .06em;
+    }
+    footer strong { color: var(--ink); }
+
+    @media (max-width: 640px) {
+      .masthead { padding: 12px 20px; }
+      .hero { padding: 56px 20px 52px; }
+      .stats-bar { padding: 0 20px; }
+      .stats-inner, .scenario-grid { grid-template-columns: 1fr; }
+      .stat-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,.07); padding: 16px 0; }
+      .article-wrap { padding: 48px 20px; }
+      .instr-grid, .metrics-grid { grid-template-columns: 1fr; }
+      .data-row-label { width: 130px; font-size: .78rem; }
+    }
+  </style>
+</head>
+<body>
+
+<header class="masthead">
+  <span class="masthead-logo">kotana.com.ru</span>
+  <span class="masthead-meta">Анализ · Рынок ЦОД · 2026</span>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-tag">Обзор · Цифровая инфраструктура · 2026</div>
+    <h1>Рынок ЦОД в России — 2026: <em>дефицит мощностей, ИИ-нагрузки и энергетический предел</em></h1>
+    <p class="hero-lead">Оборот коммерческих ЦОД вырос в 2,3 раза за пять лет — до 148 млрд рублей. Загрузка московских дата-центров превысила 95%. Новые подключения заморожены до 2028 года. Рынок растёт в деньгах, стагнирует в стойках — и разворачивается на восток страны.</p>
+    <div class="hero-byline">
+      <strong>Редакция kotana.com.ru</strong>
+      <span>·</span>
+      <span>Май 2026</span>
+      <span>·</span>
+      <span>13 мин чтения</span>
+    </div>
+  </div>
+</section>
+
+<div class="stats-bar">
+  <div class="stats-inner">
+    <div class="stat-item">
+      <span class="stat-number">148 млрд ₽</span>
+      <span class="stat-label">Оборот коммерческих ЦОД в 2025 г. — рост в 2,3× за 5 лет</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number">84 600</span>
+      <span class="stat-label">Стойко-мест в коммерческих ЦОД на конец 2025 г.</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number">+15–20%</span>
+      <span class="stat-label">Прогноз роста рынка в 2026 г. — Альфа-Банк, BusinesStat</span>
+    </div>
+  </div>
+</div>
+
+<main class="article-wrap">
+  <article class="article-inner">
+
+    <p>Российский рынок центров обработки данных живёт в состоянии хронического парадокса: спрос растёт быстрее предложения уже несколько лет подряд, а ускорить строительство не позволяет ни одна из двух главных переменных — энергетика и деньги. По данным BusinesStat, оборот коммерческих ЦОД за 2021–2025 годы вырос в 2,3 раза: с 65 до <span class="highlight">148 млрд рублей</span>. Это очень быстрый рост по любым меркам. Но темп нового ввода в 2025 году упал до ~5% — против 15–16% в предыдущие два года. Цены за размещение в Москве прибавили 11%, в Санкт-Петербурге — 19%. Загрузка столичных объектов превысила 95%, а сетевые компании фактически закрыли выдачу разрешений на новые подключения до 2028 года. Результат: рынок зарабатывает больше, почти не вводя новые мощности — за счёт роста тарифов в условиях структурного дефицита. Именно эта модель будет определять развитие сектора в 2026-м и за его пределами.</p>
+
+    <h2>Структура рынка: от московской доминанты к региональной экспансии</h2>
+
+    <p>Российский рынок ЦОД исторически сверхконцентрирован географически. На долю Москвы и Московской области приходится <span class="highlight">около 75%</span> действующих коммерческих серверных ферм. Санкт-Петербург — второй по значимости кластер. Но именно эта диспропорция и стала источником кризиса: энергосеть Московского региона не справляется с нагрузкой отрасли, которая по темпам роста потребления электроэнергии опережает все прочие секторы экономики. По оценке ВТБ, для предотвращения дефицита электроэнергии к 2030 году только под нужды дата-центров (с учётом ИИ) необходимо профинансировать строительство новых генерирующих мощностей на 6 трлн рублей.</p>
+
+    <p>Ответом становится региональная диверсификация. Аналитики называют наиболее перспективными локациями для новых ЦОД <span class="highlight">Мурманскую, Свердловскую и Иркутскую области, Красноярский край и Хакасию</span> — регионы с избытком дешёвой электроэнергии (гидро- и атомные станции), холодным климатом, снижающим затраты на охлаждение, и приемлемой транспортной связностью. Якутия заявила амбиции стать центром цифровых проектов Дальнего Востока — с планируемой мощностью ЦОД до 2 ГВт. Путин поручил правительству проработать схемы подключения новых объектов к угольным и газовым ТЭС в энергопрофицитных районах страны.</p>
+
+    <div class="data-card">
+      <h4>Динамика оборота рынка коммерческих ЦОД России, млрд рублей</h4>
+      <div class="data-rows">
+        <div class="data-row">
+          <span class="data-row-label">2021 (факт)</span>
+          <div class="data-row-bar-wrap"><div class="data-row-bar muted" style="width:44%"></div></div>
+          <span class="data-row-val">65 млрд ₽</span>
+        </div>
+        <div class="data-row">
+          <span class="data-row-label">2023 (факт)</span>
+          <div class="data-row-bar-wrap"><div class="data-row-bar gold" style="width:70%"></div></div>
+          <span class="data-row-val">~105 млрд ₽</span>
+        </div>
+        <div class="data-row">
+          <span class="data-row-label">2024 (факт)</span>
+          <div class="data-row-bar-wrap"><div class="data-row-bar slate" style="width:86%"></div></div>
+          <span class="data-row-val">~130 млрд ₽</span>
+        </div>
+        <div class="data-row">
+          <span class="data-row-label">2025 (факт)</span>
+          <div class="data-row-bar-wrap"><div class="data-row-bar slate" style="width:100%"></div></div>
+          <span class="data-row-val">148 млрд ₽</span>
+        </div>
+        <div class="data-row">
+          <span class="data-row-label">2026 (прогноз)</span>
+          <div class="data-row-bar-wrap"><div class="data-row-bar green" style="width:100%"></div></div>
+          <span class="data-row-val">170–178 млрд ₽</span>
+        </div>
+        <div class="data-row">
+          <span class="data-row-label">Облако 2025 (отдельно)</span>
+          <div class="data-row-bar-wrap"><div class="data-row-bar gold" style="width:100%"></div></div>
+          <span class="data-row-val">416,5 млрд ₽</span>
+        </div>
+      </div>
+    </div>
+
+    <hr class="divider" />
+
+    <h2>Игроки: пятёрка лидеров контролирует две трети рынка</h2>
+
+    <div class="instr-grid">
+      <div class="instr-card">
+        <span class="instr-icon">🏛️</span>
+        <div class="instr-type">Абсолютный лидер</div>
+        <div class="instr-name">РТК-ЦОД (Ростелеком)</div>
+        <span class="instr-label hot">~32% рынка по стойко-местам</span>
+        <div class="instr-yield">27 100 стойко-мест · выручка ~51 млрд ₽</div>
+        <div class="instr-desc">Крупнейший оператор страны с масштабом, втрое превышающим второго игрока рынка. Государству принадлежит 35,9% ПАО «Ростелеком». Стратегия — переход от классического colocation к модели DCaaS с интеллектуальным управлением ресурсами. В 2025 году открыл новый объект в Нижнем Новгороде. Доходность на стойку — 2,49 млн рублей: чуть ниже Selectel, но выше всего colocation-сегмента.</div>
+      </div>
+      <div class="instr-card">
+        <span class="instr-icon">☁️</span>
+        <div class="instr-type">Облачный лидер</div>
+        <div class="instr-name">Selectel</div>
+        <span class="instr-label hot">Выручка +39% в 2025 году</span>
+        <div class="instr-yield">18,3 млрд ₽ · 4 ЦОД · 3 600 стоек</div>
+        <div class="instr-desc">Независимый провайдер с наибольшей доходностью на стойку (3,51 млн ₽) — за счёт облачной модели (87% выручки — IaaS). В 2025 году выручка выросла на 39% до 18,3 млрд рублей — с учётом консолидации Servers.ru. В декабре 2025-го 25% компании приобрело СП «Интерроса» и «Т-Технологий». ЦОД Юрловский в Москве, открытие которого переносилось с 2023 года, планируется к запуску в 2026-м.</div>
+      </div>
+      <div class="instr-card">
+        <span class="instr-icon">⚙️</span>
+        <div class="instr-type">Colocation-игрок</div>
+        <div class="instr-name">IXcellerate</div>
+        <span class="instr-label warm">8 270 стойко-мест · нейтральная площадка</span>
+        <div class="instr-yield">Выручка ~8+ млрд ₽ · 2-е место по стойкам</div>
+        <div class="instr-desc">Технологически нейтральная colocation-площадка — хаб для развёртывания сервисов сторонних облачных провайдеров. Второй по числу стойко-мест оператор страны (8 269). Сохраняет агрессивный темп ввода мощностей: входит в тройку игроков с наибольшим приростом по итогам 2025 года наряду с РТК-ЦОД и Key Point.</div>
+      </div>
+      <div class="instr-card">
+        <span class="instr-icon">⚛️</span>
+        <div class="instr-type">Государственный игрок</div>
+        <div class="instr-name">Росатом + DataPro</div>
+        <span class="instr-label ok">~8% рынка каждый</span>
+        <div class="instr-yield">6 570 и 6 553 стойко-мест соответственно</div>
+        <div class="instr-desc">Росатом формирует отдельную нишу: ЦОД для государственных структур (ФНС, МВД, Минприроды), КИИ и ядерного комплекса. Крупнейший объект — «ЦОД Калининский» в Тверской области. DataPro — классический colocation-провайдер с активной экспансией: DataPro V запущен в Москве в 2025 году, DataPro VI планируется к 2027-му. В 2024 году госсектор обеспечил 50% выручки рынка строительства ЦОД, потратив 60 млрд рублей на ведомственные объекты.</div>
+      </div>
+    </div>
+
+    <hr class="divider" />
+
+    <h2>ИИ как главный драйвер спроса нового поколения</h2>
+
+    <p>Искусственный интеллект меняет саму физику дата-центра. Если стандартная нагрузка на серверную стойку 2–3 года назад составляла 10–15 кВт, то в 2025–2026 годах запросы на размещение ИИ-инфраструктуры предполагают <span class="highlight">40–80 кВт и выше</span> на стойку — в 4–6 раз больше. Это требует принципиально иных систем охлаждения (жидкостного и погружного), более мощных силовых вводов и специализированной инженерной инфраструктуры, которой у большинства действующих объектов просто нет. В 2026 году именно ИИ-нагрузки становятся основным вектором нового строительства — все крупные операторы декларируют создание гипермасштабных ИИ-ЦОД как приоритет развития.</p>
+
+    <p>Директор AI-вертикали Selectel прогнозирует: в 2026 году компании из различных отраслей начнут активно развёртывать и масштабировать ИИ-модели, преимущественно зарубежных вендоров, на российских мощностях. Спрос на высоконагруженные стойки в коммерческих ЦОД вырос примерно на 30% в 2025 году. Облачный рынок, потребляющий значительную долю этих мощностей, вырос ещё стремительнее: <span class="highlight">+29,2% — до 416,5 млрд рублей</span> в 2025 году. По прогнозу, к 2030 году рынок облачных сервисов достигнет 1,2 трлн рублей при среднегодовом темпе роста 24,4%.</p>
+
+    <blockquote>
+      <p>«Ключевым драйвером роста рынка дата-центров и облаков в 2026 году будет ИИ. Компании начнут активно масштабировать эти технологии, развёртывая модели на российских мощностях.»</p>
+      <cite>— Александр Тугов, директор AI-вертикали Selectel, Коммерсантъ</cite>
+    </blockquote>
+
+    <hr class="divider" />
+
+    <h2>Сценарии: между ростом цен и перезапуском строительства</h2>
+
+    <div class="scenario-grid">
+      <div class="sc-card">
+        <div class="sc-label">Базовый сценарий</div>
+        <div class="sc-title">Рост цен без роста мощностей</div>
+        <div class="sc-value base">+15–20%</div>
+        <div class="sc-source">Альфа-Банк / BusinesStat / 2026</div>
+        <div class="sc-desc">Рынок в рублях прибавляет 15–20% за счёт роста тарифов на аренду стоек (+10–15%) и расширения облачного сегмента. Ввод новых стоек — около 5% г/г. Перезапуск инвестиционной активности откладывается на 2027 год. Дефицит столичных мощностей сохраняется. Цены растут быстрее инфляции.</div>
+      </div>
+      <div class="sc-card">
+        <div class="sc-label">Оптимистичный</div>
+        <div class="sc-title">Снижение ставки + региональный прорыв</div>
+        <div class="sc-value bull">+25–30%</div>
+        <div class="sc-source">При CAGR 2028–2030 в 30–35%</div>
+        <div class="sc-desc">Снижение ключевой ставки ЦБ до 12–13% открывает доступ к проектному финансированию. Региональные ЦОД в Якутии, Иркутске, Мурманске наращивают ввод. Реализуются отложенные проекты 2025 года. ИИ-ЦОД становятся новым якорным форматом. Возврат к CAGR 30–35% к концу десятилетия.</div>
+      </div>
+      <div class="sc-card">
+        <div class="sc-label">Консервативный</div>
+        <div class="sc-title">Высокая ставка давит на стройку</div>
+        <div class="sc-value bear">+8–12%</div>
+        <div class="sc-source">При сохранении ставки ЦБ &gt;15%</div>
+        <div class="sc-desc">ЦБ сохраняет высокую ставку дольше прогнозов. Проектное финансирование недоступно — крупные игроки дробят этапы, средние замораживают планы. Рост — только за счёт дальнейшего удорожания аренды стоек. Замедление темпов роста рынка на 10–20% в ближайшие 3–5 лет.</div>
+      </div>
+    </div>
+
+    <hr class="divider" />
+
+    <h2>Риски и ограничители рынка</h2>
+
+    <div class="risk-list">
+      <div class="risk-item">
+        <div class="risk-badge high">Критический</div>
+        <div>
+          <div class="risk-title">Энергетический предел московского региона</div>
+          <div class="risk-desc">Московский рынок практически исчерпан: загрузка превысила 95%, энергосетевые компании закрыли выдачу разрешений на новые подключения до 2028 года. Средний ЦОД мощностью 10 МВт требует подключения 12–13 МВт с учётом охлаждения и ИБП. Стоимость техприсоединения уже растёт на 20–30% к 2026 году. Энергетический барьер — главный структурный ограничитель всей отрасли.</div>
+        </div>
+      </div>
+      <div class="risk-item">
+        <div class="risk-badge high">Высокий</div>
+        <div>
+          <div class="risk-title">Высокая ключевая ставка блокирует инвестиции</div>
+          <div class="risk-desc">Проекты ЦОД — капиталоёмкие с окупаемостью до 10 лет. При ключевой ставке 15%+ проектное финансирование становится нерентабельным для большинства игроков. Значительная часть анонсированных проектов перенесена на 2026–2027 годы. Перезапуск активного строительства новых коммерческих ЦОД возможен, по оценке Альфа-Банка, не ранее 2027 года.</div>
+        </div>
+      </div>
+      <div class="risk-item">
+        <div class="risk-badge high">Высокий</div>
+        <div>
+          <div class="risk-title">Дефицит отечественного серверного оборудования</div>
+          <div class="risk-desc">Санкции отрезали российский рынок от ведущих западных поставщиков серверов и GPU — Nvidia, Intel, AMD. Параллельный импорт решает проблему частично, но не в масштабе, необходимом для гипермасштабных ИИ-ЦОД. Отечественные производители (МЦСТ, Байкал) пока не могут удовлетворить спрос на высокопроизводительные вычисления. Это ограничивает темп развития ИИ-инфраструктуры внутри страны.</div>
+        </div>
+      </div>
+      <div class="risk-item">
+        <div class="risk-badge mid">Средний</div>
+        <div>
+          <div class="risk-title">Конкуренция корпоративных ЦОД с коммерческими</div>
+          <div class="risk-desc">Нехватка стойко-мест в коммерческих ЦОД вынуждает крупных заказчиков строить собственные объекты. Wildberries, Сбербанк, ВТБ, Яндекс — все строят или расширяют кэптивные ЦОД. Это снижает потенциальный спрос на услуги коммерческих операторов в высокомаржинальном корпоративном сегменте. Госсектор через ведомственные ЦОД (Росатом, МВД, ФНС) изымает дополнительный платёжеспособный спрос.</div>
+        </div>
+      </div>
+      <div class="risk-item">
+        <div class="risk-badge low">Долгосрочный</div>
+        <div>
+          <div class="risk-title">Регуляторная нагрузка растёт</div>
+          <div class="risk-desc">В 2025 году Минстрой утвердил новые обязательные стандарты проектирования и строительства ЦОД (СП 541.1 325 800.2024). Требования к КИИ ужесточаются. Реестр дата-центров, формируемый Минцифры, повышает прозрачность, но и регуляторную нагрузку. Долгосрочный вектор — усиление контроля над критической цифровой инфраструктурой.</div>
+        </div>
+      </div>
+    </div>
+
+    <hr class="divider" />
+
+    <h2>Ключевые метрики рынка</h2>
+
+    <div class="metrics-grid">
+      <div class="metric-cell">
+        <div class="metric-label">Оборот рынка коммерч. ЦОД, 2025</div>
+        <div class="metric-value slate">148 млрд ₽</div>
+        <div class="metric-note">Рост с 65 млрд ₽ в 2021 году. CAGR 2021–2025 оценивается в 20–25%. Прогноз 2026: 170–178 млрд ₽.</div>
+      </div>
+      <div class="metric-cell">
+        <div class="metric-label">Рынок облачных сервисов, 2025</div>
+        <div class="metric-value gold">416,5 млрд ₽</div>
+        <div class="metric-note">Рост +29,2% г/г. Прогноз к 2030 году — 1,2 трлн ₽ при CAGR 24,4%. Сегмент растёт вдвое быстрее colocation.</div>
+      </div>
+      <div class="metric-cell">
+        <div class="metric-label">Установленная мощность ЦОД, 2024</div>
+        <div class="metric-value green">840 МВт</div>
+        <div class="metric-note">Рост почти вдвое к 2020 году. Ежегодный ввод — 120–150 МВт. Потребление ЦОД к 2030 г. потребует 6 трлн ₽ инвестиций в энергетику.</div>
+      </div>
+      <div class="metric-cell">
+        <div class="metric-label">Нагрузка на стойку: ИИ vs. стандарт</div>
+        <div class="metric-value red">40–80 кВт</div>
+        <div class="metric-note">Против 10–15 кВт стандарт три года назад. В 4–6 раз выше — требует принципиально нового инженерного проекта и систем охлаждения.</div>
+      </div>
+    </div>
+
+    <blockquote>
+      <p>«В 2026 году рынок дата-центров будет развиваться под влиянием классических ограничителей для капиталоёмкой инфраструктуры: при высокой ключевой ставке проекты дробятся на этапы, а решения принимаются осторожнее.»</p>
+      <cite>— Константин Степанов, директор по развитию дата-центров РТК-ЦОД, Коммерсантъ</cite>
+    </blockquote>
+
+    <hr class="divider" />
+
+    <h2>Стратегии: что работает в условиях дефицита</h2>
+
+    <h3>Для операторов ЦОД</h3>
+    <p>Выигрывают те, кто успел зайти в строительство до роста ставки — и сейчас вводит объекты с высокой степенью готовности. В 2026 году приоритет — достройка и ввод уже начатых объектов, а не запуск новых. Стратегия — уплотнение вычислительных мощностей и смещение в сторону облачных и ИИ-нагрузок как более маржинальных сервисов. Гипермасштабный ИИ-ЦОД с жидкостным охлаждением — новый якорный продукт, на который формируется очередь из заказчиков. Доступ к «зелёной» или дешёвой региональной энергии становится главным конкурентным преимуществом горизонта 2027–2030.</p>
+
+    <h3>Для корпоративных заказчиков</h3>
+    <p>Нехватка коммерческих мощностей создаёт давление в сторону собственного строительства у всех крупных компаний — банков, ритейла, логистики. Модульные ЦОД заводской сборки (спрос вырос на 30% в 2025 году) стали рабочим ответом для промышленных предприятий, НИИ и региональных госструктур. Edge-ЦОД — решение для операторов связи и ритейлеров, которым нужна инфраструктура ближе к клиенту. Горизонт окупаемости собственного ЦОД — до 10 лет: это долго, но оправдано при хронически растущих ценах на аренду.</p>
+
+    <h3>Чего ожидать к 2030 году</h3>
+    <p>Отложенный спрос реализуется не раньше 2027 года, когда снижение ключевой ставки откроет проектное финансирование. К 2028 году iKS-Consulting прогнозирует 148 тыс. стойко-мест — рост в 1,75 раза против 2025-го. Темп роста рынка в 2028–2030 годах вернётся к 30–35% г/г по мере реализации накопленного отложенного спроса. Регионализация продолжится: доля Москвы постепенно снизится с 75% к 60–65%, а новые мощности будут концентрироваться в энергопрофицитных регионах Сибири и Дальнего Востока.</p>
+
+    <div class="conclusion">
+      <h3>Прогноз: год дефицита, пауза перед перезапуском</h3>
+      <p>2026 год — это рынок, который богатеет в деньгах и стагнирует в физике. Оборот прибавит 15–20% без ощутимого прироста мощностей: цены на стойки продолжат расти при загрузке московских площадок выше 95% и закрытых техприсоединениях. Операторы зарабатывают больше с тех же стоек — это не масштабирование, а рента на дефиците. Но дефицит не вечен: снижение ставки ЦБ откроет проектное финансирование, а поручение Путина по размещению ЦОД у угольных и газовых ТЭС создаёт новый класс энергетических решений для индустрии.</p>
+      <p>ИИ меняет всё. Спрос на высоконагруженную инфраструктуру — 40–80 кВт на стойку вместо 10–15 — создаёт потребность в принципиально новых объектах, которые практически невозможно получить в рамках существующего московского инвентаря. Гипермасштабные ИИ-ЦОД с жидкостным охлаждением — это новый рынок, и он будет строиться именно в регионах с дешёвой энергией: в Якутии, Иркутске, Красноярском крае. Первые игроки, застолбившие площадки с гарантированной мощностью 50–200 МВт, получат преимущество на десятилетие.</p>
+      <p>Главный принцип года: энергия — это новая земля. В 2015–2020 годах конкурентное преимущество оператора ЦОД определялось локацией в Москве и качеством инженерной инфраструктуры. В 2026–2030 годах оно будет определяться доступом к недорогой и бесперебойной электроэнергии — в объёмах, которые московская энергосистема больше не может предоставить. Кто найдёт эти мегаватты первым — тот и выиграет следующий цикл роста.</p>
+    </div>
+
+  </article>
+</main>
+
+<footer>
+  <strong>kotana.com.ru</strong> &nbsp;·&nbsp; Рынок ЦОД и дата-центров · 2026 &nbsp;·&nbsp; Источники: BusinesStat, Альфа-Банк, CNews Analytics, iKS-Consulting, Аналитический хаб Сбера, IPG.Estate, GreenMDC, Selectel, РТК-ЦОД, Минцифры, Коммерсантъ, Telecombloger, Megaresearch
+</footer>
+
+</body>
+</html>

@@ -326,6 +326,18 @@
         <h2 class="section-heading">Аналитика</h2>
         {% endif %}
         <div class="blog-grid">
+            <a href="/blog/datacenter-market-2026" class="blog-card">
+                <span class="blog-tag">{{ 'Analytics' if lang == 'en' else 'Аналитика' }}</span>
+                {% if lang == 'en' %}
+                <h3>Russian Data Centre Market 2026: Sovereign Cloud, AI Demand and the Infrastructure Race</h3>
+                <p>Russia's data centre capacity has surpassed 70 000 racks. AI workloads, sovereign cloud mandates and the departure of Western hyperscalers have triggered the largest infrastructure build-out in the sector's history — with over 350 billion roubles committed through 2028.</p>
+                {% else %}
+                <h3>Рынок дата-центров России — 2026: суверенное облако, спрос на ИИ и инфраструктурная гонка</h3>
+                <p>Ёмкость российских ЦОД превысила 70 000 стоек. Нагрузки ИИ, требования суверенного облака и уход западных гиперскейлеров запустили крупнейшую стройку в истории отрасли — более 350 млрд рублей инвестиций до 2028 года.</p>
+                {% endif %}
+                <span class="blog-read">{{ 'Read' if lang == 'en' else 'Читать' }} →</span>
+            </a>
+
             <a href="/blog/russia-africa-investment-2026" class="blog-card">
                 <span class="blog-tag">{{ 'Analytics' if lang == 'en' else 'Аналитика' }}</span>
                 {% if lang == 'en' %}
