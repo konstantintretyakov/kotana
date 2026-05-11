@@ -326,6 +326,18 @@
         <h2 class="section-heading">Аналитика</h2>
         {% endif %}
         <div class="blog-grid">
+            <a href="/blog/russia-africa-investment-2026" class="blog-card">
+                <span class="blog-tag">{{ 'Analytics' if lang == 'en' else 'Аналитика' }}</span>
+                {% if lang == 'en' %}
+                <h3>Russian Investment in Africa 2026: Capital, Sanctions and the New Payment Frontier</h3>
+                <p>Russia–Africa trade has reached $27 billion. Over 200 Russian companies are active on the continent across energy, mining, agriculture and IT. Yet sanctions have severed traditional payment rails — forcing businesses to build an entirely new cross-border financial architecture.</p>
+                {% else %}
+                <h3>Российские инвестиции в Африку — 2026: капитал, санкции и новая платёжная архитектура</h3>
+                <p>Торговля Россия–Африка достигла $27 млрд. Более 200 российских компаний работают на континенте в энергетике, добыче, сельском хозяйстве и ИТ. Но санкции разрушили традиционные платёжные каналы — бизнесу приходится строить совершенно новую архитектуру трансграничных расчётов.</p>
+                {% endif %}
+                <span class="blog-read">{{ 'Read' if lang == 'en' else 'Читать' }} →</span>
+            </a>
+
             <a href="/blog/coal-market-2026" class="blog-card">
                 <span class="blog-tag">{{ 'Analytics' if lang == 'en' else 'Аналитика' }}</span>
                 {% if lang == 'en' %}
