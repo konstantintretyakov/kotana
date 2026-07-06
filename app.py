@@ -17,6 +17,11 @@ def index_en():
     return render_template("index.html", lang="en")
 
 
+@app.route("/partners")
+def partners():
+    return render_template("partners.html")
+
+
 @app.route("/blog/ma-market-2025")
 def blog_ma_market_2025():
     return render_template("blog/ma-market-2025.html")

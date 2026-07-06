@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Услуги партнёров — КОТАНА</title>
+    <meta name="description" content="Партнёрские услуги КОТАНА: получение статуса резидента Сколково, ИТ-аккредитация, реестр Минпромторга, реестр российского ПО, реестр МТК. Господдержка для технологических и промышленных компаний.">
+    <link rel="canonical" href="https://kotana.com.ru/partners">
+
+    <script>if('scrollRestoration' in history) history.scrollRestoration='manual';</script>
+    <style>
+        *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+        :root{--navy-dark:#0a0f1e;--navy:#111833;--navy-light:#1a2444;--gold:#c9a84c;--gold-light:#ddc175;--text:#d0d4e0;--text-muted:#8891a8;--white:#f0f1f5}
+        html{scroll-behavior:smooth}
+        body{font-family:"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;background:var(--navy-dark);color:var(--text);line-height:1.7}
+        nav{position:fixed;top:0;width:100%;background:rgba(10,15,30,0.92);backdrop-filter:blur(10px);border-bottom:1px solid rgba(201,168,76,0.15);z-index:100;padding:0 2rem}
+        nav .nav-inner{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;height:64px}
+        nav .logo{font-size:1.25rem;font-weight:700;letter-spacing:0.25em;color:var(--gold);text-decoration:none}
+        nav ul{list-style:none;display:flex;gap:2rem}
+        nav ul a{color:var(--text-muted);font-size:0.85rem;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;transition:color .2s}
+        nav ul a:hover,nav ul a.active{color:var(--gold)}
+        .nav-right{display:flex;align-items:center;gap:2rem}
+        .burger{display:none;background:none;border:none;cursor:pointer;padding:4px}
+        .burger span{display:block;width:22px;height:2px;background:var(--gold);margin:5px 0;transition:transform .3s,opacity .3s}
+        @media(max-width:900px){nav ul a{font-size:.75rem}nav ul{gap:1.25rem}}
+        @media(max-width:768px){
+            .burger{display:block}
+            nav ul{display:none;position:absolute;top:64px;left:0;width:100%;flex-direction:column;background:rgba(10,15,30,0.97);padding:1.5rem 2rem;gap:1.5rem;border-bottom:1px solid rgba(201,168,76,0.15)}
+            nav ul.open{display:flex}
+            .burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+            .burger.open span:nth-child(2){opacity:0}
+            .burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+        }
+        .partner-hero{padding:10rem 2rem 5rem;background:radial-gradient(ellipse at 50% 30%,rgba(26,36,68,0.8) 0%,transparent 70%),var(--navy-dark);border-bottom:1px solid rgba(201,168,76,0.1);text-align:center}
+        .service-tag{display:inline-block;font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);border:1px solid rgba(201,168,76,.3);padding:2px 10px;border-radius:3px;margin-bottom:.75rem}
+        .service-timeline{font-size:.8rem;color:var(--text-muted);margin-top:1rem;padding-top:1rem;border-top:1px solid rgba(201,168,76,.08)}
+        .service-timeline span{color:var(--gold);font-weight:600}
+        .benefit-list{list-style:none;margin-top:.75rem}
+        .benefit-list li{font-size:.9rem;color:var(--text-muted);line-height:1.7;padding-left:1.2rem;position:relative}
+        .benefit-list li::before{content:'✓';position:absolute;left:0;color:var(--gold);font-size:.8rem}
+        .audience-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem;margin-top:2rem}
+        .audience-card{background:var(--navy);border:1px solid rgba(201,168,76,.1);border-radius:6px;padding:2rem;display:flex;gap:1.5rem;align-items:flex-start}
+        .audience-num{font-family:'Cormorant Garamond',Georgia,serif;font-size:2.5rem;font-weight:600;color:rgba(201,168,76,.3);line-height:1;flex-shrink:0}
+        .audience-body h3{font-size:1rem;color:var(--white);font-weight:600;margin-bottom:.5rem}
+        .audience-body p{font-size:.88rem;color:var(--text-muted);line-height:1.65}
+        .audience-badge{display:inline-block;font-size:.75rem;color:var(--gold);background:rgba(201,168,76,.08);border:1px solid rgba(201,168,76,.2);border-radius:3px;padding:2px 8px;margin-top:.75rem}
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Outfit:wght@300;400&display=swap" media="print" onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+        <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Outfit:wght@300;400&display=swap" rel="stylesheet">
+    </noscript>
+    <link rel="icon" type="image/svg+xml" href="https://kotana.com.ru/favicon.svg">
+    <link rel="icon" type="image/png" sizes="120x120" href="https://kotana.com.ru/favicon.png">
+    <link rel="shortcut icon" href="https://kotana.com.ru/favicon.ico" type="image/x-icon">
+</head>
+<body>
+
+<header>
+<nav>
+    <div class="nav-inner">
+        <a href="/" class="logo">КОТАНА</a>
+        <div class="nav-right">
+            <ul id="nav-menu">
+                <li><a href="/#about">О нас</a></li>
+                <li><a href="/#services">Услуги</a></li>
+                <li><a href="/partners" class="active">Услуги партнёров</a></li>
+                <li><a href="/#blog">Блог</a></li>
+                <li><a href="/#contact">Контакты</a></li>
+            </ul>
+            <button class="burger" id="burger" aria-label="Menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </div>
+</nav>
+</header>
+
+<main>
+
+<!-- Hero -->
+<section class="partner-hero">
+    <div class="container">
+        <p class="section-title">Партнёры КОТАНА</p>
+        <h1 class="section-heading" style="font-size:2.4rem">Услуги партнёров</h1>
+        <p style="max-width:680px;margin:0 auto;font-size:1.05rem;line-height:1.9;color:var(--text)">
+            Мы сотрудничаем с ведущими консультантами в области технологического и промышленного бизнеса.
+            Наши партнёры помогают компаниям получать государственную поддержку, налоговые льготы
+            и доступ к инфраструктуре для роста.
+        </p>
+    </div>
+</section>
+
+<!-- Services -->
+<section class="services" id="services">
+    <div class="container">
+        <p class="section-title">Господдержка и льготы</p>
+        <h2 class="section-heading">Услуги</h2>
+        <div class="services-grid">
+
+            <div class="service-card">
+                <span class="service-tag">Господдержка</span>
+                <h3>Статус резидента Сколково</h3>
+                <p>Получение статуса резидента инновационного центра «Сколково» — одной из наиболее значимых льгот для технологических компаний.</p>
+                <ul class="benefit-list">
+                    <li>Освобождение от НДС</li>
+                    <li>0% налог на прибыль</li>
+                    <li>15% страховые взносы свыше 1,5 МРОТ</li>
+                    <li>0% налог на имущество</li>
+                </ul>
+                <p class="service-timeline">Срок реализации: <span>2–3 месяца</span></p>
+            </div>
+
+            <div class="service-card">
+                <span class="service-tag">Производство</span>
+                <h3>Реестр Минпромторга</h3>
+                <p>Включение продукции в реестр промышленной продукции Министерства промышленности и торговли РФ.</p>
+                <ul class="benefit-list">
+                    <li>Преимущество в закупках по 44-ФЗ и 223-ФЗ</li>
+                    <li>Официальное подтверждение российского производства</li>
+                    <li>Размещение в публичном каталоге ГИСП для видимости заказчикам</li>
+                    <li>Доступ к льготному финансированию, субсидиям и грантам</li>
+                </ul>
+                <p class="service-timeline">Срок реализации: <span>3–6 месяцев</span></p>
+            </div>
+
+            <div class="service-card">
+                <span class="service-tag">ИТ</span>
+                <h3>ИТ-аккредитация</h3>
+                <p>Получение государственной аккредитации ИТ-компании — ключевого условия для применения налоговых льгот и кадровых преимуществ.</p>
+                <ul class="benefit-list">
+                    <li>5% налог на прибыль</li>
+                    <li>7,6% страховые взносы сверх предельной базы (до 15%)</li>
+                    <li>Отсрочка от военной службы для сотрудников</li>
+                    <li>Льготные кредиты и ипотека</li>
+                </ul>
+                <p class="service-timeline">Срок реализации: <span>2–3 месяца</span></p>
+            </div>
+
+            <div class="service-card">
+                <span class="service-tag">ИТ / ПО</span>
+                <h3>Реестр российского ПО</h3>
+                <p>Включение программного продукта в Единый реестр российского программного обеспечения Минцифры России.</p>
+                <ul class="benefit-list">
+                    <li>Подтверждение отечественного происхождения</li>
+                    <li>Реализация ПО без НДС</li>
+                    <li>Упрощённая процедура получения и сохранения ИТ-аккредитации</li>
+                    <li>Доступ к тендерам, где требуется российское ПО</li>
+                </ul>
+                <p class="service-timeline">Срок реализации: <span>2–3 месяца</span></p>
+            </div>
+
+            <div class="service-card">
+                <span class="service-tag">Технологии</span>
+                <h3>Реестр МТК</h3>
+                <p>Включение в реестр Малых Технологических Компаний — статус для получения льготного финансирования и господдержки.</p>
+                <ul class="benefit-list">
+                    <li>0% налог на имущество</li>
+                    <li>Доступ к программам льготного кредитования и финансирования</li>
+                    <li>Упрощённое получение мер господдержки без дополнительных документов</li>
+                    <li>Прямой доступ к инвесторам, индустриальным партнёрам и сообществу МТК</li>
+                </ul>
+                <p class="service-timeline">Срок реализации: <span>2–3 месяца</span></p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Target audience and timelines -->
+<section style="padding:5rem 2rem;background:var(--navy)" id="audience">
+    <div class="container">
+        <p class="section-title">Для кого</p>
+        <h2 class="section-heading">Целевая аудитория и сроки</h2>
+        <div class="audience-grid">
+
+            <div class="audience-card">
+                <div class="audience-num">01</div>
+                <div class="audience-body">
+                    <h3>Статус резидента Сколково</h3>
+                    <p>Инновационные технологические стартапы, привлекающие инвестиции. Технологические компании с оборотом от 30 млн ₽ в год. Производственные технологические компании, локализованные в РФ.</p>
+                    <span class="audience-badge">Срок: 2–3 месяца</span>
+                </div>
+            </div>
+
+            <div class="audience-card">
+                <div class="audience-num">02</div>
+                <div class="audience-body">
+                    <h3>Реестр Минпромторга</h3>
+                    <p>Компании с реальным собственным или заказным производством, использующие преимущественно российские компоненты и их поставщики. Организации, участвующие в тендерах и госзакупках.</p>
+                    <span class="audience-badge">Срок: 3–6 месяцев</span>
+                </div>
+            </div>
+
+            <div class="audience-card">
+                <div class="audience-num">03</div>
+                <div class="audience-body">
+                    <h3>Реестр российского ПО</h3>
+                    <p>Разработчики или правообладатели программного продукта.</p>
+                    <span class="audience-badge">Срок: 2–3 месяца</span>
+                </div>
+            </div>
+
+            <div class="audience-card">
+                <div class="audience-num">04</div>
+                <div class="audience-body">
+                    <h3>ИТ-аккредитация</h3>
+                    <p>Компании с доходом от ИТ-деятельности более 30% для получения аккредитации и не менее 70% для применения налоговых льгот.</p>
+                    <span class="audience-badge">Срок: 2–3 месяца</span>
+                </div>
+            </div>
+
+            <div class="audience-card">
+                <div class="audience-num">05</div>
+                <div class="audience-body">
+                    <h3>Реестр МТК</h3>
+                    <p>Технологические организации, планирующие привлечение господдержки и льготных кредитов, с оборотом до 4 млрд ₽.</p>
+                    <span class="audience-badge">Срок: 2–3 месяца</span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+</main>
+
+<footer>
+    &copy; 2026 КОТАНА. Все права защищены.
+</footer>
+
+<script>
+document.getElementById('burger').addEventListener('click',function(){
+    this.classList.toggle('open');
+    var menu=document.getElementById('nav-menu');
+    menu.classList.toggle('open');
+    this.setAttribute('aria-expanded',menu.classList.contains('open'));
+});
+document.querySelectorAll('#nav-menu a').forEach(function(a){
+    a.addEventListener('click',function(){
+        document.getElementById('burger').classList.remove('open');
+        document.getElementById('nav-menu').classList.remove('open');
+    });
+});
+</script>
+
+</body>
+</html>
