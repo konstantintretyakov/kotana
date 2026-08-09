@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {% if lang == 'en' %}
     <title>KOTANA — Investment Banking Boutique | M&A, Capital Raising, Restructuring</title>
-    <meta name="description" content="KOTANA is an independent investment banking boutique. Mergers & acquisitions (M&A), capital raising, restructuring. Strategic financial advisory for mid-cap and large businesses in Russia.">
-    <meta name="keywords" content="investment banking, M&A, mergers and acquisitions, capital raising, restructuring, financial advisory, investment boutique, KOTANA, financial advisor, debt financing, bonds, Moscow, Russia">
+    <meta name="description" content="KOTANA is an independent investment banking boutique. M&A, capital raising, restructuring. Specialising in international transactions: Russia–Middle East, Russia–Africa, Russia–Asia.">
+    <meta name="keywords" content="investment banking, M&A, mergers and acquisitions, capital raising, restructuring, financial advisory, investment boutique, KOTANA, financial advisor, Russia Middle East, Russia Africa, Russia Asia, international transactions, cross-border M&A, debt financing, bonds, Moscow, Russia">
     {% else %}
     <title>КОТАНА — Инвестиционно-банковский бутик | M&A, привлечение капитала, реструктуризация</title>
-    <meta name="description" content="КОТАНА — независимый инвестиционно-банковский бутик. Слияния и поглощения (M&A), привлечение капитала, реструктуризация. Стратегические финансовые консультации для среднего и крупного бизнеса в России.">
-    <meta name="keywords" content="инвестиционный банкинг, M&A, слияния и поглощения, привлечение капитала, реструктуризация, финансовые консультации, инвестиционный бутик, КОТАНА, котана, финансовый советник, долговое финансирование, облигации, Москва">
+    <meta name="description" content="КОТАНА — независимый инвестиционно-банковский бутик. M&A, привлечение капитала, реструктуризация. Специализация на международных сделках: Россия–Ближний Восток, Россия–Африка, Россия–Азия.">
+    <meta name="keywords" content="инвестиционный банкинг, M&A, слияния и поглощения, привлечение капитала, реструктуризация, финансовые консультации, инвестиционный бутик, КОТАНА, котана, финансовый советник, Россия Ближний Восток, Россия Африка, Россия Азия, международные сделки, трансграничные сделки, долговое финансирование, облигации, Москва">
     {% endif %}
     <link rel="canonical" href="https://kotana.com.ru/{{ 'en/' if lang == 'en' else '' }}">
     <link rel="alternate" hreflang="ru" href="https://kotana.com.ru/">
@@ -20,12 +20,12 @@
     <!-- Open Graph -->
     {% if lang == 'en' %}
     <meta property="og:title" content="KOTANA — Investment Banking Boutique">
-    <meta property="og:description" content="Strategic financial advisory: M&A, capital raising, restructuring. Over 35 years of experience, RUB 180 bn+ in completed transactions.">
+    <meta property="og:description" content="Strategic financial advisory: M&A, capital raising, restructuring. Specialising in international transactions: Russia–Middle East, Russia–Africa, Russia–Asia. Over 35 years of experience, RUB 180 bn+ in completed transactions.">
     <meta property="og:locale" content="en_US">
     <meta property="og:locale:alternate" content="ru_RU">
     {% else %}
     <meta property="og:title" content="КОТАНА — Инвестиционно-банковский бутик">
-    <meta property="og:description" content="Стратегические финансовые консультации: M&A, привлечение капитала, реструктуризация. Более 35 лет опыта, ₽180 млрд+ совершённых сделок.">
+    <meta property="og:description" content="Стратегические финансовые консультации: M&A, привлечение капитала, реструктуризация. Специализация на международных сделках: Россия–Ближний Восток, Россия–Африка, Россия–Азия. Более 35 лет опыта, ₽180 млрд+ совершённых сделок.">
     <meta property="og:locale" content="ru_RU">
     <meta property="og:locale:alternate" content="en_US">
     {% endif %}
@@ -102,10 +102,10 @@
         "@type": "FinancialService",
         {% if lang == 'en' %}
         "name": "KOTANA",
-        "description": "An independent investment banking boutique specializing in mergers & acquisitions (M&A), capital raising and restructuring for mid-cap and large companies.",
+        "description": "An independent investment banking boutique specializing in mergers & acquisitions (M&A), capital raising and restructuring. Focus on international transactions: Russia–Middle East, Russia–Africa, Russia–Asia.",
         {% else %}
         "name": "КОТАНА",
-        "description": "Независимый инвестиционно-банковский бутик, специализирующийся на слияниях и поглощениях (M&A), привлечении капитала и реструктуризации для средних и крупных компаний.",
+        "description": "Независимый инвестиционно-банковский бутик, специализирующийся на слияниях и поглощениях (M&A), привлечении капитала и реструктуризации. Фокус на международных сделках: Россия–Ближний Восток, Россия–Африка, Россия–Азия.",
         {% endif %}
         "alternateName": "Kotana",
         "url": "https://kotana.com.ru",
@@ -143,6 +143,7 @@
             <ul id="nav-menu">
                 <li><a href="#about">{{ 'About' if lang == 'en' else 'О нас' }}</a></li>
                 <li><a href="#services">{{ 'Services' if lang == 'en' else 'Услуги' }}</a></li>
+                <li><a href="#markets">{{ 'Markets' if lang == 'en' else 'Рынки' }}</a></li>
                 <li><a href="/partners">{{ 'Partner Services' if lang == 'en' else 'Услуги партнёров' }}</a></li>
                 <li><a href="#blog">{{ 'Blog' if lang == 'en' else 'Блог' }}</a></li>
                 <li><a href="#contact">{{ 'Contact' if lang == 'en' else 'Контакты' }}</a></li>
@@ -162,9 +163,9 @@
 
 <!-- SEO intro (visually hidden, crawlable) -->
 {% if lang == 'en' %}
-<p class="sr-only">KOTANA is an independent investment banking boutique in Moscow. We provide mergers &amp; acquisitions (M&amp;A), debt and equity capital raising, as well as financial and operational restructuring services. Over 35 years of experience, more than 60 closed deals and RUB 180 bn+ in completed transactions.</p>
+<p class="sr-only">KOTANA is an independent investment banking boutique in Moscow. We provide mergers &amp; acquisitions (M&amp;A), debt and equity capital raising, as well as financial and operational restructuring services. We specialise in international transactions across the Russia–Middle East, Russia–Africa and Russia–Asia corridors. Over 35 years of experience, more than 60 closed deals and RUB 180 bn+ in completed transactions.</p>
 {% else %}
-<p class="sr-only">КОТАНА — независимый инвестиционно-банковский бутик в Москве. Мы предоставляем услуги в области слияний и поглощений (M&amp;A), привлечения долгового и долевого капитала, а также финансовой и операционной реструктуризации. Более 35 лет опыта, свыше 60 закрытых сделок и ₽180 млрд+ совершённых транзакций.</p>
+<p class="sr-only">КОТАНА — независимый инвестиционно-банковский бутик в Москве. Мы предоставляем услуги в области слияний и поглощений (M&amp;A), привлечения долгового и долевого капитала, а также финансовой и операционной реструктуризации. Специализируемся на международных сделках по коридорам Россия–Ближний Восток, Россия–Африка и Россия–Азия. Более 35 лет опыта, свыше 60 закрытых сделок и ₽180 млрд+ совершённых транзакций.</p>
 {% endif %}
 
 <!-- Hero -->
@@ -188,7 +189,9 @@
             in strategic financial advisory for mid-cap and large companies.
             We combine deep market expertise with a tailored approach
             to each client, delivering results that create long-term
-            value for your business.
+            value for your business. Our particular focus is on cross-border
+            transactions across the Russia–Middle East, Russia–Africa
+            and Russia–Asia corridors.
         </p>
         {% else %}
         <p class="section-title">О компании</p>
@@ -198,7 +201,8 @@
             на предоставлении стратегических финансовых консультаций для средних и крупных
             компаний. Мы объединяем глубокую экспертизу рынка с индивидуальным подходом
             к каждому клиенту, обеспечивая результаты, которые создают долгосрочную
-            стоимость для бизнеса.
+            стоимость для бизнеса. Особое направление нашей работы — трансграничные сделки
+            по коридорам Россия–Ближний Восток, Россия–Африка и Россия–Азия.
         </p>
         {% endif %}
     </div>
@@ -308,6 +312,83 @@
                     Финансовая и операционная реструктуризация, переговоры
                     с кредиторами, разработка планов оздоровления бизнеса
                     и сопровождение процедур в сложных ситуациях.
+                </p>
+                {% endif %}
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- International Markets -->
+<section class="services" id="markets">
+    <div class="container">
+        {% if lang == 'en' %}
+        <p class="section-title">Geography</p>
+        <h2 class="section-heading">International markets</h2>
+        {% else %}
+        <p class="section-title">География</p>
+        <h2 class="section-heading">Международные рынки</h2>
+        {% endif %}
+        <div class="services-grid">
+
+            <div class="service-card">
+                {% if lang == 'en' %}
+                <h3>Russia — Middle East</h3>
+                <p>
+                    Advisory on cross-border M&A, capital raising and joint
+                    ventures between Russian and Middle Eastern companies.
+                    Deep knowledge of Gulf investor expectations and the Russian
+                    regulatory environment.
+                </p>
+                {% else %}
+                <h3>Россия — Ближний Восток</h3>
+                <p>
+                    Консультирование по трансграничным сделкам M&A, привлечению
+                    капитала и совместным предприятиям между российскими
+                    и ближневосточными компаниями. Глубокое понимание
+                    ожиданий инвесторов из стран Залива и российского
+                    регуляторного контекста.
+                </p>
+                {% endif %}
+            </div>
+
+            <div class="service-card">
+                {% if lang == 'en' %}
+                <h3>Russia — Africa</h3>
+                <p>
+                    Support for investment projects in mining, agriculture,
+                    energy and infrastructure across Sub-Saharan and North Africa.
+                    We structure cross-border payment solutions and local
+                    partnership arrangements.
+                </p>
+                {% else %}
+                <h3>Россия — Африка</h3>
+                <p>
+                    Сопровождение инвестиционных проектов в горнодобывающей
+                    отрасли, сельском хозяйстве, энергетике и инфраструктуре
+                    в странах Африки. Структурируем трансграничные платёжные
+                    решения и схемы местного партнёрства.
+                </p>
+                {% endif %}
+            </div>
+
+            <div class="service-card">
+                {% if lang == 'en' %}
+                <h3>Russia — Asia</h3>
+                <p>
+                    Facilitating transactions between Russian businesses and
+                    partners in China, India, Southeast Asia and Central Asia.
+                    Expertise in yuan and rupee settlements, local market entry
+                    and technology transfer deals.
+                </p>
+                {% else %}
+                <h3>Россия — Азия</h3>
+                <p>
+                    Сопровождение сделок между российскими компаниями
+                    и партнёрами из Китая, Индии, Юго-Восточной и Центральной
+                    Азии. Экспертиза в расчётах в юанях и рупиях, выходе
+                    на локальные рынки и сделках по передаче технологий.
                 </p>
                 {% endif %}
             </div>
