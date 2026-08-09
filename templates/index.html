@@ -408,6 +408,18 @@
         <h2 class="section-heading">Аналитика</h2>
         {% endif %}
         <div class="blog-grid">
+            <a href="/blog/russia-asia-investment-2026" class="blog-card">
+                <span class="blog-tag">{{ 'Analytics' if lang == 'en' else 'Аналитика' }}</span>
+                {% if lang == 'en' %}
+                <h3>Russia–Asia Investment 2025–2026: The Pivot Is Done, Now Comes the Bargaining</h3>
+                <p>Foreign direct investment into Russia grew 11.5× to $25.3 billion in 2025, almost entirely from China, India and Asia. Russia–China trade exceeds $230 billion with 99% settled in rubles and yuan. Power of Siberia 2 is initialled. But the structural vulnerability is real: China dictates prices, India delays investment, and Southeast Asia watches with interest but no commitment.</p>
+                {% else %}
+                <h3>Россия — Азия: инвестиции 2025–2026. Разворот завершён, начинается торг</h3>
+                <p>ПИИ в Россию выросли в 11,5 раза — до $25,3 млрд, почти целиком за счёт Китая, Индии и Азии. Товарооборот с Китаем превысил $230 млрд, 99% расчётов в рублях и юанях. «Сила Сибири — 2» парафирована. Но за цифрами успеха — структурная асимметрия: Китай диктует цены, Индия медлит, ЮВА смотрит с интересом, но без обязательств.</p>
+                {% endif %}
+                <span class="blog-read">{{ 'Read' if lang == 'en' else 'Читать' }} →</span>
+            </a>
+
             <a href="/blog/russia-me-investment-2026" class="blog-card">
                 <span class="blog-tag">{{ 'Analytics' if lang == 'en' else 'Аналитика' }}</span>
                 {% if lang == 'en' %}
