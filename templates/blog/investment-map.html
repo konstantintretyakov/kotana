@@ -1,0 +1,1392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cross-Border Investment Map 2026 — Africa · Middle East · Asia | kotana.com.ru</title>
+  <meta name="description" content="Interactive risk-opportunity map across 20 key markets in Africa, the Middle East and Asia. Explore sectoral profiles, macro risk and investment potential by country. KOTANA Analytics 2026." />
+  <meta property="og:title" content="Cross-Border Investment Map 2026 — Africa · Middle East · Asia" />
+  <meta property="og:description" content="Interactive risk-opportunity matrix across 20 key markets. Macro risk, investment potential, key sectors and country profiles. KOTANA Analytics." />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://kotana.com.ru/investment-map" />
+  <meta property="og:site_name" content="kotana.com.ru" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Cross-Border Investment Map 2026 | kotana.com.ru" />
+  <meta name="twitter:description" content="Interactive risk-opportunity matrix — Africa, Middle East, Asia. KOTANA Analytics." />
+  <link rel="canonical" href="https://kotana.com.ru/investment-map" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --ink:          #0f1117;
+      --paper:        #f7f4ef;
+      --cream:        #ede9e0;
+      --accent:       #2a4a1e;
+      --accent-light: #cde0c3;
+      --gold:         #b8922a;
+      --green:        #1a7a3c;
+      --red:          #c0392b;
+      --muted:        #7a7060;
+      --rule:         #d4cfc5;
+      /* quadrant palette */
+      --q-priority:    #1a7a3c;
+      --q-opportunity: #b8922a;
+      --q-stable:      #2a5a80;
+      --q-cautionary:  #b53020;
+      /* map palette */
+      --map-ocean:  #16202e;
+      --map-land:   #313a4d;
+      --map-border: rgba(255,255,255,.10);
+    }
+    html { font-size: 16px; scroll-behavior: smooth; }
+    body {
+      background: var(--paper); color: var(--ink);
+      font-family: 'IBM Plex Sans', sans-serif;
+      line-height: 1.7; -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── MASTHEAD ── */
+    .masthead {
+      background: var(--ink); padding: 14px 40px;
+      display: flex; align-items: center; justify-content: space-between;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: .75rem; letter-spacing: .12em; text-transform: uppercase;
+    }
+    .masthead a { color: #fff; text-decoration: none; font-size: 1rem; font-weight: 500; }
+    .masthead-meta { color: #555; }
+
+    /* ── HERO ── */
+    .hero {
+      background: var(--accent); color: var(--paper);
+      padding: 64px 40px 56px; position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: 'MAP';
+      position: absolute; right: -16px; top: 50%; transform: translateY(-50%);
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(100px, 18vw, 240px); font-weight: 900;
+      color: rgba(255,255,255,.04); letter-spacing: -.04em; pointer-events: none;
+    }
+    .hero-inner { max-width: 740px; margin: 0 auto; position: relative; }
+    .hero-tag {
+      display: inline-block;
+      border: 1px solid rgba(255,255,255,.3); color: rgba(255,255,255,.75);
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: .72rem; letter-spacing: .15em; text-transform: uppercase;
+      padding: 4px 12px; margin-bottom: 24px;
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.9rem, 4vw, 3rem); font-weight: 700;
+      line-height: 1.18; letter-spacing: -.02em; margin-bottom: 18px;
+    }
+    .hero h1 em { font-style: italic; color: #a8dba8; }
+    .hero-lead {
+      font-size: 1rem; color: rgba(255,255,255,.7);
+      max-width: 58ch; line-height: 1.65; margin-bottom: 28px;
+    }
+    .hero-note {
+      font-family: 'IBM Plex Mono', monospace; font-size: .7rem;
+      color: rgba(255,255,255,.35); letter-spacing: .06em;
+    }
+
+    /* ── MAP SECTION ── */
+    .map-section { background: var(--map-ocean); }
+
+    .filter-bar {
+      display: flex; overflow-x: auto;
+      border-bottom: 1px solid rgba(255,255,255,.07);
+      padding: 0 24px;
+    }
+    .filter-btn {
+      background: none; border: none; cursor: pointer;
+      padding: 14px 22px;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: .7rem; letter-spacing: .12em; text-transform: uppercase;
+      color: rgba(255,255,255,.32);
+      border-bottom: 2px solid transparent;
+      transition: color .18s, border-color .18s;
+      white-space: nowrap; flex-shrink: 0;
+    }
+    .filter-btn:hover { color: rgba(255,255,255,.65); }
+    .filter-btn.active { color: #fff; border-bottom-color: var(--accent-light); }
+
+    .map-outer {
+      position: relative;
+      max-width: 1200px; margin: 0 auto;
+    }
+
+    /* loading / error overlay */
+    .map-overlay {
+      position: absolute; inset: 0;
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'IBM Plex Mono', monospace; font-size: .75rem;
+      letter-spacing: .1em; text-transform: uppercase; color: rgba(255,255,255,.3);
+      pointer-events: none;
+    }
+    .map-overlay.hidden { display: none; }
+
+    #world-map {
+      display: block; width: 100%; height: auto;
+      cursor: grab;
+    }
+    #world-map:active { cursor: grabbing; }
+
+    .zoom-controls {
+      position: absolute; top: 14px; right: 14px;
+      display: flex; flex-direction: column; gap: 4px; z-index: 20;
+    }
+    .zoom-btn {
+      width: 32px; height: 32px;
+      background: rgba(10,14,22,.88);
+      border: 1px solid rgba(255,255,255,.15);
+      color: rgba(255,255,255,.6);
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: .95rem; line-height: 1; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      transition: background .15s, color .15s; user-select: none;
+    }
+    .zoom-btn:hover { background: rgba(255,255,255,.1); color: #fff; }
+    .zoom-btn.reset { font-size: .52rem; letter-spacing: .06em; }
+
+    /* ── D3 COUNTRY PATHS ── */
+    .sphere   { fill: var(--map-ocean); }
+    .gratline { fill: none; stroke: rgba(255,255,255,.04); stroke-width: .5; }
+    .country  { stroke: var(--map-border); stroke-width: .4; transition: opacity .22s; fill: var(--map-land); }
+    .country.clickable { cursor: pointer; }
+    .country.dimmed    { opacity: .15; }
+    .country.selected  { stroke: rgba(255,255,255,.8); stroke-width: 1.5; }
+
+    .country.q-priority    { fill: var(--q-priority); }
+    .country.q-opportunity { fill: var(--q-opportunity); }
+    .country.q-stable      { fill: var(--q-stable); }
+    .country.q-cautionary  { fill: var(--q-cautionary); }
+
+    .country.q-priority:hover    { fill: #23a050; }
+    .country.q-opportunity:hover { fill: #d4a840; }
+    .country.q-stable:hover      { fill: #3678a8; }
+    .country.q-cautionary:hover  { fill: #d44030; }
+
+    /* ── LEGEND ── */
+    .legend {
+      position: absolute; bottom: 20px; left: 20px;
+      background: rgba(10, 14, 22, .85);
+      backdrop-filter: blur(6px);
+      border: 1px solid rgba(255,255,255,.1);
+      padding: 16px 18px;
+    }
+    .legend-title {
+      font-family: 'IBM Plex Mono', monospace; font-size: .6rem;
+      letter-spacing: .14em; text-transform: uppercase;
+      color: rgba(255,255,255,.3); margin-bottom: 12px;
+    }
+    .legend-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 9px 20px; }
+    .legend-item { display: flex; align-items: center; gap: 8px; }
+    .legend-swatch { width: 10px; height: 10px; border-radius: 2px; flex-shrink: 0; }
+    .legend-label  { font-family: 'IBM Plex Sans', sans-serif; font-size: .73rem; color: rgba(255,255,255,.65); white-space: nowrap; }
+
+    /* ── TOOLTIP ── */
+    .tt {
+      position: absolute; pointer-events: none; display: none; z-index: 30;
+      background: rgba(10,14,22,.95); border: 1px solid rgba(255,255,255,.14);
+      padding: 16px 18px; min-width: 220px; max-width: 260px;
+    }
+    .tt-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.05rem; font-weight: 700; color: #fff; margin-bottom: 3px;
+    }
+    .tt-region {
+      font-family: 'IBM Plex Mono', monospace; font-size: .62rem;
+      letter-spacing: .12em; text-transform: uppercase;
+      color: rgba(255,255,255,.38); margin-bottom: 10px;
+    }
+    .tt-badge {
+      display: inline-block; font-family: 'IBM Plex Mono', monospace;
+      font-size: .58rem; letter-spacing: .1em; text-transform: uppercase;
+      padding: 3px 9px; border-radius: 2px; margin-bottom: 10px;
+    }
+    .tt-badge.priority    { background: rgba(26,122,60,.35);  color: #5ae08a; }
+    .tt-badge.opportunity { background: rgba(184,146,42,.35); color: #e0c050; }
+    .tt-badge.stable      { background: rgba(42,90,128,.35);  color: #50a8e0; }
+    .tt-badge.cautionary  { background: rgba(181,48,32,.35);  color: #e07060; }
+    .tt-scores { display: grid; grid-template-columns: 1fr 1fr; gap: 0 12px; margin-bottom: 10px; }
+    .tt-score-label { font-family: 'IBM Plex Mono', monospace; font-size: .6rem; text-transform: uppercase; letter-spacing: .1em; color: rgba(255,255,255,.35); margin-bottom: 2px; }
+    .tt-score-val   { font-family: 'Playfair Display', serif; font-size: 1.2rem; font-weight: 700; color: #fff; }
+    .tt-hint { font-family: 'IBM Plex Mono', monospace; font-size: .62rem; color: rgba(255,255,255,.28); text-transform: uppercase; letter-spacing: .08em; }
+
+    /* ── DETAIL CARD ── */
+    .detail-section {
+      display: none; background: var(--paper);
+      padding: 48px 40px;
+    }
+    .detail-section.open { display: block; }
+    .detail-inner { max-width: 760px; margin: 0 auto; }
+
+    .detail-card { border: 1px solid var(--rule); }
+    .detail-head {
+      padding: 28px 32px 20px; border-bottom: 1px solid var(--rule);
+      display: flex; align-items: flex-start; justify-content: space-between; gap: 20px; flex-wrap: wrap;
+    }
+    .detail-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem; font-weight: 700; line-height: 1.1;
+    }
+    .detail-badges { display: flex; flex-direction: column; gap: 6px; align-items: flex-end; }
+    .region-badge {
+      font-family: 'IBM Plex Mono', monospace; font-size: .62rem;
+      letter-spacing: .12em; text-transform: uppercase;
+      padding: 5px 12px; border-radius: 2px;
+    }
+    .region-badge.africa      { background: var(--accent-light); color: var(--accent); }
+    .region-badge.middle-east { background: #f5ecd4; color: var(--gold); }
+    .region-badge.asia        { background: #d4e6f2; color: #1a5070; }
+    .quadrant-badge {
+      font-family: 'IBM Plex Mono', monospace; font-size: .62rem;
+      letter-spacing: .12em; text-transform: uppercase;
+      padding: 5px 12px; border-radius: 2px;
+    }
+    .quadrant-badge.priority    { background: var(--accent-light); color: var(--accent); }
+    .quadrant-badge.opportunity { background: #f5ecd4; color: var(--gold); }
+    .quadrant-badge.stable      { background: #d4e6f2; color: #1a5070; }
+    .quadrant-badge.cautionary  { background: #fde8e0; color: var(--red); }
+
+    .detail-body { padding: 28px 32px; }
+
+    .scores-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0 40px; margin-bottom: 28px; }
+    .score-block .score-label {
+      font-family: 'IBM Plex Mono', monospace; font-size: .68rem;
+      letter-spacing: .14em; text-transform: uppercase; color: var(--muted); margin-bottom: 8px;
+    }
+    .score-track { height: 4px; background: var(--rule); margin-bottom: 7px; position: relative; }
+    .score-fill  { position: absolute; top: 0; left: 0; height: 100%; transition: width .45s ease; }
+    .score-fill.risk      { background: var(--red); }
+    .score-fill.potential { background: var(--green); }
+    .score-num {
+      font-family: 'Playfair Display', serif; font-size: 1.55rem; font-weight: 700;
+    }
+    .score-num.risk      { color: var(--red); }
+    .score-num.potential { color: var(--green); }
+    .score-denom { font-family: 'IBM Plex Mono', monospace; font-size: .78rem; color: var(--muted); }
+
+    .sectors-row { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 24px; }
+    .sector-chip {
+      font-family: 'IBM Plex Mono', monospace; font-size: .62rem;
+      letter-spacing: .1em; text-transform: uppercase;
+      padding: 4px 10px; background: var(--cream); color: var(--muted);
+      border: 1px solid var(--rule);
+    }
+
+    .detail-summary {
+      font-size: .92rem; color: var(--muted); line-height: 1.72;
+      border-top: 1px solid var(--rule); padding-top: 20px; margin-bottom: 16px;
+    }
+    .detail-close-btn {
+      background: none; border: none; cursor: pointer; padding: 0;
+      font-family: 'IBM Plex Mono', monospace; font-size: .7rem;
+      letter-spacing: .1em; text-transform: uppercase; color: var(--muted);
+    }
+    .detail-close-btn:hover { color: var(--ink); }
+
+    /* ── COUNTRY GRID ── */
+    .grid-section { padding: 56px 40px; }
+    .grid-inner   { max-width: 1100px; margin: 0 auto; }
+
+    .section-eyebrow {
+      font-family: 'IBM Plex Mono', monospace; font-size: .7rem;
+      letter-spacing: .15em; text-transform: uppercase; color: var(--muted); margin-bottom: 8px;
+    }
+    .section-h2 {
+      font-family: 'Playfair Display', serif; font-size: 1.6rem; font-weight: 700;
+      letter-spacing: -.02em; margin-bottom: 28px;
+    }
+    .section-h2::before {
+      content: ''; display: block; width: 28px; height: 3px;
+      background: var(--accent); margin-bottom: 14px;
+    }
+
+    .country-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+      gap: 1px; background: var(--rule); border: 1px solid var(--rule);
+    }
+    .cc {
+      background: var(--paper); padding: 20px 22px;
+      cursor: pointer; transition: background .14s;
+    }
+    .cc:hover { background: var(--cream); }
+    .cc.hidden { display: none; }
+
+    .cc-head { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 10px; gap: 8px; }
+    .cc-name { font-family: 'Playfair Display', serif; font-size: 1.05rem; font-weight: 700; }
+    .cc-badge {
+      font-family: 'IBM Plex Mono', monospace; font-size: .57rem;
+      letter-spacing: .1em; text-transform: uppercase;
+      padding: 3px 8px; border-radius: 2px; flex-shrink: 0; margin-top: 2px;
+    }
+    .cc-badge.priority    { background: var(--accent-light); color: var(--accent); }
+    .cc-badge.opportunity { background: #f5ecd4; color: var(--gold); }
+    .cc-badge.stable      { background: #d4e6f2; color: #1a5070; }
+    .cc-badge.cautionary  { background: #fde8e0; color: var(--red); }
+
+    .cc-scores { display: flex; gap: 20px; margin-bottom: 10px; }
+    .cc-score-label { font-family: 'IBM Plex Mono', monospace; font-size: .6rem; text-transform: uppercase; letter-spacing: .1em; color: var(--muted); display: block; }
+    .cc-score-val   { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 700; }
+    .cc-score-val.risk      { color: var(--red); }
+    .cc-score-val.potential { color: var(--green); }
+
+    .cc-chips { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 10px; }
+    .cc-chip {
+      font-family: 'IBM Plex Mono', monospace; font-size: .6rem;
+      letter-spacing: .08em; text-transform: uppercase;
+      padding: 2px 7px; background: var(--cream); color: var(--muted);
+    }
+    .cc-blurb { font-size: .8rem; color: var(--muted); line-height: 1.55; }
+
+    /* ── DIVIDER ── */
+    hr.divider { border: none; border-top: 1px solid var(--rule); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--cream); border-top: 1px solid var(--rule);
+      padding: 24px 40px; font-family: 'IBM Plex Mono', monospace;
+      font-size: .68rem; color: var(--muted); text-align: center; letter-spacing: .06em;
+    }
+    footer strong { color: var(--ink); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 720px) {
+      .masthead  { padding: 12px 20px; }
+      .hero      { padding: 48px 20px 40px; }
+      .filter-bar { padding: 0 12px; }
+      .legend    { bottom: 10px; left: 10px; padding: 11px 13px; }
+      .legend-grid { grid-template-columns: 1fr; gap: 7px; }
+      .legend-label { font-size: .68rem; }
+      .detail-section, .grid-section { padding: 36px 20px; }
+      .detail-head  { padding: 20px; }
+      .detail-body  { padding: 20px; }
+      .scores-row   { grid-template-columns: 1fr 1fr; gap: 0 20px; }
+      footer { padding: 20px; }
+    }
+    @media (max-width: 460px) {
+      .hero h1 { font-size: 1.75rem; }
+      .country-grid { grid-template-columns: 1fr; }
+      .detail-name { font-size: 1.6rem; }
+    }
+  </style>
+</head>
+<body>
+
+<header class="masthead">
+  <a href="/">kotana.com.ru</a>
+  <span class="masthead-meta">Analytics · Investment Map · 2026</span>
+</header>
+
+<!-- ── HERO ── -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-tag">Interactive Analytics · Cross-Border · 2026</div>
+    <h1>Cross-Border Investment <em>Landscape</em> 2026</h1>
+    <p class="hero-lead">A risk-opportunity matrix across 20 key markets in Africa, the Middle East and Asia — the three corridors at the core of KOTANA's cross-border advisory practice. Hover or click any highlighted country to explore its profile.</p>
+    <p class="hero-note">Scores reflect publicly available macro indicators: World Bank Political Stability Index, UNCTAD FDI data, IMF WEO, sovereign ratings, EIU Country Risk. Not investment advice.</p>
+  </div>
+</section>
+
+<!-- ── MAP ── -->
+<div class="map-section">
+  <div class="filter-bar" id="filter-bar">
+    <button class="filter-btn active" data-region="all">All Regions</button>
+    <button class="filter-btn" data-region="Africa">Africa</button>
+    <button class="filter-btn" data-region="Middle East">Middle East</button>
+    <button class="filter-btn" data-region="Asia">Asia</button>
+  </div>
+
+  <div class="map-outer" id="map-outer">
+    <div class="map-overlay" id="map-overlay">Loading map data…</div>
+
+    <div class="zoom-controls">
+      <button class="zoom-btn" id="zoom-in"    title="Zoom in">+</button>
+      <button class="zoom-btn" id="zoom-out"   title="Zoom out">−</button>
+      <button class="zoom-btn reset" id="zoom-reset" title="Reset view">RST</button>
+    </div>
+
+    <svg id="world-map" viewBox="0 0 960 500" xmlns="http://www.w3.org/2000/svg"></svg>
+
+    <div class="legend">
+      <div class="legend-title">Risk / Opportunity Quadrant</div>
+      <div class="legend-grid">
+        <div class="legend-item">
+          <div class="legend-swatch" style="background:var(--q-priority)"></div>
+          <span class="legend-label">Priority Growth</span>
+        </div>
+        <div class="legend-item">
+          <div class="legend-swatch" style="background:var(--q-opportunity)"></div>
+          <span class="legend-label">High Opp / High Risk</span>
+        </div>
+        <div class="legend-item">
+          <div class="legend-swatch" style="background:var(--q-stable)"></div>
+          <span class="legend-label">Stable / Limited</span>
+        </div>
+        <div class="legend-item">
+          <div class="legend-swatch" style="background:var(--q-cautionary)"></div>
+          <span class="legend-label">Cautionary</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Floating tooltip -->
+    <div class="tt" id="tt">
+      <div class="tt-name"    id="tt-name"></div>
+      <div class="tt-region"  id="tt-region"></div>
+      <span class="tt-badge"  id="tt-badge"></span>
+      <div class="tt-scores">
+        <div>
+          <div class="tt-score-label">Risk</div>
+          <div class="tt-score-val" id="tt-risk"></div>
+        </div>
+        <div>
+          <div class="tt-score-label">Potential</div>
+          <div class="tt-score-val" id="tt-pot"></div>
+        </div>
+      </div>
+      <div class="tt-hint">Click for full profile →</div>
+    </div>
+  </div>
+</div>
+
+<!-- ── DETAIL CARD ── -->
+<div class="detail-section" id="detail-section">
+  <div class="detail-inner">
+    <div class="detail-card">
+      <div class="detail-head">
+        <div class="detail-name" id="dc-name"></div>
+        <div class="detail-badges">
+          <span class="region-badge"   id="dc-region-badge"></span>
+          <span class="quadrant-badge" id="dc-quadrant-badge"></span>
+        </div>
+      </div>
+      <div class="detail-body">
+        <div class="scores-row">
+          <div class="score-block">
+            <div class="score-label">Risk Score</div>
+            <div class="score-track"><div class="score-fill risk" id="dc-risk-fill"></div></div>
+            <span class="score-num risk" id="dc-risk-num"></span>
+            <span class="score-denom"> / 10</span>
+          </div>
+          <div class="score-block">
+            <div class="score-label">Opportunity Score</div>
+            <div class="score-track"><div class="score-fill potential" id="dc-pot-fill"></div></div>
+            <span class="score-num potential" id="dc-pot-num"></span>
+            <span class="score-denom"> / 10</span>
+          </div>
+        </div>
+        <div class="sectors-row" id="dc-sectors"></div>
+        <div class="detail-summary" id="dc-summary"></div>
+        <button class="detail-close-btn" id="detail-close">✕ Close profile</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- ── COUNTRY GRID ── -->
+<div class="grid-section">
+  <div class="grid-inner">
+    <div class="section-eyebrow">Market Index</div>
+    <h2 class="section-h2">All Covered Markets</h2>
+    <div class="country-grid" id="country-grid"></div>
+  </div>
+</div>
+
+<footer>
+  <strong>kotana.com.ru</strong> &nbsp;·&nbsp;
+  Cross-Border Investment Map · 2026 &nbsp;·&nbsp;
+  Sources: World Bank, UNCTAD, IMF WEO, EIU, Sovereign Ratings Composite &nbsp;·&nbsp;
+  For informational purposes only — not investment advice
+</footer>
+
+<!-- ── D3 + TopoJSON from CDN ── -->
+<script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/topojson-client@3/dist/topojson-client.min.js"></script>
+<script>
+// ═══════════════════════════════════════════════════════════
+// DATA  —  edit this object to update the map without
+//          touching any other code in the file.
+// ═══════════════════════════════════════════════════════════
+// riskScore  1–10  (higher = riskier)
+// potentialScore 1–10 (higher = more attractive)
+// id = ISO 3166-1 numeric country code
+
+const REGIONS_DATA = [
+
+  /* ══════════════════════════════════════════════════════
+     AFRICA  (54 countries)
+  ══════════════════════════════════════════════════════ */
+  {
+    id: 12, country: "Algeria", region: "Africa",
+    riskScore: 5, potentialScore: 6,
+    sectors: ["Energy", "Infrastructure", "Agribusiness", "Renewable Energy"],
+    summary: "Large hydrocarbon exporter with significant fiscal buffers from natural gas revenues. Government-controlled economy with historically restricted FDI access; recent reform signals offer selective openings. Renewable energy capacity and food-security programmes are the most accessible entry points for non-state capital."
+  },
+  {
+    id: 24, country: "Angola", region: "Africa",
+    riskScore: 6, potentialScore: 7,
+    sectors: ["Energy", "Infrastructure", "Agriculture", "Mining"],
+    summary: "Sub-Saharan Africa's second-largest oil producer undergoing genuine post-MPLA economic liberalisation. Significant infrastructure deficit and a large agricultural frontier create opportunity for patient investors. Currency management and state-enterprise reform remain the primary execution risks."
+  },
+  {
+    id: 204, country: "Benin", region: "Africa",
+    riskScore: 4, potentialScore: 5,
+    sectors: ["Logistics", "Agriculture", "Trade", "Renewable Energy"],
+    summary: "Stable, well-governed small economy serving as a critical transit corridor for landlocked Sahel states. Cotonou port modernisation and agri-value-chain investment offer credible entry points; modest market scale limits headline upside for institutional capital."
+  },
+  {
+    id: 72, country: "Botswana", region: "Africa",
+    riskScore: 2, potentialScore: 6,
+    sectors: ["Mining", "Financial Services", "Tourism", "Renewable Energy"],
+    summary: "Africa's strongest institutional framework outside South Africa, sustained by diamond-revenue-funded governance. Rule of law, property rights and investor protection rank among the continent's highest. Limited market scale and diamond-revenue concentration are the structural constraints."
+  },
+  {
+    id: 854, country: "Burkina Faso", region: "Africa",
+    riskScore: 9, potentialScore: 3,
+    sectors: ["Mining", "Agriculture"],
+    summary: "Active Sahel insurgency covers large parts of the territory under a military government with strained Western relations. Gold mining continues under significant operational risk; no conventional FDI framework is functional across most sectors."
+  },
+  {
+    id: 108, country: "Burundi", region: "Africa",
+    riskScore: 9, potentialScore: 2,
+    sectors: ["Agriculture"],
+    summary: "One of the world's poorest and most fragile states with ongoing political tension and near-zero FDI inflows. Subsistence agriculture dominates; negligible investable opportunity for foreign capital under current governance conditions."
+  },
+  {
+    id: 132, country: "Cabo Verde", region: "Africa",
+    riskScore: 2, potentialScore: 5,
+    sectors: ["Tourism", "Renewable Energy", "Financial Services"],
+    summary: "Stable island democracy with strong governance and a well-developed tourism sector. Genuine renewable energy potential driven by wind and solar resources. Limited market scale constrains headline ambition beyond sector-specific or DFI mandates."
+  },
+  {
+    id: 120, country: "Cameroon", region: "Africa",
+    riskScore: 6, potentialScore: 6,
+    sectors: ["Energy", "Agriculture", "Infrastructure", "Timber"],
+    summary: "Central Africa's largest economy with significant hydrocarbon reserves and high-value agricultural exports. Boko Haram pressure in the north and Anglophone separatist conflict in the west create persistent security risk requiring regional-level assessment before entry."
+  },
+  {
+    id: 140, country: "Central African Republic", region: "Africa",
+    riskScore: 10, potentialScore: 3,
+    sectors: ["Mining", "Timber"],
+    summary: "Active armed conflict and near-absent state capacity with some of the world's most adverse governance indicators. Russian Africa Corps presence has reshaped security dynamics without resolving underlying fragmentation. Effectively uninvestable for conventional foreign capital."
+  },
+  {
+    id: 148, country: "Chad", region: "Africa",
+    riskScore: 9, potentialScore: 4,
+    sectors: ["Energy", "Agriculture"],
+    summary: "Oil-producing landlocked state facing severe governance challenges and Sahel security pressure. Recurring political crises and infrastructure absence significantly constrain the investable universe beyond sovereign or state-to-state frameworks."
+  },
+  {
+    id: 174, country: "Comoros", region: "Africa",
+    riskScore: 7, potentialScore: 3,
+    sectors: ["Agriculture", "Tourism"],
+    summary: "Small island state with structural vulnerability to political instability and climate change. Negligible FDI base; subsistence agriculture and fishing dominate; scale precludes institutional capital interest in any conventional sense."
+  },
+  {
+    id: 178, country: "Congo, Republic", region: "Africa",
+    riskScore: 7, potentialScore: 5,
+    sectors: ["Energy", "Timber", "Agriculture"],
+    summary: "Oil-dependent economy with chronic Chinese debt overhang. Significant forest resources and agricultural land represent longer-horizon opportunities for structured, patient investors. Governance weakness and oil-revenue dependence constrain macro stability."
+  },
+  {
+    id: 180, country: "Congo, DRC", region: "Africa",
+    riskScore: 9, potentialScore: 8,
+    sectors: ["Critical Minerals", "Energy", "Agriculture"],
+    summary: "World's largest cobalt producer and a pivotal node in the global energy-transition supply chain. Extraordinary mineral wealth — cobalt, coltan, copper — is offset by severe security fragmentation in the east, governance failure and infrastructure absence. The highest-risk, highest-potential country on the continent."
+  },
+  {
+    id: 384, country: "Côte d'Ivoire", region: "Africa",
+    riskScore: 4, potentialScore: 7,
+    sectors: ["Agribusiness", "Infrastructure", "Consumer Markets", "Critical Minerals"],
+    summary: "West Africa's economic anchor with GDP growth consistently above the regional average. Abidjan's deepening capital markets and growing professional-services sector make it the most accessible institutional entry point into the sub-region."
+  },
+  {
+    id: 262, country: "Djibouti", region: "Africa",
+    riskScore: 5, potentialScore: 6,
+    sectors: ["Logistics", "Infrastructure", "Financial Services"],
+    summary: "Strategic Red Sea gateway hosting major military bases and the region's most China-invested port infrastructure. High debt-to-GDP ratio and political concentration are risks; logistics and fintech represent the most accessible entry points for foreign capital."
+  },
+  {
+    id: 818, country: "Egypt", region: "Africa",
+    riskScore: 5, potentialScore: 8,
+    sectors: ["Energy", "Infrastructure", "Real Estate", "Agribusiness"],
+    summary: "Largest economy in North Africa anchored by a young population, Suez Canal revenues and a substantial infrastructure investment pipeline backed by IMF support and Gulf SWFs. Currency volatility, external debt and FX convertibility remain the primary risk variables to model."
+  },
+  {
+    id: 226, country: "Equatorial Guinea", region: "Africa",
+    riskScore: 8, potentialScore: 4,
+    sectors: ["Energy", "Infrastructure"],
+    summary: "Small oil state with high per-capita income masking extreme inequality and governance failure. Declining hydrocarbon output and minimal economic diversification constrain the investable universe beyond existing energy-sector counterparties."
+  },
+  {
+    id: 232, country: "Eritrea", region: "Africa",
+    riskScore: 10, potentialScore: 3,
+    sectors: ["Mining"],
+    summary: "Closed authoritarian economy with one of the world's most restrictive business environments and international sanctions exposure. Military conscription of labour and near-zero private sector effectively bar conventional foreign investment in any sector."
+  },
+  {
+    id: 748, country: "Eswatini", region: "Africa",
+    riskScore: 6, potentialScore: 4,
+    sectors: ["Manufacturing", "Agriculture"],
+    summary: "Small landlocked kingdom under political restrictions on multiparty activity. Manufacturing access to South Africa via SACU provides modest economic stability; limited scale and political risk constrain investor appeal beyond DFI-oriented mandates."
+  },
+  {
+    id: 231, country: "Ethiopia", region: "Africa",
+    riskScore: 7, potentialScore: 6,
+    sectors: ["Infrastructure", "Manufacturing", "Agribusiness"],
+    summary: "Africa's second-most populous country with a credible low-cost manufacturing thesis and large domestic market. Post-Tigray conflict recovery is underway, but security risks in several regions and FX convertibility difficulties remain elevated."
+  },
+  {
+    id: 266, country: "Gabon", region: "Africa",
+    riskScore: 7, potentialScore: 5,
+    sectors: ["Energy", "Timber", "Mining", "Agriculture"],
+    summary: "Oil-dependent middle-income state navigating post-coup political transition under military authority. Significant manganese resources and forest assets exist; resource nationalism and governance uncertainty constrain new capital commitments."
+  },
+  {
+    id: 270, country: "Gambia", region: "Africa",
+    riskScore: 4, potentialScore: 4,
+    sectors: ["Agriculture", "Tourism", "Fisheries"],
+    summary: "Small West African state in a credible post-authoritarian reform process. Tourism recovery and agricultural modernisation are underway; market scale limits relevance for institutional capital beyond development-finance frameworks."
+  },
+  {
+    id: 288, country: "Ghana", region: "Africa",
+    riskScore: 4, potentialScore: 7,
+    sectors: ["Financial Services", "Energy", "Agribusiness", "Consumer Markets", "Technology"],
+    summary: "West Africa's most developed capital market and professional services hub, completing IMF-supported debt restructuring. Cocoa, gold and an emerging tech ecosystem underpin a diversified investment thesis; improving macro stability post-restructuring makes Ghana increasingly accessible to institutional capital."
+  },
+  {
+    id: 324, country: "Guinea", region: "Africa",
+    riskScore: 7, potentialScore: 6,
+    sectors: ["Mining", "Energy", "Agriculture"],
+    summary: "World's largest bauxite reserves and significant iron ore potential under military government since 2021. Critical mineral demand from the energy transition is driving renewed investor interest despite political and operational risk."
+  },
+  {
+    id: 624, country: "Guinea-Bissau", region: "Africa",
+    riskScore: 9, potentialScore: 2,
+    sectors: ["Agriculture", "Fisheries"],
+    summary: "One of West Africa's most fragile states, structurally exposed to political coups and drug-trafficking corridor dynamics. Negligible formal FDI; cashew-agriculture exports dominate; effectively inaccessible for institutional capital."
+  },
+  {
+    id: 404, country: "Kenya", region: "Africa",
+    riskScore: 4, potentialScore: 8,
+    sectors: ["Financial Services", "Technology", "Infrastructure", "Agribusiness", "Renewable Energy"],
+    summary: "East Africa's financial and technology hub with the region's deepest capital markets and most active tech ecosystem. M-Pesa-led fintech leadership, geothermal energy and a growing logistics sector make Nairobi the primary institutional entry point into East Africa."
+  },
+  {
+    id: 426, country: "Lesotho", region: "Africa",
+    riskScore: 6, potentialScore: 3,
+    sectors: ["Textiles", "Water", "Mining"],
+    summary: "Landlocked mountain kingdom economically integrated with and dependent on South Africa. Highlands Water Project and textile manufacturing are narrow opportunities; recurring political instability significantly limits the broader investment case."
+  },
+  {
+    id: 430, country: "Liberia", region: "Africa",
+    riskScore: 7, potentialScore: 4,
+    sectors: ["Mining", "Agriculture", "Timber"],
+    summary: "Post-conflict state with significant iron ore, rubber and timber resources under improving but still fragile governance. Infrastructure deficit and limited financial sector depth restrict investable opportunity to project-specific mandates."
+  },
+  {
+    id: 434, country: "Libya", region: "Africa",
+    riskScore: 10, potentialScore: 6,
+    sectors: ["Energy", "Infrastructure", "Real Estate"],
+    summary: "Massive hydrocarbon reserves and significant reconstruction potential sit behind unresolved civil conflict and bifurcated governmental authority. Oil infrastructure remains operational but accessible only through state-to-state or sovereign frameworks at present."
+  },
+  {
+    id: 450, country: "Madagascar", region: "Africa",
+    riskScore: 6, potentialScore: 5,
+    sectors: ["Mining", "Agriculture", "Tourism"],
+    summary: "Rich in nickel, cobalt, chromite and rare earth minerals alongside world-scale vanilla exports. Recurring political crises and infrastructure absence constrain extraction economics; agribusiness and sustainable tourism offer more stable exposure."
+  },
+  {
+    id: 454, country: "Malawi", region: "Africa",
+    riskScore: 7, potentialScore: 4,
+    sectors: ["Agriculture", "Mining"],
+    summary: "Landlocked, aid-dependent economy facing severe FX shortages and tobacco-export concentration. Agricultural diversification is a long-run structural story; current macro fragility limits near-term investor interest to DFI-adjacent mandates."
+  },
+  {
+    id: 466, country: "Mali", region: "Africa",
+    riskScore: 9, potentialScore: 4,
+    sectors: ["Mining", "Agriculture"],
+    summary: "Military government in a deep Sahel security crisis with departure from ECOWAS and alignment with Russia. Gold mining continues under severely constrained conditions; broader economic activity is significantly disrupted."
+  },
+  {
+    id: 478, country: "Mauritania", region: "Africa",
+    riskScore: 6, potentialScore: 6,
+    sectors: ["Energy", "Mining", "Fisheries", "Renewable Energy"],
+    summary: "Emerging LNG producer with major gas discoveries on the Senegalese border providing a transformative revenue outlook. Iron ore mining and world-class Atlantic fisheries provide existing revenues; green hydrogen potential is attracting early project interest."
+  },
+  {
+    id: 480, country: "Mauritius", region: "Africa",
+    riskScore: 2, potentialScore: 6,
+    sectors: ["Financial Services", "Tourism", "Technology", "Logistics"],
+    summary: "Africa's premier offshore financial centre with the continent's highest ease-of-doing-business rating and an extensive bilateral tax treaty network. Serves as the primary holding and structuring jurisdiction for African investment; tourism and fintech are supplementary growth pillars."
+  },
+  {
+    id: 504, country: "Morocco", region: "Africa",
+    riskScore: 3, potentialScore: 7,
+    sectors: ["Green Energy", "Infrastructure", "Agribusiness", "Logistics"],
+    summary: "Gateway between Europe and West Africa with a steadily improving institutional and regulatory framework. Morocco's renewable energy programme, Atlantic deepwater port expansion and free-trade agreements position it as the region's leading connectivity hub for European and Gulf capital."
+  },
+  {
+    id: 508, country: "Mozambique", region: "Africa",
+    riskScore: 7, potentialScore: 7,
+    sectors: ["Energy", "Mining", "Infrastructure", "Agriculture"],
+    summary: "Major LNG province under development with transformative long-run export potential. Insurgency in Cabo Delgado province has disrupted construction timelines; long-horizon energy investors remain committed. Significant coal and graphite resources provide supplementary exposure."
+  },
+  {
+    id: 516, country: "Namibia", region: "Africa",
+    riskScore: 3, potentialScore: 7,
+    sectors: ["Mining", "Energy", "Green Hydrogen", "Tourism", "Renewable Energy"],
+    summary: "One of Africa's most stable and transparent investment environments with strong rule of law. Major offshore oil discoveries, world-class green hydrogen corridor ambitions and lithium deposits are attracting sustained institutional interest from global energy and transition-capital investors."
+  },
+  {
+    id: 562, country: "Niger", region: "Africa",
+    riskScore: 9, potentialScore: 5,
+    sectors: ["Critical Minerals", "Uranium"],
+    summary: "Significant uranium and emerging critical mineral reserves attract strategic interest amid global energy-transition supply-chain demand. Political instability following the 2023 military transition, Sahel security conditions and sanctions exposure create substantial operational risk."
+  },
+  {
+    id: 566, country: "Nigeria", region: "Africa",
+    riskScore: 7, potentialScore: 9,
+    sectors: ["Energy", "Fintech", "Consumer Markets", "Agribusiness"],
+    summary: "Africa's largest economy and most populous market — 220 million consumers, a formidable fintech ecosystem and one of the continent's largest oil sectors. Currency reform and subsidy removal signal structural adjustment intent. Very high return potential is offset by FX, security and regulatory execution risk."
+  },
+  {
+    id: 646, country: "Rwanda", region: "Africa",
+    riskScore: 3, potentialScore: 7,
+    sectors: ["Financial Services", "Technology", "Infrastructure", "Tourism", "Agribusiness"],
+    summary: "Africa's benchmark for governance reform and ease of doing business under sustained institutional investment. Kigali is emerging as a genuine regional business hub hosting an increasing number of continental institutions. Political concentration and market scale are the primary structural constraints."
+  },
+  {
+    id: 678, country: "São Tomé and Príncipe", region: "Africa",
+    riskScore: 5, potentialScore: 3,
+    sectors: ["Tourism", "Energy", "Agriculture"],
+    summary: "Micro island state with improving governance and modest offshore oil acreage potential. Cocoa exports and niche sustainable tourism represent the primary sectors; negligible scale for institutional capital beyond highly specialised mandates."
+  },
+  {
+    id: 686, country: "Senegal", region: "Africa",
+    riskScore: 4, potentialScore: 7,
+    sectors: ["Energy", "Agribusiness", "Digital Infrastructure"],
+    summary: "Emerging LNG producer following major offshore gas discoveries now entering production. Stable democratic institutions, improving ease of doing business and a growing tech ecosystem make Senegal one of the most accessible entry points into West Africa."
+  },
+  {
+    id: 690, country: "Seychelles", region: "Africa",
+    riskScore: 3, potentialScore: 4,
+    sectors: ["Tourism", "Financial Services", "Blue Economy"],
+    summary: "Stable high-income island state with strong governance and a sophisticated offshore services sector. Tourism-dependent economy with blue economy potential emerging. Very limited market scale for institutional capital beyond sector-specific or structuring mandates."
+  },
+  {
+    id: 694, country: "Sierra Leone", region: "Africa",
+    riskScore: 7, potentialScore: 4,
+    sectors: ["Mining", "Agriculture", "Fisheries"],
+    summary: "Post-Ebola and post-conflict recovery continues with improving but fragile governance. Iron ore, rutile and bauxite resources attract mining capital; broader FDI constrained by infrastructure deficit and institutional weakness."
+  },
+  {
+    id: 706, country: "Somalia", region: "Africa",
+    riskScore: 10, potentialScore: 4,
+    sectors: ["Energy", "Fisheries", "Livestock"],
+    summary: "Persistent Al-Shabaab insurgency and fragile federal governance with near-absent state capacity. Significant offshore oil potential and livestock export revenues exist; effectively uninvestable for conventional foreign capital under current security conditions."
+  },
+  {
+    id: 710, country: "South Africa", region: "Africa",
+    riskScore: 5, potentialScore: 6,
+    sectors: ["Mining", "Financial Services", "Renewables", "Infrastructure"],
+    summary: "The continent's most developed financial markets, legal infrastructure and capital-raising ecosystem. A substantial energy-transition pipeline exists under the JETP framework — though structural constraints on economic growth (energy supply, logistics) are well-documented."
+  },
+  {
+    id: 728, country: "South Sudan", region: "Africa",
+    riskScore: 10, potentialScore: 5,
+    sectors: ["Energy", "Agriculture"],
+    summary: "World's newest state locked in recurring conflict cycles with oil revenues flowing primarily to political elite. Significant oil reserves and agricultural frontier potential cannot be accessed under current conditions; effective FDI is exclusively state-to-state."
+  },
+  {
+    id: 729, country: "Sudan", region: "Africa",
+    riskScore: 10, potentialScore: 4,
+    sectors: ["Energy", "Mining", "Agriculture"],
+    summary: "Active civil war since April 2023 has caused catastrophic humanitarian and economic collapse. Gold, oil and significant agricultural land represent long-horizon potential that cannot be accessed under current conflict conditions."
+  },
+  {
+    id: 834, country: "Tanzania", region: "Africa",
+    riskScore: 4, potentialScore: 6,
+    sectors: ["Critical Minerals", "Agribusiness", "Tourism", "Energy"],
+    summary: "Stable political environment with an improving business climate. Significant offshore gas reserves, lithium and nickel deposits are attracting growing interest from energy-transition investors; Dar es Salaam is emerging as East Africa's principal logistics hub."
+  },
+  {
+    id: 768, country: "Togo", region: "Africa",
+    riskScore: 5, potentialScore: 5,
+    sectors: ["Logistics", "Agriculture", "Phosphates"],
+    summary: "Lomé port is one of West Africa's most efficient transit gateways for landlocked interior markets. Improving business climate under sustained reform; phosphate exports and agri-value-chain development provide stable sectoral exposure."
+  },
+  {
+    id: 788, country: "Tunisia", region: "Africa",
+    riskScore: 6, potentialScore: 6,
+    sectors: ["Manufacturing", "Financial Services", "Tourism", "Agriculture", "Renewable Energy"],
+    summary: "Closest North African market to Europe with established manufacturing and professional services export sectors. Political consolidation under President Saied and IMF programme uncertainty introduce macro risk; the near-shoring manufacturing thesis remains structurally intact."
+  },
+  {
+    id: 800, country: "Uganda", region: "Africa",
+    riskScore: 5, potentialScore: 7,
+    sectors: ["Energy", "Infrastructure", "Agribusiness", "Financial Services"],
+    summary: "East Africa's third-largest economy with major oil production expected via the EACOP pipeline. Kampala is an increasingly active regional business hub; political environment is stable but concentrated, with rule-of-law risks that require careful deal structuring."
+  },
+  {
+    id: 894, country: "Zambia", region: "Africa",
+    riskScore: 6, potentialScore: 7,
+    sectors: ["Critical Minerals", "Energy", "Agribusiness", "Infrastructure"],
+    summary: "World's second-largest cobalt producer and major copper exporter at the centre of the Africa battery supply-chain story. Completed landmark sovereign debt restructuring in 2023; copper and cobalt demand from the energy transition is driving renewed FDI inflows."
+  },
+  {
+    id: 716, country: "Zimbabwe", region: "Africa",
+    riskScore: 8, potentialScore: 6,
+    sectors: ["Critical Minerals", "Agriculture", "Mining"],
+    summary: "Exceptional critical mineral endowment — lithium, platinum, chrome — attracting Chinese and other capital despite severe macro dysfunction. Currency instability and political risk require bespoke deal structuring; returns for appropriately structured positions can be significant."
+  },
+
+  /* ══════════════════════════════════════════════════════
+     MIDDLE EAST  (16 countries)
+  ══════════════════════════════════════════════════════ */
+  {
+    id: 48, country: "Bahrain", region: "Middle East",
+    riskScore: 3, potentialScore: 6,
+    sectors: ["Financial Services", "Fintech", "Logistics", "Energy"],
+    summary: "One of the Gulf's most open and diversified economies with the region's most developed fintech sector relative to GDP. Lower operating costs than UAE, a progressive regulatory framework and Islamic finance depth make Bahrain a credible complement to Dubai for financial services mandates."
+  },
+  {
+    id: 196, country: "Cyprus", region: "Middle East",
+    riskScore: 3, potentialScore: 5,
+    sectors: ["Financial Services", "Tourism", "Shipping", "Energy"],
+    summary: "EU member state serving as a major capital structuring and holding jurisdiction for CIS and Middle Eastern investment flows. The 2013 banking-sector restructuring led to a leaner financial industry; tourism and offshore gas discoveries provide supplementary growth pillars."
+  },
+  {
+    id: 364, country: "Iran", region: "Middle East",
+    riskScore: 10, potentialScore: 7,
+    sectors: ["Energy", "Agriculture", "Manufacturing", "Infrastructure"],
+    summary: "World's second-largest natural gas reserves and a large industrial economy effectively isolated from international capital markets by US and multilateral sanctions. Any change in the sanctions regime would unlock one of the world's largest uninvested economies; under current conditions, access is restricted to state-to-state or barter frameworks."
+  },
+  {
+    id: 368, country: "Iraq", region: "Middle East",
+    riskScore: 8, potentialScore: 7,
+    sectors: ["Energy", "Infrastructure", "Agriculture", "Real Estate"],
+    summary: "OPEC's second-largest producer with substantial infrastructure reconstruction needs and a large population creating consumer market potential. Political fragmentation, Iranian influence, security conditions in certain regions and contracting risk are the primary overlays for foreign capital."
+  },
+  {
+    id: 376, country: "Israel", region: "Middle East",
+    riskScore: 5, potentialScore: 8,
+    sectors: ["Technology", "Financial Services", "Defence", "Agritech"],
+    summary: "The world's leading technology and cyber startup ecosystem per capita, deeply integrated into global venture and private equity capital flows. Post-October 2023 security environment introduces a geopolitical risk premium; tech-sector resilience has been notable despite ongoing conflict conditions."
+  },
+  {
+    id: 400, country: "Jordan", region: "Middle East",
+    riskScore: 4, potentialScore: 5,
+    sectors: ["Financial Services", "Agribusiness", "Phosphates", "Logistics"],
+    summary: "Stable, well-governed jurisdiction serving as a professional-services and transit hub for the broader Levant. Significant phosphate reserves, proximity to Gulf capital and a well-educated workforce make Jordan a consistent, lower-volatility destination for specific sector mandates."
+  },
+  {
+    id: 414, country: "Kuwait", region: "Middle East",
+    riskScore: 2, potentialScore: 6,
+    sectors: ["Energy", "Financial Services", "Real Estate"],
+    summary: "Highly stable Gulf monarchy with substantial sovereign wealth managed through the Kuwait Investment Authority. Almost entirely oil-dependent economy with limited diversification progress; KIA is a significant LP in global alternative assets and infrastructure funds."
+  },
+  {
+    id: 422, country: "Lebanon", region: "Middle East",
+    riskScore: 10, potentialScore: 5,
+    sectors: ["Financial Services", "Real Estate", "Agriculture", "Reconstruction"],
+    summary: "Post-conflict and post-financial collapse presents an extreme-risk / long-horizon reconstruction opportunity. Significant diaspora capital, skilled workforce and strategic location underpin a recovery thesis; current conditions — banking collapse, currency failure — effectively preclude conventional investment entry."
+  },
+  {
+    id: 512, country: "Oman", region: "Middle East",
+    riskScore: 3, potentialScore: 6,
+    sectors: ["Logistics", "Energy", "Green Hydrogen", "Tourism"],
+    summary: "Strategic location on the Strait of Hormuz positions Oman as a credible logistics and India–Gulf trade corridor. Fiscal consolidation under Vision 2040 is progressing; green hydrogen ambitions are attracting early-stage project finance interest from European and Asian developers."
+  },
+  {
+    id: 275, country: "Palestine", region: "Middle East",
+    riskScore: 10, potentialScore: 4,
+    sectors: ["Infrastructure", "Agriculture", "Real Estate"],
+    summary: "Active conflict in Gaza and severely constrained conditions in the West Bank effectively suspend conventional investment activity. Long-horizon reconstruction potential is significant given population size and infrastructure deficit; accessible only through DFI or UN-aligned frameworks."
+  },
+  {
+    id: 634, country: "Qatar", region: "Middle East",
+    riskScore: 2, potentialScore: 7,
+    sectors: ["Energy", "Financial Services", "Infrastructure"],
+    summary: "World's largest LNG exporter with one of the highest per-capita incomes globally. Qatar Investment Authority is an active co-investor in international assets. The domestic market is small but highly liquid, with long-cycle infrastructure spending sustained by gas revenues."
+  },
+  {
+    id: 682, country: "Saudi Arabia", region: "Middle East",
+    riskScore: 3, potentialScore: 9,
+    sectors: ["Energy", "Infrastructure", "Real Estate", "Technology"],
+    summary: "Vision 2030 has activated one of the largest domestic investment programmes globally. The Public Investment Fund is deploying capital at scale across giga-projects, sports, tech and manufacturing. Non-oil GDP is growing rapidly, creating a diversifying opportunity set for early-mover investors."
+  },
+  {
+    id: 760, country: "Syria", region: "Middle East",
+    riskScore: 9, potentialScore: 5,
+    sectors: ["Energy", "Agriculture", "Infrastructure", "Reconstruction"],
+    summary: "Post-Assad transition following the December 2024 political change creates the first genuine reconstruction investment context in over a decade. Significant oil, gas and agricultural assets exist; rebuilding the institutional and legal framework for foreign investment will take years, but early-mover positioning in select sectors may be warranted."
+  },
+  {
+    id: 792, country: "Turkey", region: "Middle East",
+    riskScore: 6, potentialScore: 8,
+    sectors: ["Manufacturing", "Logistics", "Financial Services", "Consumer Markets"],
+    summary: "A major industrial and logistics bridge between Europe and Asia with deep capital markets and a sophisticated manufacturing base. Post-stabilisation macro environment is improving; currency, inflation and political-concentration risk remain key considerations for foreign investors."
+  },
+  {
+    id: 784, country: "United Arab Emirates", region: "Middle East",
+    riskScore: 2, potentialScore: 9,
+    sectors: ["Financial Services", "Logistics", "Real Estate", "Technology"],
+    summary: "The region's premier financial hub, trade gateway and capital deployment platform. UAE free zones — DMCC, ADGM, JAFZA — offer the most accessible international business environment in the corridor. Geopolitical neutrality and world-class infrastructure underpin its role in cross-border M&A and capital raising."
+  },
+  {
+    id: 887, country: "Yemen", region: "Middle East",
+    riskScore: 10, potentialScore: 4,
+    sectors: ["Energy", "Agriculture", "Logistics"],
+    summary: "Active Houthi conflict with a severe humanitarian crisis and bifurcated governmental authority. Strategic Bab el-Mandeb location and significant oil and gas reserves represent long-horizon reconstruction potential; effectively inaccessible for conventional foreign capital under current conflict conditions."
+  },
+
+  /* ══════════════════════════════════════════════════════
+     ASIA  (32 countries)
+  ══════════════════════════════════════════════════════ */
+  {
+    id: 4, country: "Afghanistan", region: "Asia",
+    riskScore: 10, potentialScore: 4,
+    sectors: ["Mining", "Energy", "Agriculture"],
+    summary: "Taliban-controlled state under international sanctions with some of the world's largest untapped lithium, copper and rare earth deposits. Chinese and certain other sovereign actors are the only capital currently accessing the resource base; no conventional foreign investment framework exists."
+  },
+  {
+    id: 51, country: "Armenia", region: "Asia",
+    riskScore: 5, potentialScore: 5,
+    sectors: ["Financial Services", "Mining", "Technology", "Tourism"],
+    summary: "Small South Caucasus economy undergoing significant geopolitical reorientation away from Russia toward the EU and US. Growing tech sector and mining industry; Yerevan is becoming a regional professional services hub. Nagorno-Karabakh resolution has removed a longstanding security risk overlay."
+  },
+  {
+    id: 31, country: "Azerbaijan", region: "Asia",
+    riskScore: 5, potentialScore: 7,
+    sectors: ["Energy", "Infrastructure", "Logistics", "Agriculture"],
+    summary: "Major Caspian oil and gas producer at the centre of the East-West Middle Corridor trade route. Post-conflict consolidation of Karabakh territory has removed the security overlay; infrastructure investment and energy diversification drive the investment case for both resource and non-resource capital."
+  },
+  {
+    id: 50, country: "Bangladesh", region: "Asia",
+    riskScore: 5, potentialScore: 7,
+    sectors: ["Manufacturing", "Infrastructure", "Consumer Markets", "Agriculture"],
+    summary: "World's second-largest garment exporter with a large, young population and sustained GDP growth. Post-Hasina political transition creates near-term uncertainty; manufacturing FDI diversifying from China continues to flow into the country's competitive cost base."
+  },
+  {
+    id: 64, country: "Bhutan", region: "Asia",
+    riskScore: 3, potentialScore: 4,
+    sectors: ["Renewable Energy", "Tourism", "Agriculture"],
+    summary: "Stable Himalayan monarchy with strong governance, hydropower exports to India and a high-value sustainable tourism model. Very limited market scale; investment entry points are largely DFI or development-finance oriented."
+  },
+  {
+    id: 96, country: "Brunei", region: "Asia",
+    riskScore: 2, potentialScore: 5,
+    sectors: ["Energy", "Financial Services", "Logistics"],
+    summary: "Stable, wealthy micro-state with significant LNG exports and an Islamic finance sector. Very limited diversification and market scale; the BIA sovereign wealth fund is an active LP in international assets. Halal industry and downstream energy provide niche entry points."
+  },
+  {
+    id: 116, country: "Cambodia", region: "Asia",
+    riskScore: 5, potentialScore: 6,
+    sectors: ["Manufacturing", "Infrastructure", "Agriculture", "Tourism"],
+    summary: "Emerging garment and light manufacturing destination diversifying from textiles into electronics assembly. Strong Chinese investment presence; political concentration and governance constraints are the primary FDI risk overlay for non-Chinese capital."
+  },
+  {
+    id: 156, country: "China", region: "Asia",
+    riskScore: 5, potentialScore: 8,
+    sectors: ["Manufacturing", "Technology", "Financial Services", "Infrastructure"],
+    summary: "The world's second-largest economy and largest trading partner for most countries in the corridor. A complex regulatory and geopolitical environment requires bespoke structuring. Co-investment with Chinese state and private capital in third markets — Africa, Central Asia — is an emerging deal architecture."
+  },
+  {
+    id: 268, country: "Georgia", region: "Asia",
+    riskScore: 4, potentialScore: 6,
+    sectors: ["Financial Services", "Logistics", "Tourism", "Infrastructure", "Energy"],
+    summary: "Strategic Caucasus transit state on the Middle Corridor between China and Europe. Tbilisi has become a significant regional fintech and professional services hub; Anaklia deep-sea port project would materially upgrade logistics capacity. Political volatility over EU integration is the key near-term risk."
+  },
+  {
+    id: 356, country: "India", region: "Asia",
+    riskScore: 3, potentialScore: 9,
+    sectors: ["Manufacturing", "Technology", "Energy", "Infrastructure"],
+    summary: "The world's fastest-growing major economy and a structural FDI supercycle destination. Production-linked incentives, a deep domestic capital market and 1.4 billion consumers are driving sustained commitment from global capital across manufacturing, digital infrastructure and clean energy."
+  },
+  {
+    id: 360, country: "Indonesia", region: "Asia",
+    riskScore: 4, potentialScore: 8,
+    sectors: ["Critical Minerals", "Consumer Markets", "Digital Infrastructure", "Agribusiness"],
+    summary: "Southeast Asia's largest economy with world-scale nickel and bauxite reserves central to the global EV supply chain. BRICS membership and assertive downstream processing policy signal strategic ambition. A 280-million consumer base and growing digital economy provide market scale."
+  },
+  {
+    id: 392, country: "Japan", region: "Asia",
+    riskScore: 1, potentialScore: 7,
+    sectors: ["Technology", "Manufacturing", "Financial Services", "Automotive"],
+    summary: "World's third-largest economy with unparalleled industrial depth and technology capability. Japanese capital is a major source of LP and strategic co-investment across Asian markets. Low growth and demographic decline are structural headwinds; yen volatility introduces FX considerations for cross-border transactions."
+  },
+  {
+    id: 398, country: "Kazakhstan", region: "Asia",
+    riskScore: 5, potentialScore: 7,
+    sectors: ["Critical Minerals", "Energy", "Logistics", "Agribusiness"],
+    summary: "Central Asia's largest economy at the intersection of the Russia–China axis and the North–South trade corridor. Uranium, copper, lithium and rare earth reserves attract resource-sector capital; the Middle Corridor logistics route is gaining relevance as global supply chains restructure."
+  },
+  {
+    id: 417, country: "Kyrgyzstan", region: "Asia",
+    riskScore: 7, potentialScore: 4,
+    sectors: ["Mining", "Agriculture", "Logistics"],
+    summary: "Small Central Asian state with gold mining as its primary FDI sector and significant transit route potential on the Middle Corridor. Political instability, governance weakness and limited financial infrastructure constrain broader investment appeal."
+  },
+  {
+    id: 418, country: "Laos", region: "Asia",
+    riskScore: 6, potentialScore: 5,
+    sectors: ["Energy", "Mining", "Logistics", "Agriculture"],
+    summary: "Landlocked Mekong state heavily indebted to China following major railway and hydropower investment. Significant hydropower capacity and minerals are assets; Chinese capital dominance and debt-sustainability concerns are the primary overlays for non-Chinese investors."
+  },
+  {
+    id: 458, country: "Malaysia", region: "Asia",
+    riskScore: 3, potentialScore: 8,
+    sectors: ["Technology", "Manufacturing", "Financial Services", "Renewable Energy", "Digital Infrastructure"],
+    summary: "One of ASEAN's most developed economies with world-class logistics, deep capital markets and a significant semiconductor and electronics manufacturing base. Kuala Lumpur is a major Islamic finance centre; consistent FDI inflows across tech, renewables and professional services."
+  },
+  {
+    id: 462, country: "Maldives", region: "Asia",
+    riskScore: 5, potentialScore: 4,
+    sectors: ["Tourism", "Blue Economy", "Renewable Energy"],
+    summary: "High-end tourism-dependent economy under significant Chinese debt pressure. Climate vulnerability is an existential concern; exclusive reliance on tourism revenue creates macro fragility. Blue economy potential is emerging but nascent."
+  },
+  {
+    id: 496, country: "Mongolia", region: "Asia",
+    riskScore: 6, potentialScore: 6,
+    sectors: ["Mining", "Energy", "Agriculture"],
+    summary: "Resource-rich landlocked state squeezed between Russia and China. Major coal, copper and gold resources with Oyu Tolgoi ramping to full production. China dependency for trade routes and Russian energy dependency create structural geopolitical constraints that require careful deal structuring."
+  },
+  {
+    id: 104, country: "Myanmar", region: "Asia",
+    riskScore: 9, potentialScore: 5,
+    sectors: ["Energy", "Agriculture", "Mining", "Manufacturing"],
+    summary: "Military junta since 2021 under international sanctions with active civil conflict across significant parts of the country. Significant natural gas, rare earth and agricultural resources exist; effectively inaccessible for most conventional Western foreign capital under current conditions."
+  },
+  {
+    id: 524, country: "Nepal", region: "Asia",
+    riskScore: 5, potentialScore: 5,
+    sectors: ["Renewable Energy", "Tourism", "Agriculture", "Infrastructure"],
+    summary: "Himalayan republic with world-class hydropower potential being developed with Indian and Chinese capital. Political instability and frequent government changes are structural features; energy and tourism are the primary investable sectors for international capital."
+  },
+  {
+    id: 408, country: "North Korea", region: "Asia",
+    riskScore: 10, potentialScore: 3,
+    sectors: ["Mining"],
+    summary: "Under the world's most comprehensive international sanctions regime with zero accessible conventional FDI. Significant mineral deposits — rare earth, coal, iron — theoretically exist; no investment framework exists for foreign capital under current political conditions."
+  },
+  {
+    id: 586, country: "Pakistan", region: "Asia",
+    riskScore: 7, potentialScore: 7,
+    sectors: ["Energy", "Infrastructure", "Agriculture", "Consumer Markets", "Mining"],
+    summary: "Large economy of 240 million people with significant CPEC infrastructure investment from China and world-scale copper and rare earth deposits in Balochistan. IMF programme provides a macro anchor; political instability, security conditions in certain regions and FX convertibility are the primary risk overlays."
+  },
+  {
+    id: 608, country: "Philippines", region: "Asia",
+    riskScore: 4, potentialScore: 8,
+    sectors: ["Consumer Markets", "Digital Infrastructure", "Manufacturing", "Agriculture", "Mining"],
+    summary: "Southeast Asia's fastest-growing major economy with a large English-speaking workforce and deepening technology and BPO sectors. Nickel reserves are significant; improving ease of doing business and regional logistics connectivity support a diversified investment thesis."
+  },
+  {
+    id: 702, country: "Singapore", region: "Asia",
+    riskScore: 1, potentialScore: 8,
+    sectors: ["Financial Services", "Technology", "Logistics", "Asset Management"],
+    summary: "The world's premier Asian financial hub and legal jurisdiction for cross-border investment structuring. Deep capital markets, world-class regulatory transparency and a strategically neutral geopolitical position make Singapore the default holding and capital-raising platform for Asian transactions."
+  },
+  {
+    id: 410, country: "South Korea", region: "Asia",
+    riskScore: 2, potentialScore: 7,
+    sectors: ["Technology", "Manufacturing", "Financial Services", "Automotive"],
+    summary: "World-leading electronics, semiconductor and automotive manufacturing base with advanced capital markets. A major LP and strategic co-investor across Asian and global assets. Low growth and demographic pressures are structural headwinds; the NPS sovereign fund is a significant institutional counterparty."
+  },
+  {
+    id: 144, country: "Sri Lanka", region: "Asia",
+    riskScore: 6, potentialScore: 6,
+    sectors: ["Tourism", "Agriculture", "Manufacturing", "Logistics", "Infrastructure"],
+    summary: "Post-2022 default and IMF-supported recovery trajectory. Strategic Indian Ocean location and recovering tourism sector underpin the investment case; debt sustainability and political execution risk remain primary considerations for foreign capital entry."
+  },
+  {
+    id: 762, country: "Tajikistan", region: "Asia",
+    riskScore: 7, potentialScore: 4,
+    sectors: ["Mining", "Energy", "Agriculture"],
+    summary: "Small Central Asian state with significant gold, silver and aluminium resources dominated by Russian-aligned governance. Hydropower potential is significant but infrastructure constraints limit export capacity; governance and rule-of-law risks are elevated."
+  },
+  {
+    id: 764, country: "Thailand", region: "Asia",
+    riskScore: 4, potentialScore: 7,
+    sectors: ["Manufacturing", "Tourism", "Financial Services", "Agriculture", "Renewable Energy"],
+    summary: "Southeast Asia's second-largest economy with a sophisticated manufacturing base in electronics, automotive and food processing. Bangkok is a major regional financial and logistics hub; political cycle risk — recurrent military interventions — is a known structural feature requiring governance-risk discounting."
+  },
+  {
+    id: 626, country: "Timor-Leste", region: "Asia",
+    riskScore: 6, potentialScore: 5,
+    sectors: ["Energy", "Agriculture", "Tourism"],
+    summary: "Small island state with significant Timor Sea oil and gas revenues funding sovereign wealth. Greater Sunrise field development remains commercially contested; governance is improving from a low base. Infrastructure deficit is substantial and creates both a constraint and an opportunity."
+  },
+  {
+    id: 795, country: "Turkmenistan", region: "Asia",
+    riskScore: 7, potentialScore: 5,
+    sectors: ["Energy", "Agriculture"],
+    summary: "World's fourth-largest natural gas reserves entirely controlled by an authoritarian state. TAPI pipeline project would transform export optionality; current energy sales are almost entirely to China. Near-impenetrable investment environment for non-energy, non-Chinese capital."
+  },
+  {
+    id: 860, country: "Uzbekistan", region: "Asia",
+    riskScore: 5, potentialScore: 7,
+    sectors: ["Mining", "Manufacturing", "Agriculture", "Infrastructure", "Consumer Markets"],
+    summary: "Central Asia's most reform-active economy under President Mirziyoyev, with genuine liberalisation of FDI rules, currency convertibility and privatisation. Gold, uranium and critical minerals provide the resource base; a growing consumer market of 37 million and a young population support the long-run thesis."
+  },
+  {
+    id: 704, country: "Vietnam", region: "Asia",
+    riskScore: 3, potentialScore: 8,
+    sectors: ["Manufacturing", "Renewable Energy", "Technology", "Agribusiness"],
+    summary: "One of Asia's most consistent FDI destinations over the past decade. Supply chain diversification from China is sustaining investment inflows into electronics, semiconductors and textiles, while domestic consumption growth and a renewable energy build-out create parallel opportunity."
+  },
+];
+
+// ═══════════════════════════════════════════════════════════
+// HELPERS
+// ═══════════════════════════════════════════════════════════
+const byId = new Map(REGIONS_DATA.map(d => [d.id, d]));
+
+const Q = {
+  priority:    { label: "Priority Growth Market",           short: "Priority Growth" },
+  opportunity: { label: "High Opportunity / Elevated Risk", short: "High Opp / Elevated Risk" },
+  stable:      { label: "Stable, Modest Upside",            short: "Stable / Modest" },
+  cautionary:  { label: "Heightened Caution",               short: "Cautionary" },
+};
+
+function quadrant(d) {
+  if (d.riskScore <= 5 && d.potentialScore >= 7) return "priority";
+  if (d.riskScore  > 5 && d.potentialScore >= 7) return "opportunity";
+  if (d.riskScore <= 5 && d.potentialScore  < 7) return "stable";
+  return "cautionary";
+}
+
+function regionSlug(r) { return r.toLowerCase().replace(/\s+/g, "-"); }
+
+// ═══════════════════════════════════════════════════════════
+// D3 MAP
+// ═══════════════════════════════════════════════════════════
+const svg        = d3.select("#world-map");
+const projection = d3.geoNaturalEarth1().scale(153).translate([480, 250]);
+const pathGen    = d3.geoPath().projection(projection);
+
+// Single wrapper <g> — zoom transform is applied here
+const mapG = svg.append("g").attr("id", "map-g");
+mapG.append("path").datum({ type: "Sphere" }).attr("class", "sphere").attr("d", pathGen);
+mapG.append("path").datum(d3.geoGraticule()()).attr("class", "gratline").attr("d", pathGen);
+const countriesG = mapG.append("g");
+
+const mapOuter = document.getElementById("map-outer");
+const overlay  = document.getElementById("map-overlay");
+const tt       = document.getElementById("tt");
+
+let activeFilter = "all";
+
+// ── ZOOM ──────────────────────────────────────────────────
+let pointerStart = null; // used to distinguish click from drag
+
+const zoomBehavior = d3.zoom()
+  .scaleExtent([1, 10])
+  .translateExtent([[0, 0], [960, 500]])
+  .on("start", (event) => {
+    if (event.sourceEvent) {
+      pointerStart = [event.sourceEvent.clientX, event.sourceEvent.clientY];
+    }
+    tt.style.display = "none";
+  })
+  .on("zoom", (event) => {
+    mapG.attr("transform", event.transform);
+  });
+
+svg.call(zoomBehavior)
+   .on("dblclick.zoom", null); // disable double-click zoom; keep clicks for country selection
+
+document.getElementById("zoom-in").addEventListener("click", () => {
+  svg.transition().duration(280).call(zoomBehavior.scaleBy, 1.6);
+});
+document.getElementById("zoom-out").addEventListener("click", () => {
+  svg.transition().duration(280).call(zoomBehavior.scaleBy, 1 / 1.6);
+});
+document.getElementById("zoom-reset").addEventListener("click", () => {
+  svg.transition().duration(350).call(zoomBehavior.transform, d3.zoomIdentity);
+});
+
+// ── COUNTRIES ─────────────────────────────────────────────
+d3.json("https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json")
+  .then(world => {
+    overlay.classList.add("hidden");
+    const features = topojson.feature(world, world.objects.countries).features;
+
+    countriesG.selectAll(".country")
+      .data(features)
+      .join("path")
+      .attr("class", d => {
+        const cd = byId.get(+d.id);
+        if (!cd) return "country";
+        return `country clickable q-${quadrant(cd)} r-${regionSlug(cd.region)}`;
+      })
+      .attr("d", pathGen)
+      .on("mouseenter", (event, d) => {
+        const cd = byId.get(+d.id);
+        if (!cd) return;
+        renderTooltip(cd);
+        positionTooltip(event);
+        tt.style.display = "block";
+      })
+      .on("mousemove", (event, d) => {
+        if (!byId.get(+d.id)) return;
+        positionTooltip(event);
+      })
+      .on("mouseleave", () => { tt.style.display = "none"; })
+      .on("click", (event, d) => {
+        // Ignore if this was actually a drag
+        if (pointerStart) {
+          const dx = event.clientX - pointerStart[0];
+          const dy = event.clientY - pointerStart[1];
+          if (Math.sqrt(dx * dx + dy * dy) > 4) return;
+        }
+        const cd = byId.get(+d.id);
+        if (!cd) return;
+        tt.style.display = "none";
+        selectCountry(cd);
+      });
+  })
+  .catch(() => { overlay.textContent = "Map data could not be loaded. Explore the country index below."; });
+
+function positionTooltip(event) {
+  const rect = mapOuter.getBoundingClientRect();
+  let x = event.clientX - rect.left + 14;
+  let y = event.clientY - rect.top  + 14;
+  if (x + 270 > rect.width)  x = event.clientX - rect.left - 275;
+  if (y + 180 > rect.height) y = event.clientY - rect.top  - 185;
+  tt.style.left = x + "px";
+  tt.style.top  = y + "px";
+}
+
+function renderTooltip(cd) {
+  const q = quadrant(cd);
+  document.getElementById("tt-name").textContent   = cd.country;
+  document.getElementById("tt-region").textContent = cd.region;
+  document.getElementById("tt-risk").textContent   = cd.riskScore;
+  document.getElementById("tt-pot").textContent    = cd.potentialScore;
+  const badge = document.getElementById("tt-badge");
+  badge.textContent = Q[q].short;
+  badge.className   = `tt-badge ${q}`;
+}
+
+// ═══════════════════════════════════════════════════════════
+// DETAIL CARD
+// ═══════════════════════════════════════════════════════════
+function selectCountry(cd) {
+  // highlight on map
+  countriesG.selectAll(".country").classed("selected", d => +d.id === cd.id);
+  renderDetailCard(cd);
+  // scroll to card
+  const sec = document.getElementById("detail-section");
+  sec.classList.add("open");
+  setTimeout(() => sec.scrollIntoView({ behavior: "smooth", block: "start" }), 30);
+}
+
+function renderDetailCard(cd) {
+  const q = quadrant(cd);
+  document.getElementById("dc-name").textContent = cd.country;
+
+  const rb = document.getElementById("dc-region-badge");
+  rb.textContent = cd.region;
+  rb.className   = `region-badge ${regionSlug(cd.region)}`;
+
+  const qb = document.getElementById("dc-quadrant-badge");
+  qb.textContent = Q[q].label;
+  qb.className   = `quadrant-badge ${q}`;
+
+  document.getElementById("dc-risk-num").textContent = cd.riskScore;
+  document.getElementById("dc-risk-fill").style.width = (cd.riskScore * 10) + "%";
+  document.getElementById("dc-pot-num").textContent   = cd.potentialScore;
+  document.getElementById("dc-pot-fill").style.width  = (cd.potentialScore * 10) + "%";
+
+  document.getElementById("dc-sectors").innerHTML =
+    cd.sectors.map(s => `<span class="sector-chip">${s}</span>`).join("");
+  document.getElementById("dc-summary").textContent = cd.summary;
+}
+
+document.getElementById("detail-close").addEventListener("click", () => {
+  document.getElementById("detail-section").classList.remove("open");
+  countriesG.selectAll(".country").classed("selected", false);
+});
+
+// ═══════════════════════════════════════════════════════════
+// FILTER
+// ═══════════════════════════════════════════════════════════
+document.getElementById("filter-bar").addEventListener("click", e => {
+  const btn = e.target.closest(".filter-btn");
+  if (!btn) return;
+  document.querySelectorAll(".filter-btn").forEach(b => b.classList.remove("active"));
+  btn.classList.add("active");
+  activeFilter = btn.dataset.region;
+
+  // map: dim countries outside filter
+  countriesG.selectAll(".country.clickable").classed("dimmed", d => {
+    if (activeFilter === "all") return false;
+    const cd = byId.get(+d.id);
+    return !cd || cd.region !== activeFilter;
+  });
+
+  // grid: hide cards outside filter
+  document.querySelectorAll(".cc").forEach(card => {
+    card.classList.toggle("hidden",
+      activeFilter !== "all" && card.dataset.region !== activeFilter);
+  });
+});
+
+// ═══════════════════════════════════════════════════════════
+// COUNTRY GRID
+// ═══════════════════════════════════════════════════════════
+(function buildGrid() {
+  const order = { "Africa": 0, "Middle East": 1, "Asia": 2 };
+  const sorted = [...REGIONS_DATA].sort((a, b) =>
+    order[a.region] - order[b.region] || b.potentialScore - a.potentialScore
+  );
+
+  const grid = document.getElementById("country-grid");
+  grid.innerHTML = sorted.map(cd => {
+    const q    = quadrant(cd);
+    const chip = cd.sectors.slice(0, 3).map(s => `<span class="cc-chip">${s}</span>`).join("");
+    const blurb = cd.summary.length > 110 ? cd.summary.slice(0, 110) + "…" : cd.summary;
+    return `
+<div class="cc" data-id="${cd.id}" data-region="${cd.region}">
+  <div class="cc-head">
+    <div class="cc-name">${cd.country}</div>
+    <span class="cc-badge ${q}">${Q[q].short.split("/")[0].trim()}</span>
+  </div>
+  <div class="cc-scores">
+    <div>
+      <span class="cc-score-label">Risk</span>
+      <span class="cc-score-val risk">${cd.riskScore}</span>
+    </div>
+    <div>
+      <span class="cc-score-label">Potential</span>
+      <span class="cc-score-val potential">${cd.potentialScore}</span>
+    </div>
+  </div>
+  <div class="cc-chips">${chip}</div>
+  <div class="cc-blurb">${blurb}</div>
+</div>`;
+  }).join("");
+
+  grid.addEventListener("click", e => {
+    const card = e.target.closest(".cc");
+    if (!card) return;
+    const cd = byId.get(+card.dataset.id);
+    if (!cd) return;
+    selectCountry(cd);
+    // scroll map into view first so user sees the country highlight
+    document.querySelector(".map-section").scrollIntoView({ behavior: "smooth", block: "start" });
+  });
+})();
+</script>
+
+</body>
+</html>
