@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Российские инвестиции на Ближний Восток 2025–2026 | kotana.com.ru</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --ink:          #0f1117;
+      --paper:        #f7f4ef;
+      --cream:        #ede9e0;
+      --accent:       #6b4a0f;
+      --accent-light: #f0deb0;
+      --gold:         #b8922a;
+      --green:        #1a7a3c;
+      --red:          #c0392b;
+      --muted:        #7a7060;
+      --rule:         #d4cfc5;
+      --col:          clamp(320px, 66ch, 720px);
+    }
+    html { font-size: 17px; scroll-behavior: smooth; }
+    body {
+      background: var(--paper); color: var(--ink);
+      font-family: 'IBM Plex Sans', sans-serif;
+      line-height: 1.75; -webkit-font-smoothing: antialiased;
+    }
+
+    .masthead {
+      background: var(--ink); padding: 14px 40px;
+      display: flex; align-items: center; justify-content: space-between;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: .75rem; letter-spacing: .12em; text-transform: uppercase;
+    }
+    .masthead-logo { font-size: 1rem; font-weight: 500; color: #fff; }
+    .masthead-meta { color: #666; }
+
+    .hero {
+      background: var(--accent); color: var(--paper);
+      padding: 80px 40px 72px; position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: 'MENA';
+      position: absolute; right: -20px; top: 50%; transform: translateY(-50%);
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(110px, 16vw, 230px); font-weight: 900;
+      color: rgba(255,255,255,.05); letter-spacing: -.04em; line-height: 1; pointer-events: none;
+    }
+    .hero-inner { max-width: var(--col); margin: 0 auto; position: relative; }
+    .hero-tag {
+      display: inline-block;
+      border: 1px solid rgba(255,255,255,.3); color: rgba(255,255,255,.75);
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: .72rem; letter-spacing: .15em; text-transform: uppercase;
+      padding: 4px 12px; margin-bottom: 28px;
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.2rem, 5vw, 3.4rem); font-weight: 700;
+      line-height: 1.18; letter-spacing: -.02em; margin-bottom: 24px; max-width: 22ch;
+    }
+    .hero h1 em { font-style: italic; color: #f5d890; }
+    .hero-lead {
+      font-size: 1.08rem; color: rgba(255,255,255,.72);
+      max-width: 54ch; line-height: 1.65; margin-bottom: 40px;
+    }
+    .hero-byline {
+      display: flex; align-items: center; gap: 16px;
+      font-size: .8rem; color: rgba(255,255,255,.4);
+      font-family: 'IBM Plex Mono', monospace;
+    }
+    .hero-byline span { color: rgba(255,255,255,.25); }
+    .hero-byline strong { color: rgba(255,255,255,.65); font-weight: 500; }
+
+    .stats-bar { background: var(--ink); padding: 0 40px; }
+    .stats-inner {
+      max-width: calc(var(--col) + 200px); margin: 0 auto;
+      display: grid; grid-template-columns: repeat(3,1fr);
+    }
+    .stat-item {
+      padding: 24px 32px; border-right: 1px solid rgba(255,255,255,.07); color: #fff;
+    }
+    .stat-item:first-child { padding-left: 0; }
+    .stat-item:last-child  { border-right: none; }
+    .stat-number {
+      font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 700;
+      display: block; line-height: 1; color: #f5d890;
+    }
+    .stat-label {
+      font-size: .75rem; text-transform: uppercase;
+      letter-spacing: .1em; opacity: .45; margin-top: 4px;
+      font-family: 'IBM Plex Mono', monospace;
+    }
+
+    .article-wrap { padding: 72px 40px; }
+    .article-inner { max-width: var(--col); margin: 0 auto; }
+
+    .article-inner > p:first-of-type::first-letter {
+      font-family: 'Playfair Display', serif; font-size: 4.5em; font-weight: 900;
+      float: left; line-height: .78; margin-right: 8px; margin-top: 6px; color: var(--accent);
+    }
+    p { margin-bottom: 1.5rem; }
+
+    h2 {
+      font-family: 'Playfair Display', serif; font-size: 1.7rem; font-weight: 700;
+      letter-spacing: -.02em; line-height: 1.25; margin: 3rem 0 1.1rem;
+    }
+    h2::before { content: ''; display: block; width: 32px; height: 3px; background: var(--accent); margin-bottom: 16px; }
+
+    h3 {
+      font-family: 'IBM Plex Sans', sans-serif; font-size: 1.05rem; font-weight: 600;
+      margin: 2rem 0 .7rem; text-transform: uppercase; letter-spacing: .06em; color: var(--gold);
+    }
+
+    blockquote {
+      border-left: 3px solid var(--accent); margin: 2.5rem 0; padding: 20px 0 20px 32px;
+    }
+    blockquote p {
+      font-family: 'Playfair Display', serif; font-size: 1.35rem; font-style: italic;
+      line-height: 1.5; color: var(--ink); margin: 0 0 8px;
+    }
+    blockquote cite {
+      font-family: 'IBM Plex Mono', monospace; font-size: .72rem;
+      text-transform: uppercase; letter-spacing: .12em; color: var(--muted); font-style: normal;
+    }
+
+    .highlight { background: var(--accent-light); padding: 0 4px; font-weight: 500; }
+
+    /* Data card */
+    .data-card {
+      background: var(--cream); border: 1px solid var(--rule); padding: 28px 32px; margin: 2.5rem 0;
+    }
+    .data-card h4 {
+      font-family: 'IBM Plex Mono', monospace; font-size: .7rem;
+      text-transform: uppercase; letter-spacing: .15em; color: var(--muted); margin-bottom: 20px;
+    }
+    .data-rows { display: flex; flex-direction: column; gap: 12px; }
+    .data-row { display: flex; align-items: center; gap: 16px; }
+    .data-row-label { font-size: .85rem; color: var(--muted); width: 220px; flex-shrink: 0; }
+    .data-row-bar-wrap { flex: 1; height: 6px; background: var(--rule); position: relative; }
+    .data-row-bar { position: absolute; top: 0; left: 0; height: 100%; }
+    .data-row-bar.sand  { background: var(--accent); }
+    .data-row-bar.gold  { background: var(--gold); }
+    .data-row-bar.green { background: var(--green); }
+    .data-row-bar.red   { background: var(--red); opacity: .7; }
+    .data-row-bar.muted { background: var(--muted); opacity: .35; }
+    .data-row-val {
+      font-family: 'IBM Plex Mono', monospace; font-size: .8rem;
+      font-weight: 500; width: 110px; text-align: right;
+    }
+
+    /* Country / sector cards (2-col) */
+    .geo-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 1px; background: var(--rule); border: 1px solid var(--rule); margin: 2.5rem 0;
+    }
+    .geo-card { background: var(--paper); padding: 24px; }
+    .geo-icon { font-size: 1.3rem; margin-bottom: 8px; display: block; }
+    .geo-type {
+      font-family: 'IBM Plex Mono', monospace; font-size: .65rem;
+      text-transform: uppercase; letter-spacing: .12em; color: var(--muted); margin-bottom: 6px;
+    }
+    .geo-name { font-weight: 600; font-size: .97rem; margin-bottom: 4px; }
+    .geo-stat {
+      font-family: 'Playfair Display', serif; font-weight: 700;
+      color: var(--accent); font-size: 1.15rem; margin-bottom: 4px;
+    }
+    .geo-label {
+      display: inline-block; font-family: 'IBM Plex Mono', monospace;
+      font-size: .6rem; text-transform: uppercase; letter-spacing: .1em;
+      padding: 3px 8px; border-radius: 2px; margin-bottom: 8px;
+    }
+    .geo-label.hot  { background: var(--accent-light); color: var(--accent); }
+    .geo-label.warm { background: #f5ecd4; color: var(--gold); }
+    .geo-label.risk { background: #fde8e0; color: var(--red); }
+    .geo-label.ok   { background: #d0ead8; color: var(--green); }
+    .geo-desc { font-size: .8rem; color: var(--muted); line-height: 1.55; }
+
+    /* Metrics 2×2 */
+    .metrics-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 1px; background: var(--rule); border: 1px solid var(--rule); margin: 2.5rem 0;
+    }
+    .metric-cell { background: var(--paper); padding: 24px; }
+    .metric-label {
+      font-family: 'IBM Plex Mono', monospace; font-size: .68rem;
+      text-transform: uppercase; letter-spacing: .14em; color: var(--muted); margin-bottom: 8px;
+    }
+    .metric-value { font-family: 'Playfair Display', serif; font-size: 1.65rem; font-weight: 700; line-height: 1.1; }
+    .metric-value.sand  { color: var(--accent); }
+    .metric-value.gold  { color: var(--gold); }
+    .metric-value.green { color: var(--green); }
+    .metric-value.red   { color: var(--red); }
+    .metric-note { font-size: .78rem; color: var(--muted); margin-top: 6px; }
+
+    /* Risk / factor list */
+    .risk-list { margin: 2rem 0; }
+    .risk-item {
+      display: flex; gap: 16px; padding: 16px 0;
+      border-bottom: 1px solid var(--rule); align-items: flex-start;
+    }
+    .risk-item:first-child { border-top: 1px solid var(--rule); }
+    .risk-badge {
+      font-family: 'IBM Plex Mono', monospace; font-size: .62rem;
+      text-transform: uppercase; letter-spacing: .1em;
+      padding: 4px 10px; border-radius: 2px; flex-shrink: 0; margin-top: 2px;
+    }
+    .risk-badge.high { background: #fde8e0; color: var(--red); }
+    .risk-badge.mid  { background: #f5ecd4; color: var(--gold); }
+    .risk-badge.low  { background: #d0ead8; color: var(--green); }
+    .risk-title { font-weight: 600; font-size: .9rem; margin-bottom: 3px; }
+    .risk-desc  { font-size: .82rem; color: var(--muted); line-height: 1.55; }
+
+    .divider { border: none; border-top: 1px solid var(--rule); margin: 3rem 0; }
+
+    .conclusion {
+      background: var(--ink); color: var(--paper); padding: 36px 40px; margin: 3rem 0 0;
+    }
+    .conclusion h3 { color: #f5d890; margin-top: 0; letter-spacing: .06em; font-size: 1rem; text-transform: uppercase; }
+    .conclusion p { color: #ccc; margin-bottom: 1rem; }
+    .conclusion p:last-child { margin-bottom: 0; }
+
+    /* Kotana brand block */
+    .kotana-note {
+      border: 1px solid var(--rule); background: var(--cream);
+      padding: 24px 28px; margin: 2.5rem 0;
+    }
+    .kotana-note-label {
+      font-family: 'IBM Plex Mono', monospace; font-size: .65rem;
+      text-transform: uppercase; letter-spacing: .15em; color: var(--accent);
+      margin-bottom: 10px;
+    }
+    .kotana-note p {
+      font-size: .88rem; color: var(--muted); line-height: 1.6; margin: 0;
+    }
+
+    footer {
+      background: var(--cream); border-top: 1px solid var(--rule);
+      padding: 28px 40px; font-family: 'IBM Plex Mono', monospace;
+      font-size: .72rem; color: var(--muted); text-align: center; letter-spacing: .06em;
+    }
+    footer strong { color: var(--ink); }
+
+    @media (max-width: 640px) {
+      .masthead { padding: 12px 20px; }
+      .hero { padding: 56px 20px 52px; }
+      .stats-bar { padding: 0 20px; }
+      .stats-inner { grid-template-columns: 1fr; }
+      .stat-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,.07); padding: 16px 0; }
+      .article-wrap { padding: 48px 20px; }
+      .geo-grid, .metrics-grid { grid-template-columns: 1fr; }
+      .data-row-label { width: 130px; font-size: .78rem; }
+    }
+  </style>
+</head>
+<body>
+
+<header class="masthead">
+  <span class="masthead-logo">kotana.com.ru</span>
+  <span class="masthead-meta">Аналитика · Инвестиции · Россия — Ближний Восток</span>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-tag">Аналитика · M&A · Россия — MENA · 2025–2026</div>
+    <h1>Россия — Ближний Восток: <em>капитал ищет новые маршруты</em></h1>
+    <p class="hero-lead">Российские инвестиции на Ближний Восток выросли кратно после 2022 года. ОАЭ стали главным структурным хабом, Саудовская Аравия — ключевым торговым партнёром. Но за видимым сближением — сложный баланс: Залив не хочет стать посредником для обхода санкций и усиливает комплаенс. Как устроен этот коридор и кто на нём зарабатывает.</p>
+    <div class="hero-byline">
+      <strong>Kotana · Редакционная аналитика</strong>
+      <span>·</span>
+      <span>Август 2026</span>
+      <span>·</span>
+      <span>14 мин чтения</span>
+    </div>
+  </div>
+</section>
+
+<div class="stats-bar">
+  <div class="stats-inner">
+    <div class="stat-item">
+      <span class="stat-number">$9 млрд</span>
+      <span class="stat-label">Инвестиции стран Персидского залива в Евразию за 2024–2025 гг. — ЕАБР</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number">×6</span>
+      <span class="stat-label">Рост объёма российских инвестиций в Саудовскую Аравию за 2024 г. — Новак</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number">$176 млрд</span>
+      <span class="stat-label">Накопленный объём взаимных инвестиций Евразии и Азии — рекорд 2025 г.</span>
+    </div>
+  </div>
+</div>
+
+<main class="article-wrap">
+  <article class="article-inner">
+
+    <p>Когда западные рынки закрылись для российского капитала в 2022 году, деньги не исчезли — они сменили направление. Дубай, Абу-Даби, Эр-Рияд, Доха стали новыми точками притяжения для российских предпринимателей, семейных офисов и корпоративных структур. ОАЭ приняли сотни российских юридических лиц, Саудовская Аравия согласилась на кратный рост товарооборота, Катар вёл переговоры по газовым проектам. За три года этот коридор из форс-мажорного превратился в стратегический. Но он же поставил обеих сторон перед неудобным вопросом: где граница между прагматичным партнёрством и соучастием в обходе санкций?</p>
+
+    <h2>Масштаб: цифры, которые говорят сами за себя</h2>
+
+    <p>По данным ЕАБР, за 2024–2025 годы страны Персидского залива вложили в Евразийский регион около <span class="highlight">$9 млрд</span> из общего притока азиатских инвестиций в $20 млрд — почти половину. Накопленный объём взаимных инвестиций всего Евразийского региона с азиатскими партнёрами достиг <span class="highlight">$176 млрд</span> — исторический максимум. Поток двусторонний, но асимметричный: капитал Залива идёт в Россию преимущественно в энергетику и инфраструктуру, тогда как российский капитал на Ближний Восток — в недвижимость, структурные холдинги и торговые операции.</p>
+
+    <p>Российско-саудовский товарооборот в 2024 году вырос на <span class="highlight">62,7%</span>. Вице-премьер Александр Новак по итогам встречи с саудовским министром энергетики сообщил: объём российских инвестиций в Саудовскую Аравию за год вырос в шесть раз. Параллельно стороны обсуждают более 40 совместных проектов в сфере IT, транспорта и нефтехимии. На повестке — сельское хозяйство: поставки российского продовольствия в КСА достигли примерно $1 млрд, что составляет около четверти всего товарооборота.</p>
+
+    <div class="data-card">
+      <h4>Структура российско-ближневосточного инвестиционного коридора</h4>
+      <div class="data-rows">
+        <div class="data-row">
+          <span class="data-row-label">Недвижимость ОАЭ (российский капитал)</span>
+          <div class="data-row-bar-wrap"><div class="data-row-bar sand" style="width:100%"></div></div>
+          <span class="data-row-val">Крупнейший сегмент</span>
+        </div>
+        <div class="data-row">
+          <span class="data-row-label">Инвестиции Залива в Евразию</span>
+          <div class="data-row-bar-wrap"><div class="data-row-bar gold" style="width:82%"></div></div>
+          <span class="data-row-val">$9 млрд (2024–2025)</span>
+        </div>
+        <div class="data-row">
+          <span class="data-row-label">Торговля РФ–КСА (рост 2024)</span>
+          <div class="data-row-bar-wrap"><div class="data-row-bar gold" style="width:63%"></div></div>
+          <span class="data-row-val">+62,7%</span>
+        </div>
+        <div class="data-row">
+          <span class="data-row-label">Российские инвестиции в КСА (рост)</span>
+          <div class="data-row-bar-wrap"><div class="data-row-bar green" style="width:60%"></div></div>
+          <span class="data-row-val">×6 за 2024 г.</span>
+        </div>
+        <div class="data-row">
+          <span class="data-row-label">Доля агропродукции в экспорте в КСА</span>
+          <div class="data-row-bar-wrap"><div class="data-row-bar muted" style="width:25%"></div></div>
+          <span class="data-row-val">~25%</span>
+        </div>
+        <div class="data-row">
+          <span class="data-row-label">Доля агропродукции в экспорте в Катар</span>
+          <div class="data-row-bar-wrap"><div class="data-row-bar muted" style="width:80%"></div></div>
+          <span class="data-row-val">~80% (2024)</span>
+        </div>
+      </div>
+    </div>
+
+    <blockquote>
+      <p>«ОАЭ стремятся привлечь больше инвесторов, улучшить условия для предпринимателей и предоставить больше преимуществ иностранным специалистам. Соглашение об избежании двойного налогообложения между Россией и ОАЭ, подписанное в 2025 году, стало важным шагом для упрощения взаимодействия.»</p>
+      <cite>— Аналитический обзор по релокации российского бизнеса в ОАЭ, 2025</cite>
+    </blockquote>
+
+    <hr class="divider" />
+
+    <h2>Четыре юрисдикции — четыре роли</h2>
+
+    <div class="geo-grid">
+      <div class="geo-card">
+        <span class="geo-icon">🇦🇪</span>
+        <div class="geo-type">ОАЭ — главный хаб</div>
+        <div class="geo-name">Дубай и Абу-Даби</div>
+        <span class="geo-label hot">Структурный центр</span>
+        <div class="geo-stat">Сотни рос. юрлиц</div>
+        <div class="geo-desc">ОАЭ выполняют роль главного транзитного и структурного хаба для российского капитала. Нулевой НДФЛ, нулевой налог на прирост капитала, 9% корпоративный налог с нулём для квалифицированных фризон-компаний. Недвижимость — главный инструмент: Freehold-зоны открыты для иностранцев, «золотая виза» при покупке от $545 тыс. Более 200 российских юрфирм открыли офисы в Дубае. Соглашение об ИДНО с Россией подписано в 2025 году.</div>
+      </div>
+      <div class="geo-card">
+        <span class="geo-icon">🇸🇦</span>
+        <div class="geo-type">Саудовская Аравия — торговый партнёр</div>
+        <div class="geo-name">Эр-Рияд, Vision 2030</div>
+        <span class="geo-label warm">Агро + энергетика</span>
+        <div class="geo-stat">+62,7% товарооборот</div>
+        <div class="geo-desc">КСА — крупнейший торговый партнёр России на Ближнем Востоке и соарбитр нефтяного рынка в рамках ОПЕК+. В конце 2024 года присоединилась к БРИКС как приглашённая страна. Россия вошла в топ-10 поставщиков КСА в агропромышленном секторе ещё в 2022-м. Перспективные совместные проекты: IT, транспорт, нефтехимия, зерно. Российские инвестиции в КСА выросли в 6 раз за 2024 год.</div>
+      </div>
+      <div class="geo-card">
+        <span class="geo-icon">🇶🇦</span>
+        <div class="geo-type">Катар — газовый диалог</div>
+        <div class="geo-name">Доха, LNG</div>
+        <span class="geo-label warm">Газ + агро</span>
+        <div class="geo-stat">~80% экспорта — агро</div>
+        <div class="geo-desc">Наиболее специализированный партнёр: российская агропродукция составляла около 80% всего товарооборота с Катаром в 2024 году. Страна — ключевой мировой игрок в LNG, что делает её интересным собеседником для «Новатэка» и «Газпрома». Катар сохраняет нейтральную позицию по западным санкциям и выступает посредником в международных переговорах.</div>
+      </div>
+      <div class="geo-card">
+        <span class="geo-icon">🇴🇲</span>
+        <div class="geo-type">Оман и Бахрейн — тихие гавани</div>
+        <div class="geo-name">Маскат, Манама</div>
+        <span class="geo-label ok">Нишевые возможности</span>
+        <div class="geo-stat">Продовольствие 25–30%</div>
+        <div class="geo-desc">Оман и Бахрейн — менее «хайповые», но стабильные направления. Доля продовольствия в товарообороте с Оманом аналогична саудовской — 25–30%. Оман не входит в ключевые санкционные группы и традиционно более открыт к нестандартным финансовым структурам. Бахрейн — исторически финансовый центр Залива с развитой банковской инфраструктурой.</div>
+      </div>
+    </div>
+
+    <hr class="divider" />
+
+    <h2>Зачем россиянину ОАЭ: пять реальных мотивов</h2>
+
+    <p>Российский бизнес идёт в ОАЭ не только ради тёплого климата. За каждым потоком стоит конкретная экономическая логика — и понимание этой логики важно как для инвесторов, так и для консультантов, сопровождающих трансграничные сделки.</p>
+
+    <div class="metrics-grid">
+      <div class="metric-cell">
+        <div class="metric-label">Сохранение капитала</div>
+        <div class="metric-value sand">Главный мотив</div>
+        <div class="metric-note">Дирхам привязан к доллару более 20 лет. Нет налога на богатство, прирост капитала, дивиденды, наследство. Нет валютного контроля и ограничений на репатриацию.</div>
+      </div>
+      <div class="metric-cell">
+        <div class="metric-label">Торговые операции</div>
+        <div class="metric-value gold">Транзит и реэкспорт</div>
+        <div class="metric-note">ОАЭ исторически — крупнейший реэкспортный хаб. Российские компании используют дубайские юрлица для ведения международных торговых операций, недоступных через российские структуры.</div>
+      </div>
+      <div class="metric-cell">
+        <div class="metric-label">Недвижимость</div>
+        <div class="metric-value gold">Доходность 6–8% годовых</div>
+        <div class="metric-note">Среднегодовая доходность аренды в Дубае — 6–8%. В популярных районах (Dubai Marina, Downtown, Business Bay) рост цен за 2022–2025 превысил 60%. «Золотая виза» при покупке от $545 тыс.</div>
+      </div>
+      <div class="metric-cell">
+        <div class="metric-label">Корпоративное структурирование</div>
+        <div class="metric-value sand">Редомициляция через ОАЭ</div>
+        <div class="metric-note">Крупные группы выстраивают холдинговые структуры в ОАЭ как альтернативу BVI, Кипру и Нидерландам. Используется как транзитная юрисдикция при редомициляции — особенно актуально для компаний с санкционным элементом.</div>
+      </div>
+    </div>
+
+    <hr class="divider" />
+
+    <h2>Отраслевые точки входа: где реальный поток</h2>
+
+    <h3>Агропромышленный комплекс</h3>
+    <p>Агро — бесспорный лидер российского экспорта на Ближний Восток и одновременно наименее чувствительный к санкциям сектор. Продовольственная безопасность — стратегический приоритет для стран Залива: Саудовская Аравия импортирует около 80% потребляемого продовольствия. Российская пшеница, ячмень, подсолнечное масло, мясо птицы конкурируют здесь с украинским, аргентинским и австралийским зерном. Поставки продовольствия в КСА достигли около <span class="highlight">$1 млрд</span>, в Катар — формируют основу всего товарооборота. Перспективные ниши: переработка в ОАЭ с последующей дистрибуцией по всему региону, создание совместных торговых домов, инвестиции в портовую инфраструктуру для обслуживания зернового трафика.</p>
+
+    <h3>Энергетика и нефтехимия</h3>
+    <p>Россия и страны Залива — конкуренты на мировом рынке углеводородов, но это не мешает двустороннему сотрудничеству. В 2025 году глава «Роснефти» заявил, что поставки мазута и тяжёлых нефтепродуктов в Саудовскую Аравию за четыре года выросли более чем в шесть раз. Это не парадокс, а рыночная логика: КСА предпочитает жечь тяжёлые продукты российского происхождения на электростанциях, высвобождая собственную лёгкую нефть для экспорта с более высокой маржой. В нефтехимии идут переговоры о СП на территории КСА — с использованием российского сырья и саудовских производственных мощностей.</p>
+
+    <h3>Технологии и IT</h3>
+    <p>Российские технологические компании ищут на Ближнем Востоке то, чего им не хватает дома: доступ к глобальным рынкам, международных инвесторов и нейтральную юрисдикцию для IP-холдинга. ОАЭ активно привлекают технологические стартапы через программы типа DIFC FinTech Hive, Hub71 в Абу-Даби. Часть российских технологических предпринимателей, покинувших Россию после 2022 года, осела именно здесь — и теперь строит компании с ближневосточной пропиской, но российскими командами. Среди 40+ совместных российско-саудовских проектов IT-направление названо одним из приоритетных.</p>
+
+    <h3>Транспорт и логистика: коридор «Север — Юг»</h3>
+    <p>Международный транспортный коридор «Север — Юг» — от Санкт-Петербурга через Россию, Каспий и Иран до портов Персидского залива — остаётся главным инфраструктурным амбициозным проектом. Он должен создать альтернативу Суэцкому каналу для грузов между Индией, Россией и Европой. Страны Залива рассматривают его как возможность диверсифицировать логистику. Однако иранский участок создаёт санкционные риски, а реализация буксует: физическая инфраструктура отстаёт от декларируемых темпов. Тем не менее инвестиции в логистическую инфраструктуру — склады, порты, морские терминалы — привлекают всё больше российского частного капитала.</p>
+
+    <hr class="divider" />
+
+    <h2>Риски: три слона в комнате</h2>
+
+    <div class="risk-list">
+      <div class="risk-item">
+        <div class="risk-badge high">Критично</div>
+        <div>
+          <div class="risk-title">Банковский комплаенс ОАЭ: хаб закручивает гайки</div>
+          <div class="risk-desc">Главный структурный риск для всего коридора — ужесточение банковского комплаенса в ОАЭ. Юристы открыто говорят: большинство их клиентов с российскими корнями привыкли использовать эмиратские юрлица как «связующее звено» для торговли с западными контрагентами. Власти ОАЭ такой роли не рады и последовательно усиливают KYC-требования, чтобы пресекать обход западных санкций, введённых против РФ. После включения ОАЭ в «серый список» FATF (2024) местные банки стали значительно осторожнее открывать счета российским структурам. Открытие корпоративного счёта в банке класса А в Дубае для российского юрлица — задача, требующая 3–6 месяцев и квалифицированного сопровождения.</div>
+        </div>
+      </div>
+      <div class="risk-item">
+        <div class="risk-badge high">Критично</div>
+        <div>
+          <div class="risk-title">Вторичные санкции: страны Залива не хотят попасть под удар</div>
+          <div class="risk-desc">ОАЭ, Саудовская Аравия и Катар не присоединились к западным санкциям против России — но они активно торгуют с США и Европой и не намерены жертвовать этими отношениями ради российских партнёров. После нескольких предупреждений со стороны США и Евросоюза страны Залива ужесточили контроль за транзитными операциями. Любая транзакция, в которой ближневосточный партнёр выступает промежуточным звеном для обхода санкций, создаёт риск вторичных санкций — то есть ограничений против самого ближневосточного юрлица. Это системно ограничивает использование ОАЭ как «прокладки» для обхода ограничений.</div>
+        </div>
+      </div>
+      <div class="risk-item">
+        <div class="risk-badge mid">Значимый</div>
+        <div>
+          <div class="risk-title">Конкуренция за капитал Залива: Китай и Индия опережают</div>
+          <div class="risk-desc">Страны Залива активно диверсифицируют инвестиции по всему миру: Азия, Африка, Латинская Америка. Россия конкурирует за эти потоки с Китаем, Индией, Вьетнамом — которые предлагают более понятный правовой режим, меньший санкционный риск и более ёмкие рынки. По данным ЕАБР, сырьевой сектор занимает 55% совокупных инвестиций Залива в Евразию. Чтобы привлечь капитал в несырьевые секторы, России нужно предложить структурные решения, а не просто декларации о партнёрстве.</div>
+        </div>
+      </div>
+      <div class="risk-item">
+        <div class="risk-badge mid">Значимый</div>
+        <div>
+          <div class="risk-title">Иранский фактор в коридоре «Север — Юг»</div>
+          <div class="risk-desc">Ключевой инфраструктурный проект — МТК «Север — Юг» — проходит через Иран, который сам находится под жёсткими американскими санкциями. Страны Залива — особенно ОАЭ и Саудовская Аравия — имеют сложные отношения с Тегераном и не спешат интегрироваться в инфраструктуру, создающую зависимость от иранского транзита. Военная операция США и Израиля против иранских ядерных объектов в феврале 2026 года резко повысила неопределённость вокруг всего проекта.</div>
+        </div>
+      </div>
+      <div class="risk-item">
+        <div class="risk-badge low">Управляемый</div>
+        <div>
+          <div class="risk-title">Нефтяная конкуренция внутри ОПЕК+</div>
+          <div class="risk-desc">Россия и страны Залива — конкуренты на рынке нефти, и снижение цен бьёт по обоим. Разногласия внутри ОПЕК+ по квотам периодически осложняют политическую повестку. Однако до сих пор экономический прагматизм всегда брал верх над конкурентными противоречиями: обе стороны заинтересованы в ценовой стабильности. Риск управляем, пока нефть держится выше $55–60 за баррель.</div>
+        </div>
+      </div>
+    </div>
+
+    <hr class="divider" />
+
+    <h2>Как работает структурирование: практика 2025–2026</h2>
+
+    <p>Реальные сделки российско-ближневосточного коридора делятся на несколько моделей, каждая из которых имеет свою логику и свой профиль риска.</p>
+
+    <h3>Модель 1 — Холдинг в ОАЭ как структурный центр</h3>
+    <p>Российская группа регистрирует холдинговую компанию в одной из фризон ОАЭ (DIFC, ADGM, Jebel Ali, RAK ICC). Через неё структурируются активы, ведётся международная торговля, привлекается внешнее финансирование. Соглашение об избежании двойного налогообложения 2025 года снизило транзакционные издержки. Ключевое ограничение: банки требуют доказательства реальной операционной деятельности (Economic Substance) — фиктивные структуры без персонала и офиса отклоняются.</p>
+
+    <h3>Модель 2 — Недвижимость как инвестиционный инструмент</h3>
+    <p>Физические лица переводят капитал в дубайскую недвижимость через законные механизмы: покупка в Freehold-зонах, получение «золотой визы», структурирование через местное юрлицо для снижения налоговых обязательств. Доходность аренды 6–8% годовых в долларах при нулевом налоге выглядит привлекательно на фоне российских инструментов. Рост цен за 2022–2025 превысил 60% в ряде районов.</p>
+
+    <h3>Модель 3 — Торговый дом для агропоставок</h3>
+    <p>Российский экспортёр зерна или масложировой продукции создаёт trading desk в Дубае. Торговый дом заключает контракты с покупателями в КСА, Катаре, Египте, выставляет инвойсы в дирхамах или долларах, рассчитывается с российским поставщиком в рублях или юанях. Это обходит часть расчётных проблем, связанных с SWIFT-ограничениями. Риск: банки ОАЭ тщательно проверяют происхождение товара и цепочку расчётов.</p>
+
+    <div class="kotana-note">
+      <div class="kotana-note-label">Позиция Kotana</div>
+      <p>Мы сопровождаем кросс-бордерные сделки на коридоре Россия — Ближний Восток: от структурирования холдинговых структур до сопровождения M&A-сделок с ближневосточными партнёрами в секторах агро, энергетики и критических материалов. Ближний Восток — не просто «тихая гавань» для капитала, а полноценный рынок с растущими институциональными инвесторами, суверенными фондами и реальным спросом на российские активы и компетенции.</p>
+    </div>
+
+    <div class="conclusion">
+      <h3>Итог: прагматизм без иллюзий</h3>
+      <p>Российско-ближневосточный инвестиционный коридор — реальный и растущий. Но его нельзя переоценивать. Страны Залива не стали союзниками России в политическом смысле: они ведут свою игру, балансируя между Вашингтоном, Пекином и Москвой. Их нейтралитет — прагматичный, не идеологический, и он имеет ограниченный ресурс при эскалации санкционного давления.</p>
+      <p>Реальные возможности сосредоточены в трёх зонах. Первая — агропромышленный комплекс: здесь наименьшие санкционные риски, наибольший спрос и уже сложившиеся потоки. Вторая — структурирование капитала через ОАЭ: законные инструменты существуют, но требуют грамотного юридического и финансового сопровождения. Третья — проекты в энергетике и нефтехимии в рамках двусторонних межправительственных договорённостей.</p>
+      <p>Главный вывод: Ближний Восток — это не обходной путь вокруг санкций, а самостоятельный рынок с собственной логикой и ценностью. Компании и инвесторы, которые строят присутствие здесь как долгосрочную стратегию, а не как временную схему, получат устойчивое конкурентное преимущество на следующем витке геополитической перестройки.</p>
+    </div>
+
+  </article>
+</main>
+
+<footer>
+  <strong>kotana.com.ru</strong> &nbsp;·&nbsp; Аналитика: инвестиции Россия — Ближний Восток · 2025–2026 &nbsp;·&nbsp; Источники: ЕАБР, Ведомости, Право.ру, ИноСМИ (The i Paper), Sber Pro, РИА Новости, ЭКСАР
+</footer>
+
+</body>
+</html>

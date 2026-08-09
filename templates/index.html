@@ -408,6 +408,18 @@
         <h2 class="section-heading">Аналитика</h2>
         {% endif %}
         <div class="blog-grid">
+            <a href="/blog/russia-me-investment-2026" class="blog-card">
+                <span class="blog-tag">{{ 'Analytics' if lang == 'en' else 'Аналитика' }}</span>
+                {% if lang == 'en' %}
+                <h3>Russian Investment in the Middle East 2026: Gulf Capital, the Dubai Hub and the New Financial Architecture</h3>
+                <p>Over 40,000 Russian companies are registered in the UAE. Dubai has absorbed ~$7 billion in Russian real estate purchases since 2022. Russia and Saudi Arabia co-anchor OPEC+. Yet Western sanctions are tightening the corridor — forcing ruble-dirham rails, CIPS routing and crypto settlement to carry flows that SWIFT once handled.</p>
+                {% else %}
+                <h3>Российские инвестиции на Ближний Восток — 2026: капитал Залива, дубайский хаб и новая финансовая архитектура</h3>
+                <p>Более 40 000 российских компаний зарегистрированы в ОАЭ. Дубай поглотил ~$7 млрд в российской недвижимости с 2022 года. Россия и Саудовская Аравия совместно управляют ОПЕК+. Но санкционное давление ужесточается — и рубль-дирхамные коридоры, маршрутизация через CIPS и крипторасчёты заменяют SWIFT.</p>
+                {% endif %}
+                <span class="blog-read">{{ 'Read' if lang == 'en' else 'Читать' }} →</span>
+            </a>
+
             <a href="/blog/datacenter-market-2026" class="blog-card">
                 <span class="blog-tag">{{ 'Analytics' if lang == 'en' else 'Аналитика' }}</span>
                 {% if lang == 'en' %}
