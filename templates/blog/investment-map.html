@@ -330,7 +330,6 @@
     }
     .cc:hover { background: var(--cream); }
     .cc.hidden { display: none; }
-    .cc-filler { flex: 1 1 290px; background: var(--paper); }
 
     .cc-head { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 10px; gap: 8px; }
     .cc-name { font-family: 'Playfair Display', serif; font-size: 1.05rem; font-weight: 700; }
@@ -1700,7 +1699,7 @@ document.getElementById("sector-select").addEventListener("change", e => {
   <div class="cc-chips">${chip}</div>
   <div class="cc-blurb">${blurb}</div>
 </div>`;
-  }).join("") + Array.from({ length: 6 }, () => `<div class="cc-filler"></div>`).join("");
+  }).join("");
 
   grid.addEventListener("click", e => {
     const card = e.target.closest(".cc");
