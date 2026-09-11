@@ -473,7 +473,7 @@
                 <span class="blog-read">{{ 'Read' if lang == 'en' else 'Читать' }} →</span>
             </a>
 
-            <a href="/blog/russia-africa-investment-2026" class="blog-card">
+            <a href="{{ '/blog/russia-africa-investment-2026' if lang == 'en' else '/ru/blog/russia-africa-investment-2026' }}" class="blog-card">
                 <span class="blog-tag">{{ 'Analytics' if lang == 'en' else 'Аналитика' }}</span>
                 {% if lang == 'en' %}
                 <h3>Russian Investment in Africa 2026: Capital, Sanctions and the New Payment Frontier</h3>

@@ -256,6 +256,12 @@
       font-size: .72rem; color: var(--muted); text-align: center; letter-spacing: .06em;
     }
     footer strong { color: var(--ink); }
+    .footer-nav {
+      display: flex; flex-wrap: wrap; justify-content: center; gap: 6px 22px;
+      margin-bottom: 16px; padding-bottom: 16px; border-bottom: 1px solid var(--rule);
+    }
+    .footer-nav a { color: var(--muted); text-decoration: none; transition: color .15s; }
+    .footer-nav a:hover { color: var(--accent); }
 
     @media (max-width: 640px) {
       .masthead { padding: 12px 20px; }
@@ -599,6 +605,16 @@
 </main>
 
 <footer>
+  <nav class="footer-nav" aria-label="Site sections">
+    <a href="/en/">Home</a>
+    <a href="/en/#about">About</a>
+    <a href="/en/#services">Services</a>
+    <a href="/en/#markets">Markets</a>
+    <a href="/investment-map">Investment Map</a>
+    <a href="/partners">Partner Services</a>
+    <a href="/en/#blog">Blog</a>
+    <a href="/en/#contact">Contact</a>
+  </nav>
   <strong>kotana.com.ru</strong> &nbsp;·&nbsp; Russian Investment in the Middle East · 2026 &nbsp;·&nbsp; Sources: Dubai Land Department, DMCC, UAE Central Bank, VARA, OFAC enforcement data, Moscow Exchange, Russian Export Centre, NEFT Research, Gulf Cooperation Council Secretariat, Chatham House, DIFC, ADGM, Carnegie Endowment, Oxford Economics, TASS, Reuters
 </footer>
 

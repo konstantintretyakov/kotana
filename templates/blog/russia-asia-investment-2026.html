@@ -269,6 +269,12 @@
       font-size: .72rem; color: var(--muted); text-align: center; letter-spacing: .06em;
     }
     footer strong { color: var(--ink); }
+    .footer-nav {
+      display: flex; flex-wrap: wrap; justify-content: center; gap: 6px 22px;
+      margin-bottom: 16px; padding-bottom: 16px; border-bottom: 1px solid var(--rule);
+    }
+    .footer-nav a { color: var(--muted); text-decoration: none; transition: color .15s; }
+    .footer-nav a:hover { color: var(--accent); }
 
     @media (max-width: 640px) {
       .masthead { padding: 12px 20px; }
@@ -544,6 +550,16 @@
 </main>
 
 <footer>
+  <nav class="footer-nav" aria-label="Разделы сайта">
+    <a href="/">Главная</a>
+    <a href="/#about">О нас</a>
+    <a href="/#services">Услуги</a>
+    <a href="/#markets">Рынки</a>
+    <a href="/ru/investment-map">Карта инвестиций</a>
+    <a href="/partners">Услуги партнёров</a>
+    <a href="/#blog">Блог</a>
+    <a href="/#contact">Контакты</a>
+  </nav>
   <strong>kotana.com.ru</strong> &nbsp;·&nbsp; Аналитика: инвестиции Россия — Азия · 2025–2026 &nbsp;·&nbsp; Источники: ЕАБР, ЮНКТАД, Ведомости, РИА Новости, Sber Pro, Valdai Club, Russiaspivottoasia.com, ИноСМИ, Chinalogist, Neftegaz.ru
 </footer>
 

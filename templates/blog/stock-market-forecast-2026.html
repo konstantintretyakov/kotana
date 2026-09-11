@@ -262,6 +262,12 @@
       font-size: .72rem; color: var(--muted); text-align: center; letter-spacing: .06em;
     }
     footer strong { color: var(--ink); }
+    .footer-nav {
+      display: flex; flex-wrap: wrap; justify-content: center; gap: 6px 22px;
+      margin-bottom: 16px; padding-bottom: 16px; border-bottom: 1px solid var(--rule);
+    }
+    .footer-nav a { color: var(--muted); text-decoration: none; transition: color .15s; }
+    .footer-nav a:hover { color: var(--accent); }
 
     /* ── RESPONSIVE ───────────────────────── */
     @media (max-width: 640px) {
@@ -563,6 +569,16 @@
 </main>
 
 <footer>
+  <nav class="footer-nav" aria-label="Разделы сайта">
+    <a href="/">Главная</a>
+    <a href="/#about">О нас</a>
+    <a href="/#services">Услуги</a>
+    <a href="/#markets">Рынки</a>
+    <a href="/ru/investment-map">Карта инвестиций</a>
+    <a href="/partners">Услуги партнёров</a>
+    <a href="/#blog">Блог</a>
+    <a href="/#contact">Контакты</a>
+  </nav>
   <strong>kotana.com.ru</strong> &nbsp;·&nbsp; Прогноз рынка акций · 2026 &nbsp;·&nbsp; Источники: Альфа-Инвестиции, БКС, SberCIB, ВТБ МИ, Финам, J.P. Morgan, Goldman Sachs, Bloomberg, РБК Инвестиции
 </footer>
 

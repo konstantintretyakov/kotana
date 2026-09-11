@@ -373,6 +373,12 @@
       font-size: .68rem; color: var(--muted); text-align: center; letter-spacing: .06em;
     }
     footer strong { color: var(--ink); }
+    .footer-nav {
+      display: flex; flex-wrap: wrap; justify-content: center; gap: 6px 22px;
+      margin-bottom: 16px; padding-bottom: 16px; border-bottom: 1px solid var(--rule);
+    }
+    .footer-nav a { color: var(--muted); text-decoration: none; transition: color .15s; }
+    .footer-nav a:hover { color: var(--accent); }
 
     /* ── RESPONSIVE ── */
     @media (max-width: 720px) {
@@ -579,6 +585,15 @@
 </div>
 
 <footer>
+  <nav class="footer-nav" aria-label="{% if lang == 'ru' %}Разделы сайта{% else %}Site sections{% endif %}">
+    <a href="{% if lang == 'ru' %}/{% else %}/en/{% endif %}">{% if lang == 'ru' %}Главная{% else %}Home{% endif %}</a>
+    <a href="{% if lang == 'ru' %}/#about{% else %}/en/#about{% endif %}">{% if lang == 'ru' %}О нас{% else %}About{% endif %}</a>
+    <a href="{% if lang == 'ru' %}/#services{% else %}/en/#services{% endif %}">{% if lang == 'ru' %}Услуги{% else %}Services{% endif %}</a>
+    <a href="{% if lang == 'ru' %}/#markets{% else %}/en/#markets{% endif %}">{% if lang == 'ru' %}Рынки{% else %}Markets{% endif %}</a>
+    <a href="/partners">{% if lang == 'ru' %}Услуги партнёров{% else %}Partner Services{% endif %}</a>
+    <a href="{% if lang == 'ru' %}/#blog{% else %}/en/#blog{% endif %}">{% if lang == 'ru' %}Блог{% else %}Blog{% endif %}</a>
+    <a href="{% if lang == 'ru' %}/#contact{% else %}/en/#contact{% endif %}">{% if lang == 'ru' %}Контакты{% else %}Contact{% endif %}</a>
+  </nav>
   {% if lang == 'ru' %}
   <strong>kotana.com.ru</strong> &nbsp;·&nbsp;
   Карта трансграничных инвестиций · 2026 &nbsp;·&nbsp;
@@ -1456,7 +1471,7 @@ const T = {
 };
 
 const REGION_ARTICLES = {
-  "Africa":      { href: "/blog/russia-africa-investment-2026", label: LANG === 'ru' ? "Россия – Африка: инвестиционный обзор 2026" : "Russia–Africa Investment Overview 2026" },
+  "Africa":      { href: LANG === 'ru' ? "/ru/blog/russia-africa-investment-2026" : "/blog/russia-africa-investment-2026", label: LANG === 'ru' ? "Россия – Африка: инвестиционный обзор 2026" : "Russia–Africa Investment Overview 2026" },
   "Middle East": { href: "/blog/russia-me-investment-2026",     label: LANG === 'ru' ? "Россия – Ближний Восток: инвестиционный обзор 2026" : "Russia–Middle East Investment Overview 2026" },
   "Asia":        { href: "/blog/russia-asia-investment-2026",   label: LANG === 'ru' ? "Россия – Азия: инвестиционный обзор 2026" : "Russia–Asia Investment Overview 2026" },
 };

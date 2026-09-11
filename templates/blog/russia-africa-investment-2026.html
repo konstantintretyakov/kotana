@@ -256,6 +256,12 @@
       font-size: .72rem; color: var(--muted); text-align: center; letter-spacing: .06em;
     }
     footer strong { color: var(--ink); }
+    .footer-nav {
+      display: flex; flex-wrap: wrap; justify-content: center; gap: 6px 22px;
+      margin-bottom: 16px; padding-bottom: 16px; border-bottom: 1px solid var(--rule);
+    }
+    .footer-nav a { color: var(--muted); text-decoration: none; transition: color .15s; }
+    .footer-nav a:hover { color: var(--accent); }
 
     @media (max-width: 640px) {
       .masthead { padding: 12px 20px; }
@@ -479,8 +485,7 @@
         <div class="sc-title">Sanctions tighten, momentum stalls</div>
         <div class="sc-value bear">$20–25 bn</div>
         <div class="sc-source">Secondary sanctions pressure scenario</div>
-        <div class="sc-desc">Expanded US/EU secondary sanctions on Russian-linked African financial institutions create systemic chilling effect. African SMEs unwilling to assume compliance risk pull back. Commodity trade continues but investment projects stall for lack of financing mechanisms. Crypto rails face regulatory crackdowns. Russia's presence remains but fails to deepen beyond strategic enclaves.</desc>
-        </div>
+        <div class="sc-desc">Expanded US/EU secondary sanctions on Russian-linked African financial institutions create systemic chilling effect. African SMEs unwilling to assume compliance risk pull back. Commodity trade continues but investment projects stall for lack of financing mechanisms. Crypto rails face regulatory crackdowns. Russia's presence remains but fails to deepen beyond strategic enclaves.</div>
       </div>
     </div>
 
@@ -590,6 +595,16 @@
 </main>
 
 <footer>
+  <nav class="footer-nav" aria-label="Site sections">
+    <a href="/en/">Home</a>
+    <a href="/en/#about">About</a>
+    <a href="/en/#services">Services</a>
+    <a href="/en/#markets">Markets</a>
+    <a href="/investment-map">Investment Map</a>
+    <a href="/partners">Partner Services</a>
+    <a href="/en/#blog">Blog</a>
+    <a href="/en/#contact">Contact</a>
+  </nav>
   <strong>kotana.com.ru</strong> &nbsp;·&nbsp; Russian Investment in Africa · 2026 &nbsp;·&nbsp; Sources: Russia-Africa Expo-2025, Rosatom, Russian Export Centre, NEFT Research, VEB.RF, Modern Diplomacy, IFRI, GIS Reports, African Energy Chamber, Chainalysis, Lowy Institute, Carnegie Endowment, TASS
 </footer>
 

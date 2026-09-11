@@ -172,6 +172,11 @@ def blog_russia_africa_investment_2026():
     return render_template("blog/russia-africa-investment-2026.html")
 
 
+@app.route("/ru/blog/russia-africa-investment-2026")
+def blog_russia_africa_investment_2026_ru():
+    return render_template("blog/russia-africa-investment-2026-ru.html")
+
+
 @app.route("/blog/russia-asia-investment-2026")
 def blog_russia_asia_investment_2026():
     return render_template("blog/russia-asia-investment-2026.html")
@@ -368,6 +373,11 @@ def sitemap():
     </url>
     <url>
         <loc>{SITE_URL}/blog/russia-africa-investment-2026</loc>
+        <changefreq>yearly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>{SITE_URL}/ru/blog/russia-africa-investment-2026</loc>
         <changefreq>yearly</changefreq>
         <priority>0.7</priority>
     </url>
