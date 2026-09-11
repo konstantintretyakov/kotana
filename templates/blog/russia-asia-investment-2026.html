@@ -280,6 +280,22 @@
       .geo-grid, .metrics-grid { grid-template-columns: 1fr; }
       .data-row-label { width: 130px; font-size: .78rem; }
     }
+
+    .map-cta {
+      display: block; margin: 3rem 0 0; padding: 28px 32px;
+      border: 1px solid var(--rule); background: var(--cream);
+      color: inherit; text-decoration: none; transition: background .16s;
+    }
+    .map-cta:hover { background: var(--accent-light); }
+    .map-cta-eyebrow {
+      font-family: 'IBM Plex Mono', monospace; font-size: .68rem;
+      text-transform: uppercase; letter-spacing: .15em; color: var(--muted); margin-bottom: 8px;
+    }
+    .map-cta-title {
+      font-family: 'Playfair Display', serif; font-size: 1.25rem; font-weight: 700;
+      color: var(--accent); margin-bottom: 8px;
+    }
+    .map-cta-desc { font-size: .86rem; color: var(--muted); line-height: 1.6; margin: 0; }
   </style>
 </head>
 <body>
@@ -517,6 +533,12 @@
       <p>Главный вопрос следующих пяти лет — сможет ли Россия диверсифицировать азиатское присутствие достаточно, чтобы не оказаться в ловушке одного партнёра. Ответ зависит от трёх факторов: скорости развития инфраструктуры (логистика, расчёты, регуляторика), способности предложить Азии что-то кроме ресурсов (атом, технологии, агро с добавленной стоимостью) и от геополитической динамики, которую Россия контролирует лишь отчасти.</p>
       <p>Для бизнеса и инвесторов вывод практический: азиатский коридор открыт и растёт, но он не однородный. Китай — рынок с масштабом и ценовым давлением. Индия — рынок с потенциалом и осторожностью. ЮВА — рынок возможностей без обязательств. Каждый требует отдельной стратегии, отдельных структур и отдельного понимания того, кто здесь хозяин переговоров.</p>
     </div>
+
+    <a class="map-cta" href="/ru/investment-map">
+      <div class="map-cta-eyebrow">Интерактивный инструмент · Аналитика КОТАНА</div>
+      <div class="map-cta-title">Открыть карту инвестиций &rarr;</div>
+      <p class="map-cta-desc">Профили рисков и возможностей по странам Африки, Ближнего Востока и Азии — интерактивная карта с детальными карточками стран и квадрантным анализом.</p>
+    </a>
 
   </article>
 </main>

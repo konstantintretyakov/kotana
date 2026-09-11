@@ -267,6 +267,22 @@
       .instr-grid, .metrics-grid { grid-template-columns: 1fr; }
       .data-row-label { width: 130px; font-size: .78rem; }
     }
+
+    .map-cta {
+      display: block; margin: 3rem 0 0; padding: 28px 32px;
+      border: 1px solid var(--rule); background: var(--cream);
+      color: inherit; text-decoration: none; transition: background .16s;
+    }
+    .map-cta:hover { background: var(--accent-light); }
+    .map-cta-eyebrow {
+      font-family: 'IBM Plex Mono', monospace; font-size: .68rem;
+      text-transform: uppercase; letter-spacing: .15em; color: var(--muted); margin-bottom: 8px;
+    }
+    .map-cta-title {
+      font-family: 'Playfair Display', serif; font-size: 1.25rem; font-weight: 700;
+      color: var(--accent); margin-bottom: 8px;
+    }
+    .map-cta-desc { font-size: .86rem; color: var(--muted); line-height: 1.6; margin: 0; }
   </style>
 </head>
 <body>
@@ -563,6 +579,12 @@
       <p>But the payment problem is the load-bearing constraint. Russia's ability to move capital to and from Africa at scale — without SWIFT, without dollar clearing, and without exposing African partners to secondary sanctions — determines whether this strategic pivot translates into lasting economic integration or remains an archipelago of politically connected deals that are commercially difficult to replicate at scale. SPFS, CIPS, ruble bilateral accounts and experimental crypto rails all exist. None yet provides the seamless, low-friction experience that underpins normal international commercial relationships.</p>
       <p>The fundamental principle for assessing Russia's Africa strategy in 2026 is this: political will is ahead of financial infrastructure. The agreements are being signed faster than the payment systems that would settle them can be built. Closing that gap — through BRICS Pay, digital CBDC corridors and expanding correspondent banking networks — is the decisive variable for the decade ahead. Those who build that infrastructure first will control the terms of a relationship that could eventually reach $50 billion or beyond.</p>
     </div>
+
+    <a class="map-cta" href="/investment-map">
+      <div class="map-cta-eyebrow">Interactive Tool · KOTANA Analytics</div>
+      <div class="map-cta-title">Explore the Investment Map &rarr;</div>
+      <p class="map-cta-desc">Country-by-country risk and opportunity profiles across Africa, the Middle East and Asia — interactive map with detailed country cards and quadrant analysis.</p>
+    </a>
 
   </article>
 </main>

@@ -182,9 +182,19 @@ def blog_russia_me_investment_2026():
     return render_template("blog/russia-me-investment-2026.html")
 
 
+@app.route("/blog/russia-outbound-investment-2025-2026")
+def blog_russia_outbound_investment_2025_2026():
+    return render_template("blog/russia-outbound-investment-2025-2026.html")
+
+
 @app.route("/investment-map")
 def investment_map():
-    return render_template("blog/investment-map.html")
+    return render_template("blog/investment-map.html", lang="en")
+
+
+@app.route("/ru/investment-map")
+def investment_map_ru():
+    return render_template("blog/investment-map.html", lang="ru")
 
 
 @app.route("/blog/datacenter-market-2026")
@@ -372,7 +382,17 @@ def sitemap():
         <priority>0.7</priority>
     </url>
     <url>
+        <loc>{SITE_URL}/blog/russia-outbound-investment-2025-2026</loc>
+        <changefreq>yearly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
         <loc>{SITE_URL}/investment-map</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>{SITE_URL}/ru/investment-map</loc>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>

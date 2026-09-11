@@ -158,7 +158,7 @@
                     <a href="#markets" class="nav-dropdown-toggle">{{ 'Markets' if lang == 'en' else 'Рынки' }}</a>
                     <ul class="nav-dropdown-menu">
                         <li><a href="#markets">{{ 'Market Overview' if lang == 'en' else 'Обзор рынков' }}</a></li>
-                        <li><a href="/investment-map">{{ 'Investment Map' if lang == 'en' else 'Карта инвестиций' }}</a></li>
+                        <li><a href="{{ '/investment-map' if lang == 'en' else '/ru/investment-map' }}">{{ 'Investment Map' if lang == 'en' else 'Карта инвестиций' }}</a></li>
                     </ul>
                 </li>
                 <li><a href="/partners">{{ 'Partner Services' if lang == 'en' else 'Услуги партнёров' }}</a></li>
@@ -425,6 +425,18 @@
         <h2 class="section-heading">Аналитика</h2>
         {% endif %}
         <div class="blog-grid">
+            <a href="/blog/russia-outbound-investment-2025-2026" class="blog-card">
+                <span class="blog-tag">{{ 'Analytics' if lang == 'en' else 'Аналитика' }}</span>
+                {% if lang == 'en' %}
+                <h3>Russian Outbound Investment 2025–2026: Rosatom Builds, Oil Majors Retreat</h3>
+                <p>Rosatom is building 26 power units in 10 countries — the world's largest overseas nuclear portfolio — while opening new markets in Africa. Lukoil is selling most of its foreign assets to Carlyle under US sanctions pressure. Rosneft holds onto its Indian refinery despite EU sanctions. Gazprom is betting on Power of Siberia 2. A map of who is building abroad, who is losing ground, and who is selling.</p>
+                {% else %}
+                <h3>Российские инвестиции за рубежом: крупнейшие проекты 2025–2026</h3>
+                <p>«Росатом» возводит 26 энергоблоков в 10 странах — крупнейший в мире зарубежный портфель — и осваивает новые рынки в Африке. «Лукойл» продаёт большую часть зарубежных активов фонду Carlyle под санкционным давлением США. «Роснефть» удерживает НПЗ в Индии вопреки санкциям ЕС. «Газпром» делает ставку на «Силу Сибири — 2». Карта российских инвестиций за рубежом: кто строит, кто теряет, кто продаёт.</p>
+                {% endif %}
+                <span class="blog-read">{{ 'Read' if lang == 'en' else 'Читать' }} →</span>
+            </a>
+
             <a href="/blog/russia-asia-investment-2026" class="blog-card">
                 <span class="blog-tag">{{ 'Analytics' if lang == 'en' else 'Аналитика' }}</span>
                 {% if lang == 'en' %}
