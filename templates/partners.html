@@ -12,7 +12,7 @@
         *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
         :root{--navy-dark:#0a0f1e;--navy:#111833;--navy-light:#1a2444;--gold:#c9a84c;--gold-light:#ddc175;--text:#d0d4e0;--text-muted:#8891a8;--white:#f0f1f5}
         html{scroll-behavior:smooth}
-        body{font-family:"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;background:var(--navy-dark);color:var(--text);line-height:1.7}
+        body{font-family:"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;background:var(--navy-dark) url("{{ url_for('static', filename='navy-gold-bg.svg') }}") center top/cover no-repeat fixed;color:var(--text);line-height:1.7}
         nav{position:fixed;top:0;width:100%;background:rgba(10,15,30,0.92);backdrop-filter:blur(10px);border-bottom:1px solid rgba(201,168,76,0.15);z-index:100;padding:0 2rem}
         nav .nav-inner{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;height:64px}
         nav .logo{font-size:1.25rem;font-weight:700;letter-spacing:0.25em;color:var(--gold);text-decoration:none}
@@ -50,7 +50,7 @@
         .benefit-list li{font-size:.9rem;color:var(--text-muted);line-height:1.7;padding-left:1.2rem;position:relative}
         .benefit-list li::before{content:'✓';position:absolute;left:0;color:var(--gold);font-size:.8rem}
         .audience-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem;margin-top:2rem}
-        .audience-card{background:var(--navy);border:1px solid rgba(201,168,76,.1);border-radius:6px;padding:2rem;display:flex;gap:1.5rem;align-items:flex-start}
+        .audience-card{background:rgba(17,24,51,.78);border:1px solid rgba(201,168,76,.1);border-radius:6px;padding:2rem;display:flex;gap:1.5rem;align-items:flex-start}
         .audience-num{font-family:'Cormorant Garamond',Georgia,serif;font-size:2.5rem;font-weight:600;color:rgba(201,168,76,.3);line-height:1;flex-shrink:0}
         .audience-body h3{font-size:1rem;color:var(--white);font-weight:600;margin-bottom:.5rem}
         .audience-body p{font-size:.88rem;color:var(--text-muted);line-height:1.65}
@@ -189,7 +189,7 @@
 </section>
 
 <!-- Target audience and timelines -->
-<section style="padding:5rem 2rem;background:var(--navy)" id="audience">
+<section style="padding:5rem 2rem;background:rgba(17,24,51,.55)" id="audience">
     <div class="container">
         <p class="section-title">Для кого</p>
         <h2 class="section-heading">Целевая аудитория и сроки</h2>
